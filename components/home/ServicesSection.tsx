@@ -35,6 +35,21 @@ const SERVICE_ICONS: Record<string, ReactElement> = {
       <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/>
     </svg>
   ),
+  mother_baby_care: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 011.8 3.9 2 2 0 010 3.6 9 9 0 01-17.6 0 2 2 0 010-3.6A9 9 0 0112 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/>
+    </svg>
+  ),
+  dementia_care: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 5a3 3 0 10-5.997.142 4 4 0 00-2.526 5.77 4 4 0 00.556 6.588A4 4 0 1012 18Z"/><path d="M12 5a3 3 0 115.997.142 4 4 0 012.526 5.77 4 4 0 01-.556 6.588A4 4 0 1112 18Z"/>
+    </svg>
+  ),
+  palliative_care: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M11 14h2a2 2 0 002-2 2 2 0 00-2-2h-3c-.6 0-1.1.2-1.4.6L3 18"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 00-2.75-2.91l-4.2 3.9"/><path d="m2 15 6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0016 4a2.78 2.78 0 00-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z"/>
+    </svg>
+  ),
 };
 
 export default function ServicesSection() {
