@@ -1,3 +1,7 @@
+// Live deployment domain — used for canonical URLs, sitemap, and JSON-LD.
+// The live site is lucaintel.com (the old mysehatconnect.com is not deployed).
+export const SITE_URL = "https://lucaintel.com";
+
 export const PRICES = {
   qualified_nurse: 4000,
   attendant: 3000,
@@ -29,6 +33,8 @@ export const CITIES = [
   'Faisalabad',
 ];
 
+export const LIVE_CITIES = ['Lahore'];
+
 export const SHIFTS = [
   { id: 'morning', label: 'Day',   time: '8:00 AM – 8:00 PM' },
   { id: 'night',   label: 'Night', time: '8:00 PM – 8:00 AM' },
@@ -41,7 +47,7 @@ export const CONTACT_PHONE_TEL = '+923288489988';
 export const FAQ_ITEMS = [
   {
     q: 'Are all nurses Pakistan Nursing Council registered?',
-    a: 'Yes. Every Qualified Nurse on our platform holds a valid PNC registration number, which is verified by our team before onboarding. Attendants are trained non-clinical caregivers with background verification.',
+    a: 'Yes. Every Qualified Nurse we send holds a valid PNC registration number, which is verified by our team before onboarding. Attendants are trained non-clinical caregivers with background verification.',
   },
   {
     q: 'Can I request a specific nurse again?',
@@ -57,18 +63,18 @@ export const FAQ_ITEMS = [
   },
   {
     q: 'What if I need to cancel or reschedule?',
-    a: 'You can cancel or reschedule up to 4 hours before the shift at no charge via your dashboard or by calling/WhatsApp-ing our support team.',
+    a: 'Just call or WhatsApp us up to 4 hours before the shift and we will cancel or reschedule it at no charge.',
   },
   {
     q: 'Is the service available outside major cities?',
-    a: 'We currently serve Lahore, Karachi, Islamabad, Rawalpindi, and Faisalabad. We are expanding — contact us to check availability in your city.',
+    a: 'Right now we serve all of Lahore — DHA, Gulberg, Johar Town, Model Town, Bahria Town, Cantt and more. We are expanding to other cities soon — call or WhatsApp us to check your area.',
   },
   {
     q: 'Can I request a female nurse specifically?',
-    a: 'Yes. Gender preference is a first-class feature on our platform. Simply select Female when searching or booking and only female caregivers will be shown.',
+    a: 'Yes, of course. Many families prefer a female caregiver for a female patient. Just tell us when we call and we will send a female nurse or attendant.',
   },
   {
     q: 'What happens if the nurse doesn\'t arrive on time?',
-    a: 'Our nurses are GPS-tracked. If your nurse is running late you will receive an SMS update. If arrival is delayed beyond 30 minutes, contact our support line and we will resolve it immediately.',
+    a: 'We confirm the arrival time with you in advance and message you when your caregiver is on the way. If anyone is running late, our team calls you and sorts it out right away — a real person is always just a call or WhatsApp away.',
   },
 ];

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { notify } from "@/lib/notify";
 
 export async function GET() {
   // Ping Supabase to prevent free tier from pausing
@@ -12,15 +13,12 @@ export async function GET() {
   }).catch(() => {});
 
   // Ping ntfy to keep subscription alive
-  await fetch("https://ntfy.sh/sehatghar-bookings-sawar", {
-    method: "POST",
-    headers: {
-      "Title": "Sehat Connect - System Online",
-      "Priority": "min",
-      "Tags": "white_check_mark",
-    },
+  await notify({
+    title: "Sehat Connect - System Online",
+    priority: "min",
+    tags: "white_check_mark",
     body: "Keepalive ping - Supabase and ntfy are active.",
-  }).catch(() => {});
+  });
 
   return NextResponse.json({ ok: true });
 }

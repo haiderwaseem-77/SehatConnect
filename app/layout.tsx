@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "./direction6.css";
+import StickyActionBar from "@/components/ui/StickyActionBar";
+import { LanguageProvider } from "@/components/i18n/LanguageProvider";
+import { SITE_URL } from "@/lib/constants";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mysehatconnect.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Sehat Connect | Home Nursing Service in Lahore | Nurse at Home",
     template: "%s | Sehat Connect",
@@ -52,7 +56,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_PK",
-    url: "https://mysehatconnect.com",
+    url: SITE_URL,
     siteName: "Sehat Connect",
     title: "Sehat Connect | Home Nursing Service in Lahore",
     description:
@@ -65,7 +69,7 @@ export const metadata: Metadata = {
       "Book a verified nurse or patient attendant at home in Lahore. Available 24/7.",
   },
   alternates: {
-    canonical: "https://mysehatconnect.com",
+    canonical: SITE_URL,
   },
 };
 
@@ -74,7 +78,20 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="min-h-screen flex flex-col">{children}</body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="min-h-screen flex flex-col">
+        <LanguageProvider>
+          {children}
+          <StickyActionBar />
+        </LanguageProvider>
+      </body>
     </html>
   );
 }

@@ -1,53 +1,64 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
-import { QUALIFIED_NURSE_SERVICES, PRICES } from "@/lib/constants";
+import ServiceDetailPage from "@/components/services/ServiceDetailPage";
+import {
+  QUALIFIED_NURSE_SERVICES,
+  PRICES,
+  SITE_URL,
+  CONTACT_PHONE_TEL,
+} from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Qualified Home Nurse in Lahore | PNC Registered | Sehat Connect",
   description:
     "Book a PNC-registered qualified nurse at home in Lahore for post-op care, elderly care, ICU step-down, diabetic care and more. Rs. 4,000 per 12-hour shift. Call 0328-8489988.",
-  alternates: { canonical: "https://mysehatconnect.com/services/qualified-nurse" },
+  alternates: { canonical: `${SITE_URL}/services/qualified-nurse` },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MedicalTherapy",
+  name: "Qualified Nurse at Home (Lahore)",
+  description:
+    "Clinical home nursing by Pakistan Nursing Council registered nurses — wound care, dressings, injections, medication management, monitoring, post-operative and ICU step-down care.",
+  url: `${SITE_URL}/services/qualified-nurse`,
+  provider: {
+    "@type": "MedicalBusiness",
+    name: "Sehat Connect",
+    telephone: CONTACT_PHONE_TEL,
+    areaServed: { "@type": "City", name: "Lahore" },
+  },
+  areaServed: { "@type": "City", name: "Lahore" },
+  offers: {
+    "@type": "Offer",
+    price: PRICES.qualified_nurse,
+    priceCurrency: "PKR",
+    description: "Per 12-hour shift, paid after the shift — no advance.",
+  },
+  relevantSpecialty: QUALIFIED_NURSE_SERVICES.map((s) => s.label),
 };
 
 export default function QualifiedNursePage() {
   return (
-    <>
-      <Navbar />
-      <main style={{ backgroundColor: "#F5FAF9", minHeight: "80vh" }}>
-        <div style={{ backgroundColor: "#0D7A6E", padding: "48px 0" }}>
-          <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8">
-            <span style={{ backgroundColor: "rgba(255,255,255,0.2)", color: "#fff", fontSize: "11px", fontWeight: 600, padding: "4px 12px", borderRadius: "20px" }}>PNC Registered</span>
-            <h1 style={{ fontSize: "clamp(24px, 4vw, 36px)", fontWeight: 700, color: "#fff", marginTop: "12px", marginBottom: "10px" }}>Qualified Nurse</h1>
-            <p style={{ fontSize: "15px", color: "#B2DED9", marginBottom: "16px" }}>Clinical home nursing care by Pakistan Nursing Council registered professionals.</p>
-            <div style={{ fontSize: "26px", fontWeight: 700, color: "#fff" }}>Rs. {PRICES.qualified_nurse.toLocaleString()} <span style={{ fontSize: "14px", fontWeight: 400, color: "#B2DED9" }}>/ 12-hour shift</span></div>
-          </div>
-        </div>
-
-        <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
-            {QUALIFIED_NURSE_SERVICES.map(s => (
-              <div key={s.id} style={{ backgroundColor: "#fff", border: "0.5px solid #B2DED9", borderRadius: "12px", padding: "20px" }}>
-                <h3 style={{ fontSize: "15px", fontWeight: 700, color: "#0A2E2B", marginBottom: "8px" }}>{s.label}</h3>
-                <p style={{ fontSize: "13px", color: "#5A7572", lineHeight: 1.6, marginBottom: "14px" }}>{s.description}</p>
-                <Link href={`/book?service=${s.id}&category=qualified_nurse`}
-                  style={{ fontSize: "12px", fontWeight: 600, color: "#0D7A6E" }}>Book this service →</Link>
-              </div>
-            ))}
-          </div>
-          <div style={{ textAlign: "center" }}>
-            <Link href="/book?category=qualified_nurse"
-              style={{ backgroundColor: "#0D7A6E", color: "#fff", padding: "13px 36px", borderRadius: "8px", fontWeight: 700, fontSize: "14px", display: "inline-block" }}
-              className="hover:bg-[#0A5E55] transition-colors">
-              Book a Qualified Nurse
-            </Link>
-          </div>
-        </div>
-      </main>
-      <Footer />
-      <WhatsAppButton />
-    </>
+    <ServiceDetailPage
+      role="Qualified Nurse"
+      roleUrdu="کوالیفائیڈ نرس"
+      badge={{ en: "PNC Registered", ur: "پی این سی رجسٹرڈ" }}
+      price={PRICES.qualified_nurse}
+      category="qualified_nurse"
+      intro={{
+        en: "Clinical home nursing by Pakistan Nursing Council registered nurses — wounds, dressings, injections, medicines, monitoring, post-op and ICU step-down care.",
+        ur: "پاکستان نرسنگ کونسل کی رجسٹرڈ نرسیں گھر پر طبی نگہداشت فراہم کرتی ہیں — زخم، ڈریسنگ، انجیکشن، ادویات، نگرانی، آپریشن اور آئی سی یو کے بعد کی دیکھ بھال۔",
+      }}
+      gridHeading={{
+        en: "What our nurses handle",
+        ur: "ہماری نرسیں کیا سنبھالتی ہیں",
+      }}
+      gridSub={{
+        en: "Every nurse is PNC registered, CNIC & references checked. Tap WhatsApp or ask us to call you back.",
+        ur: "ہر نرس پی این سی رجسٹرڈ ہے، شناختی کارڈ اور حوالہ جات کی جانچ شدہ۔ واٹس ایپ کریں یا کال کی درخواست کریں۔",
+      }}
+      services={QUALIFIED_NURSE_SERVICES}
+      jsonLd={jsonLd}
+    />
   );
 }

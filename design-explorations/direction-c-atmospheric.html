@@ -1,0 +1,1132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sehat Connect — A trusted nurse or caregiver, right at your home</title>
+<meta name="description" content="Tell us what you need and we'll call you back — verified nurses and caregivers in Lahore, male or female, day or night. Pay after, no advance.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* Hallmark · pre-emit critique: P5 H4 E4 S4 R5 V4
+ * Hallmark · genre: atmospheric (teal, brand-locked) · macrostructure: Stat-Led + Photographic fold
+ * theme: custom-teal (brand tokens from CONTENT-BRAND-SPEC §9) · nav: N9 edge-aligned · footer: Ft5 statement
+ * contrast: pass (40–41) · honest: pass (46, real facts only) · chrome: pass (47) · tokens: pass (48)
+ * responsive: pass (49) · icons: pass (30, one custom line set) · mobile: pass (34, 50–57)
+ */
+
+/* ============================================================
+   TOKENS  — every colour & font referenced by name (no inline values)
+   Brand values are verbatim from CONTENT-BRAND-SPEC §9 (locked).
+   ============================================================ */
+:root{
+  /* — Brand (locked) — */
+  --color-primary:#0D7A6E;
+  --color-primary-dark:#0A5E55;
+  --color-primary-light:#EEF9F7;
+  --color-primary-muted:#B2DED9;
+  --color-surface:#FFFFFF;
+  --color-background:#F5FAF9;
+  --color-text-primary:#0A2E2B;
+  --color-text-secondary:#3D5E5A;
+  --color-text-muted:#41605C;
+  --color-female-tint:#F4E8F4;
+  --color-female-text:#7A3D8A;
+  --color-success:#1A9E6E;
+  --color-warning:#E8A020;
+  --color-error:#C0392B;
+  --color-error-bg:#FEE2E2;
+  --color-error-text:#991B1B;
+  --color-whatsapp:#25D366;
+  --color-reassure:#15936B;
+  --color-card-border:#CFE7E2;
+  --color-on-primary:#FFFFFF;
+
+  /* — Atmospheric system (derived, named) — */
+  --color-deep:#0A2E2B;          /* deep teal canvas */
+  --color-deep-2:#0C3A35;        /* elevated dark surface */
+  --color-deep-3:#12463F;        /* higher elevation on dark */
+  --color-deep-line:#1C4B47;     /* hairline on dark */
+  --color-on-dark:#EAF7F4;       /* primary text on dark */
+  --color-on-dark-soft:#CFE7E2;  /* secondary text on dark */
+  --color-on-dark-muted:#A8D4CD; /* muted text on dark */
+  --color-mint:#8AD8C9;          /* accent on dark: large text / underline / marks */
+  --color-mint-bright:#A9EBDC;   /* brightest accent flicker */
+
+  /* radial bloom colours (kept as named tokens for gate-48 discipline) */
+  --bloom-mint:rgba(138,216,201,0.16);
+  --bloom-teal:rgba(13,122,110,0.34);
+  --bloom-deep:rgba(8,38,35,0.55);
+  --glow-form:rgba(138,216,201,0.22);
+
+  /* scrims, tints & accents (named so no raw value lives outside :root — gate 48) */
+  --color-whatsapp-dark:#1FB957;
+  --scrim-1:rgba(6,28,26,0.65);
+  --scrim-2:rgba(6,28,26,0.5);
+  --scrim-3:rgba(6,28,26,0.4);
+  --tint-light-12:rgba(234,247,244,0.12);
+  --tint-light-08:rgba(234,247,244,0.08);
+  --tint-light-06:rgba(234,247,244,0.06);
+  --tint-mint-12:rgba(138,216,201,0.12);
+  --ring-success:rgba(26,158,110,0.22);
+
+  /* focus ring (per-context override sets --ring) */
+  --ring:var(--color-primary-dark);
+
+  /* — Radii (brand) — */
+  --radius-card:12px;
+  --radius-btn:8px;
+  --radius-badge:20px;
+  --radius-input:10px;
+  --radius-pill:999px;
+
+  /* — Type — */
+  --font-display:'Geist','Inter',system-ui,-apple-system,sans-serif;
+  --font-body:'Inter',system-ui,-apple-system,sans-serif;
+  --font-urdu:'Noto Nastaliq Urdu','Noto Naskh Arabic',serif;
+
+  --text-sm:1rem;        /* 16px — label floor (nothing important under 16px) */
+  --text-base:1.125rem;  /* 18px — body floor */
+  --text-md:1.25rem;     /* 20px */
+  --text-lg:1.5rem;      /* 24px */
+  --text-xl:1.875rem;    /* 30px */
+  --text-2xl:2.25rem;    /* 36px */
+  --text-3xl:2.75rem;    /* 44px */
+  --text-display:clamp(2.25rem, 5.2vw + 1rem, 3.5rem);
+  --text-stat:clamp(2.7rem, 6.5vw + 0.5rem, 4.5rem);
+
+  --lh-tight:1.08;
+  --lh-snug:1.25;
+  --lh-body:1.6;
+
+  /* — Spacing (4pt) — */
+  --space-2xs:4px; --space-xs:8px; --space-sm:12px; --space-md:16px;
+  --space-lg:24px; --space-xl:36px; --space-2xl:56px; --space-3xl:80px; --space-4xl:112px;
+
+  /* — Motion — */
+  --ease-out:cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out:cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro:120ms; --dur-short:220ms; --dur-long:420ms;
+
+  /* — Z — */
+  --z-sticky:200; --z-nav:300; --z-bar:350; --z-float:360;
+
+  /* — Layout — */
+  --maxw:1200px;
+  --nav-h:64px;
+}
+
+/* ============================================================
+   RESET / BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  font-size:var(--text-base);
+  line-height:var(--lh-body);
+  color:var(--color-text-primary);
+  background:var(--color-background);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  font-variant-numeric:oldstyle-nums;
+  /* clear the sticky mobile action bar */
+  padding-bottom:calc(88px + env(safe-area-inset-bottom));
+}
+@media (min-width:48rem){ body{ padding-bottom:0 } }
+
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--font-display);font-style:normal;margin:0;line-height:var(--lh-tight);letter-spacing:-0.02em;font-weight:700;overflow-wrap:anywhere;min-width:0}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--ring);outline-offset:2px;border-radius:2px}
+button{font-family:inherit}
+
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(16px, 4.5vw, 40px)}
+.urdu{font-family:var(--font-urdu);direction:rtl;unicode-bidi:isolate;line-height:1.9}
+
+/* page-load reveal (single orchestrated entrance) */
+.reveal{opacity:0;transform:translateY(10px);animation:reveal var(--dur-long) var(--ease-out) forwards;animation-delay:calc(var(--i,0) * 70ms)}
+@keyframes reveal{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:150ms !important;animation-iteration-count:1 !important;
+    transition-duration:150ms !important
+  }
+  .reveal{animation:reveal-r 150ms linear forwards}
+  @keyframes reveal-r{to{opacity:1;transform:none}}
+}
+
+/* ============================================================
+   SHARED COMPONENTS
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:var(--space-xs);
+  min-height:56px;padding:0 var(--space-lg);
+  font-family:var(--font-body);font-size:var(--text-md);font-weight:600;line-height:1;
+  white-space:nowrap;border:1px solid transparent;border-radius:var(--radius-pill);
+  cursor:pointer;transition:background-color var(--dur-short) var(--ease-out),
+    color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out),
+    border-color var(--dur-short) var(--ease-out);
+}
+.btn svg{width:20px;height:20px;flex:none}
+.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:0.55;cursor:not-allowed}
+
+.btn--primary{background:var(--color-primary);color:var(--color-on-primary)}
+.btn--primary:hover{background:var(--color-primary-dark)}
+.btn--wa{background:var(--color-whatsapp);color:var(--color-deep)}
+.btn--wa:hover{background:var(--color-whatsapp-dark)}
+.btn--ghost{background:transparent;color:var(--color-primary-dark);border-color:var(--color-card-border)}
+.btn--ghost:hover{background:var(--color-primary-light)}
+.btn--light{background:var(--color-surface);color:var(--color-primary-dark);border-color:var(--color-surface)}
+.btn--light:hover{background:var(--color-primary-light)}
+.btn--block{width:100%}
+
+@media (hover:hover) and (pointer:fine){
+  .btn--primary:hover,.btn--wa:hover,.btn--light:hover{transform:translateY(-1px)}
+}
+
+/* small custom line-icon set — single consistent stroke voice */
+.ic{width:20px;height:20px;flex:none;stroke:currentColor;stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* section heads — single column, eyebrow stacked above heading */
+.head{max-width:42ch}
+.kicker{
+  display:inline-flex;align-items:center;gap:var(--space-xs);
+  font-size:var(--text-sm);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--color-primary-dark);margin-bottom:var(--space-sm)
+}
+.kicker::before{content:"";width:22px;height:2px;background:var(--color-primary);border-radius:2px}
+.on-dark .kicker{color:var(--color-mint)}
+.on-dark .kicker::before{background:var(--color-mint)}
+.head h2{font-size:var(--text-2xl);font-weight:700;color:var(--color-text-primary)}
+.on-dark .head h2{color:var(--color-on-dark)}
+.head .sub{margin-top:var(--space-sm);font-size:var(--text-md);color:var(--color-text-secondary);max-width:46ch}
+.on-dark .head .sub{color:var(--color-on-dark-soft)}
+
+/* dark-context focus + selection */
+.on-dark{--ring:var(--color-mint)}
+::selection{background:var(--color-primary-muted);color:var(--color-deep)}
+
+/* ============================================================
+   HEADER  (N9 edge-aligned — no inline browse links, action-first)
+   ============================================================ */
+.nav{
+  position:sticky;top:0;z-index:var(--z-nav);
+  display:flex;align-items:center;justify-content:space-between;gap:var(--space-md);
+  min-height:var(--nav-h);padding-inline:clamp(16px,4.5vw,40px);
+  background:transparent;color:var(--color-on-dark);
+  transition:background-color var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+}
+.nav.is-solid{
+  background:var(--color-deep);
+  box-shadow:0 1px 0 var(--color-deep-line);
+}
+.brand{display:inline-flex;align-items:center;gap:var(--space-xs);white-space:nowrap}
+.brand__mark{width:34px;height:34px;flex:none}
+.brand__name{font-family:var(--font-display);font-weight:700;font-size:var(--text-md);letter-spacing:-0.02em;color:var(--color-on-dark)}
+.brand__name b{color:var(--color-mint);font-weight:700}
+.nav__right{display:flex;align-items:center;gap:var(--space-sm)}
+
+/* language toggle — credible visual segmented control */
+.lang{display:inline-flex;background:var(--tint-light-12);border:1px solid var(--color-deep-line);border-radius:var(--radius-pill);padding:3px}
+.lang button{
+  min-height:40px;padding:0 14px;border:0;background:transparent;border-radius:var(--radius-pill);
+  color:var(--color-on-dark-soft);font-weight:600;font-size:var(--text-sm);cursor:pointer;white-space:nowrap;line-height:1;
+  transition:background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out)
+}
+.lang button[aria-pressed="true"]{background:var(--color-mint);color:var(--color-deep)}
+.lang button.lang--ur{font-family:var(--font-urdu);font-size:var(--text-base);padding-bottom:4px}
+
+.nav .btn--callbar{
+  min-height:44px;padding:0 16px;font-size:var(--text-base);
+  background:var(--color-mint);color:var(--color-deep);border-radius:var(--radius-pill)
+}
+.nav .btn--callbar:hover{background:var(--color-mint-bright)}
+.nav .btn--callbar .num{font-variant-numeric:tabular-nums}
+@media (max-width:22.5rem){ .brand__name{display:none} .nav .btn--callbar .num{display:none} }
+@media (max-width:30rem){ .nav .btn--callbar .num{display:none} }
+
+/* ============================================================
+   HERO  — atmospheric dark canvas + the "lit doorway" lead form
+   ============================================================ */
+.hero{
+  position:relative;color:var(--color-on-dark);
+  background:
+    radial-gradient(130% 95% at 88% 4%, var(--bloom-mint), transparent 52%),
+    radial-gradient(95% 88% at 4% 98%, var(--bloom-teal), transparent 60%),
+    var(--color-deep);
+  margin-top:calc(-1 * var(--nav-h));
+  padding-top:calc(var(--nav-h) + 24px);
+  padding-bottom:clamp(56px, 9vw, 120px);
+  overflow:clip;
+}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(28px,5vw,56px);align-items:center}
+@media (min-width:60rem){ .hero__grid{grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);gap:64px} }
+
+.badge{
+  display:inline-flex;align-items:center;gap:var(--space-xs);
+  background:var(--tint-light-08);border:1px solid var(--color-deep-line);
+  border-radius:var(--radius-pill);padding:8px 16px;
+  font-size:var(--text-sm);font-weight:600;color:var(--color-on-dark);letter-spacing:0.01em
+}
+.badge .dot{width:9px;height:9px;border-radius:50%;background:var(--color-success);box-shadow:0 0 0 4px var(--ring-success);flex:none}
+
+.hero h1{
+  font-size:var(--text-display);font-weight:700;letter-spacing:-0.03em;
+  color:var(--color-on-dark);margin-top:var(--space-lg);max-width:18ch
+}
+.hero h1 .hl{
+  color:var(--color-mint);
+  text-decoration:underline;text-decoration-color:var(--color-mint);
+  text-decoration-thickness:3px;text-underline-offset:4px;text-decoration-skip-ink:none
+}
+.hero__sub{margin-top:var(--space-lg);font-size:var(--text-md);line-height:1.55;color:var(--color-on-dark-soft);max-width:42ch}
+
+.hero__chips{display:flex;flex-wrap:wrap;gap:var(--space-sm);margin-top:var(--space-xl);list-style:none;padding:0}
+.hero__chips li{
+  display:inline-flex;align-items:center;gap:var(--space-xs);
+  background:var(--tint-light-06);border:1px solid var(--color-deep-line);
+  border-radius:var(--radius-pill);padding:10px 16px;font-size:var(--text-sm);font-weight:500;color:var(--color-on-dark)
+}
+.hero__chips .ic{width:18px;height:18px;color:var(--color-mint);stroke-width:2}
+
+.hero__call{display:inline-flex;align-items:center;gap:var(--space-sm);margin-top:var(--space-xl);color:var(--color-on-dark)}
+.hero__call .num{font-family:var(--font-display);font-weight:600;font-size:var(--text-lg);font-variant-numeric:tabular-nums;letter-spacing:-0.01em;border-bottom:2px solid var(--color-mint);padding-bottom:2px}
+.hero__call .lbl{font-size:var(--text-sm);color:var(--color-on-dark-muted)}
+.hero__call .ic{color:var(--color-mint)}
+
+/* the lead form — luminous light card on the dark canvas */
+.formcard{
+  position:relative;background:var(--color-surface);color:var(--color-text-primary);
+  border:1px solid var(--color-card-border);border-radius:18px;
+  padding:clamp(20px, 4.5vw, 32px);
+  box-shadow:0 24px 60px -24px var(--scrim-1), 0 0 0 6px var(--glow-form);
+}
+.formcard h2{font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;color:var(--color-text-primary);letter-spacing:-0.02em}
+.formcard .formsub{margin-top:6px;font-size:var(--text-base);color:var(--color-text-secondary)}
+
+.field{margin-top:var(--space-lg)}
+.field label{display:block;font-size:var(--text-sm);font-weight:600;color:var(--color-text-primary);margin-bottom:6px}
+.field label .opt{color:var(--color-text-muted);font-weight:500}
+.field input{
+  width:100%;min-height:56px;padding:0 16px;
+  font-family:var(--font-body);font-size:var(--text-md);color:var(--color-text-primary);
+  background:var(--color-background);
+  border:1px solid var(--color-card-border);border-radius:var(--radius-input);
+  outline:2px solid transparent;outline-offset:1px;
+  transition:background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out)
+}
+.field input::placeholder{color:var(--color-text-muted);opacity:0.85}
+.field input:hover{background:var(--color-surface)}
+.field input:focus-visible{background:var(--color-surface);border-color:var(--color-primary);outline:2px solid var(--color-primary);outline-offset:1px}
+.field input:disabled{opacity:0.55;cursor:not-allowed}
+.field input[aria-invalid="true"]{border-color:var(--color-error);background:var(--color-error-bg)}
+.field .err{display:block;min-height:1.2lh;margin-top:5px;font-size:var(--text-sm);color:var(--color-error-text);font-weight:500}
+
+/* tap-not-type care chips */
+.chips{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-top:6px}
+.chip{
+  min-height:56px;padding:0 18px;
+  display:inline-flex;align-items:center;gap:var(--space-xs);
+  font-family:var(--font-body);font-size:var(--text-base);font-weight:500;line-height:1;white-space:nowrap;
+  background:var(--color-primary-light);color:var(--color-text-primary);
+  border:1px solid var(--color-card-border);border-radius:var(--radius-pill);cursor:pointer;
+  transition:background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out)
+}
+.chip:hover{border-color:var(--color-primary-muted)}
+.chip[aria-pressed="true"]{background:var(--color-primary);color:var(--color-on-primary);border-color:var(--color-primary)}
+.chip .tick{width:16px;height:16px;display:none}
+.chip[aria-pressed="true"] .tick{display:block}
+
+.submit{margin-top:var(--space-lg)}
+.reassure{display:flex;align-items:center;justify-content:center;gap:var(--space-xs);margin-top:var(--space-md);font-size:var(--text-sm);font-weight:600;color:var(--color-reassure)}
+.reassure .ic{width:18px;height:18px;color:var(--color-reassure);stroke-width:2}
+
+.formdivider{display:flex;align-items:center;gap:var(--space-md);margin:var(--space-lg) 0;color:var(--color-text-muted);font-size:var(--text-sm)}
+.formdivider::before,.formdivider::after{content:"";height:1px;flex:1;background:var(--color-card-border)}
+.form-actions{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-sm)}
+.form-actions .btn{min-height:56px;font-size:var(--text-base)}
+
+/* success state */
+.formdone{display:none;text-align:center;padding:var(--space-md) 0}
+.formdone.is-on{display:block}
+.formdone .check{width:64px;height:64px;margin:0 auto var(--space-md);border-radius:50%;background:var(--color-primary-light);display:grid;place-items:center}
+.formdone .check .ic{width:32px;height:32px;color:var(--color-primary);stroke-width:2.2}
+.formdone h2{font-size:var(--text-xl)}
+.formdone p{margin-top:8px;color:var(--color-text-secondary);font-size:var(--text-base)}
+.form.is-hidden{display:none}
+
+/* ============================================================
+   STAT BAND  — the real facts as large, confident focal points
+   ============================================================ */
+.stats{background:var(--color-background);padding-block:clamp(48px,8vw,88px);position:relative}
+.stats__head{margin-bottom:clamp(28px,5vw,48px)}
+.stats h2{font-size:var(--text-2xl);font-weight:700;color:var(--color-text-primary);max-width:22ch}
+.stats h2 em{font-style:normal;color:var(--color-primary-dark)}
+
+.statgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:1px;background:var(--color-card-border);border:1px solid var(--color-card-border);border-radius:var(--radius-card);overflow:clip}
+@media (min-width:34rem){ .statgrid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (min-width:60rem){ .statgrid{grid-template-columns:repeat(3,minmax(0,1fr))} }
+.stat{background:var(--color-surface);padding:clamp(22px,3.5vw,32px)}
+.stat--wide{background:var(--color-deep);color:var(--color-on-dark)}
+@media (min-width:60rem){ .stat--feature{grid-row:span 1} }
+
+.stat__fig{
+  font-family:var(--font-display);font-weight:800;letter-spacing:-0.03em;line-height:1;
+  font-size:var(--text-stat);color:var(--color-primary);font-variant-numeric:tabular-nums lining-nums;
+  display:flex;align-items:baseline;gap:6px
+}
+.stat__fig .cur{font-size:0.5em;font-weight:700;color:var(--color-text-secondary)}
+.stat__fig .unit{font-size:0.34em;font-weight:600;color:var(--color-text-secondary);letter-spacing:0}
+.stat--wide .stat__fig{color:var(--color-mint)}
+.stat--wide .stat__fig .cur,.stat--wide .stat__fig .unit{color:var(--color-on-dark-soft)}
+.stat--cred .stat__fig{font-size:clamp(2.4rem,4.5vw,3.2rem);letter-spacing:0.02em;color:var(--color-primary-dark)}
+
+.stat__name{margin-top:var(--space-sm);font-family:var(--font-display);font-weight:700;font-size:var(--text-md);color:var(--color-text-primary);letter-spacing:-0.01em}
+.stat--wide .stat__name{color:var(--color-on-dark)}
+.stat__desc{margin-top:4px;font-size:var(--text-base);line-height:1.45;color:var(--color-text-secondary)}
+.stat--wide .stat__desc{color:var(--color-on-dark-soft)}
+.stat__tag{display:inline-block;margin-bottom:var(--space-sm);font-size:var(--text-sm);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-muted)}
+.stat--wide .stat__tag{color:var(--color-mint)}
+
+/* ============================================================
+   HOW IT WORKS  — connected vertical timeline (not a 3-col grid)
+   ============================================================ */
+.how{background:var(--color-primary-light);padding-block:clamp(48px,8vw,88px)}
+.how__head{margin-bottom:clamp(28px,5vw,48px)}
+.timeline{display:grid;gap:var(--space-md);max-width:760px}
+.step{
+  position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:var(--space-lg);
+  padding:var(--space-lg);background:var(--color-surface);border:1px solid var(--color-card-border);border-radius:var(--radius-card)
+}
+.step__num{
+  width:56px;height:56px;flex:none;border-radius:50%;
+  display:grid;place-items:center;
+  font-family:var(--font-display);font-weight:800;font-size:var(--text-lg);font-variant-numeric:tabular-nums;
+  background:var(--color-primary-light);color:var(--color-primary-dark);border:1px solid var(--color-primary-muted)
+}
+.step:last-child .step__num{background:var(--color-primary);color:var(--color-on-primary);border-color:var(--color-primary)}
+.step h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);color:var(--color-text-primary)}
+.step p{margin-top:6px;font-size:var(--text-base);color:var(--color-text-secondary);line-height:1.5}
+/* connector */
+.step:not(:last-child)::after{content:"";position:absolute;left:calc(var(--space-lg) + 28px);top:calc(var(--space-lg) + 56px);bottom:calc(-1 * var(--space-md));width:2px;background:linear-gradient(var(--color-primary-muted),transparent)}
+
+/* ============================================================
+   SERVICES  — interactive toggles + EN/Urdu cards + price
+   ============================================================ */
+.services{background:var(--color-background);padding-block:clamp(48px,8vw,88px)}
+.services__top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:var(--space-lg);margin-bottom:var(--space-xl)}
+.price{
+  display:inline-flex;align-items:baseline;gap:8px;flex-wrap:wrap;
+  background:var(--color-deep);color:var(--color-on-dark);
+  border-radius:var(--radius-card);padding:14px 20px;white-space:nowrap
+}
+.price .amt{font-family:var(--font-display);font-weight:800;font-size:var(--text-xl);color:var(--color-mint);font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+.price .per{font-size:var(--text-sm);color:var(--color-on-dark-soft)}
+
+.controls{display:flex;flex-direction:column;gap:var(--space-md);margin-bottom:var(--space-xl)}
+@media (min-width:40rem){ .controls{flex-direction:row;flex-wrap:wrap;align-items:center} }
+.toggle{display:inline-flex;background:var(--color-surface);border:1px solid var(--color-card-border);border-radius:var(--radius-pill);padding:4px;gap:2px}
+.toggle__label{align-self:center;font-size:var(--text-sm);font-weight:600;color:var(--color-text-muted);margin-right:var(--space-xs)}
+.seg{display:flex;align-items:center;gap:var(--space-sm);flex-wrap:wrap}
+.toggle button{
+  min-height:48px;padding:0 20px;border:0;background:transparent;border-radius:var(--radius-pill);
+  font-family:var(--font-body);font-weight:600;font-size:var(--text-base);color:var(--color-text-secondary);cursor:pointer;white-space:nowrap;line-height:1;
+  transition:background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out)
+}
+.toggle button[aria-pressed="true"]{background:var(--color-primary);color:var(--color-on-primary)}
+/* gender toggle: female active uses the brand female tint (functional, contained) */
+.toggle--gender button[data-g="female"][aria-pressed="true"]{background:var(--color-female-tint);color:var(--color-female-text)}
+.toggle--cat{}
+
+.svcgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-md)}
+@media (min-width:34rem){ .svcgrid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (min-width:62rem){ .svcgrid{grid-template-columns:repeat(3,minmax(0,1fr))} }
+.svc{
+  display:flex;flex-direction:column;gap:6px;
+  background:var(--color-surface);border:1px solid var(--color-card-border);border-radius:var(--radius-card);
+  padding:var(--space-lg);
+  transition:border-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out)
+}
+@media (hover:hover) and (pointer:fine){ .svc:hover{border-color:var(--color-primary)} }
+.svc__en{font-family:var(--font-display);font-weight:700;font-size:var(--text-md);color:var(--color-text-primary);letter-spacing:-0.01em}
+.svc__ur{font-family:var(--font-urdu);direction:rtl;unicode-bidi:isolate;font-size:var(--text-md);line-height:1.9;color:var(--color-primary-dark);font-weight:600}
+.svc__desc{font-size:var(--text-base);line-height:1.45;color:var(--color-text-secondary);flex:1}
+.svc__book{
+  margin-top:var(--space-sm);align-self:flex-start;
+  display:inline-flex;align-items:center;gap:6px;min-height:48px;padding:0 4px;
+  font-weight:600;font-size:var(--text-base);color:var(--color-primary-dark);white-space:nowrap;
+  border-bottom:2px solid transparent
+}
+.svc__book .ic{width:18px;height:18px;transition:transform var(--dur-short) var(--ease-out)}
+.svc__book:hover{border-bottom-color:var(--color-primary)}
+.svc__book:hover .ic{transform:translateX(3px)}
+.svc.is-extra{display:none}
+.svcgrid.is-expanded .svc.is-extra{display:flex}
+@media (min-width:34rem){ .svc.is-extra{display:flex} }
+
+.showmore{margin-top:var(--space-md)}
+@media (min-width:34rem){ .showmore{display:none} }
+.showmore .btn{width:100%}
+
+.compare{
+  margin-top:var(--space-xl);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--space-md);
+  background:var(--color-primary-light);border:1px solid var(--color-primary-muted);border-radius:var(--radius-card);padding:var(--space-lg)
+}
+.compare__t{font-family:var(--font-display);font-weight:700;font-size:var(--text-md);color:var(--color-text-primary)}
+.compare__b{font-size:var(--text-base);color:var(--color-text-secondary);max-width:52ch;margin-top:2px}
+.compare .btn{min-height:52px}
+
+/* ============================================================
+   TRUST  — photographic fold (placeholder wells + real-fact specifics)
+   ============================================================ */
+.trust{
+  background:
+    radial-gradient(120% 80% at 90% 0%, var(--bloom-teal), transparent 55%),
+    radial-gradient(90% 70% at 0% 100%, var(--bloom-mint), transparent 60%),
+    var(--color-deep);
+  color:var(--color-on-dark);padding-block:clamp(52px,9vw,104px);overflow:clip
+}
+.trust__head{margin-bottom:clamp(32px,5vw,56px)}
+
+.fold{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(20px,4vw,40px);align-items:center;margin-bottom:clamp(28px,5vw,56px)}
+@media (min-width:54rem){
+  .fold{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,4vw,64px)}
+  .fold--flip .well{order:2}
+}
+/* placeholder photo well (real photo to be added) */
+.well{
+  position:relative;border-radius:18px;overflow:clip;min-height:240px;
+  background:linear-gradient(150deg, var(--color-deep-3), var(--color-deep-2) 70%);
+  border:1px solid var(--color-deep-line);
+  display:grid;place-items:center
+}
+.well::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 70% at 50% 30%, var(--glow-form), transparent 70%)}
+.well__art{width:96px;height:96px;color:var(--color-mint);opacity:0.55;position:relative}
+.well__cap{
+  position:absolute;left:16px;bottom:14px;right:16px;
+  font-size:var(--text-sm);color:var(--color-on-dark-soft);line-height:1.35
+}
+.well__tag{
+  position:absolute;top:14px;left:16px;
+  font-size:0.8125rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--color-deep);background:var(--color-mint);border-radius:var(--radius-pill);padding:5px 12px
+}
+
+.proofs{list-style:none;margin:0;padding:0;display:grid;gap:var(--space-md)}
+.proof{display:grid;grid-template-columns:auto minmax(0,1fr);gap:var(--space-md);align-items:start}
+.proof__ic{width:46px;height:46px;flex:none;border-radius:12px;background:var(--tint-mint-12);border:1px solid var(--color-deep-line);display:grid;place-items:center}
+.proof__ic .ic{width:24px;height:24px;color:var(--color-mint);stroke-width:1.9}
+.proof__k{font-family:var(--font-display);font-weight:700;font-size:var(--text-md);color:var(--color-on-dark);letter-spacing:-0.01em}
+.proof__d{margin-top:2px;font-size:var(--text-base);line-height:1.45;color:var(--color-on-dark-soft)}
+
+/* closing reassurance line inside trust */
+.oneline{
+  margin-top:clamp(20px,4vw,40px);border-top:1px solid var(--color-deep-line);padding-top:clamp(28px,5vw,48px);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--space-lg)
+}
+.oneline__t{font-family:var(--font-display);font-weight:700;font-size:var(--text-xl);color:var(--color-on-dark);letter-spacing:-0.02em;max-width:18ch}
+.oneline__t b{color:var(--color-mint);font-weight:700}
+.oneline__actions{display:flex;flex-wrap:wrap;gap:var(--space-sm)}
+
+/* ============================================================
+   CTA  — bright teal invitation (full-bleed)
+   ============================================================ */
+.cta{background:var(--color-primary);color:var(--color-on-primary);padding-block:clamp(48px,8vw,88px);text-align:center}
+.cta h2{font-size:var(--text-3xl);font-weight:800;letter-spacing:-0.03em;max-width:18ch;margin-inline:auto;color:var(--color-on-primary)}
+.cta p{margin:var(--space-md) auto 0;font-size:var(--text-md);color:var(--color-primary-light);max-width:46ch;line-height:1.5}
+.cta__actions{display:flex;flex-wrap:wrap;gap:var(--space-md);justify-content:center;margin-top:var(--space-xl)}
+.cta__call{margin-top:var(--space-lg);display:inline-flex;align-items:center;gap:var(--space-xs);font-weight:600;color:var(--color-primary-light)}
+.cta__call .num{font-variant-numeric:tabular-nums;border-bottom:2px solid var(--color-primary-light);padding-bottom:2px}
+.cta{--ring:var(--color-primary-light)}
+
+/* ============================================================
+   FOOTER  (Ft5 statement close)
+   ============================================================ */
+.foot{background:var(--color-deep);color:var(--color-on-dark-soft);padding-block:clamp(44px,7vw,72px)}
+.foot__statement{font-family:var(--font-display);font-weight:600;font-size:var(--text-xl);line-height:1.35;color:var(--color-on-dark);letter-spacing:-0.02em;max-width:24ch}
+.foot__brandrow{display:flex;align-items:center;gap:var(--space-sm);margin-bottom:var(--space-md)}
+.foot__brandrow .brand__name{font-size:var(--text-md)}
+.foot__cols{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(28px,5vw,48px);margin-top:clamp(32px,5vw,52px)}
+@media (min-width:46rem){ .foot__cols{grid-template-columns:1.4fr 1fr 1fr} }
+.foot h4{font-family:var(--font-display);font-size:var(--text-sm);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-on-dark-muted);margin-bottom:var(--space-md)}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:var(--space-sm)}
+.foot a{color:var(--color-on-dark-soft);display:inline-flex;align-items:center;gap:8px;min-height:32px;white-space:nowrap}
+.foot a:hover{color:var(--color-mint)}
+.foot a .ic{width:18px;height:18px;color:var(--color-mint)}
+.foot__loc .where{color:var(--color-on-dark);font-weight:600}
+.foot__loc .city{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);color:var(--color-mint)}
+.foot__loc .soon{font-size:var(--text-sm);color:var(--color-on-dark-muted)}
+.foot__bar{margin-top:clamp(32px,5vw,52px);border-top:1px solid var(--color-deep-line);padding-top:var(--space-lg);display:flex;flex-wrap:wrap;gap:var(--space-md);align-items:center;justify-content:space-between}
+.foot__bar p{font-size:var(--text-sm);color:var(--color-on-dark-muted)}
+.foot__bar nav{display:flex;gap:var(--space-lg);flex-wrap:wrap}
+.foot__bar nav a{min-height:32px;font-size:var(--text-sm)}
+.foot{--ring:var(--color-mint)}
+
+/* ============================================================
+   STICKY MOBILE ACTION BAR  (Call / WhatsApp / Get a call)
+   ============================================================ */
+.actionbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:var(--z-bar);
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:var(--color-surface);border-top:1px solid var(--color-card-border);
+  box-shadow:0 -8px 24px -16px var(--scrim-3)
+}
+.actionbar a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  min-height:58px;border-radius:var(--radius-btn);
+  font-size:0.875rem;font-weight:700;line-height:1;white-space:nowrap;text-align:center
+}
+.actionbar a .ic{width:22px;height:22px}
+.ab--call{background:var(--color-primary);color:var(--color-on-primary)}
+.ab--wa{background:var(--color-whatsapp);color:var(--color-deep)}
+.ab--form{background:var(--color-primary-light);color:var(--color-primary-dark);border:1px solid var(--color-primary-muted)}
+.actionbar{--ring:var(--color-primary-dark)}
+@media (min-width:48rem){ .actionbar{display:none} }
+
+/* desktop floating WhatsApp */
+.wafloat{
+  position:fixed;right:24px;bottom:24px;z-index:var(--z-float);
+  width:60px;height:60px;border-radius:50%;display:none;place-items:center;
+  background:var(--color-whatsapp);color:var(--color-deep);
+  box-shadow:0 12px 30px -10px var(--scrim-2);
+  transition:transform var(--dur-short) var(--ease-out)
+}
+.wafloat .ic{width:30px;height:30px;stroke-width:1.6}
+@media (min-width:48rem){ .wafloat{display:grid} }
+@media (hover:hover){ .wafloat:hover{transform:translateY(-2px)} }
+
+/* skip link */
+.skip{position:absolute;left:-999px;top:8px;z-index:500;background:var(--color-surface);color:var(--color-primary-dark);padding:12px 18px;border-radius:var(--radius-btn);font-weight:700}
+.skip:focus{left:12px}
+
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+</style>
+</head>
+<body>
+<a class="skip" href="#lead-form">Skip to the call-back form</a>
+
+<!-- ===================== HEADER (N9) ===================== -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Sehat Connect — home">
+    <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" fill="none">
+      <circle cx="20" cy="20" r="18" stroke="var(--color-mint)" stroke-width="2.2"/>
+      <path d="M7 20.5h6l2.5-6 4.5 12 3-9 2 3h8" stroke="var(--color-mint)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="brand__name">Sehat<b>Connect</b></span>
+  </a>
+
+  <div class="nav__right">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" class="lang--en" aria-pressed="true">EN</button>
+      <button type="button" class="lang--ur" aria-pressed="false" lang="ur">اردو</button>
+    </div>
+    <a class="btn btn--callbar" href="tel:+923288489988" aria-label="Call us at 0328 8489988">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:18px;height:18px"><path d="M4 5c0 8 7 15 15 15a2 2 0 0 0 2-2v-2.3a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .4l-.8 1a12 12 0 0 1-5.2-5.2l1-.8a1 1 0 0 0 .4-1L10.3 4.8a1 1 0 0 0-1-.8H7a2 2 0 0 0-2 2Z"/></svg>
+      <span class="num">0328-8489988</span><span class="visually-hidden">Call</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero__grid">
+
+        <div class="hero__intro">
+          <span class="badge reveal" style="--i:0"><span class="dot" aria-hidden="true"></span>Verified &amp; Certified Nurses in Lahore</span>
+          <h1 class="reveal" style="--i:1">A trusted nurse or caregiver, <span class="hl">right at your home</span></h1>
+          <p class="hero__sub reveal" style="--i:2">Tell us what you need and we&rsquo;ll call you back &mdash; verified caregivers, male or female, day or night.</p>
+
+          <ul class="hero__chips reveal" style="--i:3">
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4 10-10"/></svg>CNIC &amp; references checked</li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4 10-10"/></svg>Female &amp; male nurses</li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4 10-10"/></svg>Pay after &mdash; no advance</li>
+          </ul>
+
+          <a class="hero__call reveal" style="--i:4" href="tel:+923288489988">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5c0 8 7 15 15 15a2 2 0 0 0 2-2v-2.3a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .4l-.8 1a12 12 0 0 1-5.2-5.2l1-.8a1 1 0 0 0 .4-1L10.3 4.8a1 1 0 0 0-1-.8H7a2 2 0 0 0-2 2Z"/></svg>
+            <span><span class="lbl">Or call us, 24/7&nbsp;&nbsp;</span><span class="num">0328-8489988</span></span>
+          </a>
+        </div>
+
+        <!-- THE LIT DOORWAY: lead form -->
+        <div class="formcard reveal" style="--i:3" id="lead-form">
+          <form class="form" id="leadForm" novalidate>
+            <h2>Request a free call back</h2>
+            <p class="formsub">No payment now. A real person will call you.</p>
+
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Ali Hassan" required aria-describedby="name-err">
+              <span class="err" id="name-err" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0300 1234567" required aria-describedby="phone-err">
+              <span class="err" id="phone-err" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label id="care-label">Who needs care? <span class="opt">(optional)</span></label>
+              <div class="chips" role="group" aria-labelledby="care-label">
+                <button type="button" class="chip" aria-pressed="false"><svg class="ic tick" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4 10-10"/></svg>Parent / elderly</button>
+                <button type="button" class="chip" aria-pressed="false"><svg class="ic tick" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4 10-10"/></svg>After operation</button>
+                <button type="button" class="chip" aria-pressed="false"><svg class="ic tick" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4 10-10"/></svg>New mother &amp; baby</button>
+                <button type="button" class="chip" aria-pressed="false"><svg class="ic tick" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4 10-10"/></svg>Bedridden / long-term</button>
+                <button type="button" class="chip" aria-pressed="false"><svg class="ic tick" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4 10-10"/></svg>Not sure</button>
+              </div>
+              <input type="hidden" name="careType" id="careType">
+            </div>
+
+            <button class="btn btn--primary btn--block submit" type="submit" id="submitBtn">Request my free call</button>
+
+            <p class="reassure"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4 10-10"/></svg>Free &middot; We call you &middot; No payment now</p>
+
+            <div class="formdivider">or talk to us now</div>
+            <div class="form-actions">
+              <a class="btn btn--ghost" href="tel:+923288489988">
+                <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5c0 8 7 15 15 15a2 2 0 0 0 2-2v-2.3a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .4l-.8 1a12 12 0 0 1-5.2-5.2l1-.8a1 1 0 0 0 .4-1L10.3 4.8a1 1 0 0 0-1-.8H7a2 2 0 0 0-2 2Z"/></svg>Call
+              </a>
+              <a class="btn btn--wa" href="https://wa.me/923288489988?text=Assalam%20o%20Alaikum%21%20Mujhe%20ghar%20ke%20liye%20nurse%2Fattendant%20chahiye." target="_blank" rel="noopener">
+                <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.4-4.7a8 8 0 1 1 3 2.9l-4.4 1.8Z"/><path d="M9 9.2c.2-.6.4-.6.7-.6h.5c.2 0 .4 0 .6.5l.7 1.6c0 .2 0 .3-.1.5l-.4.5c-.2.2-.3.3-.1.6.6 1 1.4 1.6 2.4 2.1.3.2.5.1.6 0l.6-.7c.2-.2.3-.2.5-.1l1.5.8c.2.1.3.2.3.4 0 .6-.5 1.3-1 1.4-1 .3-2 .2-3.9-.9a8 8 0 0 1-3-3.2c-.4-.8-.4-1.5-.4-1.7Z" fill="currentColor" stroke="none"/></svg>WhatsApp
+              </a>
+            </div>
+          </form>
+
+          <div class="formdone" id="formDone" aria-live="polite">
+            <div class="check"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4 10-10"/></svg></div>
+            <h2>Your request is in.</h2>
+            <p>A real person will call you back.</p>
+            <div class="form-actions" style="margin-top:24px">
+              <a class="btn btn--ghost" href="tel:+923288489988"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5c0 8 7 15 15 15a2 2 0 0 0 2-2v-2.3a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .4l-.8 1a12 12 0 0 1-5.2-5.2l1-.8a1 1 0 0 0 .4-1L10.3 4.8a1 1 0 0 0-1-.8H7a2 2 0 0 0-2 2Z"/></svg>Call now</a>
+              <a class="btn btn--wa" href="https://wa.me/923288489988?text=Assalam%20o%20Alaikum%21%20Mujhe%20ghar%20ke%20liye%20nurse%2Fattendant%20chahiye." target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.4-4.7a8 8 0 1 1 3 2.9l-4.4 1.8Z"/></svg>WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STAT BAND ===================== -->
+  <section class="stats" aria-labelledby="stats-h">
+    <div class="wrap">
+      <div class="stats__head head">
+        <span class="kicker">Clear from the start</span>
+        <h2 id="stats-h">Open price. Pay after. <em>Verified people.</em></h2>
+      </div>
+
+      <div class="statgrid">
+        <div class="stat stat--feature reveal" style="--i:0">
+          <div class="stat__fig"><span class="cur">Rs</span>4,000</div>
+          <div class="stat__name">Qualified Nurse</div>
+          <p class="stat__desc">Per 12-hour shift. PNC-registered, for clinical care.</p>
+        </div>
+        <div class="stat stat--feature reveal" style="--i:1">
+          <div class="stat__fig"><span class="cur">Rs</span>3,000</div>
+          <div class="stat__name">Attendant</div>
+          <p class="stat__desc">Per 12-hour shift. For daily care and personal support.</p>
+        </div>
+        <div class="stat stat--wide reveal" style="--i:2">
+          <div class="stat__fig"><span class="cur">Rs</span>0</div>
+          <div class="stat__name">Advance</div>
+          <p class="stat__desc">You pay cash only after the shift &mdash; no advance.</p>
+        </div>
+        <div class="stat reveal" style="--i:3">
+          <div class="stat__fig">24/7</div>
+          <div class="stat__name">Always available</div>
+          <p class="stat__desc">Day shifts, night shifts, and emergency bookings.</p>
+        </div>
+        <div class="stat stat--cred reveal" style="--i:4">
+          <span class="stat__tag">Registered</span>
+          <div class="stat__fig">PNC</div>
+          <div class="stat__name">Pakistan Nursing Council</div>
+          <p class="stat__desc">Every nurse verified with the PNC before onboarding.</p>
+        </div>
+        <div class="stat stat--cred reveal" style="--i:5">
+          <span class="stat__tag">Checked</span>
+          <div class="stat__fig">CNIC</div>
+          <div class="stat__name">CNIC &amp; references</div>
+          <p class="stat__desc">We check CNIC and references before hiring anyone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <section class="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="how__head head">
+        <span class="kicker">How it works</span>
+        <h2 id="how-h">How It Works</h2>
+        <p class="sub">From your call to care at home &mdash; in 3 simple steps</p>
+      </div>
+
+      <ol class="timeline" style="list-style:none;padding:0;margin:0">
+        <li class="step reveal" style="--i:0">
+          <div class="step__num">01</div>
+          <div>
+            <h3>Tell us, or just call</h3>
+            <p>Leave your name and number, or call/WhatsApp us. It takes 30 seconds.</p>
+          </div>
+        </li>
+        <li class="step reveal" style="--i:1">
+          <div class="step__num">02</div>
+          <div>
+            <h3>We call &amp; match</h3>
+            <p>A real person calls you back, understands what you need, and matches a verified caregiver near you.</p>
+          </div>
+        </li>
+        <li class="step reveal" style="--i:2">
+          <div class="step__num">03</div>
+          <div>
+            <h3>Caregiver arrives &mdash; pay after</h3>
+            <p>Your caregiver reaches home on time. You pay cash only after the shift &mdash; no advance.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section class="services" aria-labelledby="svc-h">
+    <div class="wrap">
+      <div class="services__top">
+        <div class="head">
+          <span class="kicker">Our services</span>
+          <h2 id="svc-h">Our Services</h2>
+          <p class="sub">Choose the right care for your family</p>
+        </div>
+        <div class="price" aria-live="polite">
+          <span class="amt" id="priceAmt">Rs. 4,000</span><span class="per" id="pricePer">/ 12hr shift</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="seg">
+          <span class="toggle__label">Caregiver</span>
+          <div class="toggle toggle--gender" role="group" aria-label="Caregiver gender">
+            <button type="button" data-g="female" aria-pressed="true">Female</button>
+            <button type="button" data-g="male" aria-pressed="false">Male</button>
+          </div>
+        </div>
+        <div class="seg">
+          <span class="toggle__label">Type</span>
+          <div class="toggle toggle--cat" role="group" aria-label="Care type">
+            <button type="button" data-c="qualified" aria-pressed="true">Qualified Nurse</button>
+            <button type="button" data-c="attendant" aria-pressed="false">Attendant</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="svcgrid" id="svcGrid" aria-live="polite"></div>
+      <div class="showmore" id="showMore"></div>
+
+      <div class="compare">
+        <div>
+          <div class="compare__t">Not sure which to choose?</div>
+          <p class="compare__b">A Qualified Nurse handles medical tasks. An Attendant helps with daily care and personal support.</p>
+        </div>
+        <a class="btn btn--ghost" href="#lead-form">Compare Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TRUST — photographic fold ===================== -->
+  <section class="trust on-dark" aria-labelledby="trust-h">
+    <div class="wrap">
+      <div class="trust__head head">
+        <span class="kicker">Proven, not promised</span>
+        <h2 id="trust-h">Why Choose Sehat Connect?</h2>
+        <p class="sub">Every nurse and attendant is verified and background checked before coming to your home</p>
+      </div>
+
+      <!-- Fold 1 -->
+      <div class="fold reveal" style="--i:0">
+        <figure class="well">
+          <span class="well__tag">Real photo</span>
+          <svg class="well__art" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="32" cy="22" r="9"/>
+            <path d="M14 52c2-9 9-14 18-14s16 5 18 14"/>
+            <path d="M44 30l3 3 6-6"/>
+          </svg>
+          <figcaption class="well__cap">A verified caregiver, ready for a home visit in Lahore. <em>(Real photograph to be added.)</em></figcaption>
+        </figure>
+        <ul class="proofs">
+          <li class="proof">
+            <span class="proof__ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <div><div class="proof__k">PNC Registered</div><p class="proof__d">Every nurse verified with Pakistan Nursing Council.</p></div>
+          </li>
+          <li class="proof">
+            <span class="proof__ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h5M7 13h8"/></svg></span>
+            <div><div class="proof__k">CNIC Checked</div><p class="proof__d">We check CNIC and references before hiring anyone.</p></div>
+          </li>
+          <li class="proof">
+            <span class="proof__ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg></span>
+            <div><div class="proof__k">Background Screened</div><p class="proof__d">Background checks on all caregivers.</p></div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Fold 2 (flipped) -->
+      <div class="fold fold--flip reveal" style="--i:1">
+        <figure class="well">
+          <span class="well__tag">Real photo</span>
+          <svg class="well__art" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 46l2-7a12 12 0 1 1 5 5l-7 2Z"/>
+            <path d="M26 30c1 3 4 6 7 7"/>
+          </svg>
+          <figcaption class="well__cap">We message you on WhatsApp the moment your caregiver is on the way. <em>(Real photograph to be added.)</em></figcaption>
+        </figure>
+        <ul class="proofs">
+          <li class="proof">
+            <span class="proof__ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div><div class="proof__k">24/7 Available</div><p class="proof__d">Day shifts, night shifts, and emergency bookings.</p></div>
+          </li>
+          <li class="proof">
+            <span class="proof__ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4Z"/><path d="M8 9h8M8 12h5"/></svg></span>
+            <div><div class="proof__k">WhatsApp Updates</div><p class="proof__d">We message you when your caregiver is on the way.</p></div>
+          </li>
+          <li class="proof">
+            <span class="proof__ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10M7 12h7"/><path d="M4 5h16v11H8l-4 4Z"/></svg></span>
+            <div><div class="proof__k">Urdu Support</div><p class="proof__d">Full support in Urdu for every family.</p></div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- closing reassurance -->
+      <div class="oneline">
+        <div class="oneline__t">A real person is always <b>one call away.</b></div>
+        <div class="oneline__actions">
+          <a class="btn btn--light" href="tel:+923288489988"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5c0 8 7 15 15 15a2 2 0 0 0 2-2v-2.3a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .4l-.8 1a12 12 0 0 1-5.2-5.2l1-.8a1 1 0 0 0 .4-1L10.3 4.8a1 1 0 0 0-1-.8H7a2 2 0 0 0-2 2Z"/></svg>Call 0328-8489988</a>
+          <a class="btn btn--wa" href="https://wa.me/923288489988?text=Assalam%20o%20Alaikum%21%20Mujhe%20ghar%20ke%20liye%20nurse%2Fattendant%20chahiye." target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.4-4.7a8 8 0 1 1 3 2.9l-4.4 1.8Z"/></svg>WhatsApp us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta" aria-labelledby="cta-h">
+    <div class="wrap">
+      <h2 id="cta-h">Need a Nurse Today?</h2>
+      <p>Call or WhatsApp us &mdash; a real person will confirm a caregiver for you, usually within 30 minutes.</p>
+      <div class="cta__actions">
+        <a class="btn btn--light" href="#lead-form">Book a Nurse Now</a>
+        <a class="btn btn--wa" href="https://wa.me/923288489988?text=Assalam%20o%20Alaikum%21%20Mujhe%20ghar%20ke%20liye%20nurse%2Fattendant%20chahiye." target="_blank" rel="noopener">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.4-4.7a8 8 0 1 1 3 2.9l-4.4 1.8Z"/></svg>WhatsApp Us
+        </a>
+      </div>
+      <a class="cta__call" href="tel:+923288489988"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5c0 8 7 15 15 15a2 2 0 0 0 2-2v-2.3a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .4l-.8 1a12 12 0 0 1-5.2-5.2l1-.8a1 1 0 0 0 .4-1L10.3 4.8a1 1 0 0 0-1-.8H7a2 2 0 0 0-2 2Z"/></svg><span class="num">0328-8489988</span></a>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== FOOTER (Ft5 statement) ===================== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__brandrow">
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" fill="none" style="width:30px;height:30px">
+        <circle cx="20" cy="20" r="18" stroke="var(--color-mint)" stroke-width="2.2"/>
+        <path d="M7 20.5h6l2.5-6 4.5 12 3-9 2 3h8" stroke="var(--color-mint)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand__name">Sehat<b style="color:var(--color-mint)">Connect</b></span>
+    </div>
+    <p class="foot__statement">Verified nurses and attendants sent straight to your home in Lahore. Available day and night.</p>
+
+    <div class="foot__cols">
+      <div class="foot__loc">
+        <h4>Currently serving</h4>
+        <div class="city">Lahore</div>
+        <p class="soon">More cities coming soon</p>
+      </div>
+      <div>
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#svc-h">Qualified Nurse</a></li>
+          <li><a href="#svc-h">Attendant</a></li>
+          <li><a href="#lead-form">Book a Nurse</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="tel:+923288489988"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5c0 8 7 15 15 15a2 2 0 0 0 2-2v-2.3a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .4l-.8 1a12 12 0 0 1-5.2-5.2l1-.8a1 1 0 0 0 .4-1L10.3 4.8a1 1 0 0 0-1-.8H7a2 2 0 0 0-2 2Z"/></svg>0328-8489988</a></li>
+          <li><a href="https://wa.me/923288489988?text=Assalam%20o%20Alaikum%21%20Mujhe%20ghar%20ke%20liye%20nurse%2Fattendant%20chahiye." target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.4-4.7a8 8 0 1 1 3 2.9l-4.4 1.8Z"/></svg>WhatsApp Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot__bar">
+      <p>&copy; 2025 Sehat Connect &mdash; All rights reserved.</p>
+      <nav aria-label="Footer">
+        <a href="#top">About</a>
+        <a href="#how-h">FAQ</a>
+        <a href="#lead-form">Contact</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== STICKY MOBILE ACTION BAR ===================== -->
+<nav class="actionbar" aria-label="Quick contact">
+  <a class="ab--call" href="tel:+923288489988"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5c0 8 7 15 15 15a2 2 0 0 0 2-2v-2.3a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .4l-.8 1a12 12 0 0 1-5.2-5.2l1-.8a1 1 0 0 0 .4-1L10.3 4.8a1 1 0 0 0-1-.8H7a2 2 0 0 0-2 2Z"/></svg>Call</a>
+  <a class="ab--wa" href="https://wa.me/923288489988?text=Assalam%20o%20Alaikum%21%20Mujhe%20ghar%20ke%20liye%20nurse%2Fattendant%20chahiye." target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.4-4.7a8 8 0 1 1 3 2.9l-4.4 1.8Z"/></svg>WhatsApp</a>
+  <a class="ab--form" href="#lead-form"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16l-7-3-7 3Z"/></svg>Get a call</a>
+</nav>
+
+<!-- desktop floating WhatsApp -->
+<a class="wafloat" href="https://wa.me/923288489988?text=Assalam%20o%20Alaikum%21%20Mujhe%20ghar%20ke%20liye%20nurse%2Fattendant%20chahiye." target="_blank" rel="noopener" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.4-4.7a8 8 0 1 1 3 2.9l-4.4 1.8Z"/><path d="M9 9.2c.2-.6.4-.6.7-.6h.5c.2 0 .4 0 .6.5l.7 1.6c0 .2 0 .3-.1.5l-.4.5c-.2.2-.3.3-.1.6.6 1 1.4 1.6 2.4 2.1.3.2.5.1.6 0l.6-.7c.2-.2.3-.2.5-.1l1.5.8c.2.1.3.2.3.4 0 .6-.5 1.3-1 1.4-1 .3-2 .2-3.9-.9a8 8 0 0 1-3-3.2c-.4-.8-.4-1.5-.4-1.7Z" fill="currentColor" stroke="none"/></svg>
+</a>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---- header solidify on scroll ---- */
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('is-solid', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- language toggle (visual-only, per brief) ---- */
+  document.querySelectorAll('.lang button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+      btn.setAttribute('aria-pressed','true');
+    });
+  });
+
+  /* ---- care chips (single-select, toggleable) ---- */
+  var careInput = document.getElementById('careType');
+  document.querySelectorAll('.chip').forEach(function(chip){
+    chip.addEventListener('click', function(){
+      var was = chip.getAttribute('aria-pressed') === 'true';
+      document.querySelectorAll('.chip').forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+      if(!was){ chip.setAttribute('aria-pressed','true'); careInput.value = chip.textContent.trim(); }
+      else { careInput.value = ''; }
+    });
+  });
+
+  /* ---- lead form submit (no backend: simulate, honest copy) ---- */
+  var form = document.getElementById('leadForm');
+  var done = document.getElementById('formDone');
+  var btn  = document.getElementById('submitBtn');
+  var nameEl = document.getElementById('name');
+  var phoneEl = document.getElementById('phone');
+
+  function setErr(el, msgEl, msg){
+    if(msg){ el.setAttribute('aria-invalid','true'); document.getElementById(msgEl).textContent = msg; }
+    else { el.removeAttribute('aria-invalid'); document.getElementById(msgEl).textContent = ''; }
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var ok = true;
+    if(!nameEl.value.trim()){ setErr(nameEl,'name-err','Please enter your name.'); ok=false; } else setErr(nameEl,'name-err','');
+    var digits = phoneEl.value.replace(/\D/g,'');
+    if(digits.length < 10){ setErr(phoneEl,'phone-err','Please enter a valid phone number.'); ok=false; } else setErr(phoneEl,'phone-err','');
+    if(!ok){ (nameEl.getAttribute('aria-invalid') ? nameEl : phoneEl).focus(); return; }
+
+    btn.disabled = true; btn.textContent = 'Sending…';
+    setTimeout(function(){
+      form.classList.add('is-hidden');
+      done.classList.add('is-on');
+      done.setAttribute('tabindex','-1');
+      done.focus();
+    }, 700);
+  });
+
+  /* ---- services ---- */
+  var NURSE = [
+    {en:'Post-op Care', ur:'آپریشن کے بعد دیکھ بھال', desc:'Wound care, dressing changes, and recovery support after surgery'},
+    {en:'Elderly Care', ur:'بزرگوں کی دیکھ بھال', desc:'Help with medicines, movement, and day-to-day health monitoring for elderly patients'},
+    {en:'Paediatric Care', ur:'بچوں کی دیکھ بھال', desc:'Nursing care for newborns, infants, and young children at home'},
+    {en:'ICU Step-down', ur:'آئی سی یو کے بعد', desc:'Care for patients coming home after a stay in ICU or HDU'},
+    {en:'Night Duty', ur:'رات کی ڈیوٹی', desc:'A nurse stays through the night to monitor and care for your patient'},
+    {en:'Diabetic Care', ur:'ذیابیطس کی دیکھ بھال', desc:'Blood sugar checks, insulin injections, and diet guidance for diabetic patients'},
+    {en:'Mother & Baby Care', ur:'ماں اور بچے کی دیکھ بھال', desc:'Newborn care plus postnatal support for new mothers — feeding, recovery, and hygiene at home'},
+    {en:"Dementia & Alzheimer's Care", ur:'ڈیمنشیا کی دیکھ بھال', desc:"Patient, specialised care for dementia and Alzheimer's patients — routine, safety, and companionship"},
+    {en:'Palliative & Long-term Care', ur:'آرام دہ نگہداشت', desc:'Comfort-focused nursing for cancer, stroke, and long-term patients, including pain and symptom management'}
+  ];
+  var ATTEND = [
+    {en:'Elderly Care', ur:'بزرگوں کی دیکھ بھال', desc:'Helping elderly patients with feeding, hygiene, movement, and daily routines'},
+    {en:'Paediatric Care', ur:'بچوں کی دیکھ بھال', desc:'Non-clinical care and support for children at home'},
+    {en:'Night Duty', ur:'رات کی ڈیوٹی', desc:'An attendant stays through the night to keep your patient comfortable and safe'}
+  ];
+
+  var state = { gender:'female', cat:'qualified', expanded:false };
+  var grid = document.getElementById('svcGrid');
+  var showMore = document.getElementById('showMore');
+  var priceAmt = document.getElementById('priceAmt');
+
+  var ARROW = '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+  function render(){
+    var list = state.cat === 'qualified' ? NURSE : ATTEND;
+    priceAmt.textContent = state.cat === 'qualified' ? 'Rs. 4,000' : 'Rs. 3,000';
+
+    grid.innerHTML = '';
+    list.forEach(function(s, i){
+      var card = document.createElement('article');
+      card.className = 'svc' + (i >= 4 ? ' is-extra' : '');
+      var en = document.createElement('h3'); en.className = 'svc__en'; en.textContent = s.en;
+      var ur = document.createElement('div'); ur.className = 'svc__ur'; ur.lang = 'ur'; ur.dir = 'rtl'; ur.textContent = s.ur;
+      var d  = document.createElement('p'); d.className = 'svc__desc'; d.textContent = s.desc;
+      var a  = document.createElement('a'); a.className = 'svc__book'; a.href = '#lead-form';
+      a.innerHTML = 'Book Now ' + ARROW;
+      a.setAttribute('aria-label', 'Book Now: ' + s.en);
+      card.appendChild(en); card.appendChild(ur); card.appendChild(d); card.appendChild(a);
+      grid.appendChild(card);
+    });
+
+    grid.classList.toggle('is-expanded', state.expanded);
+
+    // mobile "show N more"
+    showMore.innerHTML = '';
+    if(list.length > 4){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'btn btn--ghost';
+      b.textContent = state.expanded ? 'Show fewer services' : ('Show ' + (list.length - 4) + ' more services');
+      b.addEventListener('click', function(){ state.expanded = !state.expanded; render(); });
+      showMore.appendChild(b);
+    } else {
+      state.expanded = false;
+    }
+  }
+
+  document.querySelectorAll('.toggle--gender button').forEach(function(b){
+    b.addEventListener('click', function(){
+      state.gender = b.getAttribute('data-g');
+      document.querySelectorAll('.toggle--gender button').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+      b.setAttribute('aria-pressed','true');
+    });
+  });
+  document.querySelectorAll('.toggle--cat button').forEach(function(b){
+    b.addEventListener('click', function(){
+      state.cat = b.getAttribute('data-c'); state.expanded = false;
+      document.querySelectorAll('.toggle--cat button').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+      b.setAttribute('aria-pressed','true');
+      render();
+    });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,8 +1,18 @@
 import type { MetadataRoute } from "next";
+import { LIVE_CITIES, SITE_URL } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://mysehatconnect.com";
+  const base = SITE_URL;
   const now = new Date();
+
+  // Only live cities (Lahore) appear in the sitemap; the not-yet-live cities
+  // are excluded until they launch.
+  const cityPages: MetadataRoute.Sitemap = LIVE_CITIES.map((city) => ({
+    url: `${base}/cities/${city.toLowerCase()}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
 
   return [
     {
@@ -30,31 +40,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${base}/nurses`,
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
       url: `${base}/book`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
+      url: `${base}/cities`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    ...cityPages,
+    {
       url: `${base}/about`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/faq`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/contact`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,

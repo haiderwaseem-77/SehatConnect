@@ -196,6 +196,20 @@
   .sec-head h2{font-size:clamp(27px,6.2vw,40px)}
   .sec-head p{margin-top:12px;color:var(--ink-soft);font-size:18px}
 
+  /* ---- How it works (3 steps) ---- */
+  .how .sec-head{margin-bottom:24px}
+  .steps{list-style:none;display:grid;gap:16px}
+  .step{display:flex;flex-direction:column;gap:11px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px 18px;box-shadow:var(--shadow-sm)}
+  .step-top{display:flex;align-items:center;gap:14px}
+  .step-n{flex:none;width:46px;height:46px;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;font-size:21px;display:grid;place-items:center;box-shadow:0 7px 16px -7px rgba(13,122,110,.7)}
+  .step h3{font-size:19px;color:var(--ink);line-height:1.22}
+  .step h3 .urdu{font-size:16px;color:var(--teal-deep);font-weight:700}
+  .step p{color:var(--ink-soft);font-size:16.5px;font-weight:500;line-height:1.5}
+  .step p .urdu{font-size:15.5px}
+  .step-wa{display:inline-flex;align-items:flex-start;gap:9px;margin-top:3px;padding:11px 13px;background:#E9F8EF;border:1px solid #BFE9CF;border-radius:12px;color:#0A5E55;font-weight:700;font-size:15px;line-height:1.35}
+  .step-wa svg{flex:none;width:19px;height:19px;margin-top:1px;color:#25A560}
+  .step-wa .urdu{font-weight:600}
+
   /* ================= VERIFIED ID CARD (signature 1) ================= */
   .verified{background:var(--ink);color:var(--cream);padding:58px 0;position:relative}
   .verified .pulse path{stroke:rgba(255,255,255,.30)}
@@ -205,6 +219,13 @@
   .verified .eyebrow::before{background:#6fd0c3}
   .verified h2{color:#fff;font-size:clamp(27px,6.2vw,40px)}
   .verified-head p{color:rgba(251,248,242,.80);margin-top:12px;font-size:18px}
+  .choice-note{display:flex;align-items:flex-start;gap:13px;margin-top:20px;padding:14px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:16px}
+  .choice-note .cn-ico{flex:none;width:40px;height:40px;border-radius:12px;background:rgba(111,208,195,.16);display:grid;place-items:center}
+  .choice-note .cn-ico svg{width:22px;height:22px;color:#6fd0c3}
+  .choice-note .cn-text{display:flex;flex-direction:column;gap:3px;min-width:0}
+  .choice-note .cn-text b{color:#fff;font-size:17px;font-weight:800;line-height:1.25}
+  .choice-note .cn-text .sub{color:rgba(251,248,242,.80);font-size:15px;font-weight:500;line-height:1.42}
+  .choice-note .cn-text .urdu.sub{font-size:15px}
 
   .id-card{
     background:var(--cream);color:var(--ink);border-radius:22px;overflow:hidden;
@@ -320,7 +341,8 @@
   .disc-chev svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2.4}
   .disc[data-open="1"] .disc-chev{transform:rotate(180deg);background:var(--teal);color:#fff}
   .disc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.4,0,.2,1)}
-  .disc-body-inner{overflow:hidden;min-height:0;padding:4px 16px 18px;border-top:1px solid var(--line)}
+  .disc-body-inner{overflow:hidden;min-height:0}
+  .disc-body-pad{padding:4px 16px 18px;border-top:1px solid var(--line)}
 
   .tier-bar{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:13px 16px;background:var(--ink);color:var(--cream);border-radius:11px;margin:16px 0 0}
   .tier-bar .tn{font-size:18px;font-weight:800}
@@ -351,7 +373,8 @@
   .faq-q .qc{flex:none;width:30px;height:30px;border-radius:50%;background:var(--cream-2);color:var(--teal);display:grid;place-items:center;font-size:22px;font-weight:800;line-height:0;transition:transform .25s ease, background .2s}
   .faq-q[aria-expanded="true"] .qc{transform:rotate(45deg);background:var(--teal);color:#fff}
   .faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
-  .faq-a-in{overflow:hidden;min-height:0;padding:0 18px 18px;font-size:16px;color:var(--ink-soft);font-weight:500;line-height:1.55}
+  .faq-a-in{overflow:hidden;min-height:0;font-size:16px;color:var(--ink-soft);font-weight:500;line-height:1.55}
+  .faq-a-pad{padding:0 18px 18px}
   .faq-a-in .urdu{display:block;margin-top:8px;font-size:15px;color:var(--ink-soft)}
 
   /* ================= HUMAN PROOF ================= */
@@ -430,6 +453,7 @@
     .receipt-grid{grid-template-columns:1.05fr .95fr;gap:50px}
     .id-body{grid-template-columns:300px 1fr}
     .id-photo{min-height:auto}
+    .steps{grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
     .svc-rows{grid-template-columns:1fr 1fr;gap:0 28px}
     .faq-list{grid-template-columns:1fr 1fr;gap:14px}
     .closer-grid{grid-template-columns:1fr 1.02fr;gap:50px}
@@ -556,6 +580,43 @@
   </div>
 </section>
 
+<!-- ============ HOW IT WORKS (what happens after you leave your number) ============ -->
+<section class="block how" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><span data-en>How it works. Three simple steps.</span><span data-ur class="urdu">یہ کیسے کام کرتا ہے۔ تین آسان مرحلے۔</span></h2>
+      <p><span data-en>From your number to care at home, with a real person the whole way.</span><span data-ur class="urdu">آپ کے نمبر سے لے کر گھر پر دیکھ بھال تک، ہر قدم پر ایک حقیقی فرد ساتھ۔</span></p>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <div class="step-top">
+          <span class="step-n">1</span>
+          <h3><span data-en>Leave your number, or just call</span><span data-ur class="urdu">اپنا نمبر دیں، یا بس کال کریں</span></h3>
+        </div>
+        <p><span data-en>Tell us your name and number, or tap Call or WhatsApp. Thirty seconds, no long form.</span><span data-ur class="urdu">بس اپنا نام اور نمبر دیں، یا کال / واٹس ایپ کریں۔ تیس سیکنڈ، کوئی لمبا فارم نہیں۔</span></p>
+      </li>
+      <li class="step">
+        <div class="step-top">
+          <span class="step-n">2</span>
+          <h3><span data-en>A real person calls you back</span><span data-ur class="urdu">ایک حقیقی فرد آپ کو کال کرتا ہے</span></h3>
+        </div>
+        <p><span data-en>We listen, understand the patient, and match a verified nurse or attendant. We send you their card on WhatsApp before the visit.</span><span data-ur class="urdu">ہم سنتے ہیں، مریض کو سمجھتے ہیں، اور تصدیق شدہ نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں۔ آنے سے پہلے ان کا کارڈ واٹس ایپ پر بھیجتے ہیں۔</span></p>
+      </li>
+      <li class="step">
+        <div class="step-top">
+          <span class="step-n">3</span>
+          <h3><span data-en>Care arrives. You pay after</span><span data-ur class="urdu">دیکھ بھال پہنچتی ہے۔ ادائیگی بعد میں</span></h3>
+        </div>
+        <p><span data-en>Your caregiver reaches home on time. You pay cash only after the shift, never before.</span><span data-ur class="urdu">نگہداشت کنندہ وقت پر گھر پہنچتا ہے۔ آپ صرف شفٹ کے بعد نقد ادائیگی کرتے ہیں، پہلے کبھی نہیں۔</span></p>
+        <span class="step-wa">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Z"/></svg>
+          <span><span data-en>We message you on WhatsApp when your caregiver is on the way.</span><span data-ur class="urdu">جب نگہداشت کنندہ راستے میں ہو تو ہم واٹس ایپ پر بتا دیتے ہیں۔</span></span>
+        </span>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <!-- ============ PRICE RECEIPT (signature, kept visible) ============ -->
 <section class="block receipt-sec" id="price">
   <div class="wrap">
@@ -624,7 +685,7 @@
         <span class="disc-chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </button>
       <div class="disc-body">
-        <div class="disc-body-inner" id="svcFull">
+        <div class="disc-body-inner" id="svcFull"><div class="disc-body-pad">
           <div class="tier-bar"><span class="tn">Qualified Nurse</span><span class="tp">Rs 4,000 / 12-hr shift</span></div>
           <div class="svc-rows">
             <div class="svc-row" data-svc="Post-op Care"><span class="wa-mini"><svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Z"/></svg></span><div><div class="nm">Post-op Care <span class="urdu">آپریشن کے بعد دیکھ بھال</span></div><div class="ds">Wound care, dressing changes, recovery support after surgery.</div></div></div>
@@ -646,7 +707,7 @@
           </div>
 
           <p class="svc-foot"><b>Need a medical task done</b>, like injections, drips or wound dressing? That&rsquo;s a <b>Qualified Nurse</b>, not an attendant. We&rsquo;ll never send the cheaper option for a job it can&rsquo;t do.</p>
-        </div>
+        </div></div>
       </div>
     </div>
   </div>
@@ -659,6 +720,17 @@
       <div class="verified-head">
         <h2>We send you the nurse&rsquo;s card before the shift.</h2>
         <p>Photo, full name, PNC registration number and verification, on WhatsApp, before anyone enters your home. You meet them first. No strangers, no surprises.</p>
+        <div class="choice-note">
+          <span class="cn-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="4.2"/><path d="M9 13.2V20M6.2 17h5.6"/><path d="M15.5 8.5 20 4m0 0h-3.6M20 4v3.6"/></svg>
+          </span>
+          <span class="cn-text">
+            <b data-en>Female or male nurses. You choose.</b>
+            <b data-ur class="urdu">خاتون یا مرد نرس۔ آپ کی مرضی۔</b>
+            <span class="sub" data-en>Many families want a female nurse for a female patient. Just tell us when we call.</span>
+            <span class="sub urdu" data-ur>بہت سے گھرانے خاتون مریض کے لیے خاتون نرس چاہتے ہیں۔ کال پر بتا دیں۔</span>
+          </span>
+        </div>
       </div>
 
       <div class="id-card" role="group" aria-label="Sample verified nurse card">
@@ -723,7 +795,7 @@
           <span class="qt">&ldquo;How do I know this isn&rsquo;t a scam?&rdquo;<span class="urdu">”مجھے کیسے پتا کہ یہ دھوکہ نہیں؟“</span></span>
           <span class="qc">+</span>
         </button>
-        <div class="faq-a"><div class="faq-a-in">There&rsquo;s no advance and no card number to hand over. The nurse finishes the 12-hour shift in your home — <b>then</b> you pay, cash on the visit. We&rsquo;re a real Lahore service working 24/7, and a real person is always one call away.<span class="urdu">کوئی پیشگی نہیں، کوئی آن لائن رقم نہیں۔ شفٹ کے بعد نقد ادائیگی۔</span></div></div>
+        <div class="faq-a"><div class="faq-a-in"><div class="faq-a-pad">There&rsquo;s no advance and no card number to hand over. The nurse finishes the 12-hour shift in your home — <b>then</b> you pay, cash on the visit. We&rsquo;re a real Lahore service working 24/7, and a real person is always one call away.<span class="urdu">کوئی پیشگی نہیں، کوئی آن لائن رقم نہیں۔ شفٹ کے بعد نقد ادائیگی۔</span></div></div></div>
       </div>
 
       <div class="faq-item">
@@ -731,7 +803,7 @@
           <span class="qt">&ldquo;Who actually comes into my home?&rdquo;<span class="urdu">”میرے گھر میں کون آئے گا؟“</span></span>
           <span class="qc">+</span>
         </button>
-        <div class="faq-a"><div class="faq-a-in">A verified person whose card we send you first — photo, name and PNC number on WhatsApp before they arrive. Every Qualified Nurse is <b>PNC registered</b>; attendants are background-verified, CNIC &amp; references checked. Caring for a woman? Ask for a <b>female</b> nurse or attendant — female-for-female, always.<span class="urdu">تصدیق شدہ فرد جس کا کارڈ آنے سے پہلے بھیجا جاتا ہے۔ خاتون کے لیے خاتون دستیاب۔</span></div></div>
+        <div class="faq-a"><div class="faq-a-in"><div class="faq-a-pad">A verified person whose card we send you first — photo, name and PNC number on WhatsApp before they arrive. Every Qualified Nurse is <b>PNC registered</b>; attendants are background-verified, CNIC &amp; references checked. Caring for a woman? Ask for a <b>female</b> nurse or attendant — female-for-female, always.<span class="urdu">تصدیق شدہ فرد جس کا کارڈ آنے سے پہلے بھیجا جاتا ہے۔ خاتون کے لیے خاتون دستیاب۔</span></div></div></div>
       </div>
 
       <div class="faq-item">
@@ -739,7 +811,7 @@
           <span class="qt">&ldquo;Can they actually do the medical work?&rdquo;<span class="urdu">”کیا وہ اصل طبی کام کر سکتے ہیں؟“</span></span>
           <span class="qc">+</span>
         </button>
-        <div class="faq-a"><div class="faq-a-in">Yes. Our Qualified Nurses are Pakistan Nursing Council registered and do real nursing at home — wounds, dressings, injections, medicines, monitoring, post-op and ICU step-down care. For non-clinical help (feeding, hygiene, movement) an Attendant is enough, and we&rsquo;ll tell you honestly which you need.<span class="urdu">جی ہاں — پی این سی رجسٹرڈ نرسیں گھر پر مکمل نرسنگ کرتی ہیں۔</span></div></div>
+        <div class="faq-a"><div class="faq-a-in"><div class="faq-a-pad">Yes. Our Qualified Nurses are Pakistan Nursing Council registered and do real nursing at home — wounds, dressings, injections, medicines, monitoring, post-op and ICU step-down care. For non-clinical help (feeding, hygiene, movement) an Attendant is enough, and we&rsquo;ll tell you honestly which you need.<span class="urdu">جی ہاں — پی این سی رجسٹرڈ نرسیں گھر پر مکمل نرسنگ کرتی ہیں۔</span></div></div></div>
       </div>
 
       <div class="faq-item">
@@ -747,7 +819,7 @@
           <span class="qt">&ldquo;What&rsquo;s the difference between a nurse and an attendant?&rdquo;<span class="urdu">”نرس اور اٹینڈنٹ میں کیا فرق ہے؟“</span></span>
           <span class="qc">+</span>
         </button>
-        <div class="faq-a"><div class="faq-a-in">A <b>Qualified Nurse</b> (Rs 4,000) handles clinical care — medicines, wounds, injections, monitoring. An <b>Attendant</b> (Rs 3,000) handles non-clinical care — feeding, hygiene, movement and comfort. Both per 12-hour shift.<span class="urdu">نرس طبی کام کرتی ہے؛ اٹینڈنٹ غیر طبی دیکھ بھال کرتا ہے۔</span></div></div>
+        <div class="faq-a"><div class="faq-a-in"><div class="faq-a-pad">A <b>Qualified Nurse</b> (Rs 4,000) handles clinical care — medicines, wounds, injections, monitoring. An <b>Attendant</b> (Rs 3,000) handles non-clinical care — feeding, hygiene, movement and comfort. Both per 12-hour shift.<span class="urdu">نرس طبی کام کرتی ہے؛ اٹینڈنٹ غیر طبی دیکھ بھال کرتا ہے۔</span></div></div></div>
       </div>
 
       <div class="faq-item">
@@ -755,7 +827,7 @@
           <span class="qt">&ldquo;How and when do I pay?&rdquo;<span class="urdu">”ادائیگی کیسے اور کب؟“</span></span>
           <span class="qc">+</span>
         </button>
-        <div class="faq-a"><div class="faq-a-in">Cash after the shift — no advance, ever. Easypaisa and JazzCash are coming soon for convenience. You can cancel or reschedule free up to 4 hours before.<span class="urdu">شفٹ کے بعد نقد — کوئی پیشگی نہیں۔ ایزی پیسہ / جاز کیش جلد۔</span></div></div>
+        <div class="faq-a"><div class="faq-a-in"><div class="faq-a-pad">Cash after the shift — no advance, ever. Easypaisa and JazzCash are coming soon for convenience. You can cancel or reschedule free up to 4 hours before.<span class="urdu">شفٹ کے بعد نقد — کوئی پیشگی نہیں۔ ایزی پیسہ / جاز کیش جلد۔</span></div></div></div>
       </div>
 
       <div class="faq-item">
@@ -763,7 +835,7 @@
           <span class="qt">&ldquo;Can I request the same nurse again?&rdquo;<span class="urdu">”کیا میں دوبارہ وہی نرس مانگ سکتا ہوں؟“</span></span>
           <span class="qc">+</span>
         </button>
-        <div class="faq-a"><div class="faq-a-in">Yes. Tell us on WhatsApp and we try our best to send the same caregiver, so your loved one sees a familiar face. Continuity matters to us too.<span class="urdu">جی ہاں۔ واٹس ایپ پر بتائیں، ہم وہی نگہداشت کنندہ بھیجنے کی کوشش کرتے ہیں۔</span></div></div>
+        <div class="faq-a"><div class="faq-a-in"><div class="faq-a-pad">Yes. Tell us on WhatsApp and we try our best to send the same caregiver, so your loved one sees a familiar face. Continuity matters to us too.<span class="urdu">جی ہاں۔ واٹس ایپ پر بتائیں، ہم وہی نگہداشت کنندہ بھیجنے کی کوشش کرتے ہیں۔</span></div></div></div>
       </div>
 
       <div class="faq-item">
@@ -771,7 +843,7 @@
           <span class="qt">&ldquo;Which areas of Lahore do you cover?&rdquo;<span class="urdu">”لاہور کے کن علاقوں میں؟“</span></span>
           <span class="qc">+</span>
         </button>
-        <div class="faq-a"><div class="faq-a-in">All of Lahore — DHA, Gulberg, Johar Town, Model Town, Bahria Town, Cantt and everywhere in between, 24/7. We ask your exact area on the call.<span class="urdu">پورا لاہور — ڈی ایچ اے، گلبرگ، جوہر ٹاؤن، ماڈل ٹاؤن، بحریہ ٹاؤن، کینٹ۔</span></div></div>
+        <div class="faq-a"><div class="faq-a-in"><div class="faq-a-pad">All of Lahore — DHA, Gulberg, Johar Town, Model Town, Bahria Town, Cantt and everywhere in between, 24/7. We ask your exact area on the call.<span class="urdu">پورا لاہور — ڈی ایچ اے، گلبرگ، جوہر ٹاؤن، ماڈل ٹاؤن، بحریہ ٹاؤن، کینٹ۔</span></div></div></div>
       </div>
 
       <div class="faq-item">
@@ -779,7 +851,7 @@
           <span class="qt">&ldquo;What if the caregiver is running late?&rdquo;<span class="urdu">”اگر نگہداشت کنندہ دیر سے آئے تو؟“</span></span>
           <span class="qc">+</span>
         </button>
-        <div class="faq-a"><div class="faq-a-in">We keep you updated by WhatsApp/SMS, and you can always call us. If there&rsquo;s a delay, we sort out a replacement quickly — you&rsquo;re never left waiting without an answer.<span class="urdu">ہم واٹس ایپ / ایس ایم ایس پر اپڈیٹ دیتے ہیں؛ تاخیر ہو تو فوراً متبادل بندوبست۔</span></div></div>
+        <div class="faq-a"><div class="faq-a-in"><div class="faq-a-pad">We keep you updated by WhatsApp/SMS, and you can always call us. If there&rsquo;s a delay, we sort out a replacement quickly — you&rsquo;re never left waiting without an answer.<span class="urdu">ہم واٹس ایپ / ایس ایم ایس پر اپڈیٹ دیتے ہیں؛ تاخیر ہو تو فوراً متبادل بندوبست۔</span></div></div></div>
       </div>
     </div>
   </div>
@@ -878,6 +950,7 @@
       </div>
       <div class="foot-col">
         <h4>On this page</h4>
+        <a href="#how">How it works</a>
         <a href="#price">The price receipt</a>
         <a href="#services">What our nurses do</a>
         <a href="#who">Who comes to you</a>

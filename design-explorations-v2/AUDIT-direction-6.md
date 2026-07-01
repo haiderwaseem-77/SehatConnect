@@ -37,7 +37,7 @@
 
 ### Phase 4 — Verify
 
-- [ ] Render 390px + desktop screenshots; confirm no regressions; confirm all hard constraints still pass (≥56px taps, ≥16px important text, fields reach fold at 390px).
+- [x] Render 390px + desktop screenshots; confirm no regressions; confirm all hard constraints still pass (≥56px taps, ≥16px important text, fields reach fold at 390px). — DONE (via `phone-preview`, 393 + 360 + desktop). Hero highlight renders as a clean marker-band across the wrap; Name field reaches the fold at 393; receipt / services chips / verified ID card / founder / closer / footer all pass. One real regression caught and fixed below.
 
 ---
 
@@ -62,4 +62,20 @@ Three mobile-only visual defects caught by *looking at the render* (not code rev
 - [x] **Gold hero highlight rendered as a stray dot on wrap.** Root cause: P3-5 removed `white-space:nowrap`, so the absolutely-positioned `.hl::after` detached when "Leave your number" broke across lines. **Fix:** replaced `::after` with a clipped `linear-gradient` background on `.hl` + `box-decoration-break:clone`, so the highlight follows every line fragment. Clean at 393, 360, desktop.
 - [x] **Hero ate the whole fold** (form not visible at the conservative 720px fold). **Fix:** H1 `clamp(31→28px)` min + `line-height:1.06`; trimmed eyebrow/sub/trust top-margins + hero-grid gap. Name input now reaches the fold at 393px (and the ribbon+label at 360px).
 - [x] **Trust pills orphaned a separator `·` at line-wrap.** **Fix:** removed the inline `.sep` spans; each non-first pill now carries a leading teal dot via `::before`, which travels with the pill and never orphans.
+
+## Visual polish pass — 2026-06-30 (round 2, `phone-preview` at 393 + 360 + desktop)
+
+## Feature additions — 2026-06-30 (parity with the live app landing page)
+
+- [x] **Added a "How it works — three simple steps" section** (new `#how` block, inserted between Hero and Price Receipt). The live app has a 3-step process explainer that direction-6 lacked entirely, leaving the stressed first-timer's "what happens after I leave my number? am I committing?" unanswered. Steps: (1) Leave your number, or just call — 30 seconds, no long form; (2) A real person calls you back, matches a verified nurse/attendant, sends their card on WhatsApp before the visit; (3) Care arrives, you pay after. Numbered teal badges + `--paper` cards; 1-col on mobile, 3-col at ≥760px. Bilingual (data-en/data-ur toggle). Added `#how` to the footer "On this page" nav. Placed before the receipt so the narrative is: form → what happens next → honest price.
+- [x] **Added the WhatsApp "on the way" status-update promise** (a North Star BUILD priority the app surfaces but direction-6 didn't). Rendered as a distinct WhatsApp-green chip inside step 3: "We message you on WhatsApp when your caregiver is on the way." Honest per the honesty rule — a manual WhatsApp update, no GPS/ETA claim. Bilingual.
+- [x] **Bug caught during verify:** first render showed EN+UR text together in the steps. Root cause: my `.step … .urdu{display:block}` rules out-specified the global `[data-ur]{display:none}`, forcing Urdu visible in EN mode. Fixed by dropping `display`/margins from those rules (EN/UR spans are mutually exclusive via the toggle, so no stacking needed) — mirrors the working `.choice-note` approach. Re-verified: EN-only in English mode, Nastaliq-only in Urdu mode, mobile + desktop. Record shots: `6-combined-v5-how-{mobile,desktop,mobile-ur}.png`.
+
+## Feature addition — 2026-06-30 (male/female caregivers, parity with the live app)
+
+- [x] **Added a "Female or male nurses. You choose." trust note.** The live app surfaces both genders (hero chip "Female & male nurses", a Female/Male toggle in ServicesSection, TrustSignals "Female & male nurses — many families prefer a female caregiver for a female patient, just ask") but direction-6 only framed gender as *female-for-female*, implying female-only availability. **Fix:** added a bilingual `.choice-note` panel in the dark Verified section's `verified-head` (the "who comes into your home" context) — mint venus+mars icon, bold "Female or male nurses. You choose." + subline "Many families want a female nurse for a female patient. Just tell us when we call." The female-for-female badge stays on the sample card as complementary visual proof. Verified visually at 393 (EN), desktop 2-col (EN), and Urdu (Nastaliq RTL). Record shots: `6-combined-v4-choice-{mobile,desktop}.png`.
+
+## Visual polish pass — 2026-06-30 (round 2, `phone-preview` at 393 + 360 + desktop)
+
+- [x] **Collapsed FAQ + services disclosures leaked ~18px of hidden answer text.** Root cause (measured in Blink: collapsed `.faq-a` track resolved to **18px**, not 0): the `0fr→1fr` grid-collapse trick from P3-2 was applied to a grid item (`.faq-a-in` / `.disc-body-inner`) that **carried its own padding** (`padding:0 18px 18px`). A grid item's padding survives `min-height:0` + `overflow:hidden`, so the track's auto-minimum stayed at the padding height and the first line of every collapsed answer peeked out under the "+" (clipped by the card's rounded corner). **Fix:** moved padding (and the services `border-top`) off the collapsing grid item onto a new inner `.faq-a-pad` / `.disc-body-pad` wrapper — the canonical 3-level `0fr` pattern. Collapsed height now measures **0** for both; open state is pixel-identical to before. Page is ~500px shorter with the 9 phantom slivers gone. Verified visually: closed cards show only the question (EN + Urdu).
 

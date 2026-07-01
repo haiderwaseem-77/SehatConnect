@@ -14,7 +14,7 @@
   /* Text */
   --color-text-primary:   #0A2E2B;
   --color-text-secondary: #3D5E5A;
-  --color-text-muted:     #5A7572;
+  --color-text-muted:     #41605C;
 
   /* Gender tints */
   --color-female-tint:    #F4E8F4;
@@ -46,6 +46,8 @@ body {
   background-color: #F5FAF9;
   color: #0A2E2B;
   font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -58,3 +60,44 @@ body {
 /* Utility: hide scrollbar */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Urdu font helper */
+.font-urdu { font-family: 'Noto Nastaliq Urdu', serif; }
+
+/* FAQ accordion (native <details>) — hide default marker, rotate chevron when open */
+summary::-webkit-details-marker { display: none; }
+summary::marker { content: ""; }
+details[open] .faq-chev { transform: rotate(180deg); }
+
+/* Bottom padding so StickyActionBar never covers page content on mobile */
+@media (max-width: 767px) { body { padding-bottom: 86px; } }
+
+/* Floating WhatsApp button — visible on desktop, hidden on mobile (StickyActionBar covers that) */
+.wa-float { display: flex; align-items: center; justify-content: center; }
+@media (max-width: 767px) { .wa-float { display: none; } }
+
+/* Sticky mobile action bar is mobile-only. Its root uses an inline display:grid,
+   which outranks Tailwind's `md:hidden` — so force-hide it on desktop here
+   (author !important beats inline). Desktop uses the navbar utility strip instead. */
+@media (min-width: 768px) { .sticky-action-bar { display: none !important; } }
+
+/* Calm motion — subtle fade/rise on reveal (graft from Direction A). Cheap, opacity + small translate. */
+@keyframes sc-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.sc-rise { animation: sc-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.sc-rise-1 { animation-delay: 0.05s; }
+.sc-rise-2 { animation-delay: 0.12s; }
+.sc-rise-3 { animation-delay: 0.19s; }
+
+/* Respect reduced-motion: no animation, no smooth scroll, no transitions. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

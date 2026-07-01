@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
+import { notify } from "@/lib/notify";
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, phone, area, ref } = await req.json();
+    const { name, phone, area, careType, ref } = await req.json();
 
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
     const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -16,7 +17,10 @@ export async function POST(req: NextRequest) {
         "Authorization": `Bearer ${supabaseKey}`,
         "Prefer": "return=minimal",
       },
-      body: JSON.stringify({ name, phone, area, ref, status: "pending" }),
+      // NOTE: `care_type` requires a column on the Supabase `bookings` table
+      // (text, nullable). Add it with:
+      //   alter table bookings add column if not exists care_type text;
+      body: JSON.stringify({ name, phone, area, care_type: careType || null, ref, status: "pending" }),
     });
 
     if (!res.ok) {
@@ -26,14 +30,11 @@ export async function POST(req: NextRequest) {
     }
 
     // Send ntfy notification (fire and forget — don't let it block or crash)
-    fetch("https://ntfy.sh/sehatghar-bookings-sawar", {
-      method: "POST",
-      headers: {
-        "Title": "New Booking - Sehat Connect",
-        "Priority": "high",
-        "Tags": "hospital",
-      },
-      body: `Name: ${name}\nPhone: ${phone}\nArea: ${area}\nRef: ${ref}`,
+    notify({
+      title: "New Booking - Sehat Connect",
+      priority: "high",
+      tags: "hospital",
+      body: `Name: ${name}\nPhone: ${phone}\nArea: ${area}\nCare: ${careType || "—"}\nRef: ${ref}`,
     }).catch(() => {});
 
     return NextResponse.json({ success: true });

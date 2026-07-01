@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  SEHAT CONNECT — NORTH STAR  (strategy / vision doc, standalone)
+  ============================================================================
+  This is the WRITTEN VISION / NORTH STAR: the strategy behind every product
+  and design decision — mission, target user, core principle, design rules,
+  build-vs-skip table, honesty rule, language policy, and the Definition of
+  Done checklist. Read this before changing anything on the site or app.
+
+  Open it directly in any browser. NOT wired into the Next.js app.
+
+  FINAL DESIGN REFERENCES (the only locked-in visual assets right now):
+    • design/Sehat Connect Logo.jpg                      — the official logo
+    • design/Sehat Connect Visiting Card Standalone.html — the brand visiting
+      card (colours, type, logo lockup, tone). Treat this as the source of
+      truth for brand look-and-feel until a fuller design system exists.
+  Both live in this same design/ folder and are referenced in the doc below.
+
+  Built for the real target user: a 40–65 yr old in Lahore, not very techy,
+  arranging care for a parent. Stressed, cautious about scams, on a phone.
+  ============================================================================
+-->
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sehat Connect — Vision / North Star</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  /* ---------------------------------------------------------------- TOKENS */
+  :root {
+    --teal:       #0D7A6E;   /* primary */
+    --teal-dark:  #0A5E55;
+    --teal-deep:  #0A2E2B;   /* headings */
+    --teal-50:    #EEF9F7;
+    --teal-100:   #DBF0EC;
+    --mint:       #F2FAF8;   /* page bg */
+    --line:       #CFE7E2;   /* visible-but-soft borders */
+    --text:       #11302D;   /* high-contrast body */
+    --text-soft:  #3D5E5A;   /* only for non-critical text */
+    --ok:         #15936B;
+  }
+
+  /* ----------------------------------------------------------------- BASE */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--mint);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { color: var(--teal-deep); line-height: 1.2; letter-spacing: -.01em; }
+
+  /* --------------------------------------------------------- VISION / NORTH STAR (ns-) */
+  .ns-section {
+    background: #fff;
+    padding: 56px 0 64px;
+  }
+  .ns-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .ns-section > .ns-wrap > h1 {
+    font-size: clamp(24px, 5vw, 34px);
+    font-weight: 800;
+    color: var(--teal-deep);
+    margin-bottom: 6px;
+  }
+  .ns-doc-sub {
+    font-size: 17px;
+    color: var(--text-soft);
+    margin-bottom: 44px;
+    border-left: 4px solid var(--teal-100);
+    padding-left: 14px;
+  }
+  .ns-section h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--teal-deep);
+    margin: 40px 0 10px;
+    padding-bottom: 7px;
+    border-bottom: 2px solid var(--teal-100);
+  }
+  .ns-section h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--teal-deep);
+    margin: 18px 0 6px;
+  }
+  .ns-section p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  .ns-section ul,
+  .ns-section ol {
+    padding-left: 22px;
+    margin-bottom: 12px;
+  }
+  .ns-section ul li,
+  .ns-section ol li {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .ns-callout {
+    background: var(--teal-50);
+    border-left: 4px solid var(--teal);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin: 16px 0 18px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--teal-deep);
+  }
+  /* build-vs-skip table */
+  .ns-table-wrap { overflow-x: auto; margin: 14px 0 20px; }
+  .ns-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15.5px;
+  }
+  .ns-table th {
+    background: var(--teal-50);
+    color: var(--teal-deep);
+    font-weight: 700;
+    padding: 10px 13px;
+    text-align: left;
+    border: 1px solid var(--line);
+    white-space: nowrap;
+  }
+  .ns-table td {
+    padding: 10px 13px;
+    border: 1px solid var(--line);
+    vertical-align: top;
+    line-height: 1.6;
+    color: var(--text);
+  }
+  .ns-table tr:nth-child(even) td { background: var(--mint); }
+  .ns-verdict-build { color: var(--ok);   font-weight: 700; }
+  .ns-verdict-skip  { color: #b84f4f;     font-weight: 700; }
+  .ns-verdict-later { color: #a0720a;     font-weight: 700; }
+  /* final design references */
+  .ns-assets {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 8px 0 18px;
+  }
+  @media (min-width: 620px) { .ns-assets { grid-template-columns: 1fr 1fr; } }
+  .ns-asset {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--mint);
+    padding: 16px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .ns-asset .ns-asset-media {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .ns-asset img { max-width: 100%; max-height: 170px; border-radius: 6px; }
+  .ns-asset .ns-asset-fallback {
+    font-size: 40px; font-weight: 800; color: var(--teal); letter-spacing: -.02em;
+  }
+  .ns-asset h3 { margin: 0 0 4px; font-size: 16px; }
+  .ns-asset p { margin: 0; font-size: 14.5px; color: var(--text-soft); line-height: 1.55; }
+  .ns-asset code { font-size: 13px; color: var(--teal-dark); background: var(--teal-50);
+    padding: 1px 6px; border-radius: 5px; }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════ VISION / NORTH STAR ════════════════════════════ -->
+<section class="ns-section" aria-label="Vision and North Star">
+  <div class="ns-wrap">
+
+    <h1>Sehat Connect &mdash; Vision / North Star</h1>
+    <p class="ns-doc-sub">The strategy behind every product and design decision. Read this before changing anything on the site or in the app.</p>
+
+    <!-- ── 0. Final design references ── -->
+    <h2>0. Final design references (locked-in visual assets)</h2>
+    <p>These are the only finalised visual assets right now. Until a fuller design system exists, treat them as the source of truth for the brand look-and-feel &mdash; logo lockup, colours, type, and tone. Both files live in this same <code>design/</code> folder.</p>
+    <div class="ns-assets">
+      <a class="ns-asset" href="Sehat Connect Logo.jpg" target="_blank" rel="noopener">
+        <span class="ns-asset-media">
+          <img src="Sehat Connect Logo.jpg" alt="Sehat Connect logo" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=&quot;ns-asset-fallback&quot;>Sehat Connect</span>';" />
+        </span>
+        <h3>Official logo</h3>
+        <p><code>design/Sehat Connect Logo.jpg</code> &mdash; the official Sehat Connect logo.</p>
+      </a>
+      <a class="ns-asset" href="Sehat Connect Visiting Card Standalone.html" target="_blank" rel="noopener">
+        <span class="ns-asset-media">
+          <span class="ns-asset-fallback">Visiting&nbsp;Card</span>
+        </span>
+        <h3>Brand visiting card</h3>
+        <p><code>design/Sehat Connect Visiting Card Standalone.html</code> &mdash; the brand visiting card. Open it in a browser; it is the reference for colours, type, and tone.</p>
+      </a>
+    </div>
+
+    <!-- ── 1. Mission ── -->
+    <h2>1. What this is (mission)</h2>
+    <ul>
+      <li>Sehat Connect is a home-nursing &amp; caregiving service in Lahore, Pakistan: verified nurses and trained attendants sent to families&rsquo; homes.</li>
+      <li>The website has <strong>one job</strong>: get a worried family member to leave their name + phone (or call / WhatsApp us) so a real person can call them back and arrange the care. It is a <strong>lead-generation + trust-building site</strong> &mdash; not a self-service booking app and not a marketplace.</li>
+      <li>Success = more qualified callbacks requested, and families trusting us enough to let our caregiver into their home. Every decision serves that.</li>
+    </ul>
+
+    <!-- ── 2. Target user ── -->
+    <h2>2. Who we are designing for (always picture this person)</h2>
+    <ul>
+      <li>40&ndash;65 years old, in Lahore. Usually a son/daughter or the person running the household, arranging care for an elderly parent &mdash; or for post-op recovery, a new mother &amp; baby, a bedridden/long-term, dementia, or palliative patient.</li>
+      <li>Not very tech-savvy. Mobile-first, Android, often an older phone, ageing eyesight (cannot read small text). WhatsApp-native. Comfortable making a phone call. Uncomfortable with long forms, dropdowns, passwords/accounts, anything that feels like &ldquo;signing up.&rdquo;</li>
+      <li>Emotionally loaded: stressed, anxious, often in a hurry. A loved one is unwell.</li>
+    </ul>
+    <h3>The fears the site must defuse:</h3>
+    <ol>
+      <li>&ldquo;Is this real, or a scam?&rdquo; (trust is the #1 conversion barrier in Pakistan)</li>
+      <li>&ldquo;Will a safe, decent person come into my home?&rdquo; (especially for a female/elderly patient &mdash; they want a verified caregiver and often a female one)</li>
+      <li>&ldquo;Can this person actually do the medical task?&rdquo; (a real qualified nurse)</li>
+      <li>&ldquo;How much will it cost &mdash; will I be overcharged?&rdquo; (price transparency)</li>
+      <li>&ldquo;Can I just talk to a human?&rdquo; (they don&rsquo;t want to commit online; the phone call is the trust bridge)</li>
+    </ol>
+
+    <!-- ── 3. Core principle ── -->
+    <h2>3. The core principle (the one idea behind everything)</h2>
+    <div class="ns-callout">The customer is buying a trustworthy human, not software.</div>
+    <ul>
+      <li>Spend money/effort on tech that makes our humans reliable and verifiable. Stay cheap on tech that tries to replace the human contact the customer actually wants.</li>
+      <li>Customer-facing = WhatsApp + a phone call + a dead-simple website. Anything fancy lives behind the scenes in internal staff tools.</li>
+      <li>The test for any feature: <em>&ldquo;Does this make a nervous family trust us more &mdash; or does it just look impressive?&rdquo;</em></li>
+    </ul>
+
+    <!-- ── 4. Design & experience rules ── -->
+    <h2>4. Design &amp; experience rules (how it must look, work, and feel)</h2>
+    <ul>
+      <li><strong>Big &amp; readable:</strong> 18px base body text, nothing important under 16px, high-contrast dark text (not faint grey). Large tap targets (buttons &ge; 56px tall).</li>
+      <li><strong>One page, one action:</strong> the home page does ~95% of the work; everything funnels to &ldquo;we&rsquo;ll call you.&rdquo; No browsing, no accounts, no self-service booking calendar.</li>
+      <li><strong>Call + WhatsApp are co-stars:</strong> reachable from anywhere (header call button + sticky bottom bar on mobile). Many users will never fill the form &mdash; they&rsquo;ll WhatsApp. Pre-fill a friendly Roman-Urdu message for them.</li>
+      <li><strong>The form asks for almost nothing:</strong> Name + Phone required. &ldquo;Who needs care?&rdquo; is optional, tap-not-type chips (never a long dropdown). Area is collected on the call. Every field removed lifts completion.</li>
+      <li><strong>Bilingual:</strong> English default + an &#1575;&#1585;&#1583;&#1608; toggle. Render the Urdu we already store in <code>lib/constants.ts</code>. English signals &ldquo;professional/legit&rdquo;; Urdu signals &ldquo;I&rsquo;m comfortable.&rdquo; Use a proper Urdu font (Noto Nastaliq Urdu).</li>
+      <li><strong>Prove trust, don&rsquo;t claim it:</strong> show the price openly + &ldquo;pay cash after, no advance,&rdquo; a founder&rsquo;s face &amp; note, real testimonials (first name + area), &ldquo;female nurse for female patient,&rdquo; and simple &ldquo;CNIC &amp; references checked.&rdquo; Real photos beat abstract icons.</li>
+      <li><strong>Warm, calm, clean</strong> medical feel. Teal palette. Plain, short, human sentences.</li>
+      <li><strong>Mobile-first and fast:</strong> assume a mid/low-end Android on patchy data.</li>
+    </ul>
+
+    <!-- ── 5. Build vs skip ── -->
+    <h2>5. What we build vs. what we skip (settled product decisions)</h2>
+    <div class="ns-table-wrap">
+      <table class="ns-table">
+        <thead>
+          <tr>
+            <th>Idea</th>
+            <th>Verdict</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pre-visit caregiver profile on WhatsApp (name + photo + verified badges + experience + ETA)</td>
+            <td><span class="ns-verdict-build">BUILD &mdash; top priority</span></td>
+            <td>Directly answers &ldquo;who is this stranger coming to my home?&rdquo; Highest trust-per-rupee; it&rsquo;s just a message template.</td>
+          </tr>
+          <tr>
+            <td>Status updates (confirmed &rarr; assigned &rarr; on the way/ETA &rarr; arrived &rarr; done &rarr; &ldquo;how was it?&rdquo;)</td>
+            <td><span class="ns-verdict-build">BUILD, but light</span></td>
+            <td>WhatsApp-first (rich, two-way, carries the photo). SMS only as a fallback for the booking confirmation + ETA. Don&rsquo;t build an SMS pipeline.</td>
+          </tr>
+          <tr>
+            <td>Same-caregiver continuity (&ldquo;want the same nurse again? just tell us&rdquo;)</td>
+            <td><span class="ns-verdict-build">BUILD &mdash; no customer tech</span></td>
+            <td>Tracked in our internal tool, requested on WhatsApp. Big for retention.</td>
+          </tr>
+          <tr>
+            <td>Female-for-female matching, clearly offered and honoured</td>
+            <td><span class="ns-verdict-build">BUILD &mdash; no customer tech</span></td>
+            <td>A real differentiator in this market.</td>
+          </tr>
+          <tr>
+            <td>Internal ops tool (lead inbox so no callback is dropped, caregiver roster/availability, verification records, shift logs, message templates)</td>
+            <td><span class="ns-verdict-build">BUILD &mdash; the real backbone</span></td>
+            <td>This is where dev resources actually pay off. The &ldquo;dashboard&rdquo; worth building is for staff, not customers.</td>
+          </tr>
+          <tr>
+            <td>Real-time GPS tracking</td>
+            <td><span class="ns-verdict-skip">SKIP</span></td>
+            <td>High cost, marginal value for a 12-hour shift, caregiver privacy/labour friction, and it breaks visibly. The trust it seems to give comes cheaper from a verified profile + an ETA + a callable human.</td>
+          </tr>
+          <tr>
+            <td>Customer dashboard / login</td>
+            <td><span class="ns-verdict-skip">SKIP (public)</span></td>
+            <td>This audience won&rsquo;t log in to self-serve. WhatsApp + a human is faster and familiar &mdash; the WhatsApp thread IS their dashboard.</td>
+          </tr>
+          <tr>
+            <td>Browse-nurses / public nurse profiles</td>
+            <td><span class="ns-verdict-skip">SKIP</span></td>
+            <td>Marketplace model: implies an inventory you must keep &ldquo;available&rdquo; and causes choice paralysis. &ldquo;We match you&rdquo; is more trustworthy and simpler to run.</td>
+          </tr>
+          <tr>
+            <td>Public ratings/reviews platform</td>
+            <td><span class="ns-verdict-skip">SKIP</span></td>
+            <td>A few real testimonials on-site + a private post-shift &ldquo;how did it go?&rdquo; for quality control is enough.</td>
+          </tr>
+          <tr>
+            <td>Online payment (Easypaisa/JazzCash)</td>
+            <td><span class="ns-verdict-later">OPTIONAL / LATER</span></td>
+            <td>Cash-after is itself a trust feature (&ldquo;no advance&rdquo; = not a scam). Offer an e-wallet as a convenience for paying after; never require it upfront.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── 6. Honesty rule ── -->
+    <h2>6. The honesty rule (no false promises)</h2>
+    <ul>
+      <li>Never promise on the site what we don&rsquo;t actually deliver. Specifically: <strong>no GPS-tracking claims, no live &ldquo;Available&rdquo; roster, no customer-dashboard promises, no response times we can&rsquo;t always hit.</strong> Reframe as the real thing: &ldquo;updates by WhatsApp/SMS&rdquo; + &ldquo;a real person, one call away.&rdquo;</li>
+      <li>The callback-time promise (e.g. &ldquo;we&rsquo;ll call within 15 minutes&rdquo;) must be a number we hit <em>every</em> time. Pick a safe one &mdash; a missed promise here is the fastest way to lose this audience&rsquo;s trust.</li>
+    </ul>
+
+    <!-- ── 7. Language ── -->
+    <h2>7. Language</h2>
+    <p>English default, &#1575;&#1585;&#1583;&#1608; toggle everywhere. Every user-facing string has an Urdu counterpart, rendered in the Urdu font (Noto Nastaliq Urdu).</p>
+
+    <!-- ── 8. Definition of Done ── -->
+    <h2>8. The tests &mdash; every customer-facing change must pass these (Definition of Done)</h2>
+    <p>A change is only &ldquo;done&rdquo; if all of these are true:</p>
+    <ol>
+      <li>The primary action is still &ldquo;we&rsquo;ll call you&rdquo; (or call/WhatsApp). It does not introduce browsing, accounts, or self-service booking.</li>
+      <li>The form stays minimal: Name + Phone required; anything else optional and tap-not-type.</li>
+      <li>Call + WhatsApp are reachable from anywhere on the page (header + sticky bar). Phone/WhatsApp numbers come from constants &mdash; never hardcoded.</li>
+      <li>Text is &ge; 16px (body 18px) and high-contrast; tap targets &ge; 48&ndash;56px. A 60-year-old can read it at arm&rsquo;s length.</li>
+      <li>It works well on a mid-range Android in portrait and is fast on slow data.</li>
+      <li>Bilingual-ready: any new user-facing string has an Urdu counterpart and renders in the Urdu font.</li>
+      <li>No false promises: nothing implies GPS, a live roster, a dashboard, or response times we don&rsquo;t guarantee.</li>
+      <li>Trust is shown with specifics (price, pay-after, real people), not just icon claims.</li>
+      <li>Plain, warm language &mdash; short sentences a stressed, non-native-English reader understands instantly.</li>
+      <li>It reuses existing constants/components and does not reintroduce the marketplace/account model.</li>
+    </ol>
+
+  </div>
+</section>
+
+</body>
+</html>
