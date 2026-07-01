@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sehat Connect — Just say hello. Home nursing in Lahore.</title>
+<meta name="description" content="Home nurses and attendants in Lahore. No long forms, no advance. Message us on WhatsApp or call — a real person replies. PNC-registered nurses, pay after the shift." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#FBF8F2;
+    --cream-2:#F4EFE4;
+    --teal:#0D7A6E;
+    --teal-deep:#0A6359;
+    --dark:#0A2E2B;
+    --ink:#0A2E2B;
+    --line:#E2DBCB;
+    --wa:#1FA855;        /* whatsapp-ish green, used only on WA CTAs */
+    --wa-deep:#178043;
+    --grey-bubble:#ECECEC;
+    --tick:#34B7F1;
+    --maxchat:640px;
+    --shadow-s:0 1px 2px rgba(10,46,43,.10);
+    --shadow-m:0 8px 28px -12px rgba(10,46,43,.30);
+    --shadow-l:0 24px 60px -28px rgba(10,46,43,.45);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    font-size:18px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .ur{font-family:'Noto Nastaliq Urdu',serif;direction:rtl;line-height:2.1;font-feature-settings:"liga";}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--teal);color:#fff}
+
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  .chatcol{max-width:var(--maxchat);margin:0 auto}
+
+  /* ---------- Heartbeat wallpaper ---------- */
+  .wallpaper{
+    background-color:var(--cream);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cg fill='none' stroke='%230D7A6E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' opacity='0.05'%3E%3Cpath d='M8 42 h20 l5 -16 l8 30 l6 -14 h20'/%3E%3Cpath d='M82 112 h20 l5 -16 l8 30 l6 -14 h20'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* ---------- Header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:60;
+    background:rgba(251,248,242,.86);
+    backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar{display:flex;align-items:center;gap:12px;height:68px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto}
+  .mark{width:40px;height:40px;flex:0 0 40px}
+  .brand .name{font-weight:800;font-size:19px;letter-spacing:-.02em;color:var(--dark);line-height:1.05}
+  .brand .name b{color:var(--teal);font-weight:800}
+  .brand .tag{font-size:11px;font-weight:600;color:var(--teal-deep);letter-spacing:.02em}
+  .lang{
+    display:inline-flex;align-items:center;gap:6px;
+    border:1.5px solid var(--line);background:#fff;
+    border-radius:999px;padding:8px 13px;font-weight:700;font-size:14px;color:var(--dark);
+    cursor:pointer;min-height:44px;
+  }
+  .lang .ur{font-size:15px}
+  .lang.active-ur .en-lab{opacity:.45}
+  .header-call{
+    display:none;align-items:center;gap:8px;
+    background:var(--teal);color:#fff;border-radius:999px;
+    padding:11px 18px;font-weight:700;font-size:15px;min-height:48px;
+  }
+  .header-call svg{width:18px;height:18px}
+  @media(min-width:760px){ .header-call{display:inline-flex} }
+
+  /* ---------- Generic buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    min-height:58px;padding:0 22px;border-radius:16px;
+    font-weight:800;font-size:18px;letter-spacing:-.01em;cursor:pointer;border:none;
+    transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+    width:100%;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn svg{width:22px;height:22px;flex:0 0 22px}
+  .btn-wa{background:var(--wa);color:#fff;box-shadow:0 10px 22px -10px rgba(31,168,85,.7)}
+  .btn-wa:hover{background:var(--wa-deep)}
+  .btn-call{background:var(--teal);color:#fff;box-shadow:0 10px 22px -12px rgba(13,122,110,.8)}
+  .btn-call:hover{background:var(--teal-deep)}
+  .btn-call.outline{background:#fff;color:var(--teal);border:2px solid var(--teal);box-shadow:none}
+  .btn-call.outline:hover{background:#F0F8F6}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:30px 0 18px;position:relative}
+  .hero .wrap{display:flex;flex-direction:column;gap:26px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;align-self:flex-start;
+    background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:7px 14px;font-size:13.5px;font-weight:700;color:var(--teal-deep);
+    box-shadow:var(--shadow-s);
+  }
+  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 4px rgba(31,168,85,.18)}
+  h1{
+    font-size:clamp(34px,9vw,52px);line-height:1.02;letter-spacing:-.035em;font-weight:800;color:var(--dark);
+  }
+  h1 .teal{color:var(--teal)}
+  .h1-ur{font-size:clamp(26px,7vw,38px);color:var(--teal);font-weight:700;margin-top:6px}
+  .hero-sub{font-size:19px;max-width:30ch;color:#26433F;font-weight:500}
+  .hero-sub b{color:var(--dark);font-weight:700}
+
+  .hero-cta{display:flex;flex-direction:column;gap:12px;max-width:420px}
+  .reassure{
+    display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:4px;
+  }
+  .reassure span{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:600;color:var(--teal-deep)}
+  .reassure svg{width:17px;height:17px;flex:0 0 17px;color:var(--teal)}
+
+  /* ---------- Chat card (phone) ---------- */
+  .phone{
+    position:relative;border-radius:30px;overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow-l);
+    background:var(--cream);
+    max-width:420px;width:100%;margin:0 auto;
+  }
+  .phone-head{
+    display:flex;align-items:center;gap:11px;
+    background:var(--dark);color:#fff;padding:13px 16px;
+  }
+  .phone-head .av{
+    width:40px;height:40px;border-radius:50%;background:#fff;
+    display:flex;align-items:center;justify-content:center;flex:0 0 40px;
+  }
+  .phone-head .av svg{width:26px;height:26px}
+  .phone-head .who{line-height:1.15}
+  .phone-head .who b{font-size:16px;font-weight:700;letter-spacing:-.01em}
+  .phone-head .who small{display:block;font-size:11.5px;color:#9FD4CC;font-weight:600}
+  .phone-head .ph-ic{margin-left:auto;display:flex;gap:16px;opacity:.85}
+  .phone-head .ph-ic svg{width:19px;height:19px}
+
+  .thread{padding:18px 14px 16px;display:flex;flex-direction:column;gap:10px}
+  .daystamp{align-self:center;background:#FFFFFFcc;border:1px solid var(--line);color:#4A625E;
+    font-size:11.5px;font-weight:700;padding:4px 12px;border-radius:999px;margin:2px 0}
+
+  .bubble{
+    position:relative;max-width:82%;padding:11px 14px;font-size:16.5px;line-height:1.45;
+    border-radius:18px;animation:pop .35s ease both;
+  }
+  .bubble .t{display:block;font-size:10.5px;font-weight:600;text-align:right;margin-top:3px;opacity:.75}
+  .bubble.in{
+    align-self:flex-start;background:#fff;color:var(--ink);
+    border-radius:18px 18px 18px 5px;box-shadow:var(--shadow-s);
+  }
+  .bubble.out{
+    align-self:flex-end;background:var(--teal);color:#fff;
+    border-radius:18px 18px 5px 18px;box-shadow:0 2px 6px -2px rgba(13,122,110,.5);
+  }
+  .bubble.out .t{color:#CDEBE5;display:inline-flex;gap:4px;align-items:center;justify-content:flex-end;width:100%}
+  .ticks{display:inline-flex}
+  .ticks svg{width:15px;height:11px;color:var(--tick)}
+  @keyframes pop{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
+
+  .typing{align-self:flex-start;background:#fff;border-radius:18px 18px 18px 5px;
+    box-shadow:var(--shadow-s);padding:13px 16px;display:flex;gap:5px}
+  .typing i{width:8px;height:8px;border-radius:50%;background:#B9C6C2;animation:blink 1.2s infinite}
+  .typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,60%,100%{opacity:.35;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+
+  /* honesty note */
+  .honesty{
+    display:flex;gap:9px;align-items:flex-start;max-width:var(--maxchat);margin:18px auto 0;
+    background:var(--cream-2);border:1px dashed #C9BFA8;border-radius:14px;padding:12px 15px;
+    font-size:14px;line-height:1.45;color:#4A5C57;font-weight:500;
+  }
+  .honesty svg{width:18px;height:18px;flex:0 0 18px;color:var(--teal);margin-top:2px}
+
+  /* ---------- Section frame ---------- */
+  section{position:relative}
+  .pulse-div{display:block;width:100%;height:34px;color:var(--teal);opacity:.5}
+  .sec-head{max-width:var(--maxchat);margin:0 auto 22px;text-align:center;padding:0 4px}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--teal);margin-bottom:12px;
+  }
+  .kicker::before,.kicker::after{content:"";width:22px;height:2px;background:var(--teal);opacity:.5;border-radius:2px}
+  h2{font-size:clamp(27px,6.4vw,38px);line-height:1.08;letter-spacing:-.03em;font-weight:800;color:var(--dark)}
+  .sec-head p{margin-top:10px;font-size:17px;color:#3A534E;font-weight:500}
+
+  /* ---------- Fears thread ---------- */
+  .fears{padding:34px 0 20px}
+  .pinned{
+    max-width:var(--maxchat);margin:0 auto 20px;
+    display:flex;gap:12px;align-items:center;
+    background:#fff;border:1px solid var(--line);border-left:8px solid var(--teal);
+    border-radius:14px;padding:14px 16px;box-shadow:var(--shadow-s);
+  }
+  .pinned .pin-ic{flex:0 0 22px;color:var(--teal)}
+  .pinned .pin-ic svg{width:22px;height:22px}
+  .pinned .pin-txt{font-size:15.5px;line-height:1.4}
+  .pinned .pin-txt b{color:var(--dark);font-weight:800}
+  .pinned .pin-txt .price{color:var(--teal);font-weight:800}
+
+  .exchange{max-width:var(--maxchat);margin:0 auto;display:flex;flex-direction:column;gap:8px;
+    padding:6px 4px 4px;}
+  .exchange .bubble{max-width:88%}
+  .bubble.worry{background:var(--grey-bubble);color:#2A2A2A;border-radius:18px 18px 18px 5px}
+  .bubble.worry .t{color:#7a7a7a}
+  .bubble.reply{font-size:16.5px}
+  .bubble.reply .fact{font-weight:800;color:#fff;background:rgba(255,255,255,.16);
+    border-radius:7px;padding:1px 6px;display:inline-block;margin:1px 0}
+  .bubble.reply .ur{font-size:14px;color:#D7F0EB;margin-top:6px;line-height:1.9;display:block}
+  .gap{height:14px}
+
+  /* ---------- Services chips ---------- */
+  .services{padding:34px 0 22px}
+  .chip-intro{max-width:var(--maxchat);margin:0 auto 14px;align-self:flex-start}
+  .chip-intro .bubble.in{max-width:88%}
+  .chips{
+    max-width:var(--maxchat);margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end;
+  }
+  .chip{
+    display:inline-flex;flex-direction:column;align-items:flex-end;gap:1px;
+    background:#fff;border:1.5px solid var(--teal);color:var(--teal-deep);
+    border-radius:14px;padding:11px 15px;min-height:56px;justify-content:center;
+    font-weight:700;font-size:16px;text-align:right;
+    box-shadow:var(--shadow-s);transition:transform .12s ease,background .12s ease,color .12s ease;
+  }
+  .chip:hover{background:var(--teal);color:#fff;transform:translateY(-2px)}
+  .chip:hover .chip-ur{color:#CDEBE5}
+  .chip:hover .chip-wa{color:#fff}
+  .chip .chip-row{display:flex;align-items:center;gap:7px}
+  .chip-wa{color:var(--wa);display:flex}
+  .chip-wa svg{width:16px;height:16px}
+  .chip-ur{font-size:12.5px;color:var(--teal);font-weight:600;font-family:'Noto Nastaliq Urdu',serif;line-height:1.8}
+  .att-note{
+    max-width:var(--maxchat);margin:16px auto 0;
+    background:var(--cream-2);border-radius:14px;padding:13px 16px;
+    font-size:15px;font-weight:500;color:#3A534E;line-height:1.45;
+  }
+  .att-note b{color:var(--dark);font-weight:800}
+
+  /* ---------- Form ---------- */
+  .formsec{padding:40px 0}
+  .formcard{
+    max-width:560px;margin:0 auto;background:#fff;border:1px solid var(--line);
+    border-radius:26px;box-shadow:var(--shadow-m);overflow:hidden;
+  }
+  .form-top{background:var(--dark);color:#fff;padding:22px 24px}
+  .form-top h3{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+  .form-top .h3-ur{font-size:20px;color:#9FD4CC;font-weight:600;margin-top:4px}
+  .form-top p{font-size:15px;color:#BCD9D3;margin-top:8px;font-weight:500}
+  .form-body{padding:22px 22px 24px}
+  label{display:block;font-weight:700;font-size:15px;color:var(--dark);margin:0 0 7px}
+  .field{
+    width:100%;min-height:58px;border:2px solid var(--line);border-radius:14px;
+    padding:0 16px;font-size:18px;font-family:inherit;color:var(--dark);background:var(--cream);
+    margin-bottom:16px;transition:border-color .12s ease,background .12s ease;
+  }
+  .field:focus{outline:none;border-color:var(--teal);background:#fff}
+  .field::placeholder{color:#8A9B96}
+  .opt-label{font-weight:700;font-size:15px;color:var(--dark);margin-bottom:9px}
+  .opt-label span{font-weight:500;color:#6A7C77;font-size:13.5px}
+  .care-chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:20px}
+  .care{
+    border:1.5px solid var(--line);background:var(--cream);border-radius:999px;
+    padding:10px 15px;min-height:48px;font-weight:600;font-size:15px;color:var(--dark);cursor:pointer;
+    display:inline-flex;align-items:center;gap:7px;transition:.12s ease;
+  }
+  .care:hover{border-color:var(--teal)}
+  .care.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+  .care .ck{width:15px;height:15px;display:none}
+  .care.on .ck{display:inline-flex}
+  .form-foot-note{font-size:13.5px;color:#5A6C67;text-align:center;margin-top:13px;line-height:1.5}
+  .or-call{display:flex;align-items:center;gap:12px;margin:18px 0 4px;color:#7A8C87;font-size:13px;font-weight:700}
+  .or-call::before,.or-call::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  /* ---------- Testimonials ---------- */
+  .testi{padding:30px 0 8px}
+  .testi-thread{max-width:var(--maxchat);margin:0 auto;display:flex;flex-direction:column;gap:12px}
+  .testi-bubble{
+    background:#fff;border-radius:18px 18px 18px 5px;box-shadow:var(--shadow-s);
+    padding:14px 16px;max-width:88%;align-self:flex-start;
+  }
+  .testi-bubble p{font-size:16.5px;line-height:1.5;color:var(--ink)}
+  .testi-bubble .who{display:flex;align-items:center;gap:9px;margin-top:10px}
+  .testi-bubble .ava{width:34px;height:34px;border-radius:50%;flex:0 0 34px;
+    display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:14px}
+  .testi-bubble .nm{font-size:14px;font-weight:800;color:var(--dark);line-height:1.2}
+  .testi-bubble .nm small{display:block;font-weight:600;color:var(--teal-deep);font-size:12.5px}
+  .sample-tag{font-size:12px;font-weight:700;color:#8A6A2A;background:#FBEFD3;border:1px solid #EBD9A8;
+    border-radius:999px;padding:3px 10px;display:inline-block}
+
+  /* ---------- Footer ---------- */
+  footer.site{background:var(--dark);color:#CFE3DF;margin-top:34px;padding:40px 0 110px}
+  footer.site .wrap{display:flex;flex-direction:column;gap:24px}
+  .foot-brand{display:flex;align-items:center;gap:12px}
+  .foot-brand .mark{width:44px;height:44px}
+  .foot-brand .name{color:#fff;font-weight:800;font-size:20px}
+  .foot-brand .name b{color:#5FC9BC}
+  .foot-brand .tag{color:#7FB8AF;font-size:12.5px;font-weight:600}
+  .foot-grid{display:grid;grid-template-columns:1fr;gap:22px}
+  .foot-col h4{color:#fff;font-size:14px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
+  .foot-col a,.foot-col p{display:block;color:#CFE3DF;font-size:16px;margin-bottom:9px;font-weight:500}
+  .foot-col a:hover{color:#fff}
+  .foot-areas{font-size:14.5px;line-height:1.7;color:#A9CBC5}
+  .foot-cta{display:flex;flex-direction:column;gap:10px;max-width:340px}
+  .foot-fine{border-top:1px solid rgba(255,255,255,.12);padding-top:18px;font-size:13px;color:#8FB3AD;line-height:1.6}
+  .foot-fine b{color:#CFE3DF}
+
+  /* ---------- Sticky bottom bar ---------- */
+  .stickybar{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;
+    display:flex;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(251,248,242,.92);backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);
+  }
+  .stickybar .btn{border-radius:14px;font-size:17px;min-height:56px}
+  @media(min-width:760px){ .stickybar{display:none} footer.site{padding-bottom:40px} }
+
+  /* ---------- Desktop hero layout ---------- */
+  @media(min-width:880px){
+    .hero{padding:54px 0 30px}
+    .hero .wrap{
+      display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;
+    }
+    .hero-left{display:flex;flex-direction:column;gap:22px}
+    .hero-cta{max-width:none;flex-direction:row;flex-wrap:wrap}
+    .hero-cta .btn{width:auto;flex:1;min-width:200px}
+    .phone{margin:0;max-width:400px;justify-self:end}
+    .honesty{margin-top:24px}
+  }
+  @media(min-width:880px){
+    .foot-grid{grid-template-columns:1.3fr 1fr 1.2fr}
+  }
+  /* keep the order natural on mobile: text, then phone */
+  @media(max-width:879px){
+    .hero-left{order:1}
+    .phone{order:2}
+  }
+</style>
+</head>
+<body class="wallpaper">
+
+<!-- ===================== HEADER ===================== -->
+<header class="site">
+  <div class="wrap topbar">
+    <a class="brand" href="#top" aria-label="Sehat Connect home">
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="42" fill="none" stroke="#0A2E2B" stroke-width="6"/>
+        <circle cx="22" cy="50" r="5" fill="#0A2E2B"/>
+        <circle cx="78" cy="50" r="5" fill="#0A2E2B"/>
+        <path d="M22 50 H40 L46 34 L54 66 L60 44 L66 50 H78" fill="none" stroke="#0D7A6E" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>
+        <span class="name">Sehat<b> Connect</b></span>
+        <span class="tag" data-en="Home nursing · Lahore" data-ur="گھر پر نرسنگ · لاہور">Home nursing · Lahore</span>
+      </span>
+    </a>
+
+    <button class="lang" id="langToggle" aria-label="Switch language">
+      <span class="en-lab">EN</span>
+      <span aria-hidden="true">/</span>
+      <span class="ur">اردو</span>
+    </button>
+
+    <a class="header-call" href="tel:+923288489988">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+      <span data-en="Call 0328-8489988" data-ur="کال کریں 0328-8489988">Call 0328-8489988</span>
+    </a>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-left">
+      <span class="eyebrow"><span class="dot"></span><span data-en="Lahore · 24/7 · a real person replies" data-ur="لاہور · 24/7 · اصلی انسان جواب دیتا ہے">Lahore · 24/7 · a real person replies</span></span>
+
+      <h1>
+        <span data-en="Just say" data-ur="بس">Just say</span> <span class="teal" data-en="hello." data-ur="ہیلو۔">hello.</span>
+        <span class="h1-ur ur">بس سلام کہیں</span>
+      </h1>
+
+      <p class="hero-sub" data-en="Home nurses and attendants in Lahore. <b>No long forms. No advance.</b> Message us on WhatsApp or call — and a real person sorts it out." data-ur="لاہور میں گھر پر نرس اور اٹینڈنٹ۔ نہ لمبے فارم، نہ پیشگی۔ واٹس ایپ پر میسج کریں یا کال کریں۔">Home nurses and attendants in Lahore. <b>No long forms. No advance.</b> Message us on WhatsApp or call — and a real person sorts it out.</p>
+
+      <div class="hero-cta">
+        <a class="btn btn-wa" href="https://wa.me/923288489988?text=Assalam%20o%20alaikum%2C%20mujhe%20ghar%20par%20nurse%2Fattendant%20chahiye.">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.6-6c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.6.1a6.6 6.6 0 0 1-3.2-2.8c-.2-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3.2-.5s0-.4 0-.5-.6-1.4-.8-1.9-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.6 4c.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>
+          <span data-en="Continue on WhatsApp" data-ur="واٹس ایپ پر بات کریں">Continue on WhatsApp</span>
+        </a>
+        <a class="btn btn-call outline" href="tel:+923288489988">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+          <span data-en="Call 0328-8489988" data-ur="کال کریں 0328-8489988">Call 0328-8489988</span>
+        </a>
+      </div>
+
+      <div class="reassure">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-en="PNC-registered nurses" data-ur="پی این سی رجسٹرڈ نرسیں">PNC-registered nurses</span></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-en="Pay after the shift" data-ur="شفٹ کے بعد ادائیگی">Pay after the shift</span></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-en="Female nurse on request" data-ur="درخواست پر خاتون نرس">Female nurse on request</span></span>
+      </div>
+    </div>
+
+    <!-- Chat preview -->
+    <div class="phone" aria-label="A preview of a chat with Sehat Connect">
+      <div class="phone-head">
+        <span class="av">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="42" fill="none" stroke="#0A2E2B" stroke-width="7"/>
+            <path d="M20 50 H40 L46 33 L55 67 L61 44 L67 50 H80" fill="none" stroke="#0D7A6E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="who"><b>Sehat Connect</b><small data-en="Lahore · 24/7 home nursing" data-ur="لاہور · 24/7">Lahore · 24/7 home nursing</small></span>
+        <span class="ph-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+        </span>
+      </div>
+      <div class="thread">
+        <span class="daystamp" data-en="Today" data-ur="آج">Today</span>
+        <div class="bubble in">Assalam o alaikum 👋 Ghar par nurse ya attendant chahiye? Bas apna <b>naam</b> aur <b>number</b> bhejein — baaqi hum sambhaal lenge.<span class="t">11:02</span></div>
+        <div class="bubble out">Ji, walid sahab ke liye chahiye — operation hua hai.<span class="t">11:03 <span class="ticks"><svg viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 7l3.5 3.5L11 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10.5L13.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></div>
+        <div class="bubble in">Allah unhein jald sehat de. Hum aaj hi ek <b>PNC-registered nurse</b> ka intezaam kar dete hain — post-op aur dressing ki mahir. 💚<span class="t">11:03</span></div>
+        <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="honesty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span data-en="This is an example of what talking to us feels like — not a live bot. The buttons go to our real WhatsApp and phone, and a real person replies." data-ur="یہ صرف ایک مثال ہے کہ ہم سے بات کیسی لگتی ہے — کوئی روبوٹ نہیں۔ بٹن اصلی واٹس ایپ اور فون پر جاتے ہیں۔">This is an example of what talking to us feels like — not a live bot. The buttons go to our real WhatsApp and phone, and a real person replies.</span>
+    </div>
+  </div>
+</section>
+
+<!-- pulse divider -->
+<svg class="pulse-div" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 H470 L495 6 L520 34 L545 12 L565 20 H635 L660 6 L685 34 L710 12 L730 20 H1200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+<!-- ===================== FEARS THREAD ===================== -->
+<section class="fears">
+  <div class="sec-head">
+    <span class="kicker" data-en="Your worries, answered" data-ur="آپ کے سوال، ہمارے جواب">Your worries, answered</span>
+    <h2 data-en="Everything you’re scared to ask" data-ur="ہر وہ بات جو آپ پوچھتے گھبراتے ہیں">Everything you’re scared to ask</h2>
+    <p data-en="The questions every worried family asks us — answered plainly, like a chat." data-ur="ہر پریشان گھر والے کے سوال — سیدھے، سادہ جواب کے ساتھ۔">The questions every worried family asks us — answered plainly, like a chat.</p>
+  </div>
+
+  <div class="pinned">
+    <span class="pin-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2l8 8-4 1-3 3 1 5-4-4-6 6 6-6-4-4 5 1 3-3 1-4z"/></svg></span>
+    <span class="pin-txt" data-en="<b>Pinned:</b> Qualified Nurse <span class='price'>Rs 4,000</span> · Attendant <span class='price'>Rs 3,000</span> — per 12-hr shift. Pay <b>after</b> the shift. No advance." data-ur="<b>پن شدہ:</b> کوالیفائیڈ نرس <span class='price'>4,000 روپے</span> · اٹینڈنٹ <span class='price'>3,000 روپے</span> — 12 گھنٹے کی شفٹ۔ شفٹ کے بعد ادائیگی۔ کوئی پیشگی نہیں۔"><b>Pinned:</b> Qualified Nurse <span class="price">Rs 4,000</span> · Attendant <span class="price">Rs 3,000</span> — per 12-hr shift. Pay <b>after</b> the shift. No advance.</span>
+  </div>
+
+  <div class="exchange">
+    <span class="daystamp" data-en="Today" data-ur="آج">Today</span>
+
+    <!-- Fear 1: scam -->
+    <div class="bubble worry">Yeh asli hai? Paise pehle to nahi maangte? 😟<span class="t">10:41</span></div>
+    <div class="bubble out reply">Bilkul nahi. Aap shift ke <span class="fact">BAAD pay karte hain — koi advance nahi</span>. Cash on visit; Easypaisa/JazzCash jald aa raha hai.
+      <span class="ur">رقم شفٹ کے بعد — کوئی پیشگی نہیں</span>
+      <span class="t">10:41 <span class="ticks"><svg viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 7l3.5 3.5L11 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10.5L13.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+    </div>
+
+    <div class="gap"></div>
+
+    <!-- Fear 2: who comes in -->
+    <div class="bubble worry">Ghar mein kaun aayega? Koi bharosay-mand banda hona chahiye. 🏠<span class="t">10:43</span></div>
+    <div class="bubble out reply">Har Qualified Nurse <span class="fact">PNC (Pakistan Nursing Council) registered</span> hai aur humari team verify karti hai. <span class="fact">CNIC aur references checked</span>. Aurat patient ke liye <span class="fact">female nurse — bas keh dein</span>.
+      <span class="ur">سی این آئی سی اور حوالہ جات چیک شدہ · خاتون مریض کے لیے خاتون نرس</span>
+      <span class="t">10:43 <span class="ticks"><svg viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 7l3.5 3.5L11 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10.5L13.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+    </div>
+
+    <div class="gap"></div>
+
+    <!-- Fear 3: medical task -->
+    <div class="bubble worry">Operation ke baad wound dressing aur ICU ke baad ki care kar lenge? 💉<span class="t">10:46</span></div>
+    <div class="bubble out reply">Ji haan. Hamari nurses <span class="fact">post-op care, dressing, ICU step-down, diabetic care aur night duty</span> sab karti hain — yeh unka rozana ka kaam hai.
+      <span class="ur">آپریشن کے بعد، ڈریسنگ، آئی سی یو کے بعد، ذیابیطس، رات کی ڈیوٹی</span>
+      <span class="t">10:46 <span class="ticks"><svg viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 7l3.5 3.5L11 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10.5L13.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+    </div>
+
+    <div class="gap"></div>
+
+    <!-- Fear 4: cost -->
+    <div class="bubble worry">Theek hai… lekin kitna kharcha aayega? 🧾<span class="t">10:48</span></div>
+    <div class="bubble out reply">Saaf saaf, koi chhupi baat nahi: <span class="fact">Nurse Rs 4,000</span>, <span class="fact">Attendant Rs 3,000</span> — har 12 ghante ki shift. Cancel ya reschedule shift se 4 ghante pehle tak <span class="fact">bilkul free</span>.
+      <span class="ur">نرس 4,000 · اٹینڈنٹ 3,000 — 12 گھنٹے · 4 گھنٹے پہلے تک کینسل مفت</span>
+      <span class="t">10:48 <span class="ticks"><svg viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 7l3.5 3.5L11 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10.5L13.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+    </div>
+
+    <div class="gap"></div>
+
+    <!-- Fear 5: talk to a human -->
+    <div class="bubble worry">Main bas kisi asli insaan se baat karna chahta hoon. ☎️<span class="t">10:50</span></div>
+    <div class="bubble out reply">Bilkul — yahi to humara tareeqa hai. <span class="fact">Abhi call karein 0328-8489988</span> ya WhatsApp par message bhejein. <span class="fact">Asli insaan jawab dega, koi robot nahi</span>.
+      <span class="ur">ابھی کال کریں یا واٹس ایپ کریں — اصلی انسان، کوئی روبوٹ نہیں</span>
+      <span class="t">10:50 <span class="ticks"><svg viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 7l3.5 3.5L11 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10.5L13.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+    </div>
+  </div>
+</section>
+
+<!-- pulse divider -->
+<svg class="pulse-div" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 H470 L495 6 L520 34 L545 12 L565 20 H635 L660 6 L685 34 L710 12 L730 20 H1200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+<!-- ===================== SERVICES AS QUICK-REPLY CHIPS ===================== -->
+<section class="services">
+  <div class="sec-head">
+    <span class="kicker" data-en="Quick reply" data-ur="فوری جواب">Quick reply</span>
+    <h2 data-en="What do you need a nurse for?" data-ur="کس کام کے لیے نرس چاہیے؟">What do you need a nurse for?</h2>
+    <p data-en="Tap one — it opens WhatsApp with your message ready. No typing." data-ur="ایک پر ٹیپ کریں — واٹس ایپ آپ کے میسج کے ساتھ کھل جائے گا۔">Tap one — it opens WhatsApp with your message ready. No typing.</p>
+  </div>
+
+  <div class="chip-intro">
+    <div class="bubble in" data-en="Tap whatever fits — we’ll take it from there 👇" data-ur="جو بھی مناسب ہو ٹیپ کریں — آگے ہم سنبھال لیں گے 👇">Tap whatever fits — we’ll take it from there 👇</div>
+  </div>
+
+  <div class="chips" id="serviceChips">
+    <!-- chips injected for cleanliness, but also written out for no-JS -->
+    <a class="chip" href="https://wa.me/923288489988?text=Assalam%20o%20alaikum%2C%20mujhe%20Post-op%20Care%20chahiye.">
+      <span class="chip-row"><span class="chip-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg></span><span>Post-op Care</span></span>
+      <span class="chip-ur">آپریشن کے بعد دیکھ بھال</span>
+    </a>
+    <a class="chip" href="https://wa.me/923288489988?text=Assalam%20o%20alaikum%2C%20mujhe%20Elderly%20Care%20chahiye.">
+      <span class="chip-row"><span class="chip-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg></span><span>Elderly Care</span></span>
+      <span class="chip-ur">بزرگوں کی دیکھ بھال</span>
+    </a>
+    <a class="chip" href="https://wa.me/923288489988?text=Assalam%20o%20alaikum%2C%20mujhe%20Paediatric%20Care%20chahiye.">
+      <span class="chip-row"><span class="chip-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg></span><span>Paediatric Care</span></span>
+      <span class="chip-ur">بچوں کی دیکھ بھال</span>
+    </a>
+    <a class="chip" href="https://wa.me/923288489988?text=Assalam%20o%20alaikum%2C%20mujhe%20ICU%20Step-down%20care%20chahiye.">
+      <span class="chip-row"><span class="chip-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg></span><span>ICU Step-down</span></span>
+      <span class="chip-ur">آئی سی یو کے بعد</span>
+    </a>
+    <a class="chip" href="https://wa.me/923288489988?text=Assalam%20o%20alaikum%2C%20mujhe%20Night%20Duty%20nurse%20chahiye.">
+      <span class="chip-row"><span class="chip-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg></span><span>Night Duty</span></span>
+      <span class="chip-ur">رات کی ڈیوٹی</span>
+    </a>
+    <a class="chip" href="https://wa.me/923288489988?text=Assalam%20o%20alaikum%2C%20mujhe%20Diabetic%20Care%20chahiye.">
+      <span class="chip-row"><span class="chip-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg></span><span>Diabetic Care</span></span>
+      <span class="chip-ur">ذیابیطس کی دیکھ بھال</span>
+    </a>
+    <a class="chip" href="https://wa.me/923288489988?text=Assalam%20o%20alaikum%2C%20mujhe%20Mother%20%26%20Baby%20Care%20chahiye.">
+      <span class="chip-row"><span class="chip-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg></span><span>Mother &amp; Baby Care</span></span>
+      <span class="chip-ur">ماں اور بچے کی دیکھ بھال</span>
+    </a>
+    <a class="chip" href="https://wa.me/923288489988?text=Assalam%20o%20alaikum%2C%20mujhe%20Dementia%20%2F%20Alzheimer%27s%20care%20chahiye.">
+      <span class="chip-row"><span class="chip-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg></span><span>Dementia &amp; Alzheimer’s</span></span>
+      <span class="chip-ur">ڈیمنشیا کی دیکھ بھال</span>
+    </a>
+    <a class="chip" href="https://wa.me/923288489988?text=Assalam%20o%20alaikum%2C%20mujhe%20Palliative%20%2F%20long-term%20care%20chahiye.">
+      <span class="chip-row"><span class="chip-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg></span><span>Palliative &amp; Long-term</span></span>
+      <span class="chip-ur">آرام دہ نگہداشت</span>
+    </a>
+    <a class="chip" href="https://wa.me/923288489988?text=Assalam%20o%20alaikum%2C%20mujhe%20samajh%20nahi%20aa%20raha%20kaunsi%20care%20chahiye%20-%20rehnumai%20karein.">
+      <span class="chip-row"><span class="chip-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg></span><span>Not sure — help me</span></span>
+      <span class="chip-ur">سمجھ نہیں آ رہا — رہنمائی کریں</span>
+    </a>
+  </div>
+
+  <div class="att-note" data-en="<b>Need an attendant instead?</b> Non-clinical help — feeding, hygiene, movement and comfort — for Elderly, Paediatric and Night Duty. Just tell us on WhatsApp." data-ur="<b>اٹینڈنٹ چاہیے؟</b> غیر طبی مدد — کھانا، صفائی، حرکت اور آرام — بزرگوں، بچوں اور رات کی ڈیوٹی کے لیے۔"><b>Need an attendant instead?</b> Non-clinical help — feeding, hygiene, movement and comfort — for Elderly, Paediatric and Night Duty. Just tell us on WhatsApp.</div>
+</section>
+
+<!-- ===================== FORM ===================== -->
+<section class="formsec" id="message">
+  <div class="formcard">
+    <div class="form-top">
+      <h3 data-en="Leave your number" data-ur="اپنا نمبر چھوڑ دیں">Leave your number</h3>
+      <div class="h3-ur ur">اپنا نمبر چھوڑ دیں</div>
+      <p data-en="We’ll message you on WhatsApp — a real person, not a robot. Name and number is all we need to start." data-ur="ہم آپ کو واٹس ایپ پر میسج کریں گے — اصلی انسان، کوئی روبوٹ نہیں۔ صرف نام اور نمبر کافی ہے۔">We’ll message you on WhatsApp — a real person, not a robot. Name and number is all we need to start.</p>
+    </div>
+    <div class="form-body">
+      <form id="leadForm" novalidate>
+        <label for="nm" data-en="Your name" data-ur="آپ کا نام">Your name</label>
+        <input class="field" id="nm" name="name" type="text" autocomplete="name" placeholder="Aapka naam" required />
+
+        <label for="ph" data-en="Phone number" data-ur="فون نمبر">Phone number</label>
+        <input class="field" id="ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="03xx-xxxxxxx" required />
+
+        <div class="opt-label" data-en="Who needs care? <span>(optional — tap any)</span>" data-ur="کس کی دیکھ بھال؟ <span>(اختیاری)</span>">Who needs care? <span>(optional — tap any)</span></div>
+        <div class="care-chips" id="careChips">
+          <button type="button" class="care" data-v="Post-op"><span class="ck">✓</span>Post-op</button>
+          <button type="button" class="care" data-v="Elderly"><span class="ck">✓</span>Elderly</button>
+          <button type="button" class="care" data-v="Mother & Baby"><span class="ck">✓</span>Mother &amp; Baby</button>
+          <button type="button" class="care" data-v="Night Duty"><span class="ck">✓</span>Night Duty</button>
+          <button type="button" class="care" data-v="Dementia"><span class="ck">✓</span>Dementia</button>
+          <button type="button" class="care" data-v="Attendant"><span class="ck">✓</span>Attendant</button>
+          <button type="button" class="care" data-v="Not sure"><span class="ck">✓</span>Not sure</button>
+        </div>
+
+        <button class="btn btn-wa" type="submit">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg>
+          <span data-en="Send us a message" data-ur="ہمیں میسج بھیجیں">Send us a message</span>
+        </button>
+
+        <div class="or-call"><span data-en="or" data-ur="یا">or</span></div>
+        <a class="btn btn-call outline" href="tel:+923288489988">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+          <span data-en="Call 0328-8489988 instead" data-ur="بجائے کال کریں 0328-8489988">Call 0328-8489988 instead</span>
+        </a>
+
+        <p class="form-foot-note" data-en="Tapping ‘Send’ opens WhatsApp with your details filled in, so you can hit send. We don’t store anything until you do." data-ur="‘بھیجیں’ پر ٹیپ واٹس ایپ کھولتا ہے جس میں آپ کی تفصیلات بھری ہوتی ہیں۔">Tapping ‘Send’ opens WhatsApp with your details filled in, so you can hit send. We don’t store anything until you do.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- pulse divider -->
+<svg class="pulse-div" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 H470 L495 6 L520 34 L545 12 L565 20 H635 L660 6 L685 34 L710 12 L730 20 H1200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="testi">
+  <div class="sec-head">
+    <span class="kicker" data-en="Real families" data-ur="اصل گھرانے">Real families</span>
+    <h2 data-en="What Lahore families tell us" data-ur="لاہور کے گھرانے کیا کہتے ہیں">What Lahore families tell us</h2>
+    <p><span class="sample-tag" data-en="Sample testimonials" data-ur="نمونہ آراء">Sample testimonials</span></p>
+  </div>
+  <div class="testi-thread">
+    <div class="testi-bubble">
+      <p>“Walid sahab ke operation ke baad nurse bheji. Waqt par aayi, dressing saaf ki, aur paisay shift ke baad liye. Bharosa ban gaya.”</p>
+      <div class="who"><span class="ava" style="background:#0D7A6E">AK</span><span class="nm">Ayesha K.<small>DHA Phase 5</small></span></div>
+    </div>
+    <div class="testi-bubble">
+      <p>“Ammi ke liye female attendant chahiye thi. Unhone female-for-female ka khayal rakha. CNIC bhi dikhaya. Bohat sukoon mila.”</p>
+      <div class="who"><span class="ava" style="background:#0A6359">MA</span><span class="nm">Muhammad Asif<small>Johar Town</small></span></div>
+    </div>
+    <div class="testi-bubble">
+      <p>“Raat ki duty ke liye nurse mili — meri walida ki dawai aur sugar time par check hoti rahi. WhatsApp par hi sab tay ho gaya.”</p>
+      <div class="who"><span class="ava" style="background:#0A2E2B">FN</span><span class="nm">Farah N.<small>Model Town</small></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-brand">
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="42" fill="none" stroke="#5FC9BC" stroke-width="6"/>
+        <circle cx="22" cy="50" r="5" fill="#5FC9BC"/>
+        <circle cx="78" cy="50" r="5" fill="#5FC9BC"/>
+        <path d="M22 50 H40 L46 34 L54 66 L60 44 L66 50 H78" fill="none" stroke="#fff" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>
+        <span class="name">Sehat<b> Connect</b></span><br>
+        <span class="tag">bringing the hospital to your home</span>
+      </span>
+    </div>
+
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h4 data-en="Talk to a real person" data-ur="کسی اصلی انسان سے بات کریں">Talk to a real person</h4>
+        <a href="tel:+923288489988">📞 0328-8489988</a>
+        <a href="https://wa.me/923288489988?text=Assalam%20o%20alaikum">💬 WhatsApp us</a>
+        <p data-en="Open 24/7 — every day" data-ur="ہر روز 24 گھنٹے کھلا">Open 24/7 — every day</p>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Plain facts" data-ur="سیدھی باتیں">Plain facts</h4>
+        <p>Nurse Rs 4,000 · Attendant Rs 3,000 / 12-hr shift</p>
+        <p data-en="Pay after the shift — no advance" data-ur="شفٹ کے بعد ادائیگی — کوئی پیشگی نہیں">Pay after the shift — no advance</p>
+        <p data-en="PNC-registered · CNIC &amp; references checked" data-ur="پی این سی رجسٹرڈ · سی این آئی سی چیک شدہ">PNC-registered · CNIC &amp; references checked</p>
+        <p data-en="Female nurse on request" data-ur="درخواست پر خاتون نرس">Female nurse on request</p>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="All of Lahore" data-ur="پورا لاہور">All of Lahore</h4>
+        <p class="foot-areas">DHA · Gulberg · Johar Town · Model Town · Bahria Town · Cantt — and everywhere in between.</p>
+        <div class="foot-cta">
+          <a class="btn btn-wa" href="https://wa.me/923288489988?text=Assalam%20o%20alaikum%2C%20mujhe%20ghar%20par%20nurse%2Fattendant%20chahiye.">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg>
+            <span data-en="Say hello on WhatsApp" data-ur="واٹس ایپ پر سلام کریں">Say hello on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="foot-fine" data-en="Cancel or reschedule free up to 4 hours before the shift. Cash on visit (Easypaisa / JazzCash coming soon). <b>Sehat Connect</b> — Lahore home nursing &amp; attendant care. The chat shown above is an illustration, not an automated bot." data-ur="شفٹ سے 4 گھنٹے پہلے تک کینسل یا ری شیڈول مفت۔ وزٹ پر نقد ادائیگی۔ اوپر دکھائی گئی چیٹ صرف ایک مثال ہے، خودکار بوٹ نہیں۔">Cancel or reschedule free up to 4 hours before the shift. Cash on visit (Easypaisa / JazzCash coming soon). <b>Sehat Connect</b> — Lahore home nursing &amp; attendant care. The chat shown above is an illustration, not an automated bot.</p>
+  </div>
+</footer>
+
+<!-- ===================== STICKY BOTTOM BAR (mobile) ===================== -->
+<div class="stickybar">
+  <a class="btn btn-call" href="tel:+923288489988">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+    <span data-en="Call" data-ur="کال">Call</span>
+  </a>
+  <a class="btn btn-wa" href="https://wa.me/923288489988?text=Assalam%20o%20alaikum%2C%20mujhe%20ghar%20par%20nurse%2Fattendant%20chahiye.">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg>
+    <span data-en="WhatsApp" data-ur="واٹس ایپ">WhatsApp</span>
+  </a>
+</div>
+
+<script>
+  /* ---- Language toggle (EN <-> Urdu) for labelled strings ---- */
+  (function(){
+    var btn = document.getElementById('langToggle');
+    var isUr = false;
+    btn.addEventListener('click', function(){
+      isUr = !isUr;
+      btn.classList.toggle('active-ur', isUr);
+      document.querySelectorAll('[data-en]').forEach(function(el){
+        var v = isUr ? el.getAttribute('data-ur') : el.getAttribute('data-en');
+        if(v !== null){ el.innerHTML = v; }
+        // apply Urdu font/direction on swapped nodes
+        if(isUr){ el.classList.add('ur'); } else { el.classList.remove('ur'); }
+      });
+    });
+  })();
+
+  /* ---- Care chips (multi-select) ---- */
+  document.getElementById('careChips').addEventListener('click', function(e){
+    var b = e.target.closest('.care'); if(!b) return;
+    b.classList.toggle('on');
+  });
+
+  /* ---- Form -> open real WhatsApp with details prefilled ---- */
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('nm').value.trim();
+    var phone = document.getElementById('ph').value.trim();
+    if(!name || !phone){
+      if(!name){ document.getElementById('nm').focus(); }
+      else { document.getElementById('ph').focus(); }
+      return;
+    }
+    var care = [];
+    document.querySelectorAll('#careChips .care.on').forEach(function(c){ care.push(c.getAttribute('data-v')); });
+    var msg = 'Assalam o alaikum, mera naam ' + name + ' hai. Mera number: ' + phone + '.';
+    if(care.length){ msg += ' Care: ' + care.join(', ') + '.'; }
+    msg += ' Mujhe ghar par nurse/attendant chahiye.';
+    window.location.href = 'https://wa.me/923288489988?text=' + encodeURIComponent(msg);
+  });
+</script>
+</body>
+</html>

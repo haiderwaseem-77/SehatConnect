@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sehat Connect — From Worry to Relief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#FBF8F2;
+    --cream-2:#F6F1E7;
+    --teal:#0D7A6E;
+    --teal-dark:#0A2E2B;
+    --teal-deep:#072421;
+    --teal-soft:#DCEDE9;
+    --teal-mist:#EAF3F0;
+    --ink:#0A2E2B;
+    --ink-2:#234742;
+    --line:#0D7A6E;
+    --gold:#C8862B;
+    --shadow:0 18px 40px -22px rgba(10,46,43,.45);
+    --shadow-sm:0 8px 22px -14px rgba(10,46,43,.4);
+    --radius:20px;
+    --rail:34px;          /* mobile rail width */
+    --node:26px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+    font-size:18px;
+    line-height:1.6;
+    color:var(--ink);
+    background:var(--cream);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body.lock{overflow:hidden}
+  .urdu{font-family:'Noto Nastaliq Urdu',serif;line-height:2.1;direction:rtl}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+
+  .wrap{width:100%;max-width:760px;margin:0 auto;padding:0 20px}
+
+  /* ---------- top scroll-progress (worry -> relief) ---------- */
+  .progress{
+    position:fixed;top:0;left:0;height:4px;width:0%;
+    background:linear-gradient(90deg,#9DB8B2,var(--teal));
+    z-index:120;transition:width .12s linear;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(251,248,242,.92);
+    border-bottom:1px solid rgba(10,46,43,.08);
+    backdrop-filter:saturate(140%) blur(6px);
+  }
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;
+       max-width:1100px;margin:0 auto;padding:10px 18px}
+  .brand{display:flex;align-items:center;gap:11px;min-width:0}
+  .mark{width:42px;height:42px;flex:none;border:2.5px solid var(--teal-dark);
+        border-radius:50%;display:grid;place-items:center;background:var(--cream)}
+  .mark svg{width:26px;height:26px;display:block}
+  .brand b{font-size:18px;font-weight:800;letter-spacing:-.3px;line-height:1}
+  .brand b span{color:var(--teal)}
+  .brand small{display:block;font-size:11px;color:var(--ink-2);font-weight:600;margin-top:2px}
+  .hd-right{display:flex;align-items:center;gap:8px}
+  .lang{display:flex;align-items:center;border:1.5px solid rgba(10,46,43,.18);
+        border-radius:999px;overflow:hidden;font-weight:700;font-size:13px;flex:none}
+  .lang button{background:none;border:0;padding:7px 12px;cursor:pointer;color:var(--ink-2);
+               font-family:inherit;font-weight:700;font-size:13px}
+  .lang button.on{background:var(--teal);color:#fff}
+  .lang button.ur{font-family:'Noto Nastaliq Urdu',serif;padding:4px 13px 8px}
+  .hd-call{display:none;align-items:center;gap:8px;background:var(--teal-dark);color:#fff;
+           padding:10px 16px;border-radius:999px;font-weight:700;font-size:15px;min-height:44px}
+  .hd-call svg{width:17px;height:17px}
+  @media(min-width:760px){.hd-call{display:inline-flex}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;text-align:center;padding:46px 0 30px;
+        background:radial-gradient(120% 80% at 50% -10%, #FFFFFF 0%, var(--cream) 55%)}
+  .kick{display:inline-flex;align-items:center;gap:9px;background:#fff;
+        border:1.5px solid rgba(10,46,43,.12);border-radius:999px;
+        padding:7px 15px;font-size:13.5px;font-weight:700;color:var(--ink-2);
+        box-shadow:var(--shadow-sm)}
+  .kick .dot{width:9px;height:9px;border-radius:50%;background:var(--teal);
+             box-shadow:0 0 0 0 rgba(13,122,110,.5);animation:beat 2.4s infinite}
+  @keyframes beat{0%{box-shadow:0 0 0 0 rgba(13,122,110,.45)}70%{box-shadow:0 0 0 10px rgba(13,122,110,0)}100%{box-shadow:0 0 0 0 rgba(13,122,110,0)}}
+  h1{font-size:clamp(31px,8vw,50px);line-height:1.08;letter-spacing:-1px;
+     font-weight:800;margin:20px 0 0;color:var(--teal-dark)}
+  h1 .hl{color:var(--teal)}
+  .hero-sub{font-size:19px;color:var(--ink-2);margin:18px auto 0;max-width:540px;font-weight:500}
+  .hero-ur{font-size:18px;color:var(--teal);margin:14px auto 0;max-width:520px}
+  .ecg{display:block;margin:24px auto 4px;width:min(320px,80%);height:46px}
+  .ecg path{fill:none;stroke:var(--teal);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;
+            stroke-dasharray:600;stroke-dashoffset:600;animation:draw 3.2s ease-out forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .hero-cta{display:flex;flex-direction:column;gap:11px;max-width:380px;margin:22px auto 0}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+       min-height:58px;border-radius:15px;font-weight:800;font-size:18px;
+       font-family:inherit;cursor:pointer;border:0;padding:0 22px;line-height:1.1;
+       transition:transform .12s ease, box-shadow .12s ease}
+  .btn:active{transform:translateY(1px)}
+  .btn svg{width:20px;height:20px;flex:none}
+  .btn-primary{background:var(--teal);color:#fff;box-shadow:0 12px 26px -12px rgba(13,122,110,.85)}
+  .btn-wa{background:#1FAF54;color:#fff;box-shadow:0 12px 26px -12px rgba(31,175,84,.8)}
+  .btn-ghost{background:#fff;color:var(--teal-dark);border:2px solid rgba(10,46,43,.16)}
+  .btn-dark{background:var(--teal-dark);color:#fff}
+  .scroll-cue{margin:30px auto 0;display:flex;flex-direction:column;align-items:center;gap:6px;
+              color:var(--ink-2);font-weight:600;font-size:14px}
+  .scroll-cue .arr{width:30px;height:30px;border-radius:50%;border:2px solid rgba(10,46,43,.22);
+                   display:grid;place-items:center;animation:bob 1.8s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+  /* ---------- the spine (descent: cream -> soft teal) ---------- */
+  .journey{
+    background:linear-gradient(180deg,
+      var(--cream) 0%,
+      #F4F4EC 14%,
+      var(--teal-mist) 42%,
+      var(--teal-soft) 72%,
+      #CBE2DC 100%);
+    padding:8px 0 60px;
+  }
+  .spine{position:relative;max-width:720px;margin:0 auto;padding:6px 20px 0}
+  /* the connecting line */
+  .spine::before{
+    content:"";position:absolute;top:6px;bottom:120px;
+    left:calc(20px + var(--rail)/2);width:3px;
+    background:linear-gradient(180deg,#A9C4BE 0%,var(--teal) 45%,var(--teal) 100%);
+    border-radius:3px;
+  }
+
+  .station{position:relative;padding:30px 0 30px var(--rail);}
+  .station + .station{padding-top:8px}
+  .node{
+    position:absolute;left:calc(var(--rail)/2);top:34px;transform:translateX(-50%);
+    width:var(--node);height:var(--node);border-radius:50%;
+    background:#fff;border:3px solid var(--teal);display:grid;place-items:center;z-index:3}
+  .node::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--teal)}
+  .node.pulse::before{content:"";position:absolute;inset:-3px;border-radius:50%;
+        border:2px solid var(--teal);opacity:.5;animation:ring 2.6s ease-out infinite}
+  @keyframes ring{0%{transform:scale(1);opacity:.5}100%{transform:scale(2.1);opacity:0}}
+
+  .step-tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;
+            letter-spacing:1.4px;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+  .step-tag .n{width:22px;height:22px;border-radius:7px;background:var(--teal);color:#fff;
+               display:grid;place-items:center;font-size:12px;letter-spacing:0}
+
+  /* worry bubble */
+  .worry{position:relative;background:#FFF;border:1.5px dashed rgba(10,46,43,.28);
+         border-radius:16px 16px 16px 4px;padding:14px 18px;margin-bottom:16px;
+         font-style:italic;font-weight:600;font-size:19px;color:var(--ink);max-width:520px;
+         box-shadow:var(--shadow-sm)}
+  .worry .q{color:var(--teal);font-style:normal;font-weight:800;margin-right:4px}
+  .worry .ur{font-style:normal;font-size:16px;color:var(--ink-2);margin-top:4px}
+
+  /* answer card */
+  .answer{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);
+          overflow:hidden;border:1px solid rgba(10,46,43,.06)}
+  .answer .accent{height:8px;background:var(--teal)}
+  .answer .body{padding:22px 22px 24px}
+  .answer h2{font-size:clamp(22px,5.4vw,28px);line-height:1.18;letter-spacing:-.5px;
+             font-weight:800;color:var(--teal-dark)}
+  .answer h2 .ur{display:block;font-size:18px;color:var(--teal);font-weight:600;margin-top:8px}
+  .answer p{font-size:18px;color:var(--ink-2);margin-top:14px;font-weight:500}
+  .answer p b{color:var(--teal-dark);font-weight:800}
+
+  /* fact chips */
+  .facts{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+  .fact{display:inline-flex;align-items:center;gap:8px;background:var(--teal-mist);
+        color:var(--teal-dark);font-weight:700;font-size:14.5px;padding:9px 13px;border-radius:11px}
+  .fact svg{width:16px;height:16px;flex:none;color:var(--teal)}
+
+  /* services grid (station 3) */
+  .svc{display:grid;grid-template-columns:1fr;gap:11px;margin-top:18px}
+  @media(min-width:560px){.svc{grid-template-columns:1fr 1fr}}
+  .svc-item{background:var(--cream);border:1px solid rgba(10,46,43,.09);border-radius:14px;
+            padding:14px 14px 15px;position:relative}
+  .svc-item .top{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+  .svc-item h3{font-size:16.5px;font-weight:800;color:var(--teal-dark)}
+  .svc-item .ur{font-family:'Noto Nastaliq Urdu',serif;font-size:14px;color:var(--teal);direction:rtl;
+                white-space:nowrap}
+  .svc-item p{font-size:14.5px;color:var(--ink-2);margin-top:6px;font-weight:500;line-height:1.5}
+  .att-note{margin-top:16px;background:var(--teal-dark);color:#EAF3F0;border-radius:14px;
+            padding:15px 16px;font-size:15.5px;font-weight:500}
+  .att-note b{color:#fff;font-weight:800}
+
+  /* price cards (station 4) */
+  .prices{display:grid;grid-template-columns:1fr;gap:13px;margin-top:18px}
+  @media(min-width:520px){.prices{grid-template-columns:1fr 1fr}}
+  .price{border:2px solid rgba(10,46,43,.12);border-radius:16px;padding:18px;background:var(--cream)}
+  .price.lead{border-color:var(--teal);background:#fff;box-shadow:var(--shadow-sm)}
+  .price .role{font-size:15px;font-weight:800;color:var(--teal);letter-spacing:.3px}
+  .price .amt{font-size:34px;font-weight:800;color:var(--teal-dark);letter-spacing:-1px;margin-top:6px;line-height:1}
+  .price .per{font-size:14.5px;color:var(--ink-2);font-weight:600;margin-top:4px}
+  .price .ur{font-family:'Noto Nastaliq Urdu',serif;font-size:13.5px;color:var(--teal);margin-top:8px;direction:rtl}
+  .payafter{margin-top:16px;display:flex;align-items:center;gap:11px;background:var(--teal-mist);
+            border-radius:13px;padding:14px 16px;font-size:17px;font-weight:800;color:var(--teal-dark)}
+  .payafter svg{width:24px;height:24px;color:var(--teal);flex:none}
+
+  /* talk-to-person CTAs (station 5) */
+  .talk-cta{display:flex;flex-direction:column;gap:11px;margin-top:18px}
+  @media(min-width:520px){.talk-cta{flex-direction:row}.talk-cta .btn{flex:1}}
+  .talk-num{margin-top:14px;text-align:center;font-size:15px;color:var(--ink-2);font-weight:600}
+  .talk-num b{color:var(--teal-dark);font-size:20px;letter-spacing:.5px}
+
+  /* sample testimonial (relief) */
+  .quote{position:relative;padding:34px 0 8px var(--rail)}
+  .quote .node{top:42px}
+  .quote-card{background:var(--teal-dark);color:#EAF3F0;border-radius:var(--radius);
+              padding:24px 22px;box-shadow:var(--shadow)}
+  .quote-card .mk{font-size:42px;line-height:0;color:var(--teal);font-weight:800;font-family:Georgia,serif}
+  .quote-card p{font-size:19px;font-weight:500;margin-top:6px;color:#F1F7F5}
+  .quote-card .who{margin-top:14px;font-size:14.5px;font-weight:700;color:#A9D2CA;display:flex;
+                   align-items:center;gap:8px}
+  .quote-card .who em{font-style:normal;color:#7FB8AF;font-weight:600}
+  .sample{font-size:11.5px;text-transform:uppercase;letter-spacing:1px;color:#6FA89F;
+          border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:2px 7px;font-weight:700}
+
+  /* destination / form */
+  .destination{position:relative;padding-top:20px}
+  .dest-head{text-align:center;padding:0 4px 22px}
+  .dest-head .relief-tag{display:inline-flex;align-items:center;gap:8px;background:var(--teal);
+        color:#fff;font-weight:800;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;
+        padding:8px 15px;border-radius:999px}
+  .dest-head h2{font-size:clamp(26px,6.4vw,34px);line-height:1.12;letter-spacing:-.7px;
+                font-weight:800;color:var(--teal-dark);margin-top:16px}
+  .dest-head p{font-size:18.5px;color:var(--ink-2);font-weight:500;margin:12px auto 0;max-width:480px}
+  .dest-head .ur{font-size:17px;color:var(--teal);margin-top:10px}
+
+  .formcard{background:#fff;border-radius:24px;box-shadow:var(--shadow);overflow:hidden;
+            border:1px solid rgba(10,46,43,.06);max-width:520px;margin:0 auto}
+  .formcard .accent{height:8px;background:var(--teal)}
+  form{padding:22px 20px 24px}
+  label{display:block;font-weight:800;font-size:15px;color:var(--teal-dark);margin:0 0 8px}
+  label .ur{font-family:'Noto Nastaliq Urdu',serif;font-weight:600;color:var(--teal);font-size:13px;margin-right:6px}
+  .field{width:100%;min-height:58px;border:2px solid rgba(10,46,43,.16);border-radius:14px;
+         padding:0 16px;font-size:18px;font-family:inherit;font-weight:600;color:var(--ink);
+         background:var(--cream);margin-bottom:18px;outline:none;transition:border-color .15s}
+  .field:focus{border-color:var(--teal);background:#fff}
+  .field::placeholder{color:#7C918C;font-weight:500}
+  .opt-label{font-weight:800;font-size:15px;color:var(--teal-dark);margin-bottom:10px}
+  .opt-label span{font-weight:600;color:var(--ink-2);font-size:13.5px}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:20px}
+  .chip{border:2px solid rgba(10,46,43,.16);background:#fff;color:var(--ink-2);
+        border-radius:999px;padding:11px 15px;font-size:15.5px;font-weight:700;cursor:pointer;
+        font-family:inherit;min-height:48px;transition:all .12s}
+  .chip:active{transform:translateY(1px)}
+  .chip.on{background:var(--teal);border-color:var(--teal);color:#fff}
+  .submit{width:100%;min-height:60px;background:var(--teal);color:#fff;border:0;border-radius:15px;
+          font-weight:800;font-size:19px;font-family:inherit;cursor:pointer;
+          box-shadow:0 14px 30px -14px rgba(13,122,110,.9);display:flex;align-items:center;
+          justify-content:center;gap:10px}
+  .submit svg{width:20px;height:20px}
+  .reassure{margin-top:16px;text-align:center;font-size:15px;color:var(--ink-2);font-weight:600;
+            display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px}
+  .reassure span{display:inline-flex;align-items:center;gap:6px}
+  .reassure svg{width:15px;height:15px;color:var(--teal)}
+  .done{padding:40px 24px;text-align:center}
+  .done .big{width:74px;height:74px;border-radius:50%;background:var(--teal-mist);margin:0 auto 18px;
+             display:grid;place-items:center}
+  .done .big svg{width:38px;height:38px;color:var(--teal)}
+  .done h3{font-size:25px;font-weight:800;color:var(--teal-dark)}
+  .done p{font-size:18px;color:var(--ink-2);margin-top:10px;font-weight:500}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--teal-deep);color:#CFE3DE;padding:40px 0 110px}
+  @media(min-width:760px){footer{padding-bottom:48px}}
+  .foot{max-width:720px;margin:0 auto;padding:0 22px}
+  .foot .fb{display:flex;align-items:center;gap:11px}
+  .foot .mark{border-color:#2C6A61;background:transparent}
+  .foot .mark svg path{stroke:#fff}
+  .foot b{color:#fff;font-size:18px;font-weight:800}
+  .foot b span{color:#5FBFB1}
+  .foot .tag{font-size:14px;color:#8FB8B1;margin-top:2px}
+  .foot p{font-size:15.5px;line-height:1.7;margin-top:18px;color:#B7D3CD;font-weight:500}
+  .areas{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+  .areas span{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+              border-radius:8px;padding:6px 11px;font-size:13.5px;font-weight:600;color:#CFE3DE}
+  .foot-contact{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+  .foot-contact a{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;
+                  padding:11px 16px;border-radius:12px;min-height:48px}
+  .foot-contact .c1{background:#fff;color:var(--teal-dark)}
+  .foot-contact .c2{background:#1FAF54;color:#fff}
+  .foot-contact svg{width:17px;height:17px}
+  .legal{margin-top:24px;font-size:13px;color:#7BA59D;border-top:1px solid rgba(255,255,255,.08);
+         padding-top:16px}
+
+  /* ---------- sticky mobile action bar ---------- */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:110;
+          background:rgba(251,248,242,.97);border-top:1px solid rgba(10,46,43,.1);
+          backdrop-filter:blur(8px);box-shadow:0 -8px 26px -18px rgba(10,46,43,.55);
+          display:flex;gap:9px;padding:9px 12px calc(9px + env(safe-area-inset-bottom))}
+  .sticky a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+            min-height:54px;border-radius:13px;font-weight:800;font-size:16px}
+  .sticky .s-call{background:var(--teal-dark);color:#fff}
+  .sticky .s-wa{background:#1FAF54;color:#fff}
+  .sticky .s-form{background:var(--teal);color:#fff}
+  .sticky svg{width:18px;height:18px}
+  @media(min-width:760px){.sticky{display:none}}
+
+  /* ---------- right journey rail (desktop only) ---------- */
+  .jrail{display:none}
+  @media(min-width:1040px){
+    .jrail{display:flex;flex-direction:column;gap:16px;position:fixed;right:26px;top:50%;
+           transform:translateY(-50%);z-index:90}
+    .jrail a{display:flex;align-items:center;gap:10px;justify-content:flex-end}
+    .jrail .lbl{font-size:12.5px;font-weight:700;color:var(--ink-2);opacity:0;transform:translateX(6px);
+                transition:.2s;white-space:nowrap}
+    .jrail .pt{width:11px;height:11px;border-radius:50%;background:#fff;border:2px solid #A9C4BE;flex:none;transition:.2s}
+    .jrail a.active .pt{background:var(--teal);border-color:var(--teal);transform:scale(1.25)}
+    .jrail a.active .lbl{opacity:1;transform:translateX(0);color:var(--teal-dark)}
+    .jrail a:hover .lbl{opacity:1;transform:translateX(0)}
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="bar">
+    <a class="brand" href="#top">
+      <span class="mark">
+        <svg viewBox="0 0 40 18" aria-hidden="true"><path d="M1 9h9l3-7 4 14 3-9 2 4h13" fill="none" stroke="#0D7A6E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>
+        <b>Sehat<span> Connect</span></b>
+        <small>Lahore · 24/7 home care</small>
+      </span>
+    </a>
+    <div class="hd-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button class="on" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="ur" data-lang="ur" onclick="setLang('ur')">اردو</button>
+      </div>
+      <a class="hd-call" href="tel:+923288489988">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
+        0328-8489988
+      </a>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <span class="kick"><span class="dot"></span> A real person is one call away</span>
+    <h1 data-en="Worried about caring for someone at home?" data-ur="گھر پر کسی کی دیکھ بھال کی فکر ہے؟">Worried about caring for someone at home?</h1>
+    <p class="hero-sub" data-en="Take a breath. No advance to pay, no long form to fight. Walk down this page with us — we’ll answer every worry, one step at a time, and end with a real person ready to call you back." data-ur="ایک لمبا سانس لیں۔ کوئی پیشگی رقم نہیں، کوئی لمبا فارم نہیں۔">Take a breath. No advance to pay, no long form to fight. Walk down this page with us — we’ll answer every worry, one step at a time, and end with a real person ready to call you back.</p>
+    <p class="hero-ur urdu">آئیے، ساتھ مل کر ہر بات سمجھتے ہیں — فکر سے سکون تک۔</p>
+
+    <svg class="ecg" viewBox="0 0 320 46" aria-hidden="true"><path d="M2 23h60l8-15 9 30 7-23 5 11h40l9-9 8 9h157"/></svg>
+
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#station-1">
+        Walk me through it
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+      </a>
+      <a class="btn btn-dark" href="tel:+923288489988">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
+        Call now · 0328-8489988
+      </a>
+    </div>
+
+    <div class="scroll-cue">
+      <span data-en="Start the walk" data-ur="چلنا شروع کریں">Start the walk</span>
+      <span class="arr"><svg viewBox="0 0 24 24" width="16" fill="none" stroke="#234742" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE GUIDED SPINE ============ -->
+<section class="journey">
+  <div class="spine">
+
+    <!-- STATION 1 — scam -->
+    <article class="station" id="station-1" data-step="1" data-label="Trust">
+      <span class="node pulse"></span>
+      <span class="step-tag"><span class="n">1</span> Is this real?</span>
+      <div class="worry">
+        <span class="q">“</span>How do I know this isn’t a scam?<span class="q">”</span>
+        <div class="ur urdu">”مجھے کیسے پتا چلے کہ یہ دھوکہ نہیں؟“</div>
+      </div>
+      <div class="answer">
+        <div class="accent"></div>
+        <div class="body">
+          <h2>You pay only after the shift. Never before.<span class="ur urdu">شفٹ کے بعد ادائیگی — پہلے کبھی نہیں</span></h2>
+          <p>Sehat Connect is a real Lahore care service, working <b>24/7</b>. There’s <b>no advance</b>, no online deposit, no card number to hand over. The nurse or attendant finishes the 12-hour shift in your home — <b>then</b> you pay. Cash on visit, with Easypaisa &amp; JazzCash coming.</p>
+          <div class="facts">
+            <span class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Pay after the shift</span>
+            <span class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> No advance, ever</span>
+            <span class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Free cancel up to 4 hrs before</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- STATION 2 — who comes in -->
+    <article class="station" data-step="2" data-label="Who comes">
+      <span class="node pulse"></span>
+      <span class="step-tag"><span class="n">2</span> Who enters my home?</span>
+      <div class="worry">
+        <span class="q">“</span>Who is actually coming into my home?<span class="q">”</span>
+        <div class="ur urdu">”میرے گھر میں کون آئے گا؟“</div>
+      </div>
+      <div class="answer">
+        <div class="accent"></div>
+        <div class="body">
+          <h2>A verified person — and a woman, if you ask.<span class="ur urdu">تصدیق شدہ فرد — اور خاتون، اگر آپ کہیں</span></h2>
+          <p>Before anyone reaches your door, our team checks their <b>CNIC and references</b>. Every Qualified Nurse is <b>PNC (Pakistan Nursing Council) registered</b>; attendants are background-verified. Caring for a mother, a daughter, or an elderly woman? Ask for a <b>female</b> nurse or attendant — female-for-female, always respected.</p>
+          <div class="facts">
+            <span class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg> CNIC &amp; references checked</span>
+            <span class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg> PNC-registered nurses</span>
+            <span class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg> Female on request</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- STATION 3 — medical task (lead fear) -->
+    <article class="station" data-step="3" data-label="The medical task">
+      <span class="node pulse"></span>
+      <span class="step-tag"><span class="n">3</span> Can they do the medical work?</span>
+      <div class="worry">
+        <span class="q">“</span>But can they actually do the real medical work?<span class="q">”</span>
+        <div class="ur urdu">”کیا وہ اصل طبی کام کر سکتے ہیں؟“</div>
+      </div>
+      <div class="answer">
+        <div class="accent"></div>
+        <div class="body">
+          <h2>Yes — proper nursing, done at home.<span class="ur urdu">جی ہاں — گھر پر مکمل نرسنگ</span></h2>
+          <p>Our Qualified Nurses are registered with the <b>Pakistan Nursing Council</b>. This is the actual care they give in your home:</p>
+          <div class="svc">
+            <div class="svc-item"><div class="top"><h3>Post-op Care</h3><span class="ur">آپریشن کے بعد دیکھ بھال</span></div><p>Wound care, dressing changes, recovery support after surgery.</p></div>
+            <div class="svc-item"><div class="top"><h3>Elderly Care</h3><span class="ur">بزرگوں کی دیکھ بھال</span></div><p>Medicines, movement, day-to-day health monitoring.</p></div>
+            <div class="svc-item"><div class="top"><h3>Paediatric Care</h3><span class="ur">بچوں کی دیکھ بھال</span></div><p>Nursing care for newborns, infants and young children.</p></div>
+            <div class="svc-item"><div class="top"><h3>ICU Step-down</h3><span class="ur">آئی سی یو کے بعد</span></div><p>Care for patients home after ICU or HDU.</p></div>
+            <div class="svc-item"><div class="top"><h3>Night Duty</h3><span class="ur">رات کی ڈیوٹی</span></div><p>A nurse stays through the night to monitor and care.</p></div>
+            <div class="svc-item"><div class="top"><h3>Diabetic Care</h3><span class="ur">ذیابیطس کی دیکھ بھال</span></div><p>Blood sugar checks, insulin, and diet guidance.</p></div>
+            <div class="svc-item"><div class="top"><h3>Mother &amp; Baby Care</h3><span class="ur">ماں اور بچے کی دیکھ بھال</span></div><p>Newborn and postnatal support for new mothers.</p></div>
+            <div class="svc-item"><div class="top"><h3>Dementia &amp; Alzheimer’s</h3><span class="ur">ڈیمنشیا کی دیکھ بھال</span></div><p>Routine, safety and gentle companionship.</p></div>
+            <div class="svc-item"><div class="top"><h3>Palliative &amp; Long-term</h3><span class="ur">آرام دہ نگہداشت</span></div><p>Comfort-focused nursing, pain &amp; symptom management.</p></div>
+          </div>
+          <div class="att-note"><b>Only need non-clinical help?</b> An <b>Attendant</b> covers Elderly, Paediatric and Night Duty — feeding, hygiene, movement and comfort.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- STATION 4 — cost -->
+    <article class="station" data-step="4" data-label="What it costs">
+      <span class="node pulse"></span>
+      <span class="step-tag"><span class="n">4</span> What will it cost?</span>
+      <div class="worry">
+        <span class="q">“</span>What is all this going to cost me?<span class="q">”</span>
+        <div class="ur urdu">”اس سب کا خرچہ کتنا ہوگا؟“</div>
+      </div>
+      <div class="answer">
+        <div class="accent"></div>
+        <div class="body">
+          <h2>Clear prices. Nothing hidden.<span class="ur urdu">صاف قیمتیں — کچھ بھی چھپا نہیں</span></h2>
+          <div class="prices">
+            <div class="price lead">
+              <div class="role">Qualified Nurse</div>
+              <div class="amt">Rs 4,000</div>
+              <div class="per">per 12-hour shift</div>
+              <div class="ur urdu">کوالیفائیڈ نرس · فی ۱۲ گھنٹے</div>
+            </div>
+            <div class="price">
+              <div class="role">Attendant</div>
+              <div class="amt">Rs 3,000</div>
+              <div class="per">per 12-hour shift</div>
+              <div class="ur urdu">اٹینڈنٹ · فی ۱۲ گھنٹے</div>
+            </div>
+          </div>
+          <div class="payafter">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+            Pay after the shift. No advance.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- STATION 5 — talk to a person -->
+    <article class="station" data-step="5" data-label="Talk to a person">
+      <span class="node pulse"></span>
+      <span class="step-tag"><span class="n">5</span> Can I talk to a person?</span>
+      <div class="worry">
+        <span class="q">“</span>I just want to talk to a real person.<span class="q">”</span>
+        <div class="ur urdu">”میں بس کسی انسان سے بات کرنا چاہتا ہوں۔“</div>
+      </div>
+      <div class="answer">
+        <div class="accent"></div>
+        <div class="body">
+          <h2>Of course. We’re one call away.<span class="ur urdu">بالکل۔ ہم ایک کال کی دوری پر ہیں</span></h2>
+          <p>No bots, no menus. Call us or message on WhatsApp and a real person from our Lahore team will answer — day or night.</p>
+          <div class="talk-cta">
+            <a class="btn btn-dark" href="tel:+923288489988">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
+              Call now
+            </a>
+            <a class="btn btn-wa" href="https://wa.me/923288489988?text=Assalam%20o%20Alaikum%2C%20mujhe%20ghar%20par%20nursing%2Fcare%20chahiye.%20Baat%20kar%20sakte%20hain%3F">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.5 23.5l1.7-6A11.5 11.5 0 1 1 12 23.5a11.6 11.6 0 0 1-5.6-1.4zM12 2.2A9.3 9.3 0 0 0 4.1 16.4l-1 3.6 3.7-1A9.3 9.3 0 1 0 12 2.2m5.4 12.8c-.3.8-1.6 1.5-2.2 1.5s-1.3.3-4.3-.9-4.9-4.2-5-4.4-1.2-1.5-1.2-2.9.7-2 1-2.3a1 1 0 0 1 .8-.4h.6c.2 0 .4 0 .6.5l.9 2.1a.6.6 0 0 1 0 .5 2 2 0 0 1-.3.5l-.4.5c-.2.1-.3.3-.1.6a8.6 8.6 0 0 0 1.6 2 7.7 7.7 0 0 0 2.3 1.4c.3.2.5.1.6 0l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3s.1.7-.2 1.5"/></svg>
+              WhatsApp us
+            </a>
+          </div>
+          <div class="talk-num">Saved as <b>0328-8489988</b> · Lahore · open 24/7</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- RELIEF — sample testimonial -->
+    <article class="quote" data-step="5b">
+      <span class="node"></span>
+      <div class="quote-card">
+        <div class="mk">“</div>
+        <p>My father came home after his operation and I was terrified to handle the dressing myself. Their nurse came that same evening, did everything calmly, and I finally slept. We paid after — exactly as they said.</p>
+        <div class="who">Ayesha R. · Johar Town, Lahore <span class="sample">Sample</span></div>
+      </div>
+    </article>
+
+    <!-- DESTINATION — the form -->
+    <section class="destination" id="get-call">
+      <div class="dest-head">
+        <span class="relief-tag">
+          <svg viewBox="0 0 24 24" width="16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          You’ve reached the easy part
+        </span>
+        <h2 data-en="Leave your name and number — we’ll call you back." data-ur="اپنا نام اور نمبر دیں — ہم آپ کو کال کریں گے۔">Leave your name and number — we’ll call you back.</h2>
+        <p data-en="A real person from Sehat Connect will call to understand who needs care and arrange everything. That’s the whole step." data-ur="سہت کنیکٹ کا ایک فرد آپ کو کال کرے گا اور سب کچھ ترتیب دے گا۔">A real person from Sehat Connect will call to understand who needs care and arrange everything. That’s the whole step.</p>
+        <p class="ur urdu">فکر یہاں ختم — سکون یہاں شروع۔</p>
+      </div>
+
+      <div class="formcard">
+        <div class="accent"></div>
+        <form id="leadForm" onsubmit="return submitLead(event)">
+          <label for="name"><span class="ur urdu">نام</span> Your name</label>
+          <input class="field" id="name" name="name" type="text" placeholder="e.g. Imran Saeed" required autocomplete="name" />
+
+          <label for="phone"><span class="ur urdu">فون نمبر</span> Phone number</label>
+          <input class="field" id="phone" name="phone" type="tel" inputmode="tel" placeholder="03xx-xxxxxxx" required autocomplete="tel" />
+
+          <div class="opt-label" data-en="Who needs care? <span>(optional — tap any)</span>" data-ur="کس کی دیکھ بھال؟ <span>(اختیاری)</span>">Who needs care? <span>(optional — tap any)</span></div>
+          <div class="chips" id="chips">
+            <button type="button" class="chip">Parent / elderly</button>
+            <button type="button" class="chip">New mother &amp; baby</button>
+            <button type="button" class="chip">Post-op recovery</button>
+            <button type="button" class="chip">Bedridden / long-term</button>
+            <button type="button" class="chip">Dementia</button>
+            <button type="button" class="chip">Palliative care</button>
+            <button type="button" class="chip">Someone else</button>
+          </div>
+
+          <button class="submit" type="submit">
+            Request my callback
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+
+          <div class="reassure">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> No advance</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> We call you</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Pay only after the shift</span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot">
+    <div class="fb">
+      <span class="mark">
+        <svg viewBox="0 0 40 18" aria-hidden="true"><path d="M1 9h9l3-7 4 14 3-9 2 4h13" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>
+        <b>Sehat<span> Connect</span></b>
+        <div class="tag">bringing the hospital to your home</div>
+      </span>
+    </div>
+    <p>Verified, PNC-registered nurses and background-checked attendants, brought to your home across Lahore. Pay after the shift — no advance, ever. Female nurse or attendant on request.</p>
+    <div class="areas">
+      <span>DHA</span><span>Gulberg</span><span>Johar Town</span><span>Model Town</span><span>Bahria Town</span><span>Cantt</span><span>…all Lahore</span>
+    </div>
+    <div class="foot-contact">
+      <a class="c1" href="tel:+923288489988">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
+        0328-8489988
+      </a>
+      <a class="c2" href="https://wa.me/923288489988?text=Assalam%20o%20Alaikum%2C%20mujhe%20ghar%20par%20nursing%2Fcare%20chahiye.%20Baat%20kar%20sakte%20hain%3F">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.5 23.5l1.7-6A11.5 11.5 0 1 1 12 23.5a11.6 11.6 0 0 1-5.6-1.4zM12 2.2A9.3 9.3 0 0 0 4.1 16.4l-1 3.6 3.7-1A9.3 9.3 0 1 0 12 2.2m5.4 12.8c-.3.8-1.6 1.5-2.2 1.5s-1.3.3-4.3-.9-4.9-4.2-5-4.4-1.2-1.5-1.2-2.9.7-2 1-2.3a1 1 0 0 1 .8-.4h.6c.2 0 .4 0 .6.5l.9 2.1a.6.6 0 0 1 0 .5 2 2 0 0 1-.3.5l-.4.5c-.2.1-.3.3-.1.6a8.6 8.6 0 0 0 1.6 2 7.7 7.7 0 0 0 2.3 1.4c.3.2.5.1.6 0l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3s.1.7-.2 1.5"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <div class="legal">© Sehat Connect · Lahore · 24/7. Testimonials marked “Sample” are illustrative. We never ask for advance payment online.</div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE BAR ============ -->
+<nav class="sticky" aria-label="Quick actions">
+  <a class="s-call" href="tel:+923288489988">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
+    Call
+  </a>
+  <a class="s-wa" href="https://wa.me/923288489988?text=Assalam%20o%20Alaikum%2C%20mujhe%20ghar%20par%20nursing%2Fcare%20chahiye.%20Baat%20kar%20sakte%20hain%3F">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.5 23.5l1.7-6A11.5 11.5 0 1 1 12 23.5a11.6 11.6 0 0 1-5.6-1.4zM12 2.2A9.3 9.3 0 0 0 4.1 16.4l-1 3.6 3.7-1A9.3 9.3 0 1 0 12 2.2m5.4 12.8c-.3.8-1.6 1.5-2.2 1.5s-1.3.3-4.3-.9-4.9-4.2-5-4.4-1.2-1.5-1.2-2.9.7-2 1-2.3a1 1 0 0 1 .8-.4h.6c.2 0 .4 0 .6.5l.9 2.1a.6.6 0 0 1 0 .5 2 2 0 0 1-.3.5l-.4.5c-.2.1-.3.3-.1.6a8.6 8.6 0 0 0 1.6 2 7.7 7.7 0 0 0 2.3 1.4c.3.2.5.1.6 0l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3s.1.7-.2 1.5"/></svg>
+    WhatsApp
+  </a>
+  <a class="s-form" href="#get-call">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    Get a call
+  </a>
+</nav>
+
+<!-- ============ DESKTOP JOURNEY RAIL ============ -->
+<nav class="jrail" id="jrail" aria-label="Journey progress"></nav>
+
+<script>
+  /* ---- top scroll progress ---- */
+  var prog = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    prog.style.width = (max>0 ? (h.scrollTop/max*100) : 0) + '%';
+  }
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---- build desktop journey rail ---- */
+  var stations = Array.prototype.slice.call(document.querySelectorAll('.station, .destination'));
+  var jrail = document.getElementById('jrail');
+  var labels = ['Is this real?','Who comes in?','The medical task','What it costs','Talk to a person','Relief'];
+  stations.forEach(function(st, i){
+    if(i>=labels.length) return;
+    if(!st.id) st.id = 'jr-'+i;
+    var a = document.createElement('a');
+    a.href = '#'+st.id;
+    a.innerHTML = '<span class="lbl">'+labels[i]+'</span><span class="pt"></span>';
+    a.dataset.idx = i;
+    jrail.appendChild(a);
+  });
+  var railLinks = Array.prototype.slice.call(jrail.children);
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var idx = stations.indexOf(e.target);
+          railLinks.forEach(function(l){ l.classList.toggle('active', +l.dataset.idx===idx); });
+        }
+      });
+    }, {rootMargin:'-45% 0px -45% 0px'});
+    stations.forEach(function(st){ io.observe(st); });
+  }
+
+  /* ---- care-type chips ---- */
+  document.getElementById('chips').addEventListener('click', function(e){
+    var c = e.target.closest('.chip');
+    if(c) c.classList.toggle('on');
+  });
+
+  /* ---- form (mockup) ---- */
+  function submitLead(ev){
+    ev.preventDefault();
+    var name = (document.getElementById('name').value||'').trim();
+    var card = document.querySelector('.formcard');
+    card.innerHTML = '<div class="accent"></div><div class="done">'+
+      '<div class="big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>'+
+      '<h3>Thank you'+(name? ', '+name.split(' ')[0] : '')+'.</h3>'+
+      '<p>A real person from Sehat Connect will call you back shortly to arrange care. No advance — you pay only after the shift.</p>'+
+      '<p class="urdu" style="color:#0D7A6E;margin-top:14px">ہم جلد آپ کو کال کریں گے۔</p>'+
+      '</div>';
+    card.scrollIntoView({behavior:'smooth', block:'center'});
+    return false;
+  }
+
+  /* ---- language toggle (swaps curated EN/UR strings) ---- */
+  function setLang(lang){
+    document.querySelectorAll('.lang button').forEach(function(b){
+      b.classList.toggle('on', b.dataset.lang===lang);
+    });
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      var val = lang==='ur' ? el.getAttribute('data-ur') : el.getAttribute('data-en');
+      if(val!=null){ el.innerHTML = val; el.classList.toggle('urdu', lang==='ur'); }
+    });
+  }
+</script>
+</body>
+</html>

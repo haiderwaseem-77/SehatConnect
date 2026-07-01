@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sehat Connect — Meet the nurse before they come in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#FBF8F2;
+    --cream-2:#F4EEE2;
+    --teal:#0D7A6E;
+    --teal-deep:#0A6258;
+    --ink:#0A2E2B;
+    --ink-soft:#173f3b;
+    --line:#E2DACA;
+    --gold:#C9A24B;
+    --shadow:0 24px 60px -28px rgba(10,46,43,.45);
+    --shadow-sm:0 10px 30px -18px rgba(10,46,43,.4);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Plus Jakarta Sans",system-ui,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    font-size:18px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    padding-bottom:84px; /* sticky bar room on mobile */
+  }
+  .urdu{font-family:"Noto Nastaliq Urdu",serif;direction:rtl;line-height:2.1}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+
+  /* ---------- heartbeat motif ---------- */
+  .pulse{display:block;width:100%;height:18px}
+  .pulse path{fill:none;stroke:var(--teal);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+  .pulse .node{fill:var(--teal)}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    min-height:56px;padding:0 26px;border-radius:16px;
+    font-weight:700;font-size:18px;letter-spacing:.1px;cursor:pointer;
+    border:2px solid transparent;transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    text-align:center;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--teal);color:#fff;box-shadow:0 14px 30px -14px rgba(13,122,110,.85)}
+  .btn-primary:hover{background:var(--teal-deep)}
+  .btn-wa{background:#fff;color:var(--ink);border-color:var(--line)}
+  .btn-wa:hover{border-color:var(--teal)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:rgba(10,46,43,.18)}
+  .btn-lg{min-height:64px;font-size:19px;padding:0 32px}
+  .btn-block{width:100%}
+  .wa-ico,.call-ico{width:22px;height:22px;flex:none}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--teal-deep);
+  }
+  .eyebrow::before{content:"";width:26px;height:8px;border-radius:4px;background:var(--teal)}
+
+  h1,h2,h3{line-height:1.12;letter-spacing:-.02em;font-weight:800;color:var(--ink)}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(251,248,242,.86);backdrop-filter:saturate(140%) blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand .mark{width:40px;height:40px;border:3px solid var(--ink);border-radius:50%;display:grid;place-items:center;flex:none;background:var(--cream)}
+  .brand .mark svg{width:24px;height:14px}
+  .brand .name{display:flex;flex-direction:column;line-height:1}
+  .brand .name b{font-size:18px;font-weight:800;letter-spacing:-.02em}
+  .brand .name b span{color:var(--teal)}
+  .brand .name small{font-size:11px;color:var(--ink-soft);font-style:italic;font-weight:500;margin-top:3px}
+  .nav-actions{display:flex;align-items:center;gap:10px}
+  .lang{
+    display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);
+    border-radius:999px;padding:7px 12px;font-weight:700;font-size:14px;cursor:pointer;background:#fff;color:var(--ink);
+  }
+  .lang .urdu{font-size:16px}
+  .lang .sep{opacity:.35}
+  .nav-call{display:none}
+  @media(min-width:760px){
+    .nav-call{display:inline-flex}
+    .nav .lang{font-size:15px}
+  }
+
+  /* ================= HERO ================= */
+  .hero{position:relative;padding:30px 0 44px;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(120% 80% at 85% 0%, rgba(13,122,110,.10), transparent 60%),
+      radial-gradient(90% 60% at 0% 100%, rgba(201,162,75,.08), transparent 55%);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;z-index:1}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:30px;align-items:center}
+
+  .hero-copy .eyebrow{margin-bottom:18px}
+  .hero h1{font-size:clamp(34px,8.6vw,60px)}
+  .hero h1 .hl{position:relative;white-space:nowrap}
+  .hero h1 .hl::after{
+    content:"";position:absolute;left:-2px;right:-2px;bottom:.06em;height:.30em;
+    background:rgba(201,162,75,.40);border-radius:3px;z-index:-1;
+  }
+  .hero-sub{margin-top:18px;font-size:19px;color:var(--ink-soft);max-width:30ch}
+  .hero-urdu{margin-top:10px;font-size:18px;color:var(--teal-deep)}
+  .hero-cta{display:flex;flex-direction:column;gap:12px;margin-top:26px}
+  .hero-micro{display:flex;align-items:center;gap:8px;margin-top:16px;font-size:15px;color:var(--ink-soft);font-weight:600}
+  .hero-micro .dot{width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(13,122,110,.16);flex:none}
+
+  /* ---- portrait well ---- */
+  .portrait-stage{position:relative;align-self:stretch}
+  .portrait{
+    position:relative;border-radius:26px;overflow:hidden;
+    aspect-ratio:4/4.6;
+    background:
+      radial-gradient(130% 110% at 50% 0%, #14887b 0%, #0d7468 42%, #0A2E2B 100%);
+    box-shadow:var(--shadow);
+    border:1px solid rgba(255,255,255,.12);
+  }
+  .portrait .figure{position:absolute;inset:0;display:grid;place-items:end center;opacity:.92}
+  .portrait .figure svg{width:78%;height:auto}
+  .portrait .vignette{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,46,43,.55) 100%)}
+  .sample-tag{
+    position:absolute;top:14px;left:14px;z-index:3;
+    background:rgba(251,248,242,.92);color:var(--ink);
+    font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:6px 11px;border-radius:999px;border:1px solid var(--line);
+  }
+  .portrait-name{position:absolute;left:18px;bottom:16px;z-index:3;color:#fff}
+  .portrait-name b{display:block;font-size:20px;font-weight:800;letter-spacing:-.01em}
+  .portrait-name span{font-size:14px;opacity:.9;font-weight:600}
+
+  /* floating verified badges */
+  .badge-float{
+    position:absolute;z-index:4;background:var(--cream);border:1px solid var(--line);
+    border-radius:14px;padding:10px 13px;display:flex;align-items:center;gap:9px;
+    box-shadow:var(--shadow-sm);font-weight:700;font-size:14px;color:var(--ink);max-width:200px;
+  }
+  .badge-float .tick{width:26px;height:26px;border-radius:8px;background:var(--teal);display:grid;place-items:center;flex:none}
+  .badge-float .tick svg{width:15px;height:15px;stroke:#fff;stroke-width:3;fill:none}
+  .bf-1{top:-12px;right:-6px}
+  .bf-2{top:44%;right:-10px}
+  .bf-3{bottom:-14px;right:18px}
+
+  /* ================= VERIFIED PERSON CARD (signature) ================= */
+  .verified{background:var(--ink);color:var(--cream);padding:58px 0;position:relative}
+  .verified .pulse path{stroke:rgba(255,255,255,.30)}
+  .verified .pulse .node{fill:rgba(255,255,255,.4)}
+  .verified-head{max-width:36ch;margin-bottom:30px}
+  .verified .eyebrow{color:#6fd0c3}
+  .verified .eyebrow::before{background:#6fd0c3}
+  .verified h2{color:#fff;font-size:clamp(27px,6.4vw,40px);margin-top:14px}
+  .verified-head p{color:rgba(251,248,242,.78);margin-top:12px;font-size:18px}
+
+  .id-card{
+    background:var(--cream);color:var(--ink);border-radius:22px;overflow:hidden;
+    box-shadow:0 40px 80px -40px rgba(0,0,0,.7);
+    display:grid;grid-template-columns:1fr;
+    border:1px solid rgba(255,255,255,.1);
+  }
+  .id-strip{height:8px;background:var(--teal)}
+  .id-body{display:grid;grid-template-columns:1fr;gap:0}
+  .id-photo{
+    position:relative;min-height:230px;
+    background:radial-gradient(120% 100% at 50% 0%, #18927f, #0d7468 55%, #0A2E2B);
+  }
+  .id-photo .figure{position:absolute;inset:0;display:grid;place-items:end center}
+  .id-photo .figure svg{width:66%;opacity:.95}
+  .id-photo .sample-tag{top:14px;left:14px}
+  .id-stamp{
+    position:absolute;right:14px;bottom:14px;z-index:3;
+    width:78px;height:78px;border-radius:50%;border:2.5px solid var(--gold);
+    display:grid;place-items:center;text-align:center;color:#fff;
+    font-size:10px;font-weight:800;letter-spacing:.12em;line-height:1.25;text-transform:uppercase;
+    transform:rotate(-12deg);background:rgba(10,46,43,.32);backdrop-filter:blur(2px);
+  }
+  .id-info{padding:22px 22px 26px}
+  .id-info .who{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .id-info h3{font-size:24px}
+  .id-role{color:var(--teal-deep);font-weight:700;font-size:15px;margin-top:2px}
+  .id-meta{margin-top:16px;display:grid;gap:10px}
+  .id-row{display:flex;align-items:flex-start;gap:11px;font-size:16px;font-weight:600;color:var(--ink-soft)}
+  .id-row .tick{width:24px;height:24px;border-radius:7px;background:rgba(13,122,110,.12);display:grid;place-items:center;flex:none;margin-top:1px}
+  .id-row .tick svg{width:14px;height:14px;stroke:var(--teal);stroke-width:3;fill:none}
+  .id-row b{color:var(--ink)}
+  .pnc-pill{display:inline-block;font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;font-size:13px;background:var(--ink);color:#fff;padding:3px 9px;border-radius:6px;letter-spacing:.06em;margin-left:2px}
+  .id-foot{
+    border-top:1px dashed var(--line);margin-top:18px;padding-top:16px;
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between;
+  }
+  .female-badge{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1.5px solid var(--teal);color:var(--teal-deep);border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px}
+  .female-badge .urdu{font-size:15px}
+  .id-note{font-size:14px;color:var(--ink-soft);max-width:30ch}
+
+  .verified-foot{margin-top:26px;color:rgba(251,248,242,.72);font-size:15px;display:flex;align-items:flex-start;gap:10px}
+  .verified-foot svg{width:20px;height:20px;flex:none;stroke:#6fd0c3;fill:none;stroke-width:2;margin-top:2px}
+
+  /* ================= PROOF STRIP ================= */
+  .proof{background:var(--teal);color:#fff;padding:8px 0}
+  .proof-inner{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.18);border-radius:18px;overflow:hidden;margin:18px 0}
+  .proof-cell{background:var(--teal);padding:18px 20px;text-align:center}
+  .proof-cell .k{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+  .proof-cell .v{font-size:24px;font-weight:800;margin-top:4px;letter-spacing:-.01em}
+  .proof-cell .v small{font-size:14px;font-weight:600;opacity:.85}
+  .proof-cell .u{font-size:14px;font-weight:600;margin-top:3px;opacity:.9}
+
+  /* ================= SECTION SHELL ================= */
+  section.block{padding:60px 0}
+  .sec-head{max-width:42ch;margin-bottom:34px}
+  .sec-head h2{font-size:clamp(27px,6.4vw,40px);margin-top:14px}
+  .sec-head p{margin-top:12px;color:var(--ink-soft);font-size:18px}
+
+  /* ===== HOW WE MATCH ===== */
+  .match{background:var(--cream-2)}
+  .steps{display:grid;grid-template-columns:1fr;gap:16px}
+  .step{
+    background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:24px;
+    position:relative;display:flex;gap:18px;align-items:flex-start;
+  }
+  .step .num{
+    width:52px;height:52px;border-radius:15px;flex:none;
+    background:var(--ink);color:#fff;display:grid;place-items:center;
+    font-size:22px;font-weight:800;
+  }
+  .step:nth-child(2) .num{background:var(--teal)}
+  .step h3{font-size:21px}
+  .step p{margin-top:6px;color:var(--ink-soft);font-size:16.5px}
+  .step .urdu{font-size:15px;color:var(--teal-deep);margin-top:4px}
+
+  /* ===== SERVICES ===== */
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  .svc{
+    background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:18px 18px 18px 16px;
+    display:flex;gap:14px;align-items:flex-start;transition:border-color .15s ease, transform .15s ease;
+  }
+  .svc:hover{border-color:var(--teal);transform:translateY(-2px)}
+  .svc .ic{width:46px;height:46px;border-radius:13px;flex:none;background:rgba(13,122,110,.10);display:grid;place-items:center}
+  .svc .ic svg{width:24px;height:24px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .svc .t b{font-size:18px;font-weight:800;display:block}
+  .svc .t .urdu{font-size:16px;color:var(--teal-deep);display:block;margin:1px 0 5px}
+  .svc .t p{font-size:15px;color:var(--ink-soft);line-height:1.5}
+  .svc.hidden{display:none}
+  .show-more{margin-top:18px;text-align:center}
+  .att-note{margin-top:22px;background:var(--cream);border:1px dashed var(--teal);border-radius:16px;padding:16px 18px;font-size:16px;color:var(--ink-soft)}
+  .att-note b{color:var(--ink)}
+
+  /* ===== TESTIMONIALS ===== */
+  .testi{background:var(--ink);color:var(--cream)}
+  .testi .eyebrow{color:#6fd0c3}.testi .eyebrow::before{background:#6fd0c3}
+  .testi h2{color:#fff}
+  .testi .sec-head p{color:rgba(251,248,242,.78)}
+  .t-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  .t-card{background:rgba(251,248,242,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:24px}
+  .t-quote{font-size:18px;line-height:1.55;color:#fff}
+  .t-quote::before{content:"“";font-size:46px;line-height:0;color:#6fd0c3;font-weight:800;vertical-align:-18px;margin-right:4px}
+  .t-who{display:flex;align-items:center;gap:13px;margin-top:20px}
+  .t-face{width:48px;height:48px;border-radius:50%;flex:none;display:grid;place-items:center;color:#fff;font-weight:800;font-size:18px;
+    background:radial-gradient(120% 120% at 30% 20%, #18927f, #0A2E2B)}
+  .t-who b{display:block;font-size:16px;color:#fff}
+  .t-who span{font-size:14px;color:rgba(251,248,242,.7)}
+  .sample-line{margin-top:22px;font-size:13.5px;color:rgba(251,248,242,.55);font-style:italic}
+
+  /* ===== LEAD FORM ===== */
+  .lead{background:linear-gradient(180deg,var(--cream) 0%, var(--cream-2) 100%)}
+  .lead-grid{display:grid;grid-template-columns:1fr;gap:26px;align-items:start}
+  .lead-copy h2{font-size:clamp(28px,6.6vw,42px)}
+  .lead-copy .lead-sub{margin-top:14px;color:var(--ink-soft);font-size:18px;max-width:34ch}
+  .lead-points{margin-top:22px;display:grid;gap:12px}
+  .lead-points li{list-style:none;display:flex;gap:11px;align-items:flex-start;font-size:16.5px;font-weight:600;color:var(--ink-soft)}
+  .lead-points .tick{width:24px;height:24px;border-radius:7px;background:var(--teal);display:grid;place-items:center;flex:none;margin-top:1px}
+  .lead-points .tick svg{width:14px;height:14px;stroke:#fff;stroke-width:3;fill:none}
+  .alt-contact{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px}
+
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px 22px;box-shadow:var(--shadow)}
+  .form-card .ribbon{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:700;color:var(--teal-deep);margin-bottom:18px}
+  .form-card .ribbon .dot{width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(13,122,110,.16)}
+  label.fld{display:block;margin-bottom:16px}
+  label.fld .lbl{display:block;font-size:15px;font-weight:700;margin-bottom:7px}
+  label.fld .lbl .req{color:var(--teal);margin-left:3px}
+  .input{
+    width:100%;min-height:58px;border:2px solid var(--line);border-radius:14px;
+    padding:0 16px;font-size:18px;font-family:inherit;color:var(--ink);background:var(--cream);
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .input::placeholder{color:#8a978f}
+  .input:focus{outline:none;border-color:var(--teal);background:#fff}
+  .opt-label{font-size:15px;font-weight:700;margin:4px 0 10px}
+  .opt-label span{font-weight:500;color:var(--ink-soft)}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:20px}
+  .chip{
+    border:2px solid var(--line);background:var(--cream);color:var(--ink);
+    border-radius:999px;padding:11px 15px;font-size:15px;font-weight:700;cursor:pointer;min-height:48px;
+    display:inline-flex;align-items:center;gap:7px;transition:all .14s ease;
+  }
+  .chip:hover{border-color:var(--teal)}
+  .chip[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+  .chip[aria-pressed="true"]::before{content:"✓";font-size:13px}
+  .form-foot{margin-top:6px;font-size:14px;color:var(--ink-soft);text-align:center;display:flex;align-items:center;justify-content:center;gap:7px}
+  .form-foot svg{width:16px;height:16px;stroke:var(--teal);fill:none;stroke-width:2}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--ink);color:var(--cream);padding:46px 0 30px}
+  .foot-top{display:grid;grid-template-columns:1fr;gap:26px;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:28px}
+  .foot-brand .brand .name b{color:#fff}
+  .foot-brand .brand .mark{border-color:#fff}
+  .foot-brand p{color:rgba(251,248,242,.72);font-size:15.5px;margin-top:14px;max-width:34ch}
+  .foot-col h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#6fd0c3;margin-bottom:14px;font-weight:800}
+  .foot-col a,.foot-col p{display:block;color:rgba(251,248,242,.82);font-size:16px;margin-bottom:10px;font-weight:600}
+  .foot-col a:hover{color:#fff}
+  .areas{color:rgba(251,248,242,.6);font-size:14px;line-height:1.7}
+  .foot-bottom{display:flex;flex-direction:column;gap:10px;justify-content:space-between;align-items:flex-start;padding-top:22px;color:rgba(251,248,242,.55);font-size:13.5px}
+  .foot-bottom .urdu{font-size:15px;color:rgba(251,248,242,.7)}
+
+  /* ===== STICKY MOBILE BAR ===== */
+  .sticky-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:80;
+    background:var(--cream);border-top:1px solid var(--line);
+    box-shadow:0 -10px 30px -18px rgba(10,46,43,.5);
+    display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:8px;padding:9px 12px;
+    padding-bottom:calc(9px + env(safe-area-inset-bottom));
+  }
+  .sticky-bar a{
+    min-height:56px;border-radius:13px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+    font-size:13px;font-weight:800;
+  }
+  .sticky-bar .s-call{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+  .sticky-bar .s-wa{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+  .sticky-bar .s-cta{background:var(--teal);color:#fff}
+  .sticky-bar svg{width:20px;height:20px}
+  .sticky-bar .s-call svg{stroke:var(--teal)}
+  .sticky-bar .s-wa svg{stroke:#1f9d57}
+
+  /* ================= DESKTOP ================= */
+  @media(min-width:760px){
+    body{padding-bottom:0}
+    .sticky-bar{display:none}
+    .wrap{padding:0 32px}
+    .hero{padding:54px 0 70px}
+    .hero-grid{grid-template-columns:1.05fr .95fr;gap:48px}
+    .hero-cta{flex-direction:row;flex-wrap:wrap}
+    .hero-cta .btn{flex:1;min-width:200px}
+    .portrait{aspect-ratio:4/4.9}
+    .proof-inner{grid-template-columns:repeat(4,1fr)}
+    .steps{grid-template-columns:repeat(3,1fr)}
+    .svc-grid{grid-template-columns:repeat(2,1fr)}
+    .t-grid{grid-template-columns:repeat(3,1fr)}
+    .id-body{grid-template-columns:300px 1fr}
+    .id-photo{min-height:auto}
+    .lead-grid{grid-template-columns:1fr 1.05fr;gap:54px}
+    .foot-top{grid-template-columns:1.4fr 1fr 1fr 1.2fr}
+    .foot-bottom{flex-direction:row;align-items:center}
+  }
+  @media(min-width:1024px){
+    .svc-grid{grid-template-columns:repeat(3,1fr)}
+    .verified-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
+    .verified-head{margin-bottom:0}
+  }
+  @media(max-width:759px){
+    .verified-layout{display:block}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .float-anim{animation:bob 5s ease-in-out infinite}
+    .bf-2.float-anim{animation-delay:-2s}
+    .bf-3.float-anim{animation-delay:-3.5s}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Sehat Connect home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 60 30"><path d="M2 15 H18 L23 6 L30 24 L36 12 L40 15 H58" fill="none" stroke="#0D7A6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="15" r="3.5" fill="#0A2E2B"/><circle cx="56" cy="15" r="3.5" fill="#0A2E2B"/></svg>
+      </span>
+      <span class="name">
+        <b>Sehat <span>Connect</span></b>
+        <small>bringing the hospital to your home</small>
+      </span>
+    </a>
+    <div class="nav-actions">
+      <button class="lang" type="button" aria-label="Switch language">
+        EN <span class="sep">/</span> <span class="urdu">اردو</span>
+      </button>
+      <a class="btn btn-primary nav-call" href="tel:+923288489988">
+        <svg class="call-ico" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        0328-8489988
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Before they ever ring your bell</span>
+        <h1>You'll know <span class="hl">exactly who</span> is coming into your home.</h1>
+        <p class="hero-sub">A real, verified nurse or attendant — name, photo and credentials shared with you before the visit. No strangers. No surprises.</p>
+        <p class="hero-urdu urdu">آپ کے گھر آنے والی نرس — جانی پہچانی، تصدیق شدہ، قابلِ بھروسہ۔</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="#form">Meet your nurse — request a call</a>
+          <a class="btn btn-wa btn-lg" href="https://wa.me/923288489988?text=Assalam%20o%20Alaikum%2C%20mujhe%20ghar%20par%20nurse%2Fattendant%20chahiye.%20Rabta%20karein." target="_blank" rel="noopener">
+            <svg class="wa-ico" viewBox="0 0 24 24" fill="#1f9d57"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15c-1.52 0-3-.41-4.3-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.25 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+            WhatsApp us now
+          </a>
+        </div>
+        <div class="hero-micro"><span class="dot"></span> A real person answers — call or message anytime, 24/7 across Lahore.</div>
+      </div>
+
+      <!-- portrait -->
+      <div class="portrait-stage">
+        <div class="portrait">
+          <span class="sample-tag">Sample photo</span>
+          <div class="vignette"></div>
+          <div class="figure" aria-hidden="true">
+            <!-- calm line-art caregiver figure -->
+            <svg viewBox="0 0 200 230" fill="none">
+              <circle cx="100" cy="70" r="40" fill="rgba(251,248,242,.16)"/>
+              <circle cx="100" cy="70" r="40" stroke="rgba(251,248,242,.55)" stroke-width="2.5"/>
+              <path d="M100 48 a14 12 0 0 1 14 12 v8 a14 16 0 0 1 -28 0 v-8 a14 12 0 0 1 14 -12z" fill="rgba(251,248,242,.5)"/>
+              <path d="M30 230 v-26 a70 60 0 0 1 140 0 v26" fill="rgba(251,248,242,.16)" stroke="rgba(251,248,242,.55)" stroke-width="2.5"/>
+              <path d="M86 118 v22 a14 14 0 0 0 28 0 v-22" stroke="rgba(251,248,242,.55)" stroke-width="2.5" fill="none"/>
+              <!-- little ECG on chest -->
+              <path d="M64 168 H82 L88 156 L96 182 L102 166 H120" stroke="#FBF8F2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="portrait-name">
+            <b>Ayesha Saleem</b>
+            <span>Qualified Nurse · PNC registered</span>
+          </div>
+        </div>
+
+        <div class="badge-float bf-1 float-anim">
+          <span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+          CNIC &amp; references checked
+        </div>
+        <div class="badge-float bf-2 float-anim">
+          <span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+          PNC registered nurse
+        </div>
+        <div class="badge-float bf-3 float-anim">
+          <span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+          Female nurse on request
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VERIFIED PERSON CARD (signature) ============ -->
+<section class="verified" id="who">
+  <div class="wrap">
+    <div class="verified-layout">
+      <div class="verified-head">
+        <span class="eyebrow">This is who comes to you</span>
+        <h2>We send you the nurse's card before the shift.</h2>
+        <p>Photo, full name, PNC registration number and verification — on WhatsApp, before anyone enters your home. You meet them first.</p>
+      </div>
+
+      <!-- the ID / verified-person card -->
+      <div class="id-card" role="group" aria-label="Sample verified nurse card">
+        <div class="id-strip" aria-hidden="true"></div>
+        <div class="id-body">
+          <div class="id-photo">
+            <span class="sample-tag">Sample photo</span>
+            <div class="figure" aria-hidden="true">
+              <svg viewBox="0 0 200 230" fill="none">
+                <circle cx="100" cy="74" r="38" fill="rgba(251,248,242,.16)"/>
+                <circle cx="100" cy="74" r="38" stroke="rgba(251,248,242,.6)" stroke-width="2.5"/>
+                <path d="M100 54 a13 11 0 0 1 13 11 v7 a13 15 0 0 1 -26 0 v-7 a13 11 0 0 1 13 -11z" fill="rgba(251,248,242,.5)"/>
+                <path d="M34 230 v-22 a66 56 0 0 1 132 0 v22" fill="rgba(251,248,242,.16)" stroke="rgba(251,248,242,.6)" stroke-width="2.5"/>
+                <path d="M66 166 H84 L90 154 L98 180 L104 164 H122" stroke="#FBF8F2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+            <div class="id-stamp" aria-hidden="true">Sehat<br>Verified</div>
+          </div>
+          <div class="id-info">
+            <div class="who">
+              <div>
+                <h3>Ayesha Saleem</h3>
+                <div class="id-role">Qualified Nurse · 6 yrs experience</div>
+              </div>
+            </div>
+            <div class="id-meta">
+              <div class="id-row">
+                <span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <span><b>PNC registered</b><span class="pnc-pill">PNC-LHR-2024-08812</span></span>
+              </div>
+              <div class="id-row">
+                <span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <span><b>CNIC &amp; references checked</b> — verified in person by our team</span>
+              </div>
+              <div class="id-row">
+                <span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <span>Trained in <b>post-op, elderly &amp; night-duty</b> care</span>
+              </div>
+            </div>
+            <div class="id-foot">
+              <span class="female-badge">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0A6258" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="8" r="5"/><path d="M12 13v8M9 18h6"/></svg>
+                Female-for-female · <span class="urdu">خواتین کے لیے خاتون</span>
+              </span>
+              <span class="id-note">Sample card — your nurse's real card is sent to you on WhatsApp before the visit.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="verified-foot">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+      Every Qualified Nurse is Pakistan Nursing Council registered; every Attendant is background-verified. You always know who is at your door.
+    </p>
+  </div>
+</section>
+
+<!-- ============ PROOF STRIP ============ -->
+<section class="proof" aria-label="Prices and payment">
+  <div class="wrap">
+    <div class="proof-inner">
+      <div class="proof-cell">
+        <div class="k">Qualified Nurse</div>
+        <div class="v">Rs 4,000</div>
+        <div class="u">per 12-hour shift</div>
+      </div>
+      <div class="proof-cell">
+        <div class="k">Attendant</div>
+        <div class="v">Rs 3,000</div>
+        <div class="u">per 12-hour shift</div>
+      </div>
+      <div class="proof-cell">
+        <div class="k">You pay</div>
+        <div class="v">After the shift</div>
+        <div class="u">No advance, ever</div>
+      </div>
+      <div class="proof-cell">
+        <div class="k">Available</div>
+        <div class="v">24 / 7</div>
+        <div class="u">All of Lahore</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW WE MATCH ============ -->
+<section class="block match" id="how">
+  <div class="wrap">
+    <svg class="pulse" viewBox="0 0 400 18" preserveAspectRatio="none" aria-hidden="true" style="margin-bottom:22px"><path d="M0 9 H150 L160 2 L172 16 L182 9 H400"/><circle class="node" cx="3" cy="9" r="3.5"/></svg>
+    <div class="sec-head">
+      <span class="eyebrow">How we match you</span>
+      <h2>Three calm steps. A person, not a portal.</h2>
+      <p>No app, no account, no forms to wrestle with. You talk to us; we bring you the right verified caregiver.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">1</span>
+        <div>
+          <h3>Tell us who needs care</h3>
+          <p>Leave your name and number, or just WhatsApp us. We call you back and listen.</p>
+          <p class="urdu">آپ ہمیں بتائیں، باقی ہم سنبھالیں گے۔</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="num">2</span>
+        <div>
+          <h3>Meet your caregiver first</h3>
+          <p>We share the nurse's card — photo, name, PNC number — on WhatsApp before the visit. Female-for-female on request.</p>
+          <p class="urdu">آنے سے پہلے نرس کی تفصیل آپ کے پاس۔</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="num">3</span>
+        <div>
+          <h3>Care at home, pay after</h3>
+          <p>They arrive on time and care for your loved one. You pay cash only after the shift — no advance.</p>
+          <p class="urdu">شفٹ کے بعد ادائیگی — کوئی پیشگی نہیں۔</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What our nurses do</span>
+      <h2>Real medical care, in your own home.</h2>
+      <p>Every nurse below is PNC registered. Tell us the situation and we match the right one to you.</p>
+    </div>
+    <div class="svc-grid" id="svcGrid">
+      <!-- 1 -->
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M8 2h8M12 2v6m-4 4 4-4 4 4M5 12a7 7 0 0 0 14 0"/><path d="M5 12v4a7 7 0 0 0 14 0v-4"/></svg></span>
+        <div class="t"><b>Post-op Care</b><span class="urdu">آپریشن کے بعد دیکھ بھال</span><p>Wound care, dressing changes and recovery support after surgery.</p></div>
+      </div>
+      <!-- 2 -->
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v6m0 0 3-3m-3 3-3-3"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/><circle cx="12" cy="6" r="0"/></svg></span>
+        <div class="t"><b>Elderly Care</b><span class="urdu">بزرگوں کی دیکھ بھال</span><p>Medicines, movement and day-to-day health monitoring.</p></div>
+      </div>
+      <!-- 3 -->
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-4 3-6 7-6s7 2 7 6"/></svg></span>
+        <div class="t"><b>Paediatric Care</b><span class="urdu">بچوں کی دیکھ بھال</span><p>Nursing care for newborns, infants and young children.</p></div>
+      </div>
+      <!-- 4 -->
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg></span>
+        <div class="t"><b>ICU Step-down</b><span class="urdu">آئی سی یو کے بعد</span><p>Care for patients sent home after ICU or HDU.</p></div>
+      </div>
+      <!-- 5 -->
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></span>
+        <div class="t"><b>Night Duty</b><span class="urdu">رات کی ڈیوٹی</span><p>A nurse stays through the night to monitor and care.</p></div>
+      </div>
+      <!-- 6 -->
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2s6 7 6 12a6 6 0 0 1-12 0c0-5 6-12 6-12Z"/><path d="M9 14a3 3 0 0 0 6 0"/></svg></span>
+        <div class="t"><b>Diabetic Care</b><span class="urdu">ذیابیطس کی دیکھ بھال</span><p>Blood sugar checks, insulin and diet guidance.</p></div>
+      </div>
+      <!-- 7 hidden on mobile until show-more -->
+      <div class="svc hidden">
+        <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M6 21c0-3 2.7-5 6-5s6 2 6 5"/><path d="M17 9a2 2 0 1 0 0-4"/></svg></span>
+        <div class="t"><b>Mother &amp; Baby Care</b><span class="urdu">ماں اور بچے کی دیکھ بھال</span><p>Newborn and postnatal support for new mothers.</p></div>
+      </div>
+      <!-- 8 -->
+      <div class="svc hidden">
+        <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div class="t"><b>Dementia &amp; Alzheimer's Care</b><span class="urdu">ڈیمنشیا کی دیکھ بھال</span><p>Routine, safety and gentle companionship.</p></div>
+      </div>
+      <!-- 9 -->
+      <div class="svc hidden">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M20.8 6.6a5 5 0 0 0-7.1 0L12 8.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 22l8.8-8.3a5 5 0 0 0 0-7.1Z"/></svg></span>
+        <div class="t"><b>Palliative &amp; Long-term Care</b><span class="urdu">آرام دہ نگہداشت</span><p>Comfort-focused nursing, pain and symptom management.</p></div>
+      </div>
+    </div>
+    <div class="show-more">
+      <button class="btn btn-ghost" id="moreBtn" type="button">Show all 9 services</button>
+    </div>
+    <div class="att-note">
+      <b>Need an Attendant instead?</b> For non-clinical help — feeding, hygiene, movement and comfort — our background-verified Attendants cover Elderly Care, Paediatric Care and Night Duty at <b>Rs 3,000 / 12-hr shift</b>.
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="block testi" id="stories">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Families across Lahore</span>
+      <h2>They let our nurse in. Here's what happened.</h2>
+      <p>Real care, in real homes. (Sample testimonials shown below while we collect consent to publish real ones.)</p>
+    </div>
+    <div class="t-grid">
+      <div class="t-card">
+        <p class="t-quote">They sent me the nurse's photo and PNC number on WhatsApp the night before. My mother felt safe the moment she walked in.</p>
+        <div class="t-who">
+          <span class="t-face" aria-hidden="true">SK</span>
+          <div><b>Sadia Khan</b><span>DHA Phase 5, Lahore</span></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <p class="t-quote">My father needed night duty after his operation. Same nurse three nights running, and we paid only after each shift. No advance, no stress.</p>
+        <div class="t-who">
+          <span class="t-face" aria-hidden="true">UA</span>
+          <div><b>Usman Ali</b><span>Johar Town, Lahore</span></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <p class="t-quote">We asked for a female nurse for my wife after delivery and that's exactly who came. Calm, trained, on time. Felt like family.</p>
+        <div class="t-who">
+          <span class="t-face" aria-hidden="true">FR</span>
+          <div><b>Faisal Rauf</b><span>Model Town, Lahore</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="sample-line">Names and areas above are sample placeholders — we publish only real, consented testimonials with name and area.</p>
+  </div>
+</section>
+
+<!-- ============ LEAD FORM ============ -->
+<section class="block lead" id="form">
+  <div class="wrap">
+    <div class="lead-grid">
+      <div class="lead-copy">
+        <span class="eyebrow">One step left</span>
+        <h2>Leave your number. A real person calls you back.</h2>
+        <p class="lead-sub">Just your name and phone — that's it. We'll call, understand the situation, and send you your nurse's card before anyone visits.</p>
+        <ul class="lead-points">
+          <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span> No advance — pay cash after the shift</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span> Free cancel or reschedule up to 4 hrs before</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span> Female nurse or attendant on request</li>
+        </ul>
+        <div class="alt-contact">
+          <a class="btn btn-primary" href="tel:+923288489988">
+            <svg class="call-ico" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            Call 0328-8489988
+          </a>
+          <a class="btn btn-wa" href="https://wa.me/923288489988?text=Assalam%20o%20Alaikum%2C%20mujhe%20ghar%20par%20nurse%2Fattendant%20chahiye.%20Rabta%20karein." target="_blank" rel="noopener">
+            <svg class="wa-ico" viewBox="0 0 24 24" fill="#1f9d57"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15c-1.52 0-3-.41-4.3-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.25 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <form class="form-card" onsubmit="event.preventDefault();this.querySelector('.form-foot').innerHTML='Thank you — this is a design sample. On the live site we would call you back.';">
+        <div class="ribbon"><span class="dot"></span> We'll call you back — usually the same day</div>
+        <label class="fld">
+          <span class="lbl">Your name <span class="req">*</span></span>
+          <input class="input" type="text" name="name" placeholder="e.g. Bilal Ahmed" required />
+        </label>
+        <label class="fld">
+          <span class="lbl">Phone number <span class="req">*</span></span>
+          <input class="input" type="tel" name="phone" inputmode="tel" placeholder="03xx xxxxxxx" required />
+        </label>
+        <div class="opt-label">Who needs care? <span>(optional — tap any)</span></div>
+        <div class="chips" role="group" aria-label="Who needs care">
+          <button type="button" class="chip" aria-pressed="false">Elderly parent</button>
+          <button type="button" class="chip" aria-pressed="false">After surgery</button>
+          <button type="button" class="chip" aria-pressed="false">Mother &amp; baby</button>
+          <button type="button" class="chip" aria-pressed="false">Night duty</button>
+          <button type="button" class="chip" aria-pressed="false">Bedridden</button>
+          <button type="button" class="chip" aria-pressed="false">Not sure yet</button>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Request my callback</button>
+        <p class="form-foot">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Your number stays private. We only call about your care.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="mark" aria-hidden="true"><svg viewBox="0 0 60 30"><path d="M2 15 H18 L23 6 L30 24 L36 12 L40 15 H58" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="15" r="3.5" fill="#6fd0c3"/><circle cx="56" cy="15" r="3.5" fill="#6fd0c3"/></svg></span>
+          <span class="name"><b>Sehat <span style="color:#6fd0c3">Connect</span></b><small style="color:rgba(251,248,242,.7)">bringing the hospital to your home</small></span>
+        </div>
+        <p>Verified nurses and attendants for your home, across Lahore. You always meet the caregiver before they arrive.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Talk to us</h4>
+        <a href="tel:+923288489988">Call 0328-8489988</a>
+        <a href="https://wa.me/923288489988?text=Assalam%20o%20Alaikum%2C%20mujhe%20ghar%20par%20nurse%2Fattendant%20chahiye.%20Rabta%20karein." target="_blank" rel="noopener">WhatsApp us</a>
+        <p>Open 24 / 7</p>
+      </div>
+      <div class="foot-col">
+        <h4>Care we provide</h4>
+        <a href="#services">Qualified Nurses</a>
+        <a href="#services">Attendants</a>
+        <a href="#how">How matching works</a>
+      </div>
+      <div class="foot-col">
+        <h4>We serve all Lahore</h4>
+        <p class="areas">DHA · Gulberg · Johar Town · Model Town · Bahria Town · Cantt — and everywhere in between.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Sehat Connect · Lahore · PNC-registered nurses, CNIC &amp; references checked.</span>
+      <span class="urdu">گھر بیٹھے قابلِ بھروسہ نرسنگ کیئر</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE BAR ============ -->
+<nav class="sticky-bar" aria-label="Quick contact">
+  <a class="s-call" href="tel:+923288489988">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+    Call
+  </a>
+  <a class="s-wa" href="https://wa.me/923288489988?text=Assalam%20o%20Alaikum%2C%20mujhe%20ghar%20par%20nurse%2Fattendant%20chahiye.%20Rabta%20karein." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+    WhatsApp
+  </a>
+  <a class="s-cta" href="#form">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+    Get a call
+  </a>
+</nav>
+
+<script>
+  // care-type chips
+  document.querySelectorAll('.chip').forEach(function(c){
+    c.addEventListener('click',function(){
+      var on=c.getAttribute('aria-pressed')==='true';
+      c.setAttribute('aria-pressed', on?'false':'true');
+    });
+  });
+  // show all services
+  (function(){
+    var btn=document.getElementById('moreBtn');
+    var open=false;
+    btn.addEventListener('click',function(){
+      open=!open;
+      document.querySelectorAll('#svcGrid .svc.hidden').forEach(function(el){
+        // toggle by data only on mobile; on desktop they already show via CSS? keep simple: toggle inline
+      });
+      var hiddenEls=document.querySelectorAll('#svcGrid .svc');
+      hiddenEls.forEach(function(el,i){ if(i>=6) el.style.display = open ? 'flex':''; });
+      btn.textContent = open ? 'Show fewer services' : 'Show all 9 services';
+    });
+    // on desktop reveal all (CSS .hidden hides; un-hide for wide screens)
+    function syncWide(){
+      if(window.matchMedia('(min-width:760px)').matches){
+        document.querySelectorAll('#svcGrid .svc').forEach(function(el){el.style.display='flex'});
+        btn.style.display='none';
+      }
+    }
+    syncWide();
+    window.addEventListener('resize',syncWide);
+  })();
+  // language toggle (visual only for the mock)
+  document.querySelector('.lang').addEventListener('click',function(){
+    this.classList.toggle('on');
+  });
+</script>
+</body>
+</html>
