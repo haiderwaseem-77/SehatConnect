@@ -33,6 +33,12 @@ export default function Footer() {
             <Link href="/#get-call">Request a call back</Link>
           </div>
           <div className="foot-col">
+            <h4>Our care</h4>
+            <Link href="/services">Home nursing service</Link>
+            <Link href="/services/qualified-nurse">Qualified nurse (PNC)</Link>
+            <Link href="/services/attendant">Patient attendant</Link>
+          </div>
+          <div className="foot-col">
             <h4>On this page</h4>
             <Link href="/#how">How it works</Link>
             <Link href="/#price">The price receipt</Link>
@@ -42,6 +48,8 @@ export default function Footer() {
           </div>
           <div className="foot-col">
             <h4>We serve all Lahore</h4>
+            <Link href="/cities/lahore">Nursing care in Lahore</Link>
+            <Link href="/about">About Sehat Connect</Link>
             <p className="areas">DHA &middot; Gulberg &middot; Johar Town &middot; Model Town &middot; Bahria Town &middot; Cantt, and everywhere in between.</p>
           </div>
         </div>
