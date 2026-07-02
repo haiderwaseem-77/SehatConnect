@@ -8,21 +8,21 @@ export const PRICES = {
 };
 
 export const QUALIFIED_NURSE_SERVICES = [
-  { id: 'post_op_care',    label: 'Post-op Care',    urdu: 'آپریشن کے بعد دیکھ بھال', icon: 'Activity',    description: 'Wound care, dressing changes, and recovery support after surgery' },
-  { id: 'elderly_care',    label: 'Elderly Care',    urdu: 'بزرگوں کی دیکھ بھال',    icon: 'Heart',        description: 'Help with medicines, movement, and day-to-day health monitoring for elderly patients' },
-  { id: 'paediatric_care', label: 'Paediatric Care', urdu: 'بچوں کی دیکھ بھال',      icon: 'Baby',         description: 'Nursing care for newborns, infants, and young children at home' },
-  { id: 'icu_stepdown',    label: 'ICU Step-down',   urdu: 'آئی سی یو کے بعد',       icon: 'HeartPulse',   description: 'Care for patients coming home after a stay in ICU or HDU' },
-  { id: 'night_duty',      label: 'Night Duty',      urdu: 'رات کی ڈیوٹی',           icon: 'Moon',         description: 'A nurse stays through the night to monitor and care for your patient' },
-  { id: 'diabetic_care',   label: 'Diabetic Care',   urdu: 'ذیابیطس کی دیکھ بھال',   icon: 'Droplets',     description: 'Blood sugar checks, insulin injections, and diet guidance for diabetic patients' },
-  { id: 'mother_baby_care', label: 'Mother & Baby Care', urdu: 'ماں اور بچے کی دیکھ بھال', icon: 'Baby',     description: 'Newborn care plus postnatal support for new mothers — feeding, recovery, and hygiene at home' },
-  { id: 'dementia_care',   label: "Dementia & Alzheimer's Care", urdu: 'ڈیمنشیا کی دیکھ بھال', icon: 'Brain', description: "Patient, specialised care for dementia and Alzheimer's patients — routine, safety, and companionship" },
-  { id: 'palliative_care', label: 'Palliative & Long-term Care', urdu: 'آرام دہ نگہداشت', icon: 'HandHeart', description: 'Comfort-focused nursing for cancer, stroke, and long-term patients, including pain and symptom management' },
+  { id: 'post_op_care',    label: 'Post-op Care',    urdu: 'آپریشن کے بعد دیکھ بھال', icon: 'Activity',    description: 'Wound care, dressing changes, and recovery support after surgery', descriptionUrdu: 'زخم کی دیکھ بھال، ڈریسنگ کی تبدیلی، اور آپریشن کے بعد صحت یابی میں مدد' },
+  { id: 'elderly_care',    label: 'Elderly Care',    urdu: 'بزرگوں کی دیکھ بھال',    icon: 'Heart',        description: 'Help with medicines, movement, and day-to-day health monitoring for elderly patients', descriptionUrdu: 'بزرگ مریضوں کے لیے دوائی، چلنے پھرنے، اور روزمرہ صحت کی نگرانی میں مدد' },
+  { id: 'paediatric_care', label: 'Paediatric Care', urdu: 'بچوں کی دیکھ بھال',      icon: 'Baby',         description: 'Nursing care for newborns, infants, and young children at home', descriptionUrdu: 'نوزائیدہ بچوں اور کم عمر بچوں کے لیے گھر پر نرسنگ دیکھ بھال' },
+  { id: 'icu_stepdown',    label: 'ICU Step-down',   urdu: 'آئی سی یو کے بعد',       icon: 'HeartPulse',   description: 'Care for patients coming home after a stay in ICU or HDU', descriptionUrdu: 'آئی سی یو یا ایچ ڈی یو سے گھر آنے والے مریضوں کی دیکھ بھال' },
+  { id: 'night_duty',      label: 'Night Duty',      urdu: 'رات کی ڈیوٹی',           icon: 'Moon',         description: 'A nurse stays through the night to monitor and care for your patient', descriptionUrdu: 'ایک نرس رات بھر آپ کے مریض کی نگرانی اور دیکھ بھال کے لیے موجود رہتی ہے' },
+  { id: 'diabetic_care',   label: 'Diabetic Care',   urdu: 'ذیابیطس کی دیکھ بھال',   icon: 'Droplets',     description: 'Blood sugar checks, insulin injections, and diet guidance for diabetic patients', descriptionUrdu: 'ذیابیطس کے مریضوں کے لیے بلڈ شوگر چیک، انسولین انجیکشن، اور خوراک سے متعلق رہنمائی' },
+  { id: 'mother_baby_care', label: 'Mother & Baby Care', urdu: 'ماں اور بچے کی دیکھ بھال', icon: 'Baby',     description: 'Newborn care plus postnatal support for new mothers — feeding, recovery, and hygiene at home', descriptionUrdu: 'نوزائیدہ بچے کی دیکھ بھال کے ساتھ نئی ماؤں کے لیے زچگی کے بعد کی مدد — گھر پر فیڈنگ، صحت یابی، اور صفائی' },
+  { id: 'dementia_care',   label: "Dementia & Alzheimer's Care", urdu: 'ڈیمنشیا کی دیکھ بھال', icon: 'Brain', description: "Patient, specialised care for dementia and Alzheimer's patients — routine, safety, and companionship", descriptionUrdu: 'ڈیمنشیا اور الزائمر کے مریضوں کے لیے صبر اور مہارت سے دیکھ بھال — معمول، حفاظت، اور ساتھ' },
+  { id: 'palliative_care', label: 'Palliative & Long-term Care', urdu: 'آرام دہ نگہداشت', icon: 'HandHeart', description: 'Comfort-focused nursing for cancer, stroke, and long-term patients, including pain and symptom management', descriptionUrdu: 'کینسر، فالج، اور طویل المدتی مریضوں کے لیے آرام پر مرکوز نرسنگ، جس میں درد اور علامات کا انتظام بھی شامل ہے' },
 ];
 
 export const ATTENDANT_SERVICES = [
-  { id: 'elderly_care',    label: 'Elderly Care',    urdu: 'بزرگوں کی دیکھ بھال',  icon: 'Heart',    description: 'Helping elderly patients with feeding, hygiene, movement, and daily routines' },
-  { id: 'paediatric_care', label: 'Paediatric Care', urdu: 'بچوں کی دیکھ بھال',    icon: 'Baby',     description: 'Non-clinical care and support for children at home' },
-  { id: 'night_duty',      label: 'Night Duty',      urdu: 'رات کی ڈیوٹی',         icon: 'Moon',     description: 'An attendant stays through the night to keep your patient comfortable and safe' },
+  { id: 'elderly_care',    label: 'Elderly Care',    urdu: 'بزرگوں کی دیکھ بھال',  icon: 'Heart',    description: 'Helping elderly patients with feeding, hygiene, movement, and daily routines', descriptionUrdu: 'بزرگ مریضوں کی فیڈنگ، صفائی، چلنے پھرنے، اور روزمرہ کاموں میں مدد' },
+  { id: 'paediatric_care', label: 'Paediatric Care', urdu: 'بچوں کی دیکھ بھال',    icon: 'Baby',     description: 'Non-clinical care and support for children at home', descriptionUrdu: 'گھر پر بچوں کے لیے غیر طبی دیکھ بھال اور مدد' },
+  { id: 'night_duty',      label: 'Night Duty',      urdu: 'رات کی ڈیوٹی',         icon: 'Moon',     description: 'An attendant stays through the night to keep your patient comfortable and safe', descriptionUrdu: 'ایک اٹینڈنٹ رات بھر آپ کے مریض کو آرام دہ اور محفوظ رکھنے کے لیے موجود رہتا ہے' },
 ];
 
 export const CITIES = [
@@ -43,6 +43,8 @@ export const SHIFTS = [
 export const WHATSAPP_NUMBER = '923288489988';
 export const CONTACT_PHONE_DISPLAY = '0328-8489988';
 export const CONTACT_PHONE_TEL = '+923288489988';
+export const OFFICE_ADDRESS = '132/2, Block-B, Model Town, Lahore, Pakistan';
+export const CONTACT_EMAIL = 'care@mysehatconnect.com';
 
 export const FAQ_ITEMS = [
   {

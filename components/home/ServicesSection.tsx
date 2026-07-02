@@ -64,10 +64,20 @@ export default function ServicesSection() {
           <circle className="node" cx="3" cy="9" r="3.5" />
         </svg>
         <div className="sec-head">
-          <h2>Tap the care you need. We&rsquo;ll pick it up on WhatsApp.</h2>
-          <p>Every nurse is PNC registered. Tap a service and a friendly message opens, ready to send. A real person replies and matches the right caregiver to you.</p>
+          <h2>
+            <span data-en>Tap the care you need. A real person replies on WhatsApp.</span>
+            <span data-ur className="urdu">جو دیکھ بھال چاہیے اسے ٹیپ کریں۔ ایک حقیقی فرد واٹس ایپ پر جواب دیتا ہے۔</span>
+          </h2>
+          <p>
+            <span data-en>Tap a service and a ready-made message opens &mdash; just press send. Someone on our team reads it and matches you with the right nurse or attendant. Every nurse is PNC registered.</span>
+            <span data-ur className="urdu">کوئی سروس ٹیپ کریں اور تیار شدہ پیغام کھل جاتا ہے &mdash; بس سینڈ دبائیں۔ ہماری ٹیم کا کوئی رکن اسے پڑھ کر آپ کو صحیح نرس یا اٹینڈنٹ سے ملاتا ہے۔ ہر نرس PNC رجسٹرڈ ہے۔</span>
+          </p>
         </div>
 
+        <p className="svc-chips-lead">
+          <span data-en>What families ask for most</span>
+          <span data-ur className="urdu">گھرانے سب سے زیادہ کیا مانگتے ہیں</span>
+        </p>
         <div className="svc-chips">
           {CHIPS.map((c) => (
             <a key={c.svc} className="svc-chip" href={waLink(serviceWaMsg(c.svc))} target="_blank" rel="noopener noreferrer">
@@ -79,15 +89,22 @@ export default function ServicesSection() {
 
         <p className="svc-help">
           <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Z" /></svg>
-          Not sure which one fits? Just WhatsApp us, we&rsquo;ll be honest about whether you need a nurse or an attendant.
+          <span data-en>Not sure which one fits? Just WhatsApp us, we&rsquo;ll be honest about whether you need a nurse or an attendant.</span>
+          <span data-ur className="urdu">پکا نہیں کون سی درست ہے؟ بس ہمیں واٹس ایپ کریں، ہم صاف بتا دیں گے کہ آپ کو نرس چاہیے یا اٹینڈنٹ۔</span>
         </p>
 
         <div className="disc" data-open={open ? "1" : "0"}>
           <button className="disc-head" type="button" aria-expanded={open} onClick={() => setOpen((o) => !o)}>
             <span className="disc-ico"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" strokeLinecap="round" /></svg></span>
             <span className="disc-titles">
-              <span className="dt">Show all services</span>{" "}
-              <span className="ds">9 nurse services + attendant care · tap any to WhatsApp</span>
+              <span className="dt">
+                <span data-en>All services &amp; prices</span>
+                <span data-ur className="urdu">تمام سروسز اور قیمتیں</span>
+              </span>{" "}
+              <span className="ds">
+                <span data-en>9 nurse services + attendant, with prices · tap any to WhatsApp</span>
+                <span data-ur className="urdu">9 نرسنگ سروسز + اٹینڈنٹ، قیمتوں کے ساتھ · کسی پر بھی ٹیپ کریں اور واٹس ایپ کریں</span>
+              </span>
             </span>
             <span className="disc-chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
           </button>
@@ -104,7 +121,10 @@ export default function ServicesSection() {
                   {ATTENDANT_ROWS.map((r) => <Row key={r.svc} {...r} />)}
                 </div>
 
-                <p className="svc-foot"><b>Need a medical task done</b>, like injections, drips or wound dressing? That&rsquo;s a <b>Qualified Nurse</b>, not an attendant. We&rsquo;ll never send the cheaper option for a job it can&rsquo;t do.</p>
+                <p className="svc-foot">
+                  <span data-en><b>Need a medical task done</b>, like injections, drips or wound dressing? That&rsquo;s a <b>Qualified Nurse</b>, not an attendant. We&rsquo;ll never send the cheaper option for a job it can&rsquo;t do.</span>
+                  <span data-ur className="urdu"><b>طبی کام درکار ہے</b>، جیسے انجیکشن، ڈرپ یا زخم کی ڈریسنگ؟ یہ <b>کوالیفائیڈ نرس</b> کا کام ہے، اٹینڈنٹ کا نہیں۔ ہم کبھی ایسا کام سستے آپشن کو نہیں دیں گے جو وہ کر ہی نہیں سکتا۔</span>
+                </p>
               </div>
             </div>
           </div>

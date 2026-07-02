@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { CONTACT_PHONE_TEL } from "@/lib/constants";
+import { CONTACT_PHONE_TEL, CONTACT_PHONE_DISPLAY } from "@/lib/constants";
 import { waLink, GENERIC_WA_MSG } from "@/lib/wa";
 
 type Variant = "hero" | "closer";
@@ -15,13 +15,30 @@ const CARE_CHIPS: { en: string; ur: string }[] = [
   { en: "Not sure yet", ur: "ابھی یقین نہیں" },
 ];
 
+type ErrorKey = "name" | "phone" | "generic";
+
+const ERROR_MESSAGES: Record<ErrorKey, { en: string; ur: string }> = {
+  name: {
+    en: "Please add your name so we can call you back.",
+    ur: "براہ کرم اپنا نام لکھیں تاکہ ہم آپ کو کال کر سکیں۔",
+  },
+  phone: {
+    en: "Please add your phone number so we can call you back.",
+    ur: "براہ کرم اپنا فون نمبر لکھیں تاکہ ہم آپ کو کال کر سکیں۔",
+  },
+  generic: {
+    en: "Something went wrong. Please call us directly.",
+    ur: "کچھ غلط ہو گیا۔ براہ کرم ہمیں براہِ راست کال کریں۔",
+  },
+};
+
 export default function LeadFormD6({ variant, area }: { variant: Variant; area?: string }) {
   const router = useRouter();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [selected, setSelected] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState<ErrorKey | null>(null);
 
   const namePlaceholder = variant === "hero" ? "e.g. Ahmed Raza" : "e.g. Bilal Ahmed";
 
@@ -31,14 +48,14 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim()) {
-      setError("Please add your name so we can call you back.");
+      setError("name");
       return;
     }
     if (phone.replace(/\D/g, "").length < 7) {
-      setError("Please add your phone number so we can call you back.");
+      setError("phone");
       return;
     }
-    setError("");
+    setError(null);
     setLoading(true);
     const ref = "SGH-" + Math.floor(1000 + Math.random() * 9000);
     try {
@@ -55,24 +72,24 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
       });
       if (!res.ok) {
         setLoading(false);
-        setError("Something went wrong. Please call us directly.");
+        setError("generic");
         return;
       }
     } catch {
       setLoading(false);
-      setError("Something went wrong. Please call us directly.");
+      setError("generic");
       return;
     }
     setLoading(false);
-    router.push("/book/confirm?ref=" + ref);
+    router.push("/book/confirm?ref=" + ref + "&name=" + encodeURIComponent(name.trim()));
   };
 
   return (
     <form className="form-card" onSubmit={handleSubmit} noValidate>
       <div className="ribbon">
         <span className={variant === "closer" ? "dot beat-dot" : "dot"} />
-        <span data-en>We&rsquo;ll call you back, usually the same day</span>
-        <span data-ur className="urdu">ہم آپ کو کال کریں گے &mdash; عموماً اسی دن</span>
+        <span data-en>We call back fast — usually within 15 minutes</span>
+        <span data-ur className="urdu">ہم فوراً کال کرتے ہیں &mdash; عموماً 15 منٹ میں</span>
       </div>
 
       <label className="fld">
@@ -87,7 +104,7 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
           autoComplete="name"
           placeholder={namePlaceholder}
           value={name}
-          onChange={(e) => { setName(e.target.value); if (error) setError(""); }}
+          onChange={(e) => { setName(e.target.value); if (error) setError(null); }}
           required
         />
       </label>
@@ -105,7 +122,7 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
           autoComplete="tel"
           placeholder="03xx xxxxxxx"
           value={phone}
-          onChange={(e) => { setPhone(e.target.value); if (error) setError(""); }}
+          onChange={(e) => { setPhone(e.target.value); if (error) setError(null); }}
           required
         />
       </label>
@@ -142,13 +159,19 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
             <path d="M12 7.5v5.5" strokeLinecap="round" />
             <path d="M12 16.6h.01" strokeLinecap="round" />
           </svg>
-          <span className="form-err-txt">{error}</span>
+          <span className="form-err-txt">
+            <span data-en>{ERROR_MESSAGES[error].en}</span>
+            <span data-ur className="urdu">{ERROR_MESSAGES[error].ur}</span>
+          </span>
         </p>
       )}
 
       <button type="submit" className="btn btn-primary btn-block btn-lg" disabled={loading}>
         {loading ? (
-          <span>Sending&hellip;</span>
+          <>
+            <span data-en>Sending&hellip;</span>
+            <span data-ur className="urdu">بھیجا جا رہا ہے&hellip;</span>
+          </>
         ) : (
           <>
             <span data-en>Request my callback</span>
@@ -167,9 +190,19 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
             <span data-ur className="urdu">کال</span>
           </a>
           <a className="btn btn-wa" href={waLink(GENERIC_WA_MSG)} target="_blank" rel="noopener noreferrer">
-            <span className="wadot" /> WhatsApp
+            <span className="wadot" /> <span data-en>WhatsApp</span>
+            <span data-ur className="urdu">واٹس ایپ</span>
           </a>
         </div>
+      )}
+
+      {variant === "hero" && (
+        <p className="form-foot">
+          <a href={`tel:${CONTACT_PHONE_TEL}`}>
+            <span data-en>Or call {CONTACT_PHONE_DISPLAY} — 24/7</span>
+            <span data-ur className="urdu">یا کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi> — چوبیس گھنٹے</span>
+          </a>
+        </p>
       )}
 
       <p className="form-foot">

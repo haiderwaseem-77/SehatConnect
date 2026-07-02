@@ -11,7 +11,13 @@ import CtaBanner from "@/components/home/CtaBanner";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL } from "@/lib/constants";
 import { waLink, serviceWaMsg } from "@/lib/wa";
 
-type Service = { id: string; label: string; urdu: string; description: string };
+type Service = {
+  id: string;
+  label: string;
+  urdu: string;
+  description: string;
+  descriptionUrdu: string;
+};
 
 interface Bilingual {
   en: string;
@@ -170,7 +176,8 @@ export default function ServiceDetailPage({
                       </span>
                     </h3>
                     <p style={{ fontSize: 16, color: "var(--ink-soft)", lineHeight: 1.5, marginTop: 8, fontWeight: 500, flex: 1 }}>
-                      {s.description}
+                      <span data-en>{s.description}</span>
+                      <span data-ur className="urdu">{s.descriptionUrdu}</span>
                     </p>
                     <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10, marginTop: 16 }}>
                       <a

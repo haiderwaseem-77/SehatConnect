@@ -1,6 +1,6 @@
 // Direction-6 footer — ported from design-explorations-v2/direction-6-combined.html
 import Link from "next/link";
-import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL } from "@/lib/constants";
+import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL, OFFICE_ADDRESS, CONTACT_EMAIL } from "@/lib/constants";
 import { waLink, GENERIC_WA_MSG } from "@/lib/wa";
 
 export default function Footer() {
@@ -20,42 +20,50 @@ export default function Footer() {
               </span>
               <span className="name">
                 <b>Sehat <span style={{ color: "#6fd0c3" }}>Connect</span></b>
-                <small style={{ color: "rgba(251,248,242,.7)" }}>bringing the hospital to your home</small>
+                <small style={{ color: "rgba(251,248,242,.7)" }}>
+                  <span data-en>bringing the hospital to your home</span>
+                  <span data-ur className="urdu">ہسپتال کی سہولت، آپ کے گھر پر</span>
+                </small>
               </span>
             </div>
-            <p>Verified, PNC-registered nurses and background-checked attendants for your home, across Lahore. You always meet the caregiver before they arrive.</p>
-            <p className="ur urdu">گھر پر قابلِ بھروسہ نرسیں اور اٹینڈنٹ — پورے لاہور میں۔</p>
+            <p data-en>Verified, PNC-registered nurses and background-checked attendants for your home, across Lahore. You always meet the caregiver before they arrive.</p>
+            <p data-ur className="ur urdu">تصدیق شدہ، پی این سی رجسٹرڈ نرسیں اور پس منظر کی جانچ شدہ اٹینڈنٹ — پورے لاہور میں آپ کے گھر کے لیے۔ نگہداشت کنندہ کے آنے سے پہلے آپ ہمیشہ اس سے ملتے ہیں۔</p>
           </div>
           <div className="foot-col">
-            <h4>Talk to us &middot; 24/7</h4>
+            <h4><span data-en>Talk to us &middot; 24/7</span><span data-ur className="urdu">ہم سے بات کریں &middot; 24/7</span></h4>
             <a className="foot-num" href={`tel:${CONTACT_PHONE_TEL}`}>{CONTACT_PHONE_DISPLAY}</a>
-            <a href={wa} target="_blank" rel="noopener noreferrer">WhatsApp us</a>
-            <Link href="/#get-call">Request a call back</Link>
+            <a href={wa} target="_blank" rel="noopener noreferrer"><span data-en>WhatsApp us</span><span data-ur className="urdu">واٹس ایپ کریں</span></a>
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+            <p><span data-en>Office</span><span data-ur className="urdu">دفتر</span>: {OFFICE_ADDRESS}</p>
+            <Link href="/#get-call"><span data-en>Request a call back</span><span data-ur className="urdu">کال منگوائیں</span></Link>
           </div>
           <div className="foot-col">
-            <h4>Our care</h4>
-            <Link href="/services">Home nursing service</Link>
-            <Link href="/services/qualified-nurse">Qualified nurse (PNC)</Link>
-            <Link href="/services/attendant">Patient attendant</Link>
+            <h4><span data-en>Our care</span><span data-ur className="urdu">ہماری خدمات</span></h4>
+            <Link href="/services"><span data-en>Home nursing service</span><span data-ur className="urdu">گھر پر نرسنگ سروس</span></Link>
+            <Link href="/services/qualified-nurse"><span data-en>Qualified nurse (PNC)</span><span data-ur className="urdu">کوالیفائیڈ نرس (PNC)</span></Link>
+            <Link href="/services/attendant"><span data-en>Patient attendant</span><span data-ur className="urdu">مریض کا اٹینڈنٹ</span></Link>
           </div>
           <div className="foot-col">
-            <h4>On this page</h4>
-            <Link href="/#how">How it works</Link>
-            <Link href="/#price">The price receipt</Link>
-            <Link href="/#services">What our nurses do</Link>
-            <Link href="/#who">Who comes to you</Link>
-            <Link href="/#faq">Questions families ask</Link>
+            <h4><span data-en>On this page</span><span data-ur className="urdu">اس صفحے پر</span></h4>
+            <Link href="/#how"><span data-en>How it works</span><span data-ur className="urdu">یہ کیسے کام کرتا ہے</span></Link>
+            <Link href="/#price"><span data-en>The price receipt</span><span data-ur className="urdu">قیمت کی رسید</span></Link>
+            <Link href="/#services"><span data-en>What our nurses do</span><span data-ur className="urdu">ہماری نرسیں کیا کرتی ہیں</span></Link>
+            <Link href="/#who"><span data-en>Who comes to you</span><span data-ur className="urdu">آپ کے پاس کون آتا ہے</span></Link>
+            <Link href="/#faq"><span data-en>Questions families ask</span><span data-ur className="urdu">گھرانے جو سوالات پوچھتے ہیں</span></Link>
           </div>
           <div className="foot-col">
-            <h4>We serve all Lahore</h4>
-            <Link href="/cities/lahore">Nursing care in Lahore</Link>
-            <Link href="/about">About Sehat Connect</Link>
-            <p className="areas">DHA &middot; Gulberg &middot; Johar Town &middot; Model Town &middot; Bahria Town &middot; Cantt, and everywhere in between.</p>
+            <h4><span data-en>We serve all Lahore</span><span data-ur className="urdu">ہم پورے لاہور میں خدمت کرتے ہیں</span></h4>
+            <Link href="/cities/lahore"><span data-en>Nursing care in Lahore</span><span data-ur className="urdu">لاہور میں نرسنگ کی دیکھ بھال</span></Link>
+            <Link href="/about"><span data-en>About Sehat Connect</span><span data-ur className="urdu">سحت کنیکٹ کے بارے میں</span></Link>
+            <p className="areas">
+              <span data-en>DHA &middot; Gulberg &middot; Johar Town &middot; Model Town &middot; Bahria Town &middot; Cantt, and everywhere in between.</span>
+              <span data-ur className="urdu">ڈی ایچ اے &middot; گلبرگ &middot; جوہر ٹاؤن &middot; ماڈل ٹاؤن &middot; بحریہ ٹاؤن &middot; کینٹ، اور آس پاس ہر جگہ۔</span>
+            </p>
           </div>
         </div>
         <div className="foot-bottom">
-          <span>&copy; 2026 Sehat Connect &middot; Lahore &middot; PNC-registered nurses, CNIC &amp; references checked. Pay after the shift, no advance.</span>
-          <span className="urdu">گھر بیٹھے قابلِ بھروسہ نرسنگ کیئر</span>
+          <span data-en>&copy; 2026 Sehat Connect &middot; Lahore &middot; PNC-registered nurses, CNIC &amp; references checked. Pay after the shift, no advance.</span>
+          <span data-ur className="urdu">&copy; 2026 سحت کنیکٹ &middot; لاہور &middot; پی این سی رجسٹرڈ نرسیں، شناختی کارڈ اور حوالہ جات کی تصدیق شدہ۔ شفٹ کے بعد ادائیگی، کوئی پیشگی نہیں۔</span>
         </div>
       </div>
     </footer>

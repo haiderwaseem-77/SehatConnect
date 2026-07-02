@@ -9,11 +9,11 @@ export default function Hero() {
           <div className="hero-copy">
             <span className="eyebrow">
               <span data-en>A real person is one call away</span>
-              <span data-ur>ایک حقیقی فرد ایک کال کی دوری پر</span>
+              <span data-ur className="urdu">ایک حقیقی فرد ایک کال کی دوری پر</span>
             </span>
             <h1>
-              <span data-en>Worried about caring for someone at home? <span className="hl">Leave your number</span> — a real person calls you back.</span>
-              <span data-ur className="urdu">گھر پر کسی کی دیکھ بھال کی فکر ہے؟ <span className="hl">بس اپنا نمبر دیں</span> — ایک حقیقی فرد آپ کو کال کرے گا۔</span>
+              <span data-en>A verified nurse or attendant at home, in Lahore. <span className="hl">Leave your number</span> — a real person calls you back.</span>
+              <span data-ur className="urdu">گھر پر تصدیق شدہ نرس یا تیماردار، لاہور میں۔ <span className="hl">اپنا نمبر چھوڑیں</span> — ایک اصل انسان آپ کو کال کرے گا۔</span>
             </h1>
             <p className="hero-sub">
               <span data-en>Take a breath. No advance to pay, no long form to fight. Tell us your name and number. We&rsquo;ll call, listen, and arrange a verified nurse or attendant.</span>
@@ -31,8 +31,16 @@ export default function Hero() {
                 <span data-ur className="urdu">شفٹ کے بعد ادائیگی</span>
               </span>
               <span className="pill">
-                <span data-en>0 advance</span>
-                <span data-ur className="urdu">صفر پیشگی</span>
+                <span data-en>No advance</span>
+                <span data-ur className="urdu">کوئی پیشگی نہیں</span>
+              </span>
+              <span className="pill">
+                <span data-en>Day or night</span>
+                <span data-ur className="urdu">دن ہو یا رات</span>
+              </span>
+              <span className="pill">
+                <span data-en>We speak Urdu</span>
+                <span data-ur className="urdu">ہم اردو میں بات کرتے ہیں</span>
               </span>
             </div>
           </div>

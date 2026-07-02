@@ -58,8 +58,11 @@ const jsonLd = {
   sameAs: [`https://wa.me/${WHATSAPP_NUMBER}`],
 };
 
-// FAQPage structured data — must mirror the questions/answers VISIBLE in
+// FAQPage structured data — must mirror all questions/answers rendered in
 // components/home/HomeFAQ.tsx (Google requires schema to match on-page content).
+// That includes the 5 items collapsed behind "More questions" there — same as
+// ServicesSection's "All services & prices" disclosure, collapsed accordion
+// content is still real, reachable, on-page content.
 const nursePrice = `Rs ${PRICES.qualified_nurse.toLocaleString("en-US")}`;
 const attendantPrice = `Rs ${PRICES.attendant.toLocaleString("en-US")}`;
 
@@ -73,28 +76,40 @@ const homeFaq: { q: string; a: string }[] = [
     a: "A verified person whose card we send you first — photo, name and PNC number on WhatsApp before they arrive. Every Qualified Nurse is PNC registered; attendants are background-verified, CNIC & references checked. Caring for a woman? Ask for a female nurse or attendant — female-for-female, always.",
   },
   {
-    q: "Can they actually do the medical work?",
-    a: "Yes. Our Qualified Nurses are Pakistan Nursing Council registered and do real nursing at home — wounds, dressings, injections, medicines, monitoring, post-op and ICU step-down care. For non-clinical help (feeding, hygiene, movement) an Attendant is enough, and we’ll tell you honestly which you need.",
+    q: "How fast can care start?",
+    a: "Within 24 hours of your call, often sooner. We confirm the caregiver on WhatsApp and send their card before they arrive.",
   },
   {
-    q: "What’s the difference between a nurse and an attendant?",
-    a: `A Qualified Nurse (${nursePrice}) handles clinical care — medicines, wounds, injections, monitoring. An Attendant (${attendantPrice}) handles non-clinical care — feeding, hygiene, movement and comfort. Both per 12-hour shift.`,
+    q: "What if we’re not comfortable with the caregiver?",
+    a: "Tell us after the first shift and we’ll send someone else. You’ve paid nothing in advance, so you’re never stuck.",
   },
   {
     q: "How and when do I pay?",
     a: "Cash after the shift — no advance, ever. Easypaisa and JazzCash are coming soon for convenience. You can cancel or reschedule free up to 4 hours before.",
   },
   {
-    q: "Can I request the same nurse again?",
-    a: "Yes. Tell us on WhatsApp and we try our best to send the same caregiver, so your loved one sees a familiar face. Continuity matters to us too.",
-  },
-  {
     q: "Which areas of Lahore do you cover?",
     a: "All of Lahore — DHA, Gulberg, Johar Town, Model Town, Bahria Town, Cantt and everywhere in between, 24/7. We ask your exact area on the call.",
   },
   {
+    q: "What’s the difference between a nurse and an attendant?",
+    a: `A Qualified Nurse (${nursePrice}) handles clinical care — medicines, wounds, injections, monitoring. An Attendant (${attendantPrice}) handles non-clinical care — feeding, hygiene, movement and comfort. Both per 12-hour shift.`,
+  },
+  {
+    q: "Can they actually do the medical work?",
+    a: "Yes. Our Qualified Nurses are Pakistan Nursing Council registered and do real nursing at home — wounds, dressings, injections, medicines, monitoring, post-op and ICU step-down care. For non-clinical help (feeding, hygiene, movement) an Attendant is enough, and we’ll tell you honestly which you need.",
+  },
+  {
+    q: "Can I request the same nurse again?",
+    a: "Yes. Tell us on WhatsApp and we try our best to send the same caregiver, so your loved one sees a familiar face. Continuity matters to us too.",
+  },
+  {
     q: "What if the caregiver is running late?",
     a: "We keep you updated by WhatsApp/SMS, and you can always call us. If there’s a delay, we sort out a replacement quickly — you’re never left waiting without an answer.",
+  },
+  {
+    q: "I live abroad — can I arrange care for my parents in Lahore?",
+    a: "Yes. Many families arrange everything over WhatsApp from abroad — we send the caregiver’s card before the shift, just like any booking, and keep you updated by WhatsApp throughout. Your family in Lahore pays after the shift, same as usual.",
   },
 ];
 

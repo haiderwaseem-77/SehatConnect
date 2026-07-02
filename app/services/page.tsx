@@ -80,16 +80,16 @@ const CATEGORIES = [
 ];
 
 // nurse-vs-attendant comparison (preserved from the original page)
-const COMPARE: [string, boolean | string, boolean | string][] = [
-  ["PNC registered", true, false],
-  ["Wound dressing / IV care", true, false],
-  ["Injections & medication", true, false],
-  ["Vitals monitoring", true, false],
-  ["Personal hygiene support", true, true],
-  ["Feeding assistance", true, true],
-  ["Companionship / support", true, true],
-  ["Overnight duty", true, true],
-  ["Price per shift", `Rs ${PRICES.qualified_nurse.toLocaleString()}`, `Rs ${PRICES.attendant.toLocaleString()}`],
+const COMPARE: [{ en: string; ur: string }, boolean | string, boolean | string][] = [
+  [{ en: "PNC registered", ur: "پی این سی رجسٹرڈ" }, true, false],
+  [{ en: "Wound dressing / IV care", ur: "زخم کی ڈریسنگ / ڈرپ" }, true, false],
+  [{ en: "Injections & medication", ur: "انجیکشن اور ادویات" }, true, false],
+  [{ en: "Vitals monitoring", ur: "طبی نگرانی" }, true, false],
+  [{ en: "Personal hygiene support", ur: "صفائی میں مدد" }, true, true],
+  [{ en: "Feeding assistance", ur: "کھانا کھلانے میں مدد" }, true, true],
+  [{ en: "Companionship / support", ur: "رفاقت اور ساتھ" }, true, true],
+  [{ en: "Overnight duty", ur: "رات کی ڈیوٹی" }, true, true],
+  [{ en: "Price per shift", ur: "فی شفٹ قیمت" }, `Rs ${PRICES.qualified_nurse.toLocaleString()}`, `Rs ${PRICES.attendant.toLocaleString()}`],
 ];
 
 const CARD: CSSProperties = {
@@ -279,8 +279,11 @@ export default function ServicesPage() {
                     </thead>
                     <tbody>
                       {COMPARE.map(([feat, n, a]) => (
-                        <tr key={feat} style={{ borderBottom: "1px solid var(--line)" }}>
-                          <td style={{ padding: "12px 6px", color: "var(--ink)", fontWeight: 600, lineHeight: 1.35 }}>{feat}</td>
+                        <tr key={feat.en} style={{ borderBottom: "1px solid var(--line)" }}>
+                          <td style={{ padding: "12px 6px", color: "var(--ink)", fontWeight: 600, lineHeight: 1.35 }}>
+                            <span data-en>{feat.en}</span>
+                            <span data-ur className="urdu">{feat.ur}</span>
+                          </td>
                           <td style={{ textAlign: "center", padding: "12px 4px" }}><Cell v={n} /></td>
                           <td style={{ textAlign: "center", padding: "12px 4px" }}><Cell v={a} /></td>
                         </tr>

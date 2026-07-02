@@ -3,7 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LandingRoot from "@/components/home/LandingRoot";
-import { CONTACT_PHONE_DISPLAY } from "@/lib/constants";
+import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL } from "@/lib/constants";
 import { waLink, GENERIC_WA_MSG } from "@/lib/wa";
 
 export const metadata: Metadata = {
@@ -34,10 +34,11 @@ const STEPS: { en: string; ur: string }[] = [
 export default async function BookingConfirmPage({
   searchParams,
 }: {
-  searchParams: Promise<{ ref?: string }>;
+  searchParams: Promise<{ ref?: string; name?: string }>;
 }) {
   const resolvedParams = await searchParams;
   const ref = resolvedParams.ref ?? "SGH-0000";
+  const name = (resolvedParams.name ?? "").trim();
 
   return (
     <LandingRoot>
@@ -98,20 +99,27 @@ export default async function BookingConfirmPage({
               </div>
 
               <h1 style={{ fontSize: "clamp(24px,5.5vw,30px)", marginBottom: 12 }}>
-                <span data-en>Thank you! We&rsquo;ve got your details.</span>
-                <span data-ur className="urdu">شکریہ! ہمیں آپ کی تفصیلات مل گئیں۔</span>
+                <span data-en>Done. A real person will call you back — usually within 15 minutes.</span>
+                <span data-ur className="urdu">
+                  ہو گیا۔ ایک حقیقی فرد آپ کو کال کرے گا — عام طور پر 15 منٹ کے اندر۔
+                </span>
               </h1>
+
+              {name && (
+                <p style={{ fontSize: 18, color: "var(--ink)", fontWeight: 700, marginBottom: 8 }}>
+                  <span data-en>Shukriya, {name}.</span>
+                  <span data-ur className="urdu">شکریہ، {name}۔</span>
+                </p>
+              )}
 
               <p style={{ fontSize: 18, color: "var(--ink-soft)", lineHeight: 1.65, marginBottom: 22, fontWeight: 500 }}>
                 <span data-en>
-                  A real person will call you back shortly to understand what you need and arrange everything. We&rsquo;ll
-                  call from <strong>{CONTACT_PHONE_DISPLAY}</strong> — please save it so you know it&rsquo;s us. No payment
-                  now.
+                  We&rsquo;ll call from <strong>{CONTACT_PHONE_DISPLAY}</strong>{" "}
+                  to understand what you need and arrange everything — please save it so you know it&rsquo;s us. No payment now.
                 </span>
                 <span data-ur className="urdu">
-                  ایک حقیقی فرد جلد آپ کو کال کر کے آپ کی ضرورت سمجھے گا اور سب بندوبست کرے گا۔ ہم{" "}
-                  <strong>{CONTACT_PHONE_DISPLAY}</strong> سے کال کریں گے — براہِ کرم اسے محفوظ کر لیں۔ ابھی کوئی ادائیگی
-                  نہیں۔
+                  ہم <strong><bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></strong>{" "}
+                  سے کال کر کے آپ کی ضرورت سمجھیں گے اور سب بندوبست کریں گے — براہِ کرم اسے محفوظ کر لیں۔ ابھی کوئی ادائیگی نہیں۔
                 </span>
               </p>
 
@@ -187,6 +195,13 @@ export default async function BookingConfirmPage({
 
               {/* Actions */}
               <div style={{ display: "grid", gap: 10 }}>
+                <a className="btn btn-call btn-block btn-lg" href={`tel:${CONTACT_PHONE_TEL}`}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
+                  </svg>
+                  <span data-en>Can&rsquo;t wait? Call us now: {CONTACT_PHONE_DISPLAY}</span>
+                  <span data-ur className="urdu">انتظار نہیں کر سکتے؟ ابھی کال کریں: <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+                </a>
                 <a
                   className="btn btn-wa btn-block btn-lg"
                   href={waLink(GENERIC_WA_MSG)}
@@ -201,6 +216,28 @@ export default async function BookingConfirmPage({
                   <span data-en>Back to home</span>
                   <span data-ur className="urdu">ہوم پر واپس</span>
                 </Link>
+                <a
+                  href={`data:text/vcard;charset=utf-8,${encodeURIComponent(
+                    [
+                      "BEGIN:VCARD",
+                      "VERSION:3.0",
+                      "FN:Sehat Connect",
+                      `TEL;TYPE=CELL:${CONTACT_PHONE_TEL}`,
+                      "END:VCARD",
+                    ].join("\n")
+                  )}`}
+                  download="Sehat-Connect.vcf"
+                  style={{
+                    fontSize: 14,
+                    fontWeight: 600,
+                    color: "var(--ink-soft)",
+                    textDecoration: "underline",
+                    marginTop: 4,
+                  }}
+                >
+                  <span data-en>Save our number, so our call isn&rsquo;t a stranger&rsquo;s number</span>
+                  <span data-ur className="urdu">ہمارا نمبر محفوظ کر لیں، تاکہ ہماری کال اجنبی نمبر نہ لگے</span>
+                </a>
               </div>
             </div>
           </div>

@@ -26,6 +26,17 @@ function resolveCity(slug: string) {
 const nursePrice = `Rs ${PRICES.qualified_nurse.toLocaleString("en-US")}`;
 const attendantPrice = `Rs ${PRICES.attendant.toLocaleString("en-US")}`;
 
+// Same locality list as the footer's areas line and the HomeFAQ "Which areas
+// of Lahore do you cover?" answer — keep these three in sync.
+const LAHORE_AREAS = [
+  { en: "DHA", ur: "ڈی ایچ اے" },
+  { en: "Gulberg", ur: "گلبرگ" },
+  { en: "Johar Town", ur: "جوہر ٹاؤن" },
+  { en: "Model Town", ur: "ماڈل ٹاؤن" },
+  { en: "Bahria Town", ur: "بحریہ ٹاؤن" },
+  { en: "Cantt", ur: "کینٹ" },
+];
+
 export async function generateMetadata({ params }: { params: Promise<{ city: string }> }): Promise<Metadata> {
   const { city } = await params;
   const slug = (city ?? "").toLowerCase();
@@ -172,8 +183,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                         <span data-ur className="urdu">شفٹ کے بعد ادائیگی</span>
                       </span>
                       <span className="pill">
-                        <span data-en>0 advance</span>
-                        <span data-ur className="urdu">صفر پیشگی</span>
+                        <span data-en>No advance</span>
+                        <span data-ur className="urdu">کوئی پیشگی نہیں</span>
                       </span>
                     </div>
                   )}
@@ -248,13 +259,54 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                     </span>
                     <span data-ur className="urdu">
                       سہت کنیکٹ {cityName} میں تصدیق شدہ گھریلو نرسنگ لا رہا ہے — آپریشن کے بعد کی دیکھ بھال، بزرگوں کی دیکھ بھال، بچوں کی دیکھ بھال اور بہت کچھ، پی این سی رجسٹرڈ نرسوں اور تربیت یافتہ اٹینڈنٹس کی طرف سے، سب شناختی کارڈ اور پس منظر کی جانچ شدہ۔ ہم ابھی {cityName} میں شروع نہیں ہوئے — اپنی تفصیلات دیں اور جیسے ہی ہم شروع ہوں گے ہم آپ کو کال کریں گے۔ سوالات؟ کال یا واٹس ایپ کریں{" "}
-                      <strong style={{ color: "var(--teal-deep)" }}>{CONTACT_PHONE_DISPLAY}</strong>۔
+                      <strong style={{ color: "var(--teal-deep)" }}><bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></strong>۔
                     </span>
                   </p>
                 )}
               </div>
             </div>
           </section>
+
+          {/* Named localities — keeps this the one indexed city page with real coverage detail */}
+          {isLive && (
+            <section className="block" style={{ paddingTop: 0 }}>
+              <div className="wrap">
+                <div className="sec-head" style={{ marginBottom: "14px" }}>
+                  <h2 style={{ fontSize: "clamp(20px,4.4vw,26px)" }}>
+                    <span data-en>Areas we serve in Lahore</span>
+                    <span data-ur className="urdu">لاہور کے وہ علاقے جہاں ہم خدمات فراہم کرتے ہیں</span>
+                  </h2>
+                </div>
+                <div className="founder-card">
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                    {LAHORE_AREAS.map(area => (
+                      <span
+                        key={area.en}
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          fontSize: "15px",
+                          fontWeight: 700,
+                          color: "var(--teal-deep)",
+                          background: "var(--mist)",
+                          border: "1px solid var(--line)",
+                          borderRadius: "999px",
+                          padding: "7px 14px",
+                        }}
+                      >
+                        <span data-en>{area.en}</span>
+                        <span data-ur className="urdu">{area.ur}</span>
+                      </span>
+                    ))}
+                  </div>
+                  <p style={{ fontSize: "16px", color: "var(--ink-soft)", lineHeight: 1.6, fontWeight: 500, margin: "16px 0 0" }}>
+                    <span data-en>And everywhere in between, 24/7. We ask your exact area on the call.</span>
+                    <span data-ur className="urdu">اور ان کے درمیان ہر جگہ، چوبیس گھنٹے۔ کال پر ہم آپ کا صحیح علاقہ پوچھ لیتے ہیں۔</span>
+                  </p>
+                </div>
+              </div>
+            </section>
+          )}
 
         </main>
         <Footer />

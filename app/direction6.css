@@ -297,8 +297,19 @@ body{overflow-x:hidden}
 }
 .d6 .receipt-foot b{color:var(--teal);font-weight:800;display:block;font-size:14px;letter-spacing:.14em;margin-top:6px}
 
+.d6 .receipt-share{
+  display:flex;align-items:center;justify-content:center;gap:11px;
+  width:100%;margin-top:20px;background:var(--cream-2);border:1.5px solid var(--line);border-radius:14px;
+  padding:13px 16px;min-height:56px;cursor:pointer;font-weight:700;font-size:15.5px;color:var(--ink);
+  transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.d6 .receipt-share:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.d6 .receipt-share .wa-mini{width:30px;height:30px;border-radius:9px;background:rgba(31,168,85,.12);display:grid;place-items:center;flex:none}
+.d6 .receipt-share .wa-mini svg{width:18px;height:18px;fill:var(--wa)}
+
 /* ================= SERVICES (WhatsApp deep-link chips) ================= */
 .d6 .services .sec-head{margin-bottom:22px}
+.d6 .svc-chips-lead{font-size:13px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--teal-deep);margin:0 0 11px}
 .d6 .svc-chips{display:flex;flex-wrap:wrap;gap:10px}
 .d6 .svc-chip{
   display:inline-flex;align-items:center;gap:11px;
@@ -325,7 +336,7 @@ body{overflow-x:hidden}
 .d6 .disc-ico svg{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:2}
 .d6 .disc-titles{flex:1;min-width:0}
 .d6 .disc-titles .dt{font-size:18px;font-weight:800;color:var(--ink);line-height:1.2}
-.d6 .disc-titles .ds{font-size:14px;color:var(--ink-soft);font-weight:600;margin-top:2px}
+.d6 .disc-titles .ds{display:block;font-size:14px;color:var(--ink-soft);font-weight:600;margin-top:2px}
 .d6 .disc-chev{flex:none;width:32px;height:32px;border-radius:50%;background:var(--cream-2);color:var(--teal);display:grid;place-items:center;transition:transform .28s ease, background .2s}
 .d6 .disc-chev svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2.4}
 .d6 .disc[data-open="1"] .disc-chev{transform:rotate(180deg);background:var(--teal);color:#fff}
@@ -365,6 +376,11 @@ body{overflow-x:hidden}
 .d6 .faq-a-in{overflow:hidden;min-height:0;font-size:16px;color:var(--ink-soft);font-weight:500;line-height:1.55}
 .d6 .faq-a-pad{padding:0 18px 18px}
 .d6 .faq-a-in .urdu{display:block;margin-top:8px;font-size:15px;color:var(--ink-soft)}
+/* "More questions" disclosure header shows English + Urdu inline (unlike
+   ServicesSection's data-en/data-ur toggle) — force the Urdu run onto its own
+   line so it never merges with the preceding English text (e.g. a trailing count). */
+.d6 #faq .disc-titles .dt .urdu,
+.d6 #faq .disc-titles .ds .urdu{display:block;margin-top:2px}
 
 /* ================= HUMAN PROOF ================= */
 .d6 .founder-card{
