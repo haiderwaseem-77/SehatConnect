@@ -21,7 +21,7 @@ export default function FounderNote() {
               <span data-ur className="urdu">جب میری دادی کو گھر پر دیکھ بھال چاہیے تھی، مجھے سمجھ آیا کہ اجنبی کو گھر میں بلانا کتنا مشکل فیصلہ ہے۔ اسی لیے Sehat Connect بنایا۔ ہر فرد پہلے چیک ہوتا ہے، ادائیگی شفٹ کے بعد ہوتی ہے، اور ہماری ٹیم ایک کال دور رہتی ہے۔</span>
             </p>
             <p>
-              <span data-en>I promise to look after your family the way I wanted <em>mine</em> looked after.</span>
+              <span data-en>I aim to look after your family the way I wanted <em>mine</em> looked after.</span>
               <span data-ur className="urdu">میرا وعدہ ہے: آپ کے گھر والوں کا خیال ایسے رکھیں گے جیسے اپنے گھر والوں کا۔</span>
             </p>
           </div>

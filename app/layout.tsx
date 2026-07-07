@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import {
+  Fraunces,
+  Inter,
+  Noto_Nastaliq_Urdu,
+  Plus_Jakarta_Sans,
+} from "next/font/google";
 import "./globals.css";
 import "./direction6.css";
 import StickyActionBar from "@/components/ui/StickyActionBar";
@@ -9,7 +14,29 @@ import { SITE_URL } from "@/lib/constants";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-sans",
+  variable: "--font-inter",
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-jakarta",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  display: "swap",
+  style: ["italic"],
+  weight: ["500", "600"],
+  variable: "--font-fraunces",
+});
+
+const notoNastaliqUrdu = Noto_Nastaliq_Urdu({
+  display: "swap",
+  preload: false,
+  weight: ["400", "600", "700"],
+  variable: "--font-urdu",
 });
 
 export const metadata: Metadata = {
@@ -76,16 +103,15 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const fontVars = [
+    inter.variable,
+    plusJakarta.variable,
+    fraunces.variable,
+    notoNastaliqUrdu.variable,
+  ].join(" ");
+
   return (
-    <html lang="en" className={inter.variable}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={fontVars}>
       <body className="min-h-screen flex flex-col">
         <LanguageProvider>
           {children}
