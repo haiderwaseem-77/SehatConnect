@@ -14,8 +14,8 @@ export default function CtaBanner() {
               <span data-ur className="urdu">بس اپنا نمبر دیں۔ ہم آپ کو کال کریں گے۔</span>
             </h2>
             <p className="c-sub">
-              <span data-en>The form takes less than 30 seconds. We&rsquo;ll help arrange the care your loved one needs.</span>
-              <span data-ur className="urdu">فارم بھرنے میں 30 سیکنڈ سے کم وقت لگتا ہے۔ ہم آپ کے پیارے کے لیے ضروری دیکھ بھال کا بندوبست کرنے میں مدد کریں گے۔</span>
+              <span data-en>The form takes less than 30 seconds. Our team will call and guide you from there.</span>
+              <span data-ur className="urdu">فارم بھرنے میں 30 سیکنڈ سے کم وقت لگتا ہے۔ ہماری ٹیم کال کر کے آپ کی رہنمائی کرے گی۔</span>
             </p>
             <p className="closer-urdu">
               <span data-en>Call or WhatsApp. Our team answers.</span>
