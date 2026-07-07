@@ -67,7 +67,7 @@ const homeFaq: { q: string; a: string }[] = [
   },
   {
     q: "How fast can care start?",
-    a: "Often within 24 hours. We confirm the details on the call, arrange the right person, and care starts once your family is comfortable.",
+    a: "Often within 24 hours. We confirm the details on the call and arrange the right person for your loved one’s care.",
   },
   {
     q: "What if we’re not comfortable with the caregiver?",
@@ -75,7 +75,7 @@ const homeFaq: { q: string; a: string }[] = [
   },
   {
     q: "How and when do I pay?",
-    a: "There is no advance payment. We explain the plan clearly before care starts, your first day is free, and payment is handled after care begins.",
+    a: "There is no advance payment. First day is free, and payment starts only once the right person is finalized and your family is comfortable.",
   },
   {
     q: "Which areas of Lahore do you cover?",

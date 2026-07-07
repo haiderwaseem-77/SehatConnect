@@ -32,9 +32,9 @@ const ITEMS: Item[] = [
     q: "How fast can care start?",
     qUr: "دیکھ بھال کتنی جلدی شروع ہو سکتی ہے؟",
     a: (
-      <>Often within <b>24 hours</b>. We confirm the details on the call, arrange the right person, and care starts once your family is comfortable.</>
+      <>Often within <b>24 hours</b>. We confirm the details on the call and arrange the right person for your loved one&rsquo;s care.</>
     ),
-    aUr: "اکثر 24 گھنٹوں میں دیکھ بھال شروع ہو سکتی ہے۔ ہم کال پر تفصیل کنفرم کر کے مناسب فرد کا بندوبست کرتے ہیں، اور آپ کے گھرانے کے اطمینان کے بعد دیکھ بھال شروع ہوتی ہے۔",
+    aUr: "اکثر 24 گھنٹوں میں دیکھ بھال شروع ہو سکتی ہے۔ ہم کال پر تفصیل کنفرم کر کے آپ کے پیارے کے لیے مناسب فرد کا بندوبست کرتے ہیں۔",
   },
   {
     q: "What if we’re not comfortable with the caregiver?",
@@ -48,9 +48,9 @@ const ITEMS: Item[] = [
     q: "How and when do I pay?",
     qUr: "ادائیگی کیسے اور کب؟",
     a: (
-      <>There is <b>no advance payment</b>. We explain the plan clearly before care starts, your first day is free, and payment is handled after care begins.</>
+      <>There is <b>no advance payment</b>. First day is free, and payment starts only once the right person is finalized and your family is comfortable.</>
     ),
-    aUr: "کوئی پیشگی ادائیگی نہیں۔ دیکھ بھال شروع ہونے سے پہلے ہم پلان صاف بتاتے ہیں، پہلا دن مفت ہے، اور ادائیگی دیکھ بھال شروع ہونے کے بعد ہوتی ہے۔",
+    aUr: "کوئی پیشگی ادائیگی نہیں۔ پہلا دن مفت ہے، اور ادائیگی صرف تب شروع ہوتی ہے جب مناسب فرد فائنل ہو جائے اور آپ کا گھرانہ مطمئن ہو۔",
   },
   {
     q: "Which areas of Lahore do you cover?",
