@@ -2,103 +2,100 @@ import Image from "next/image";
 import PulseAccent from "@/components/home/PulseAccent";
 
 /*
- * ============================================================================
- * MOCK DATA — client will replace with real team info + photos.
- * ----------------------------------------------------------------------------
- * Every name, role and one-line description below is a PLACEHOLDER supplied so
- * the section can be designed and reviewed. The photos in /public/team are also
- * placeholders (team-photo-1 is literally named *STOCK-REPLACE*). The client
- * will swap in the real team's names, roles, photos and lines before launch.
- * Do NOT treat any string here as an approved public claim. The only claim that
- * is real and reusable is the verification triple in the closing line, which is
- * the NORTH-STAR §3 canon phrasing and applies to every caregiver we send.
- *
- * TODO: Urdu counterpart for every user-facing string in this section
- *       (name/role/line/header/lede/closing line) — this pass ships EN only,
- *       matching the site's other new-section convention.
- * ============================================================================
+ * "The team on the other end of your call" — five photos, deliberately unnamed.
+ * Decision (2026-07-07): we do NOT publish team names, roles or per-person bios.
+ * Anything per-person would either be invented (honesty-rule violation — the old
+ * mock names were a live audit blocker) or an unverifiable claim. Instead the
+ * section shows the team at work and states only what is true for everyone:
+ * the NORTH-STAR §3 verification triple, plus a privacy line explaining WHY
+ * there are no names. Photos are a horizontal snap-scroller on mobile and a
+ * single five-up row on desktop. This must never read as browsable caregiver
+ * profiles — no per-person text, badges or actions.
  */
-type Member = {
-  name: string;
-  role: string;
-  line: string;
+type Shot = {
   photo: string;
   alt: string;
-  /** object-position for the crop — each stock photo frames the face differently */
+  /** object-position — each photo frames its subject differently */
   pos: string;
 };
 
-// MOCK DATA — client will replace with real team info + photos.
-const TEAM: Member[] = [
+const SHOTS: Shot[] = [
   {
-    name: "Bilal Ahmad", // MOCK
-    role: "Care Coordinator", // MOCK
-    line: "Answers when you call, and matches the right caregiver to your family's needs.", // MOCK
-    photo: "/team/team-photo-1-STOCK-REPLACE.jpg",
-    alt: "Bilal Ahmad, care coordinator at Sehat Connect", // MOCK
+    photo: "/team/team-photo-1.jpg",
+    alt: "Caregiver in navy scrubs standing in a hospital staff room",
+    pos: "center 18%",
+  },
+  {
+    photo: "/team/team-photo-5.jpg",
+    alt: "Nurse preparing a line at a patient's bedside",
+    pos: "center 26%",
+  },
+  {
+    photo: "/team/team-photo-4.jpg",
+    alt: "Caregiver in scrubs with a stethoscope, standing outdoors",
     pos: "center 22%",
   },
   {
-    name: "Sana Riaz", // MOCK
-    role: "Head Nurse · PNC-registered", // MOCK — "PNC-registered" is the only certification claim allowed for the nurse role
-    line: "Reviews the clinical details so the nurse we send fits the care your loved one needs.", // MOCK
     photo: "/team/team-photo-2.jpg",
-    alt: "Sana Riaz, head nurse at Sehat Connect, preparing an IV drip", // MOCK
-    pos: "32% 24%",
+    alt: "Nurse adjusting an IV drip in a hospital corridor",
+    pos: "38% 28%",
   },
   {
-    name: "Hina Farooq", // MOCK
-    role: "Attendant Team Lead", // MOCK
-    line: "Checks in after the first visit to make sure your family is comfortable.", // MOCK
     photo: "/team/team-photo-3.jpg",
-    alt: "Hina Farooq, attendant team lead at Sehat Connect", // MOCK
-    pos: "center 18%",
+    alt: "Nurse in a white coat in a hospital hallway",
+    pos: "center 16%",
   },
 ];
 
-// Extends the founder note: "…and here's the team that delivers on it." A calm,
-// editorial "the people behind your call" moment — NOT browsable caregiver
-// profiles. No per-person actions, no ratings, no marketplace patterns.
+// Extends the founder note: "…and here's the team that delivers on it."
+// Header + lede reuse the hero's exact vocabulary (leave your number / arrange
+// the right nurse or attendant / stay with your family) so the section answers
+// the promise the hero makes.
 //
 // Scroll-reveal is handled by the shared mechanism in LandingRoot: `data-reveal`
 // elements are fully visible by default (SSR / no-JS / crawlers / reduced-motion)
 // and only enhanced once JS + motion allow it. No component-local observer.
 export default function TeamSection() {
   return (
-    // TODO: Urdu counterpart for header, lede, roles, lines and closing note.
     <section className="block team" id="team" aria-labelledby="team-title">
       <div className="wrap">
         <div className="sec-head" data-reveal>
           {/* shared mini-ECG section accent — the brand motif, drawn on reveal */}
           <PulseAccent />
-          <h2 id="team-title">The people behind your call.</h2>
+          <h2 id="team-title">
+            <span data-en>The team on the other end of your call.</span>
+            <span data-ur className="urdu">آپ کی کال کی دوسری جانب — ہماری ٹیم۔</span>
+          </h2>
           <p>
-            Real people in Lahore who answer when you call, match the right
-            caregiver, and stay with your family after the first visit.
+            <span data-en>
+              Leave your number and our team calls you back, arranges the right
+              nurse or attendant, and stays with your family after care starts.
+            </span>
+            <span data-ur className="urdu">
+              اپنا نمبر دیں — ہماری ٹیم کال کرے گی، صحیح نرس یا اٹینڈنٹ کا
+              انتظام کرے گی، اور دیکھ بھال شروع ہونے کے بعد بھی آپ کے ساتھ رہے
+              گی۔
+            </span>
           </p>
         </div>
+      </div>
 
-        <ul className="team-grid" role="list">
-          {TEAM.map((m) => (
-            <li key={m.name} className="team-card" data-reveal>
-              <div className="team-photo">
-                <Image
-                  src={m.photo}
-                  alt={m.alt}
-                  fill
-                  sizes="(min-width:760px) 104px, 96px"
-                  style={{ objectFit: "cover", objectPosition: m.pos }}
-                />
-              </div>
-              <div className="team-meta">
-                <div className="team-name">{m.name}</div>
-                <div className="team-role">{m.role}</div>
-                <p className="team-line">{m.line}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+      {/* full-bleed on mobile so the peeking next card signals "swipe" */}
+      <ul className="team-strip" role="list" data-reveal>
+        {SHOTS.map((s) => (
+          <li key={s.photo} className="team-shot">
+            <Image
+              src={s.photo}
+              alt={s.alt}
+              fill
+              sizes="(min-width:760px) 210px, 64vw"
+              style={{ objectFit: "cover", objectPosition: s.pos }}
+            />
+          </li>
+        ))}
+      </ul>
 
+      <div className="wrap">
         {/* Single quiet reassurance — carries the NORTH-STAR §3 verification
             canon verbatim. Not a CTA; the final CTA banner follows immediately. */}
         <p className="team-assure" data-reveal>
@@ -120,8 +117,28 @@ export default function TeamSection() {
             />
           </svg>
           <span>
-            Every caregiver they send is <b>CNIC checked, references called,
-            police-verified</b> &mdash; before anyone reaches your door.
+            <span data-en>
+              Every caregiver we send is <b>CNIC checked, references called,
+              police-verified</b> &mdash; before anyone reaches your door.
+            </span>
+            <span data-ur className="urdu">
+              جو بھی آپ کے گھر آئے — اس کا شناختی کارڈ، حوالہ جات اور پولیس
+              تصدیق پہلے چیک ہوتی ہے۔
+            </span>
+          </span>
+        </p>
+
+        {/* Why there are no names — an explained absence beats invented bios. */}
+        <p className="team-privacy" data-reveal>
+          <span data-en>
+            We don&rsquo;t put our team&rsquo;s names on the internet &mdash;
+            for their privacy and safety. You&rsquo;ll know your caregiver by
+            name before care starts.
+          </span>
+          <span data-ur className="urdu">
+            ہم اپنی ٹیم کے نام انٹرنیٹ پر نہیں ڈالتے — ان کی پرائیویسی اور
+            حفاظت کے لیے۔ دیکھ بھال شروع ہونے سے پہلے آپ کو نرس یا اٹینڈنٹ کا
+            نام بتا دیا جاتا ہے۔
           </span>
         </p>
       </div>

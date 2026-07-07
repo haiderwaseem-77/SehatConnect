@@ -568,31 +568,31 @@ body{overflow-x:hidden}
 
 /* ============================================================================
    ===== team section =====
-   "The people behind your call" — a calm trust moment that extends the founder
-   note. Photo-left rows on mobile reflow to a 3-across portrait grid on desktop.
-   Photos rhyme with the founder avatar (teal ring, rounded). No per-person
-   actions — this must never read as browsable caregiver profiles.
+   "The team on the other end of your call" — a calm trust moment that extends
+   the founder note. Five unnamed photos: a horizontal snap-scroller (full-bleed,
+   next card peeking = swipe affordance) on mobile, one five-up row on desktop.
+   Deliberately no names/roles/bios — the collective verification line and the
+   privacy note carry the trust. Must never read as browsable caregiver
+   profiles: no per-person text or actions.
    ============================================================================ */
 .d6 .team{background:var(--cream-2);border-top:1px solid var(--line)}
-.d6 .team .sec-head{margin-bottom:26px}
+.d6 .team .sec-head{margin-bottom:22px}
 /* header accent is now the shared .d6-pulse-accent (see PulseAccent) */
 
-/* people cards */
-.d6 .team-grid{list-style:none;display:grid;grid-template-columns:1fr;gap:14px;margin:0;padding:0}
-.d6 .team-card{
-  display:flex;gap:16px;align-items:flex-start;
-  background:var(--paper);border:1px solid var(--line);border-radius:18px;
-  padding:18px;box-shadow:var(--shadow-sm);
+/* photo strip */
+.d6 .team-strip{
+  list-style:none;margin:0;padding:0 20px;
+  display:flex;gap:12px;
+  overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:20px;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;
 }
-.d6 .team-photo{
-  position:relative;flex:0 0 auto;width:96px;aspect-ratio:4/5;
-  border-radius:14px;overflow:hidden;border:2px solid var(--teal);
-  background:var(--cream-2);box-shadow:0 8px 20px -14px rgba(10,46,43,.5);
+.d6 .team-strip::-webkit-scrollbar{display:none}
+.d6 .team-shot{
+  position:relative;flex:0 0 auto;width:min(64vw,250px);aspect-ratio:4/5;
+  scroll-snap-align:start;
+  border-radius:18px;overflow:hidden;border:1px solid var(--line);
+  background:var(--cream-2);box-shadow:var(--shadow-sm);
 }
-.d6 .team-meta{min-width:0;padding-top:2px}
-.d6 .team-name{font-weight:800;font-size:18px;color:var(--ink);line-height:1.25}
-.d6 .team-role{margin-top:2px;font-size:15px;font-weight:700;color:var(--teal-deep);letter-spacing:.01em}
-.d6 .team-line{margin-top:9px;font-size:16px;color:var(--ink-soft);font-weight:500;line-height:1.5}
 
 /* closing reassurance — verification canon (NORTH-STAR §3), quiet, no CTA */
 .d6 .team-assure{
@@ -602,11 +602,19 @@ body{overflow-x:hidden}
 .d6 .team-assure svg{flex:none;width:22px;height:22px;color:var(--teal);margin-top:1px}
 .d6 .team-assure b{color:var(--ink);font-weight:800}
 
+/* why there are no names — quiet, aligned under the shield line's text */
+.d6 .team-privacy{
+  margin-top:12px;padding-left:33px;
+  font-size:16px;color:var(--ink-soft);font-weight:500;line-height:1.55;max-width:54ch;
+}
+
 @media(min-width:760px){
-  .d6 .team .sec-head{margin-bottom:30px}
-  .d6 .team-grid{grid-template-columns:repeat(3,1fr);gap:18px}
-  .d6 .team-card{flex-direction:column;gap:15px;padding:22px}
-  .d6 .team-photo{width:104px}
+  .d6 .team .sec-head{margin-bottom:28px}
+  .d6 .team-strip{
+    max-width:var(--maxw);margin:0 auto;padding:0 32px;gap:16px;
+    overflow:visible;scroll-snap-type:none;
+  }
+  .d6 .team-shot{flex:1 1 0;width:auto;min-width:0}
   .d6 .team-assure{margin-top:28px}
 }
 
@@ -630,10 +638,8 @@ body{overflow-x:hidden}
 
 /* small stagger inside card groups (matters when a row enters together on desktop;
    harmless on mobile where cards enter one at a time) */
-.d6.motion-ready .steps [data-reveal]:nth-child(2),
-.d6.motion-ready .team-grid [data-reveal]:nth-child(2){transition-delay:.08s}
-.d6.motion-ready .steps [data-reveal]:nth-child(3),
-.d6.motion-ready .team-grid [data-reveal]:nth-child(3){transition-delay:.16s}
+.d6.motion-ready .steps [data-reveal]:nth-child(2){transition-delay:.08s}
+.d6.motion-ready .steps [data-reveal]:nth-child(3){transition-delay:.16s}
 
 /* "How it works" number circles gently scale-settle as their step reveals */
 .d6.motion-ready .steps [data-reveal] .step-n{
