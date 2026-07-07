@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // Direction-6 human proof — founder note.
 export default function FounderNote() {
   return (
@@ -22,7 +24,14 @@ export default function FounderNote() {
             </p>
           </div>
           <div className="founder-sign">
-            <span className="founder-photo" aria-label="Abdullah Waseem">AW</span>
+            <span className="founder-photo">
+              <Image
+                src="/founder/abdullah-waseem.jpg"
+                alt="Abdullah Waseem, founder of Sehat Connect"
+                width={62}
+                height={62}
+              />
+            </span>
             <div className="founder-meta">
               <div className="fn">Abdullah Waseem</div>
               <div className="fr">
@@ -32,10 +41,6 @@ export default function FounderNote() {
             </div>
           </div>
         </div>
-        <p className="sample-line">
-          <span data-en>Abdullah&rsquo;s photo here is a placeholder. His real photo goes live at launch.</span>
-          <span data-ur className="urdu">Abdullah کی تصویر ابھی عارضی ہے۔ اصل تصویر لانچ پر آئے گی۔</span>
-        </p>
       </div>
     </section>
   );
