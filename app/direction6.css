@@ -571,8 +571,8 @@ body{overflow-x:hidden}
    "The team on the other end of your call" — a calm trust moment that extends
    the founder note. Five unnamed photos: a horizontal snap-scroller (full-bleed,
    next card peeking = swipe affordance) on mobile, one five-up row on desktop.
-   Deliberately no names/roles/bios — the collective verification line and the
-   privacy note carry the trust. Must never read as browsable caregiver
+   Deliberately no names/roles/bios — the collective verification line carries
+   the trust. Must never read as browsable caregiver
    profiles: no per-person text or actions.
    ============================================================================ */
 .d6 .team{background:var(--cream-2);border-top:1px solid var(--line)}
@@ -601,12 +601,6 @@ body{overflow-x:hidden}
 }
 .d6 .team-assure svg{flex:none;width:22px;height:22px;color:var(--teal);margin-top:1px}
 .d6 .team-assure b{color:var(--ink);font-weight:800}
-
-/* why there are no names — quiet, aligned under the shield line's text */
-.d6 .team-privacy{
-  margin-top:12px;padding-left:33px;
-  font-size:16px;color:var(--ink-soft);font-weight:500;line-height:1.55;max-width:54ch;
-}
 
 @media(min-width:760px){
   .d6 .team .sec-head{margin-bottom:28px}

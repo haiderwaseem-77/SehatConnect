@@ -7,9 +7,8 @@ import PulseAccent from "@/components/home/PulseAccent";
  * Anything per-person would either be invented (honesty-rule violation — the old
  * mock names were a live audit blocker) or an unverifiable claim. Instead the
  * section shows the team at work and states only what is true for everyone:
- * the NORTH-STAR §3 verification triple, plus a privacy line explaining WHY
- * there are no names. Photos are a horizontal snap-scroller on mobile and a
- * single five-up row on desktop. This must never read as browsable caregiver
+ * the NORTH-STAR §3 verification triple. Photos are a horizontal snap-scroller
+ * on mobile and a single five-up row on desktop. This must never read as browsable caregiver
  * profiles — no per-person text, badges or actions.
  */
 type Shot = {
@@ -128,19 +127,6 @@ export default function TeamSection() {
           </span>
         </p>
 
-        {/* Why there are no names — an explained absence beats invented bios. */}
-        <p className="team-privacy" data-reveal>
-          <span data-en>
-            We don&rsquo;t put our team&rsquo;s names on the internet &mdash;
-            for their privacy and safety. You&rsquo;ll know your caregiver by
-            name before care starts.
-          </span>
-          <span data-ur className="urdu">
-            ہم اپنی ٹیم کے نام انٹرنیٹ پر نہیں ڈالتے — ان کی پرائیویسی اور
-            حفاظت کے لیے۔ دیکھ بھال شروع ہونے سے پہلے آپ کو نرس یا اٹینڈنٹ کا
-            نام بتا دیا جاتا ہے۔
-          </span>
-        </p>
       </div>
     </section>
   );
