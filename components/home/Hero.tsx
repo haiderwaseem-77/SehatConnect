@@ -16,8 +16,8 @@ export default function Hero() {
               <span data-ur className="urdu">گھر پر آپ کے پیارے کے لیے خیال رکھنے والی نرس یا اٹینڈنٹ۔ <span className="hl">اپنا نمبر چھوڑیں</span> — ہم مناسب فرد کا بندوبست کریں گے۔</span>
             </h1>
             <p className="hero-sub">
-              <span data-en>First day free. Leave your name and phone. We&rsquo;ll call, listen, and arrange the right nurse or attendant.</span>
-              <span data-ur className="urdu">پہلا دن مفت۔ اپنا نام اور فون دیں۔ ہم کال کر کے سنیں گے اور صحیح نرس یا اٹینڈنٹ کا بندوبست کریں گے۔</span>
+              <span data-en>First day free. Leave your name and phone. We&rsquo;ll call and arrange the right nurse or attendant.</span>
+              <span data-ur className="urdu">پہلا دن مفت۔ اپنا نام اور فون دیں۔ ہم کال کر کے صحیح نرس یا اٹینڈنٹ کا بندوبست کریں گے۔</span>
             </p>
 
             <div className="hero-trust">
