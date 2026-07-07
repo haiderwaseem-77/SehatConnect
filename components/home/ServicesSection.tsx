@@ -12,13 +12,10 @@ function WaMini() {
 const CARE_ROWS: { svc: string; nm: string; ur: string; ds: string; dsUr: string }[] = [
   { svc: "Post-op Care", nm: "Post-op Care", ur: "آپریشن کے بعد دیکھ بھال", ds: "Wound care, dressing changes, recovery support after surgery.", dsUr: "زخم کی دیکھ بھال، ڈریسنگ کی تبدیلی، آپریشن کے بعد صحت یابی میں مدد۔" },
   { svc: "Elderly Care", nm: "Elderly Care", ur: "بزرگوں کی دیکھ بھال", ds: "Medicines, movement, feeding, hygiene and daily comfort.", dsUr: "دوائیں، چلنا پھرنا، کھانا، صفائی اور روزمرہ آرام۔" },
-  { svc: "Paediatric Care", nm: "Paediatric Care", ur: "بچوں کی دیکھ بھال", ds: "Support for newborns, infants and young children.", dsUr: "نوزائیدہ، شیرخوار اور چھوٹے بچوں کے لیے مدد۔" },
-  { svc: "ICU Step-down Care", nm: "ICU Step-down", ur: "آئی سی یو کے بعد", ds: "Care for patients sent home after ICU or HDU.", dsUr: "آئی سی یو یا ایچ ڈی یو سے گھر آنے والے مریضوں کی دیکھ بھال۔" },
-  { svc: "Diabetic Care", nm: "Diabetic Care", ur: "ذیابیطس کی دیکھ بھال", ds: "Blood sugar checks, insulin, diet guidance.", dsUr: "بلڈ شوگر چیک، انسولین، خوراک کی رہنمائی۔" },
+  { svc: "Injection & Drip Service", nm: "Injection & Drip Service", ur: "انجیکشن اور ڈرپ", ds: "Qualified help for injections, IV drips and basic monitoring at home.", dsUr: "گھر پر انجیکشن، آئی وی ڈرپ اور بنیادی نگرانی کے لیے کوالیفائیڈ مدد۔" },
+  { svc: "Physiotherapy", nm: "Physiotherapy", ur: "فزیوتھراپی", ds: "Movement, mobility and recovery support at home.", dsUr: "گھر پر حرکت، چلنے پھرنے اور صحت یابی میں مدد۔" },
   { svc: "Mother & Baby Care", nm: "Mother & Baby Care", ur: "ماں اور بچے کی دیکھ بھال", ds: "Newborn and postnatal support for new mothers.", dsUr: "نوزائیدہ بچے کی دیکھ بھال اور نئی ماؤں کے لیے زچگی کے بعد مدد۔" },
-  { svc: "Dementia & Alzheimer's Care", nm: "Dementia & Alzheimer’s", ur: "ڈیمنشیا کی دیکھ بھال", ds: "Routine, safety and gentle companionship.", dsUr: "معمول، حفاظت اور نرمی سے ساتھ۔" },
-  { svc: "Palliative & Long-term Care", nm: "Palliative & Long-term", ur: "آرام دہ نگہداشت", ds: "Comfort-focused care, pain support and symptom management.", dsUr: "آرام پر مرکوز دیکھ بھال، درد میں مدد اور علامات کا انتظام۔" },
-  { svc: "Daily Care & Comfort", nm: "Daily Care & Comfort", ur: "روزمرہ دیکھ بھال", ds: "Feeding, hygiene, movement and companionship at home.", dsUr: "کھانا، صفائی، چلنا پھرنا اور گھر پر ساتھ۔" },
+  { svc: "Long-term Care & Comfort", nm: "Long-term Care & Comfort", ur: "طویل مدتی دیکھ بھال", ds: "Ongoing care, hygiene, feeding, movement and companionship.", dsUr: "مسلسل دیکھ بھال، صفائی، کھانا، چلنا پھرنا اور ساتھ۔" },
 ];
 
 function Row({ svc, nm, ur, ds, dsUr }: { svc: string; nm: string; ur: string; ds: string; dsUr: string }) {
