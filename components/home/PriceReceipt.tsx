@@ -1,93 +1,53 @@
-// Direction-6 price receipt — scalloped ticket with dotted leaders.
+// Direction-6 payment section — simple plan summary.
 // NOTE: prices hidden from all public surfaces as of 2026-07-02 (see
-// NORTH-STAR Decision Ledger). This card now explains HOW payment works
-// instead of showing rupee amounts. File name + id="price" kept as-is so
-// the anchor link and any future restore stay simple.
+// NORTH-STAR Decision Ledger). File name + id="price" kept as-is so the
+// anchor link and any future restore stay simple.
 import { waLink, receiptShareMsg } from "@/lib/wa";
 
 export default function PriceReceipt() {
   return (
     <section className="block receipt-sec" id="price">
       <div className="wrap">
-        <div className="receipt-grid">
+        <div className="receipt-grid receipt-grid-simple">
           <div className="receipt-copy">
             <h2>
               <span data-en>How payment works</span>
               <span data-ur className="urdu">ادائیگی کیسے ہوتی ہے</span>
             </h2>
             <p>
-              <span data-en>Choose the care plan that fits your family. Daily, weekly, and monthly packages are available depending on what your loved one needs at home.</span>
-              <span data-ur className="urdu">اپنے گھرانے کے لیے مناسب دیکھ بھال کا پلان منتخب کریں۔ آپ کے پیارے کی گھر پر ضرورت کے مطابق روزانہ، ہفتہ وار اور ماہانہ پیکیجز دستیاب ہیں۔</span>
+              <span data-en>Choose the care plan that fits your family.</span>
+              <span data-ur className="urdu">اپنے گھرانے کے لیے مناسب دیکھ بھال کا پلان منتخب کریں۔</span>
             </p>
-            <p>
-              <span data-en>First day is free, so your family can feel comfortable first. If the nurse or attendant doesn&rsquo;t feel right, we&rsquo;ll replace them until you&rsquo;re satisfied.</span>
-              <span data-ur className="urdu">پہلا دن مفت ہے، تاکہ آپ کا گھرانہ پہلے اطمینان محسوس کر سکے۔ اگر نرس یا اٹینڈنٹ مناسب نہ لگے، ہم آپ کی تسلی تک اسے بدل دیں گے۔</span>
-            </p>
-          </div>
-
-          <aside className="receipt" aria-label="Payment terms">
-            <div className="receipt-head">
-              <div className="r-title">
-                <span data-en>Care plan summary</span>
-                <span data-ur className="urdu">دیکھ بھال کے پلان کا خلاصہ</span>
-              </div>
-              <div className="r-sub">
-                <span data-en>In-home care &middot; Lahore &middot; 24/7</span>
-                <span data-ur className="urdu">گھر پر دیکھ بھال &middot; لاہور &middot; 24/7</span>
-              </div>
-            </div>
-            <div className="rline">
-              <span className="rname">
-                <span data-en>First day</span>
-                <span data-ur className="urdu">پہلا دن</span>
-              </span>
-              <span className="dots" />
-              <span className="rval free">
-                <span data-en>Free</span>
-                <span data-ur className="urdu">مفت</span>
-              </span>
-            </div>
-            <div className="rline">
-              <span className="rname">
-                <span data-en>Advance</span>
-                <span data-ur className="urdu">پیشگی</span>
-              </span>
-              <span className="dots" />
-              <span className="rval free">
-                <span data-en>None</span>
-                <span data-ur className="urdu">کوئی نہیں</span>
-              </span>
-            </div>
-            <div className="rline">
-              <span className="rname">
-                <span data-en>Plans</span>
-                <span data-ur className="urdu">پلانز</span>
-              </span>
-              <span className="dots" />
-              <span className="rval">
-                <span data-en>Daily / weekly / monthly</span>
-                <span data-ur className="urdu">روزانہ / ہفتہ وار / ماہانہ</span>
-              </span>
-            </div>
-            <div className="rline total">
-              <span className="rname">
-                <span data-en>Replacement</span>
-                <span data-ur className="urdu">تبدیلی</span>
-              </span>
-              <span className="dots" />
-              <span className="rval free">
-                <span data-en>Until satisfied</span>
-                <span data-ur className="urdu">تسلی تک</span>
-              </span>
-            </div>
-            <div className="receipt-foot">
-              <span data-en>Choose what fits your family</span>
-              <span data-ur className="urdu">اپنے گھرانے کے لیے مناسب آپشن منتخب کریں</span>
-              <b>
-                <span data-en>FAMILY FIRST</span>
-                <span data-ur className="urdu">گھرانہ پہلے</span>
-              </b>
-            </div>
+            <ul className="receipt-points">
+              <li>
+                <span className="mk" />
+                <span>
+                  <span data-en>Daily, weekly, and monthly packages are available.</span>
+                  <span data-ur className="urdu">روزانہ، ہفتہ وار اور ماہانہ پیکیجز دستیاب ہیں۔</span>
+                </span>
+              </li>
+              <li>
+                <span className="mk" />
+                <span>
+                  <span data-en>First day is free, so your family can feel comfortable first.</span>
+                  <span data-ur className="urdu">پہلا دن مفت ہے، تاکہ آپ کا گھرانہ پہلے اطمینان محسوس کر سکے۔</span>
+                </span>
+              </li>
+              <li>
+                <span className="mk" />
+                <span>
+                  <span data-en>No advance payment.</span>
+                  <span data-ur className="urdu">کوئی پیشگی ادائیگی نہیں۔</span>
+                </span>
+              </li>
+              <li>
+                <span className="mk" />
+                <span>
+                  <span data-en>If the nurse or attendant doesn&rsquo;t feel right, we&rsquo;ll replace them until you&rsquo;re satisfied.</span>
+                  <span data-ur className="urdu">اگر نرس یا اٹینڈنٹ مناسب نہ لگے، ہم آپ کی تسلی تک اسے بدل دیں گے۔</span>
+                </span>
+              </li>
+            </ul>
 
             <a
               className="receipt-share"
@@ -103,7 +63,7 @@ export default function PriceReceipt() {
                 <span data-ur className="urdu">اپنے گھر والوں کو بھیجیں</span>
               </span>
             </a>
-          </aside>
+          </div>
         </div>
       </div>
     </section>
