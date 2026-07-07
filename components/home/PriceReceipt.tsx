@@ -23,8 +23,7 @@ export default function PriceReceipt() {
           </h2>
           {/* TODO: Urdu counterpart for this lede (EN-only this pass). */}
           <p className="d6-rc-lede">
-            No advance. Pay after the shift — the whole arrangement, in plain
-            terms.
+            Pay after the shift. The whole arrangement, in plain terms.
           </p>
         </div>
 
@@ -48,11 +47,6 @@ export default function PriceReceipt() {
                 <dt>First day</dt>
                 <span className="d6-rc-dots" aria-hidden="true" />
                 <dd className="is-free">Free</dd>
-              </div>
-              <div className="d6-rc-row">
-                <dt>Advance</dt>
-                <span className="d6-rc-dots" aria-hidden="true" />
-                <dd>None</dd>
               </div>
               <div className="d6-rc-row">
                 <dt>Hidden fees</dt>
@@ -88,11 +82,7 @@ export default function PriceReceipt() {
 
             {/* stamp + honesty footer */}
             <div className="d6-receipt-foot">
-              {/* Decorative seal — "Advance: None" already conveys this to
-                  screen readers, so the stamp is aria-hidden to avoid a repeat. */}
-              <span className="d6-receipt-stamp" aria-hidden="true">
-                No advance
-              </span>
+              <span className="d6-receipt-stamp">No advance</span>
               <span className="d6-receipt-hidden">Nothing hidden</span>
             </div>
           </div>
