@@ -16,9 +16,9 @@ const ITEMS: Item[] = [
     q: "How do I know my loved one will get the care they deserve?",
     qUr: "مجھے کیسے پتا کہ میرے پیارے کو اچھی دیکھ بھال ملے گی؟",
     a: (
-      <>We call first, understand what your loved one needs, and arrange a caring nurse or attendant for the home. <b>First day is free</b>, there is no advance, and if the person does not feel right, we replace them until your family is comfortable.</>
+      <>We call and understand your needs first. <b>First day is free</b>, there is no advance, and if the person does not feel right, we replace them until your family is comfortable.</>
     ),
-    aUr: "ہم پہلے کال کر کے آپ کے پیارے کی ضرورت سمجھتے ہیں اور گھر کے لیے خیال رکھنے والی نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں۔ پہلا دن مفت ہے، کوئی پیشگی نہیں، اور اگر فرد مناسب نہ لگے تو ہم آپ کے گھرانے کے اطمینان تک بدل دیتے ہیں۔",
+    aUr: "ہم پہلے کال کر کے آپ کی ضرورت سمجھتے ہیں۔ پہلا دن مفت ہے، کوئی پیشگی نہیں، اور اگر فرد مناسب نہ لگے تو ہم آپ کے گھرانے کے اطمینان تک بدل دیتے ہیں۔",
   },
   {
     q: "Who actually comes into my home?",
