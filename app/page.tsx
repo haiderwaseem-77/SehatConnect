@@ -71,7 +71,7 @@ const homeFaq: { q: string; a: string }[] = [
   },
   {
     q: "What if we’re not comfortable with the caregiver?",
-    a: "Tell us. We replace the caregiver, free, until your family is comfortable. Because there is no advance payment, you are never stuck.",
+    a: "Tell us. We replace the caregiver until your family is comfortable. Payment only starts once the right person is finalized.",
   },
   {
     q: "How and when do I pay?",

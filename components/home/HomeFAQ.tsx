@@ -40,9 +40,9 @@ const ITEMS: Item[] = [
     q: "What if we’re not comfortable with the caregiver?",
     qUr: "اگر ہمیں نگہداشت کنندہ سے اطمینان نہ ہو تو؟",
     a: (
-      <>Tell us. <b>We replace the caregiver, free, until your family is comfortable</b>. Because there is no advance payment, you are never stuck.</>
+      <>Tell us. <b>We replace the caregiver until your family is comfortable</b>. Payment only starts once the right person is finalized.</>
     ),
-    aUr: "ہمیں بتائیں — ہم نگہداشت کنندہ مفت بدلتے رہیں گے، جب تک آپ کا گھرانہ مطمئن نہ ہو۔ کوئی پیشگی ادائیگی نہیں، اس لیے آپ کبھی پھنسے نہیں۔",
+    aUr: "ہمیں بتائیں — ہم نگہداشت کنندہ بدلتے رہیں گے، جب تک آپ کا گھرانہ مطمئن نہ ہو۔ ادائیگی صرف تب شروع ہوتی ہے جب مناسب فرد فائنل ہو جائے۔",
   },
   {
     q: "How and when do I pay?",
