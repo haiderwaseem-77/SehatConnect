@@ -16,8 +16,8 @@ export default function PriceReceipt() {
               <span data-ur className="urdu">ادائیگی کیسے ہوتی ہے</span>
             </h2>
             <p>
-              <span data-en>We&rsquo;ll explain the right care option on the call. Daily, weekly, and monthly packages are available, depending on what your loved one needs at home.</span>
-              <span data-ur className="urdu">ہم کال پر مناسب دیکھ بھال کا آپشن سمجھا دیں گے۔ آپ کے پیارے کی گھر پر ضرورت کے مطابق روزانہ، ہفتہ وار اور ماہانہ پیکیجز دستیاب ہیں۔</span>
+              <span data-en>Choose the care plan that fits your family. Daily, weekly, and monthly packages are available depending on what your loved one needs at home.</span>
+              <span data-ur className="urdu">اپنے گھرانے کے لیے مناسب دیکھ بھال کا پلان منتخب کریں۔ آپ کے پیارے کی گھر پر ضرورت کے مطابق روزانہ، ہفتہ وار اور ماہانہ پیکیجز دستیاب ہیں۔</span>
             </p>
             <p>
               <span data-en>First day is free, so your family can feel comfortable first. If the nurse or attendant doesn&rsquo;t feel right, we&rsquo;ll replace them until you&rsquo;re satisfied.</span>
@@ -115,8 +115,8 @@ export default function PriceReceipt() {
               </span>
             </div>
             <div className="receipt-foot">
-              <span data-en>Care discussed clearly on the call</span>
-              <span data-ur className="urdu">دیکھ بھال کی بات کال پر صاف ہو جاتی ہے</span>
+              <span data-en>Choose what fits your family</span>
+              <span data-ur className="urdu">اپنے گھرانے کے لیے مناسب آپشن منتخب کریں</span>
               <b>
                 <span data-en>FAMILY FIRST</span>
                 <span data-ur className="urdu">گھرانہ پہلے</span>
