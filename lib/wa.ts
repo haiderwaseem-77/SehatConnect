@@ -15,7 +15,7 @@ export function serviceWaMsg(service: string): string {
 // Forwardable "share with family" summary for the receipt share button.
 // No prices — prices are hidden from all public surfaces as of 2026-07-02
 // (see PRICES comment in lib/constants.ts); leads with the free first-day
-// trial and payment-after promises instead (PROMISES in lib/constants.ts).
+// trial, no-advance promise, package options, and replacement support.
 export function receiptShareMsg(): string {
-  return `Sehat Connect: ghar par qualified nurse ya attendant, CNIC-checked aur police-verified staff. Pehla din bilkul free — koi advance nahi, payment sirf shift ke baad. Call ya WhatsApp karein: ${CONTACT_PHONE_DISPLAY}.`;
+  return `Sehat Connect: ghar par caring nurse ya attendant. Pehla din free, koi advance nahi. Daily, weekly aur monthly care options available. Agar caregiver fit na lage, replacement till satisfied. Call ya WhatsApp karein: ${CONTACT_PHONE_DISPLAY}.`;
 }

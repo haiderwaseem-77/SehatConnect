@@ -3,7 +3,6 @@
 // NORTH-STAR Decision Ledger). This card now explains HOW payment works
 // instead of showing rupee amounts. File name + id="price" kept as-is so
 // the anchor link and any future restore stay simple.
-import { PROMISES } from "@/lib/constants";
 import { waLink, receiptShareMsg } from "@/lib/wa";
 
 export default function PriceReceipt() {
@@ -17,33 +16,33 @@ export default function PriceReceipt() {
               <span data-ur className="urdu">ادائیگی کیسے ہوتی ہے</span>
             </h2>
             <p>
-              <span data-en>{PROMISES.priceOnCall.en}</span>
-              <span data-ur className="urdu">{PROMISES.priceOnCall.ur}</span>
+              <span data-en>We&rsquo;ll explain the right care option on the call. Daily, weekly, and monthly packages are available, depending on what your loved one needs at home.</span>
+              <span data-ur className="urdu">ہم کال پر مناسب دیکھ بھال کا آپشن سمجھا دیں گے۔ آپ کے پیارے کی گھر پر ضرورت کے مطابق روزانہ، ہفتہ وار اور ماہانہ پیکیجز دستیاب ہیں۔</span>
             </p>
             <p>
-              <span data-en>No pressure. Cash after the 12-hour shift, not before.</span>
-              <span data-ur className="urdu">کوئی دباؤ نہیں۔ 12 گھنٹے کی شفٹ کے بعد نقد ادائیگی کریں، پہلے نہیں۔</span>
+              <span data-en>First day is free, so your family can feel comfortable first. If the nurse or attendant doesn&rsquo;t feel right, we&rsquo;ll replace them until you&rsquo;re satisfied.</span>
+              <span data-ur className="urdu">پہلا دن مفت ہے، تاکہ آپ کا گھرانہ پہلے اطمینان محسوس کر سکے۔ اگر نرس یا اٹینڈنٹ مناسب نہ لگے، ہم آپ کی تسلی تک اسے بدل دیں گے۔</span>
             </p>
             <ul className="receipt-points">
               <li>
                 <span className="mk" />
                 <span>
-                  <span data-en><b>No advance.</b> You pay cash <b>after</b> the 12-hour shift</span>
-                  <span data-ur className="urdu"><b>کوئی پیشگی نہیں۔</b> 12 گھنٹے کی شفٹ کے <b>بعد</b> نقد ادائیگی کریں</span>
+                  <span data-en><b>No advance</b> payment</span>
+                  <span data-ur className="urdu"><b>کوئی پیشگی</b> ادائیگی نہیں</span>
                 </span>
               </li>
               <li>
                 <span className="mk" />
                 <span>
-                  <span data-en>Same terms, day or night, anywhere in Lahore</span>
-                  <span data-ur className="urdu">دن ہو یا رات، لاہور میں کہیں بھی — ایک جیسی شرائط</span>
+                  <span data-en>Daily, weekly, and monthly care options</span>
+                  <span data-ur className="urdu">روزانہ، ہفتہ وار اور ماہانہ دیکھ بھال کے آپشنز</span>
                 </span>
               </li>
               <li>
                 <span className="mk" />
                 <span>
-                  <span data-en>Cancel or reschedule free up to <b>4 hours before</b></span>
-                  <span data-ur className="urdu">شفٹ سے <b>4 گھنٹے پہلے</b> تک مفت منسوخ یا تبدیل کریں</span>
+                  <span data-en>Replacement until you&rsquo;re satisfied</span>
+                  <span data-ur className="urdu">آپ کی تسلی تک تبدیلی</span>
                 </span>
               </li>
             </ul>
@@ -62,13 +61,13 @@ export default function PriceReceipt() {
             </div>
             <div className="rline">
               <span className="rname">
-                <span data-en>Exact price</span>
-                <span data-ur className="urdu">صحیح قیمت</span>
+                <span data-en>Care options</span>
+                <span data-ur className="urdu">دیکھ بھال کے آپشنز</span>
               </span>
               <span className="dots" />
               <span className="rval">
-                <span data-en>Told on the call</span>
-                <span data-ur className="urdu">کال پر بتائی جائے گی</span>
+                <span data-en>Daily / weekly / monthly</span>
+                <span data-ur className="urdu">روزانہ / ہفتہ وار / ماہانہ</span>
               </span>
             </div>
             <div className="rline">
@@ -95,32 +94,32 @@ export default function PriceReceipt() {
             </div>
             <div className="rline">
               <span className="rname">
-                <span data-en>Hidden fees</span>
-                <span data-ur className="urdu">چھپی ہوئی فیس</span>
+                <span data-en>Replacement</span>
+                <span data-ur className="urdu">تبدیلی</span>
               </span>
               <span className="dots" />
               <span className="rval free">
-                <span data-en>None</span>
-                <span data-ur className="urdu">کوئی نہیں</span>
+                <span data-en>Until satisfied</span>
+                <span data-ur className="urdu">تسلی تک</span>
               </span>
             </div>
             <div className="rline total">
               <span className="rname">
-                <span data-en>You pay</span>
-                <span data-ur className="urdu">آپ ادا کریں</span>
+                <span data-en>You continue</span>
+                <span data-ur className="urdu">آپ جاری رکھیں</span>
               </span>
               <span className="dots" />
               <span className="rval free">
-                <span data-en>AFTER THE 12-HR SHIFT</span>
-                <span data-ur className="urdu">12 گھنٹے کی شفٹ کے بعد</span>
+                <span data-en>When comfortable</span>
+                <span data-ur className="urdu">اطمینان کے بعد</span>
               </span>
             </div>
             <div className="receipt-foot">
-              <span data-en>PNC-registered &middot; CNIC checked &middot; police-verified</span>
-              <span data-ur className="urdu">PNC رجسٹرڈ &middot; شناختی کارڈ چیک &middot; پولیس تصدیق</span>
+              <span data-en>Care discussed clearly on the call</span>
+              <span data-ur className="urdu">دیکھ بھال کی بات کال پر صاف ہو جاتی ہے</span>
               <b>
-                <span data-en>NOTHING HIDDEN</span>
-                <span data-ur className="urdu">کچھ نہیں چھپا</span>
+                <span data-en>FAMILY FIRST</span>
+                <span data-ur className="urdu">گھرانہ پہلے</span>
               </b>
             </div>
 
