@@ -56,7 +56,7 @@ export default function ServicesSection() {
           </div>
 
           <p className="svc-foot">
-            <span data-en>For medical tasks like injections, drips or wound dressing, we send a qualified nurse. Not sure what fits? WhatsApp us and we&rsquo;ll guide you.</span>
+            <span data-en>For medical tasks like injections, drips or wound dressing, we send a <b>qualified nurse</b>. Not sure what fits? WhatsApp us and we&rsquo;ll guide you.</span>
             <span data-ur className="urdu">انجیکشن، ڈرپ یا ڈریسنگ کے لیے نرس آتی ہے۔ سمجھ نہ آئے تو واٹس ایپ کریں۔</span>
           </p>
         </div>
