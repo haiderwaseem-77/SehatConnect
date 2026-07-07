@@ -47,7 +47,7 @@ export default function Footer() {
             <h4><span data-en>On this page</span><span data-ur className="urdu">اس صفحے پر</span></h4>
             <Link href="/#how"><span data-en>How it works</span><span data-ur className="urdu">یہ کیسے کام کرتا ہے</span></Link>
             <Link href="/#price"><span data-en>How payment works</span><span data-ur className="urdu">ادائیگی کا طریقہ</span></Link>
-            <Link href="/#services"><span data-en>What our nurses do</span><span data-ur className="urdu">ہماری نرسیں کیا کرتی ہیں</span></Link>
+            <Link href="/#services"><span data-en>Care services</span><span data-ur className="urdu">دیکھ بھال کی سروسز</span></Link>
             <Link href="/#faq"><span data-en>Questions families ask</span><span data-ur className="urdu">گھرانے جو سوالات پوچھتے ہیں</span></Link>
           </div>
           <div className="foot-col">

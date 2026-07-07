@@ -9,20 +9,16 @@ function WaMini() {
   );
 }
 
-const NURSE_ROWS: { svc: string; nm: string; ur: string; ds: string; dsUr: string }[] = [
+const CARE_ROWS: { svc: string; nm: string; ur: string; ds: string; dsUr: string }[] = [
   { svc: "Post-op Care", nm: "Post-op Care", ur: "آپریشن کے بعد دیکھ بھال", ds: "Wound care, dressing changes, recovery support after surgery.", dsUr: "زخم کی دیکھ بھال، ڈریسنگ کی تبدیلی، آپریشن کے بعد صحت یابی میں مدد۔" },
-  { svc: "Elderly Care", nm: "Elderly Care", ur: "بزرگوں کی دیکھ بھال", ds: "Medicines, movement, day-to-day health monitoring.", dsUr: "دوائیں، چلنا پھرنا، روزمرہ صحت کی نگرانی۔" },
-  { svc: "Paediatric Care", nm: "Paediatric Care", ur: "بچوں کی دیکھ بھال", ds: "Nursing care for newborns, infants and young children.", dsUr: "نوزائیدہ، شیرخوار اور چھوٹے بچوں کے لیے نرسنگ دیکھ بھال۔" },
+  { svc: "Elderly Care", nm: "Elderly Care", ur: "بزرگوں کی دیکھ بھال", ds: "Medicines, movement, feeding, hygiene and daily comfort.", dsUr: "دوائیں، چلنا پھرنا، کھانا، صفائی اور روزمرہ آرام۔" },
+  { svc: "Paediatric Care", nm: "Paediatric Care", ur: "بچوں کی دیکھ بھال", ds: "Support for newborns, infants and young children.", dsUr: "نوزائیدہ، شیرخوار اور چھوٹے بچوں کے لیے مدد۔" },
   { svc: "ICU Step-down Care", nm: "ICU Step-down", ur: "آئی سی یو کے بعد", ds: "Care for patients sent home after ICU or HDU.", dsUr: "آئی سی یو یا ایچ ڈی یو سے گھر آنے والے مریضوں کی دیکھ بھال۔" },
   { svc: "Diabetic Care", nm: "Diabetic Care", ur: "ذیابیطس کی دیکھ بھال", ds: "Blood sugar checks, insulin, diet guidance.", dsUr: "بلڈ شوگر چیک، انسولین، خوراک کی رہنمائی۔" },
   { svc: "Mother & Baby Care", nm: "Mother & Baby Care", ur: "ماں اور بچے کی دیکھ بھال", ds: "Newborn and postnatal support for new mothers.", dsUr: "نوزائیدہ بچے کی دیکھ بھال اور نئی ماؤں کے لیے زچگی کے بعد مدد۔" },
   { svc: "Dementia & Alzheimer's Care", nm: "Dementia & Alzheimer’s", ur: "ڈیمنشیا کی دیکھ بھال", ds: "Routine, safety and gentle companionship.", dsUr: "معمول، حفاظت اور نرمی سے ساتھ۔" },
-  { svc: "Palliative & Long-term Care", nm: "Palliative & Long-term", ur: "آرام دہ نگہداشت", ds: "Comfort-focused nursing, pain & symptom management.", dsUr: "آرام پر مرکوز نرسنگ، درد اور علامات کا انتظام۔" },
-];
-
-const ATTENDANT_ROWS: { svc: string; nm: string; ur: string; ds: string; dsUr: string }[] = [
-  { svc: "an Attendant for Elderly Care", nm: "Elderly Care", ur: "بزرگوں کی دیکھ بھال", ds: "Feeding, hygiene, movement and comfort — non-clinical.", dsUr: "کھانا کھلانا، صفائی، چلنا پھرنا اور آرام — غیر طبی۔" },
-  { svc: "an Attendant for Paediatric Care", nm: "Paediatric Care", ur: "بچوں کی دیکھ بھال", ds: "Day-to-day care and supervision for children.", dsUr: "بچوں کی روزمرہ دیکھ بھال اور نگرانی۔" },
+  { svc: "Palliative & Long-term Care", nm: "Palliative & Long-term", ur: "آرام دہ نگہداشت", ds: "Comfort-focused care, pain support and symptom management.", dsUr: "آرام پر مرکوز دیکھ بھال، درد میں مدد اور علامات کا انتظام۔" },
+  { svc: "Daily Care & Comfort", nm: "Daily Care & Comfort", ur: "روزمرہ دیکھ بھال", ds: "Feeding, hygiene, movement and companionship at home.", dsUr: "کھانا، صفائی، چلنا پھرنا اور گھر پر ساتھ۔" },
 ];
 
 function Row({ svc, nm, ur, ds, dsUr }: { svc: string; nm: string; ur: string; ds: string; dsUr: string }) {
@@ -51,37 +47,19 @@ export default function ServicesSection() {
             <span data-ur className="urdu">جو دیکھ بھال چاہیے اسے ٹیپ کریں۔ ہم واٹس ایپ پر جواب دیتے ہیں۔</span>
           </h2>
           <p>
-            <span data-en>Tap a service. WhatsApp opens with a ready message. Send it, and we&rsquo;ll guide you to the right nurse or attendant.</span>
-            <span data-ur className="urdu">کوئی سروس ٹیپ کریں۔ واٹس ایپ میں تیار پیغام کھل جائے گا۔ اسے بھیج دیں، ہم آپ کو صحیح نرس یا اٹینڈنٹ تک رہنمائی دیں گے۔</span>
+            <span data-en>Tap a service. WhatsApp opens with a ready message. Send it, and we&rsquo;ll guide you to the right care at home.</span>
+            <span data-ur className="urdu">کوئی سروس ٹیپ کریں۔ واٹس ایپ میں تیار پیغام کھل جائے گا۔ اسے بھیج دیں، ہم آپ کو گھر پر صحیح دیکھ بھال تک رہنمائی دیں گے۔</span>
           </p>
         </div>
 
         <div className="services-list">
-          <div className="tier-bar">
-            <span className="tn">Qualified Nurse</span>
-            <span className="tp">
-              <span data-en>Medical care at home</span>
-              <span data-ur className="urdu">گھر پر طبی دیکھ بھال</span>
-            </span>
-          </div>
           <div className="svc-rows">
-            {NURSE_ROWS.map((r) => <Row key={r.svc} {...r} />)}
-          </div>
-
-          <div className="tier-bar">
-            <span className="tn">Attendant</span>
-            <span className="tp">
-              <span data-en>Daily support and comfort</span>
-              <span data-ur className="urdu">روزمرہ مدد اور آرام</span>
-            </span>
-          </div>
-          <div className="svc-rows">
-            {ATTENDANT_ROWS.map((r) => <Row key={r.svc} {...r} />)}
+            {CARE_ROWS.map((r) => <Row key={r.svc} {...r} />)}
           </div>
 
           <p className="svc-foot">
-            <span data-en><b>Need a medical task done</b>, like injections, drips or wound dressing? That&rsquo;s a <b>Qualified Nurse</b>, not an attendant. We&rsquo;ll guide you to the right care.</span>
-            <span data-ur className="urdu"><b>طبی کام درکار ہے</b>، جیسے انجیکشن، ڈرپ یا زخم کی ڈریسنگ؟ یہ <b>کوالیفائیڈ نرس</b> کا کام ہے، اٹینڈنٹ کا نہیں۔ ہم آپ کو صحیح دیکھ بھال تک رہنمائی دیں گے۔</span>
+            <span data-en>For medical tasks like injections, drips or wound dressing, we send a qualified nurse. Not sure what fits? WhatsApp us and we&rsquo;ll guide you.</span>
+            <span data-ur className="urdu">انجیکشن، ڈرپ یا زخم کی ڈریسنگ جیسے طبی کام کے لیے ہم کوالیفائیڈ نرس بھیجتے ہیں۔ پکا نہیں کیا چاہیے؟ ہمیں واٹس ایپ کریں، ہم رہنمائی دیں گے۔</span>
           </p>
         </div>
       </div>

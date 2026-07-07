@@ -353,6 +353,7 @@ body{overflow-x:hidden}
 .d6 .tier-bar .tn{font-size:18px;font-weight:800}
 .d6 .tier-bar .tp{font-size:16px;font-weight:700;color:#FFE2A8;font-variant-numeric:tabular-nums}
 .d6 .svc-rows{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px}
+.d6 .services-list .svc-rows:first-child{margin-top:0}
 .d6 .svc-row{display:flex;gap:13px;align-items:flex-start;padding:14px 12px;border:1px solid var(--line);border-radius:13px;background:var(--cream);cursor:pointer;transition:background .14s ease,border-color .14s ease,transform .14s ease,box-shadow .14s ease}
 .d6 .svc-row:hover{background:var(--paper);border-color:var(--teal);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
 .d6 .svc-row .wa-mini{width:30px;height:30px;border-radius:9px;background:rgba(31,168,85,.12);display:grid;place-items:center;flex:none;margin-top:1px}
