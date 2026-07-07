@@ -59,23 +59,23 @@ const jsonLd = {
 const homeFaq: { q: string; a: string }[] = [
   {
     q: "How do I know my loved one will get the care they deserve?",
-    a: "We call first, understand what your loved one needs, and arrange a caring nurse or attendant for the home. First day is free, there is no advance, and if the person does not feel right, we replace them until you are satisfied.",
+    a: "We call first, understand what your loved one needs, and arrange a caring nurse or attendant for the home. First day is free, there is no advance, and if the person does not feel right, we replace them until your family is comfortable.",
   },
   {
     q: "Who actually comes into my home?",
-    a: "We arrange a caring nurse or attendant based on what your loved one needs. Every caregiver is CNIC checked, references called, police-verified. Caring for a woman? Ask for female-for-female.",
+    a: "We arrange a caring nurse or attendant based on what your loved one needs. Every caregiver is CNIC checked, references called, and police-verified. Caring for a woman? You can ask for female-for-female.",
   },
   {
     q: "How fast can care start?",
-    a: "Within 24 hours of your call, often sooner. We confirm the details on WhatsApp and arrange the right nurse or attendant.",
+    a: "Often within 24 hours. We confirm the details on WhatsApp and arrange the right person for your loved one’s care.",
   },
   {
     q: "What if we’re not comfortable with the caregiver?",
-    a: "Tell us — we replace the caregiver, free, until you're fully satisfied. You have paid nothing in advance, so you are never stuck.",
+    a: "Tell us. We replace the caregiver, free, until your family is comfortable. Because there is no advance payment, you are never stuck.",
   },
   {
     q: "How and when do I pay?",
-    a: "Cash after the shift — no advance, ever. Easypaisa and JazzCash are coming soon for convenience. You can cancel or reschedule free up to 4 hours before.",
+    a: "There is no advance payment. We explain the plan clearly before care starts, your first day is free, and payment is handled after care begins.",
   },
   {
     q: "Which areas of Lahore do you cover?",
@@ -91,15 +91,15 @@ const homeFaq: { q: string; a: string }[] = [
   },
   {
     q: "Can I request the same nurse again?",
-    a: "Yes. Tell us on WhatsApp and we try our best to send the same caregiver, so your loved one sees a familiar face. Continuity matters to us too.",
+    a: "Yes. Tell us on WhatsApp and we try our best to send the same caregiver, so your loved one sees a familiar face. Familiarity and comfort matter to us too.",
   },
   {
     q: "What if the caregiver is running late?",
-    a: "We keep you updated by WhatsApp/SMS, and you can always call us. If there’s a delay, we sort out a replacement quickly — you’re never left waiting without an answer.",
+    a: "We keep you updated on WhatsApp or by phone, and you can always call us. If there is a delay, we sort out the next step quickly so your family is not left waiting without an answer.",
   },
   {
     q: "I live abroad — can I arrange care for my parents in Lahore?",
-    a: "Yes. Many families arrange everything over WhatsApp from abroad. We keep you updated on WhatsApp, and your family in Lahore pays after the shift, same as usual.",
+    a: "Yes. Many families arrange care for parents in Lahore from abroad. We keep you updated on WhatsApp, and your family in Lahore pays after care begins, same as usual.",
   },
 ];
 

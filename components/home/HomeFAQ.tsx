@@ -16,15 +16,15 @@ const ITEMS: Item[] = [
     q: "How do I know my loved one will get the care they deserve?",
     qUr: "مجھے کیسے پتا کہ میرے پیارے کو اچھی دیکھ بھال ملے گی؟",
     a: (
-      <>We call first, understand what your loved one needs, and arrange a caring nurse or attendant for the home. <b>First day is free</b>, there is no advance, and if the person does not feel right, we replace them until you are satisfied.</>
+      <>We call first, understand what your loved one needs, and arrange a caring nurse or attendant for the home. <b>First day is free</b>, there is no advance, and if the person does not feel right, we replace them until your family is comfortable.</>
     ),
-    aUr: "ہم پہلے کال کر کے آپ کے پیارے کی ضرورت سمجھتے ہیں اور گھر کے لیے خیال رکھنے والی نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں۔ پہلا دن مفت ہے، کوئی پیشگی نہیں، اور اگر فرد مناسب نہ لگے تو ہم آپ کی تسلی تک بدل دیتے ہیں۔",
+    aUr: "ہم پہلے کال کر کے آپ کے پیارے کی ضرورت سمجھتے ہیں اور گھر کے لیے خیال رکھنے والی نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں۔ پہلا دن مفت ہے، کوئی پیشگی نہیں، اور اگر فرد مناسب نہ لگے تو ہم آپ کے گھرانے کے اطمینان تک بدل دیتے ہیں۔",
   },
   {
     q: "Who actually comes into my home?",
     qUr: "میرے گھر میں کون آئے گا؟",
     a: (
-      <>We arrange a caring nurse or attendant based on what your loved one needs. Every caregiver is <b>CNIC checked, references called, police-verified</b>. Caring for a woman? Ask for female-for-female.</>
+      <>We arrange a caring nurse or attendant based on what your loved one needs. Every caregiver is <b>CNIC checked, references called, and police-verified</b>. Caring for a woman? You can ask for female-for-female.</>
     ),
     aUr: "ہم آپ کے پیارے کی ضرورت کے مطابق خیال رکھنے والی نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں۔ ہر نگہداشت کنندہ کا شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ خاتون کے لیے خاتون مانگ سکتے ہیں۔",
   },
@@ -32,25 +32,25 @@ const ITEMS: Item[] = [
     q: "How fast can care start?",
     qUr: "دیکھ بھال کتنی جلدی شروع ہو سکتی ہے؟",
     a: (
-      <>Within <b>24 hours</b> of your call, often sooner. We confirm the details on WhatsApp and arrange the right nurse or attendant.</>
+      <>Often within <b>24 hours</b>. We confirm the details on WhatsApp and arrange the right person for your loved one&rsquo;s care.</>
     ),
-    aUr: "کال کے 24 گھنٹوں میں دیکھ بھال شروع، اکثر اس سے بھی جلدی۔ ہم واٹس ایپ پر تفصیل کنفرم کر کے صحیح نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں۔",
+    aUr: "اکثر 24 گھنٹوں میں دیکھ بھال شروع ہو سکتی ہے۔ ہم واٹس ایپ پر تفصیل کنفرم کر کے آپ کے پیارے کے لیے مناسب فرد کا بندوبست کرتے ہیں۔",
   },
   {
     q: "What if we’re not comfortable with the caregiver?",
     qUr: "اگر ہمیں نگہداشت کنندہ سے اطمینان نہ ہو تو؟",
     a: (
-      <>Tell us — <b>we replace the caregiver, free, until you&rsquo;re fully satisfied</b>. You have paid nothing in advance, so you are never stuck.</>
+      <>Tell us. <b>We replace the caregiver, free, until your family is comfortable</b>. Because there is no advance payment, you are never stuck.</>
     ),
-    aUr: "ہمیں بتائیں — ہم نگہداشت کنندہ مفت بدلتے رہیں گے، جب تک آپ مکمل مطمئن نہ ہوں۔ آپ نے پیشگی کچھ ادا نہیں کیا، اس لیے آپ کبھی پھنسے نہیں۔",
+    aUr: "ہمیں بتائیں — ہم نگہداشت کنندہ مفت بدلتے رہیں گے، جب تک آپ کا گھرانہ مطمئن نہ ہو۔ کوئی پیشگی ادائیگی نہیں، اس لیے آپ کبھی پھنسے نہیں۔",
   },
   {
     q: "How and when do I pay?",
     qUr: "ادائیگی کیسے اور کب؟",
     a: (
-      <>Cash after the shift — no advance, ever. Easypaisa and JazzCash are coming soon for convenience. You can cancel or reschedule free up to 4 hours before.</>
+      <>There is <b>no advance payment</b>. We explain the plan clearly before care starts, your first day is free, and payment is handled after care begins.</>
     ),
-    aUr: "شفٹ کے بعد نقد — کوئی پیشگی نہیں۔ ایزی پیسہ / جاز کیش جلد۔",
+    aUr: "کوئی پیشگی ادائیگی نہیں۔ دیکھ بھال شروع ہونے سے پہلے ہم پلان صاف بتاتے ہیں، پہلا دن مفت ہے، اور ادائیگی دیکھ بھال شروع ہونے کے بعد ہوتی ہے۔",
   },
   {
     q: "Which areas of Lahore do you cover?",
@@ -80,25 +80,25 @@ const ITEMS: Item[] = [
     q: "Can I request the same nurse again?",
     qUr: "کیا میں دوبارہ وہی نرس مانگ سکتا ہوں؟",
     a: (
-      <>Yes. Tell us on WhatsApp and we try our best to send the same caregiver, so your loved one sees a familiar face. Continuity matters to us too.</>
+      <>Yes. Tell us on WhatsApp and we try our best to send the same caregiver, so your loved one sees a familiar face. Familiarity and comfort matter to us too.</>
     ),
-    aUr: "جی ہاں۔ واٹس ایپ پر بتائیں، ہم وہی نگہداشت کنندہ بھیجنے کی کوشش کرتے ہیں۔",
+    aUr: "جی ہاں۔ واٹس ایپ پر بتائیں، ہم وہی نگہداشت کنندہ بھیجنے کی کوشش کرتے ہیں تاکہ آپ کے پیارے کو شناسا چہرہ ملے۔",
   },
   {
     q: "What if the caregiver is running late?",
     qUr: "اگر نگہداشت کنندہ دیر سے آئے تو؟",
     a: (
-      <>We keep you updated by WhatsApp/SMS, and you can always call us. If there&rsquo;s a delay, we sort out a replacement quickly — you&rsquo;re never left waiting without an answer.</>
+      <>We keep you updated on WhatsApp or by phone, and you can always call us. If there is a delay, we sort out the next step quickly so your family is not left waiting without an answer.</>
     ),
-    aUr: "ہم واٹس ایپ / ایس ایم ایس پر اپڈیٹ دیتے ہیں؛ تاخیر ہو تو فوراً متبادل بندوبست۔",
+    aUr: "ہم واٹس ایپ یا فون پر اپڈیٹ دیتے ہیں؛ تاخیر ہو تو فوراً اگلا بندوبست کرتے ہیں تاکہ آپ کا گھرانہ جواب کے بغیر انتظار نہ کرے۔",
   },
   {
     q: "I live abroad — can I arrange care for my parents in Lahore?",
     qUr: "میں بیرون ملک ہوں — کیا لاہور میں والدین کے لیے بندوبست ہو سکتا ہے؟",
     a: (
-      <>Yes. Many families arrange everything over WhatsApp from abroad. We keep you updated on WhatsApp, and your family in Lahore pays after the shift, same as usual.</>
+      <>Yes. Many families arrange care for parents in Lahore from abroad. We keep you updated on WhatsApp, and your family in Lahore pays after care begins, same as usual.</>
     ),
-    aUr: "جی ہاں، واٹس ایپ پر بیرون ملک سے بندوبست ممکن ہے۔ ہم واٹس ایپ پر اپڈیٹس دیتے ہیں۔ ادائیگی شفٹ کے بعد، ہمیشہ کی طرح۔",
+    aUr: "جی ہاں، بیرون ملک سے لاہور میں والدین کے لیے دیکھ بھال کا بندوبست ہو سکتا ہے۔ ہم واٹس ایپ پر اپڈیٹس دیتے ہیں، اور لاہور میں آپ کا گھرانہ دیکھ بھال شروع ہونے کے بعد ادائیگی کرتا ہے۔",
   },
 ];
 
