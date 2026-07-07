@@ -125,6 +125,7 @@ export default function CitiesPage() {
                   display: "block",
                   position: "relative",
                   boxShadow: "var(--shadow-sm)",
+                  minHeight: "208px",
                 };
 
                 return isLive ? (

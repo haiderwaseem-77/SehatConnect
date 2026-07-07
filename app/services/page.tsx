@@ -114,7 +114,7 @@ function Cell({ v }: { v: CellValue }) {
   return v ? (
     <span style={{ color: "var(--teal)", fontWeight: 800 }} aria-label="Yes">✓</span>
   ) : (
-    <span style={{ color: "#B3261E", fontWeight: 700 }} aria-label="No">✕</span>
+    <span style={{ color: "var(--ink-soft)", fontWeight: 700, opacity: 0.55 }} aria-label="No">–</span>
   );
 }
 
@@ -269,11 +269,11 @@ export default function ServicesPage() {
                           <span data-en>Feature</span>
                           <span data-ur className="urdu">کام</span>
                         </th>
-                        <th style={{ width: "20%", textAlign: "center", padding: "10px 4px", color: "var(--teal-deep)", fontWeight: 800, lineHeight: 1.2, overflowWrap: "anywhere" }}>
+                        <th style={{ width: "28%", textAlign: "center", padding: "10px 4px", color: "var(--teal-deep)", fontWeight: 800, lineHeight: 1.2, hyphens: "none", overflowWrap: "normal" }}>
                           <span data-en>Qualified Nurse</span>
                           <span data-ur className="urdu">نرس</span>
                         </th>
-                        <th style={{ width: "20%", textAlign: "center", padding: "10px 4px", color: "var(--ink)", fontWeight: 800, lineHeight: 1.2, overflowWrap: "anywhere" }}>
+                        <th style={{ width: "28%", textAlign: "center", padding: "10px 4px", color: "var(--ink)", fontWeight: 800, lineHeight: 1.2, hyphens: "none", overflowWrap: "normal" }}>
                           <span data-en>Attendant</span>
                           <span data-ur className="urdu">اٹینڈنٹ</span>
                         </th>

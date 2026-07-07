@@ -61,8 +61,8 @@ export default function Footer() {
           </div>
         </div>
         <div className="foot-bottom">
-          <span data-en>&copy; 2026 Sehat Connect &middot; Lahore &middot; PNC-registered nurses, CNIC &amp; references checked. Pay after the shift, no advance.</span>
-          <span data-ur className="urdu">&copy; 2026 Sehat Connect &middot; لاہور &middot; PNC رجسٹرڈ نرسیں، شناختی کارڈ اور حوالہ جات چیک۔ شفٹ کے بعد ادائیگی، کوئی پیشگی نہیں۔</span>
+          <span data-en>&copy; 2026 Sehat Connect &middot; Lahore &middot; PNC-registered nurses &middot; CNIC checked, references called, police-verified. Pay after the shift, no advance.</span>
+          <span data-ur className="urdu">&copy; 2026 Sehat Connect &middot; لاہور &middot; PNC رجسٹرڈ نرسیں &middot; شناختی کارڈ چیک، حوالہ جات کی تصدیق، پولیس تصدیق شدہ۔ شفٹ کے بعد ادائیگی، کوئی پیشگی نہیں۔</span>
         </div>
       </div>
     </footer>

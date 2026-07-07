@@ -39,6 +39,9 @@ body{overflow-x:hidden}
 
 .d6 .urdu{font-family:var(--font-urdu),serif;direction:rtl;line-height:2.1}
 .d6 a{color:inherit;text-decoration:none}
+/* `.d6 a{color:inherit}` above out-specifies `.btn-call/.btn-primary{color:#fff}`,
+   so solid buttons rendered as <a> would go ink-on-ink (invisible label). Restore. */
+.d6 .btn-call,.d6 .btn-primary{color:#fff}
 .d6 img{max-width:100%;display:block}
 /* .wrap / .btn / .accent-bar are used by the shared header, footer and sticky
    bar too (rendered on every route, sometimes outside .d6), so keep them global. */
@@ -177,7 +180,7 @@ body{overflow-x:hidden}
 .d6 .chip[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff;box-shadow:0 6px 14px -8px rgba(13,122,110,.7)}
 .d6 .chip[aria-pressed="true"]::before{content:"✓";font-size:13px}
 .d6 .form-alt{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
-.d6 .form-foot{margin-top:13px;font-size:14px;color:var(--ink-soft);text-align:center;display:flex;align-items:center;justify-content:center;gap:7px;font-weight:600}
+.d6 .form-foot{margin-top:13px;font-size:16px;color:var(--ink-soft);text-align:center;display:flex;align-items:center;justify-content:center;gap:7px;font-weight:600}
 .d6 .form-foot svg{width:16px;height:16px;stroke:var(--teal);fill:none;stroke-width:2;flex:none}
 .d6 .form-err{
   display:none;align-items:flex-start;gap:9px;
