@@ -86,12 +86,12 @@ export default function PriceReceipt() {
             {/* the punchline "total" */}
             <div className="d6-rc-total">
               <span className="d6-rc-total-label">Payment starts</span>
-              <span className="d6-rc-total-value">When you approve</span>
+              <span className="d6-rc-total-value">On approval</span>
             </div>
 
             {/* stamp + honesty footer */}
             <div className="d6-receipt-foot">
-              <span className="d6-receipt-stamp">No advance to start</span>
+              <span className="d6-receipt-stamp">No advance</span>
               <span className="d6-receipt-hidden">Nothing hidden</span>
             </div>
           </div>
