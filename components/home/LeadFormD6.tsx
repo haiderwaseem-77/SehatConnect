@@ -6,15 +6,6 @@ import { waLink, GENERIC_WA_MSG } from "@/lib/wa";
 
 type Variant = "hero" | "closer";
 
-const CARE_CHIPS: { en: string; ur: string }[] = [
-  { en: "Elderly parent", ur: "بزرگ" },
-  { en: "After surgery", ur: "آپریشن کے بعد" },
-  { en: "Mother & baby", ur: "ماں و بچہ" },
-  { en: "Night duty", ur: "رات کی ڈیوٹی" },
-  { en: "Bedridden", ur: "صاحبِ فراش" },
-  { en: "Not sure yet", ur: "ابھی یقین نہیں" },
-];
-
 type ErrorKey = "name" | "phone" | "generic";
 
 const ERROR_MESSAGES: Record<ErrorKey, { en: string; ur: string }> = {
@@ -36,14 +27,10 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
   const router = useRouter();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [selected, setSelected] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<ErrorKey | null>(null);
 
   const namePlaceholder = variant === "hero" ? "e.g. Ahmed Raza" : "e.g. Bilal Ahmed";
-
-  const toggleChip = (en: string) =>
-    setSelected((s) => (s.includes(en) ? s.filter((x) => x !== en) : [...s, en]));
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -66,7 +53,7 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
           name: name.trim(),
           phone: phone.trim(),
           area: area ?? "",
-          careType: selected.join(", "),
+          careType: "",
           ref,
         }),
       });
@@ -126,31 +113,6 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
           required
         />
       </label>
-
-      {variant === "hero" && (
-        <>
-          <div className="opt-label">
-            <span data-en>Who needs care?</span>
-            <span data-ur className="urdu">دیکھ بھال کس کے لیے؟</span>{" "}
-            <span className="opt" data-en>(optional — tap any)</span>
-            <span className="opt urdu" data-ur>(اختیاری)</span>
-          </div>
-          <div className="chips" role="group" aria-label="Who needs care">
-            {CARE_CHIPS.map((c) => (
-              <button
-                key={c.en}
-                type="button"
-                className="chip"
-                aria-pressed={selected.includes(c.en)}
-                onClick={() => toggleChip(c.en)}
-              >
-                <span data-en>{c.en}</span>
-                <span data-ur className="urdu">{c.ur}</span>
-              </button>
-            ))}
-          </div>
-        </>
-      )}
 
       {error && (
         <p className="form-err show" role="alert" aria-live="assertive">
