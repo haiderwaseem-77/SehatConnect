@@ -7,10 +7,6 @@ export default function Hero() {
       <div className="wrap">
         <div className="hero-grid">
           <div className="hero-copy">
-            <span className="eyebrow">
-              <span data-en>Care for your loved one is one call away</span>
-              <span data-ur className="urdu">گھر پر دیکھ بھال، صرف ایک کال دور</span>
-            </span>
             <h1>
               <span data-en>A caring nurse or attendant for your loved one at home. <span className="hl">Leave your number</span> — we&rsquo;ll arrange the right person.</span>
               <span data-ur className="urdu">لاہور میں گھر پر نرس یا اٹینڈنٹ۔ <span className="hl">اپنا نمبر دیں</span> — ہم صحیح فرد بھیجیں گے۔</span>
