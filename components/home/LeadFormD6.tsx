@@ -85,7 +85,7 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
   };
 
   return (
-    <form className="form-card" onSubmit={handleSubmit} noValidate>
+    <form className={variant === "closer" ? "form-card form-card-closer" : "form-card"} onSubmit={handleSubmit} noValidate>
       <div className="ribbon">
         <span className={variant === "closer" ? "dot beat-dot" : "dot"} />
         <span data-en>We call back fast</span>

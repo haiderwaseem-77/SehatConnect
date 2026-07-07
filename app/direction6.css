@@ -147,6 +147,7 @@ body{overflow-x:hidden}
   color:var(--ink);
 }
 .d6 .form-card::before{content:"";position:absolute;left:0;top:0;height:6px;width:100%;background:linear-gradient(90deg,var(--teal),var(--teal-deep))}
+.d6 .form-card-closer::before{display:none}
 .d6 .form-card .ribbon{display:flex;align-items:center;gap:9px;font-size:14.5px;font-weight:700;color:var(--teal-deep);margin:4px 0 16px}
 .d6 .form-card .ribbon .dot{width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(13,122,110,.16);flex:none}
 .d6 label.fld{display:block;margin-bottom:14px}
