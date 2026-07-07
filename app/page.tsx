@@ -67,7 +67,7 @@ const homeFaq: { q: string; a: string }[] = [
   },
   {
     q: "How fast can care start?",
-    a: "Often within 24 hours. We confirm the details on the call and arrange the right person for your loved one’s care.",
+    a: "Often within 24 hours. We confirm the details on the call, arrange the right person, and care starts once your family is comfortable.",
   },
   {
     q: "What if we’re not comfortable with the caregiver?",
