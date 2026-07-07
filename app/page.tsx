@@ -6,7 +6,6 @@ import Hero from "@/components/home/Hero";
 import HowItWorks from "@/components/home/HowItWorks";
 import PriceReceipt from "@/components/home/PriceReceipt";
 import ServicesSection from "@/components/home/ServicesSection";
-import VerifiedCard from "@/components/home/VerifiedCard";
 import HomeFAQ from "@/components/home/HomeFAQ";
 import FounderNote from "@/components/home/FounderNote";
 import CtaBanner from "@/components/home/CtaBanner";
@@ -46,7 +45,6 @@ const jsonLd = {
     "Elderly Care",
     "Paediatric Care",
     "Patient Attendant",
-    "Night Duty Nurse",
   ],
   openingHours: "Mo-Su 00:00-23:59",
   // priceRange intentionally omitted — prices are hidden from all public
@@ -65,11 +63,11 @@ const homeFaq: { q: string; a: string }[] = [
   },
   {
     q: "Who actually comes into my home?",
-    a: "We send the caregiver card first: photo, name and, for nurses, PNC number. Every caregiver is CNIC checked, references called, police-verified. Caring for a woman? Ask for female-for-female.",
+    a: "We arrange a caring nurse or attendant based on what your loved one needs. Every caregiver is CNIC checked, references called, police-verified. Caring for a woman? Ask for female-for-female.",
   },
   {
     q: "How fast can care start?",
-    a: "Within 24 hours of your call, often sooner. We confirm the caregiver on WhatsApp and send their card before they arrive.",
+    a: "Within 24 hours of your call, often sooner. We confirm the details on WhatsApp and arrange the right nurse or attendant.",
   },
   {
     q: "What if we’re not comfortable with the caregiver?",
@@ -101,7 +99,7 @@ const homeFaq: { q: string; a: string }[] = [
   },
   {
     q: "I live abroad — can I arrange care for my parents in Lahore?",
-    a: "Yes. Many families arrange everything over WhatsApp from abroad. We send the caregiver’s card before the shift and keep you updated on WhatsApp. Your family in Lahore pays after the shift, same as usual.",
+    a: "Yes. Many families arrange everything over WhatsApp from abroad. We keep you updated on WhatsApp, and your family in Lahore pays after the shift, same as usual.",
   },
 ];
 
@@ -137,7 +135,6 @@ export default function HomePage() {
           <HowItWorks />
           <PriceReceipt />
           <ServicesSection />
-          <VerifiedCard />
           <HomeFAQ />
           <FounderNote />
           <CtaBanner />

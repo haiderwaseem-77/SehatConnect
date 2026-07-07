@@ -14,8 +14,8 @@ export default function CtaBanner() {
               <span data-ur className="urdu">بس اپنا نمبر دیں۔ ہم آپ کو کال کریں گے۔</span>
             </h2>
             <p className="c-sub">
-              <span data-en>Name and phone only. We&rsquo;ll call, understand the situation, and send the caregiver card before the visit.</span>
-              <span data-ur className="urdu">صرف نام اور فون۔ ہم کال کر کے صورتحال سمجھیں گے اور آنے سے پہلے نگہداشت کنندہ کا کارڈ بھیجیں گے۔</span>
+              <span data-en>Name and phone only. We&rsquo;ll call, understand the situation, and arrange the right nurse or attendant.</span>
+              <span data-ur className="urdu">صرف نام اور فون۔ ہم کال کر کے صورتحال سمجھیں گے اور صحیح نرس یا اٹینڈنٹ کا بندوبست کریں گے۔</span>
             </p>
             <p className="closer-urdu">
               <span data-en>Call or WhatsApp. Our team answers.</span>

@@ -24,17 +24,17 @@ const ITEMS: Item[] = [
     q: "“Who actually comes into my home?”",
     qUr: "”میرے گھر میں کون آئے گا؟“",
     a: (
-      <>We send the caregiver card first: photo, name and, for nurses, PNC number. Every caregiver is <b>CNIC checked, references called, police-verified</b>. Caring for a woman? Ask for female-for-female.</>
+      <>We arrange a caring nurse or attendant based on what your loved one needs. Every caregiver is <b>CNIC checked, references called, police-verified</b>. Caring for a woman? Ask for female-for-female.</>
     ),
-    aUr: "ہم پہلے کارڈ بھیجتے ہیں: تصویر، نام، اور نرس کے لیے PNC نمبر۔ ہر نگہداشت کنندہ کا شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ خاتون کے لیے خاتون مانگ سکتے ہیں۔",
+    aUr: "ہم آپ کے پیارے کی ضرورت کے مطابق خیال رکھنے والی نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں۔ ہر نگہداشت کنندہ کا شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ خاتون کے لیے خاتون مانگ سکتے ہیں۔",
   },
   {
     q: "“How fast can care start?”",
     qUr: "”دیکھ بھال کتنی جلدی شروع ہو سکتی ہے؟“",
     a: (
-      <>Within <b>24 hours</b> of your call, often sooner. We confirm the caregiver on WhatsApp and send their card before they arrive.</>
+      <>Within <b>24 hours</b> of your call, often sooner. We confirm the details on WhatsApp and arrange the right nurse or attendant.</>
     ),
-    aUr: "کال کے 24 گھنٹوں میں دیکھ بھال شروع، اکثر اس سے بھی جلدی۔ آنے سے پہلے واٹس ایپ پر کارڈ ملتا ہے۔",
+    aUr: "کال کے 24 گھنٹوں میں دیکھ بھال شروع، اکثر اس سے بھی جلدی۔ ہم واٹس ایپ پر تفصیل کنفرم کر کے صحیح نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں۔",
   },
   {
     q: "“What if we’re not comfortable with the caregiver?”",
@@ -96,9 +96,9 @@ const ITEMS: Item[] = [
     q: "“I live abroad — can I arrange care for my parents in Lahore?”",
     qUr: "”میں بیرون ملک ہوں — کیا لاہور میں والدین کے لیے بندوبست ہو سکتا ہے؟“",
     a: (
-      <>Yes. Many families arrange everything over WhatsApp from abroad. We send the caregiver&rsquo;s card before the shift and keep you updated on WhatsApp. Your family in Lahore pays after the shift, same as usual.</>
+      <>Yes. Many families arrange everything over WhatsApp from abroad. We keep you updated on WhatsApp, and your family in Lahore pays after the shift, same as usual.</>
     ),
-    aUr: "جی ہاں، واٹس ایپ پر بیرون ملک سے بندوبست ممکن ہے۔ شفٹ سے پہلے کارڈ اور واٹس ایپ پر اپڈیٹس ملتی ہیں۔ ادائیگی شفٹ کے بعد، ہمیشہ کی طرح۔",
+    aUr: "جی ہاں، واٹس ایپ پر بیرون ملک سے بندوبست ممکن ہے۔ ہم واٹس ایپ پر اپڈیٹس دیتے ہیں۔ ادائیگی شفٹ کے بعد، ہمیشہ کی طرح۔",
   },
 ];
 
