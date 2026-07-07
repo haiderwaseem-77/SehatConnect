@@ -367,27 +367,31 @@ body{overflow-x:hidden}
 .d6 .svc-foot b{color:var(--ink)}
 
 /* ================= QUESTIONS FAMILIES ASK (accordion) ================= */
-.d6 .faq{background:var(--cream-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.d6 .faq-list{display:grid;grid-template-columns:1fr;gap:12px;margin-top:4px}
-.d6 .faq-item{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.d6 .faq{background:var(--cream-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);scroll-margin-top:82px}
+.d6 .faq .sec-head{margin-bottom:22px}
+.d6 .faq-list{display:grid;grid-template-columns:1fr;gap:10px;margin-top:4px}
+.d6 .faq-item{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 12px 28px -24px rgba(10,46,43,.36)}
+.d6 .faq-item-featured{border-color:rgba(13,122,110,.32);box-shadow:0 18px 36px -26px rgba(10,46,43,.48)}
 .d6 .faq-q{
   width:100%;background:transparent;border:none;cursor:pointer;font-family:inherit;
-  display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
-  padding:18px 18px;text-align:left;min-height:64px;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:16px 16px;text-align:left;min-height:60px;
 }
-.d6 .faq-q .qt{font-size:17px;font-weight:700;color:var(--ink);line-height:1.35}
-.d6 .faq-q .qt .urdu{display:block;font-size:14.5px;color:var(--teal-deep);font-weight:600;margin-top:2px}
-.d6 .faq-q .qc{flex:none;width:30px;height:30px;border-radius:50%;background:var(--cream-2);color:var(--teal);display:grid;place-items:center;font-size:22px;font-weight:800;line-height:0;transition:transform .25s ease, background .2s}
-.d6 .faq-q[aria-expanded="true"] .qc{transform:rotate(45deg);background:var(--teal);color:#fff}
+.d6 .faq-q .qt{font-size:16.5px;font-weight:800;color:var(--ink);line-height:1.32;letter-spacing:0}
+.d6 .faq-item-featured .faq-q .qt{font-size:18px}
+.d6.lang-ur .faq-q .qt [data-ur]{display:block}
+.d6 .faq-q .qc{flex:none;width:32px;height:32px;border-radius:50%;background:transparent;border:1.5px solid rgba(13,122,110,.36);color:var(--teal);display:grid;place-items:center;font-size:22px;font-weight:800;line-height:0;transition:transform .25s ease, background .2s,border-color .2s,color .2s}
+.d6 .faq-q[aria-expanded="true"] .qc{transform:rotate(45deg);background:var(--teal);border-color:var(--teal);color:#fff}
 .d6 .faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
-.d6 .faq-a-in{overflow:hidden;min-height:0;font-size:16px;color:var(--ink-soft);font-weight:500;line-height:1.55}
-.d6 .faq-a-pad{padding:0 18px 18px}
-.d6 .faq-a-in .urdu{display:block;margin-top:8px;font-size:15px;color:var(--ink-soft)}
-/* "More questions" disclosure header shows English + Urdu inline (unlike
-   ServicesSection's data-en/data-ur toggle) — force the Urdu run onto its own
-   line so it never merges with the preceding English text (e.g. a trailing count). */
-.d6 #faq .disc-titles .dt .urdu,
-.d6 #faq .disc-titles .ds .urdu{display:block;margin-top:2px}
+.d6 .faq-a-in{overflow:hidden;min-height:0;font-size:15.5px;color:var(--ink-soft);font-weight:500;line-height:1.58}
+.d6 .faq-a-pad{padding:0 16px 16px}
+.d6 .faq-a-in b{color:var(--ink);font-weight:800}
+.d6.lang-ur .faq-a-in [data-ur]{display:block}
+.d6 #faq .disc{margin-top:14px}
+.d6 #faq .disc-titles .dt [data-ur],
+.d6 #faq .disc-titles .ds [data-ur]{display:none}
+.d6.lang-ur #faq .disc-titles .dt [data-ur],
+.d6.lang-ur #faq .disc-titles .ds [data-ur]{display:block}
 
 /* ================= HUMAN PROOF ================= */
 .d6 .founder-card{
