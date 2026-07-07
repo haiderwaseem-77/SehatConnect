@@ -31,13 +31,13 @@ export default function HowItWorks() {
             <div className="step-top">
               <span className="step-n">2</span>
               <h3>
-                <span data-en>We listen and arrange the right person</span>
-                <span data-ur className="urdu">ہم سنتے ہیں اور مناسب فرد کا بندوبست کرتے ہیں</span>
+                <span data-en>We arrange the right person</span>
+                <span data-ur className="urdu">ہم مناسب فرد کا بندوبست کرتے ہیں</span>
               </h3>
             </div>
             <p>
-              <span data-en>We call back, understand the situation, and match a caring nurse or attendant. We send their card on WhatsApp before the visit.</span>
-              <span data-ur className="urdu">ہم کال کر کے صورتحال سمجھتے ہیں اور خیال رکھنے والی نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں۔ آنے سے پہلے ان کا کارڈ واٹس ایپ پر بھیجتے ہیں۔</span>
+              <span data-en>We call back, understand the situation, and match a caring nurse or attendant.</span>
+              <span data-ur className="urdu">ہم کال کر کے صورتحال سمجھتے ہیں اور خیال رکھنے والی نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں۔</span>
             </p>
           </li>
           <li className="step">
@@ -49,8 +49,8 @@ export default function HowItWorks() {
               </h3>
             </div>
             <p>
-              <span data-en>Your nurse or attendant arrives at the agreed time. First day is free. After that, you pay only after each shift.</span>
-              <span data-ur className="urdu">نرس یا اٹینڈنٹ طے شدہ وقت پر گھر پہنچتا ہے۔ پہلا دن مفت ہے۔ اس کے بعد آپ ہر شفٹ کے بعد ادائیگی کرتے ہیں۔</span>
+              <span data-en>Your nurse or attendant arrives at the agreed time. First day is free.</span>
+              <span data-ur className="urdu">نرس یا اٹینڈنٹ طے شدہ وقت پر گھر پہنچتا ہے۔ پہلا دن مفت ہے۔</span>
             </p>
             <span className="step-wa">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Z" /></svg>
