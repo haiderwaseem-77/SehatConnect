@@ -411,7 +411,7 @@ body{overflow-x:hidden}
 /* ================= FINAL CTA ================= */
 .d6 .closer{background:var(--teal);color:#fff;scroll-margin-top:82px}
 .d6 .seam-gold{height:8px;background:var(--gold);width:100%}
-.d6 .closer .wrap{padding-top:56px;padding-bottom:calc(112px + env(safe-area-inset-bottom))}
+.d6 .closer .wrap{padding-top:92px;padding-bottom:calc(112px + env(safe-area-inset-bottom))}
 .d6 .closer-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
 .d6 .closer .eyebrow{color:#6fd0c3}
 .d6 .closer .eyebrow::before{background:#6fd0c3}
@@ -480,7 +480,7 @@ body{overflow-x:hidden}
   .d6 .svc-rows{grid-template-columns:1fr}
   .d6 .faq-list{grid-template-columns:1fr 1fr;gap:14px}
   .d6 .closer-grid{grid-template-columns:1fr 1.02fr;gap:50px}
-  .d6 .closer .wrap{padding-bottom:56px}
+  .d6 .closer .wrap{padding-top:56px;padding-bottom:56px}
   .d6 .closer-actions .btn{width:auto}
   .sc-footer .foot-top{grid-template-columns:1.4fr 1fr 1fr 1fr 1.2fr}
   .sc-footer .foot-bottom{flex-direction:row;align-items:center}
