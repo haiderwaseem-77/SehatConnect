@@ -54,12 +54,12 @@ const CATEGORIES = [
   {
     cat: "qualified_nurse" as const,
     title: "Qualified Nurse",
-    titleUr: "کوالیفائیڈ نرس",
+    titleUr: "نرس",
     href: "/services/qualified-nurse",
-    badge: { en: "PNC Registered", ur: "پی این سی رجسٹرڈ" },
+    badge: { en: "PNC Registered", ur: "PNC رجسٹرڈ" },
     desc: {
       en: "PNC-registered nurses for medical tasks at home: wound dressing, drips, injections, medicines and monitoring.",
-      ur: "گھر پر طبی کاموں کے لیے PNC رجسٹرڈ نرسیں: زخم کی ڈریسنگ، ڈرپ، انجیکشن، ادویات اور نگرانی۔",
+      ur: "گھر پر طبی کام: ڈریسنگ، ڈرپ، انجیکشن، دوائیں اور نگرانی۔",
     },
     services: QUALIFIED_NURSE_SERVICES,
   },
@@ -71,7 +71,7 @@ const CATEGORIES = [
     badge: { en: "CNIC Checked", ur: "شناختی کارڈ چیک" },
     desc: {
       en: "Trained attendants for daily support: feeding, hygiene, movement, companionship and overnight duty.",
-      ur: "روزمرہ مدد کے لیے تربیت یافتہ اٹینڈنٹ: کھانا، صفائی، نقل و حرکت، رفاقت اور رات کی ڈیوٹی۔",
+      ur: "روزمرہ مدد: کھانا، صفائی، چلنا پھرنا، ساتھ اور رات کی ڈیوٹی۔",
     },
     services: ATTENDANT_SERVICES,
   },
@@ -81,7 +81,7 @@ const CATEGORIES = [
 type CellValue = boolean | { en: string; ur: string };
 const FREE = { en: "Free", ur: "مفت" };
 const COMPARE: [{ en: string; ur: string }, CellValue, CellValue][] = [
-  [{ en: "PNC registered", ur: "پی این سی رجسٹرڈ" }, true, false],
+  [{ en: "PNC registered", ur: "PNC رجسٹرڈ" }, true, false],
   [{ en: "Wound dressing / IV care", ur: "زخم کی ڈریسنگ / ڈرپ" }, true, false],
   [{ en: "Injections & medication", ur: "انجیکشن اور ادویات" }, true, false],
   [{ en: "Vitals monitoring", ur: "طبی نگرانی" }, true, false],
@@ -130,7 +130,7 @@ export default function ServicesPage() {
             <div className="wrap">
               <span className="eyebrow">
                 <span data-en>Home care in Lahore</span>
-                <span data-ur className="urdu">لاہور میں گھر پر نگہداشت</span>
+                <span data-ur className="urdu">لاہور میں گھر پر دیکھ بھال</span>
               </span>
               <div className="sec-head" style={{ marginTop: 14, marginBottom: 0 }}>
                 <h2>
@@ -142,7 +142,7 @@ export default function ServicesPage() {
                     Need medical care? Choose a Qualified Nurse. Need daily support? Choose an Attendant. First day free. Pay after the shift. Not sure? We&rsquo;ll tell you honestly.
                   </span>
                   <span data-ur className="urdu">
-                    طبی نگہداشت چاہیے؟ کوالیفائیڈ نرس لیں۔ روزمرہ مدد چاہیے؟ اٹینڈنٹ لیں۔ پہلا دن مفت۔ ادائیگی شفٹ کے بعد۔ سمجھ نہیں آ رہا؟ ہم سچ بتائیں گے۔
+                    طبی کام چاہیے؟ نرس لیں۔ روزمرہ مدد چاہیے؟ اٹینڈنٹ لیں۔ پہلا دن مفت۔ ادائیگی شفٹ کے بعد۔ سمجھ نہ آئے تو ہم بتا دیں گے۔
                   </span>
                 </p>
               </div>
@@ -259,7 +259,7 @@ export default function ServicesPage() {
                 </h2>
                 <p style={{ fontSize: 16, color: "var(--ink-soft)", fontWeight: 500, marginBottom: 18 }}>
                   <span data-en>A quick look at what each one covers.</span>
-                  <span data-ur className="urdu">ایک نظر میں دیکھیں کہ ہر ایک کیا کرتا ہے۔</span>
+                  <span data-ur className="urdu">مختصر فرق یہاں دیکھ لیں۔</span>
                 </p>
                 <div style={{ overflowX: "auto" }}>
                   <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15, tableLayout: "fixed" }}>
@@ -267,7 +267,7 @@ export default function ServicesPage() {
                       <tr style={{ borderBottom: "2px dashed var(--line-strong)" }}>
                         <th style={{ textAlign: "left", padding: "10px 6px", color: "var(--ink-soft)", fontWeight: 700 }}>
                           <span data-en>Feature</span>
-                          <span data-ur className="urdu">خدمت</span>
+                          <span data-ur className="urdu">کام</span>
                         </th>
                         <th style={{ width: "20%", textAlign: "center", padding: "10px 4px", color: "var(--teal-deep)", fontWeight: 800, lineHeight: 1.2, overflowWrap: "anywhere" }}>
                           <span data-en>Qualified Nurse</span>
@@ -295,7 +295,7 @@ export default function ServicesPage() {
                 </div>
                 <p style={{ fontSize: 15, color: "var(--ink-soft)", fontWeight: 600, marginTop: 16 }}>
                   <span data-en>You pay after the shift — we tell you the exact price on the first call.</span>
-                  <span data-ur className="urdu">ادائیگی شفٹ کے بعد — قیمت ہم آپ کو پہلی کال پر بتا دیتے ہیں۔</span>
+                  <span data-ur className="urdu">ادائیگی شفٹ کے بعد۔ قیمت پہلی کال پر بتا دیتے ہیں۔</span>
                 </p>
               </div>
             </div>

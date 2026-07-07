@@ -47,7 +47,7 @@ export default function NotFound() {
 
               <h1 style={{ fontSize: "clamp(24px,5.5vw,30px)", marginBottom: 12 }}>
                 <span data-en>Let&rsquo;s get you back to a human.</span>
-                <span data-ur className="urdu">آئیے آپ کو واپس ایک حقیقی فرد تک لے جائیں۔</span>
+                <span data-ur className="urdu">آئیں، آپ کو حقیقی انسان تک لے چلتے ہیں۔</span>
               </h1>
 
               <p style={{ fontSize: 18, color: "var(--ink-soft)", lineHeight: 1.65, marginBottom: 26, fontWeight: 500 }}>
@@ -55,7 +55,7 @@ export default function NotFound() {
                   This page doesn&rsquo;t exist, or it moved. Call or WhatsApp us and we&rsquo;ll help you right away.
                 </span>
                 <span data-ur className="urdu">
-                  یہ صفحہ موجود نہیں، یا منتقل ہو گیا ہے۔ ہمیں کال یا واٹس ایپ کریں، ہم فوراً مدد کریں گے۔
+                  یہ صفحہ موجود نہیں۔ کال یا واٹس ایپ کریں، ہم مدد کر دیں گے۔
                 </span>
               </p>
 

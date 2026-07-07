@@ -27,11 +27,11 @@ export default function CitiesPage() {
             </span>
             <h1>
               <span data-en>Cities we <span className="hl">serve</span></span>
-              <span data-ur className="urdu">شہر جہاں ہم <span className="hl">خدمت</span> کرتے ہیں</span>
+              <span data-ur className="urdu">وہ شہر جہاں ہم <span className="hl">موجود</span> ہیں</span>
             </h1>
             <p className="hero-sub">
               <span data-en>Nurses and attendants at home in Lahore now. More cities coming soon. Leave your number and a real person calls back.</span>
-              <span data-ur className="urdu">لاہور میں ابھی گھر پر نرسیں اور اٹینڈنٹ۔ مزید شہر جلد آ رہے ہیں۔ اپنا نمبر دیں، ایک حقیقی فرد آپ کو کال کرے گا۔</span>
+              <span data-ur className="urdu">ابھی لاہور میں گھر پر نرسیں اور اٹینڈنٹ دستیاب ہیں۔ باقی شہر جلد آ رہے ہیں۔ نمبر دیں، ہم کال کریں گے۔</span>
             </p>
           </div>
         </section>
@@ -65,7 +65,7 @@ export default function CitiesPage() {
                         }}
                       >
                         <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--gold)", flex: "none" }} />
-                        <span data-en>Coming soon</span>
+                          <span data-en>Coming soon</span>
                         <span data-ur className="urdu">جلد</span>
                       </span>
                     )}
@@ -97,7 +97,7 @@ export default function CitiesPage() {
                       {isLive ? (
                         <>
                           <span data-en>Nurses &amp; attendants at home</span>
-                          <span data-ur className="urdu">گھر پر نرسیں اور اٹینڈنٹ</span>
+                          <span data-ur className="urdu">گھر پر نرس یا اٹینڈنٹ</span>
                         </>
                       ) : (
                         <>
@@ -110,7 +110,7 @@ export default function CitiesPage() {
                     {isLive && (
                       <span style={{ fontSize: "16px", color: "var(--teal-deep)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: "6px" }}>
                         <span data-en>Request a call</span>
-                        <span data-ur className="urdu">کال کی درخواست کریں</span>
+                        <span data-ur className="urdu">کال منگوائیں</span>
                         <span aria-hidden="true">&rarr;</span>
                       </span>
                     )}

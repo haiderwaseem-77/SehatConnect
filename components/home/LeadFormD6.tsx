@@ -11,15 +11,15 @@ type ErrorKey = "name" | "phone" | "generic";
 const ERROR_MESSAGES: Record<ErrorKey, { en: string; ur: string }> = {
   name: {
     en: "Please add your name so we can call you back.",
-    ur: "براہ کرم اپنا نام لکھیں تاکہ ہم آپ کو کال کر سکیں۔",
+    ur: "اپنا نام لکھ دیں تاکہ ہم کال کر سکیں۔",
   },
   phone: {
     en: "Please add your phone number so we can call you back.",
-    ur: "براہ کرم اپنا فون نمبر لکھیں تاکہ ہم آپ کو کال کر سکیں۔",
+    ur: "اپنا فون نمبر لکھ دیں تاکہ ہم کال کر سکیں۔",
   },
   generic: {
     en: "Something went wrong. Please call us directly.",
-    ur: "کچھ غلط ہو گیا۔ براہ کرم ہمیں براہِ راست کال کریں۔",
+    ur: "مسئلہ آ گیا۔ براہ کرم ہمیں کال کریں۔",
   },
 };
 
@@ -76,7 +76,7 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
       <div className="ribbon">
         <span className={variant === "closer" ? "dot beat-dot" : "dot"} />
         <span data-en>We call back fast</span>
-        <span data-ur className="urdu">ہم جلدی کال کرتے ہیں</span>
+        <span data-ur className="urdu">ہم جلد کال کرتے ہیں</span>
       </div>
 
       <label className="fld">
@@ -162,7 +162,7 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
         <p className="form-foot">
           <a href={`tel:${CONTACT_PHONE_TEL}`}>
             <span data-en>Or call {CONTACT_PHONE_DISPLAY} — 24/7</span>
-            <span data-ur className="urdu">یا کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi> — چوبیس گھنٹے</span>
+            <span data-ur className="urdu">یا کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi> — 24/7</span>
           </a>
         </p>
       )}
@@ -172,12 +172,12 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
         {variant === "hero" ? (
           <>
             <span data-en>Your number stays private. We only call about your care.</span>
-            <span data-ur className="urdu">آپ کا نمبر نجی رہتا ہے۔ ہم صرف دیکھ بھال کے لیے کال کرتے ہیں۔</span>
+            <span data-ur className="urdu">آپ کا نمبر محفوظ ہے۔ ہم صرف دیکھ بھال کے لیے کال کرتے ہیں۔</span>
           </>
         ) : (
           <>
             <span data-en>Name + Phone only. Area is asked on the call.</span>
-            <span data-ur className="urdu">صرف نام اور نمبر۔ علاقہ کال پر پوچھا جاتا ہے۔</span>
+            <span data-ur className="urdu">صرف نام اور نمبر۔ علاقہ کال پر پوچھ لیں گے۔</span>
           </>
         )}
       </p>

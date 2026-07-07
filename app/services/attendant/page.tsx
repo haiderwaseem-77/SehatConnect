@@ -37,10 +37,10 @@ const jsonLd = {
 };
 
 const DOES: { en: string; ur: string }[] = [
-  { en: "Feeding & meals — help with eating, drinking and timing medicines you hand over", ur: "کھانا کھلانا — کھانے، پینے اور دوا وقت پر دینے میں مدد" },
-  { en: "Hygiene & bathing — sponge bath, changing, toilet help, keeping the patient clean", ur: "صفائی اور غسل — سپنج غسل، کپڑے بدلنا، بیت الخلا میں مدد" },
-  { en: "Movement & positioning — turning, sitting up, walking support to prevent bed sores", ur: "نقل و حرکت — کروٹ بدلنا، بٹھانا، چلنے میں سہارا تاکہ زخم نہ بنیں" },
-  { en: "Companionship — sitting with them, talking, keeping them calm and not alone", ur: "رفاقت — ساتھ بیٹھنا، بات چیت، مریض کو پُرسکون اور تنہا نہ چھوڑنا" },
+  { en: "Feeding & meals — help with eating, drinking and timing medicines you hand over", ur: "کھانا — کھلانا، پانی دینا، دی ہوئی دوا وقت پر دینا" },
+  { en: "Hygiene & bathing — sponge bath, changing, toilet help, keeping the patient clean", ur: "صفائی — سپنج غسل، کپڑے بدلنا، بیت الخلا میں مدد" },
+  { en: "Movement & positioning — turning, sitting up, walking support to prevent bed sores", ur: "حرکت — کروٹ بدلنا، بٹھانا، چلنے میں سہارا" },
+  { en: "Companionship — sitting with them, talking, keeping them calm and not alone", ur: "ساتھ — بیٹھنا، بات کرنا، مریض کو اکیلا نہ چھوڑنا" },
 ];
 
 const AttendantExtra = (
@@ -59,7 +59,7 @@ const AttendantExtra = (
         >
           <span className="eyebrow" style={{ marginBottom: 14 }}>
             <span data-en>Non-clinical care</span>
-            <span data-ur className="urdu">غیر طبی نگہداشت</span>
+            <span data-ur className="urdu">غیر طبی دیکھ بھال</span>
           </span>
           <h2 style={{ fontSize: "clamp(22px,5vw,30px)", marginBottom: 8 }}>
             <span data-en>What an attendant does</span>
@@ -70,7 +70,7 @@ const AttendantExtra = (
               An attendant handles the everyday, hands-on care an unwell or elderly person needs — the non-medical work that keeps them comfortable, clean and safe.
             </span>
             <span data-ur className="urdu">
-              اٹینڈنٹ روزمرہ کی وہ دیکھ بھال کرتا ہے جو کسی بیمار یا بزرگ فرد کو درکار ہوتی ہے — وہ غیر طبی کام جو انہیں آرام دہ، صاف اور محفوظ رکھتا ہے۔
+              اٹینڈنٹ بیمار یا بزرگ فرد کی روزمرہ مدد کرتا ہے: کھانا، صفائی، چلنا پھرنا اور ساتھ بیٹھنا۔
             </span>
           </p>
           <ul style={{ display: "grid", gap: 12 }} className="sm:grid-cols-2">
@@ -118,8 +118,8 @@ const AttendantExtra = (
               <b style={{ color: "var(--ink)" }}>Qualified Nurse</b>, not an attendant. We&rsquo;ll always tell you honestly which one you need.
             </span>
             <span data-ur className="urdu">
-              <b style={{ color: "var(--ink)" }}>طبی کام</b> — انجیکشن، ڈرپ، زخم کی ڈریسنگ یا نگرانی چاہیے؟ یہ{" "}
-              <b style={{ color: "var(--ink)" }}>کوالیفائیڈ نرس</b> کا کام ہے، اٹینڈنٹ کا نہیں۔ ہم ہمیشہ سچ بتائیں گے کہ آپ کو کون سا چاہیے۔
+              <b style={{ color: "var(--ink)" }}>طبی کام</b> — انجیکشن، ڈرپ، ڈریسنگ یا نگرانی چاہیے؟ یہ{" "}
+              <b style={{ color: "var(--ink)" }}>نرس</b> کا کام ہے، اٹینڈنٹ کا نہیں۔ ہم صاف بتائیں گے کہ آپ کو کون سا چاہیے۔
             </span>
           </p>
         </div>
@@ -157,14 +157,14 @@ const AttendantExtra = (
           <div style={{ minWidth: 0 }}>
             <b style={{ display: "block", fontSize: 17, fontWeight: 800, color: "var(--ink)", lineHeight: 1.3 }}>
               <span data-en>Female or male attendant — you choose</span>
-              <span data-ur className="urdu">اٹینڈنٹ خاتون ہو یا مرد — آپ کا فیصلہ</span>
+              <span data-ur className="urdu">خاتون یا مرد اٹینڈنٹ — آپ کی مرضی</span>
             </b>
             <span style={{ display: "block", marginTop: 4, fontSize: 15.5, fontWeight: 500, color: "var(--ink-soft)", lineHeight: 1.5 }}>
               <span data-en>
                 Caring for a woman or an elderly mother? Ask for a female attendant — female-for-female, always. Just tell us on the call.
               </span>
               <span data-ur className="urdu">
-                کسی خاتون یا بزرگ ماں کی دیکھ بھال؟ خاتون اٹینڈنٹ مانگیں — خاتون کے لیے خاتون، ہمیشہ۔ کال پر بس بتا دیں۔
+                خاتون یا بزرگ والدہ کے لیے خاتون اٹینڈنٹ چاہیے؟ کال پر بتا دیں۔
               </span>
             </span>
           </div>
@@ -183,7 +183,7 @@ export default function AttendantPage() {
       category="attendant"
       intro={{
         en: "Non-clinical personal care from trained attendants: feeding, hygiene, movement, companionship and comfort.",
-        ur: "تربیت یافتہ، تصدیق شدہ اٹینڈنٹس کی طرف سے غیر طبی ذاتی نگہداشت اور رفاقت — کھانا کھلانا، صفائی، نقل و حرکت اور آرام۔",
+        ur: "تربیت یافتہ اٹینڈنٹ روزمرہ غیر طبی مدد دیتے ہیں: کھانا، صفائی، چلنا پھرنا، ساتھ اور آرام۔",
       }}
       gridHeading={{
         en: "What our attendants help with",
@@ -191,7 +191,7 @@ export default function AttendantPage() {
       }}
       gridSub={{
         en: "Trained attendants. CNIC checked, references called, police-verified. Tap WhatsApp or ask us to call you back.",
-        ur: "تربیت یافتہ اٹینڈنٹ۔ شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ واٹس ایپ کریں یا کال کی درخواست کریں۔",
+        ur: "تربیت یافتہ اٹینڈنٹ۔ شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ واٹس ایپ کریں یا کال منگوائیں۔",
       }}
       services={ATTENDANT_SERVICES}
       waPrefix="an Attendant for "

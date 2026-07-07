@@ -23,11 +23,11 @@ export default function BookPage() {
               <div className="sec-head" style={{ marginBottom: 24 }}>
                 <span className="eyebrow">
                   <span data-en>A real person is one call away</span>
-                  <span data-ur className="urdu">ایک حقیقی فرد ایک کال کی دوری پر</span>
+                  <span data-ur className="urdu">حقیقی انسان، صرف ایک کال دور</span>
                 </span>
                 <h2>
                   <span data-en>Leave your number. We&rsquo;ll call you back.</span>
-                  <span data-ur className="urdu">بس اپنا نمبر دیں۔ ہم آپ کو کال کریں گے۔</span>
+                  <span data-ur className="urdu">اپنا نمبر دیں۔ ہم کال کریں گے۔</span>
                 </h2>
                 <p>
                   <span data-en>
@@ -35,8 +35,8 @@ export default function BookPage() {
                     and arrange the right nurse or attendant.
                   </span>
                   <span data-ur className="urdu">
-                    صرف نام اور فون۔ پہلا دن مفت۔ ابھی کوئی ادائیگی نہیں۔ کوئی پیشگی نہیں۔ ایک حقیقی فرد کال کر کے آپ کی ضرورت سمجھتا ہے
-                    اور صحیح نرس یا اٹینڈنٹ کا بندوبست کرتا ہے۔
+                    صرف نام اور نمبر۔ پہلا دن مفت۔ ابھی کوئی ادائیگی نہیں۔ ہم کال کر کے ضرورت سمجھیں گے
+                    اور صحیح نرس یا اٹینڈنٹ کا بندوبست کریں گے۔
                   </span>
                 </p>
               </div>

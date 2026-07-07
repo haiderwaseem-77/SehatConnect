@@ -14,11 +14,11 @@ export default function FounderNote() {
           <div className="founder-q">
             <p>
               <span data-en>When my grandmother needed care at home, I learned how stressful it is to let a stranger into your house. That&rsquo;s why Sehat Connect exists. Every caregiver is checked before we send them, you pay only after the shift, and our team is always one call away.</span>
-              <span data-ur className="urdu">جب میری دادی کو گھر پر دیکھ بھال کی ضرورت پڑی، مجھے پتا چلا کہ کسی اجنبی کو گھر میں آنے دینا کتنا پریشان کن ہوتا ہے۔ اسی لیے میں نے Sehat Connect بنایا۔ ہر نگہداشت کنندہ کو بھیجنے سے پہلے چیک کیا جاتا ہے، آپ صرف شفٹ کے بعد ادائیگی کرتے ہیں، اور ہماری ٹیم ہمیشہ ایک کال کی دوری پر ہوتی ہے۔</span>
+              <span data-ur className="urdu">جب میری دادی کو گھر پر دیکھ بھال چاہیے تھی، مجھے سمجھ آیا کہ اجنبی کو گھر میں بلانا کتنا مشکل فیصلہ ہے۔ اسی لیے Sehat Connect بنایا۔ ہر فرد پہلے چیک ہوتا ہے، ادائیگی شفٹ کے بعد ہوتی ہے، اور ہماری ٹیم ایک کال دور رہتی ہے۔</span>
             </p>
             <p>
               <span data-en>I promise to look after your family the way I wanted <em>mine</em> looked after.</span>
-              <span data-ur className="urdu">میں وعدہ کرتا ہوں کہ آپ کے خاندان کا اتنا ہی خیال رکھوں گا جتنا <em>اپنے</em> خاندان کا رکھنا چاہتا تھا۔</span>
+              <span data-ur className="urdu">میرا وعدہ ہے: آپ کے گھر والوں کا خیال ایسے رکھیں گے جیسے اپنے گھر والوں کا۔</span>
             </p>
           </div>
           <div className="founder-sign">
@@ -34,7 +34,7 @@ export default function FounderNote() {
         </div>
         <p className="sample-line">
           <span data-en>Abdullah&rsquo;s photo here is a placeholder. His real photo goes live at launch.</span>
-          <span data-ur className="urdu">یہاں Abdullah کی تصویر عارضی ہے۔ اصل تصویر لانچ کے وقت لگا دی جائے گی۔</span>
+          <span data-ur className="urdu">Abdullah کی تصویر ابھی عارضی ہے۔ اصل تصویر لانچ پر آئے گی۔</span>
         </p>
       </div>
     </section>

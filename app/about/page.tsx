@@ -20,7 +20,7 @@ const CREDENTIALS: { en: React.ReactNode; ur: string }[] = [
         <b>PNC registered</b> — every Qualified Nurse is on the Pakistan Nursing Council register
       </>
     ),
-    ur: "ہر کوالیفائیڈ نرس پاکستان نرسنگ کونسل میں رجسٹرڈ ہے",
+    ur: "ہر نرس PNC رجسٹرڈ ہے",
   },
   {
     en: (
@@ -28,7 +28,7 @@ const CREDENTIALS: { en: React.ReactNode; ur: string }[] = [
         <b>CNIC checked, references called, police-verified</b>, in person by our team
       </>
     ),
-    ur: "شناختی کارڈ، حوالہ جات اور پولیس تصدیق، ہماری ٹیم کی ذاتی جانچ سے",
+    ur: "شناختی کارڈ، حوالہ جات اور پولیس تصدیق",
   },
   {
     en: (
@@ -36,7 +36,7 @@ const CREDENTIALS: { en: React.ReactNode; ur: string }[] = [
         We send their <b>card on WhatsApp</b> before the visit: photo, name and PNC number for nurses
       </>
     ),
-    ur: "آنے سے پہلے واٹس ایپ پر کارڈ: تصویر، نام، اور نرس کے لیے PNC نمبر",
+    ur: "آنے سے پہلے واٹس ایپ کارڈ: تصویر، نام، PNC نمبر",
   },
   {
     en: (
@@ -44,7 +44,7 @@ const CREDENTIALS: { en: React.ReactNode; ur: string }[] = [
         <b>Female-for-female</b> matching whenever a family asks for it
       </>
     ),
-    ur: "جب گھرانہ چاہے، خاتون مریض کے لیے خاتون نرس",
+    ur: "خاتون مریض کے لیے خاتون نرس، جب آپ کہیں",
   },
 ];
 
@@ -69,18 +69,18 @@ export default function AboutPage() {
             <div className="sec-head">
               <span className="eyebrow">
                 <span data-en>About Sehat Connect</span>
-                <span data-ur className="urdu">سحت کنیکٹ کے بارے میں</span>
+                <span data-ur className="urdu">Sehat Connect کے بارے میں</span>
               </span>
               <h2>
                 <span data-en>A Lahore home nursing service built for worried families.</span>
-                <span data-ur className="urdu">پریشان گھرانوں کے لیے لاہور کی گھریلو نرسنگ سروس۔</span>
+                <span data-ur className="urdu">لاہور میں گھر والوں کے لیے نرسنگ سروس۔</span>
               </h2>
               <p>
                 <span data-en>
                   When someone is ill, the family needs clear answers: who will come, what can they do, and when do we pay?
                 </span>
                 <span data-ur className="urdu">
-                  جب کوئی بیمار ہو، گھرانے کو صاف جواب چاہیے: کون آئے گا، وہ کیا کر سکتا ہے، اور ادائیگی کب ہو گی؟
+                  جب کوئی بیمار ہو، گھر والوں کو صاف جواب چاہیے: کون آئے گا، کیا کرے گا، ادائیگی کب ہو گی؟
                 </span>
               </p>
             </div>
@@ -101,9 +101,8 @@ export default function AboutPage() {
                   sent to the home, with checks you can verify.
                 </span>
                 <span data-ur className="urdu">
-                  آپریشن یا بیماری کے بعد بہت سے گھرانوں کے پاس دو مشکل راستے ہوتے ہیں: گھر پر غیر تربیت یافتہ مدد، یا ضرورت سے زیادہ
-                  ہسپتال میں رہنا۔ Sehat Connect ایک صاف راستہ دیتا ہے: PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ گھر پر،
-                  ایسی تصدیق کے ساتھ جو آپ چیک کر سکیں۔
+                  آپریشن یا بیماری کے بعد گھر والوں کے پاس اکثر دو مشکل راستے ہوتے ہیں: غیر تربیت یافتہ مدد، یا ہسپتال میں زیادہ دن رہنا۔
+                  Sehat Connect گھر پر PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ بھیجتا ہے، ایسی تصدیق کے ساتھ جو آپ چیک کر سکیں۔
                 </span>
               </p>
             </div>
@@ -119,11 +118,11 @@ export default function AboutPage() {
             <div className="sec-head">
               <span className="eyebrow">
                 <span data-en>Why families trust us</span>
-                <span data-ur className="urdu">گھرانے ہم پر بھروسہ کیوں کرتے ہیں</span>
+                <span data-ur className="urdu">گھر والے ہم پر بھروسہ کیوں کرتے ہیں</span>
               </span>
               <h2>
                 <span data-en>Checks happen before anyone reaches your door.</span>
-                <span data-ur className="urdu">کوئی دروازے تک پہنچنے سے پہلے تصدیق ہو چکی ہوتی ہے۔</span>
+                <span data-ur className="urdu">دروازے تک آنے سے پہلے ہر فرد چیک ہوتا ہے۔</span>
               </h2>
             </div>
 

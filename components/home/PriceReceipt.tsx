@@ -16,35 +16,35 @@ export default function PriceReceipt() {
             </h2>
             <p>
               <span data-en>Choose the care plan that fits your family.</span>
-              <span data-ur className="urdu">اپنے گھرانے کے لیے مناسب دیکھ بھال کا پلان منتخب کریں۔</span>
+              <span data-ur className="urdu">جو پلان گھر والوں کو ٹھیک لگے، وہ رکھیں۔</span>
             </p>
             <ul className="receipt-points">
               <li>
                 <span className="mk" />
                 <span>
                   <span data-en>Daily, weekly, and monthly packages are available.</span>
-                  <span data-ur className="urdu">روزانہ، ہفتہ وار اور ماہانہ پیکیجز دستیاب ہیں۔</span>
+                  <span data-ur className="urdu">روزانہ، ہفتہ وار اور ماہانہ پیکیج مل جاتے ہیں۔</span>
                 </span>
               </li>
               <li>
                 <span className="mk" />
                 <span>
                   <span data-en>First day is free, so your family can feel comfortable first.</span>
-                  <span data-ur className="urdu">پہلا دن مفت ہے، تاکہ آپ کا گھرانہ پہلے اطمینان محسوس کر سکے۔</span>
+                  <span data-ur className="urdu">پہلا دن مفت ہے، پہلے اطمینان کر لیں۔</span>
                 </span>
               </li>
               <li>
                 <span className="mk" />
                 <span>
                   <span data-en>No advance payment.</span>
-                  <span data-ur className="urdu">کوئی پیشگی ادائیگی نہیں۔</span>
+                  <span data-ur className="urdu">کوئی پیشگی نہیں۔</span>
                 </span>
               </li>
               <li>
                 <span className="mk" />
                 <span>
                   <span data-en>If the nurse or attendant doesn&rsquo;t feel right, we&rsquo;ll replace them until you&rsquo;re satisfied.</span>
-                  <span data-ur className="urdu">اگر نرس یا اٹینڈنٹ مناسب نہ لگے، ہم آپ کی تسلی تک اسے بدل دیں گے۔</span>
+                  <span data-ur className="urdu">نرس یا اٹینڈنٹ مناسب نہ لگے تو بدل دیں گے۔</span>
                 </span>
               </li>
             </ul>

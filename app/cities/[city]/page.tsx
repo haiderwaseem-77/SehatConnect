@@ -136,7 +136,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                   {isLive && (
                     <span className="eyebrow" style={{ marginBottom: "12px" }}>
                       <span data-en>A real person is one call away</span>
-                      <span data-ur className="urdu">ایک حقیقی فرد ایک کال کی دوری پر</span>
+                      <span data-ur className="urdu">حقیقی انسان، صرف ایک کال دور</span>
                     </span>
                   )}
 
@@ -158,12 +158,12 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                     {isLive ? (
                       <>
                         <span data-en>PNC-registered nurses and trained attendants at home in {cityName}. CNIC checked, references called, police-verified. First day free. Pay after the shift. No advance.</span>
-                        <span data-ur className="urdu">{cityName} میں گھر پر PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ۔ شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ پہلا دن مفت۔ ادائیگی شفٹ کے بعد۔ کوئی پیشگی نہیں۔</span>
+                        <span data-ur className="urdu">{cityName} میں گھر پر PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ۔ شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ پہلا دن مفت۔ کوئی پیشگی نہیں۔</span>
                       </>
                     ) : (
                       <>
                         <span data-en>Sehat Connect is coming to {cityName} soon. Leave your name and number and we&rsquo;ll call you the day we go live.</span>
-                        <span data-ur className="urdu">Sehat Connect جلد ہی {cityName} میں آ رہا ہے۔ اپنا نام اور نمبر دیں، جس دن ہم شروع ہوں گے ہم آپ کو کال کریں گے۔</span>
+                        <span data-ur className="urdu">Sehat Connect جلد {cityName} میں آ رہا ہے۔ نام اور نمبر دیں، شروع ہوتے ہی ہم کال کریں گے۔</span>
                       </>
                     )}
                   </p>
@@ -177,7 +177,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                       <span className="pill">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round"><path d="M12 3l7 3v5c0 4.4-2.9 7.9-7 9-4.1-1.1-7-4.6-7-9V6l7-3z" /><path d="M9 12l2 2 4-4" strokeLinecap="round" /></svg>
                         <span data-en>PNC-registered nurses</span>
-                        <span data-ur className="urdu">پی این سی رجسٹرڈ نرسیں</span>
+                        <span data-ur className="urdu">PNC رجسٹرڈ نرسیں</span>
                       </span>
                       <span className="pill">
                         <span data-en>Pay after the shift</span>
@@ -195,7 +195,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                   {!isLive && (
                     <p style={{ fontSize: "16px", fontWeight: 700, color: "var(--ink)", margin: "0 0 12px" }}>
                       <span data-en>Be first in line in {cityName}:</span>
-                      <span data-ur className="urdu">{cityName} میں سب سے پہلے شامل ہوں:</span>
+                      <span data-ur className="urdu">{cityName} میں پہلے اطلاع پائیں:</span>
                     </p>
                   )}
                   <LeadFormD6 variant="hero" area={cityName} />
@@ -235,7 +235,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                         Sehat Connect arranges nurses and attendants at home in {cityName}: post-op, elderly, paediatric, ICU step-down, diabetic, night duty, mother and baby, dementia, and long-term palliative care. We send a Qualified Nurse for medical tasks and an attendant for daily support.
                       </span>
                       <span data-ur className="urdu">
-                        Sehat Connect {cityName} میں گھر پر نرس یا اٹینڈنٹ کا بندوبست کرتا ہے: آپریشن کے بعد، بزرگوں، بچوں، ICU کے بعد، ذیابیطس، رات کی ڈیوٹی، ماں اور بچے، ڈیمنشیا، اور طویل مدتی نگہداشت۔ طبی کام کے لیے کوالیفائیڈ نرس، روزمرہ مدد کے لیے اٹینڈنٹ۔
+                        Sehat Connect {cityName} میں گھر پر نرس یا اٹینڈنٹ کا بندوبست کرتا ہے: آپریشن کے بعد، بزرگوں، بچوں، ICU کے بعد، شوگر، رات کی ڈیوٹی، ماں اور بچہ، ڈیمنشیا، اور طویل دیکھ بھال۔ طبی کام کے لیے نرس، روزمرہ مدد کے لیے اٹینڈنٹ۔
                       </span>
                     </p>
                     <p style={{ fontSize: "17px", color: "var(--ink-soft)", lineHeight: 1.7, fontWeight: 500 }}>
@@ -243,7 +243,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                         Every caregiver is CNIC checked, references called, police-verified. You can request a female or male caregiver. We tell you the exact price on the first call before care starts. No advance. Pay after the shift.
                       </span>
                       <span data-ur className="urdu">
-                        ہر نگہداشت کنندہ کا شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ آپ خاتون یا مرد نگہداشت کنندہ مانگ سکتے ہیں۔ نگہداشت شروع ہونے سے پہلے پہلی کال پر صحیح قیمت بتا دی جاتی ہے۔ کوئی پیشگی نہیں۔ ادائیگی شفٹ کے بعد۔
+                        ہر فرد کا شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ خاتون یا مرد نرس/اٹینڈنٹ مانگ سکتے ہیں۔ قیمت پہلی کال پر بتا دیتے ہیں۔ کوئی پیشگی نہیں، ادائیگی شفٹ کے بعد۔
                       </span>
                     </p>
                     <p style={{ fontSize: "17px", color: "var(--ink-soft)", lineHeight: 1.7, fontWeight: 500 }}>
@@ -259,7 +259,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                       <strong style={{ color: "var(--teal-deep)" }}>{CONTACT_PHONE_DISPLAY}</strong>.
                     </span>
                     <span data-ur className="urdu">
-                      Sehat Connect ابھی {cityName} میں شروع نہیں ہوا۔ ہم گھر پر PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ فراہم کرنے کا ارادہ رکھتے ہیں۔ اپنی تفصیلات دیں، لانچ پر ہم کال کریں گے۔ سوالات؟ کال یا واٹس ایپ کریں{" "}
+                      Sehat Connect ابھی {cityName} میں شروع نہیں ہوا۔ ہم گھر پر PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ لانے کی تیاری کر رہے ہیں۔ اپنی تفصیلات دیں، شروع ہوتے ہی ہم کال کریں گے۔ سوال؟ کال یا واٹس ایپ کریں{" "}
                       <strong style={{ color: "var(--teal-deep)" }}><bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></strong>۔
                     </span>
                   </p>
@@ -275,7 +275,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 <div className="sec-head" style={{ marginBottom: "14px" }}>
                   <h2 style={{ fontSize: "clamp(20px,4.4vw,26px)" }}>
                     <span data-en>Areas we serve in Lahore</span>
-                    <span data-ur className="urdu">لاہور کے وہ علاقے جہاں ہم خدمات فراہم کرتے ہیں</span>
+                    <span data-ur className="urdu">لاہور کے علاقے جہاں ہم آتے ہیں</span>
                   </h2>
                 </div>
                 <div className="founder-card">
@@ -302,7 +302,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                   </div>
                   <p style={{ fontSize: "16px", color: "var(--ink-soft)", lineHeight: 1.6, fontWeight: 500, margin: "16px 0 0" }}>
                     <span data-en>And everywhere in between, 24/7. We ask your exact area on the call.</span>
-                    <span data-ur className="urdu">اور ان کے درمیان ہر جگہ، چوبیس گھنٹے۔ کال پر ہم آپ کا صحیح علاقہ پوچھ لیتے ہیں۔</span>
+                    <span data-ur className="urdu">اور آس پاس کے علاقے بھی، 24/7۔ صحیح علاقہ کال پر پوچھ لیں گے۔</span>
                   </p>
                 </div>
               </div>

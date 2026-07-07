@@ -40,12 +40,12 @@ export default function QualifiedNursePage() {
   return (
     <ServiceDetailPage
       role="Qualified Nurse"
-      roleUrdu="کوالیفائیڈ نرس"
-      badge={{ en: "PNC Registered", ur: "پی این سی رجسٹرڈ" }}
+      roleUrdu="PNC رجسٹرڈ نرس"
+      badge={{ en: "PNC Registered", ur: "PNC رجسٹرڈ" }}
       category="qualified_nurse"
       intro={{
         en: "PNC-registered nurses at home for wounds, dressings, injections, medicines, monitoring, post-op and ICU step-down care.",
-        ur: "پاکستان نرسنگ کونسل کی رجسٹرڈ نرسیں گھر پر طبی نگہداشت فراہم کرتی ہیں — زخم، ڈریسنگ، انجیکشن، ادویات، نگرانی، آپریشن اور آئی سی یو کے بعد کی دیکھ بھال۔",
+        ur: "PNC رجسٹرڈ نرسیں گھر پر طبی کام کرتی ہیں: ڈریسنگ، انجیکشن، ڈرپ، دوائیں، نگرانی، آپریشن اور ICU کے بعد دیکھ بھال۔",
       }}
       gridHeading={{
         en: "What our nurses handle",
@@ -53,7 +53,7 @@ export default function QualifiedNursePage() {
       }}
       gridSub={{
         en: "Every nurse is PNC registered. CNIC checked, references called, police-verified. Tap WhatsApp or ask us to call you back.",
-        ur: "ہر نرس PNC رجسٹرڈ ہے۔ شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ واٹس ایپ کریں یا کال کی درخواست کریں۔",
+        ur: "ہر نرس PNC رجسٹرڈ ہے۔ شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ واٹس ایپ کریں یا کال منگوائیں۔",
       }}
       services={QUALIFIED_NURSE_SERVICES}
       jsonLd={jsonLd}

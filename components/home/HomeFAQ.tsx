@@ -18,7 +18,7 @@ const ITEMS: Item[] = [
     a: (
       <>We call first and understand your needs. <b>First day is free</b>, there is no advance, and if the person does not feel right, we replace them until your family is comfortable.</>
     ),
-    aUr: "ہم پہلے کال کرتے ہیں اور آپ کی ضرورت سمجھتے ہیں۔ پہلا دن مفت ہے، کوئی پیشگی نہیں، اور اگر فرد مناسب نہ لگے تو ہم آپ کے گھرانے کے اطمینان تک بدل دیتے ہیں۔",
+    aUr: "ہم پہلے کال کر کے ضرورت سمجھتے ہیں۔ پہلا دن مفت ہے، کوئی پیشگی نہیں، اور فرد مناسب نہ لگے تو بدل دیتے ہیں۔",
   },
   {
     q: "Who actually comes into my home?",
@@ -26,7 +26,7 @@ const ITEMS: Item[] = [
     a: (
       <>We arrange a caring nurse or attendant based on what your loved one needs. Every caregiver is <b>CNIC checked, references called, and police-verified</b>. Caring for a woman? You can ask for female-for-female.</>
     ),
-    aUr: "ہم آپ کے پیارے کی ضرورت کے مطابق خیال رکھنے والی نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں۔ ہر نگہداشت کنندہ کا شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ خاتون کے لیے خاتون مانگ سکتے ہیں۔",
+    aUr: "ہم ضرورت کے مطابق نرس یا اٹینڈنٹ بھیجتے ہیں۔ ہر فرد کا شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ خاتون کے لیے خاتون مانگ سکتے ہیں۔",
   },
   {
     q: "How fast can care start?",
@@ -34,15 +34,15 @@ const ITEMS: Item[] = [
     a: (
       <>Often within <b>24 hours</b>. We confirm the details on the call and arrange the right person for your loved one&rsquo;s care.</>
     ),
-    aUr: "اکثر 24 گھنٹوں میں دیکھ بھال شروع ہو سکتی ہے۔ ہم کال پر تفصیل کنفرم کر کے آپ کے پیارے کے لیے مناسب فرد کا بندوبست کرتے ہیں۔",
+    aUr: "اکثر 24 گھنٹوں میں۔ ہم کال پر تفصیل لے کر مناسب نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں۔",
   },
   {
     q: "What if we’re not comfortable with the caregiver?",
-    qUr: "اگر ہمیں نگہداشت کنندہ سے اطمینان نہ ہو تو؟",
+    qUr: "اگر نرس یا اٹینڈنٹ مناسب نہ لگے؟",
     a: (
       <>Tell us. <b>We replace the caregiver until your family is comfortable</b>. Payment only starts once the right person is finalized.</>
     ),
-    aUr: "ہمیں بتائیں — ہم نگہداشت کنندہ بدلتے رہیں گے، جب تک آپ کا گھرانہ مطمئن نہ ہو۔ ادائیگی صرف تب شروع ہوتی ہے جب مناسب فرد فائنل ہو جائے۔",
+    aUr: "ہمیں بتائیں۔ ہم نرس یا اٹینڈنٹ بدل دیں گے، جب تک گھر والے مطمئن نہ ہوں۔",
   },
   {
     q: "How and when do I pay?",
@@ -50,7 +50,7 @@ const ITEMS: Item[] = [
     a: (
       <>There is <b>no advance payment</b>. First day is free, and payment starts only once the right person is finalized and your family is comfortable.</>
     ),
-    aUr: "کوئی پیشگی ادائیگی نہیں۔ پہلا دن مفت ہے، اور ادائیگی صرف تب شروع ہوتی ہے جب مناسب فرد فائنل ہو جائے اور آپ کا گھرانہ مطمئن ہو۔",
+    aUr: "کوئی پیشگی نہیں۔ پہلا دن مفت ہے۔ ادائیگی تب شروع ہوتی ہے جب گھر والے مطمئن ہوں۔",
   },
   {
     q: "Which areas of Lahore do you cover?",
@@ -66,7 +66,7 @@ const ITEMS: Item[] = [
     a: (
       <>A Qualified Nurse is PNC registered and handles clinical care — injections, drips, wound dressing, medicines and monitoring. An Attendant gives non-clinical support — feeding, hygiene, movement and companionship. We tell you the exact price on the first call, depending on which you need; either way, your first day is free, there is no advance, and you pay cash after the shift.</>
     ),
-    aUr: "کوالیفائیڈ نرس پی این سی رجسٹرڈ ہوتی ہے اور طبی کام سنبھالتی ہے — انجیکشن، ڈرپ، زخم کی ڈریسنگ، دوائیں اور نگرانی۔ اٹینڈنٹ غیر طبی مدد دیتا ہے — کھانا کھلانا، صفائی، چلنا پھرنا اور رفاقت۔ آپ کو کون سا درکار ہے اسی کے مطابق قیمت ہم پہلی کال پر بتا دیتے ہیں؛ دونوں صورتوں میں پہلا دن مفت ہے، کوئی پیشگی نہیں، اور ادائیگی شفٹ کے بعد نقد ہوتی ہے۔",
+    aUr: "نرس طبی کام کرتی ہے: انجیکشن، ڈرپ، ڈریسنگ، دوائیں۔ اٹینڈنٹ روزمرہ مدد دیتا ہے: کھانا، صفائی، چلنا پھرنا۔ قیمت پہلی کال پر بتا دیتے ہیں۔",
   },
   {
     q: "Can they actually do the medical work?",
@@ -74,7 +74,7 @@ const ITEMS: Item[] = [
     a: (
       <>Yes. Our Qualified Nurses are Pakistan Nursing Council registered and do real nursing at home — wounds, dressings, injections, medicines, monitoring, post-op and ICU step-down care. For non-clinical help (feeding, hygiene, movement) an Attendant is enough, and we&rsquo;ll tell you honestly which you need.</>
     ),
-    aUr: "جی ہاں — پی این سی رجسٹرڈ نرسیں گھر پر مکمل نرسنگ کرتی ہیں۔",
+    aUr: "جی ہاں۔ PNC رجسٹرڈ نرس گھر پر انجیکشن، ڈرپ، ڈریسنگ، دوائیں اور نگرانی کر سکتی ہے۔",
   },
   {
     q: "Can I request the same nurse again?",
@@ -82,15 +82,15 @@ const ITEMS: Item[] = [
     a: (
       <>Yes. Tell us on WhatsApp and we try our best to send the same caregiver, so your loved one sees a familiar face. Familiarity and comfort matter to us too.</>
     ),
-    aUr: "جی ہاں۔ واٹس ایپ پر بتائیں، ہم وہی نگہداشت کنندہ بھیجنے کی کوشش کرتے ہیں تاکہ آپ کے پیارے کو شناسا چہرہ ملے۔",
+    aUr: "جی ہاں۔ واٹس ایپ پر بتائیں، ہم کوشش کرتے ہیں وہی نرس یا اٹینڈنٹ دوبارہ آئے۔",
   },
   {
     q: "What if the caregiver is running late?",
-    qUr: "اگر نگہداشت کنندہ دیر سے آئے تو؟",
+    qUr: "اگر نرس یا اٹینڈنٹ دیر سے آئے؟",
     a: (
       <>We keep you updated on WhatsApp or by phone, and you can always call us. If there is a delay, we sort out the next step quickly so your family is not left waiting without an answer.</>
     ),
-    aUr: "ہم واٹس ایپ یا فون پر اپڈیٹ دیتے ہیں؛ تاخیر ہو تو فوراً اگلا بندوبست کرتے ہیں تاکہ آپ کا گھرانہ جواب کے بغیر انتظار نہ کرے۔",
+    aUr: "ہم واٹس ایپ یا فون پر بتاتے رہتے ہیں۔ تاخیر ہو تو فوراً اگلا بندوبست کرتے ہیں۔",
   },
   {
     q: "I live abroad — can I arrange care for my parents in Lahore?",
@@ -98,7 +98,7 @@ const ITEMS: Item[] = [
     a: (
       <>Yes. Many families arrange care for parents in Lahore from abroad. We keep you updated on WhatsApp, and your family in Lahore pays after care begins, same as usual.</>
     ),
-    aUr: "جی ہاں، بیرون ملک سے لاہور میں والدین کے لیے دیکھ بھال کا بندوبست ہو سکتا ہے۔ ہم واٹس ایپ پر اپڈیٹس دیتے ہیں، اور لاہور میں آپ کا گھرانہ دیکھ بھال شروع ہونے کے بعد ادائیگی کرتا ہے۔",
+    aUr: "جی ہاں۔ آپ بیرون ملک سے بھی بندوبست کر سکتے ہیں۔ ہم واٹس ایپ پر اپڈیٹ دیتے ہیں، ادائیگی لاہور میں دیکھ بھال شروع ہونے کے بعد ہوتی ہے۔",
   },
 ];
 
@@ -137,11 +137,11 @@ export default function HomeFAQ() {
         <div className="sec-head">
           <h2>
             <span data-en>The worries we hear most, answered plainly.</span>
-            <span data-ur className="urdu">سب سے عام پریشانیوں کے صاف جواب۔</span>
+            <span data-ur className="urdu">عام سوالات کے صاف جواب۔</span>
           </h2>
           <p>
             <span data-en>The real questions stressed families ask before they let us in. Tap any to read the answer.</span>
-            <span data-ur className="urdu">پریشان خاندان ہمیں گھر بلانے سے پہلے یہی سوالات پوچھتے ہیں۔ جواب پڑھنے کے لیے کسی پر بھی ٹیپ کریں۔</span>
+            <span data-ur className="urdu">گھر بلانے سے پہلے گھر والے یہی پوچھتے ہیں۔ جواب پڑھنے کے لیے ٹیپ کریں۔</span>
           </p>
         </div>
 
