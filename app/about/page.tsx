@@ -67,6 +67,10 @@ export default function AboutPage() {
         <section className="block">
           <div className="wrap">
             <div className="sec-head">
+              <span className="eyebrow eyebrow-plain">
+                <span data-en>About Sehat Connect</span>
+                <span data-ur className="urdu">Sehat Connect کے بارے میں</span>
+              </span>
               <h2>
                 <span data-en>A Lahore home nursing service built for worried families.</span>
                 <span data-ur className="urdu">لاہور میں گھر والوں کے لیے نرسنگ سروس۔</span>
@@ -112,6 +116,10 @@ export default function AboutPage() {
         <section className="block" style={{ background: "var(--cream-2)" }}>
           <div className="wrap">
             <div className="sec-head">
+              <span className="eyebrow eyebrow-plain">
+                <span data-en>Why families trust us</span>
+                <span data-ur className="urdu">گھر والے ہم پر بھروسہ کیوں کرتے ہیں</span>
+              </span>
               <h2>
                 <span data-en>Checks happen before anyone reaches your door.</span>
                 <span data-ur className="urdu">دروازے تک آنے سے پہلے ہر فرد چیک ہوتا ہے۔</span>

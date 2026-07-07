@@ -87,6 +87,8 @@ body{overflow-x:hidden}
   color:var(--teal-deep);
 }
 .d6 .eyebrow::before{content:"";width:26px;height:8px;border-radius:4px;background:var(--teal);flex:none}
+/* dash-less eyebrow variant (hero + /about): keep the label text, drop the teal bar */
+.d6 .eyebrow.eyebrow-plain::before{display:none}
 
 .d6 h1,.d6 h2,.d6 h3{line-height:1.12;letter-spacing:-.02em;font-weight:800;color:var(--ink);text-wrap:balance}
 
