@@ -23,7 +23,8 @@ export default function PriceReceipt() {
           </h2>
           {/* TODO: Urdu counterpart for this lede (EN-only this pass). */}
           <p className="d6-rc-lede">
-            Pay after the shift. The whole arrangement, in plain terms.
+            Start without pressure. Payment begins only when your family is
+            comfortable with the caregiver.
           </p>
         </div>
 
@@ -44,9 +45,14 @@ export default function PriceReceipt() {
             {/* quick ledger — short values, dotted leaders */}
             <dl className="d6-rc-ledger">
               <div className="d6-rc-row">
-                <dt>First day</dt>
+                <dt>Before approval</dt>
                 <span className="d6-rc-dots" aria-hidden="true" />
-                <dd className="is-free">Free</dd>
+                <dd className="is-free">No payment</dd>
+              </div>
+              <div className="d6-rc-row">
+                <dt>If not right</dt>
+                <span className="d6-rc-dots" aria-hidden="true" />
+                <dd>Replacement</dd>
               </div>
               <div className="d6-rc-row">
                 <dt>Hidden fees</dt>
@@ -55,34 +61,37 @@ export default function PriceReceipt() {
               </div>
             </dl>
 
-            {/* terms — the fuller promises, verbatim from NORTH-STAR §3 */}
+            {/* terms — the fuller payment promises */}
             <dl className="d6-rc-terms">
               <div className="d6-rc-term">
                 <dt>Exact price</dt>
                 <dd>Quoted on your first call, before care starts.</dd>
               </div>
               <div className="d6-rc-term">
-                <dt>If it&rsquo;s not right</dt>
+                <dt>Caregiver fit</dt>
                 <dd>
-                  We replace the caregiver, free, until you&rsquo;re fully
-                  satisfied.
+                  If the person does not feel right, tell us. We arrange a
+                  replacement.
                 </dd>
               </div>
               <div className="d6-rc-term">
-                <dt>Plans</dt>
-                <dd>Daily, weekly, and monthly packages available.</dd>
+                <dt>After approval</dt>
+                <dd>
+                  Once your family is comfortable, we confirm the daily,
+                  weekly, or monthly payment plan.
+                </dd>
               </div>
             </dl>
 
             {/* the punchline "total" */}
             <div className="d6-rc-total">
-              <span className="d6-rc-total-label">You pay</span>
-              <span className="d6-rc-total-value">After the shift</span>
+              <span className="d6-rc-total-label">Payment starts</span>
+              <span className="d6-rc-total-value">When you approve</span>
             </div>
 
             {/* stamp + honesty footer */}
             <div className="d6-receipt-foot">
-              <span className="d6-receipt-stamp">No advance</span>
+              <span className="d6-receipt-stamp">No advance to start</span>
               <span className="d6-receipt-hidden">Nothing hidden</span>
             </div>
           </div>
