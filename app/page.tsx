@@ -59,7 +59,7 @@ const jsonLd = {
 const homeFaq: { q: string; a: string }[] = [
   {
     q: "How do I know my loved one will get the care they deserve?",
-    a: "We call and understand your needs first. First day is free, there is no advance, and if the person does not feel right, we replace them until your family is comfortable.",
+    a: "We call first and understand your needs. First day is free, there is no advance, and if the person does not feel right, we replace them until your family is comfortable.",
   },
   {
     q: "Who actually comes into my home?",
