@@ -33,7 +33,7 @@ One job: a worried family member in Lahore leaves their name + phone (or calls /
 ## Business facts (finalized — NORTH-STAR Decision Ledger)
 
 - Brand: **Sehat Connect** · tagline *"bringing the hospital to your home"* · Lahore · 24/7
-- Founder: **Abdullah Waseem** (publicly named; photo pending — the only pending asset)
+- Founder: **Sardar Waseem Ilyas** (publicly named; photo pending — the only pending asset)
 - Office: **442-G, Street 7, Phase 6, DHA, Lahore, Pakistan** (goes in footer, /about, GBP, JSON-LD)
 - Email (to set up at domain cutover): **care@mysehatconnect.com**
 - Phone display: `0328-8489988` · tel: `+923288489988` · WhatsApp: `923288489988`

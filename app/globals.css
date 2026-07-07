@@ -26,7 +26,7 @@
   --color-error:          #C0392B;
 
   /* Typography */
-  --font-sans: var(--font-inter), sans-serif;
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
 
   /* Radii */
   --radius-card:   12px;
@@ -45,7 +45,7 @@ html {
 body {
   background-color: #F5FAF9;
   color: #0A2E2B;
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-jakarta), system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;

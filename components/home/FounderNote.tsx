@@ -28,7 +28,7 @@ export default function FounderNote() {
           <div className="founder-sign">
             <span className="founder-photo">
               <Image
-                src="/founder/abdullah-waseem.jpg"
+                src="/founder/sardar-waseem-ilyas.jpg"
                 alt="Sardar Waseem Ilyas, founder of Sehat Connect"
                 width={62}
                 height={62}

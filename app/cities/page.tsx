@@ -133,7 +133,7 @@ export default function CitiesPage() {
                     key={city.en}
                     href={`/cities/${city.en.toLowerCase()}`}
                     style={baseCardStyle}
-                    className="transition-all hover:-translate-y-0.5 hover:border-[#0D7A6E] hover:shadow-md"
+                    className="transition-[transform,box-shadow,border-color] hover:-translate-y-0.5 hover:border-[var(--teal)] hover:shadow-md focus-visible:-translate-y-0.5 focus-visible:border-[var(--teal)] focus-visible:shadow-md"
                   >
                     {inner}
                   </Link>

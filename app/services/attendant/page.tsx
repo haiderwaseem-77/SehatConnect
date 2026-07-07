@@ -190,8 +190,8 @@ export default function AttendantPage() {
         ur: "ہمارے اٹینڈنٹ کن چیزوں میں مدد کرتے ہیں",
       }}
       gridSub={{
-        en: "Trained attendants. CNIC checked, references called, police-verified. Tap WhatsApp or ask us to call you back.",
-        ur: "تربیت یافتہ اٹینڈنٹ۔ شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ واٹس ایپ کریں یا کال منگوائیں۔",
+        en: "Trained attendants.",
+        ur: "تربیت یافتہ اٹینڈنٹ۔",
       }}
       services={ATTENDANT_SERVICES}
       waPrefix="an Attendant for "

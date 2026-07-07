@@ -31,6 +31,8 @@ interface Props {
   category: "qualified_nurse" | "attendant";
   intro: Bilingual;
   gridHeading: Bilingual;
+  /** Role-specific lead only (e.g. "Every nurse is PNC registered."). The shared
+   *  verification promise + CTA tail is appended by the shell — don't repeat it here. */
   gridSub?: Bilingual;
   services: Service[];
   /** Prefixed onto each service label in the WhatsApp prefill (e.g. "an Attendant for "). */
@@ -39,6 +41,13 @@ interface Props {
   /** Optional extra section rendered between the grid and the closing CTA. */
   extra?: ReactNode;
 }
+
+// Shared across both routes so the verbatim verification promise (NORTH-STAR §3)
+// lives in one place and each route only supplies its role-specific lead.
+const VERIFY_TAIL: Bilingual = {
+  en: "CNIC checked, references called, police-verified. Tap WhatsApp or ask us to call you back.",
+  ur: "شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ واٹس ایپ کریں یا کال منگوائیں۔",
+};
 
 const CARD: CSSProperties = {
   background: "var(--paper)",
@@ -153,8 +162,8 @@ export default function ServiceDetailPage({
                 </h2>
                 {gridSub && (
                   <p>
-                    <span data-en>{gridSub.en}</span>
-                    <span data-ur className="urdu">{gridSub.ur}</span>
+                    <span data-en>{gridSub.en} {VERIFY_TAIL.en}</span>
+                    <span data-ur className="urdu">{gridSub.ur} {VERIFY_TAIL.ur}</span>
                   </p>
                 )}
               </div>
@@ -190,7 +199,7 @@ export default function ServiceDetailPage({
                           fontWeight: 700,
                           color: "var(--ink)",
                         }}
-                        className="hover:!border-[color:var(--wa)] transition-colors"
+                        className="hover:!border-[color:var(--wa)] focus-visible:!border-[color:var(--wa)] transition-colors"
                       >
                         <WaMini />
                         <span data-en>WhatsApp</span>

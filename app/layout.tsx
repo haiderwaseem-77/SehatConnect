@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import {
   Fraunces,
-  Inter,
   Noto_Nastaliq_Urdu,
   Plus_Jakarta_Sans,
 } from "next/font/google";
@@ -10,12 +9,6 @@ import "./direction6.css";
 import StickyActionBar from "@/components/ui/StickyActionBar";
 import { LanguageProvider } from "@/components/i18n/LanguageProvider";
 import { SITE_URL } from "@/lib/constants";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -104,7 +97,6 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const fontVars = [
-    inter.variable,
     plusJakarta.variable,
     fraunces.variable,
     notoNastaliqUrdu.variable,

@@ -21,10 +21,15 @@ export default function PriceReceipt() {
             <span data-en>How payment works</span>
             <span data-ur className="urdu">ادائیگی کیسے ہوتی ہے</span>
           </h2>
-          {/* TODO: Urdu counterpart for this lede (EN-only this pass). */}
           <p className="d6-rc-lede">
-            Start without pressure. Payment begins only when your family is
-            comfortable with the caregiver.
+            <span data-en>
+              Start without pressure. Payment begins only when your family is
+              comfortable with the caregiver.
+            </span>
+            <span data-ur className="urdu">
+              کوئی دباؤ نہیں۔ ادائیگی تب شروع ہوگی جب آپ کا خاندان کیئرگیور سے
+              مطمئن ہو۔
+            </span>
           </p>
         </div>
 
@@ -36,10 +41,12 @@ export default function PriceReceipt() {
           aria-label="Sehat Connect payment terms"
         >
           <div className="d6-receipt-inner">
-            {/* TODO: Urdu counterpart for the receipt header labels. */}
             <div className="d6-receipt-head">
               <span className="d6-receipt-brand">Sehat Connect</span>
-              <span className="d6-receipt-kicker">Payment terms</span>
+              <span className="d6-receipt-kicker">
+                <span data-en>Payment terms</span>
+                <span data-ur className="urdu">ادائیگی کی شرائط</span>
+              </span>
             </div>
 
             {/* quick ledger — short values, dotted leaders */}
@@ -98,7 +105,6 @@ export default function PriceReceipt() {
         </div>
 
         {/* ---- share (unchanged WhatsApp deep-link behavior) ---- */}
-        {/* TODO: Urdu counterpart for the share label + caption. */}
         <a
           className="d6-receipt-share"
           data-reveal
@@ -113,10 +119,16 @@ export default function PriceReceipt() {
           </span>
           <span className="d6-receipt-share-text">
             <span className="d6-receipt-share-title">
-              Share these terms with your family
+              <span data-en>Share these terms with your family</span>
+              <span data-ur className="urdu">
+                یہ شرائط اپنے گھر والوں کے ساتھ شیئر کریں
+              </span>
             </span>
             <span className="d6-receipt-share-sub">
-              Opens WhatsApp with a ready-to-send message
+              <span data-en>Opens WhatsApp with a ready-to-send message</span>
+              <span data-ur className="urdu">
+                واٹس ایپ میں تیار پیغام کھلے گا
+              </span>
             </span>
           </span>
         </a>

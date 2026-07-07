@@ -224,9 +224,9 @@ The deepest fear, answered with the product's #1 feature: **you meet the caregiv
 
 The grandmother story is the single most credible paragraph on the site — it's true, specific, and exactly mirrors the customer's situation. Keep the current text's shape: *why we exist → what we promise → "I promise to look after your family the way I wanted mine looked after."*
 
-- **Name confirmed: Abdullah Waseem.** The real photo is pending (§8, item 1) — the placeholder keeps its honesty label until the photo lands.
+- **Name confirmed: Sardar Waseem Ilyas.** The real photo is pending (§8, item 1) — the placeholder keeps its honesty label until the photo lands.
 - Consider the "family-run, not a call centre" line — research shows this framing directly defuses the scam fear.
-- Signature element: "Abdullah Waseem — Founder, Sehat Connect · Lahore".
+- Signature element: "Sardar Waseem Ilyas — Founder, Sehat Connect · Lahore".
 
 ### 7.9 Final CTA + Footer (budget: ~2 screens)
 
@@ -253,7 +253,7 @@ The moment after someone hands us their number is the moment of maximum vulnerab
 
 The site's design is ahead of its evidence. The highest-leverage work for the next month is **collecting proof**, then slotting it into seams the design already has. In priority order:
 
-1. **Founder photo** (1 hour, free — name confirmed: Abdullah Waseem). Warm, plain-background portrait, arm's-length friendly. Slots into §7.8 and `/about`. *The single cheapest big win on the whole list.*
+1. **Founder photo** (1 hour, free — name confirmed: Sardar Waseem Ilyas). Warm, plain-background portrait, arm's-length friendly. Slots into §7.8 and `/about`. *The single cheapest big win on the whole list.*
 2. **Google Business Profile** (2 hours, free) — see §9. Technically discovery, but it's also a trust asset: the audience checks Google/Maps before calling.
 3. **One real caregiver card** (needs consent + a portrait + their PNC #). Replaces the Ayesha Saleem sample. The site's central promise becomes a photographed fact.
 4. **Caregiver portraits, 3–5** (half a day). Plain background, calm, in uniform if uniforms exist. Consent in writing (a WhatsApp "yes, you can use my photo on the website" screenshot is enough process for now). These feed the card, the "who comes in" section, GBP photos, and Facebook.
@@ -377,7 +377,7 @@ Keep it nearly effortless — a weekly 10-minute habit, not a dashboard project:
 1. **Domain consolidation** (§9.0): deploy to `mysehatconnect.com`; 301 `lucaintel.com`; fix `SITE_URL`, canonicals, JSON-LD; set up care@mysehatconnect.com.
 2. **Hero H1 says the noun + the city** (§7.1); phone number as visible text in hero and footer; ~~"0 advance" → "No advance"~~ (done 2026-07-02); promise line becomes "We call back fast — usually within 15 minutes".
 3. **Google Business Profile** live and complete (§9.1), anchored on the DHA office address. Start the review/testimonial WhatsApp ask on every completed job.
-4. **Founder photo** from Abdullah (§8, item 1) — the note itself is final; footer gets the office address + email.
+4. **Founder photo** from Sardar Waseem Ilyas (§8, item 1) — the note itself is final; footer gets the office address + email.
 5. **Page diet:** home to ≤20 phone-screens (§6): 6 FAQ + 6 chips visible, rest collapsed.
 6. ~~Honest cities + contact cleanup~~ — already done (2026-07-01 route consolidation: non-live cities noindexed, `/contact` and `/faq` 301'd into home). Remaining: give `/cities/lahore` the full "areas we serve" content pass.
 7. 404 page + `/book/confirm` upgrade (§7.9 spec).
@@ -423,7 +423,7 @@ A change ships only if **all** pass:
 Every previously open question, closed. These are facts the rest of the document builds on:
 
 1. **Canonical domain:** `mysehatconnect.com` — deploy there, 301 `lucaintel.com`.
-2. **Founder:** Abdullah Waseem, publicly named, with photo (photo being arranged — the only pending *asset*, not a pending *decision*).
+2. **Founder:** Sardar Waseem Ilyas, publicly named, with photo (photo being arranged — the only pending *asset*, not a pending *decision*).
 3. **Office address:** 442-G, Street 7, Phase 6, DHA, Lahore, Pakistan — shown in the footer, `/about`, GBP, and JSON-LD. (Corrected 2026-07-02; supersedes the original Model Town placeholder used while the real address was pending.)
 4. **Callback promise:** "We call back fast — usually within 15 minutes." The word *usually* stays until ops data proves a bare "within 15 minutes" is always true (§12).
 5. **Care start:** within 24 hours of the call.
