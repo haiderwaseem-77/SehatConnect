@@ -32,9 +32,9 @@ const ITEMS: Item[] = [
     q: "How fast can care start?",
     qUr: "دیکھ بھال کتنی جلدی شروع ہو سکتی ہے؟",
     a: (
-      <>Often within <b>24 hours</b>. We confirm the details on WhatsApp and arrange the right person for your loved one&rsquo;s care.</>
+      <>Often within <b>24 hours</b>. We confirm the details on the call and arrange the right person for your loved one&rsquo;s care.</>
     ),
-    aUr: "اکثر 24 گھنٹوں میں دیکھ بھال شروع ہو سکتی ہے۔ ہم واٹس ایپ پر تفصیل کنفرم کر کے آپ کے پیارے کے لیے مناسب فرد کا بندوبست کرتے ہیں۔",
+    aUr: "اکثر 24 گھنٹوں میں دیکھ بھال شروع ہو سکتی ہے۔ ہم کال پر تفصیل کنفرم کر کے آپ کے پیارے کے لیے مناسب فرد کا بندوبست کرتے ہیں۔",
   },
   {
     q: "What if we’re not comfortable with the caregiver?",
