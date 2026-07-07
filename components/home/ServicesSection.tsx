@@ -34,11 +34,12 @@ export default function ServicesSection() {
   return (
     <section className="block services" id="services">
       <div className="wrap">
-        <svg className="pulse" viewBox="0 0 400 18" preserveAspectRatio="none" aria-hidden="true" style={{ marginBottom: 22 }}>
-          <path d="M0 9 H150 L160 2 L172 16 L182 9 H400" />
+        {/* the one full-bleed pulse moment — draws itself in on scroll */}
+        <svg className="pulse" data-reveal viewBox="0 0 400 18" preserveAspectRatio="none" aria-hidden="true" style={{ marginBottom: 22 }}>
+          <path pathLength={1} d="M0 9 H150 L160 2 L172 16 L182 9 H400" />
           <circle className="node" cx="3" cy="9" r="3.5" />
         </svg>
-        <div className="sec-head">
+        <div className="sec-head" data-reveal>
           <h2>
             <span data-en>Tap the care you need. We reply on WhatsApp.</span>
             <span data-ur className="urdu">جو مدد چاہیے، ٹیپ کریں۔ ہم واٹس ایپ پر جواب دیں گے۔</span>
@@ -49,7 +50,7 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        <div className="services-list">
+        <div className="services-list" data-reveal>
           <div className="svc-rows">
             {CARE_ROWS.map((r) => <Row key={r.svc} {...r} />)}
           </div>

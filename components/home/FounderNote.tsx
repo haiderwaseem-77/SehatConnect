@@ -1,18 +1,20 @@
 import Image from "next/image";
+import PulseAccent from "@/components/home/PulseAccent";
 
 // Direction-6 human proof — founder note.
 export default function FounderNote() {
   return (
     <section className="block" id="about">
       <div className="wrap">
-        <div className="sec-head">
+        <div className="sec-head" data-reveal>
+          <PulseAccent />
           <h2>
             <span data-en>Who&rsquo;s behind Sehat Connect.</span>
             <span data-ur className="urdu">Sehat Connect کے پیچھے کون ہے۔</span>
           </h2>
         </div>
 
-        <div className="founder-card">
+        <div className="founder-card" data-reveal>
           <div className="founder-q">
             <p>
               <span data-en>When my grandmother needed care at home, I learned how stressful it is to let a stranger into your house. That&rsquo;s why Sehat Connect exists. Every caregiver is checked before we send them, you pay only after the shift, and our team is always one call away.</span>

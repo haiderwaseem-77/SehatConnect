@@ -1,5 +1,6 @@
 // Direction-6 final CTA — teal drench, repeat lead form.
 import LeadFormD6 from "@/components/home/LeadFormD6";
+import PulseAccent from "@/components/home/PulseAccent";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL } from "@/lib/constants";
 import { waLink, GENERIC_WA_MSG } from "@/lib/wa";
 
@@ -8,7 +9,9 @@ export default function CtaBanner() {
     <section className="closer" id="get-call">
       <div className="wrap">
         <div className="closer-grid">
-          <div className="closer-copy">
+          <div className="closer-copy" data-reveal>
+            {/* cream-stroke accent so the brand ECG motif reads on the teal band */}
+            <PulseAccent tone="cream" />
             <h2>
               <span data-en>Leave your number. We call you back.</span>
               <span data-ur className="urdu">اپنا نمبر دیں۔ ہم کال کریں گے۔</span>

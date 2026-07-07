@@ -5,6 +5,7 @@
 // "More questions" disclosure — same disc/disc-head/disc-body pattern used
 // elsewhere on the home page for collapsed-but-real content.
 import { useState } from "react";
+import PulseAccent from "@/components/home/PulseAccent";
 
 type Item = { q: string; qUr: string; a: React.ReactNode; aUr: string };
 
@@ -134,7 +135,8 @@ export default function HomeFAQ() {
   return (
     <section className="block faq" id="faq">
       <div className="wrap">
-        <div className="sec-head">
+        <div className="sec-head" data-reveal>
+          <PulseAccent />
           <h2>
             <span data-en>The worries we hear most, answered plainly.</span>
             <span data-ur className="urdu">عام سوالات کے صاف جواب۔</span>
@@ -145,7 +147,7 @@ export default function HomeFAQ() {
           </p>
         </div>
 
-        <div className="faq-list">
+        <div className="faq-list" data-reveal>
           {visible.map((item, i) => renderItem(item, i))}
         </div>
 

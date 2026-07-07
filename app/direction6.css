@@ -125,20 +125,25 @@ body{overflow-x:hidden}
 .d6 .hero-grid{display:grid;grid-template-columns:1fr;gap:18px;align-items:start}
 .d6 .hero-copy .eyebrow{margin-bottom:12px}
 .d6 .hero h1{font-size:clamp(28px,6.6vw,52px);line-height:1.06}
+/* key-phrase highlight — soft brand-green marker + dark teal ink (calm,
+   high-contrast; replaces the old muddy gold wash). Shared with the city heroes. */
 .d6 .hero h1 .hl{
-  color:var(--teal);
-  background:linear-gradient(transparent 60%, rgba(201,162,75,.42) 0);
+  color:var(--teal-deep);
+  background:linear-gradient(transparent 62%, rgba(13,122,110,.16) 0);
   -webkit-box-decoration-break:clone;box-decoration-break:clone;
-  padding:0 .05em;
+  padding:0 .06em;border-radius:2px;
 }
 .d6 .hero-sub{margin-top:14px;font-size:19px;color:var(--ink-soft);max-width:42ch;font-weight:500}
 .d6 .hero-urdu{margin-top:12px;font-size:18px;color:var(--teal-deep)}
-.d6 .hero-trust{
-  margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;
+/* trust facts as self-contained pill chips — each stays whole on its line and
+   wraps cleanly (no ragged dot separators). Informational, not tap targets. */
+.d6 .hero-trust{margin-top:18px;display:flex;flex-wrap:wrap;gap:7px 8px}
+.d6 .hero-trust .pill{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--paper);border:1px solid var(--line);border-radius:999px;
+  padding:8px 12px;font-size:16px;font-weight:700;color:var(--ink);line-height:1.1;
 }
-.d6 .hero-trust .pill{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:var(--ink)}
-.d6 .hero-trust .pill svg{width:18px;height:18px;color:var(--teal);flex:none}
-.d6 .hero-trust .pill:not(:first-child)::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--teal);opacity:.5;flex:none;margin-right:2px}
+.d6 .hero-trust .pill svg{width:16px;height:16px;color:var(--teal);flex:none}
 
 /* ---- the form is reachable immediately (hero) ---- */
 .d6 .form-card{
@@ -260,56 +265,10 @@ body{overflow-x:hidden}
 
 /* ================= PAYMENT ================= */
 .d6 .receipt-sec{background:var(--cream-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.d6 .receipt-grid{display:grid;grid-template-columns:1fr;gap:30px;align-items:center}
-.d6 .receipt-grid-simple{max-width:680px;margin:0 auto}
-.d6 .receipt-copy .eyebrow{margin-bottom:14px}
-.d6 .receipt-copy h2{font-size:clamp(27px,6.2vw,40px)}
-.d6 .receipt-copy p{margin-top:14px;color:var(--ink-soft);font-size:18px;max-width:40ch}
-.d6 .receipt-points{margin-top:22px;display:grid;gap:0;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden}
-.d6 .receipt-points li{list-style:none;display:flex;gap:13px;align-items:flex-start;font-size:16.5px;font-weight:650;line-height:1.55;color:var(--ink-soft);padding:15px 16px;border-bottom:1px solid var(--line)}
-.d6 .receipt-points li:last-child{border-bottom:0}
-.d6 .receipt-points .mk{flex:none;width:9px;height:9px;border-radius:999px;background:var(--teal);margin-top:8px;box-shadow:0 0 0 4px rgba(13,122,110,.10)}
-.d6 .receipt-points b{color:var(--ink)}
-
-.d6 .receipt{
-  background:var(--paper);max-width:420px;margin:0 auto;width:100%;
-  box-shadow:0 24px 48px -28px rgba(10,46,43,.45);
-  padding:26px 24px 30px;position:relative;
-  --scallop:
-    radial-gradient(circle 7px at 7px -1px, transparent 7px, #000 7.5px) top left/14px 14px repeat-x,
-    radial-gradient(circle 7px at 7px calc(100% + 1px), transparent 7px, #000 7.5px) bottom left/14px 14px repeat-x,
-    linear-gradient(#000 0 0) center/100% calc(100% - 26px) no-repeat;
-  -webkit-mask:var(--scallop);mask:var(--scallop);
-}
-.d6 .receipt-head{text-align:center;border-bottom:2px dashed var(--line-strong);padding-bottom:14px;margin-bottom:6px}
-.d6 .receipt-head .r-title{font-weight:800;font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
-.d6 .receipt-head .r-sub{font-size:12px;color:var(--ink-soft);letter-spacing:.10em;margin-top:6px;font-weight:700;text-transform:uppercase}
-.d6 .rline{
-  display:flex;align-items:baseline;gap:6px;padding:13px 0;
-  font-size:15.5px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;
-  border-bottom:1px dashed var(--line);
-}
-.d6 .rline .rname{white-space:nowrap;letter-spacing:.01em}
-.d6 .rline .dots{flex:1 1 auto;border-bottom:2px dotted var(--line-strong);transform:translateY(-5px);min-width:14px}
-.d6 .rline .rval{white-space:nowrap;font-weight:800;font-variant-numeric:tabular-nums}
-.d6 .rline.total{border-bottom:none;padding-top:16px;font-size:17px}
-.d6 .rline.total .rname{font-weight:800}
-.d6 .rline .free{color:var(--teal)}
-.d6 .receipt-foot{
-  margin-top:6px;border-top:2px dashed var(--line-strong);padding-top:14px;
-  text-align:center;font-size:12.5px;letter-spacing:.04em;color:var(--ink-soft);line-height:1.7;font-weight:700;
-}
-.d6 .receipt-foot b{color:var(--teal);font-weight:800;display:block;font-size:14px;letter-spacing:.14em;margin-top:6px}
-
-.d6 .receipt-share{
-  display:flex;align-items:center;justify-content:center;gap:11px;
-  width:100%;margin-top:20px;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;
-  padding:13px 16px;min-height:56px;cursor:pointer;font-weight:700;font-size:15.5px;color:var(--ink);
-  transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
-}
-.d6 .receipt-share:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
-.d6 .receipt-share .wa-mini{width:30px;height:30px;border-radius:9px;background:rgba(31,168,85,.12);display:grid;place-items:center;flex:none}
-.d6 .receipt-share .wa-mini svg{width:18px;height:18px;fill:var(--wa)}
+/* NOTE: the old .receipt / .rline / .receipt-points / .receipt-copy / .receipt-grid
+   rules were removed in the 2026-07-07 pass — the payment section is now the
+   .d6-receipt artifact (see the redesign block near the end of this file). Only
+   .receipt-sec (the section shell above) survives. */
 
 /* ================= SERVICES (WhatsApp deep-link chips) ================= */
 .d6 .services .sec-head{margin-bottom:22px}
@@ -482,8 +441,6 @@ body{overflow-x:hidden}
   .d6 .hero{padding:48px 0 60px}
   .d6 .hero-grid{grid-template-columns:1.04fr .96fr;gap:46px;align-items:center}
   .d6 .form-alt{grid-template-columns:1fr 1fr}
-  .d6 .receipt-grid{grid-template-columns:1.05fr .95fr;gap:50px}
-  .d6 .receipt-grid.receipt-grid-simple{grid-template-columns:minmax(0,680px);justify-content:center}
   .d6 .id-body{grid-template-columns:300px 1fr}
   .d6 .id-photo{min-height:auto}
   .d6 .steps{grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
@@ -503,4 +460,195 @@ body{overflow-x:hidden}
 @media (prefers-reduced-motion:no-preference){
   .d6 .beat-dot{animation:beat 2.2s ease-out infinite}
   @keyframes beat{0%{box-shadow:0 0 0 0 rgba(13,122,110,.45)}70%{box-shadow:0 0 0 9px rgba(13,122,110,0)}100%{box-shadow:0 0 0 0 rgba(13,122,110,0)}}
+}
+
+/* ============================================================================
+   ===== payment receipt redesign (2026-07-07 visual-elevation pass) =====
+   Owns the "How payment works" section (components/home/PriceReceipt.tsx):
+   a literal printed-receipt artifact. Scoped under .d6. (The old .receipt-* /
+   .rline mockup rules this replaced were removed in the same pass.)
+   .d6-pulse-accent is the REUSABLE standard section-header accent (the ECG brand
+   motif) adopted across the home sections via the shared PulseAccent component.
+   ============================================================================ */
+
+/* --- reusable section-header pulse accent (mini ECG heartbeat) ---
+   Default: left-aligned above a left-aligned .sec-head. Centered contexts
+   (.d6-rc-head) re-center it; the teal band (CtaBanner) uses .is-cream. */
+.d6 .d6-pulse-accent{display:block;width:64px;height:20px;margin:0 0 14px;overflow:visible}
+.d6 .d6-pulse-accent path{fill:none;stroke:var(--teal);stroke-width:2.75;stroke-linecap:round;stroke-linejoin:round}
+.d6 .d6-pulse-accent-node{fill:var(--teal)}
+.d6 .d6-rc-head .d6-pulse-accent{margin-left:auto;margin-right:auto}
+.d6 .d6-pulse-accent.is-cream path{stroke:#6fd0c3}
+.d6 .d6-pulse-accent.is-cream .d6-pulse-accent-node{fill:#6fd0c3}
+
+/* --- section header stack: [pulse] -> [H2] -> [lede] --- */
+.d6 .d6-rc-head{max-width:600px;margin:0 auto;text-align:center}
+.d6 .d6-rc-head h2{font-size:clamp(27px,6.2vw,40px);line-height:1.15;letter-spacing:-.01em;text-wrap:balance}
+.d6 .d6-rc-lede{margin-top:12px;color:var(--ink-soft);font-size:18px;line-height:1.55;font-weight:600;text-wrap:pretty}
+
+/* --- the receipt artifact ---
+   drop-shadow on the wrapper follows the masked (zig-zag) silhouette;
+   box-shadow would ignore the mask and leak a rectangle behind the teeth. */
+.d6 .d6-receipt{max-width:428px;margin:30px auto 0;filter:drop-shadow(0 22px 34px rgba(10,46,43,.26))}
+.d6 .d6-receipt-inner{
+  --tooth-w:22px;--tooth-h:11px;
+  background:var(--paper);
+  border-radius:14px 14px 0 0;
+  padding:26px 24px calc(22px + var(--tooth-h));
+  position:relative;
+  /* straight top + zig-zag (torn/perforated) bottom edge — echoes the ECG.
+     Single conic-gradient tooth per tile => crisp + deterministic at any width. */
+  -webkit-mask:
+    linear-gradient(#000 0 0) top/100% calc(100% - var(--tooth-h)) no-repeat,
+    conic-gradient(from -45deg at 50% 100%,#000 0 90deg,#0000 0) bottom/var(--tooth-w) var(--tooth-h) repeat-x;
+  mask:
+    linear-gradient(#000 0 0) top/100% calc(100% - var(--tooth-h)) no-repeat,
+    conic-gradient(from -45deg at 50% 100%,#000 0 90deg,#0000 0) bottom/var(--tooth-w) var(--tooth-h) repeat-x;
+}
+
+/* receipt header — letterhead */
+.d6 .d6-receipt-head{text-align:center;padding-bottom:15px;margin-bottom:4px;border-bottom:2px dashed var(--line-strong)}
+.d6 .d6-receipt-brand{display:block;font-weight:800;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.d6 .d6-receipt-kicker{display:block;margin-top:7px;font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* quick ledger rows — label · dotted leader · value */
+.d6 .d6-rc-ledger{margin:0;padding:4px 0 0}
+.d6 .d6-rc-row{display:flex;align-items:baseline;gap:8px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.d6 .d6-rc-row dt{margin:0;font-size:16px;font-weight:650;color:var(--ink-soft)}
+.d6 .d6-rc-dots{flex:1 1 auto;min-width:14px;border-bottom:2px dotted var(--line-strong);transform:translateY(-4px)}
+.d6 .d6-rc-row dd{margin:0;font-size:17px;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.d6 .d6-rc-row dd.is-free{color:var(--teal)}
+
+/* terms — the fuller promises, stacked so the value stays >=16px and legible */
+.d6 .d6-rc-terms{margin:0;padding:4px 0 0}
+.d6 .d6-rc-term{padding:12px 0;border-bottom:1px dashed var(--line)}
+.d6 .d6-rc-term dt{margin:0 0 4px;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep)}
+.d6 .d6-rc-term dd{margin:0;font-size:16px;font-weight:600;line-height:1.5;color:var(--ink);text-wrap:pretty}
+
+/* the "total" — the payment punchline */
+.d6 .d6-rc-total{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 12px;margin-top:6px;padding-top:16px;border-top:2px dashed var(--line-strong)}
+.d6 .d6-rc-total-label{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+.d6 .d6-rc-total-value{margin-left:auto;text-align:right;font-size:clamp(19px,5vw,22px);font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:var(--teal)}
+
+/* stamp + honesty footer */
+.d6 .d6-receipt-foot{margin-top:20px;display:flex;flex-direction:column;align-items:center;gap:11px}
+.d6 .d6-receipt-stamp{
+  font-size:15px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);
+  padding:8px 16px;border:2px solid var(--teal);border-radius:9px;
+  box-shadow:inset 0 0 0 2px rgba(13,122,110,.16);   /* double-ring rubber-stamp edge */
+  transform:rotate(-5deg);opacity:.94;
+}
+.d6 .d6-receipt-hidden{font-size:11.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* share button — obviously tappable (matches .btn-ghost's bordered language),
+   >=56px, keeps the WhatsApp deep-link */
+.d6 .d6-receipt-share{
+  display:flex;align-items:center;gap:14px;
+  max-width:428px;margin:22px auto 0;
+  background:var(--paper);border:2px solid var(--line-strong);border-radius:16px;
+  padding:14px 18px;min-height:64px;box-shadow:var(--shadow-sm);
+  transition:border-color .16s ease,transform .16s ease,box-shadow .16s ease;
+}
+.d6 .d6-receipt-share:hover{border-color:var(--teal);transform:translateY(-2px)}
+.d6 .d6-receipt-share:active{transform:translateY(0)}
+.d6 .d6-receipt-share:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.d6 .d6-receipt-share-icon{flex:none;width:44px;height:44px;border-radius:12px;background:rgba(31,168,85,.12);display:grid;place-items:center}
+.d6 .d6-receipt-share-icon svg{width:24px;height:24px;fill:var(--wa)}
+.d6 .d6-receipt-share-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.d6 .d6-receipt-share-title{font-size:16px;font-weight:750;color:var(--ink);line-height:1.3;text-wrap:balance}
+.d6 .d6-receipt-share-sub{font-size:13.5px;font-weight:600;color:var(--ink-soft);line-height:1.35}
+
+@media (prefers-reduced-motion:reduce){
+  .d6 .d6-receipt-share{transition:none}
+  .d6 .d6-receipt-share:hover,.d6 .d6-receipt-share:active{transform:none}
+}
+
+/* ============================================================================
+   ===== team section =====
+   "The people behind your call" — a calm trust moment that extends the founder
+   note. Photo-left rows on mobile reflow to a 3-across portrait grid on desktop.
+   Photos rhyme with the founder avatar (teal ring, rounded). No per-person
+   actions — this must never read as browsable caregiver profiles.
+   ============================================================================ */
+.d6 .team{background:var(--cream-2);border-top:1px solid var(--line)}
+.d6 .team .sec-head{margin-bottom:26px}
+/* header accent is now the shared .d6-pulse-accent (see PulseAccent) */
+
+/* people cards */
+.d6 .team-grid{list-style:none;display:grid;grid-template-columns:1fr;gap:14px;margin:0;padding:0}
+.d6 .team-card{
+  display:flex;gap:16px;align-items:flex-start;
+  background:var(--paper);border:1px solid var(--line);border-radius:18px;
+  padding:18px;box-shadow:var(--shadow-sm);
+}
+.d6 .team-photo{
+  position:relative;flex:0 0 auto;width:96px;aspect-ratio:4/5;
+  border-radius:14px;overflow:hidden;border:2px solid var(--teal);
+  background:var(--cream-2);box-shadow:0 8px 20px -14px rgba(10,46,43,.5);
+}
+.d6 .team-meta{min-width:0;padding-top:2px}
+.d6 .team-name{font-weight:800;font-size:18px;color:var(--ink);line-height:1.25}
+.d6 .team-role{margin-top:2px;font-size:15px;font-weight:700;color:var(--teal-deep);letter-spacing:.01em}
+.d6 .team-line{margin-top:9px;font-size:16px;color:var(--ink-soft);font-weight:500;line-height:1.5}
+
+/* closing reassurance — verification canon (NORTH-STAR §3), quiet, no CTA */
+.d6 .team-assure{
+  display:flex;align-items:flex-start;gap:11px;margin-top:22px;
+  font-size:16px;color:var(--ink-soft);font-weight:500;line-height:1.55;max-width:54ch;
+}
+.d6 .team-assure svg{flex:none;width:22px;height:22px;color:var(--teal);margin-top:1px}
+.d6 .team-assure b{color:var(--ink);font-weight:800}
+
+@media(min-width:760px){
+  .d6 .team .sec-head{margin-bottom:30px}
+  .d6 .team-grid{grid-template-columns:repeat(3,1fr);gap:18px}
+  .d6 .team-card{flex-direction:column;gap:15px;padding:22px}
+  .d6 .team-photo{width:104px}
+  .d6 .team-assure{margin-top:28px}
+}
+
+/* ============================================================================
+   ===== shared scroll-reveal / motion layer (2026-07-07 visual-elevation pass) =====
+   ONE mechanism for the whole home page. LandingRoot adds `.motion-ready` to the
+   `.d6` root only when JS runs AND motion is allowed, then an IntersectionObserver
+   adds `.is-revealed` to each `[data-reveal]` element as it scrolls in (fire once).
+
+   HARD GUARANTEE: without `.motion-ready` (no-JS, crawlers, reduced-motion) the
+   rules below never apply, so every `[data-reveal]` element renders fully visible
+   and every pulse accent renders solid. Reveals are opacity + 10px translateY only
+   (transform => no layout shift / no CLS). The hero carries no `[data-reveal]`, so
+   above-the-fold content is never gated on a reveal.
+   ============================================================================ */
+.d6.motion-ready [data-reveal]{
+  opacity:0;transform:translateY(10px);
+  transition:opacity .42s cubic-bezier(.22,1,.36,1), transform .42s cubic-bezier(.22,1,.36,1);
+}
+.d6.motion-ready [data-reveal].is-revealed{opacity:1;transform:none}
+
+/* small stagger inside card groups (matters when a row enters together on desktop;
+   harmless on mobile where cards enter one at a time) */
+.d6.motion-ready .steps [data-reveal]:nth-child(2),
+.d6.motion-ready .team-grid [data-reveal]:nth-child(2){transition-delay:.08s}
+.d6.motion-ready .steps [data-reveal]:nth-child(3),
+.d6.motion-ready .team-grid [data-reveal]:nth-child(3){transition-delay:.16s}
+
+/* "How it works" number circles gently scale-settle as their step reveals */
+.d6.motion-ready .steps [data-reveal] .step-n{
+  transform:scale(.82);transition:transform .5s cubic-bezier(.22,1,.36,1) .05s;
+}
+.d6.motion-ready .steps [data-reveal].is-revealed .step-n{transform:scale(1)}
+
+/* the signature moment: every mini pulse accent inside a revealed header, and the
+   full-bleed services divider, draw themselves in via stroke-dashoffset */
+.d6.motion-ready [data-reveal] .d6-pulse-accent path,
+.d6.motion-ready .pulse[data-reveal] path{stroke-dasharray:1;stroke-dashoffset:1}
+.d6.motion-ready [data-reveal].is-revealed .d6-pulse-accent path{stroke-dashoffset:0;transition:stroke-dashoffset .8s ease-out .1s}
+.d6.motion-ready .pulse[data-reveal].is-revealed path{stroke-dashoffset:0;transition:stroke-dashoffset .9s ease-out .05s}
+
+@media (prefers-reduced-motion:reduce){
+  /* belt-and-suspenders — LandingRoot already skips .motion-ready here */
+  .d6.motion-ready [data-reveal]{opacity:1;transform:none;transition:none}
+  .d6.motion-ready [data-reveal] .step-n{transform:none;transition:none}
+  .d6.motion-ready [data-reveal] .d6-pulse-accent path,
+  .d6.motion-ready .pulse[data-reveal] path{stroke-dashoffset:0;transition:none}
 }

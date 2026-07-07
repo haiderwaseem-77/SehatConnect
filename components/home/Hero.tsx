@@ -26,13 +26,13 @@ export default function Hero() {
                 <span data-ur className="urdu">پہلا دن مفت</span>
               </span>
               <span className="pill">
+                <span data-en>No advance</span>
+                <span data-ur className="urdu">کوئی پیشگی نہیں</span>
+              </span>
+              <span className="pill">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round"><path d="M12 3l7 3v5c0 4.4-2.9 7.9-7 9-4.1-1.1-7-4.6-7-9V6l7-3z" /><path d="M9 12l2 2 4-4" strokeLinecap="round" /></svg>
                 <span data-en>PNC-registered nurses</span>
                 <span data-ur className="urdu">PNC رجسٹرڈ نرسیں</span>
-              </span>
-              <span className="pill">
-                <span data-en>No advance</span>
-                <span data-ur className="urdu">کوئی پیشگی نہیں</span>
               </span>
               <span className="pill">
                 <span data-en>Day or night</span>

@@ -1,9 +1,12 @@
 // Direction-6 "How it works" — three numbered steps + WhatsApp on-the-way chip.
+import PulseAccent from "@/components/home/PulseAccent";
+
 export default function HowItWorks() {
   return (
     <section className="block how" id="how">
       <div className="wrap">
-        <div className="sec-head">
+        <div className="sec-head" data-reveal>
+          <PulseAccent />
           <h2>
             <span data-en>How it works. Three simple steps.</span>
             <span data-ur className="urdu">طریقہ آسان ہے۔ تین قدم۔</span>
@@ -14,7 +17,7 @@ export default function HowItWorks() {
           </p>
         </div>
         <ol className="steps">
-          <li className="step">
+          <li className="step" data-reveal>
             <div className="step-top">
               <span className="step-n">1</span>
               <h3>
@@ -27,7 +30,7 @@ export default function HowItWorks() {
               <span data-ur className="urdu">نام اور نمبر دیں، یا کال / واٹس ایپ کریں۔ ضرورت ہمیں بتا دیں۔</span>
             </p>
           </li>
-          <li className="step">
+          <li className="step" data-reveal>
             <div className="step-top">
               <span className="step-n">2</span>
               <h3>
@@ -40,7 +43,7 @@ export default function HowItWorks() {
               <span data-ur className="urdu">ہم کال کر کے بات سمجھتے ہیں، پھر نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں۔</span>
             </p>
           </li>
-          <li className="step">
+          <li className="step" data-reveal>
             <div className="step-top">
               <span className="step-n">3</span>
               <h3>

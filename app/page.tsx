@@ -8,6 +8,7 @@ import PriceReceipt from "@/components/home/PriceReceipt";
 import ServicesSection from "@/components/home/ServicesSection";
 import HomeFAQ from "@/components/home/HomeFAQ";
 import FounderNote from "@/components/home/FounderNote";
+import TeamSection from "@/components/home/TeamSection";
 import CtaBanner from "@/components/home/CtaBanner";
 import { CONTACT_PHONE_TEL, CONTACT_EMAIL, WHATSAPP_NUMBER, SITE_URL, OFFICE_POSTAL_ADDRESS } from "@/lib/constants";
 
@@ -137,6 +138,7 @@ export default function HomePage() {
           <ServicesSection />
           <HomeFAQ />
           <FounderNote />
+          <TeamSection />
           <CtaBanner />
           <div className="seam-gold" aria-hidden="true" />
         </main>
