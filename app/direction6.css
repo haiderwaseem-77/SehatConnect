@@ -256,16 +256,17 @@ body{overflow-x:hidden}
 .d6 .verified-foot{margin-top:26px;color:rgba(251,248,242,.74);font-size:15px;display:flex;align-items:flex-start;gap:10px}
 .d6 .verified-foot svg{width:20px;height:20px;flex:none;stroke:#6fd0c3;fill:none;stroke-width:2;margin-top:2px}
 
-/* ================= PRICE RECEIPT (signature 2) ================= */
+/* ================= PAYMENT ================= */
 .d6 .receipt-sec{background:var(--cream-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .d6 .receipt-grid{display:grid;grid-template-columns:1fr;gap:30px;align-items:center}
 .d6 .receipt-grid-simple{max-width:680px;margin:0 auto}
 .d6 .receipt-copy .eyebrow{margin-bottom:14px}
 .d6 .receipt-copy h2{font-size:clamp(27px,6.2vw,40px)}
 .d6 .receipt-copy p{margin-top:14px;color:var(--ink-soft);font-size:18px;max-width:40ch}
-.d6 .receipt-points{margin-top:20px;display:grid;gap:11px}
-.d6 .receipt-points li{list-style:none;display:flex;gap:13px;align-items:flex-start;font-size:16.5px;font-weight:600;color:var(--ink-soft)}
-.d6 .receipt-points .mk{flex:none;width:16px;height:3px;border-radius:2px;background:var(--teal);margin-top:12px}
+.d6 .receipt-points{margin-top:22px;display:grid;gap:0;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden}
+.d6 .receipt-points li{list-style:none;display:flex;gap:13px;align-items:flex-start;font-size:16.5px;font-weight:650;line-height:1.55;color:var(--ink-soft);padding:15px 16px;border-bottom:1px solid var(--line)}
+.d6 .receipt-points li:last-child{border-bottom:0}
+.d6 .receipt-points .mk{flex:none;width:9px;height:9px;border-radius:999px;background:var(--teal);margin-top:8px;box-shadow:0 0 0 4px rgba(13,122,110,.10)}
 .d6 .receipt-points b{color:var(--ink)}
 
 .d6 .receipt{
@@ -300,7 +301,7 @@ body{overflow-x:hidden}
 
 .d6 .receipt-share{
   display:flex;align-items:center;justify-content:center;gap:11px;
-  width:100%;margin-top:20px;background:var(--cream-2);border:1.5px solid var(--line);border-radius:14px;
+  width:100%;margin-top:20px;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;
   padding:13px 16px;min-height:56px;cursor:pointer;font-weight:700;font-size:15.5px;color:var(--ink);
   transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
 }
