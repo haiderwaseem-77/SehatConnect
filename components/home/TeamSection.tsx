@@ -2,7 +2,7 @@ import Image from "next/image";
 import PulseAccent from "@/components/home/PulseAccent";
 
 /*
- * "The team on the other end of your call" — five photos, deliberately unnamed.
+ * "The caregivers who come into your home" — five photos, deliberately unnamed.
  * Decision (2026-07-07): we do NOT publish team names, roles or per-person bios.
  * Anything per-person would either be invented (honesty-rule violation — the old
  * mock names were a live audit blocker) or an unverifiable claim. Instead the
@@ -19,6 +19,11 @@ type Shot = {
 };
 
 const SHOTS: Shot[] = [
+  {
+    photo: "/team/team-photo-3.jpg",
+    alt: "Nurse in a white coat in a hospital hallway",
+    pos: "center 16%",
+  },
   {
     photo: "/team/team-photo-1.jpg",
     alt: "Caregiver in navy scrubs standing in a hospital staff room",
@@ -39,17 +44,11 @@ const SHOTS: Shot[] = [
     alt: "Nurse adjusting an IV drip in a hospital corridor",
     pos: "38% 28%",
   },
-  {
-    photo: "/team/team-photo-3.jpg",
-    alt: "Nurse in a white coat in a hospital hallway",
-    pos: "center 16%",
-  },
 ];
 
-// Extends the founder note: "…and here's the team that delivers on it."
-// Header + lede reuse the hero's exact vocabulary (leave your number / arrange
-// the right nurse or attendant / stay with your family) so the section answers
-// the promise the hero makes.
+// Extends the founder note: "…and here are the people who enter your home."
+// Header + lede reuse the hero/FAQ vocabulary (loved one / nurse or attendant /
+// right person / replacement) so the section answers the home-entry worry.
 //
 // Scroll-reveal is handled by the shared mechanism in LandingRoot: `data-reveal`
 // elements are fully visible by default (SSR / no-JS / crawlers / reduced-motion)
@@ -62,18 +61,18 @@ export default function TeamSection() {
           {/* shared mini-ECG section accent — the brand motif, drawn on reveal */}
           <PulseAccent />
           <h2 id="team-title">
-            <span data-en>The team on the other end of your call.</span>
-            <span data-ur className="urdu">آپ کی کال کی دوسری جانب — ہماری ٹیم۔</span>
+            <span data-en>The caregivers who come into your home.</span>
+            <span data-ur className="urdu">جو آپ کے گھر دیکھ بھال کے لیے آتے ہیں۔</span>
           </h2>
           <p>
             <span data-en>
-              Leave your number and our team calls you back, arranges the right
-              nurse or attendant, and stays with your family after care starts.
+              We arrange the right nurse or attendant for your loved one. If
+              the person does not feel right, tell us and we arrange a
+              replacement.
             </span>
             <span data-ur className="urdu">
-              اپنا نمبر دیں — ہماری ٹیم کال کرے گی، صحیح نرس یا اٹینڈنٹ کا
-              انتظام کرے گی، اور دیکھ بھال شروع ہونے کے بعد بھی آپ کے ساتھ رہے
-              گی۔
+              ہم آپ کے پیارے کے لیے صحیح نرس یا اٹینڈنٹ کا انتظام کرتے ہیں۔
+              اگر فرد مناسب نہ لگے تو ہمیں بتائیں، ہم متبادل کا انتظام کرتے ہیں۔
             </span>
           </p>
         </div>
