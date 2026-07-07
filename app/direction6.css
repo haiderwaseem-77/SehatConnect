@@ -144,6 +144,7 @@ body{overflow-x:hidden}
 .d6 .form-card{
   background:var(--paper);border:1px solid var(--line);border-radius:22px;
   padding:22px 20px 20px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+  color:var(--ink);
 }
 .d6 .form-card::before{content:"";position:absolute;left:0;top:0;height:6px;width:100%;background:linear-gradient(90deg,var(--teal),var(--teal-deep))}
 .d6 .form-card .ribbon{display:flex;align-items:center;gap:9px;font-size:14.5px;font-weight:700;color:var(--teal-deep);margin:4px 0 16px}
@@ -408,9 +409,9 @@ body{overflow-x:hidden}
 .d6 .sample-line{margin-top:22px;font-size:14px;color:var(--ink-soft);font-style:italic}
 
 /* ================= FINAL CTA ================= */
-.d6 .closer{background:var(--teal);color:#fff}
+.d6 .closer{background:var(--teal);color:#fff;scroll-margin-top:82px}
 .d6 .seam-gold{height:8px;background:var(--gold);width:100%}
-.d6 .closer .wrap{padding-top:56px;padding-bottom:56px}
+.d6 .closer .wrap{padding-top:56px;padding-bottom:calc(112px + env(safe-area-inset-bottom))}
 .d6 .closer-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
 .d6 .closer .eyebrow{color:#6fd0c3}
 .d6 .closer .eyebrow::before{background:#6fd0c3}
@@ -418,6 +419,8 @@ body{overflow-x:hidden}
 .d6 .closer .c-sub{color:rgba(251,248,242,.92);margin-top:14px;font-size:18px;max-width:38ch}
 .d6 .closer-urdu{margin-top:12px;font-size:17px;color:#e8f4f0}
 .d6 .closer-actions{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px}
+.d6 .closer-actions .btn{width:100%}
+.d6 .closer .btn-wa{color:var(--ink)}
 .d6 .closer .form-card{margin-top:0}
 
 /* ================= FOOTER ================= */
@@ -477,6 +480,8 @@ body{overflow-x:hidden}
   .d6 .svc-rows{grid-template-columns:1fr}
   .d6 .faq-list{grid-template-columns:1fr 1fr;gap:14px}
   .d6 .closer-grid{grid-template-columns:1fr 1.02fr;gap:50px}
+  .d6 .closer .wrap{padding-bottom:56px}
+  .d6 .closer-actions .btn{width:auto}
   .sc-footer .foot-top{grid-template-columns:1.4fr 1fr 1fr 1fr 1.2fr}
   .sc-footer .foot-bottom{flex-direction:row;align-items:center}
 }
