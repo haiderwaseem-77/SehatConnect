@@ -16,8 +16,8 @@ export default function Hero() {
               <span data-ur className="urdu">گھر پر آپ کے پیارے کے لیے خیال رکھنے والی نرس یا اٹینڈنٹ۔ <span className="hl">اپنا نمبر چھوڑیں</span> — ہم مناسب فرد کا بندوبست کریں گے۔</span>
             </h1>
             <p className="hero-sub">
-              <span data-en>Leave your name and phone. We&rsquo;ll call and arrange the right nurse or attendant.</span>
-              <span data-ur className="urdu">اپنا نام اور فون دیں۔ ہم کال کر کے صحیح نرس یا اٹینڈنٹ کا بندوبست کریں گے۔</span>
+              <span data-en>The form takes less than 30 seconds. Our team will call and guide you from there.</span>
+              <span data-ur className="urdu">فارم بھرنے میں 30 سیکنڈ سے کم وقت لگتا ہے۔ ہماری ٹیم کال کر کے آپ کی رہنمائی کرے گی۔</span>
             </p>
 
             <div className="hero-trust">
