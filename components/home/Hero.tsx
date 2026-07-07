@@ -8,7 +8,7 @@ export default function Hero() {
         <div className="hero-grid">
           <div className="hero-copy">
             <span className="eyebrow eyebrow-plain">
-              <span data-en>Care for your loved one is one call away</span>
+              <span data-en>Care for your loved one is a call away</span>
               <span data-ur className="urdu">گھر پر دیکھ بھال، صرف ایک کال دور</span>
             </span>
             <h1>
