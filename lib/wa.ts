@@ -1,4 +1,4 @@
-import { WHATSAPP_NUMBER, PRICES, CONTACT_PHONE_DISPLAY } from "@/lib/constants";
+import { WHATSAPP_NUMBER, CONTACT_PHONE_DISPLAY } from "@/lib/constants";
 
 // Roman-Urdu prefills, matching the direction-6 mockup exactly.
 export const GENERIC_WA_MSG =
@@ -12,9 +12,10 @@ export function serviceWaMsg(service: string): string {
   return `Assalam o Alaikum. Mujhe ghar par ${service} chahiye. Rates aur details bata dein, shukriya.`;
 }
 
-// Forwardable price summary for the receipt "share with family" button.
+// Forwardable "share with family" summary for the receipt share button.
+// No prices — prices are hidden from all public surfaces as of 2026-07-02
+// (see PRICES comment in lib/constants.ts); leads with the free first-day
+// trial and payment-after promises instead (PROMISES in lib/constants.ts).
 export function receiptShareMsg(): string {
-  const nurse = PRICES.qualified_nurse.toLocaleString("en-US");
-  const attendant = PRICES.attendant.toLocaleString("en-US");
-  return `Sehat Connect: ghar par Qualified Nurse Rs ${nurse} ya Attendant Rs ${attendant}, per 12-hour shift. Koi advance nahi, sirf shift ke baad payment. Call ya WhatsApp karein: ${CONTACT_PHONE_DISPLAY}.`;
+  return `Sehat Connect: ghar par qualified nurse ya attendant, CNIC-checked aur police-verified staff. Pehla din bilkul free — koi advance nahi, payment sirf shift ke baad. Call ya WhatsApp karein: ${CONTACT_PHONE_DISPLAY}.`;
 }

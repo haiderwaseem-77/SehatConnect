@@ -1,7 +1,6 @@
 "use client";
 // Direction-6 services — WhatsApp deep-link chips + "Show all services" disclosure.
 import { useState } from "react";
-import { PRICES } from "@/lib/constants";
 import { waLink, serviceWaMsg } from "@/lib/wa";
 
 function WaMini() {
@@ -21,31 +20,31 @@ const CHIPS: { svc: string; en: string; ur: string }[] = [
   { svc: "Dementia & Alzheimer's Care", en: "Dementia & Alzheimer’s Care", ur: "ڈیمنشیا کی دیکھ بھال" },
 ];
 
-const NURSE_ROWS: { svc: string; nm: string; ur: string; ds: string }[] = [
-  { svc: "Post-op Care", nm: "Post-op Care", ur: "آپریشن کے بعد دیکھ بھال", ds: "Wound care, dressing changes, recovery support after surgery." },
-  { svc: "Elderly Care", nm: "Elderly Care", ur: "بزرگوں کی دیکھ بھال", ds: "Medicines, movement, day-to-day health monitoring." },
-  { svc: "Paediatric Care", nm: "Paediatric Care", ur: "بچوں کی دیکھ بھال", ds: "Nursing care for newborns, infants and young children." },
-  { svc: "ICU Step-down Care", nm: "ICU Step-down", ur: "آئی سی یو کے بعد", ds: "Care for patients sent home after ICU or HDU." },
-  { svc: "Night Duty", nm: "Night Duty", ur: "رات کی ڈیوٹی", ds: "A nurse stays through the night to monitor and care." },
-  { svc: "Diabetic Care", nm: "Diabetic Care", ur: "ذیابیطس کی دیکھ بھال", ds: "Blood sugar checks, insulin, diet guidance." },
-  { svc: "Mother & Baby Care", nm: "Mother & Baby Care", ur: "ماں اور بچے کی دیکھ بھال", ds: "Newborn and postnatal support for new mothers." },
-  { svc: "Dementia & Alzheimer's Care", nm: "Dementia & Alzheimer’s", ur: "ڈیمنشیا کی دیکھ بھال", ds: "Routine, safety and gentle companionship." },
-  { svc: "Palliative & Long-term Care", nm: "Palliative & Long-term", ur: "آرام دہ نگہداشت", ds: "Comfort-focused nursing, pain & symptom management." },
+const NURSE_ROWS: { svc: string; nm: string; ur: string; ds: string; dsUr: string }[] = [
+  { svc: "Post-op Care", nm: "Post-op Care", ur: "آپریشن کے بعد دیکھ بھال", ds: "Wound care, dressing changes, recovery support after surgery.", dsUr: "زخم کی دیکھ بھال، ڈریسنگ کی تبدیلی، آپریشن کے بعد صحت یابی میں مدد۔" },
+  { svc: "Elderly Care", nm: "Elderly Care", ur: "بزرگوں کی دیکھ بھال", ds: "Medicines, movement, day-to-day health monitoring.", dsUr: "دوائیں، چلنا پھرنا، روزمرہ صحت کی نگرانی۔" },
+  { svc: "Paediatric Care", nm: "Paediatric Care", ur: "بچوں کی دیکھ بھال", ds: "Nursing care for newborns, infants and young children.", dsUr: "نوزائیدہ، شیرخوار اور چھوٹے بچوں کے لیے نرسنگ دیکھ بھال۔" },
+  { svc: "ICU Step-down Care", nm: "ICU Step-down", ur: "آئی سی یو کے بعد", ds: "Care for patients sent home after ICU or HDU.", dsUr: "آئی سی یو یا ایچ ڈی یو سے گھر آنے والے مریضوں کی دیکھ بھال۔" },
+  { svc: "Night Duty", nm: "Night Duty", ur: "رات کی ڈیوٹی", ds: "A nurse stays through the night to monitor and care.", dsUr: "ایک نرس رات بھر نگرانی اور دیکھ بھال کے لیے موجود رہتی ہے۔" },
+  { svc: "Diabetic Care", nm: "Diabetic Care", ur: "ذیابیطس کی دیکھ بھال", ds: "Blood sugar checks, insulin, diet guidance.", dsUr: "بلڈ شوگر چیک، انسولین، خوراک کی رہنمائی۔" },
+  { svc: "Mother & Baby Care", nm: "Mother & Baby Care", ur: "ماں اور بچے کی دیکھ بھال", ds: "Newborn and postnatal support for new mothers.", dsUr: "نوزائیدہ بچے کی دیکھ بھال اور نئی ماؤں کے لیے زچگی کے بعد مدد۔" },
+  { svc: "Dementia & Alzheimer's Care", nm: "Dementia & Alzheimer’s", ur: "ڈیمنشیا کی دیکھ بھال", ds: "Routine, safety and gentle companionship.", dsUr: "معمول، حفاظت اور نرمی سے ساتھ۔" },
+  { svc: "Palliative & Long-term Care", nm: "Palliative & Long-term", ur: "آرام دہ نگہداشت", ds: "Comfort-focused nursing, pain & symptom management.", dsUr: "آرام پر مرکوز نرسنگ، درد اور علامات کا انتظام۔" },
 ];
 
-const ATTENDANT_ROWS: { svc: string; nm: string; ur: string; ds: string }[] = [
-  { svc: "an Attendant for Elderly Care", nm: "Elderly Care", ur: "بزرگوں کی دیکھ بھال", ds: "Feeding, hygiene, movement and comfort — non-clinical." },
-  { svc: "an Attendant for Paediatric Care", nm: "Paediatric Care", ur: "بچوں کی دیکھ بھال", ds: "Day-to-day care and supervision for children." },
-  { svc: "an Attendant for Night Duty", nm: "Night Duty", ur: "رات کی ڈیوٹی", ds: "An attendant stays the night for comfort and basic care." },
+const ATTENDANT_ROWS: { svc: string; nm: string; ur: string; ds: string; dsUr: string }[] = [
+  { svc: "an Attendant for Elderly Care", nm: "Elderly Care", ur: "بزرگوں کی دیکھ بھال", ds: "Feeding, hygiene, movement and comfort — non-clinical.", dsUr: "کھانا کھلانا، صفائی، چلنا پھرنا اور آرام — غیر طبی۔" },
+  { svc: "an Attendant for Paediatric Care", nm: "Paediatric Care", ur: "بچوں کی دیکھ بھال", ds: "Day-to-day care and supervision for children.", dsUr: "بچوں کی روزمرہ دیکھ بھال اور نگرانی۔" },
+  { svc: "an Attendant for Night Duty", nm: "Night Duty", ur: "رات کی ڈیوٹی", ds: "An attendant stays the night for comfort and basic care.", dsUr: "ایک اٹینڈنٹ رات بھر آرام اور بنیادی دیکھ بھال کے لیے موجود رہتا ہے۔" },
 ];
 
-function Row({ svc, nm, ur, ds }: { svc: string; nm: string; ur: string; ds: string }) {
+function Row({ svc, nm, ur, ds, dsUr }: { svc: string; nm: string; ur: string; ds: string; dsUr: string }) {
   return (
     <a className="svc-row" href={waLink(serviceWaMsg(svc))} target="_blank" rel="noopener noreferrer">
       <WaMini />
       <div>
-        <div className="nm">{nm} <span className="urdu">{ur}</span></div>
-        <div className="ds">{ds}</div>
+        <div className="nm"><span data-en>{nm}</span> <span data-ur className="urdu">{ur}</span></div>
+        <div className="ds"><span data-en>{ds}</span><span data-ur className="urdu">{dsUr}</span></div>
       </div>
     </a>
   );
@@ -53,8 +52,6 @@ function Row({ svc, nm, ur, ds }: { svc: string; nm: string; ur: string; ds: str
 
 export default function ServicesSection() {
   const [open, setOpen] = useState(false);
-  const nursePrice = `Rs ${PRICES.qualified_nurse.toLocaleString("en-US")} / 12-hr shift`;
-  const attendantPrice = `Rs ${PRICES.attendant.toLocaleString("en-US")} / 12-hr shift`;
 
   return (
     <section className="block services" id="services">
@@ -65,12 +62,12 @@ export default function ServicesSection() {
         </svg>
         <div className="sec-head">
           <h2>
-            <span data-en>Tap the care you need. A real person replies on WhatsApp.</span>
-            <span data-ur className="urdu">جو دیکھ بھال چاہیے اسے ٹیپ کریں۔ ایک حقیقی فرد واٹس ایپ پر جواب دیتا ہے۔</span>
+            <span data-en>Tap the care you need. We reply on WhatsApp.</span>
+            <span data-ur className="urdu">جو دیکھ بھال چاہیے اسے ٹیپ کریں۔ ہم واٹس ایپ پر جواب دیتے ہیں۔</span>
           </h2>
           <p>
-            <span data-en>Tap a service and a ready-made message opens &mdash; just press send. Someone on our team reads it and matches you with the right nurse or attendant. Every nurse is PNC registered.</span>
-            <span data-ur className="urdu">کوئی سروس ٹیپ کریں اور تیار شدہ پیغام کھل جاتا ہے &mdash; بس سینڈ دبائیں۔ ہماری ٹیم کا کوئی رکن اسے پڑھ کر آپ کو صحیح نرس یا اٹینڈنٹ سے ملاتا ہے۔ ہر نرس PNC رجسٹرڈ ہے۔</span>
+            <span data-en>Tap a service. WhatsApp opens with a ready message. Send it, and we&rsquo;ll guide you to the right nurse or attendant.</span>
+            <span data-ur className="urdu">کوئی سروس ٹیپ کریں۔ واٹس ایپ میں تیار پیغام کھل جائے گا۔ اسے بھیج دیں، ہم آپ کو صحیح نرس یا اٹینڈنٹ تک رہنمائی دیں گے۔</span>
           </p>
         </div>
 
@@ -82,7 +79,7 @@ export default function ServicesSection() {
           {CHIPS.map((c) => (
             <a key={c.svc} className="svc-chip" href={waLink(serviceWaMsg(c.svc))} target="_blank" rel="noopener noreferrer">
               <WaMini />
-              <span className="lab"><b>{c.en}</b><span className="urdu">{c.ur}</span></span>
+              <span className="lab"><b data-en>{c.en}</b><span data-ur className="urdu">{c.ur}</span></span>
             </a>
           ))}
         </div>
@@ -98,12 +95,12 @@ export default function ServicesSection() {
             <span className="disc-ico"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" strokeLinecap="round" /></svg></span>
             <span className="disc-titles">
               <span className="dt">
-                <span data-en>All services &amp; prices</span>
-                <span data-ur className="urdu">تمام سروسز اور قیمتیں</span>
+                <span data-en>All services</span>
+                <span data-ur className="urdu">تمام سروسز</span>
               </span>{" "}
               <span className="ds">
-                <span data-en>9 nurse services + attendant, with prices · tap any to WhatsApp</span>
-                <span data-ur className="urdu">9 نرسنگ سروسز + اٹینڈنٹ، قیمتوں کے ساتھ · کسی پر بھی ٹیپ کریں اور واٹس ایپ کریں</span>
+                <span data-en>9 nurse services + attendant · tap any to WhatsApp</span>
+                <span data-ur className="urdu">9 نرسنگ سروسز + اٹینڈنٹ · کسی پر بھی ٹیپ کریں اور واٹس ایپ کریں</span>
               </span>
             </span>
             <span className="disc-chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
@@ -111,12 +108,24 @@ export default function ServicesSection() {
           <div className="disc-body" style={{ gridTemplateRows: open ? "1fr" : "0fr" }}>
             <div className="disc-body-inner">
               <div className="disc-body-pad">
-                <div className="tier-bar"><span className="tn">Qualified Nurse</span><span className="tp">{nursePrice}</span></div>
+                <div className="tier-bar">
+                  <span className="tn">Qualified Nurse</span>
+                  <span className="tp">
+                    <span data-en>Exact price on the call · First day free</span>
+                    <span data-ur className="urdu">قیمت کال پر · پہلا دن مفت</span>
+                  </span>
+                </div>
                 <div className="svc-rows">
                   {NURSE_ROWS.map((r) => <Row key={r.svc} {...r} />)}
                 </div>
 
-                <div className="tier-bar"><span className="tn">Attendant</span><span className="tp">{attendantPrice}</span></div>
+                <div className="tier-bar">
+                  <span className="tn">Attendant</span>
+                  <span className="tp">
+                    <span data-en>Exact price on the call · First day free</span>
+                    <span data-ur className="urdu">قیمت کال پر · پہلا دن مفت</span>
+                  </span>
+                </div>
                 <div className="svc-rows">
                   {ATTENDANT_ROWS.map((r) => <Row key={r.svc} {...r} />)}
                 </div>

@@ -26,8 +26,8 @@ export default function Footer() {
                 </small>
               </span>
             </div>
-            <p data-en>Verified, PNC-registered nurses and background-checked attendants for your home, across Lahore. You always meet the caregiver before they arrive.</p>
-            <p data-ur className="ur urdu">تصدیق شدہ، پی این سی رجسٹرڈ نرسیں اور پس منظر کی جانچ شدہ اٹینڈنٹ — پورے لاہور میں آپ کے گھر کے لیے۔ نگہداشت کنندہ کے آنے سے پہلے آپ ہمیشہ اس سے ملتے ہیں۔</p>
+            <p data-en>PNC-registered nurses and trained attendants for your home, across Lahore. CNIC checked, references called, police-verified before the visit.</p>
+            <p data-ur className="ur urdu">پی این سی رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ — پورے لاہور میں آپ کے گھر کے لیے۔ آنے سے پہلے شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔</p>
           </div>
           <div className="foot-col">
             <h4><span data-en>Talk to us &middot; 24/7</span><span data-ur className="urdu">ہم سے بات کریں &middot; 24/7</span></h4>
@@ -46,7 +46,7 @@ export default function Footer() {
           <div className="foot-col">
             <h4><span data-en>On this page</span><span data-ur className="urdu">اس صفحے پر</span></h4>
             <Link href="/#how"><span data-en>How it works</span><span data-ur className="urdu">یہ کیسے کام کرتا ہے</span></Link>
-            <Link href="/#price"><span data-en>The price receipt</span><span data-ur className="urdu">قیمت کی رسید</span></Link>
+            <Link href="/#price"><span data-en>How payment works</span><span data-ur className="urdu">ادائیگی کا طریقہ</span></Link>
             <Link href="/#services"><span data-en>What our nurses do</span><span data-ur className="urdu">ہماری نرسیں کیا کرتی ہیں</span></Link>
             <Link href="/#who"><span data-en>Who comes to you</span><span data-ur className="urdu">آپ کے پاس کون آتا ہے</span></Link>
             <Link href="/#faq"><span data-en>Questions families ask</span><span data-ur className="urdu">گھرانے جو سوالات پوچھتے ہیں</span></Link>

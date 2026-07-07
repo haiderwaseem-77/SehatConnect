@@ -71,7 +71,7 @@ export default function NotFound() {
                   rel="noopener noreferrer"
                 >
                   <span className="wadot" />
-                  <span data-en>Chat with us on WhatsApp</span>
+                  <span data-en>WhatsApp us</span>
                   <span data-ur className="urdu">واٹس ایپ پر بات کریں</span>
                 </a>
                 <Link className="btn btn-ghost btn-block" href="/">

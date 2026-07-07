@@ -8,16 +8,16 @@ export default function Hero() {
         <div className="hero-grid">
           <div className="hero-copy">
             <span className="eyebrow">
-              <span data-en>A real person is one call away</span>
-              <span data-ur className="urdu">ایک حقیقی فرد ایک کال کی دوری پر</span>
+              <span data-en>Care for your loved one is one call away</span>
+              <span data-ur className="urdu">آپ کے پیارے کے لیے دیکھ بھال صرف ایک کال دور</span>
             </span>
             <h1>
-              <span data-en>A verified nurse or attendant at home, in Lahore. <span className="hl">Leave your number</span> — a real person calls you back.</span>
-              <span data-ur className="urdu">گھر پر تصدیق شدہ نرس یا تیماردار، لاہور میں۔ <span className="hl">اپنا نمبر چھوڑیں</span> — ایک اصل انسان آپ کو کال کرے گا۔</span>
+              <span data-en>A caring nurse or attendant for your loved one at home. <span className="hl">Leave your number</span> — we&rsquo;ll arrange the right person.</span>
+              <span data-ur className="urdu">گھر پر آپ کے پیارے کے لیے خیال رکھنے والی نرس یا اٹینڈنٹ۔ <span className="hl">اپنا نمبر چھوڑیں</span> — ہم مناسب فرد کا بندوبست کریں گے۔</span>
             </h1>
             <p className="hero-sub">
-              <span data-en>Take a breath. No advance to pay, no long form to fight. Tell us your name and number. We&rsquo;ll call, listen, and arrange a verified nurse or attendant.</span>
-              <span data-ur className="urdu">ایک لمبا سانس لیں۔ کوئی پیشگی رقم نہیں، کوئی لمبا فارم نہیں۔ بس نام اور نمبر دیں — ہم کال کر کے سب بندوبست کر دیتے ہیں۔</span>
+              <span data-en>First day free. Leave your name and phone. We&rsquo;ll call, listen, and arrange the right nurse or attendant.</span>
+              <span data-ur className="urdu">پہلا دن مفت۔ اپنا نام اور فون دیں۔ ہم کال کر کے سنیں گے اور صحیح نرس یا اٹینڈنٹ کا بندوبست کریں گے۔</span>
             </p>
 
             <div className="hero-trust">
@@ -27,20 +27,12 @@ export default function Hero() {
                 <span data-ur className="urdu">پی این سی رجسٹرڈ نرسیں</span>
               </span>
               <span className="pill">
-                <span data-en>Pay after the shift</span>
-                <span data-ur className="urdu">شفٹ کے بعد ادائیگی</span>
-              </span>
-              <span className="pill">
                 <span data-en>No advance</span>
                 <span data-ur className="urdu">کوئی پیشگی نہیں</span>
               </span>
               <span className="pill">
                 <span data-en>Day or night</span>
                 <span data-ur className="urdu">دن ہو یا رات</span>
-              </span>
-              <span className="pill">
-                <span data-en>We speak Urdu</span>
-                <span data-ur className="urdu">ہم اردو میں بات کرتے ہیں</span>
               </span>
             </div>
           </div>

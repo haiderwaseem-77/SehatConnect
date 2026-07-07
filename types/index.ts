@@ -40,7 +40,10 @@ export interface Booking {
   patient_condition: string;
   address: string;
   city: string;
-  price: number;
+  // Optional as of 2026-07-02: prices are hidden from all public surfaces
+  // (partner decision, see NORTH-STAR Decision Ledger / lib/constants.ts
+  // PRICES comment) — kept restorable rather than removed.
+  price?: number;
   status: BookingStatus;
   created_at: string;
 }

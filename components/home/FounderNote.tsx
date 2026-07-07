@@ -13,8 +13,8 @@ export default function FounderNote() {
         <div className="founder-card">
           <div className="founder-q">
             <p>
-              <span data-en>When my grandmother needed care at home, I learned how stressful it is to let a stranger into your house. That&rsquo;s why Sehat Connect exists. Every caregiver is verified, you pay only after the shift, and a real person is always one call away.</span>
-              <span data-ur className="urdu">جب میری دادی کو گھر پر دیکھ بھال کی ضرورت پڑی، مجھے پتا چلا کہ کسی اجنبی کو گھر میں آنے دینا کتنا پریشان کن ہوتا ہے۔ اسی لیے میں نے Sehat Connect بنایا۔ ہر دیکھ بھال کرنے والے کی تصدیق ہوتی ہے، آپ صرف شفٹ کے بعد ادائیگی کرتے ہیں، اور ایک اصل انسان ہمیشہ ایک کال کی دوری پر ہوتا ہے۔</span>
+              <span data-en>When my grandmother needed care at home, I learned how stressful it is to let a stranger into your house. That&rsquo;s why Sehat Connect exists. Every caregiver is checked before we send them, you pay only after the shift, and our team is always one call away.</span>
+              <span data-ur className="urdu">جب میری دادی کو گھر پر دیکھ بھال کی ضرورت پڑی، مجھے پتا چلا کہ کسی اجنبی کو گھر میں آنے دینا کتنا پریشان کن ہوتا ہے۔ اسی لیے میں نے Sehat Connect بنایا۔ ہر نگہداشت کنندہ کو بھیجنے سے پہلے چیک کیا جاتا ہے، آپ صرف شفٹ کے بعد ادائیگی کرتے ہیں، اور ہماری ٹیم ہمیشہ ایک کال کی دوری پر ہوتی ہے۔</span>
             </p>
             <p>
               <span data-en>I promise to look after your family the way I wanted <em>mine</em> looked after.</span>

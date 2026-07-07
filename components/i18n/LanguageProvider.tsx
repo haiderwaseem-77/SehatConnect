@@ -12,10 +12,12 @@ type LanguageContextValue = {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 /**
- * Honest, contained bilingual toggle.
- * It does NOT fake full-page Urdu translation (we have no Urdu copy beyond the
- * service sublabels). When lang === "ur", ServicesSection promotes each service's
- * real Urdu label to primary + RTL. The page `dir` stays LTR globally.
+ * Bilingual toggle. `LandingRoot` maps `lang` to a `.d6`/`.d6.lang-ur` class,
+ * which drives every [data-en]/[data-ur] pair in direction6.css. Most major
+ * sections (hero, FAQ, footer, services, cities, booking, 404) now carry
+ * data-ur pairs; NORTH-STAR §5/roadmap item 11 is full coverage of every
+ * customer-visible string — check for gaps before claiming it's done.
+ * The page `dir` stays LTR globally; individual Urdu spans set their own dir.
  */
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLang] = useState<Lang>("en");

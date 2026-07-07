@@ -2,13 +2,9 @@
 // Direction-6 FAQ — the worries families ask, answered plainly. Bilingual lines
 // are always shown (matches the mockup). Accordion uses the grid-rows 0fr→1fr fix.
 // Page diet: 6 highest-intent items are always visible; the rest sit behind a
-// "More questions" disclosure — same disc/disc-head/disc-body pattern as
-// ServicesSection's "All services & prices".
+// "More questions" disclosure — same disc/disc-head/disc-body pattern used
+// elsewhere on the home page for collapsed-but-real content.
 import { useState } from "react";
-import { PRICES } from "@/lib/constants";
-
-const nurse = `Rs ${PRICES.qualified_nurse.toLocaleString("en-US")}`;
-const attendant = `Rs ${PRICES.attendant.toLocaleString("en-US")}`;
 
 type Item = { q: string; qUr: string; a: React.ReactNode; aUr: string };
 
@@ -20,17 +16,17 @@ const ITEMS: Item[] = [
     q: "“How do I know this isn’t a scam?”",
     qUr: "”مجھے کیسے پتا کہ یہ دھوکہ نہیں؟“",
     a: (
-      <>There&rsquo;s no advance and no card number to hand over. The nurse finishes the 12-hour shift in your home — <b>then</b> you pay, cash on the visit. We&rsquo;re a real Lahore service working 24/7, and a real person is always one call away.</>
+      <>There&rsquo;s no advance and no card number to hand over. The caregiver finishes the 12-hour shift in your home. <b>Then</b> you pay, cash on the visit. We&rsquo;re a Lahore care service working 24/7, and our team is always one call away.</>
     ),
-    aUr: "کوئی پیشگی نہیں، کوئی آن لائن رقم نہیں۔ شفٹ کے بعد نقد ادائیگی۔",
+    aUr: "کوئی پیشگی نہیں، کوئی کارڈ نمبر نہیں۔ 12 گھنٹے کی شفٹ کے بعد نقد ادائیگی۔",
   },
   {
     q: "“Who actually comes into my home?”",
     qUr: "”میرے گھر میں کون آئے گا؟“",
     a: (
-      <>A verified person whose card we send you first — photo, name and PNC number on WhatsApp before they arrive. Every Qualified Nurse is <b>PNC registered</b>; attendants are background-verified, CNIC &amp; references checked. Caring for a woman? Ask for a <b>female</b> nurse or attendant — female-for-female, always.</>
+      <>We send the caregiver card first: photo, name and, for nurses, PNC number. Every caregiver is <b>CNIC checked, references called, police-verified</b>. Caring for a woman? Ask for female-for-female.</>
     ),
-    aUr: "تصدیق شدہ فرد جس کا کارڈ آنے سے پہلے بھیجا جاتا ہے۔ خاتون کے لیے خاتون دستیاب۔",
+    aUr: "ہم پہلے کارڈ بھیجتے ہیں: تصویر، نام، اور نرس کے لیے PNC نمبر۔ ہر نگہداشت کنندہ کا شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ خاتون کے لیے خاتون مانگ سکتے ہیں۔",
   },
   {
     q: "“How fast can care start?”",
@@ -44,9 +40,9 @@ const ITEMS: Item[] = [
     q: "“What if we’re not comfortable with the caregiver?”",
     qUr: "”اگر ہمیں نگہداشت کنندہ سے اطمینان نہ ہو تو؟“",
     a: (
-      <>Tell us after the first shift and <b>we&rsquo;ll send someone else</b>. You&rsquo;ve paid nothing in advance, so you&rsquo;re never stuck.</>
+      <>Tell us — <b>we replace the caregiver, free, until you&rsquo;re fully satisfied</b>. You have paid nothing in advance, so you are never stuck.</>
     ),
-    aUr: "پہلی شفٹ کے بعد بتائیں، ہم دوسرا نگہداشت کنندہ بھیجیں گے۔ آپ نے پیشگی کچھ ادا نہیں کیا، اس لیے آپ کبھی نہیں پھنستے۔",
+    aUr: "ہمیں بتائیں — ہم نگہداشت کنندہ مفت بدلتے رہیں گے، جب تک آپ مکمل مطمئن نہ ہوں۔ آپ نے پیشگی کچھ ادا نہیں کیا، اس لیے آپ کبھی پھنسے نہیں۔",
   },
   {
     q: "“How and when do I pay?”",
@@ -68,9 +64,9 @@ const ITEMS: Item[] = [
     q: "“What’s the difference between a nurse and an attendant?”",
     qUr: "”نرس اور اٹینڈنٹ میں کیا فرق ہے؟“",
     a: (
-      <>A <b>Qualified Nurse</b> ({nurse}) handles clinical care — medicines, wounds, injections, monitoring. An <b>Attendant</b> ({attendant}) handles non-clinical care — feeding, hygiene, movement and comfort. Both per 12-hour shift.</>
+      <>A Qualified Nurse is PNC registered and handles clinical care — injections, drips, wound dressing, medicines and monitoring. An Attendant gives non-clinical support — feeding, hygiene, movement and companionship. We tell you the exact price on the first call, depending on which you need; either way, your first day is free, there is no advance, and you pay cash after the shift.</>
     ),
-    aUr: "نرس طبی کام کرتی ہے؛ اٹینڈنٹ غیر طبی دیکھ بھال کرتا ہے۔",
+    aUr: "کوالیفائیڈ نرس پی این سی رجسٹرڈ ہوتی ہے اور طبی کام سنبھالتی ہے — انجیکشن، ڈرپ، زخم کی ڈریسنگ، دوائیں اور نگرانی۔ اٹینڈنٹ غیر طبی مدد دیتا ہے — کھانا کھلانا، صفائی، چلنا پھرنا اور رفاقت۔ آپ کو کون سا درکار ہے اسی کے مطابق قیمت ہم پہلی کال پر بتا دیتے ہیں؛ دونوں صورتوں میں پہلا دن مفت ہے، کوئی پیشگی نہیں، اور ادائیگی شفٹ کے بعد نقد ہوتی ہے۔",
   },
   {
     q: "“Can they actually do the medical work?”",
@@ -100,7 +96,7 @@ const ITEMS: Item[] = [
     q: "“I live abroad — can I arrange care for my parents in Lahore?”",
     qUr: "”میں بیرون ملک ہوں — کیا لاہور میں والدین کے لیے بندوبست ہو سکتا ہے؟“",
     a: (
-      <>Yes. Many families arrange everything over WhatsApp from abroad — we send the caregiver&rsquo;s card before the shift, just like any booking, and keep you updated by WhatsApp throughout. Your family in Lahore pays after the shift, same as usual.</>
+      <>Yes. Many families arrange everything over WhatsApp from abroad. We send the caregiver&rsquo;s card before the shift and keep you updated on WhatsApp. Your family in Lahore pays after the shift, same as usual.</>
     ),
     aUr: "جی ہاں، واٹس ایپ پر بیرون ملک سے بندوبست ممکن ہے۔ شفٹ سے پہلے کارڈ اور واٹس ایپ پر اپڈیٹس ملتی ہیں۔ ادائیگی شفٹ کے بعد، ہمیشہ کی طرح۔",
   },

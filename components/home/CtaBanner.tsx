@@ -10,14 +10,17 @@ export default function CtaBanner() {
         <div className="closer-grid">
           <div className="closer-copy">
             <h2>
-              <span data-en>Leave your number. A real person calls you back.</span>
-              <span data-ur className="urdu">بس اپنا نمبر دیں۔ ایک حقیقی فرد آپ کو کال کرے گا۔</span>
+              <span data-en>Leave your number. We call you back.</span>
+              <span data-ur className="urdu">بس اپنا نمبر دیں۔ ہم آپ کو کال کریں گے۔</span>
             </h2>
             <p className="c-sub">
-              <span data-en>Just your name and phone. That&rsquo;s the whole step. We&rsquo;ll call, understand the situation, and send your nurse&rsquo;s card before anyone visits.</span>
-              <span data-ur className="urdu">صرف نام اور نمبر۔ ہم کال کر کے سب سمجھتے ہیں اور آنے سے پہلے نرس کا کارڈ بھیجتے ہیں۔</span>
+              <span data-en>Name and phone only. We&rsquo;ll call, understand the situation, and send the caregiver card before the visit.</span>
+              <span data-ur className="urdu">صرف نام اور فون۔ ہم کال کر کے صورتحال سمجھیں گے اور آنے سے پہلے نگہداشت کنندہ کا کارڈ بھیجیں گے۔</span>
             </p>
-            <p className="closer-urdu urdu" data-ur>فکر یہاں ختم — سکون یہاں شروع۔</p>
+            <p className="closer-urdu">
+              <span data-en>Call or WhatsApp. Our team answers.</span>
+              <span data-ur className="urdu">کال یا واٹس ایپ کریں۔ ہماری ٹیم جواب دے گی۔</span>
+            </p>
             <div className="closer-actions">
               <a className="btn btn-wa" href={waLink(GENERIC_WA_MSG)} target="_blank" rel="noopener noreferrer" style={{ background: "#fff", borderColor: "#fff" }}>
                 <span className="wadot" /> <span data-en>WhatsApp us now</span><span data-ur className="urdu">ابھی واٹس ایپ کریں</span>

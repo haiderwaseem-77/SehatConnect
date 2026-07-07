@@ -10,8 +10,8 @@ export default function VerifiedCard() {
               <span data-ur className="urdu">ہم شفٹ سے پہلے آپ کو نرس کا کارڈ بھیجتے ہیں۔</span>
             </h2>
             <p>
-              <span data-en>Photo, full name, PNC registration number and verification, on WhatsApp, before anyone enters your home. You meet them first. No strangers, no surprises.</span>
-              <span data-ur className="urdu">تصویر، پورا نام، پی این سی رجسٹریشن نمبر اور تصدیق — گھر میں کسی کے آنے سے پہلے واٹس ایپ پر۔ آپ پہلے ان سے ملتے ہیں۔ نہ کوئی اجنبی، نہ کوئی حیرانی۔</span>
+              <span data-en>Before anyone enters your home, we WhatsApp the caregiver card: photo, name, PNC number for nurses, and verification date.</span>
+              <span data-ur className="urdu">کسی کے گھر آنے سے پہلے ہم واٹس ایپ پر نگہداشت کنندہ کا کارڈ بھیجتے ہیں: تصویر، نام، نرس کے لیے PNC نمبر، اور تصدیق کی تاریخ۔</span>
             </p>
             <div className="choice-note">
               <span className="cn-ico" aria-hidden="true">
@@ -80,7 +80,7 @@ export default function VerifiedCard() {
                 <div className="id-foot">
                   <span className="female-badge">
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0A6258" strokeWidth="2.4" strokeLinecap="round"><circle cx="12" cy="8" r="5" /><path d="M12 13v8M9 18h6" /></svg>
-                    <span className="fb-text"><b>Female-for-female</b><span className="urdu">خواتین کے لیے خاتون</span></span>
+                    <span className="fb-text"><b data-en>Female-for-female</b><span data-ur className="urdu">خواتین کے لیے خاتون</span></span>
                   </span>
                   <span className="id-note">
                     <span data-en>Sample card &mdash; your nurse&rsquo;s real card, with their own verification date, is sent on WhatsApp before the visit.</span>
@@ -95,8 +95,8 @@ export default function VerifiedCard() {
         <p className="verified-foot">
           <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /></svg>
           <span>
-            <span data-en>Every Qualified Nurse is Pakistan Nursing Council registered; every Attendant is background-verified. You always know who is at your door.</span>
-            <span data-ur className="urdu">ہر کوالیفائیڈ نرس پاکستان نرسنگ کونسل میں رجسٹرڈ ہے؛ ہر اٹینڈنٹ کا پس منظر تصدیق شدہ ہے۔ آپ کو ہمیشہ معلوم ہوگا کہ آپ کے دروازے پر کون ہے۔</span>
+            <span data-en>Every Qualified Nurse is Pakistan Nursing Council registered. Every caregiver is CNIC checked, references called, police-verified. You always know who is at your door.</span>
+            <span data-ur className="urdu">ہر کوالیفائیڈ نرس پاکستان نرسنگ کونسل میں رجسٹرڈ ہے۔ ہر نگہداشت کنندہ کا شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ آپ کو ہمیشہ معلوم ہوگا کہ آپ کے دروازے پر کون ہے۔</span>
           </span>
         </p>
       </div>

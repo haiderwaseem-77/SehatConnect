@@ -1,37 +1,42 @@
 // Direction-6 price receipt — scalloped ticket with dotted leaders.
-import { PRICES } from "@/lib/constants";
+// NOTE: prices hidden from all public surfaces as of 2026-07-02 (see
+// NORTH-STAR Decision Ledger). This card now explains HOW payment works
+// instead of showing rupee amounts. File name + id="price" kept as-is so
+// the anchor link and any future restore stay simple.
+import { PROMISES } from "@/lib/constants";
 import { waLink, receiptShareMsg } from "@/lib/wa";
 
 export default function PriceReceipt() {
-  const nurse = `Rs ${PRICES.qualified_nurse.toLocaleString("en-US")}`;
-  const attendant = `Rs ${PRICES.attendant.toLocaleString("en-US")}`;
-
   return (
     <section className="block receipt-sec" id="price">
       <div className="wrap">
         <div className="receipt-grid">
           <div className="receipt-copy">
             <h2>
-              <span data-en>The whole price, on one line.</span>
-              <span data-ur className="urdu">پوری قیمت، ایک ہی جگہ پر۔</span>
+              <span data-en>How payment works</span>
+              <span data-ur className="urdu">ادائیگی کیسے ہوتی ہے</span>
             </h2>
             <p>
-              <span data-en>No fine print, no salesman, no advance. You read the price here, and you pay it after the shift, not a rupee before.</span>
-              <span data-ur className="urdu">کوئی چھپی شرط نہیں، کوئی سیلز مین نہیں، کوئی پیشگی نہیں۔ قیمت یہیں پڑھ لیں، اور شفٹ کے بعد ادا کریں — ایک روپیہ بھی پہلے نہیں۔</span>
+              <span data-en>{PROMISES.priceOnCall.en}</span>
+              <span data-ur className="urdu">{PROMISES.priceOnCall.ur}</span>
+            </p>
+            <p>
+              <span data-en>No pressure. Cash after the 12-hour shift, not before.</span>
+              <span data-ur className="urdu">کوئی دباؤ نہیں۔ 12 گھنٹے کی شفٹ کے بعد نقد ادائیگی کریں، پہلے نہیں۔</span>
             </p>
             <ul className="receipt-points">
               <li>
                 <span className="mk" />
                 <span>
-                  <span data-en><b>Advance Rs 0</b>. You pay cash <b>after</b> the 12-hour shift</span>
-                  <span data-ur className="urdu"><b>پیشگی 0 روپے</b>۔ 12 گھنٹے کی شفٹ کے <b>بعد</b> نقد ادائیگی کریں</span>
+                  <span data-en><b>No advance.</b> You pay cash <b>after</b> the 12-hour shift</span>
+                  <span data-ur className="urdu"><b>کوئی پیشگی نہیں۔</b> 12 گھنٹے کی شفٹ کے <b>بعد</b> نقد ادائیگی کریں</span>
                 </span>
               </li>
               <li>
                 <span className="mk" />
                 <span>
-                  <span data-en>Same flat rate, day or night, anywhere in Lahore</span>
-                  <span data-ur className="urdu">دن ہو یا رات، لاہور میں کہیں بھی — ایک ہی قیمت</span>
+                  <span data-en>Same terms, day or night, anywhere in Lahore</span>
+                  <span data-ur className="urdu">دن ہو یا رات، لاہور میں کہیں بھی — ایک جیسی شرائط</span>
                 </span>
               </li>
               <li>
@@ -44,7 +49,7 @@ export default function PriceReceipt() {
             </ul>
           </div>
 
-          <aside className="receipt" aria-label="Price summary">
+          <aside className="receipt" aria-label="Payment terms">
             <div className="receipt-head">
               <div className="r-title">
                 <span data-en>Sehat Connect</span>
@@ -57,38 +62,36 @@ export default function PriceReceipt() {
             </div>
             <div className="rline">
               <span className="rname">
-                <span data-en>Qualified Nurse</span>
-                <span data-ur className="urdu">کوالیفائیڈ نرس</span>
-              </span>
-              <span className="dots" />
-              <span className="rval">{nurse}</span>
-            </div>
-            <div className="rline">
-              <span className="rname">
-                <span data-en>Attendant</span>
-                <span data-ur className="urdu">اٹینڈنٹ</span>
-              </span>
-              <span className="dots" />
-              <span className="rval">{attendant}</span>
-            </div>
-            <div className="rline">
-              <span className="rname">
-                <span data-en>Per shift</span>
-                <span data-ur className="urdu">فی شفٹ</span>
+                <span data-en>Exact price</span>
+                <span data-ur className="urdu">صحیح قیمت</span>
               </span>
               <span className="dots" />
               <span className="rval">
-                <span data-en>12 hours</span>
-                <span data-ur className="urdu">12 گھنٹے</span>
+                <span data-en>Told on the call</span>
+                <span data-ur className="urdu">کال پر بتائی جائے گی</span>
               </span>
             </div>
             <div className="rline">
               <span className="rname">
-                <span data-en>Advance / deposit</span>
-                <span data-ur className="urdu">پیشگی / ڈپازٹ</span>
+                <span data-en>First day</span>
+                <span data-ur className="urdu">پہلا دن</span>
               </span>
               <span className="dots" />
-              <span className="rval free">Rs 0</span>
+              <span className="rval free">
+                <span data-en>Free</span>
+                <span data-ur className="urdu">مفت</span>
+              </span>
+            </div>
+            <div className="rline">
+              <span className="rname">
+                <span data-en>Advance</span>
+                <span data-ur className="urdu">پیشگی</span>
+              </span>
+              <span className="dots" />
+              <span className="rval free">
+                <span data-en>None</span>
+                <span data-ur className="urdu">کوئی نہیں</span>
+              </span>
             </div>
             <div className="rline">
               <span className="rname">
@@ -96,7 +99,10 @@ export default function PriceReceipt() {
                 <span data-ur className="urdu">چھپی ہوئی فیس</span>
               </span>
               <span className="dots" />
-              <span className="rval free">Rs 0</span>
+              <span className="rval free">
+                <span data-en>None</span>
+                <span data-ur className="urdu">کوئی نہیں</span>
+              </span>
             </div>
             <div className="rline total">
               <span className="rname">
@@ -105,13 +111,13 @@ export default function PriceReceipt() {
               </span>
               <span className="dots" />
               <span className="rval free">
-                <span data-en>AFTER SHIFT</span>
-                <span data-ur className="urdu">شفٹ کے بعد</span>
+                <span data-en>AFTER THE 12-HR SHIFT</span>
+                <span data-ur className="urdu">12 گھنٹے کی شفٹ کے بعد</span>
               </span>
             </div>
             <div className="receipt-foot">
-              <span data-en>PNC-registered &middot; CNIC &amp; references checked</span>
-              <span data-ur className="urdu">PNC رجسٹرڈ &middot; شناختی کارڈ اور حوالہ جات کی تصدیق</span>
+              <span data-en>PNC-registered &middot; CNIC checked &middot; police-verified</span>
+              <span data-ur className="urdu">PNC رجسٹرڈ &middot; شناختی کارڈ چیک &middot; پولیس تصدیق</span>
               <b>
                 <span data-en>NOTHING HIDDEN</span>
                 <span data-ur className="urdu">کچھ نہیں چھپا</span>

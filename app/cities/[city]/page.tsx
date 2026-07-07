@@ -8,9 +8,10 @@ import {
   LIVE_CITIES,
   CONTACT_PHONE_DISPLAY,
   CONTACT_PHONE_TEL,
+  CONTACT_EMAIL,
   WHATSAPP_NUMBER,
-  PRICES,
   SITE_URL,
+  OFFICE_POSTAL_ADDRESS,
 } from "@/lib/constants";
 
 export function generateStaticParams() {
@@ -22,9 +23,6 @@ function resolveCity(slug: string) {
   const isLive = LIVE_CITIES.some(c => c.toLowerCase() === slug.toLowerCase());
   return { cityName, isLive };
 }
-
-const nursePrice = `Rs ${PRICES.qualified_nurse.toLocaleString("en-US")}`;
-const attendantPrice = `Rs ${PRICES.attendant.toLocaleString("en-US")}`;
 
 // Same locality list as the footer's areas line and the HomeFAQ "Which areas
 // of Lahore do you cover?" answer — keep these three in sync.
@@ -44,10 +42,10 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const canonical = `${SITE_URL}/cities/${slug}`;
 
   return {
-    title: { absolute: `Home Nurse in ${cityName} | Sehat Connect` },
+    title: { absolute: `Nurse or Attendant at Home in ${cityName} | Sehat Connect` },
     description: isLive
-      ? `Verified male and female nurses and attendants at home in ${cityName} — PNC-registered and background-checked. From ${attendantPrice}–${nursePrice} per 12-hour shift, pay after the shift. Call ${CONTACT_PHONE_DISPLAY}.`
-      : `Sehat Connect is launching verified home nursing in ${cityName} soon. Leave your name and number and we'll call you the day we go live. Call ${CONTACT_PHONE_DISPLAY}.`,
+      ? `Nurses and attendants at home in ${cityName}. PNC-registered nurses; every caregiver is CNIC checked, references called, police-verified. First day free. No advance. Call ${CONTACT_PHONE_DISPLAY}.`
+      : `Sehat Connect is coming to ${cityName} soon with nurses and attendants at home. Leave your name and number and we'll call you the day we go live. Call ${CONTACT_PHONE_DISPLAY}.`,
     alternates: { canonical },
     // Not-yet-live cities are thin content — keep them out of the index but let
     // link equity flow. Live cities (Lahore) stay fully indexable.
@@ -70,18 +68,17 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         description: `Home nursing service in ${cityName} providing PNC-registered nurses and trained attendants for post-operative care, elderly care, paediatric care and more.`,
         url: `${SITE_URL}/cities/${slug}`,
         telephone: CONTACT_PHONE_TEL,
+        email: CONTACT_EMAIL,
         areaServed: {
           "@type": "City",
           name: cityName,
         },
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: cityName,
-          addressRegion: "Punjab",
-          addressCountry: "PK",
-        },
+        // Same physical office for every live city page — one business, one
+        // address, areaServed changes per city (matches how GBP models this).
+        address: OFFICE_POSTAL_ADDRESS,
         openingHours: "Mo-Su 00:00-23:59",
-        priceRange: `Rs. ${PRICES.attendant.toLocaleString()} - Rs. ${PRICES.qualified_nurse.toLocaleString()} per shift`,
+        // priceRange intentionally omitted — prices are hidden from all public
+        // surfaces as of 2026-07-02 (NORTH-STAR Decision Ledger).
         sameAs: [`https://wa.me/${WHATSAPP_NUMBER}`],
       }
     : null;
@@ -146,13 +143,13 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                   <h1>
                     {isLive ? (
                       <>
-                        <span data-en>Home nurse in <span className="hl">{cityName}</span></span>
-                        <span data-ur className="urdu"><span className="hl">{cityName}</span> میں گھر پر نرس</span>
+                        <span data-en>Nurse or attendant at home in <span className="hl">{cityName}</span></span>
+                        <span data-ur className="urdu"><span className="hl">{cityName}</span> میں گھر پر نرس یا اٹینڈنٹ</span>
                       </>
                     ) : (
                       <>
-                        <span data-en>Home nurse in <span className="hl">{cityName}</span> &mdash; coming soon</span>
-                        <span data-ur className="urdu"><span className="hl">{cityName}</span> میں گھر پر نرس &mdash; جلد آ رہا ہے</span>
+                        <span data-en>Nurse or attendant at home in <span className="hl">{cityName}</span> &mdash; coming soon</span>
+                        <span data-ur className="urdu"><span className="hl">{cityName}</span> میں گھر پر نرس یا اٹینڈنٹ &mdash; جلد آ رہا ہے</span>
                       </>
                     )}
                   </h1>
@@ -160,19 +157,23 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                   <p className="hero-sub">
                     {isLive ? (
                       <>
-                        <span data-en>Verified male and female nurses and attendants at home in {cityName} — PNC-registered and background-checked. From {attendantPrice}–{nursePrice} per 12-hour shift, and you pay after.</span>
-                        <span data-ur className="urdu">{cityName} میں گھر پر تصدیق شدہ مرد و خاتون نرسیں اور اٹینڈنٹ — پی این سی رجسٹرڈ اور پس منظر کی جانچ شدہ۔ {attendantPrice} سے {nursePrice} فی 12 گھنٹے کی شفٹ، اور ادائیگی شفٹ کے بعد۔</span>
+                        <span data-en>PNC-registered nurses and trained attendants at home in {cityName}. CNIC checked, references called, police-verified. First day free. Pay after the shift. No advance.</span>
+                        <span data-ur className="urdu">{cityName} میں گھر پر PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ۔ شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ پہلا دن مفت۔ ادائیگی شفٹ کے بعد۔ کوئی پیشگی نہیں۔</span>
                       </>
                     ) : (
                       <>
-                        <span data-en>We&rsquo;re launching Sehat Connect in {cityName} soon. Leave your name and number and we&rsquo;ll call you the day we go live.</span>
-                        <span data-ur className="urdu">ہم جلد ہی {cityName} میں سہت کنیکٹ شروع کر رہے ہیں۔ اپنا نام اور نمبر دیں، جس دن ہم شروع ہوں گے ہم آپ کو کال کریں گے۔</span>
+                        <span data-en>Sehat Connect is coming to {cityName} soon. Leave your name and number and we&rsquo;ll call you the day we go live.</span>
+                        <span data-ur className="urdu">Sehat Connect جلد ہی {cityName} میں آ رہا ہے۔ اپنا نام اور نمبر دیں، جس دن ہم شروع ہوں گے ہم آپ کو کال کریں گے۔</span>
                       </>
                     )}
                   </p>
 
                   {isLive && (
                     <div className="hero-trust">
+                      <span className="pill">
+                        <span data-en>First day free</span>
+                        <span data-ur className="urdu">پہلا دن مفت</span>
+                      </span>
                       <span className="pill">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round"><path d="M12 3l7 3v5c0 4.4-2.9 7.9-7 9-4.1-1.1-7-4.6-7-9V6l7-3z" /><path d="M9 12l2 2 4-4" strokeLinecap="round" /></svg>
                         <span data-en>PNC-registered nurses</span>
@@ -231,18 +232,18 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                   <div style={{ display: "grid", gap: "16px" }}>
                     <p style={{ fontSize: "17px", color: "var(--ink-soft)", lineHeight: 1.7, fontWeight: 500 }}>
                       <span data-en>
-                        Sehat Connect provides verified home nursing in {cityName}. Our services cover post-operative care, elderly care, paediatric care, ICU step-down care, diabetic care, night duty, mother &amp; baby care, dementia care, and long-term palliative care — delivered by PNC-registered qualified nurses or trained attendants, depending on what your patient needs.
+                        Sehat Connect arranges nurses and attendants at home in {cityName}: post-op, elderly, paediatric, ICU step-down, diabetic, night duty, mother and baby, dementia, and long-term palliative care. We send a Qualified Nurse for medical tasks and an attendant for daily support.
                       </span>
                       <span data-ur className="urdu">
-                        سہت کنیکٹ {cityName} میں تصدیق شدہ گھریلو نرسنگ فراہم کرتا ہے۔ ہماری خدمات میں آپریشن کے بعد کی دیکھ بھال، بزرگوں کی دیکھ بھال، بچوں کی دیکھ بھال، آئی سی یو کے بعد کی دیکھ بھال، ذیابیطس کی دیکھ بھال، رات کی ڈیوٹی، ماں اور بچے کی دیکھ بھال، ڈیمنشیا کی دیکھ بھال، اور طویل مدتی آرام دہ نگہداشت شامل ہیں — جو پی این سی رجسٹرڈ نرسیں یا تربیت یافتہ اٹینڈنٹ آپ کے مریض کی ضرورت کے مطابق فراہم کرتے ہیں۔
+                        Sehat Connect {cityName} میں گھر پر نرس یا اٹینڈنٹ کا بندوبست کرتا ہے: آپریشن کے بعد، بزرگوں، بچوں، ICU کے بعد، ذیابیطس، رات کی ڈیوٹی، ماں اور بچے، ڈیمنشیا، اور طویل مدتی نگہداشت۔ طبی کام کے لیے کوالیفائیڈ نرس، روزمرہ مدد کے لیے اٹینڈنٹ۔
                       </span>
                     </p>
                     <p style={{ fontSize: "17px", color: "var(--ink-soft)", lineHeight: 1.7, fontWeight: 500 }}>
                       <span data-en>
-                        Every caregiver is CNIC-verified and background-checked. You can request a female or male nurse. Pricing is transparent: {nursePrice} per 12-hour shift for a qualified nurse, {attendantPrice} for an attendant. You pay after the shift — no advance payment.
+                        Every caregiver is CNIC checked, references called, police-verified. You can request a female or male caregiver. We tell you the exact price on the first call before care starts. No advance. Pay after the shift.
                       </span>
                       <span data-ur className="urdu">
-                        ہر نگہداشت کرنے والے کی شناختی کارڈ اور پس منظر کی تصدیق کی جاتی ہے۔ آپ خاتون یا مرد نرس کی درخواست کر سکتے ہیں۔ قیمت واضح ہے: کوالیفائیڈ نرس کے لیے {nursePrice} فی 12 گھنٹے کی شفٹ، اٹینڈنٹ کے لیے {attendantPrice}۔ ادائیگی شفٹ کے بعد — کوئی پیشگی رقم نہیں۔
+                        ہر نگہداشت کنندہ کا شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ آپ خاتون یا مرد نگہداشت کنندہ مانگ سکتے ہیں۔ نگہداشت شروع ہونے سے پہلے پہلی کال پر صحیح قیمت بتا دی جاتی ہے۔ کوئی پیشگی نہیں۔ ادائیگی شفٹ کے بعد۔
                       </span>
                     </p>
                     <p style={{ fontSize: "17px", color: "var(--ink-soft)", lineHeight: 1.7, fontWeight: 500 }}>
@@ -254,11 +255,11 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 ) : (
                   <p style={{ fontSize: "17px", color: "var(--ink-soft)", lineHeight: 1.7, fontWeight: 500 }}>
                     <span data-en>
-                      Sehat Connect is bringing verified home nursing to {cityName} — post-operative care, elderly care, paediatric care and more, from PNC-registered nurses and trained attendants, all CNIC-verified and background-checked. We&apos;re not live in {cityName} yet — leave your details and we&apos;ll call you as soon as we launch. Questions? Call or WhatsApp{" "}
+                      Sehat Connect is not live in {cityName} yet. We plan to offer PNC-registered nurses and trained attendants for home care. Leave your details and we&apos;ll call when we launch. Questions? Call or WhatsApp{" "}
                       <strong style={{ color: "var(--teal-deep)" }}>{CONTACT_PHONE_DISPLAY}</strong>.
                     </span>
                     <span data-ur className="urdu">
-                      سہت کنیکٹ {cityName} میں تصدیق شدہ گھریلو نرسنگ لا رہا ہے — آپریشن کے بعد کی دیکھ بھال، بزرگوں کی دیکھ بھال، بچوں کی دیکھ بھال اور بہت کچھ، پی این سی رجسٹرڈ نرسوں اور تربیت یافتہ اٹینڈنٹس کی طرف سے، سب شناختی کارڈ اور پس منظر کی جانچ شدہ۔ ہم ابھی {cityName} میں شروع نہیں ہوئے — اپنی تفصیلات دیں اور جیسے ہی ہم شروع ہوں گے ہم آپ کو کال کریں گے۔ سوالات؟ کال یا واٹس ایپ کریں{" "}
+                      Sehat Connect ابھی {cityName} میں شروع نہیں ہوا۔ ہم گھر پر PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ فراہم کرنے کا ارادہ رکھتے ہیں۔ اپنی تفصیلات دیں، لانچ پر ہم کال کریں گے۔ سوالات؟ کال یا واٹس ایپ کریں{" "}
                       <strong style={{ color: "var(--teal-deep)" }}><bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></strong>۔
                     </span>
                   </p>

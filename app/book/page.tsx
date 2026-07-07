@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Request a Free Call Back | Sehat Connect Lahore",
   description:
-    "Leave your name and phone number — a real person from Sehat Connect calls you back to arrange a verified nurse or attendant at home in Lahore. No payment now, no advance.",
+    "Leave your name and phone number. A real person from Sehat Connect calls back to arrange the right nurse or attendant at home in Lahore. No payment now, no advance.",
   alternates: { canonical: `${SITE_URL}/book` },
 };
 
@@ -31,12 +31,12 @@ export default function BookPage() {
                 </h2>
                 <p>
                   <span data-en>
-                    Just your name and phone. No payment now, no advance. A real person calls to understand what you
-                    need and arrange a verified nurse or attendant.
+                    Name and phone only. First day free. No payment now. No advance. A real person calls to understand what you need
+                    and arrange the right nurse or attendant.
                   </span>
                   <span data-ur className="urdu">
-                    صرف نام اور فون۔ ابھی کوئی ادائیگی نہیں، کوئی پیشگی نہیں۔ ایک حقیقی فرد کال کر کے آپ کی ضرورت سمجھتا ہے
-                    اور تصدیق شدہ نرس یا اٹینڈنٹ کا بندوبست کرتا ہے۔
+                    صرف نام اور فون۔ پہلا دن مفت۔ ابھی کوئی ادائیگی نہیں۔ کوئی پیشگی نہیں۔ ایک حقیقی فرد کال کر کے آپ کی ضرورت سمجھتا ہے
+                    اور صحیح نرس یا اٹینڈنٹ کا بندوبست کرتا ہے۔
                   </span>
                 </p>
               </div>

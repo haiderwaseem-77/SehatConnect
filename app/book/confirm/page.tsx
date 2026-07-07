@@ -8,7 +8,7 @@ import { waLink, GENERIC_WA_MSG } from "@/lib/wa";
 
 export const metadata: Metadata = {
   title: "Request Received | Sehat Connect Lahore",
-  description: "Thank you — we've got your details. A real person will call you back shortly to arrange care.",
+  description: "Thank you — we've got your details. Our team will call you back shortly to arrange care.",
   robots: { index: false, follow: true },
 };
 
@@ -18,8 +18,8 @@ const STEPS: { en: string; ur: string }[] = [
     ur: "ہم آپ کو کال کر کے سمجھتے ہیں کہ آپ کو بالکل کیا چاہیے۔",
   },
   {
-    en: "We match you with a verified caregiver and share their card with you first.",
-    ur: "ہم آپ کو تصدیق شدہ نگہداشت کرنے والا دیتے ہیں اور پہلے ان کا کارڈ بھیجتے ہیں۔",
+    en: "We match you with the right caregiver and share their card with you first.",
+    ur: "ہم آپ کے لیے صحیح نگہداشت کنندہ کا بندوبست کرتے ہیں اور پہلے ان کا کارڈ بھیجتے ہیں۔",
   },
   {
     en: "Your caregiver arrives at the agreed time.",
@@ -99,9 +99,9 @@ export default async function BookingConfirmPage({
               </div>
 
               <h1 style={{ fontSize: "clamp(24px,5.5vw,30px)", marginBottom: 12 }}>
-                <span data-en>Done. A real person will call you back — usually within 15 minutes.</span>
+                <span data-en>Done. Our team will call you back soon.</span>
                 <span data-ur className="urdu">
-                  ہو گیا۔ ایک حقیقی فرد آپ کو کال کرے گا — عام طور پر 15 منٹ کے اندر۔
+                  ہو گیا۔ ہماری ٹیم جلد آپ کو کال کرے گی۔
                 </span>
               </h1>
 
@@ -209,7 +209,7 @@ export default async function BookingConfirmPage({
                   rel="noopener noreferrer"
                 >
                   <span className="wadot" />
-                  <span data-en>Chat with us on WhatsApp</span>
+                  <span data-en>WhatsApp us</span>
                   <span data-ur className="urdu">واٹس ایپ پر بات کریں</span>
                 </a>
                 <Link className="btn btn-ghost btn-block" href="/">

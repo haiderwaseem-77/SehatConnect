@@ -1,5 +1,7 @@
 # Audit — `direction-6-combined.html` (impeccable, audit mode)
 
+> **STATUS (2026-07-01): HISTORICAL CHANGELOG.** This documents the polish of the direction-6 mockup, which has since been ported into the live Next.js app. Future customer-facing changes are governed by **`/NORTH-STAR.md`** (specs, promises, DoD) — not this file.
+
 **Date:** 2026-06-30 · **Target:** `design-explorations-v2/direction-6-combined.html`
 **Verdict:** Strong, product-aware direction with real craft (receipt, WhatsApp deep-link chips, sticky bar, honesty labels). But it carries recognizable AI-template tells, and the most trust-critical element — the verified nurse ID card — renders like a wireframe, not a credible mock. Design health ~29/40.
 

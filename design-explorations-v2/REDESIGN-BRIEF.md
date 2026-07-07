@@ -1,5 +1,7 @@
 # Sehat Connect — Redesign Brief v2 (clean-room)
 
+> **STATUS (2026-07-01): HISTORICAL.** This brief did its job — direction-6 (a hybrid of the 5 concepts below) won, was polished (`AUDIT-direction-6.md`), and is live in the Next.js app. Product strategy now lives in **`/NORTH-STAR.md`**; where this brief and it disagree, NORTH-STAR wins. The v1 `design-explorations/` folder it references has been deleted. Kept for design-history reference only.
+
 > Input pack for a fresh Hallmark run. The goal is **5 genuinely different structural directions**, not 5 re-skins. Read "Why v1 failed" before generating anything.
 
 ---

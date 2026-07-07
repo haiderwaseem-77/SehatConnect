@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
 
     // Send ntfy notification (fire and forget — don't let it block or crash)
     notify({
-      title: "New Booking - Sehat Connect",
+      title: "New Lead - Sehat Connect",
       priority: "high",
       tags: "hospital",
       body: `Name: ${name}\nPhone: ${phone}\nArea: ${area}\nCare: ${careType || "—"}\nRef: ${ref}`,

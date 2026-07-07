@@ -4,12 +4,12 @@ import Footer from "@/components/layout/Footer";
 import LandingRoot from "@/components/home/LandingRoot";
 import FounderNote from "@/components/home/FounderNote";
 import CtaBanner from "@/components/home/CtaBanner";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, OFFICE_ADDRESS, CONTACT_PHONE_DISPLAY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About Us | Sehat Connect Home Nursing Service Lahore",
   description:
-    "Learn about Sehat Connect — Lahore's trusted home nursing service connecting families with PNC-registered nurses and trained attendants. Verified, affordable, open 24/7.",
+    "Meet Sehat Connect: a Lahore home nursing service run by real people, with PNC-registered nurses, trained attendants, no advance, and 24/7 phone support.",
   alternates: { canonical: `${SITE_URL}/about` },
 };
 
@@ -25,18 +25,18 @@ const CREDENTIALS: { en: React.ReactNode; ur: string }[] = [
   {
     en: (
       <>
-        <b>CNIC &amp; references checked</b>, verified in person by our team
+        <b>CNIC checked, references called, police-verified</b>, in person by our team
       </>
     ),
-    ur: "شناختی کارڈ اور حوالہ جات کی جانچ، ہماری ٹیم کی ذاتی تصدیق",
+    ur: "شناختی کارڈ، حوالہ جات اور پولیس تصدیق، ہماری ٹیم کی ذاتی جانچ سے",
   },
   {
     en: (
       <>
-        Their <b>card is sent on WhatsApp</b> — photo, name and PNC number — before anyone visits
+        We send their <b>card on WhatsApp</b> before the visit: photo, name and PNC number for nurses
       </>
     ),
-    ur: "آنے سے پہلے واٹس ایپ پر کارڈ — تصویر، نام اور پی این سی نمبر",
+    ur: "آنے سے پہلے واٹس ایپ پر کارڈ: تصویر، نام، اور نرس کے لیے PNC نمبر",
   },
   {
     en: (
@@ -72,17 +72,15 @@ export default function AboutPage() {
                 <span data-ur className="urdu">سحت کنیکٹ کے بارے میں</span>
               </span>
               <h2>
-                <span data-en>Proper nursing care at home — for every family.</span>
-                <span data-ur className="urdu">ہر گھرانے کے لیے گھر پر مناسب نرسنگ کیئر۔</span>
+                <span data-en>A Lahore home nursing service built for worried families.</span>
+                <span data-ur className="urdu">پریشان گھرانوں کے لیے لاہور کی گھریلو نرسنگ سروس۔</span>
               </h2>
               <p>
                 <span data-en>
-                  We believe every Pakistani family deserves proper nursing care at home — not just those who can
-                  afford a long hospital stay.
+                  When someone is ill, the family needs clear answers: who will come, what can they do, and when do we pay?
                 </span>
                 <span data-ur className="urdu">
-                  ہمارا یقین ہے کہ ہر پاکستانی گھرانہ گھر پر مناسب نرسنگ کیئر کا حقدار ہے — نہ کہ صرف وہ جو لمبے ہسپتال قیام
-                  کا خرچ اٹھا سکیں۔
+                  جب کوئی بیمار ہو، گھرانے کو صاف جواب چاہیے: کون آئے گا، وہ کیا کر سکتا ہے، اور ادائیگی کب ہو گی؟
                 </span>
               </p>
             </div>
@@ -98,16 +96,14 @@ export default function AboutPage() {
               </h3>
               <p style={{ fontSize: 18, color: "var(--ink-soft)", lineHeight: 1.7, fontWeight: 500 }}>
                 <span data-en>
-                  Most families in Pakistan have no easy way to get a qualified nurse at home after surgery or during
-                  illness. They either rely on untrained helpers or have to stay in hospital longer than needed. Sehat
-                  Connect was started to fix that. We send verified, PNC-registered nurses and trained attendants
-                  directly to your home — so your family member recovers safely and comfortably.
+                  After surgery or illness, many families face two bad choices: untrained help at home, or a longer
+                  hospital stay. Sehat Connect gives them a clearer option: PNC-registered nurses and trained attendants
+                  sent to the home, with checks you can verify.
                 </span>
                 <span data-ur className="urdu">
-                  پاکستان میں زیادہ تر گھرانوں کے پاس آپریشن کے بعد یا بیماری کے دوران گھر پر کوالیفائیڈ نرس حاصل کرنے کا آسان
-                  راستہ نہیں۔ وہ یا تو غیر تربیت یافتہ مددگاروں پر انحصار کرتے ہیں یا ضرورت سے زیادہ ہسپتال میں رہتے ہیں۔ سحت
-                  کنیکٹ اسی کو حل کرنے کے لیے شروع ہوا۔ ہم تصدیق شدہ، پی این سی رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ براہِ راست
-                  آپ کے گھر بھیجتے ہیں — تاکہ آپ کا پیارا محفوظ اور آرام سے صحت یاب ہو۔
+                  آپریشن یا بیماری کے بعد بہت سے گھرانوں کے پاس دو مشکل راستے ہوتے ہیں: گھر پر غیر تربیت یافتہ مدد، یا ضرورت سے زیادہ
+                  ہسپتال میں رہنا۔ Sehat Connect ایک صاف راستہ دیتا ہے: PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ گھر پر،
+                  ایسی تصدیق کے ساتھ جو آپ چیک کر سکیں۔
                 </span>
               </p>
             </div>
@@ -126,8 +122,8 @@ export default function AboutPage() {
                 <span data-ur className="urdu">گھرانے ہم پر بھروسہ کیوں کرتے ہیں</span>
               </span>
               <h2>
-                <span data-en>Every caregiver, verified before they reach your door.</span>
-                <span data-ur className="urdu">ہر نگہداشت کرنے والا آپ کے دروازے تک پہنچنے سے پہلے تصدیق شدہ۔</span>
+                <span data-en>Checks happen before anyone reaches your door.</span>
+                <span data-ur className="urdu">کوئی دروازے تک پہنچنے سے پہلے تصدیق ہو چکی ہوتی ہے۔</span>
               </h2>
             </div>
 
@@ -147,6 +143,25 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Office — a real, checkable address (rare in this category); also
+            keeps NAP (name/address/phone) consistent with the footer, GBP
+            and JSON-LD once the profile is live. */}
+        <section className="block" style={{ paddingTop: 0 }}>
+          <div className="wrap">
+            <div style={cardStyle}>
+              <h3 style={{ fontSize: 18, marginBottom: 8 }}>
+                <span data-en>Our office</span>
+                <span data-ur className="urdu">ہمارا دفتر</span>
+              </h3>
+              <p style={{ fontSize: 16, color: "var(--ink-soft)", lineHeight: 1.6, fontWeight: 500 }}>
+                <span data-en>{OFFICE_ADDRESS} &middot; </span>
+                <span data-ur className="urdu">{OFFICE_ADDRESS} &middot; </span>
+                <strong style={{ color: "var(--teal-deep)" }}>{CONTACT_PHONE_DISPLAY}</strong>
+              </p>
             </div>
           </div>
         </section>

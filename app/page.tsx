@@ -10,12 +10,12 @@ import VerifiedCard from "@/components/home/VerifiedCard";
 import HomeFAQ from "@/components/home/HomeFAQ";
 import FounderNote from "@/components/home/FounderNote";
 import CtaBanner from "@/components/home/CtaBanner";
-import { CONTACT_PHONE_TEL, WHATSAPP_NUMBER, PRICES, SITE_URL } from "@/lib/constants";
+import { CONTACT_PHONE_TEL, CONTACT_EMAIL, WHATSAPP_NUMBER, SITE_URL, OFFICE_POSTAL_ADDRESS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Sehat Connect | Home Nursing Service in Lahore | Nurse at Home",
   description:
-    "Worried about caring for someone at home in Lahore? Leave your name and number — a real person calls you back. PNC-registered nurses, CNIC & references checked. Rs 4,000 / 12-hr shift, pay after the shift, no advance.",
+    "Qualified nurses and attendants at home in Lahore, 24/7. First day free, no advance, pay after the shift. CNIC checked, references called, police-verified.",
   alternates: { canonical: SITE_URL },
 };
 
@@ -27,13 +27,8 @@ const jsonLd = {
     "Home nursing service in Lahore providing PNC-registered nurses and trained attendants for post-operative care, elderly care, paediatric care and more.",
   url: SITE_URL,
   telephone: CONTACT_PHONE_TEL,
-  email: "",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Lahore",
-    addressRegion: "Punjab",
-    addressCountry: "PK",
-  },
+  email: CONTACT_EMAIL,
+  address: OFFICE_POSTAL_ADDRESS,
   areaServed: {
     "@type": "City",
     name: "Lahore",
@@ -54,26 +49,23 @@ const jsonLd = {
     "Night Duty Nurse",
   ],
   openingHours: "Mo-Su 00:00-23:59",
-  priceRange: `Rs. ${PRICES.attendant.toLocaleString()} - Rs. ${PRICES.qualified_nurse.toLocaleString()} per shift`,
+  // priceRange intentionally omitted — prices are hidden from all public
+  // surfaces as of 2026-07-02 (NORTH-STAR Decision Ledger); see PROMISES.priceOnCall.
   sameAs: [`https://wa.me/${WHATSAPP_NUMBER}`],
 };
 
 // FAQPage structured data — must mirror all questions/answers rendered in
 // components/home/HomeFAQ.tsx (Google requires schema to match on-page content).
-// That includes the 5 items collapsed behind "More questions" there — same as
-// ServicesSection's "All services & prices" disclosure, collapsed accordion
-// content is still real, reachable, on-page content.
-const nursePrice = `Rs ${PRICES.qualified_nurse.toLocaleString("en-US")}`;
-const attendantPrice = `Rs ${PRICES.attendant.toLocaleString("en-US")}`;
-
+// That includes the 5 items collapsed behind "More questions" there — collapsed
+// accordion content is still real, reachable, on-page content.
 const homeFaq: { q: string; a: string }[] = [
   {
     q: "How do I know this isn’t a scam?",
-    a: "There’s no advance and no card number to hand over. The nurse finishes the 12-hour shift in your home — then you pay, cash on the visit. We’re a real Lahore service working 24/7, and a real person is always one call away.",
+    a: "There’s no advance and no card number to hand over. The caregiver finishes the 12-hour shift in your home. Then you pay, cash on the visit. We’re a Lahore care service working 24/7, and our team is always one call away.",
   },
   {
     q: "Who actually comes into my home?",
-    a: "A verified person whose card we send you first — photo, name and PNC number on WhatsApp before they arrive. Every Qualified Nurse is PNC registered; attendants are background-verified, CNIC & references checked. Caring for a woman? Ask for a female nurse or attendant — female-for-female, always.",
+    a: "We send the caregiver card first: photo, name and, for nurses, PNC number. Every caregiver is CNIC checked, references called, police-verified. Caring for a woman? Ask for female-for-female.",
   },
   {
     q: "How fast can care start?",
@@ -81,7 +73,7 @@ const homeFaq: { q: string; a: string }[] = [
   },
   {
     q: "What if we’re not comfortable with the caregiver?",
-    a: "Tell us after the first shift and we’ll send someone else. You’ve paid nothing in advance, so you’re never stuck.",
+    a: "Tell us — we replace the caregiver, free, until you're fully satisfied. You have paid nothing in advance, so you are never stuck.",
   },
   {
     q: "How and when do I pay?",
@@ -93,7 +85,7 @@ const homeFaq: { q: string; a: string }[] = [
   },
   {
     q: "What’s the difference between a nurse and an attendant?",
-    a: `A Qualified Nurse (${nursePrice}) handles clinical care — medicines, wounds, injections, monitoring. An Attendant (${attendantPrice}) handles non-clinical care — feeding, hygiene, movement and comfort. Both per 12-hour shift.`,
+    a: "A Qualified Nurse is PNC registered and handles clinical care — injections, drips, wound dressing, medicines and monitoring. An Attendant gives non-clinical support — feeding, hygiene, movement and companionship. We tell you the exact price on the first call, depending on which you need; either way, your first day is free, there is no advance, and you pay cash after the shift.",
   },
   {
     q: "Can they actually do the medical work?",
@@ -109,7 +101,7 @@ const homeFaq: { q: string; a: string }[] = [
   },
   {
     q: "I live abroad — can I arrange care for my parents in Lahore?",
-    a: "Yes. Many families arrange everything over WhatsApp from abroad — we send the caregiver’s card before the shift, just like any booking, and keep you updated by WhatsApp throughout. Your family in Lahore pays after the shift, same as usual.",
+    a: "Yes. Many families arrange everything over WhatsApp from abroad. We send the caregiver’s card before the shift and keep you updated on WhatsApp. Your family in Lahore pays after the shift, same as usual.",
   },
 ];
 

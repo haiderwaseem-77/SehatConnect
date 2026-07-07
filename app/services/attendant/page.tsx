@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import ServiceDetailPage from "@/components/services/ServiceDetailPage";
 import {
   ATTENDANT_SERVICES,
-  PRICES,
   SITE_URL,
   CONTACT_PHONE_TEL,
+  OFFICE_POSTAL_ADDRESS,
 } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Patient Attendant at Home in Lahore | Sehat Connect",
   description:
-    "Book a trained male or female patient attendant at home in Lahore. Elderly care, personal hygiene, companionship and overnight duty. Rs. 3,000 per 12-hour shift.",
+    "Trained male or female patient attendants at home in Lahore for elderly care, personal hygiene, companionship and overnight duty. First day free, no advance — pay after the shift.",
   alternates: { canonical: `${SITE_URL}/services/attendant` },
 };
 
@@ -20,20 +20,19 @@ const jsonLd = {
   serviceType: "Home patient attendant care",
   name: "Patient Attendant at Home (Lahore)",
   description:
-    "Trained, background-verified attendants for non-clinical home care — feeding, hygiene, movement, companionship and overnight duty. Female or male, you choose.",
+    "Trained attendants for non-clinical home care: feeding, hygiene, movement, companionship and overnight duty. CNIC checked, references called, police-verified.",
   url: `${SITE_URL}/services/attendant`,
   provider: {
     "@type": "MedicalBusiness",
     name: "Sehat Connect",
     telephone: CONTACT_PHONE_TEL,
+    address: OFFICE_POSTAL_ADDRESS,
     areaServed: { "@type": "City", name: "Lahore" },
   },
   areaServed: { "@type": "City", name: "Lahore" },
   offers: {
     "@type": "Offer",
-    price: PRICES.attendant,
-    priceCurrency: "PKR",
-    description: "Per 12-hour shift, paid after the shift — no advance.",
+    description: "Exact price told on the first call. Pay after the shift, no advance.",
   },
 };
 
@@ -180,11 +179,10 @@ export default function AttendantPage() {
     <ServiceDetailPage
       role="Attendant"
       roleUrdu="اٹینڈنٹ"
-      badge={{ en: "Trained & Verified", ur: "تربیت یافتہ و تصدیق شدہ" }}
-      price={PRICES.attendant}
+      badge={{ en: "CNIC Checked", ur: "شناختی کارڈ چیک" }}
       category="attendant"
       intro={{
-        en: "Non-clinical personal care and companionship from trained, background-verified attendants — feeding, hygiene, movement and comfort.",
+        en: "Non-clinical personal care from trained attendants: feeding, hygiene, movement, companionship and comfort.",
         ur: "تربیت یافتہ، تصدیق شدہ اٹینڈنٹس کی طرف سے غیر طبی ذاتی نگہداشت اور رفاقت — کھانا کھلانا، صفائی، نقل و حرکت اور آرام۔",
       }}
       gridHeading={{
@@ -192,8 +190,8 @@ export default function AttendantPage() {
         ur: "ہمارے اٹینڈنٹ کن چیزوں میں مدد کرتے ہیں",
       }}
       gridSub={{
-        en: "Trained, CNIC & references checked. Tap WhatsApp or ask us to call you back.",
-        ur: "تربیت یافتہ، شناختی کارڈ اور حوالہ جات کی جانچ شدہ۔ واٹس ایپ کریں یا کال کی درخواست کریں۔",
+        en: "Trained attendants. CNIC checked, references called, police-verified. Tap WhatsApp or ask us to call you back.",
+        ur: "تربیت یافتہ اٹینڈنٹ۔ شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ واٹس ایپ کریں یا کال کی درخواست کریں۔",
       }}
       services={ATTENDANT_SERVICES}
       waPrefix="an Attendant for "

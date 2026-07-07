@@ -88,8 +88,8 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
     <form className="form-card" onSubmit={handleSubmit} noValidate>
       <div className="ribbon">
         <span className={variant === "closer" ? "dot beat-dot" : "dot"} />
-        <span data-en>We call back fast — usually within 15 minutes</span>
-        <span data-ur className="urdu">ہم فوراً کال کرتے ہیں &mdash; عموماً 15 منٹ میں</span>
+        <span data-en>We call back fast</span>
+        <span data-ur className="urdu">ہم جلدی کال کرتے ہیں</span>
       </div>
 
       <label className="fld">
@@ -174,7 +174,7 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
           </>
         ) : (
           <>
-            <span data-en>Request my callback</span>
+            <span data-en>Call me back</span>
             <span data-ur className="urdu">مجھے کال کریں</span>
           </>
         )}

@@ -8,16 +8,17 @@ import CtaBanner from "@/components/home/CtaBanner";
 import {
   QUALIFIED_NURSE_SERVICES,
   ATTENDANT_SERVICES,
-  PRICES,
   SITE_URL,
   CONTACT_PHONE_TEL,
+  CONTACT_EMAIL,
   WHATSAPP_NUMBER,
+  OFFICE_POSTAL_ADDRESS,
 } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Home Nursing Services in Lahore | Qualified Nurse & Attendant | Sehat Connect",
   description:
-    "Post-operative care, elderly care, paediatric care, diabetic care and more — provided by PNC-registered nurses and trained attendants at your home in Lahore. Book now.",
+    "Nurses and attendants at home in Lahore for post-op, elderly, paediatric, diabetic and night care. Leave your number. A real person calls back.",
   alternates: { canonical: `${SITE_URL}/services` },
 };
 
@@ -27,8 +28,11 @@ const jsonLd = {
   name: "Sehat Connect — Home Nursing Services in Lahore",
   url: `${SITE_URL}/services`,
   telephone: CONTACT_PHONE_TEL,
+  email: CONTACT_EMAIL,
+  address: OFFICE_POSTAL_ADDRESS,
   areaServed: { "@type": "City", name: "Lahore" },
-  priceRange: `Rs. ${PRICES.attendant.toLocaleString()} - Rs. ${PRICES.qualified_nurse.toLocaleString()} per shift`,
+  // priceRange / offers.price intentionally omitted — prices are hidden from
+  // all public surfaces as of 2026-07-02 (NORTH-STAR Decision Ledger).
   sameAs: [`https://wa.me/${WHATSAPP_NUMBER}`],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -37,14 +41,10 @@ const jsonLd = {
       {
         "@type": "Offer",
         itemOffered: { "@type": "MedicalTherapy", name: "Qualified Nurse at Home" },
-        price: PRICES.qualified_nurse,
-        priceCurrency: "PKR",
       },
       {
         "@type": "Offer",
         itemOffered: { "@type": "Service", name: "Patient Attendant at Home" },
-        price: PRICES.attendant,
-        priceCurrency: "PKR",
       },
     ],
   },
@@ -56,11 +56,10 @@ const CATEGORIES = [
     title: "Qualified Nurse",
     titleUr: "کوالیفائیڈ نرس",
     href: "/services/qualified-nurse",
-    price: PRICES.qualified_nurse,
     badge: { en: "PNC Registered", ur: "پی این سی رجسٹرڈ" },
     desc: {
-      en: "PNC-registered nurses for clinical home care — wound dressing, IV therapy, injections, medication and monitoring.",
-      ur: "طبی نگہداشت کے لیے پی این سی رجسٹرڈ نرسیں — زخم کی ڈریسنگ، ڈرپ، انجیکشن، ادویات اور نگرانی۔",
+      en: "PNC-registered nurses for medical tasks at home: wound dressing, drips, injections, medicines and monitoring.",
+      ur: "گھر پر طبی کاموں کے لیے PNC رجسٹرڈ نرسیں: زخم کی ڈریسنگ، ڈرپ، انجیکشن، ادویات اور نگرانی۔",
     },
     services: QUALIFIED_NURSE_SERVICES,
   },
@@ -69,18 +68,19 @@ const CATEGORIES = [
     title: "Attendant",
     titleUr: "اٹینڈنٹ",
     href: "/services/attendant",
-    price: PRICES.attendant,
-    badge: { en: "Trained & Verified", ur: "تربیت یافتہ و تصدیق شدہ" },
+    badge: { en: "CNIC Checked", ur: "شناختی کارڈ چیک" },
     desc: {
-      en: "Trained, verified attendants for non-clinical care — feeding, hygiene, movement, companionship and overnight duty.",
-      ur: "غیر طبی نگہداشت کے لیے تربیت یافتہ، تصدیق شدہ اٹینڈنٹ — کھانا، صفائی، نقل و حرکت، رفاقت اور رات کی ڈیوٹی۔",
+      en: "Trained attendants for daily support: feeding, hygiene, movement, companionship and overnight duty.",
+      ur: "روزمرہ مدد کے لیے تربیت یافتہ اٹینڈنٹ: کھانا، صفائی، نقل و حرکت، رفاقت اور رات کی ڈیوٹی۔",
     },
     services: ATTENDANT_SERVICES,
   },
 ];
 
 // nurse-vs-attendant comparison (preserved from the original page)
-const COMPARE: [{ en: string; ur: string }, boolean | string, boolean | string][] = [
+type CellValue = boolean | { en: string; ur: string };
+const FREE = { en: "Free", ur: "مفت" };
+const COMPARE: [{ en: string; ur: string }, CellValue, CellValue][] = [
   [{ en: "PNC registered", ur: "پی این سی رجسٹرڈ" }, true, false],
   [{ en: "Wound dressing / IV care", ur: "زخم کی ڈریسنگ / ڈرپ" }, true, false],
   [{ en: "Injections & medication", ur: "انجیکشن اور ادویات" }, true, false],
@@ -89,7 +89,7 @@ const COMPARE: [{ en: string; ur: string }, boolean | string, boolean | string][
   [{ en: "Feeding assistance", ur: "کھانا کھلانے میں مدد" }, true, true],
   [{ en: "Companionship / support", ur: "رفاقت اور ساتھ" }, true, true],
   [{ en: "Overnight duty", ur: "رات کی ڈیوٹی" }, true, true],
-  [{ en: "Price per shift", ur: "فی شفٹ قیمت" }, `Rs ${PRICES.qualified_nurse.toLocaleString()}`, `Rs ${PRICES.attendant.toLocaleString()}`],
+  [{ en: "First day", ur: "پہلا دن" }, FREE, FREE],
 ];
 
 const CARD: CSSProperties = {
@@ -102,9 +102,14 @@ const CARD: CSSProperties = {
   flexDirection: "column",
 };
 
-function Cell({ v }: { v: boolean | string }) {
-  if (typeof v === "string") {
-    return <span style={{ fontWeight: 800, color: "var(--teal-deep)", fontVariantNumeric: "tabular-nums" }}>{v}</span>;
+function Cell({ v }: { v: CellValue }) {
+  if (typeof v === "object") {
+    return (
+      <span style={{ fontWeight: 800, color: "var(--teal-deep)" }}>
+        <span data-en>{v.en}</span>
+        <span data-ur className="urdu">{v.ur}</span>
+      </span>
+    );
   }
   return v ? (
     <span style={{ color: "var(--teal)", fontWeight: 800 }} aria-label="Yes">✓</span>
@@ -134,10 +139,10 @@ export default function ServicesPage() {
                 </h2>
                 <p>
                   <span data-en>
-                    Two kinds of verified caregiver, one flat price each, paid after the shift. Not sure which you need? We&rsquo;ll tell you honestly.
+                    Need medical care? Choose a Qualified Nurse. Need daily support? Choose an Attendant. First day free. Pay after the shift. Not sure? We&rsquo;ll tell you honestly.
                   </span>
                   <span data-ur className="urdu">
-                    تصدیق شدہ نگہداشت کی دو اقسام، ہر ایک کی مقررہ قیمت، شفٹ کے بعد ادائیگی۔ سمجھ نہیں آ رہا کون سا چاہیے؟ ہم سچ بتائیں گے۔
+                    طبی نگہداشت چاہیے؟ کوالیفائیڈ نرس لیں۔ روزمرہ مدد چاہیے؟ اٹینڈنٹ لیں۔ پہلا دن مفت۔ ادائیگی شفٹ کے بعد۔ سمجھ نہیں آ رہا؟ ہم سچ بتائیں گے۔
                   </span>
                 </p>
               </div>
@@ -153,8 +158,8 @@ export default function ServicesPage() {
                     <div style={{ background: "var(--mist)", padding: "24px 22px", borderBottom: "1px solid var(--line)" }}>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, marginBottom: 12 }}>
                         <h3 style={{ fontSize: 22, fontWeight: 800, color: "var(--ink)" }}>
-                          {c.title}{" "}
-                          <span className="urdu" style={{ fontSize: 16, color: "var(--teal-deep)", fontWeight: 700, marginRight: 4 }}>
+                          <span data-en>{c.title}</span>{" "}
+                          <span data-ur className="urdu" style={{ fontSize: 16, color: "var(--teal-deep)", fontWeight: 700, marginRight: 4 }}>
                             {c.titleUr}
                           </span>
                         </h3>
@@ -179,12 +184,9 @@ export default function ServicesPage() {
                         <span data-en>{c.desc.en}</span>
                         <span data-ur className="urdu">{c.desc.ur}</span>
                       </p>
-                      <div style={{ fontSize: 26, fontWeight: 800, color: "var(--teal-deep)", letterSpacing: "-.02em" }}>
-                        Rs {c.price.toLocaleString()}{" "}
-                        <span style={{ fontSize: 15, fontWeight: 600, color: "var(--ink-soft)" }}>
-                          <span data-en>/ 12-hr shift</span>
-                          <span data-ur className="urdu">/ 12 گھنٹے کی شفٹ</span>
-                        </span>
+                      <div style={{ fontSize: 17, fontWeight: 700, color: "var(--teal-deep)", letterSpacing: "-.01em" }}>
+                        <span data-en>First day free &middot; Pay after the shift</span>
+                        <span data-ur className="urdu">پہلا دن مفت &middot; ادائیگی شفٹ کے بعد</span>
                       </div>
                     </div>
 
@@ -210,8 +212,8 @@ export default function ServicesPage() {
                               </svg>
                             </span>
                             <span style={{ fontSize: 16, fontWeight: 600, color: "var(--ink-soft)", lineHeight: 1.4 }}>
-                              {s.label}{" "}
-                              <span className="urdu" style={{ fontSize: 14, color: "var(--teal-deep)", fontWeight: 600 }}>{s.urdu}</span>
+                              <span data-en>{s.label}</span>{" "}
+                              <span data-ur className="urdu" style={{ fontSize: 14, color: "var(--teal-deep)", fontWeight: 600 }}>{s.urdu}</span>
                             </span>
                           </li>
                         ))}
@@ -224,7 +226,7 @@ export default function ServicesPage() {
                       </ul>
                       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
                         <Link className="btn btn-ghost" href={c.href} style={{ minHeight: 52, fontSize: 16 }}>
-                          <span data-en>Learn more</span>
+                          <span data-en>See details</span>
                           <span data-ur className="urdu">مزید جانیں</span>
                         </Link>
                         <Link className="btn btn-primary" href={`/book?category=${c.cat}`} style={{ minHeight: 52, fontSize: 16 }}>
@@ -267,11 +269,11 @@ export default function ServicesPage() {
                           <span data-en>Feature</span>
                           <span data-ur className="urdu">خدمت</span>
                         </th>
-                        <th style={{ width: "20%", textAlign: "center", padding: "10px 4px", color: "var(--teal-deep)", fontWeight: 800, lineHeight: 1.2 }}>
+                        <th style={{ width: "20%", textAlign: "center", padding: "10px 4px", color: "var(--teal-deep)", fontWeight: 800, lineHeight: 1.2, overflowWrap: "anywhere" }}>
                           <span data-en>Qualified Nurse</span>
                           <span data-ur className="urdu">نرس</span>
                         </th>
-                        <th style={{ width: "20%", textAlign: "center", padding: "10px 4px", color: "var(--ink)", fontWeight: 800, lineHeight: 1.2 }}>
+                        <th style={{ width: "20%", textAlign: "center", padding: "10px 4px", color: "var(--ink)", fontWeight: 800, lineHeight: 1.2, overflowWrap: "anywhere" }}>
                           <span data-en>Attendant</span>
                           <span data-ur className="urdu">اٹینڈنٹ</span>
                         </th>
@@ -291,6 +293,10 @@ export default function ServicesPage() {
                     </tbody>
                   </table>
                 </div>
+                <p style={{ fontSize: 15, color: "var(--ink-soft)", fontWeight: 600, marginTop: 16 }}>
+                  <span data-en>You pay after the shift — we tell you the exact price on the first call.</span>
+                  <span data-ur className="urdu">ادائیگی شفٹ کے بعد — قیمت ہم آپ کو پہلی کال پر بتا دیتے ہیں۔</span>
+                </p>
               </div>
             </div>
           </section>

@@ -28,7 +28,6 @@ interface Props {
   role: string;
   roleUrdu: string;
   badge: Bilingual;
-  price: number;
   category: "qualified_nurse" | "attendant";
   intro: Bilingual;
   gridHeading: Bilingual;
@@ -76,7 +75,6 @@ export default function ServiceDetailPage({
   role,
   roleUrdu,
   badge,
-  price,
   category,
   intro,
   gridHeading,
@@ -86,8 +84,6 @@ export default function ServiceDetailPage({
   jsonLd,
   extra,
 }: Props) {
-  const priceStr = `Rs ${price.toLocaleString("en-US")}`;
-
   return (
     <>
       <script
@@ -116,17 +112,14 @@ export default function ServiceDetailPage({
               </div>
               <div
                 style={{
-                  fontSize: 30,
+                  fontSize: 22,
                   fontWeight: 800,
                   color: "var(--teal-deep)",
-                  letterSpacing: "-.02em",
+                  letterSpacing: "-.01em",
                 }}
               >
-                {priceStr}{" "}
-                <span style={{ fontSize: 17, fontWeight: 600, color: "var(--ink-soft)" }}>
-                  <span data-en>/ 12-hour shift</span>
-                  <span data-ur className="urdu">/ 12 گھنٹے کی شفٹ</span>
-                </span>
+                <span data-en>First day free &middot; No advance &middot; Pay after the shift</span>
+                <span data-ur className="urdu">پہلا دن مفت &middot; کوئی پیشگی نہیں &middot; ادائیگی شفٹ کے بعد</span>
               </div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 22 }}>
                 <a
@@ -170,8 +163,8 @@ export default function ServiceDetailPage({
                 {services.map((s) => (
                   <div key={s.id} style={CARD}>
                     <h3 style={{ fontSize: 18, fontWeight: 800, color: "var(--ink)", lineHeight: 1.25 }}>
-                      {s.label}{" "}
-                      <span className="urdu" style={{ fontSize: 15, color: "var(--teal-deep)", fontWeight: 600, marginRight: 6 }}>
+                      <span data-en>{s.label}</span>{" "}
+                      <span data-ur className="urdu" style={{ fontSize: 15, color: "var(--teal-deep)", fontWeight: 600, marginRight: 6 }}>
                         {s.urdu}
                       </span>
                     </h3>
@@ -214,7 +207,7 @@ export default function ServiceDetailPage({
                           color: "var(--teal-deep)",
                         }}
                       >
-                        <span data-en>Request a call →</span>
+                        <span data-en>Call me back →</span>
                         <span data-ur className="urdu">کال منگوائیں ←</span>
                       </Link>
                     </div>
