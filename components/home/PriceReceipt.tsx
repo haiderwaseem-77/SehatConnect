@@ -23,52 +23,18 @@ export default function PriceReceipt() {
               <span data-en>First day is free, so your family can feel comfortable first. If the nurse or attendant doesn&rsquo;t feel right, we&rsquo;ll replace them until you&rsquo;re satisfied.</span>
               <span data-ur className="urdu">پہلا دن مفت ہے، تاکہ آپ کا گھرانہ پہلے اطمینان محسوس کر سکے۔ اگر نرس یا اٹینڈنٹ مناسب نہ لگے، ہم آپ کی تسلی تک اسے بدل دیں گے۔</span>
             </p>
-            <ul className="receipt-points">
-              <li>
-                <span className="mk" />
-                <span>
-                  <span data-en><b>No advance</b> payment</span>
-                  <span data-ur className="urdu"><b>کوئی پیشگی</b> ادائیگی نہیں</span>
-                </span>
-              </li>
-              <li>
-                <span className="mk" />
-                <span>
-                  <span data-en>Daily, weekly, and monthly care options</span>
-                  <span data-ur className="urdu">روزانہ، ہفتہ وار اور ماہانہ دیکھ بھال کے آپشنز</span>
-                </span>
-              </li>
-              <li>
-                <span className="mk" />
-                <span>
-                  <span data-en>Replacement until you&rsquo;re satisfied</span>
-                  <span data-ur className="urdu">آپ کی تسلی تک تبدیلی</span>
-                </span>
-              </li>
-            </ul>
           </div>
 
           <aside className="receipt" aria-label="Payment terms">
             <div className="receipt-head">
               <div className="r-title">
-                <span data-en>Sehat Connect</span>
-                <span data-ur className="urdu">Sehat Connect</span>
+                <span data-en>Care plan summary</span>
+                <span data-ur className="urdu">دیکھ بھال کے پلان کا خلاصہ</span>
               </div>
               <div className="r-sub">
                 <span data-en>In-home care &middot; Lahore &middot; 24/7</span>
                 <span data-ur className="urdu">گھر پر دیکھ بھال &middot; لاہور &middot; 24/7</span>
               </div>
-            </div>
-            <div className="rline">
-              <span className="rname">
-                <span data-en>Care options</span>
-                <span data-ur className="urdu">دیکھ بھال کے آپشنز</span>
-              </span>
-              <span className="dots" />
-              <span className="rval">
-                <span data-en>Daily / weekly / monthly</span>
-                <span data-ur className="urdu">روزانہ / ہفتہ وار / ماہانہ</span>
-              </span>
             </div>
             <div className="rline">
               <span className="rname">
@@ -94,6 +60,17 @@ export default function PriceReceipt() {
             </div>
             <div className="rline">
               <span className="rname">
+                <span data-en>Plans</span>
+                <span data-ur className="urdu">پلانز</span>
+              </span>
+              <span className="dots" />
+              <span className="rval">
+                <span data-en>Daily / weekly / monthly</span>
+                <span data-ur className="urdu">روزانہ / ہفتہ وار / ماہانہ</span>
+              </span>
+            </div>
+            <div className="rline total">
+              <span className="rname">
                 <span data-en>Replacement</span>
                 <span data-ur className="urdu">تبدیلی</span>
               </span>
@@ -101,17 +78,6 @@ export default function PriceReceipt() {
               <span className="rval free">
                 <span data-en>Until satisfied</span>
                 <span data-ur className="urdu">تسلی تک</span>
-              </span>
-            </div>
-            <div className="rline total">
-              <span className="rname">
-                <span data-en>You continue</span>
-                <span data-ur className="urdu">آپ جاری رکھیں</span>
-              </span>
-              <span className="dots" />
-              <span className="rval free">
-                <span data-en>When comfortable</span>
-                <span data-ur className="urdu">اطمینان کے بعد</span>
               </span>
             </div>
             <div className="receipt-foot">
