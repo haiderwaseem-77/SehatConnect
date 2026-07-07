@@ -58,8 +58,8 @@ const jsonLd = {
 // accordion content is still real, reachable, on-page content.
 const homeFaq: { q: string; a: string }[] = [
   {
-    q: "How do I know this isn’t a scam?",
-    a: "There’s no advance and no card number to hand over. The caregiver finishes the 12-hour shift in your home. Then you pay, cash on the visit. We’re a Lahore care service working 24/7, and our team is always one call away.",
+    q: "How do I know my loved one will get the care they deserve?",
+    a: "We call first, understand what your loved one needs, and arrange a caring nurse or attendant for the home. First day is free, there is no advance, and if the person does not feel right, we replace them until you are satisfied.",
   },
   {
     q: "Who actually comes into my home?",

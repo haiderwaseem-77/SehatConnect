@@ -13,12 +13,12 @@ const VISIBLE_COUNT = 6;
 
 const ITEMS: Item[] = [
   {
-    q: "“How do I know this isn’t a scam?”",
-    qUr: "”مجھے کیسے پتا کہ یہ دھوکہ نہیں؟“",
+    q: "“How do I know my loved one will get the care they deserve?”",
+    qUr: "”مجھے کیسے پتا کہ میرے پیارے کو اچھی دیکھ بھال ملے گی؟“",
     a: (
-      <>There&rsquo;s no advance and no card number to hand over. The caregiver finishes the 12-hour shift in your home. <b>Then</b> you pay, cash on the visit. We&rsquo;re a Lahore care service working 24/7, and our team is always one call away.</>
+      <>We call first, understand what your loved one needs, and arrange a caring nurse or attendant for the home. <b>First day is free</b>, there is no advance, and if the person does not feel right, we replace them until you are satisfied.</>
     ),
-    aUr: "کوئی پیشگی نہیں، کوئی کارڈ نمبر نہیں۔ 12 گھنٹے کی شفٹ کے بعد نقد ادائیگی۔",
+    aUr: "ہم پہلے کال کر کے آپ کے پیارے کی ضرورت سمجھتے ہیں اور گھر کے لیے خیال رکھنے والی نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں۔ پہلا دن مفت ہے، کوئی پیشگی نہیں، اور اگر فرد مناسب نہ لگے تو ہم آپ کی تسلی تک بدل دیتے ہیں۔",
   },
   {
     q: "“Who actually comes into my home?”",
