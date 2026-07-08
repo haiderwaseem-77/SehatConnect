@@ -14,15 +14,15 @@ export default function CtaBanner() {
             <PulseAccent tone="cream" />
             <h2>
               <span data-en>Leave your number. We call you back.</span>
-              <span data-ur className="urdu">اپنا نمبر دیں۔ ہم کال کریں گے۔</span>
+              <span data-ur className="urdu">اپنا نمبر چھوڑ دیں۔ ہم واپس کال کریں گے۔</span>
             </h2>
             <p className="c-sub">
               <span data-en>The form takes less than 30 seconds. Our team will call and guide you from there.</span>
-              <span data-ur className="urdu">بس نام اور نمبر۔ باقی بات کال پر ہو جائے گی۔</span>
+              <span data-ur className="urdu">فارم 30 سیکنڈ سے کم لیتا ہے۔ ہماری ٹیم کال کر کے اگلا قدم بتا دے گی۔</span>
             </p>
             <p className="closer-urdu">
               <span data-en>Call or WhatsApp. Our team answers.</span>
-              <span data-ur className="urdu">کال یا واٹس ایپ کریں۔ ہماری ٹیم جواب دے گی۔</span>
+              <span data-ur className="urdu">کال یا واٹس ایپ کریں؛ ہماری ٹیم جواب دے گی۔</span>
             </p>
             <div className="closer-actions">
               <a className="btn btn-wa" href={waLink(GENERIC_WA_MSG)} target="_blank" rel="noopener noreferrer" style={{ background: "#fff", borderColor: "#fff" }}>

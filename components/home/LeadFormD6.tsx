@@ -11,15 +11,15 @@ type ErrorKey = "name" | "phone" | "generic";
 const ERROR_MESSAGES: Record<ErrorKey, { en: string; ur: string }> = {
   name: {
     en: "Please add your name so we can call you back.",
-    ur: "اپنا نام لکھ دیں تاکہ ہم کال کر سکیں۔",
+    ur: "اپنا نام لکھ دیں تاکہ ہم آپ کو واپس کال کر سکیں۔",
   },
   phone: {
     en: "Please add your phone number so we can call you back.",
-    ur: "اپنا فون نمبر لکھ دیں تاکہ ہم کال کر سکیں۔",
+    ur: "اپنا فون نمبر لکھ دیں تاکہ ہم آپ کو واپس کال کر سکیں۔",
   },
   generic: {
     en: "Something went wrong. Please call us directly.",
-    ur: "مسئلہ آ گیا۔ براہ کرم ہمیں کال کریں۔",
+    ur: "کچھ مسئلہ آ گیا۔ براہ کرم براہ راست کال کر لیں۔",
   },
 };
 
@@ -76,7 +76,7 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
       <div className="ribbon">
         <span className={variant === "closer" ? "dot beat-dot" : "dot"} />
         <span data-en>We call back fast</span>
-        <span data-ur className="urdu">ہم جلد کال کرتے ہیں</span>
+        <span data-ur className="urdu">ہم جلد واپس کال کرتے ہیں</span>
       </div>
 
       <label className="fld">
@@ -137,7 +137,7 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
         ) : (
           <>
             <span data-en>Call me back</span>
-            <span data-ur className="urdu">مجھے کال کریں</span>
+            <span data-ur className="urdu">مجھے واپس کال کریں</span>
           </>
         )}
       </button>
@@ -172,7 +172,7 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
         {variant === "hero" ? (
           <>
             <span data-en>Your number stays private. We only call about your care.</span>
-            <span data-ur className="urdu">آپ کا نمبر محفوظ ہے۔ ہم صرف دیکھ بھال کے لیے کال کرتے ہیں۔</span>
+            <span data-ur className="urdu">آپ کا نمبر محفوظ رہے گا۔ ہم صرف دیکھ بھال کے سلسلے میں کال کریں گے۔</span>
           </>
         ) : (
           <>

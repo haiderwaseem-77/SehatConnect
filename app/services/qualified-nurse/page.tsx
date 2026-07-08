@@ -37,12 +37,12 @@ const jsonLd = {
 };
 
 const CAN_DO: { en: string; ur: string }[] = [
-  { en: "Injections & drips — IM/IV injections and IV drips, given on the doctor's prescription", ur: "انجیکشن اور ڈرپ — ڈاکٹر کی ہدایت پر انجیکشن اور ڈرپ لگانا" },
-  { en: "Wound care & dressing — cleaning wounds, changing dressings, caring for post-surgery sites", ur: "زخم اور ڈریسنگ — زخم صاف کرنا، ڈریسنگ بدلنا، آپریشن کے زخم کی دیکھ بھال" },
-  { en: "Vitals monitoring — blood pressure, temperature, pulse, blood sugar and oxygen checks", ur: "علامات کی نگرانی — بلڈ پریشر، بخار، نبض، شوگر اور آکسیجن چیک" },
-  { en: "Tubes & catheters — looking after catheters and feeding (NG) tubes on the doctor's plan", ur: "ٹیوب اور کیتھیٹر — ڈاکٹر کی ہدایت پر کیتھیٹر اور فیڈنگ ٹیوب کی دیکھ بھال" },
-  { en: "Medicines — giving prescribed medicines on time and watching for any reaction", ur: "دوائیں — تجویز کردہ دوا وقت پر دینا اور اثر پر نظر رکھنا" },
-  { en: "Post-op & recovery — following the surgeon's after-care and spotting warning signs early", ur: "آپریشن کے بعد — سرجن کی ہدایت پر دیکھ بھال اور خطرے کی علامت پہچاننا" },
+  { en: "Injections & drips — IM/IV injections and IV drips, given on the doctor's prescription", ur: "انجیکشن اور ڈرپ — ڈاکٹر کے نسخے کے مطابق IM/IV انجیکشن اور IV ڈرپ" },
+  { en: "Wound care & dressing — cleaning wounds, changing dressings, caring for post-surgery sites", ur: "زخم اور ڈریسنگ — زخم صاف کرنا، ڈریسنگ بدلنا اور آپریشن کے بعد زخم کی دیکھ بھال" },
+  { en: "Vitals monitoring — blood pressure, temperature, pulse, blood sugar and oxygen checks", ur: "طبی علامات کی نگرانی — بلڈ پریشر، درجہ حرارت، نبض، شوگر اور آکسیجن چیک کرنا" },
+  { en: "Tubes & catheters — looking after catheters and feeding (NG) tubes on the doctor's plan", ur: "ٹیوب اور کیتھیٹر — ڈاکٹر کے پلان کے مطابق کیتھیٹر اور NG فیڈنگ ٹیوب کی دیکھ بھال" },
+  { en: "Medicines — giving prescribed medicines on time and watching for any reaction", ur: "دوائیں — تجویز کردہ دوائیں وقت پر دینا اور کسی بھی ردعمل پر نظر رکھنا" },
+  { en: "Post-op & recovery — following the surgeon's after-care and spotting warning signs early", ur: "آپریشن کے بعد ریکوری — سرجن کی ہدایات کے مطابق دیکھ بھال اور خطرے کی علامات جلد پہچاننا" },
 ];
 
 const NurseExtra = (
@@ -65,14 +65,14 @@ const NurseExtra = (
           </span>
           <h2 style={{ fontSize: "clamp(22px,5vw,30px)", marginBottom: 8 }}>
             <span data-en>What a qualified nurse can do</span>
-            <span data-ur className="urdu">نرس کیا کر سکتی ہے</span>
+            <span data-ur className="urdu">نرس کون سے طبی کام سنبھالتی ہے</span>
           </h2>
           <p style={{ fontSize: 17, color: "var(--ink-soft)", fontWeight: 500, marginBottom: 20, maxWidth: "48ch" }}>
             <span data-en>
               A qualified nurse handles the medical tasks a patient needs at home — the clinical work that follows the doctor&rsquo;s plan, done safely and on time.
             </span>
             <span data-ur className="urdu">
-              نرس گھر پر مریض کے طبی کام سنبھالتی ہے: ڈاکٹر کی ہدایت کے مطابق، محفوظ طریقے سے اور وقت پر۔
+              نرس گھر پر وہ طبی کام سنبھالتی ہے جو ڈاکٹر کے پلان کے مطابق کرنے ہوتے ہیں — محفوظ طریقے سے اور وقت پر۔
             </span>
           </p>
           <ul style={{ display: "grid", gap: 12 }} className="sm:grid-cols-2">
@@ -120,8 +120,8 @@ const NurseExtra = (
               <b style={{ color: "var(--ink)" }}>Patient Attendant</b>, not a nurse. We&rsquo;ll always tell you honestly which one your patient needs.
             </span>
             <span data-ur className="urdu">
-              <b style={{ color: "var(--ink)" }}>صرف روزمرہ، غیر طبی مدد</b> — کھانا، غسل، ساتھ، چلنا پھرنا چاہیے؟ یہ{" "}
-              <b style={{ color: "var(--ink)" }}>اٹینڈنٹ</b> کا کام ہے، نرس کا نہیں۔ ہم صاف بتائیں گے کہ آپ کے مریض کو کون سا چاہیے۔
+              <b style={{ color: "var(--ink)" }}>صرف روزمرہ، غیر طبی مدد</b> — کھانا کھلانا، غسل، ساتھ بیٹھنا یا چلنے پھرنے میں سہارا چاہیے؟ یہ{" "}
+              <b style={{ color: "var(--ink)" }}>اٹینڈنٹ</b> کا کام ہے، نرس کا نہیں۔ ہم صاف بتا دیں گے کہ آپ کے مریض کے لیے کون سا فرد مناسب ہے۔
             </span>
           </p>
         </div>
@@ -139,11 +139,11 @@ export default function QualifiedNursePage() {
       category="qualified_nurse"
       intro={{
         en: "PNC-registered nurses at home for wounds, dressings, injections, medicines, monitoring, post-op and ICU step-down care.",
-        ur: "PNC رجسٹرڈ نرسیں گھر پر طبی کام کرتی ہیں: ڈریسنگ، انجیکشن، ڈرپ، دوائیں، نگرانی، آپریشن اور ICU کے بعد دیکھ بھال۔",
+        ur: "PNC رجسٹرڈ نرسیں گھر پر طبی کام سنبھالتی ہیں: ڈریسنگ، انجیکشن، ڈرپ، دوائیں، نگرانی، آپریشن کے بعد اور ICU کے بعد دیکھ بھال۔",
       }}
       gridHeading={{
         en: "What our nurses handle",
-        ur: "ہماری نرسیں کیا سنبھالتی ہیں",
+        ur: "ہماری نرسیں کون سے کام سنبھالتی ہیں",
       }}
       gridSub={{
         en: "Every nurse is PNC registered.",

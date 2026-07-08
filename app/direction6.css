@@ -114,7 +114,7 @@ body{overflow-x:hidden}
   background:var(--paper);color:var(--ink);min-height:56px;font-family:inherit;
 }
 .sc-header .lang .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);flex:none}
-.sc-header .lang .urdu{font-size:16px;font-family:var(--font-urdu),serif}
+.sc-header .lang .urdu{font-size:16px;font-family:var(--font-urdu),serif;line-height:1;transform:translateY(-4px)}
 .sc-header .nav-call{display:none}
 @media(min-width:760px){ .sc-header .nav-call{display:inline-flex} }
 .sc-header .nav-wa{display:none}
@@ -130,6 +130,15 @@ body{overflow-x:hidden}
 .d6 .hero-grid{display:grid;grid-template-columns:1fr;gap:18px;align-items:start}
 .d6 .hero-copy .eyebrow{margin-bottom:12px}
 .d6 .hero h1{font-size:clamp(28px,6.6vw,52px);line-height:1.06}
+/* Nastaliq needs far looser leading than Latin — Urdu-only, English keeps 1.06.
+   Nastaliq reads larger/heavier at a given px, so the Urdu H1 is trimmed a notch:
+   it stays balanced against the English hero and packs more per line, which helps
+   drop the headline to 2 lines so Name/Phone reach the fold. Urdu-only rhythm
+   tightening compounds it. All scoped to .lang-ur — English hero is untouched. */
+.d6.lang-ur .hero h1{line-height:1.9;font-size:clamp(24px,5.6vw,44px)}
+.d6.lang-ur .hero-copy .eyebrow{margin-bottom:8px}
+.d6.lang-ur .hero-sub{margin-top:10px}
+.d6.lang-ur .hero-trust{margin-top:14px}
 /* key-phrase highlight — soft brand-green marker + dark teal ink (calm,
    high-contrast; replaces the old muddy gold wash). Shared with the city heroes. */
 .d6 .hero h1 .hl{

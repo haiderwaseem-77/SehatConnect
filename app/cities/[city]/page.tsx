@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import LandingRoot from "@/components/home/LandingRoot";
 import LeadFormD6 from "@/components/home/LeadFormD6";
 import {
+  CITIES,
   LIVE_CITIES,
   CONTACT_PHONE_DISPLAY,
   CONTACT_PHONE_TEL,
@@ -19,9 +20,11 @@ export function generateStaticParams() {
 }
 
 function resolveCity(slug: string) {
-  const cityName = slug ? slug.charAt(0).toUpperCase() + slug.slice(1) : "Your City";
+  const city = CITIES.find(c => c.en.toLowerCase() === slug.toLowerCase());
+  const cityName = city?.en ?? (slug ? slug.charAt(0).toUpperCase() + slug.slice(1) : "Your City");
+  const cityUr = city?.ur ?? cityName;
   const isLive = LIVE_CITIES.some(c => c.toLowerCase() === slug.toLowerCase());
-  return { cityName, isLive };
+  return { cityName, cityUr, isLive };
 }
 
 // Same locality list as the footer's areas line and the HomeFAQ "Which areas
@@ -56,7 +59,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
 export default async function CityPage({ params }: { params: Promise<{ city: string }> }) {
   const { city } = await params;
   const slug = (city ?? "").toLowerCase();
-  const { cityName, isLive } = resolveCity(slug);
+  const { cityName, cityUr, isLive } = resolveCity(slug);
 
   // LocalBusiness / MedicalBusiness schema only for the LIVE city (Lahore).
   // Non-live cities are noindexed, so no business schema for them.
@@ -144,12 +147,12 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                     {isLive ? (
                       <>
                         <span data-en>Nurse or attendant at home in <span className="hl">{cityName}</span></span>
-                        <span data-ur className="urdu"><span className="hl">{cityName}</span> میں گھر پر نرس یا اٹینڈنٹ</span>
+                        <span data-ur className="urdu"><span className="hl">{cityUr}</span> میں گھر پر نرس یا اٹینڈنٹ</span>
                       </>
                     ) : (
                       <>
                         <span data-en>Nurse or attendant at home in <span className="hl">{cityName}</span> &mdash; coming soon</span>
-                        <span data-ur className="urdu"><span className="hl">{cityName}</span> میں گھر پر نرس یا اٹینڈنٹ &mdash; جلد آ رہا ہے</span>
+                        <span data-ur className="urdu"><span className="hl">{cityUr}</span> میں گھر پر نرس یا اٹینڈنٹ &mdash; جلد آ رہا ہے</span>
                       </>
                     )}
                   </h1>
@@ -158,12 +161,12 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                     {isLive ? (
                       <>
                         <span data-en>PNC-registered nurses and trained attendants at home in {cityName}. CNIC checked, references called, police-verified. First day free. Pay after the shift. No advance.</span>
-                        <span data-ur className="urdu">{cityName} میں گھر پر PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ۔ شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ پہلا دن مفت۔ کوئی پیشگی نہیں۔</span>
+                        <span data-ur className="urdu">{cityUr} میں گھر پر PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ۔ شناختی کارڈ اور حوالہ جات چیک ہو جاتے ہیں، اور پولیس تصدیق بھی ہو جاتی ہے۔ پہلا دن مفت۔ پیشگی ادائیگی نہیں۔ ادائیگی شفٹ کے بعد۔</span>
                       </>
                     ) : (
                       <>
                         <span data-en>Sehat Connect is coming to {cityName} soon. Leave your name and number and we&rsquo;ll call you the day we go live.</span>
-                        <span data-ur className="urdu">Sehat Connect جلد {cityName} میں آ رہا ہے۔ نام اور نمبر دیں، شروع ہوتے ہی ہم کال کریں گے۔</span>
+                        <span data-ur className="urdu">Sehat Connect جلد {cityUr} میں شروع ہو رہا ہے۔ نام اور نمبر دیں؛ سروس شروع ہوتے ہی ہم کال کریں گے۔</span>
                       </>
                     )}
                   </p>
@@ -195,7 +198,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                   {!isLive && (
                     <p style={{ fontSize: "16px", fontWeight: 700, color: "var(--ink)", margin: "0 0 12px" }}>
                       <span data-en>Be first in line in {cityName}:</span>
-                      <span data-ur className="urdu">{cityName} میں پہلے اطلاع پائیں:</span>
+                      <span data-ur className="urdu">{cityUr} میں پہلے اطلاع پائیں:</span>
                     </p>
                   )}
                   <LeadFormD6 variant="hero" area={cityName} />
@@ -216,12 +219,12 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                   {isLive ? (
                     <>
                       <span data-en>Home nursing services in {cityName}</span>
-                      <span data-ur className="urdu">{cityName} میں گھریلو نرسنگ خدمات</span>
+                      <span data-ur className="urdu">{cityUr} میں گھر پر نرسنگ خدمات</span>
                     </>
                   ) : (
                     <>
                       <span data-en>Coming to {cityName} soon</span>
-                      <span data-ur className="urdu">{cityName} میں جلد آ رہا ہے</span>
+                      <span data-ur className="urdu">{cityUr} میں جلد آ رہا ہے</span>
                     </>
                   )}
                 </h2>
@@ -235,7 +238,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                         Sehat Connect arranges nurses and attendants at home in {cityName}: post-op, elderly, paediatric, ICU step-down, diabetic, night duty, mother and baby, dementia, and long-term palliative care. We send a Qualified Nurse for medical tasks and an attendant for daily support.
                       </span>
                       <span data-ur className="urdu">
-                        Sehat Connect {cityName} میں گھر پر نرس یا اٹینڈنٹ کا بندوبست کرتا ہے: آپریشن کے بعد، بزرگوں، بچوں، ICU کے بعد، شوگر، رات کی ڈیوٹی، ماں اور بچہ، ڈیمنشیا، اور طویل دیکھ بھال۔ طبی کام کے لیے نرس، روزمرہ مدد کے لیے اٹینڈنٹ۔
+                        Sehat Connect {cityUr} میں گھر پر نرس یا اٹینڈنٹ کا بندوبست کرتا ہے: آپریشن کے بعد، بزرگوں کی دیکھ بھال، بچوں کی دیکھ بھال، ICU کے بعد، شوگر، رات کی ڈیوٹی، ماں اور بچہ، ڈیمنشیا اور طویل مدتی نگہداشت۔ طبی کام کے لیے نرس، روزمرہ مدد کے لیے اٹینڈنٹ مناسب ہوتا ہے۔
                       </span>
                     </p>
                     <p style={{ fontSize: "17px", color: "var(--ink-soft)", lineHeight: 1.7, fontWeight: 500 }}>
@@ -243,7 +246,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                         Every caregiver is CNIC checked, references called, police-verified. You can request a female or male caregiver. We tell you the exact price on the first call before care starts. No advance. Pay after the shift.
                       </span>
                       <span data-ur className="urdu">
-                        ہر فرد کا شناختی کارڈ، حوالہ جات اور پولیس تصدیق چیک ہوتی ہے۔ خاتون یا مرد نرس/اٹینڈنٹ مانگ سکتے ہیں۔ قیمت پہلی کال پر بتا دیتے ہیں۔ کوئی پیشگی نہیں، ادائیگی شفٹ کے بعد۔
+                        ہر فرد کا شناختی کارڈ اور حوالہ جات چیک ہو جاتے ہیں، اور پولیس تصدیق بھی ہو جاتی ہے۔ خاتون یا مرد نرس/اٹینڈنٹ مانگ سکتے ہیں۔ صحیح قیمت پہلی کال پر بتا دیتے ہیں۔ پیشگی ادائیگی نہیں؛ ادائیگی شفٹ کے بعد۔
                       </span>
                     </p>
                     <p style={{ fontSize: "17px", color: "var(--ink-soft)", lineHeight: 1.7, fontWeight: 500 }}>
@@ -259,7 +262,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                       <strong style={{ color: "var(--teal-deep)" }}>{CONTACT_PHONE_DISPLAY}</strong>.
                     </span>
                     <span data-ur className="urdu">
-                      Sehat Connect ابھی {cityName} میں شروع نہیں ہوا۔ ہم گھر پر PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ لانے کی تیاری کر رہے ہیں۔ اپنی تفصیلات دیں، شروع ہوتے ہی ہم کال کریں گے۔ سوال؟ کال یا واٹس ایپ کریں{" "}
+                      Sehat Connect ابھی {cityUr} میں شروع نہیں ہوا۔ ہم گھر پر PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ لانے کی تیاری کر رہے ہیں۔ اپنی تفصیلات دیں؛ سروس شروع ہوتے ہی ہم کال کریں گے۔ سوال ہو تو کال یا واٹس ایپ کریں{" "}
                       <strong style={{ color: "var(--teal-deep)" }}><bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></strong>۔
                     </span>
                   </p>
@@ -275,7 +278,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 <div className="sec-head" style={{ marginBottom: "14px" }}>
                   <h2 style={{ fontSize: "clamp(20px,4.4vw,26px)" }}>
                     <span data-en>Areas we serve in Lahore</span>
-                    <span data-ur className="urdu">لاہور کے علاقے جہاں ہم آتے ہیں</span>
+                    <span data-ur className="urdu">لاہور کے وہ علاقے جہاں ہم آتے ہیں</span>
                   </h2>
                 </div>
                 <div className="founder-card">
@@ -302,7 +305,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                   </div>
                   <p style={{ fontSize: "16px", color: "var(--ink-soft)", lineHeight: 1.6, fontWeight: 500, margin: "16px 0 0" }}>
                     <span data-en>And everywhere in between, 24/7. We ask your exact area on the call.</span>
-                    <span data-ur className="urdu">اور آس پاس کے علاقے بھی، 24/7۔ صحیح علاقہ کال پر پوچھ لیں گے۔</span>
+                    <span data-ur className="urdu">اور آس پاس کے علاقے بھی، 24/7۔ صحیح علاقہ کال پر پوچھ لیتے ہیں۔</span>
                   </p>
                 </div>
               </div>

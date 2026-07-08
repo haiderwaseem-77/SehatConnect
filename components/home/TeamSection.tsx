@@ -62,7 +62,7 @@ export default function TeamSection() {
           <PulseAccent />
           <h2 id="team-title">
             <span data-en>The caregivers who come into your home.</span>
-            <span data-ur className="urdu">جو آپ کے گھر دیکھ بھال کے لیے آتے ہیں۔</span>
+            <span data-ur className="urdu">وہ لوگ جو آپ کے گھر دیکھ بھال کے لیے آتے ہیں</span>
           </h2>
           <p>
             <span data-en>
@@ -71,8 +71,8 @@ export default function TeamSection() {
               replacement.
             </span>
             <span data-ur className="urdu">
-              ہم آپ کے پیارے کے لیے صحیح نرس یا اٹینڈنٹ کا انتظام کرتے ہیں۔
-              اگر فرد مناسب نہ لگے تو ہمیں بتائیں، ہم متبادل کا انتظام کرتے ہیں۔
+              ہم آپ کے عزیز کے لیے مناسب نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں۔
+              اگر فرد مناسب نہ لگے تو ہمیں بتائیں؛ ہم متبادل کا بندوبست کرتے ہیں۔
             </span>
           </p>
         </div>
@@ -120,8 +120,8 @@ export default function TeamSection() {
               police-verified</b> &mdash; before anyone reaches your door.
             </span>
             <span data-ur className="urdu">
-              جو بھی آپ کے گھر آئے — اس کا شناختی کارڈ، حوالہ جات اور پولیس
-              تصدیق پہلے چیک ہوتی ہے۔
+              جس فرد کو بھی ہم آپ کے گھر بھیجتے ہیں، اس کا شناختی کارڈ اور
+              حوالہ جات چیک ہو جاتے ہیں، اور پولیس تصدیق بھی ہو جاتی ہے۔
             </span>
           </span>
         </p>

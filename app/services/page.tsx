@@ -54,12 +54,12 @@ const CATEGORIES = [
   {
     cat: "qualified_nurse" as const,
     title: "Qualified Nurse",
-    titleUr: "نرس",
+    titleUr: "PNC رجسٹرڈ نرس",
     href: "/services/qualified-nurse",
     badge: { en: "PNC Registered", ur: "PNC رجسٹرڈ" },
     desc: {
       en: "PNC-registered nurses for medical tasks at home: wound dressing, drips, injections, medicines and monitoring.",
-      ur: "گھر پر طبی کام: ڈریسنگ، ڈرپ، انجیکشن، دوائیں اور نگرانی۔",
+      ur: "گھر پر طبی کام کے لیے PNC رجسٹرڈ نرسیں: زخم کی ڈریسنگ، ڈرپ، انجیکشن، دوائیں اور نگرانی۔",
     },
     services: QUALIFIED_NURSE_SERVICES,
   },
@@ -68,10 +68,10 @@ const CATEGORIES = [
     title: "Attendant",
     titleUr: "اٹینڈنٹ",
     href: "/services/attendant",
-    badge: { en: "CNIC Checked", ur: "شناختی کارڈ چیک" },
+    badge: { en: "CNIC Checked", ur: "شناختی کارڈ چیک شدہ" },
     desc: {
       en: "Trained attendants for daily support: feeding, hygiene, movement, companionship and overnight duty.",
-      ur: "روزمرہ مدد: کھانا، صفائی، چلنا پھرنا، ساتھ اور رات کی ڈیوٹی۔",
+      ur: "روزمرہ غیر طبی مدد کے لیے تربیت یافتہ اٹینڈنٹ: کھانا، صفائی، چلنا پھرنا، ساتھ بیٹھنا اور رات کی ڈیوٹی۔",
     },
     services: ATTENDANT_SERVICES,
   },
@@ -82,12 +82,12 @@ type CellValue = boolean | { en: string; ur: string };
 const FREE = { en: "Free", ur: "مفت" };
 const COMPARE: [{ en: string; ur: string }, CellValue, CellValue][] = [
   [{ en: "PNC registered", ur: "PNC رجسٹرڈ" }, true, false],
-  [{ en: "Wound dressing / IV care", ur: "زخم کی ڈریسنگ / ڈرپ" }, true, false],
+  [{ en: "Wound dressing / IV care", ur: "زخم کی ڈریسنگ / IV ڈرپ" }, true, false],
   [{ en: "Injections & medication", ur: "انجیکشن اور ادویات" }, true, false],
-  [{ en: "Vitals monitoring", ur: "طبی نگرانی" }, true, false],
-  [{ en: "Personal hygiene support", ur: "صفائی میں مدد" }, true, true],
+  [{ en: "Vitals monitoring", ur: "طبی علامات کی نگرانی" }, true, false],
+  [{ en: "Personal hygiene support", ur: "ذاتی صفائی میں مدد" }, true, true],
   [{ en: "Feeding assistance", ur: "کھانا کھلانے میں مدد" }, true, true],
-  [{ en: "Companionship / support", ur: "رفاقت اور ساتھ" }, true, true],
+  [{ en: "Companionship / support", ur: "ساتھ بیٹھنا / سہارا" }, true, true],
   [{ en: "Overnight duty", ur: "رات کی ڈیوٹی" }, true, true],
   [{ en: "First day", ur: "پہلا دن" }, FREE, FREE],
 ];
@@ -142,7 +142,7 @@ export default function ServicesPage() {
                     Need medical care? Choose a Qualified Nurse. Need daily support? Choose an Attendant. First day free. Pay after the shift. Not sure? We&rsquo;ll tell you honestly.
                   </span>
                   <span data-ur className="urdu">
-                    طبی کام چاہیے؟ نرس لیں۔ روزمرہ مدد چاہیے؟ اٹینڈنٹ لیں۔ پہلا دن مفت۔ ادائیگی شفٹ کے بعد۔ سمجھ نہ آئے تو ہم بتا دیں گے۔
+                    طبی کام ہو تو نرس، روزمرہ مدد ہو تو اٹینڈنٹ مناسب ہے۔ پہلا دن مفت ہے، ادائیگی شفٹ کے بعد۔ سمجھ نہ آئے تو ہم صاف بتا دیں گے۔
                   </span>
                 </p>
               </div>
@@ -255,11 +255,11 @@ export default function ServicesPage() {
               >
                 <h2 style={{ fontSize: "clamp(20px,4.6vw,26px)", marginBottom: 4 }}>
                   <span data-en>Not sure which you need?</span>
-                  <span data-ur className="urdu">سمجھ نہیں آ رہا کون سا چاہیے؟</span>
+                  <span data-ur className="urdu">سمجھ نہیں آ رہا نرس چاہیے یا اٹینڈنٹ؟</span>
                 </h2>
                 <p style={{ fontSize: 16, color: "var(--ink-soft)", fontWeight: 500, marginBottom: 18 }}>
                   <span data-en>A quick look at what each one covers.</span>
-                  <span data-ur className="urdu">مختصر فرق یہاں دیکھ لیں۔</span>
+                  <span data-ur className="urdu">دونوں کا فرق مختصر میں دیکھ لیں۔</span>
                 </p>
                 <div style={{ overflowX: "auto" }}>
                   <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15, tableLayout: "fixed" }}>
@@ -295,7 +295,7 @@ export default function ServicesPage() {
                 </div>
                 <p style={{ fontSize: 15, color: "var(--ink-soft)", fontWeight: 600, marginTop: 16 }}>
                   <span data-en>You pay after the shift — we tell you the exact price on the first call.</span>
-                  <span data-ur className="urdu">ادائیگی شفٹ کے بعد۔ قیمت پہلی کال پر بتا دیتے ہیں۔</span>
+                  <span data-ur className="urdu">ادائیگی شفٹ کے بعد ہوتی ہے — صحیح قیمت پہلی کال پر بتا دی جاتی ہے۔</span>
                 </p>
               </div>
             </div>

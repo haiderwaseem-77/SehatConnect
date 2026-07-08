@@ -15,19 +15,19 @@ export const metadata: Metadata = {
 const STEPS: { en: string; ur: string }[] = [
   {
     en: "We call you back to understand exactly what you need.",
-    ur: "ہم کال کر کے آپ کی ضرورت سمجھتے ہیں۔",
+    ur: "ہم آپ کی ضرورت سمجھنے کے لیے واپس کال کرتے ہیں۔",
   },
   {
     en: "We match you with the right caregiver and share their card with you first.",
-    ur: "ہم صحیح نرس یا اٹینڈنٹ چنتے ہیں اور پہلے کارڈ بھیجتے ہیں۔",
+    ur: "ہم مناسب نرس یا اٹینڈنٹ کا بندوبست کرتے ہیں اور پہلے اس کا کارڈ بھیجتے ہیں۔",
   },
   {
     en: "Your caregiver arrives at the agreed time.",
-    ur: "نرس یا اٹینڈنٹ طے وقت پر آتا ہے۔",
+    ur: "نرس یا اٹینڈنٹ طے شدہ وقت پر پہنچتا ہے۔",
   },
   {
     en: "You pay after the shift — no advance, ever.",
-    ur: "آپ شفٹ کے بعد ادائیگی کرتے ہیں — کبھی پیشگی نہیں۔",
+    ur: "ادائیگی شفٹ کے بعد ہوتی ہے — پیشگی کبھی نہیں۔",
   },
 ];
 
@@ -101,7 +101,7 @@ export default async function BookingConfirmPage({
               <h1 style={{ fontSize: "clamp(24px,5.5vw,30px)", marginBottom: 12 }}>
                 <span data-en>Done. Our team will call you back soon.</span>
                 <span data-ur className="urdu">
-                  ہو گیا۔ ہماری ٹیم جلد کال کرے گی۔
+                  درخواست موصول ہو گئی۔ ہماری ٹیم جلد واپس کال کرے گی۔
                 </span>
               </h1>
 
@@ -118,7 +118,7 @@ export default async function BookingConfirmPage({
                   to understand what you need and arrange everything — please save it so you know it&rsquo;s us. No payment now.
                 </span>
                 <span data-ur className="urdu">
-                  ہم <strong><bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></strong>{" "}
+                  ہم آپ کی ضرورت سمجھنے اور بندوبست کرنے کے لیے <strong><bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></strong>{" "}
                   سے کال کریں گے۔ نمبر محفوظ کر لیں تاکہ آپ پہچان سکیں۔ ابھی کوئی ادائیگی نہیں۔
                 </span>
               </p>
@@ -200,7 +200,7 @@ export default async function BookingConfirmPage({
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                   </svg>
                   <span data-en>Can&rsquo;t wait? Call us now: {CONTACT_PHONE_DISPLAY}</span>
-                  <span data-ur className="urdu">فوری بات کرنی ہے؟ کال کریں: <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+                  <span data-ur className="urdu">انتظار نہیں کر سکتے؟ ابھی کال کریں: <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
                 </a>
                 <a
                   className="btn btn-wa btn-block btn-lg"
@@ -236,7 +236,7 @@ export default async function BookingConfirmPage({
                   }}
                 >
                   <span data-en>Save our number, so our call isn&rsquo;t a stranger&rsquo;s number</span>
-                  <span data-ur className="urdu">ہمارا نمبر محفوظ کر لیں تاکہ کال پہچان سکیں</span>
+                  <span data-ur className="urdu">ہمارا نمبر محفوظ کر لیں تاکہ ہماری کال پہچان سکیں</span>
                 </a>
               </div>
             </div>

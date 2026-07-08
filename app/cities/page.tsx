@@ -27,11 +27,11 @@ export default function CitiesPage() {
             </span>
             <h1>
               <span data-en>Cities we <span className="hl">serve</span></span>
-              <span data-ur className="urdu">وہ شہر جہاں ہم <span className="hl">موجود</span> ہیں</span>
+              <span data-ur className="urdu">وہ شہر جہاں ہماری <span className="hl">سروس</span> دستیاب ہے</span>
             </h1>
             <p className="hero-sub">
               <span data-en>Nurses and attendants at home in Lahore now. More cities coming soon. Leave your number and a real person calls back.</span>
-              <span data-ur className="urdu">ابھی لاہور میں گھر پر نرسیں اور اٹینڈنٹ دستیاب ہیں۔ باقی شہر جلد آ رہے ہیں۔ نمبر دیں، ہم کال کریں گے۔</span>
+              <span data-ur className="urdu">ابھی لاہور میں گھر پر نرسیں اور اٹینڈنٹ دستیاب ہیں۔ باقی شہروں میں جلد آ رہے ہیں۔ اپنا نمبر دیں؛ ہم کال کریں گے۔</span>
             </p>
           </div>
         </section>
@@ -66,7 +66,7 @@ export default function CitiesPage() {
                       >
                         <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--gold)", flex: "none" }} />
                           <span data-en>Coming soon</span>
-                        <span data-ur className="urdu">جلد</span>
+                        <span data-ur className="urdu">جلد آ رہا ہے</span>
                       </span>
                     )}
 
@@ -97,7 +97,7 @@ export default function CitiesPage() {
                       {isLive ? (
                         <>
                           <span data-en>Nurses &amp; attendants at home</span>
-                          <span data-ur className="urdu">گھر پر نرس یا اٹینڈنٹ</span>
+                          <span data-ur className="urdu">گھر پر نرسیں اور اٹینڈنٹ</span>
                         </>
                       ) : (
                         <>

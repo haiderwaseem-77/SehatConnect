@@ -55,40 +55,40 @@ export interface PromisesShape {
 export const PROMISES: PromisesShape = {
   trial: {
     en: "Your first day is free — no cost, no obligation. Continue only if you're happy.",
-    ur: "پہلا دن مفت ہے۔ پسند آئے تو آگے چلیں۔",
+    ur: "پہلا دن مفت ہے؛ پسند آئے تو ہی آگے جاری رکھیں۔",
     enShort: "First day free",
     urShort: "پہلا دن مفت",
   },
   replacement: {
     en: "Not comfortable? Tell us — we replace the caregiver, free, until you're fully satisfied.",
-    ur: "اطمینان نہ ہو تو بتائیں۔ ہم نرس یا اٹینڈنٹ بدل دیں گے۔",
+    ur: "اطمینان نہ ہو تو بتائیں؛ ہم نرس یا اٹینڈنٹ مفت بدلتے رہیں گے، جب تک آپ مطمئن نہ ہوں۔",
   },
   priceOnCall: {
     en: "We tell you the exact price on the first call — before care starts. No fine print, no surprises.",
-    ur: "قیمت پہلی کال پر بتا دیتے ہیں، کام شروع ہونے سے پہلے۔ کوئی چھپی بات نہیں۔",
+    ur: "صحیح قیمت پہلی کال پر، کام شروع ہونے سے پہلے بتا دیں گے۔ کوئی چھپی ہوئی شرط نہیں۔",
   },
   payment: {
     en: "No advance. Pay after the shift.",
-    ur: "کوئی پیشگی نہیں۔ ادائیگی شفٹ کے بعد۔",
+    ur: "کوئی پیشگی ادائیگی نہیں۔ ادائیگی شفٹ کے بعد۔",
   },
 };
 
 export const QUALIFIED_NURSE_SERVICES = [
-  { id: 'post_op_care',    label: 'Post-op Care',    urdu: 'آپریشن کے بعد', icon: 'Activity',    description: 'Wound care, dressing changes, and recovery support after surgery', descriptionUrdu: 'زخم، ڈریسنگ اور ریکوری میں مدد' },
-  { id: 'elderly_care',    label: 'Elderly Care',    urdu: 'بزرگوں کی دیکھ بھال',    icon: 'Heart',        description: 'Help with medicines, movement, and day-to-day health monitoring for elderly patients', descriptionUrdu: 'دوائی، چلنے پھرنے اور روزمرہ نگرانی میں مدد' },
-  { id: 'paediatric_care', label: 'Paediatric Care', urdu: 'بچوں کی دیکھ بھال',      icon: 'Baby',         description: 'Nursing care for newborns, infants, and young children at home', descriptionUrdu: 'بچوں کے لیے گھر پر نرسنگ' },
-  { id: 'icu_stepdown',    label: 'ICU Step-down',   urdu: 'آئی سی یو کے بعد',       icon: 'HeartPulse',   description: 'Care for patients coming home after a stay in ICU or HDU', descriptionUrdu: 'آئی سی یو یا ایچ ڈی یو کے بعد گھر پر دیکھ بھال' },
-  { id: 'night_duty',      label: 'Night Duty',      urdu: 'رات کی ڈیوٹی',           icon: 'Moon',         description: 'A nurse stays through the night to monitor and care for your patient', descriptionUrdu: 'رات بھر نگرانی اور دیکھ بھال' },
-  { id: 'diabetic_care',   label: 'Diabetic Care',   urdu: 'شوگر کی دیکھ بھال',   icon: 'Droplets',     description: 'Blood sugar checks, insulin injections, and diet guidance for diabetic patients', descriptionUrdu: 'شوگر چیک، انسولین اور خوراک کی رہنمائی' },
-  { id: 'mother_baby_care', label: 'Mother & Baby Care', urdu: 'ماں اور بچہ', icon: 'Baby',     description: 'Newborn care plus postnatal support for new mothers — feeding, recovery, and hygiene at home', descriptionUrdu: 'نوزائیدہ بچے اور نئی ماں کی مدد' },
-  { id: 'dementia_care',   label: "Dementia & Alzheimer's Care", urdu: 'ڈیمنشیا کی دیکھ بھال', icon: 'Brain', description: "Patient, specialised care for dementia and Alzheimer's patients — routine, safety, and companionship", descriptionUrdu: 'روٹین، حفاظت اور ساتھ' },
-  { id: 'palliative_care', label: 'Palliative & Long-term Care', urdu: 'طویل دیکھ بھال', icon: 'HandHeart', description: 'Comfort-focused nursing for cancer, stroke, and long-term patients, including pain and symptom management', descriptionUrdu: 'درد، علامات اور روزمرہ آرام میں مدد' },
+  { id: 'post_op_care',    label: 'Post-op Care',    urdu: 'آپریشن کے بعد دیکھ بھال', icon: 'Activity',    description: 'Wound care, dressing changes, and recovery support after surgery', descriptionUrdu: 'زخم کی دیکھ بھال، ڈریسنگ کی تبدیلی اور ریکوری میں مدد' },
+  { id: 'elderly_care',    label: 'Elderly Care',    urdu: 'بزرگوں کی دیکھ بھال',    icon: 'Heart',        description: 'Help with medicines, movement, and day-to-day health monitoring for elderly patients', descriptionUrdu: 'دواؤں، چلنے پھرنے اور روزمرہ صحت کی نگرانی میں مدد' },
+  { id: 'paediatric_care', label: 'Paediatric Care', urdu: 'بچوں کی نرسنگ',      icon: 'Baby',         description: 'Nursing care for newborns, infants, and young children at home', descriptionUrdu: 'نومولود، شیر خوار اور کم عمر بچوں کی گھر پر نرسنگ' },
+  { id: 'icu_stepdown',    label: 'ICU Step-down',   urdu: 'آئی سی یو کے بعد دیکھ بھال',       icon: 'HeartPulse',   description: 'Care for patients coming home after a stay in ICU or HDU', descriptionUrdu: 'آئی سی یو یا ایچ ڈی یو سے گھر آنے والے مریض کی دیکھ بھال' },
+  { id: 'night_duty',      label: 'Night Duty',      urdu: 'رات کی ڈیوٹی',           icon: 'Moon',         description: 'A nurse stays through the night to monitor and care for your patient', descriptionUrdu: 'رات بھر مریض کی نگرانی اور دیکھ بھال' },
+  { id: 'diabetic_care',   label: 'Diabetic Care',   urdu: 'شوگر کی دیکھ بھال',   icon: 'Droplets',     description: 'Blood sugar checks, insulin injections, and diet guidance for diabetic patients', descriptionUrdu: 'شوگر چیک، انسولین اور خوراک کے بارے میں رہنمائی' },
+  { id: 'mother_baby_care', label: 'Mother & Baby Care', urdu: 'ماں اور بچے کی دیکھ بھال', icon: 'Baby',     description: 'Newborn care plus postnatal support for new mothers — feeding, recovery, and hygiene at home', descriptionUrdu: 'نوزائیدہ بچے اور زچگی کے بعد ماں کی مدد' },
+  { id: 'dementia_care',   label: "Dementia & Alzheimer's Care", urdu: 'ڈیمنشیا اور الزائمر کی دیکھ بھال', icon: 'Brain', description: "Patient, specialised care for dementia and Alzheimer's patients — routine, safety, and companionship", descriptionUrdu: 'روٹین، حفاظت اور نرم مزاج ساتھ' },
+  { id: 'palliative_care', label: 'Palliative & Long-term Care', urdu: 'طویل مدتی آرام دہ نگہداشت', icon: 'HandHeart', description: 'Comfort-focused nursing for cancer, stroke, and long-term patients, including pain and symptom management', descriptionUrdu: 'درد، علامات اور روزمرہ آرام میں مدد' },
 ];
 
 export const ATTENDANT_SERVICES = [
-  { id: 'elderly_care',    label: 'Elderly Care',    urdu: 'بزرگوں کی دیکھ بھال',  icon: 'Heart',    description: 'Helping elderly patients with feeding, hygiene, movement, and daily routines', descriptionUrdu: 'کھانا، صفائی، چلنا پھرنا اور روزمرہ مدد' },
-  { id: 'paediatric_care', label: 'Paediatric Care', urdu: 'بچوں کی دیکھ بھال',    icon: 'Baby',     description: 'Non-clinical care and support for children at home', descriptionUrdu: 'بچوں کے لیے گھر پر غیر طبی مدد' },
-  { id: 'night_duty',      label: 'Night Duty',      urdu: 'رات کی ڈیوٹی',         icon: 'Moon',     description: 'An attendant stays through the night to keep your patient comfortable and safe', descriptionUrdu: 'رات بھر آرام اور حفاظت کا خیال' },
+  { id: 'elderly_care',    label: 'Elderly Care',    urdu: 'بزرگوں کی روزمرہ دیکھ بھال',  icon: 'Heart',    description: 'Helping elderly patients with feeding, hygiene, movement, and daily routines', descriptionUrdu: 'کھانا، صفائی، چلنے پھرنے اور روزمرہ معمولات میں مدد' },
+  { id: 'paediatric_care', label: 'Paediatric Care', urdu: 'بچوں کی روزمرہ دیکھ بھال',    icon: 'Baby',     description: 'Non-clinical care and support for children at home', descriptionUrdu: 'بچوں کے لیے گھر پر غیر طبی دیکھ بھال اور نگرانی' },
+  { id: 'night_duty',      label: 'Night Duty',      urdu: 'رات کی ڈیوٹی',         icon: 'Moon',     description: 'An attendant stays through the night to keep your patient comfortable and safe', descriptionUrdu: 'رات بھر آرام، حفاظت اور بنیادی دیکھ بھال کا خیال' },
 ];
 
 export const CITIES = [

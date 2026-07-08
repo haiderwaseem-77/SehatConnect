@@ -37,10 +37,10 @@ const jsonLd = {
 };
 
 const DOES: { en: string; ur: string }[] = [
-  { en: "Feeding & meals — help with eating, drinking and timing medicines you hand over", ur: "کھانا — کھلانا، پانی دینا، دی ہوئی دوا وقت پر دینا" },
-  { en: "Hygiene & bathing — sponge bath, changing, toilet help, keeping the patient clean", ur: "صفائی — سپنج غسل، کپڑے بدلنا، بیت الخلا میں مدد" },
-  { en: "Movement & positioning — turning, sitting up, walking support to prevent bed sores", ur: "حرکت — کروٹ بدلنا، بٹھانا، چلنے میں سہارا" },
-  { en: "Companionship — sitting with them, talking, keeping them calm and not alone", ur: "ساتھ — بیٹھنا، بات کرنا، مریض کو اکیلا نہ چھوڑنا" },
+  { en: "Feeding & meals — help with eating, drinking and timing medicines you hand over", ur: "کھانا — کھانا کھلانا، پانی پلانا، اور آپ کی دی ہوئی دوا وقت پر دینا" },
+  { en: "Hygiene & bathing — sponge bath, changing, toilet help, keeping the patient clean", ur: "صفائی اور غسل — سپنج باتھ، کپڑے بدلوانا، بیت الخلا میں مدد اور مریض کو صاف رکھنا" },
+  { en: "Movement & positioning — turning, sitting up, walking support to prevent bed sores", ur: "حرکت اور پوزیشن — کروٹ بدلوانا، بٹھانا، چلنے میں سہارا تاکہ بیڈ سورز کا خطرہ کم ہو" },
+  { en: "Companionship — sitting with them, talking, keeping them calm and not alone", ur: "ساتھ — مریض کے پاس بیٹھنا، بات کرنا، تسلی دینا اور اکیلا نہ چھوڑنا" },
 ];
 
 const AttendantExtra = (
@@ -63,14 +63,14 @@ const AttendantExtra = (
           </span>
           <h2 style={{ fontSize: "clamp(22px,5vw,30px)", marginBottom: 8 }}>
             <span data-en>What an attendant does</span>
-            <span data-ur className="urdu">اٹینڈنٹ کیا کرتا ہے</span>
+            <span data-ur className="urdu">اٹینڈنٹ کون سی مدد کرتا ہے</span>
           </h2>
           <p style={{ fontSize: 17, color: "var(--ink-soft)", fontWeight: 500, marginBottom: 20, maxWidth: "48ch" }}>
             <span data-en>
               An attendant handles the everyday, hands-on care an unwell or elderly person needs — the non-medical work that keeps them comfortable, clean and safe.
             </span>
             <span data-ur className="urdu">
-              اٹینڈنٹ بیمار یا بزرگ فرد کی روزمرہ مدد کرتا ہے: کھانا، صفائی، چلنا پھرنا اور ساتھ بیٹھنا۔
+              اٹینڈنٹ بیمار یا بزرگ فرد کی روزمرہ، غیر طبی مدد کرتا ہے — آرام، صفائی اور حفاظت کا خیال رکھتے ہوئے۔
             </span>
           </p>
           <ul style={{ display: "grid", gap: 12 }} className="sm:grid-cols-2">
@@ -119,7 +119,7 @@ const AttendantExtra = (
             </span>
             <span data-ur className="urdu">
               <b style={{ color: "var(--ink)" }}>طبی کام</b> — انجیکشن، ڈرپ، ڈریسنگ یا نگرانی چاہیے؟ یہ{" "}
-              <b style={{ color: "var(--ink)" }}>نرس</b> کا کام ہے، اٹینڈنٹ کا نہیں۔ ہم صاف بتائیں گے کہ آپ کو کون سا چاہیے۔
+              <b style={{ color: "var(--ink)" }}>نرس</b> کا کام ہے، اٹینڈنٹ کا نہیں۔ ہم صاف بتا دیں گے کہ آپ کے لیے کون سا فرد مناسب ہے۔
             </span>
           </p>
         </div>
@@ -157,14 +157,14 @@ const AttendantExtra = (
           <div style={{ minWidth: 0 }}>
             <b style={{ display: "block", fontSize: 17, fontWeight: 800, color: "var(--ink)", lineHeight: 1.3 }}>
               <span data-en>Female or male attendant — you choose</span>
-              <span data-ur className="urdu">خاتون یا مرد اٹینڈنٹ — آپ کی مرضی</span>
+              <span data-ur className="urdu">خاتون یا مرد اٹینڈنٹ — آپ کی پسند</span>
             </b>
             <span style={{ display: "block", marginTop: 4, fontSize: 15.5, fontWeight: 500, color: "var(--ink-soft)", lineHeight: 1.5 }}>
               <span data-en>
                 Caring for a woman or an elderly mother? Ask for a female attendant — female-for-female, always. Just tell us on the call.
               </span>
               <span data-ur className="urdu">
-                خاتون یا بزرگ والدہ کے لیے خاتون اٹینڈنٹ چاہیے؟ کال پر بتا دیں۔
+                خاتون مریض یا بزرگ والدہ کے لیے خاتون اٹینڈنٹ چاہیے؟ کال پر بتا دیں؛ خاتون کے لیے خاتون کا بندوبست کیا جا سکتا ہے۔
               </span>
             </span>
           </div>
@@ -179,19 +179,19 @@ export default function AttendantPage() {
     <ServiceDetailPage
       role="Attendant"
       roleUrdu="اٹینڈنٹ"
-      badge={{ en: "CNIC Checked", ur: "شناختی کارڈ چیک" }}
+      badge={{ en: "CNIC Checked", ur: "شناختی کارڈ چیک شدہ" }}
       category="attendant"
       intro={{
         en: "Non-clinical personal care from trained attendants: feeding, hygiene, movement, companionship and comfort.",
-        ur: "تربیت یافتہ اٹینڈنٹ روزمرہ غیر طبی مدد دیتے ہیں: کھانا، صفائی، چلنا پھرنا، ساتھ اور آرام۔",
+        ur: "تربیت یافتہ اٹینڈنٹ روزمرہ غیر طبی مدد دیتے ہیں: کھانا کھلانا، صفائی، چلنے پھرنے میں سہارا، ساتھ بیٹھنا اور آرام۔",
       }}
       gridHeading={{
         en: "What our attendants help with",
-        ur: "ہمارے اٹینڈنٹ کن چیزوں میں مدد کرتے ہیں",
+        ur: "ہمارے اٹینڈنٹ کن کاموں میں مدد کرتے ہیں",
       }}
       gridSub={{
         en: "Trained attendants.",
-        ur: "تربیت یافتہ اٹینڈنٹ۔",
+        ur: "ہر اٹینڈنٹ تربیت یافتہ ہے۔",
       }}
       services={ATTENDANT_SERVICES}
       waPrefix="an Attendant for "

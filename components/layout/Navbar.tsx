@@ -26,7 +26,7 @@ export default function Navbar() {
               <b>Sehat <span>Connect</span></b>
               <small>
                 <span data-en>bringing the hospital to your home</span>
-                <span data-ur className="urdu">ہسپتال کی سہولت، آپ کے گھر پر</span>
+                <span data-ur className="urdu">ہسپتال جیسی سہولت، آپ کے گھر پر</span>
               </small>
             </span>
           </Link>

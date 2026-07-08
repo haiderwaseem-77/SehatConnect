@@ -27,7 +27,7 @@ export default function BookPage() {
                 </span>
                 <h2>
                   <span data-en>Leave your number. We&rsquo;ll call you back.</span>
-                  <span data-ur className="urdu">اپنا نمبر دیں۔ ہم کال کریں گے۔</span>
+                  <span data-ur className="urdu">اپنا نمبر چھوڑ دیں۔ ہم واپس کال کریں گے۔</span>
                 </h2>
                 <p>
                   <span data-en>
@@ -35,8 +35,8 @@ export default function BookPage() {
                     and arrange the right nurse or attendant.
                   </span>
                   <span data-ur className="urdu">
-                    صرف نام اور نمبر۔ پہلا دن مفت۔ ابھی کوئی ادائیگی نہیں۔ ہم کال کر کے ضرورت سمجھیں گے
-                    اور صحیح نرس یا اٹینڈنٹ کا بندوبست کریں گے۔
+                    صرف نام اور نمبر۔ پہلا دن مفت ہے۔ ابھی کوئی ادائیگی نہیں، کوئی پیشگی نہیں۔ ہماری ٹیم کال کر کے ضرورت سمجھے گی
+                    اور مناسب نرس یا اٹینڈنٹ کا بندوبست کرے گی۔
                   </span>
                 </p>
               </div>

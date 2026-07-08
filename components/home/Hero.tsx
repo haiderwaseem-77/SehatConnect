@@ -9,15 +9,15 @@ export default function Hero() {
           <div className="hero-copy">
             <span className="eyebrow eyebrow-plain">
               <span data-en>Care for your loved one is a call away</span>
-              <span data-ur className="urdu">گھر پر دیکھ بھال، صرف ایک کال دور</span>
+              <span data-ur className="urdu">آپ کے عزیز کی دیکھ بھال، صرف ایک کال دور</span>
             </span>
             <h1>
               <span data-en>A caring nurse or attendant for your loved one at home. <span className="hl">Leave your number</span> — we&rsquo;ll arrange the right person.</span>
-              <span data-ur className="urdu">لاہور میں گھر پر نرس یا اٹینڈنٹ۔ <span className="hl">اپنا نمبر دیں</span> — ہم صحیح فرد بھیجیں گے۔</span>
+              <span data-ur className="urdu">لاہور میں گھر پر نرس یا اٹینڈنٹ۔ <span className="hl">اپنا نمبر دیں</span> — ہم مناسب فرد کا بندوبست کریں گے۔</span>
             </h1>
             <p className="hero-sub">
               <span data-en>The form takes less than 30 seconds. Our team will call and guide you from there.</span>
-              <span data-ur className="urdu">بس نام اور نمبر۔ ہماری ٹیم کال کر کے رہنمائی کرے گی۔</span>
+              <span data-ur className="urdu">فارم 30 سیکنڈ سے کم لیتا ہے۔ ہماری ٹیم کال کر کے اگلا قدم بتا دے گی۔</span>
             </p>
 
             <div className="hero-trust">
