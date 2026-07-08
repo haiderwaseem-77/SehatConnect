@@ -1,6 +1,6 @@
 // Direction-6 footer — ported from design-explorations-v2/direction-6-combined.html
 import Link from "next/link";
-import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL, OFFICE_ADDRESS, CONTACT_EMAIL } from "@/lib/constants";
+import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL, OFFICE_ADDRESS } from "@/lib/constants";
 import { waLink, GENERIC_WA_MSG } from "@/lib/wa";
 
 export default function Footer() {
@@ -33,7 +33,6 @@ export default function Footer() {
             <h4><span data-en>Talk to us &middot; 24/7</span><span data-ur className="urdu">ہم سے بات کریں &middot; ہر وقت</span></h4>
             <a className="foot-num" href={`tel:${CONTACT_PHONE_TEL}`}>{CONTACT_PHONE_DISPLAY}</a>
             <a href={wa} target="_blank" rel="noopener noreferrer"><span data-en>WhatsApp us</span><span data-ur className="urdu">واٹس ایپ کریں</span></a>
-            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             <p><span data-en>Office</span><span data-ur className="urdu">دفتر</span>: {OFFICE_ADDRESS}</p>
             <Link href="/#get-call"><span data-en>Request a call back</span><span data-ur className="urdu">کال منگوائیں</span></Link>
           </div>

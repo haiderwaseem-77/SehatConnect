@@ -12,7 +12,7 @@ export default function Hero() {
               <span data-ur className="urdu">آپ کے عزیز کی دیکھ بھال، صرف ایک کال دور</span>
             </span>
             <h1>
-              <span data-en>A caring nurse or attendant for your loved one at home. <span className="hl">Leave your number</span> — we&rsquo;ll arrange the right person.</span>
+              <span data-en>A caring nurse or attendant at home in Lahore. <span className="hl">Leave your number</span> — we&rsquo;ll arrange the right person.</span>
               <span data-ur className="urdu">لاہور میں گھر پر نرس یا اٹینڈنٹ۔ <span className="hl">اپنا نمبر دیں</span> — ہم مناسب فرد کا بندوبست کریں گے۔</span>
             </h1>
             <p className="hero-sub">

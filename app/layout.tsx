@@ -103,7 +103,7 @@ export default function RootLayout({
   ].join(" ");
 
   return (
-    <html lang="en" className={fontVars}>
+    <html lang="en-PK" className={fontVars}>
       <body className="min-h-screen flex flex-col">
         <LanguageProvider>
           {children}

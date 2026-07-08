@@ -3,7 +3,7 @@
 // point there yet — still testing on lucaintel.com. Flip this the moment DNS/Vercel
 // actually resolves mysehatconnect.com, so canonical/JSON-LD/OG URLs never claim a
 // domain that isn't reachable.
-export const SITE_URL = "https://lucaintel.com";
+export const SITE_URL = "https://mysehatconnect.com";
 
 // Prices are HIDDEN from every public surface (UI, SEO/JSON-LD, WhatsApp
 // prefills) as of 2026-07-02 — partner decision, see NORTH-STAR Decision
