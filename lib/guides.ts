@@ -8,6 +8,10 @@ import type { PromiseCopy } from "./constants";
  * volume publishing, which is the opposite of the intent, and thin filler pages
  * would damage exactly the trust the rest of the site is built on.
  *
+ * A dek is a promise about what the page delivers. Keep it honest: the post-op
+ * guide deliberately carries NO warning-signs list (that is medical guidance and
+ * belongs to the discharge summary), so its dek must not imply one.
+ *
  * Declared here rather than in each page file so the index, the sitemap and the
  * cross-links between guides all read from one list. Add a guide here first,
  * then create `app/guides/<slug>/page.tsx`.
@@ -39,8 +43,8 @@ export const GUIDES: Guide[] = [
       ur: "آپریشن کے بعد گھر لانا: ایک چیک لسٹ",
     },
     dek: {
-      en: "What to prepare, what to watch for, and when to call someone.",
-      ur: "کیا تیار رکھنا ہے، کس چیز پر نظر رکھنی ہے، اور کب کسی کو بلانا ہے۔",
+      en: "What to prepare, what to ask before you leave the hospital, and who takes the first night.",
+      ur: "کیا تیار رکھنا ہے، ہسپتال سے نکلنے سے پہلے کیا پوچھنا ہے، اور پہلی رات کون سنبھالے گا۔",
     },
   },
   {
