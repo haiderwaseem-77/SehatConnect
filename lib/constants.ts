@@ -181,3 +181,28 @@ export const FAQ_ITEMS = [
     a: 'We confirm the arrival time with you in advance and message you when your caregiver is on the way. If anyone is running late, our team calls you and sorts it out right away — a real person is always just a call or WhatsApp away.',
   },
 ];
+
+// ---------------------------------------------------------------------------
+// Promise copy that is law in NORTH-STAR §3 but had no bilingual home in
+// PROMISES yet. Appended 2026-08-21 for /charges. The English strings are
+// VERBATIM from the NORTH-STAR §3 promises table — do not soften or
+// strengthen them:
+//   - "usually" in the callback promise is mandatory (Decision Ledger #4);
+//     never print a bare "within 15 minutes" until ops data proves it.
+//   - "can start" keeps the 24-hour promise honest.
+//   - the verification promise always names all three checks.
+// ---------------------------------------------------------------------------
+export const CALLBACK_PROMISE: PromiseCopy = {
+  en: "We call back fast — usually within 15 minutes.",
+  ur: "ہم جلد واپس کال کرتے ہیں — عموماً 15 منٹ کے اندر۔",
+};
+
+export const START_PROMISE: PromiseCopy = {
+  en: "Care can start within 24 hours of your call.",
+  ur: "دیکھ بھال آپ کی کال کے 24 گھنٹوں کے اندر شروع ہو سکتی ہے۔",
+};
+
+export const VERIFICATION_PROMISE: PromiseCopy = {
+  en: "Every caregiver: CNIC checked, references called, police-verified — before they enter your home.",
+  ur: "ہر نرس یا اٹینڈنٹ کا شناختی کارڈ اور حوالہ جات چیک ہوتے ہیں، اور پولیس تصدیق بھی — گھر میں داخل ہونے سے پہلے۔",
+};
