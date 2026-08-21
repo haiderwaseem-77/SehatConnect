@@ -68,7 +68,7 @@ npm run lint   # linting
   1. `vercel.json` must keep `"framework": "nextjs"` — the Vercel preset is `null`; without the override every route 404s despite a green build.
   2. Vercel **Deployment Protection must stay OFF** — otherwise a login wall blocks the public site.
 - Deploy from a **real terminal**: `npx vercel deploy --prod` (the `!` prefix didn't survive long deploys).
-- Env vars needed on Vercel: `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` (**still unset — leads now survive via ntfy, but nothing is persisted until these are set**), server-only `NTFY_TOPIC` (unguessable secret; never `NEXT_PUBLIC_`), optional `NTFY_TOKEN`, optional `NEXT_PUBLIC_GA4_ID`. See `.env.example`.
+- Env vars needed on Vercel: `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` (**still unset — leads now survive via ntfy, but nothing is persisted until these are set**), server-only `NTFY_TOPIC` (unguessable secret; never `NEXT_PUBLIC_`), optional `NTFY_TOKEN`, optional `NEXT_PUBLIC_GA4_ID` (**answer the cookie/consent question before setting it** — NORTH-STAR ledger 22). See `.env.example`.
 
 ## Project Structure (direction-6; routes consolidated 2026-07-01, SEO satellites added 2026-08-21)
 
@@ -100,7 +100,7 @@ npm run lint   # linting
 | `lib/guides.ts` | `GUIDES` — slug, name, dek. Declare a guide here **first**, then create `app/guides/<slug>/page.tsx`; the index, the cross-links and the sitemap all read this list |
 | `lib/areas.ts` | `AREAS` + `LIVE_AREAS`, mirroring the `LIVE_CITIES` pattern: a declared area is not a published one, so a half-built area can never advertise a URL that 404s. Also holds each area's verified hospitals and its one distinct fact |
 | `lib/og.tsx` | The shared OG card generator — one settled brand visual, text parameterised. Changing it changes every share preview at once |
-| `lib/analytics.ts` + `components/analytics/` | GA4. Completely inert unless `NEXT_PUBLIC_GA4_ID` is set. One delegated document click listener captures every `tel:` and `wa.me` tap — do NOT add per-link handlers |
+| `lib/analytics.ts` + `components/analytics/` | GA4 (chosen 2026-08-21 over Plausible/Vercel — Ads can only optimise conversions Google records; NORTH-STAR ledger 22). Completely inert unless `NEXT_PUBLIC_GA4_ID` is set. One delegated document click listener captures every `tel:` and `wa.me` tap — do NOT add per-link handlers. **Do not set the ID until the cookie/consent question is answered** — GA4 writes cookies |
 | `docs/keyword-map.md` | **Which page owns which phrase**, plus what each must NOT target. Read it before adding or retitling any page |
 | `docs/review-ask-messages.md` | The WhatsApp scripts for asking a family for a Google review / testimonial |
 | `docs/seo-tracker.html` | The SEO plan and progress tracker (self-contained, opens in a browser; state in localStorage) |
