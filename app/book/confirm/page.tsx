@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LandingRoot from "@/components/home/LandingRoot";
+import ConfirmGreeting from "@/components/home/ConfirmGreeting";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL } from "@/lib/constants";
 import { waLink, GENERIC_WA_MSG } from "@/lib/wa";
 
@@ -34,11 +35,10 @@ const STEPS: { en: string; ur: string }[] = [
 export default async function BookingConfirmPage({
   searchParams,
 }: {
-  searchParams: Promise<{ ref?: string; name?: string }>;
+  searchParams: Promise<{ ref?: string }>;
 }) {
   const resolvedParams = await searchParams;
-  const ref = resolvedParams.ref ?? "SGH-0000";
-  const name = (resolvedParams.name ?? "").trim();
+  const ref = resolvedParams.ref ?? "";
 
   return (
     <LandingRoot>
@@ -105,12 +105,9 @@ export default async function BookingConfirmPage({
                 </span>
               </h1>
 
-              {name && (
-                <p style={{ fontSize: 18, color: "var(--ink)", fontWeight: 700, marginBottom: 8 }}>
-                  <span data-en>Shukriya, {name}.</span>
-                  <span data-ur lang="ur" dir="rtl" className="urdu">شکریہ، {name}۔</span>
-                </p>
-              )}
+              <p style={{ fontSize: 18, color: "var(--ink)", fontWeight: 700, marginBottom: 8 }}>
+                <ConfirmGreeting />
+              </p>
 
               <p style={{ fontSize: 18, color: "var(--ink-soft)", lineHeight: 1.65, marginBottom: 22, fontWeight: 500 }}>
                 <span data-en>
@@ -124,40 +121,44 @@ export default async function BookingConfirmPage({
               </p>
 
               {/* Booking ref */}
+              {/* A direct visit to this page has no reference, so the card
+                  is hidden rather than shown empty. */}
+              {ref && (
               <div
-                style={{
-                  background: "var(--cream-2)",
-                  borderRadius: 14,
-                  padding: 16,
-                  marginBottom: 22,
-                  border: "1px solid var(--line)",
-                }}
-              >
-                <div
                   style={{
-                    fontSize: 13,
-                    fontWeight: 700,
-                    letterSpacing: ".1em",
-                    textTransform: "uppercase",
-                    color: "var(--ink-soft)",
-                    marginBottom: 6,
+                    background: "var(--cream-2)",
+                    borderRadius: 14,
+                    padding: 16,
+                    marginBottom: 22,
+                    border: "1px solid var(--line)",
                   }}
                 >
-                  <span data-en>Your reference number</span>
-                  <span data-ur lang="ur" dir="rtl" className="urdu">آپ کا حوالہ نمبر</span>
+                  <div
+                    style={{
+                      fontSize: 13,
+                      fontWeight: 700,
+                      letterSpacing: ".1em",
+                      textTransform: "uppercase",
+                      color: "var(--ink-soft)",
+                      marginBottom: 6,
+                    }}
+                  >
+                    <span data-en>Your reference number</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">آپ کا حوالہ نمبر</span>
+                  </div>
+                  <div
+                    style={{
+                      fontSize: 22,
+                      fontWeight: 800,
+                      color: "var(--teal-deep)",
+                      letterSpacing: ".06em",
+                      fontFamily: "ui-monospace,\"SFMono-Regular\",Menlo,monospace",
+                    }}
+                  >
+                    {ref}
+                  </div>
                 </div>
-                <div
-                  style={{
-                    fontSize: 22,
-                    fontWeight: 800,
-                    color: "var(--teal-deep)",
-                    letterSpacing: ".06em",
-                    fontFamily: "ui-monospace,\"SFMono-Regular\",Menlo,monospace",
-                  }}
-                >
-                  {ref}
-                </div>
-              </div>
+              )}
 
               {/* What happens next */}
               <div style={{ textAlign: "left", marginBottom: 26 }}>

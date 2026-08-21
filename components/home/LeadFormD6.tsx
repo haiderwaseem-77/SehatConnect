@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useRef, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { CONTACT_PHONE_TEL, CONTACT_PHONE_DISPLAY } from "@/lib/constants";
 import { waLink, GENERIC_WA_MSG } from "@/lib/wa";
 import { trackLead } from "@/lib/analytics";
+import { rememberName } from "@/components/home/ConfirmGreeting";
 
 type Variant = "hero" | "closer";
 
@@ -26,10 +27,21 @@ const ERROR_MESSAGES: Record<ErrorKey, { en: string; ur: string }> = {
 
 export default function LeadFormD6({ variant, area }: { variant: Variant; area?: string }) {
   const router = useRouter();
+  const pathname = usePathname();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<ErrorKey | null>(null);
+
+  // Two silent bot checks. Neither is visible to a person and neither adds a
+  // step: a honeypot field people never see, and how long the form was on
+  // screen before it was submitted. A captcha would cost real completions from
+  // exactly the anxious, hurried users this form exists for.
+  const [company, setCompany] = useState("");
+  const mountedAt = useRef<number>(0);
+  useEffect(() => {
+    mountedAt.current = Date.now();
+  }, []);
 
   const namePlaceholder = variant === "hero" ? "e.g. Ahmed Raza" : "e.g. Bilal Ahmed";
 
@@ -45,38 +57,77 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
     }
     setError(null);
     setLoading(true);
-    const ref = "SGH-" + Math.floor(1000 + Math.random() * 9000);
-    try {
-      const res = await fetch("/api/book", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: name.trim(),
-          phone: phone.trim(),
-          area: area ?? "",
-          careType: "",
-          ref,
-        }),
-      });
-      if (!res.ok) {
-        setLoading(false);
-        setError("generic");
-        return;
+
+    const payload = JSON.stringify({
+      name: name.trim(),
+      phone: phone.trim(),
+      area: area ?? "",
+      source: pathname || "/",
+      variant,
+      company, // honeypot — always empty for a real person
+      elapsedMs: mountedAt.current ? Date.now() - mountedAt.current : 0,
+    });
+
+    // One retry. The audience is on mid-range Androids on patchy data, where a
+    // single dropped request is common and is not a reason to tell someone with
+    // a sick relative to try again themselves.
+    let ref = "";
+    let ok = false;
+    for (let attempt = 0; attempt < 2 && !ok; attempt++) {
+      if (attempt > 0) await new Promise((r) => setTimeout(r, 800));
+      try {
+        const res = await fetch("/api/lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: payload,
+        });
+        if (res.ok) {
+          ok = true;
+          try {
+            ref = (await res.json())?.ref ?? "";
+          } catch {
+            /* a 200 is the confirmation that matters; the ref is a nicety */
+          }
+        } else if (res.status >= 400 && res.status < 500) {
+          break; // our own validation rejected it — retrying changes nothing
+        }
+      } catch {
+        /* network failure — fall through to the retry */
       }
-    } catch {
-      setLoading(false);
+    }
+
+    setLoading(false);
+    if (!ok) {
       setError("generic");
       return;
     }
-    setLoading(false);
-    // Only counted once the server confirmed it has the lead — never on submit
-    // intent, or the conversion number would overstate real leads.
+
+    // Only counted once the server confirmed it holds the lead — never on
+    // submit intent, or the conversion figure overstates real leads.
     trackLead("lead_form_submit", { source: variant, area: area ?? "" });
-    router.push("/book/confirm?ref=" + ref + "&name=" + encodeURIComponent(name.trim()));
+    rememberName(name.trim());
+    // The name is deliberately NOT put in the URL any more: it ended up in
+    // analytics and referrer logs for no benefit.
+    router.push(ref ? `/book/confirm?ref=${encodeURIComponent(ref)}` : "/book/confirm");
   };
 
   return (
     <form className={variant === "closer" ? "form-card form-card-closer" : "form-card"} onSubmit={handleSubmit} noValidate>
+      {/* Honeypot. Off-screen rather than display:none — bots skip hidden
+          fields but happily fill an off-screen one, and screen readers are
+          told to ignore it. Anything typed here means it was not a person. */}
+      <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+        <label htmlFor={`company-${variant}`}>Company</label>
+        <input
+          id={`company-${variant}`}
+          name="company"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+        />
+      </div>
       <div className="ribbon">
         <span className={variant === "closer" ? "dot beat-dot" : "dot"} />
         <span data-en>We call back fast</span>
