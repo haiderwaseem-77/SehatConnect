@@ -5,6 +5,7 @@ import LandingRoot from "@/components/home/LandingRoot";
 import FounderNote from "@/components/home/FounderNote";
 import CtaBanner from "@/components/home/CtaBanner";
 import { SITE_URL, OFFICE_ADDRESS, CONTACT_PHONE_DISPLAY } from "@/lib/constants";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { breadcrumbList } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -59,7 +60,8 @@ const cardStyle: React.CSSProperties = {
   boxShadow: "var(--shadow-sm)",
 };
 
-const breadcrumbs = breadcrumbList([{ name: "About" }]);
+const crumbs = [{ name: "About", nameUr: "ہمارے بارے میں" }];
+const breadcrumbs = breadcrumbList(crumbs);
 
 export default function AboutPage() {
   return (
@@ -71,6 +73,7 @@ export default function AboutPage() {
     <LandingRoot>
       <Navbar />
       <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
         {/* Intro + mission */}
         <section className="block">
           <div className="wrap">

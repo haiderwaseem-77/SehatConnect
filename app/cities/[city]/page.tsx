@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LandingRoot from "@/components/home/LandingRoot";
@@ -14,6 +13,7 @@ import {
   OFFICE_POSTAL_ADDRESS,
 } from "@/lib/constants";
 import { breadcrumbList, businessSameAs } from "@/lib/schema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export function generateStaticParams() {
   return ["lahore", "karachi", "islamabad", "rawalpindi", "faisalabad"].map(city => ({ city }));
@@ -86,12 +86,15 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       }
     : null;
 
-  const breadcrumbs = isLive
-    ? breadcrumbList([
-        { name: "Areas we serve", path: "/cities" },
-        { name: cityName },
-      ])
+  // Only live (indexable) cities get a trail — a noindex "coming soon" page
+  // should not advertise itself as part of the site's structure.
+  const crumbs = isLive
+    ? [
+        { name: "Cities we serve", nameUr: "جن شہروں میں ہم آتے ہیں", path: "/cities" },
+        { name: cityName, nameUr: cityUr },
+      ]
     : null;
+  const breadcrumbs = crumbs ? breadcrumbList(crumbs) : null;
 
   return (
     <>
@@ -110,20 +113,13 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       <LandingRoot>
         <Navbar />
         <main className="flex-1">
+          {crumbs && <div className="wrap"><Breadcrumbs items={crumbs} /></div>}
 
           {/* Hero — two-column: copy + lead form (mirrors the home hero) */}
           <section className="hero">
             <div className="wrap">
               <div className="hero-grid">
                 <div className="hero-copy">
-                  <Link
-                    href="/cities"
-                    style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "15px", fontWeight: 700, color: "var(--teal-deep)", marginBottom: "14px" }}
-                  >
-                    <span aria-hidden="true">&larr;</span>
-                    <span data-en>All cities</span>
-                    <span data-ur className="urdu">تمام شہر</span>
-                  </Link>
 
                   {!isLive && (
                     <div style={{ marginBottom: "12px" }}>

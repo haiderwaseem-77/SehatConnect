@@ -6,6 +6,7 @@ import LandingRoot from "@/components/home/LandingRoot";
 import CtaBanner from "@/components/home/CtaBanner";
 import { SITE_URL } from "@/lib/constants";
 import { GUIDES } from "@/lib/guides";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { breadcrumbList } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -15,7 +16,8 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/guides` },
 };
 
-const breadcrumbs = breadcrumbList([{ name: "Guides" }]);
+const crumbs = [{ name: "Guides", nameUr: "رہنمائی" }];
+const breadcrumbs = breadcrumbList(crumbs);
 
 export default function GuidesIndexPage() {
   return (
@@ -27,6 +29,7 @@ export default function GuidesIndexPage() {
       <LandingRoot>
         <Navbar />
         <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
           <section className="block">
             <div className="wrap">
               <span className="eyebrow">

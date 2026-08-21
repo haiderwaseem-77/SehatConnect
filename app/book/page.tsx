@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import LandingRoot from "@/components/home/LandingRoot";
 import LeadFormD6 from "@/components/home/LeadFormD6";
 import { SITE_URL } from "@/lib/constants";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { breadcrumbList } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/book` },
 };
 
-const breadcrumbs = breadcrumbList([{ name: "Get a call back" }]);
+const crumbs = [{ name: "Get a call back", nameUr: "کال منگوائیں" }];
+const breadcrumbs = breadcrumbList(crumbs);
 
 export default function BookPage() {
   return (
@@ -25,6 +27,7 @@ export default function BookPage() {
     <LandingRoot>
       <Navbar />
       <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
         <section className="block">
           <div className="wrap">
             <div style={{ maxWidth: 560, margin: "0 auto" }}>

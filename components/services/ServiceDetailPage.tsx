@@ -7,6 +7,8 @@ import type { CSSProperties, ReactNode } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LandingRoot from "@/components/home/LandingRoot";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import type { Crumb } from "@/lib/schema";
 import CtaBanner from "@/components/home/CtaBanner";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL } from "@/lib/constants";
 import { waLink, serviceWaMsg } from "@/lib/wa";
@@ -40,6 +42,8 @@ interface Props {
   jsonLd: object;
   /** BreadcrumbList JSON-LD, built with breadcrumbList() from lib/schema. */
   breadcrumbs?: object;
+  /** The same Crumb[] passed to breadcrumbList(), for the visible trail. */
+  crumbs?: Crumb[];
   /** Optional extra section rendered between the grid and the closing CTA. */
   extra?: ReactNode;
 }
@@ -94,6 +98,7 @@ export default function ServiceDetailPage({
   waPrefix = "",
   jsonLd,
   breadcrumbs,
+  crumbs,
   extra,
 }: Props) {
   return (
@@ -111,6 +116,7 @@ export default function ServiceDetailPage({
       <LandingRoot>
         <Navbar />
         <main className="flex-1">
+          {crumbs && <div className="wrap"><Breadcrumbs items={crumbs} /></div>}
           {/* ---- intro hero ---- */}
           <section className="block" style={{ paddingBottom: 26 }}>
             <div className="wrap">

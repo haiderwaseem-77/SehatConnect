@@ -63,6 +63,7 @@ import {
 } from "@/lib/constants";
 import { breadcrumbList, businessSameAs, OPENING_HOURS } from "@/lib/schema";
 import { waLink } from "@/lib/wa";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 const PATH = "/care-from-abroad";
 
@@ -357,7 +358,8 @@ const webPageJsonLd = {
   },
 };
 
-const breadcrumbs = breadcrumbList([{ name: "Care from abroad" }]);
+const crumbs = [{ name: "Care from abroad", nameUr: "بیرونِ ملک سے" }];
+const breadcrumbs = breadcrumbList(crumbs);
 
 // Mirrors the on-page FAQ exactly — Google requires the schema and the rendered
 // content to match.
@@ -519,6 +521,7 @@ export default function CareFromAbroadPage() {
       <LandingRoot>
         <Navbar />
         <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
           {/* ---- hero: the situation, named, with the form beside it ---- */}
           <section className="hero">
             <div className="wrap">

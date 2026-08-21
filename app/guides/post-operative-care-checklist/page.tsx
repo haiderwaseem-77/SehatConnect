@@ -49,6 +49,7 @@ import {
   CALLBACK_PROMISE,
   START_PROMISE,
 } from "@/lib/constants";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { breadcrumbList, businessSameAs } from "@/lib/schema";
 
 const PATH = "/guides/post-operative-care-checklist";
@@ -397,10 +398,11 @@ const articleJsonLd = {
   audience: { "@type": "Audience", audienceType: "Families arranging care at home in Lahore" },
 };
 
-const breadcrumbs = breadcrumbList([
-  { name: "Guides", path: "/guides" },
-  { name: "After surgery: a checklist" },
-]);
+const crumbs = [
+  { name: "Guides", nameUr: "رہنمائی", path: "/guides" },
+  { name: "After surgery: a checklist", nameUr: "آپریشن کے بعد: چیک لسٹ" },
+];
+const breadcrumbs = breadcrumbList(crumbs);
 
 // Mirrors the on-page FAQ exactly — Google requires the schema and the
 // rendered content to match.
@@ -490,6 +492,7 @@ export default function PostOperativeCareChecklistPage() {
       <LandingRoot>
         <Navbar />
         <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
           {/* ---- hero: the primary phrase in the H1, no form. This is a
                   guide, not a landing page — the ask comes at the end. ---- */}
           <section className="hero">

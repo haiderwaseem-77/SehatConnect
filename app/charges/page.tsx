@@ -32,6 +32,7 @@ import {
 } from "@/lib/constants";
 import { breadcrumbList, businessSameAs, OPENING_HOURS } from "@/lib/schema";
 import { waLink, serviceWaMsg } from "@/lib/wa";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Home Nurse & Attendant Charges in Lahore",
@@ -196,7 +197,8 @@ const CHARGES_FAQ: { q: string; qUr: string; a: string; aUr: string }[] = [
 /* ------------------------------------------------------------------ *
  * JSON-LD
  * ------------------------------------------------------------------ */
-const breadcrumbs = breadcrumbList([{ name: "Charges" }]);
+const crumbs = [{ name: "Charges", nameUr: "اخراجات" }];
+const breadcrumbs = breadcrumbList(crumbs);
 
 // NOTE: no price, priceRange, priceCurrency or priceSpecification anywhere in
 // this graph — the Offers describe the TERMS in words only (Decision Ledger #9).
@@ -298,6 +300,7 @@ export default function ChargesPage() {
       <LandingRoot>
         <Navbar />
         <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
           {/* ---- hero: the query, answered in the H1 ---- */}
           <section className="hero">
             <div className="wrap">

@@ -49,6 +49,7 @@ import {
 import { areaBySlug } from "@/lib/areas";
 import { breadcrumbList, businessSameAs, OPENING_HOURS } from "@/lib/schema";
 import { waLink, serviceWaMsg } from "@/lib/wa";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 // Read the area from lib/areas.ts so this page and /areas can never drift.
 const AREA = areaBySlug("johar-town")!;
@@ -174,10 +175,11 @@ const businessJsonLd = {
   sameAs: businessSameAs(),
 };
 
-const breadcrumbs = breadcrumbList([
-  { name: "Areas we serve", path: "/areas" },
-  { name: AREA.name.en },
-]);
+const crumbs = [
+  { name: "Areas we serve", nameUr: "جن علاقوں میں ہم آتے ہیں", path: "/areas" },
+  { name: AREA.name.en, nameUr: AREA.name.ur },
+];
+const breadcrumbs = breadcrumbList(crumbs);
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -235,27 +237,12 @@ export default function JoharTownAreaPage() {
       <LandingRoot>
         <Navbar />
         <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
           {/* ---- hero ---- */}
           <section className="hero">
             <div className="wrap">
               <div className="hero-grid">
                 <div className="hero-copy">
-                  <Link
-                    href="/areas"
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: 6,
-                      minHeight: 44,
-                      fontSize: 16,
-                      fontWeight: 700,
-                      color: "var(--teal-deep)",
-                    }}
-                  >
-                    <span aria-hidden="true">&larr;</span>
-                    <span data-en>All areas</span>
-                    <span data-ur className="urdu">تمام علاقے</span>
-                  </Link>
 
                   <span className="eyebrow eyebrow-plain">
                     <span data-en>Johar Town, Lahore &middot; care after a discharge</span>

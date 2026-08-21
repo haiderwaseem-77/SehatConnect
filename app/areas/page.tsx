@@ -6,6 +6,7 @@ import LandingRoot from "@/components/home/LandingRoot";
 import CtaBanner from "@/components/home/CtaBanner";
 import { SITE_URL, OFFICE_ADDRESS } from "@/lib/constants";
 import { LIVE_AREAS } from "@/lib/areas";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { breadcrumbList } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -15,7 +16,8 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/areas` },
 };
 
-const breadcrumbs = breadcrumbList([{ name: "Areas we serve" }]);
+const crumbs = [{ name: "Areas we serve", nameUr: "جن علاقوں میں ہم آتے ہیں" }];
+const breadcrumbs = breadcrumbList(crumbs);
 
 export default function AreasIndexPage() {
   return (
@@ -27,6 +29,7 @@ export default function AreasIndexPage() {
       <LandingRoot>
         <Navbar />
         <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
           <section className="block">
             <div className="wrap">
               <span className="eyebrow">

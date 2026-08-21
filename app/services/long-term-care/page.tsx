@@ -43,6 +43,7 @@ import {
 } from "@/lib/constants";
 import { breadcrumbList, businessSameAs, OPENING_HOURS } from "@/lib/schema";
 import { waLink, serviceWaMsg } from "@/lib/wa";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Long-term Care at Home in Lahore",
@@ -184,10 +185,11 @@ const jsonLd = {
   },
 };
 
-const breadcrumbs = breadcrumbList([
-  { name: "Services", path: "/services" },
-  { name: "Long-term Care" },
-]);
+const crumbs = [
+  { name: "Services", nameUr: "خدمات", path: "/services" },
+  { name: "Long-term Care", nameUr: "طویل مدتی دیکھ بھال" },
+];
+const breadcrumbs = breadcrumbList(crumbs);
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -284,6 +286,7 @@ export default function LongTermCarePage() {
       <LandingRoot>
         <Navbar />
         <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
           {/* ---- hero ---- */}
           <section className="hero">
             <div className="wrap">

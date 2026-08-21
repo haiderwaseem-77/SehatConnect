@@ -39,10 +39,11 @@ const jsonLd = {
   },
 };
 
-const breadcrumbs = breadcrumbList([
-  { name: "Services", path: "/services" },
-  { name: "Patient Attendant" },
-]);
+const crumbs = [
+  { name: "Services", nameUr: "خدمات", path: "/services" },
+  { name: "Patient Attendant", nameUr: "مریض کا اٹینڈنٹ" },
+];
+const breadcrumbs = breadcrumbList(crumbs);
 
 const DOES: { en: string; ur: string }[] = [
   { en: "Feeding & meals — help with eating, drinking and timing medicines you hand over", ur: "کھانا — کھانا کھلانا، پانی پلانا، اور آپ کی دی ہوئی دوا وقت پر دینا" },
@@ -205,6 +206,7 @@ export default function AttendantPage() {
       waPrefix="an Attendant for "
       jsonLd={jsonLd}
       breadcrumbs={breadcrumbs}
+      crumbs={crumbs}
       extra={AttendantExtra}
     />
   );

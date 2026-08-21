@@ -25,8 +25,16 @@ export function businessSameAs(): string[] {
 }
 
 export type Crumb = {
-  /** Visible label, e.g. "Services". */
+  /** Label, e.g. "Services". Also the value emitted in BreadcrumbList JSON-LD. */
   name: string;
+  /**
+   * Urdu label for the visible trail. REQUIRED, even though the JSON-LD ignores
+   * it. It was optional briefly, and the result was three area pages rendering
+   * "DHA" / "Gulberg" / "Johar Town" inside the Urdu layer with no visible
+   * error — a silent English fallback is the worst kind of bilingual bug,
+   * because nothing looks broken. Let the compiler catch it instead.
+   */
+  nameUr: string;
   /** Path relative to the site root, e.g. "/services". Omit for the current page. */
   path?: string;
 };
@@ -41,7 +49,7 @@ export type Crumb = {
  * guidance that the last element may omit the URL.
  */
 export function breadcrumbList(trail: Crumb[]) {
-  const crumbs: Crumb[] = [{ name: "Home", path: "" }, ...trail];
+  const crumbs: Crumb[] = [{ name: "Home", nameUr: "ہوم", path: "" }, ...trail];
 
   return {
     "@context": "https://schema.org",

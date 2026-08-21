@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LandingRoot from "@/components/home/LandingRoot";
 import { CITIES, LIVE_CITIES, SITE_URL } from "@/lib/constants";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { breadcrumbList } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/cities` },
 };
 
-const breadcrumbs = breadcrumbList([{ name: "Areas we serve" }]);
+const crumbs = [{ name: "Areas we serve", nameUr: "جن علاقوں میں ہم آتے ہیں" }];
+const breadcrumbs = breadcrumbList(crumbs);
 
 export default function CitiesPage() {
   return (
@@ -25,6 +27,7 @@ export default function CitiesPage() {
     <LandingRoot>
       <Navbar />
       <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
 
         {/* Intro */}
         <section className="hero">

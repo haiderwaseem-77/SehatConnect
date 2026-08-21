@@ -13,6 +13,7 @@ import {
   CONTACT_EMAIL,
   OFFICE_POSTAL_ADDRESS,
 } from "@/lib/constants";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { breadcrumbList, businessSameAs } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -129,7 +130,8 @@ function Cell({ v }: { v: CellValue }) {
   );
 }
 
-const breadcrumbs = breadcrumbList([{ name: "Services" }]);
+const crumbs = [{ name: "Services", nameUr: "خدمات" }];
+const breadcrumbs = breadcrumbList(crumbs);
 
 export default function ServicesPage() {
   return (
@@ -139,6 +141,7 @@ export default function ServicesPage() {
       <LandingRoot>
         <Navbar />
         <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
           {/* ---- intro ---- */}
           <section className="block" style={{ paddingBottom: 30 }}>
             <div className="wrap">

@@ -39,10 +39,11 @@ const jsonLd = {
   relevantSpecialty: QUALIFIED_NURSE_SERVICES.map((s) => s.label),
 };
 
-const breadcrumbs = breadcrumbList([
-  { name: "Services", path: "/services" },
-  { name: "Qualified Nurse" },
-]);
+const crumbs = [
+  { name: "Services", nameUr: "خدمات", path: "/services" },
+  { name: "Qualified Nurse", nameUr: "PNC رجسٹرڈ نرس" },
+];
+const breadcrumbs = breadcrumbList(crumbs);
 
 const CAN_DO: { en: string; ur: string }[] = [
   { en: "Injections & drips — IM/IV injections and IV drips, given on the doctor's prescription", ur: "انجیکشن اور ڈرپ — ڈاکٹر کے نسخے کے مطابق IM/IV انجیکشن اور IV ڈرپ" },
@@ -160,6 +161,7 @@ export default function QualifiedNursePage() {
       services={QUALIFIED_NURSE_SERVICES}
       jsonLd={jsonLd}
       breadcrumbs={breadcrumbs}
+      crumbs={crumbs}
       extra={NurseExtra}
     />
   );

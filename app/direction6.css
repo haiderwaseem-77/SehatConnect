@@ -667,3 +667,24 @@ body{overflow-x:hidden}
   .d6.motion-ready [data-reveal] .d6-pulse-accent path,
   .d6.motion-ready .pulse[data-reveal] path{stroke-dashoffset:0;transition:none}
 }
+
+/* ---- Breadcrumb trail -------------------------------------------------
+   Sits directly under the navbar, above the page's eyebrow. Kept quiet on
+   purpose: it is a wayfinding aid for someone who arrived from a search
+   result, not a call to action, and it must never compete with the hero.
+   Tap targets stay >=44px tall via the padding on each link. */
+.d6 .crumbs{padding:14px 0 2px}
+.d6 .crumbs ol{
+  list-style:none;margin:0;padding:0;
+  display:flex;flex-wrap:wrap;align-items:center;gap:2px 0;
+}
+.d6 .crumbs li{display:flex;align-items:center}
+.d6 .crumbs a,
+.d6 .crumbs [aria-current="page"]{
+  display:inline-flex;align-items:center;min-height:44px;
+  font-size:15px;font-weight:600;line-height:1.3;
+}
+.d6 .crumbs a{color:var(--teal-deep);text-decoration:none;border-bottom:1px solid transparent}
+.d6 .crumbs a:hover{border-bottom-color:var(--teal)}
+.d6 .crumbs [aria-current="page"]{color:var(--ink-soft);font-weight:500}
+.d6 .crumbs .crumb-sep{margin:0 8px;color:var(--line-strong);font-size:15px}

@@ -36,6 +36,7 @@ import {
   START_PROMISE,
   VERIFICATION_PROMISE,
 } from "@/lib/constants";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { breadcrumbList, businessSameAs } from "@/lib/schema";
 import { guideBySlug } from "@/lib/guides";
 
@@ -321,10 +322,11 @@ const GUIDE_FAQ: { q: string; qUr: string; a: string; aUr: string }[] = [
  * date would be a fabricated fact, and the honesty rule outranks the
  * rich-result nicety.
  * ------------------------------------------------------------------ */
-const breadcrumbs = breadcrumbList([
-  { name: "Guides", path: "/guides" },
-  { name: "Nurse or attendant" },
-]);
+const crumbs = [
+  { name: "Guides", nameUr: "رہنمائی", path: "/guides" },
+  { name: "Nurse or attendant", nameUr: "نرس یا اٹینڈنٹ" },
+];
+const breadcrumbs = breadcrumbList(crumbs);
 
 const articleJsonLd = {
   "@context": "https://schema.org",
@@ -450,6 +452,7 @@ export default function NurseOrAttendantGuide() {
       <LandingRoot>
         <Navbar />
         <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
           {/* ---- H1 is the question; the short answer follows immediately ---- */}
           <section className="hero">
             <div className="wrap">

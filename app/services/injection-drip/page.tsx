@@ -46,6 +46,7 @@ import {
 } from "@/lib/constants";
 import { breadcrumbList, businessSameAs, OPENING_HOURS } from "@/lib/schema";
 import { waLink, serviceWaMsg } from "@/lib/wa";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Injection & Drip at Home in Lahore | Nurse Visit",
@@ -218,10 +219,11 @@ const serviceJsonLd = {
   ],
 };
 
-const breadcrumbs = breadcrumbList([
-  { name: "Services", path: "/services" },
-  { name: "Injection & Drip" },
-]);
+const crumbs = [
+  { name: "Services", nameUr: "خدمات", path: "/services" },
+  { name: "Injection & Drip", nameUr: "انجیکشن اور ڈرپ" },
+];
+const breadcrumbs = breadcrumbList(crumbs);
 
 // Mirrors the on-page FAQ exactly — Google requires the schema and the rendered
 // content to match.
@@ -320,6 +322,7 @@ export default function InjectionDripPage() {
       <LandingRoot>
         <Navbar />
         <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
           {/* ---- hero: the query in the H1, the single visit in the first line ---- */}
           <section className="hero">
             <div className="wrap">

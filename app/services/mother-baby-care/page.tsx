@@ -69,6 +69,7 @@ import {
 } from "@/lib/constants";
 import { breadcrumbList, businessSameAs, OPENING_HOURS } from "@/lib/schema";
 import { waLink, serviceWaMsg } from "@/lib/wa";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   // The root layout appends "| Sehat Connect" via its title template.
@@ -221,10 +222,11 @@ const jsonLd = {
   },
 };
 
-const breadcrumbs = breadcrumbList([
-  { name: "Services", path: "/services" },
-  { name: "Care after delivery" },
-]);
+const crumbs = [
+  { name: "Services", nameUr: "خدمات", path: "/services" },
+  { name: "Care after delivery", nameUr: "زچگی کے بعد دیکھ بھال" },
+];
+const breadcrumbs = breadcrumbList(crumbs);
 
 // Mirrors the on-page FAQ exactly — Google requires the schema and the
 // rendered content to match.
@@ -311,6 +313,7 @@ export default function MotherPostnatalCarePage() {
       <LandingRoot>
         <Navbar />
         <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
           {/* ---- hero: the noun and the city in the H1, the mother as subject ---- */}
           <section className="hero">
             <div className="wrap">

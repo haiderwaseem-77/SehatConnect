@@ -43,6 +43,7 @@ import {
 } from "@/lib/constants";
 import { breadcrumbList, businessSameAs, OPENING_HOURS } from "@/lib/schema";
 import { waLink, serviceWaMsg } from "@/lib/wa";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 const PATH = "/guides/elderly-care-at-home";
 
@@ -495,10 +496,11 @@ const articleJsonLd = {
   },
 };
 
-const breadcrumbs = breadcrumbList([
-  { name: "Guides", path: "/guides" },
-  { name: "Elderly care at home" },
-]);
+const crumbs = [
+  { name: "Guides", nameUr: "رہنمائی", path: "/guides" },
+  { name: "Elderly care at home", nameUr: "گھر پر بزرگوں کی دیکھ بھال" },
+];
+const breadcrumbs = breadcrumbList(crumbs);
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -656,6 +658,7 @@ export default function ElderlyCareAtHomeGuide() {
       <LandingRoot>
         <Navbar />
         <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
           {/* ---- title + who this is for. No form here: this is a guide, and
                   the reader has not asked us for anything yet. ---- */}
           <section className="hero" style={{ paddingBottom: 26 }}>

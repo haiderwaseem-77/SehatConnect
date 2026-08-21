@@ -51,6 +51,7 @@ import {
 } from "@/lib/constants";
 import { breadcrumbList, businessSameAs, OPENING_HOURS } from "@/lib/schema";
 import { waLink, serviceWaMsg } from "@/lib/wa";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Female Nurse at Home in Lahore | Female-for-Female on Request",
@@ -236,10 +237,11 @@ const serviceJsonLd = {
   },
 };
 
-const breadcrumbs = breadcrumbList([
-  { name: "Services", path: "/services" },
-  { name: "Female nurse" },
-]);
+const crumbs = [
+  { name: "Services", nameUr: "خدمات", path: "/services" },
+  { name: "Female nurse", nameUr: "خاتون نرس" },
+];
+const breadcrumbs = breadcrumbList(crumbs);
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -337,6 +339,7 @@ export default function FemaleNursePage() {
       <LandingRoot>
         <Navbar />
         <main className="flex-1">
+          <div className="wrap"><Breadcrumbs items={crumbs} /></div>
           {/* ---- hero: the query in the H1, the reason for the search in line one ---- */}
           <section className="hero">
             <div className="wrap">
