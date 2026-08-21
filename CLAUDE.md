@@ -9,6 +9,38 @@ If they ever disagree, `NORTH-STAR.md` wins; fix this file.
 
 ---
 
+## Where things stand (2026-08-21) — read this first
+
+The site is **25 indexable pages**, built out, audited and internally linked. No
+code work is outstanding. Everything remaining is either a credential the owner
+must create, a real-world action, or a decision already recorded in the ledger.
+
+**Blocking everything else:** the lead pipeline has no credentials yet, so the
+form on all 25 pages cannot deliver. `docs/lead-pipeline-setup.md` is the
+runbook. The owner is doing it in two passes — Google Sheet and Telegram first,
+WhatsApp after — which the code supports: an unconfigured channel is skipped
+quietly and is not a failure.
+
+**In progress, owner side:** Google Business Profile verification (started
+2026-08-21, postcard expected within days) and DNS. The only thing genuinely
+gated on GBP is the review engine — you cannot ask for reviews without the
+profile's review link. Everything else can proceed during the wait.
+
+**Waiting on the owner for content:** the About-page rebuild needs photos, the
+PNC-verification guide needs the portal walked and screenshotted, and the
+outreach list needs real Lahore contact names.
+
+**Parked by choice, not forgotten:** the home-page service tiles still open
+WhatsApp and link to no page (a conversion-versus-crawlability decision the
+owner wants to weigh); the other four area pages; and the `/ur/` split, which
+was decided against — see Ledger #22-29 for these and every other closed
+decision.
+
+`docs/seo-tracker.html` is the live task list and is current. Read it before
+proposing work: several items that look outstanding are recorded decisions.
+
+---
+
 ## Mission (NORTH-STAR §1)
 
 One job: a worried family member in Lahore leaves their name + phone (or calls / WhatsApps) so a real person can call back and arrange care. This is a lead-generation + trust site — NOT a booking app, NOT a marketplace. Test for every change: *"does this make a nervous 40–65-year-old family member trust us more, or just look impressive?"*
