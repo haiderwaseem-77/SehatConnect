@@ -77,6 +77,17 @@ const CATEGORIES = [
   },
 ];
 
+const NEED_LINKS = [
+  { href: "/services/injection-drip", en: "Injection & drip at home", ur: "گھر پر انجیکشن اور ڈرپ",
+    dsEn: "a nurse can come for a single visit", dsUr: "نرس ایک وزٹ کے لیے بھی آ سکتی ہے" },
+  { href: "/services/post-operative-care", en: "Post-operative care", ur: "آپریشن کے بعد دیکھ بھال",
+    dsEn: "wounds, dressings and medicines after surgery", dsUr: "زخم، ڈریسنگ اور آپریشن کے بعد دوائیں" },
+  { href: "/services/elderly-care", en: "Elderly care at home", ur: "بزرگوں کی گھر پر دیکھ بھال",
+    dsEn: "day, night, or two caregivers round the clock", dsUr: "دن، رات، یا چوبیس گھنٹے دو کیئر گیور" },
+  { href: "/charges", en: "How charges work", ur: "اخراجات کا طریقہ",
+    dsEn: "what decides the price, and when you pay", dsUr: "قیمت کس بات پر ہے، اور ادائیگی کب" },
+];
+
 // nurse-vs-attendant comparison (preserved from the original page)
 type CellValue = boolean | { en: string; ur: string };
 const FREE = { en: "Free", ur: "مفت" };
@@ -300,6 +311,35 @@ export default function ServicesPage() {
                   <span data-en>You pay after the shift — we tell you the exact price on the first call.</span>
                   <span data-ur className="urdu">ادائیگی شفٹ کے بعد ہوتی ہے — صحیح قیمت پہلی کال پر بتا دی جاتی ہے۔</span>
                 </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Care we are asked for most. These link the hub to its child pages:
+              without them the three detail pages were reachable only from the
+              footer, which gives Google almost no reason to prioritise them. */}
+          <section className="block" style={{ paddingTop: 0 }}>
+            <div className="wrap">
+              <div className="sec-head">
+                <h2>
+                  <span data-en>Care we are asked for most</span>
+                  <span data-ur className="urdu">جن خدمات کی سب سے زیادہ ضرورت پڑتی ہے</span>
+                </h2>
+                <p>
+                  <span data-en>Each one explains plainly what happens, who comes, and how soon.</span>
+                  <span data-ur className="urdu">ہر ایک میں صاف لکھا ہے کیا ہوتا ہے، کون آتا ہے اور کتنی جلدی۔</span>
+                </p>
+              </div>
+              <div className="id-meta">
+                {NEED_LINKS.map((l) => (
+                  <Link key={l.href} className="id-row" href={l.href} style={{ minHeight: 56 }}>
+                    <span className="tick" aria-hidden="true">&#10003;</span>
+                    <span>
+                      <span data-en><b>{l.en}</b> &mdash; {l.dsEn}</span>
+                      <span data-ur className="urdu"><b>{l.ur}</b> &mdash; {l.dsUr}</span>
+                    </span>
+                  </Link>
+                ))}
               </div>
             </div>
           </section>
