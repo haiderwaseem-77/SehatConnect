@@ -217,7 +217,7 @@ The deepest fear, answered with the product's #1 feature: **you meet the caregiv
 - Format: short real quote (Urdu quotes stay in Urdu — a Nastaliq testimonial is *more* convincing to this audience, add a small English gloss) — **Name, Area** (e.g., "Farhana A., DHA Phase 4"), care type, month.
 - Max 3 visible. No star-rating theatrics, no carousels.
 - **Include one mildly critical/mixed review once we have volume** — research shows it increases believability.
-- **Until real ones exist, the section does not appear.** Never fake, never "as seen from our happy clients" filler. (The empty `Testimonials.tsx` stub was the right instinct.)
+- **Until real ones exist, the section does not appear.** Never fake, never "as seen from our happy clients" filler. (The empty `Testimonials.tsx` stub was removed 2026-08-21 — it returned null and was imported nowhere, so it was dead code rather than a placeholder. Build the component when the first real quotes exist; this section is the spec for it.)
 
 ### 7.7 FAQ — "The worries we hear most, answered plainly" (budget: ~2.5 screens)
 

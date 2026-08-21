@@ -3,7 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LandingRoot from "@/components/home/LandingRoot";
-import { CITIES, LIVE_CITIES, SITE_URL } from "@/lib/constants";
+import { CITIES, SITE_URL } from "@/lib/constants";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { breadcrumbList } from "@/lib/schema";
 
@@ -52,7 +52,12 @@ export default function CitiesPage() {
           <div className="wrap">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {CITIES.map(city => {
-                const isLive = LIVE_CITIES.some(c => c.toLowerCase() === city.en.toLowerCase());
+                // Lahore is live and is served at "/" — /cities/lahore 301s
+                // there (Ledger #25). LIVE_CITIES is empty precisely so nothing
+                // links or lists that redirect, so liveness cannot be read from
+                // it here: doing so listed Lahore as "coming soon" on a page
+                // whose own intro says we work there now.
+                const isLive = city.en.toLowerCase() === "lahore";
 
                 const inner = (
                   <>
@@ -142,7 +147,7 @@ export default function CitiesPage() {
                 return isLive ? (
                   <Link
                     key={city.en}
-                    href={`/cities/${city.en.toLowerCase()}`}
+                    href={city.en.toLowerCase() === "lahore" ? "/" : `/cities/${city.en.toLowerCase()}`}
                     style={baseCardStyle}
                     className="transition-[transform,box-shadow,border-color] hover:-translate-y-0.5 hover:border-[var(--teal)] hover:shadow-md focus-visible:-translate-y-0.5 focus-visible:border-[var(--teal)] focus-visible:shadow-md"
                   >
