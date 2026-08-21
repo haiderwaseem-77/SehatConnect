@@ -7,6 +7,7 @@ import {
 import "./globals.css";
 import "./direction6.css";
 import StickyActionBar from "@/components/ui/StickyActionBar";
+import Analytics from "@/components/analytics/Analytics";
 import { LanguageProvider } from "@/components/i18n/LanguageProvider";
 import { SITE_URL } from "@/lib/constants";
 
@@ -57,7 +58,6 @@ export const metadata: Metadata = {
     "PNC registered nurse home visit",
     "attendant for patient at home",
     "Sehat Connect",
-    "sehat-connect.pk",
   ],
   authors: [{ name: "Sehat Connect" }],
   creator: "Sehat Connect",
@@ -109,6 +109,7 @@ export default function RootLayout({
           {children}
           <StickyActionBar />
         </LanguageProvider>
+        <Analytics />
       </body>
     </html>
   );

@@ -59,7 +59,7 @@ npm run lint   # linting
   1. `vercel.json` must keep `"framework": "nextjs"` — the Vercel preset is `null`; without the override every route 404s despite a green build.
   2. Vercel **Deployment Protection must stay OFF** — otherwise a login wall blocks the public site.
 - Deploy from a **real terminal**: `npx vercel deploy --prod` (the `!` prefix didn't survive long deploys).
-- Env vars needed on Vercel: `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` (**still unset → lead form 500s**), server-only `NTFY_TOPIC` (unguessable secret; never `NEXT_PUBLIC_`), optional `NTFY_TOKEN`. See `.env.example`.
+- Env vars needed on Vercel: `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` (**still unset — leads now survive via ntfy, but nothing is persisted until these are set**), server-only `NTFY_TOPIC` (unguessable secret; never `NEXT_PUBLIC_`), optional `NTFY_TOKEN`, optional `NEXT_PUBLIC_GA4_ID`. See `.env.example`.
 
 ## Project Structure (direction-6, routes consolidated 2026-07-01)
 
@@ -70,7 +70,7 @@ npm run lint   # linting
 | `app/services/` + `qualified-nurse/` + `attendant/` | SEO satellite pages (shared `components/services/ServiceDetailPage.tsx`, Service JSON-LD) |
 | `app/cities/` + `app/cities/[city]/` | Lahore live (LocalBusiness schema); other cities `noindex` "coming soon" — index a city only when actually launched |
 | `app/about/` | Founder story / E-E-A-T page |
-| `app/api/book/` | Lead capture — Supabase insert + ntfy notification (`lib/notify.ts`) |
+| `app/api/book/` | Lead capture — Supabase insert **and** ntfy notification as two independent delivery channels. Succeeds if either delivered; see the never-lose-a-lead rule below |
 | `app/api/keepalive/` | Pings Supabase every 5 days (prevents free-tier pause) |
 | `app/direction6.css` | The ported mockup CSS, scoped under a `.d6` wrapper (applied by `LandingRoot`) |
 | `components/home/` | `LandingRoot`, `Hero`, `HowItWorks`, `PriceReceipt`, `ServicesSection`, `VerifiedCard`, `HomeFAQ`, `FounderNote`, `CtaBanner`, `LeadFormD6`, `Testimonials` (empty stub — mounts only when real testimonials exist, NORTH-STAR §7.6) |
@@ -78,12 +78,17 @@ npm run lint   # linting
 | `components/i18n/LanguageProvider.tsx` | EN/اردو context, available site-wide via `LandingRoot` |
 | `lib/constants.ts` | **Content source of truth**: `SITE_URL`, prices, services (+ Urdu labels), FAQ items, phone/WhatsApp constants |
 | `lib/wa.ts` | WhatsApp deep-link prefills (warm Roman Urdu) |
+| `lib/schema.ts` | Shared JSON-LD: `OPENING_HOURS`, `businessSameAs()`, `breadcrumbList()`. **Build every structured-data block from these** so the business identity is byte-identical site-wide |
+| `lib/analytics.ts` + `components/analytics/` | GA4. Completely inert unless `NEXT_PUBLIC_GA4_ID` is set. One delegated document click listener captures every `tel:` and `wa.me` tap — do NOT add per-link handlers |
+| `docs/seo-tracker.html` | The SEO plan and progress tracker (self-contained, opens in a browser; state in localStorage) |
 | `next.config.ts` | Permanent redirects: `/faq`→`/`, `/contact`→`/`, `/nurses*`→`/services`, `/login`+`/dashboard`→`/` — keep them |
 | `design/` | **Locked brand assets only**: `Sehat Connect Logo.jpg` + `Sehat Connect Visiting Card Standalone.html` |
 | `design-explorations-v2/` | Historical: the direction-6 mockup (visual reference) + `AUDIT-direction-6.md` (its polish changelog) |
 
 ## Conventions & Gotchas
 
+- **Never lose a lead.** `app/api/book` treats the Supabase write and the ntfy notification as independent channels and returns success if *either* delivered — a family who typed their name and number must reach a human even when the database is down. Don't "simplify" this back into a single try/catch that 500s.
+- **Analytics must never gate or break a lead action**, and never fires on submit *intent* — only once the server confirms it has the lead.
 - Contact values **always** from `lib/constants.ts` (`CONTACT_PHONE_DISPLAY`, `CONTACT_PHONE_TEL`, `WHATSAPP_NUMBER`) — a hardcoded wrong WhatsApp number was a real bug.
 - Copy and Urdu strings live in `lib/constants.ts` where practical; promise phrasings come verbatim from NORTH-STAR §3.
 - Judge UI changes **visually** with the `phone-preview` skill (renders real Android sizes with fonts painted) — code-correct is not done; looked-at is done.

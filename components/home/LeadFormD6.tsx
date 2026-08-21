@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { CONTACT_PHONE_TEL, CONTACT_PHONE_DISPLAY } from "@/lib/constants";
 import { waLink, GENERIC_WA_MSG } from "@/lib/wa";
+import { trackLead } from "@/lib/analytics";
 
 type Variant = "hero" | "closer";
 
@@ -68,6 +69,9 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
       return;
     }
     setLoading(false);
+    // Only counted once the server confirmed it has the lead — never on submit
+    // intent, or the conversion number would overstate real leads.
+    trackLead("lead_form_submit", { source: variant, area: area ?? "" });
     router.push("/book/confirm?ref=" + ref + "&name=" + encodeURIComponent(name.trim()));
   };
 
