@@ -60,6 +60,13 @@ This is the most valuable fix on the list, and it costs almost nothing.
 | `/services/post-operative-care` | post operative care at home Lahore | post surgery care Lahore · wound dressing at home Lahore · care after discharge | operation ke baad dekh bhaal | ICU/ventilator terms |
 | `/services/elderly-care` | elderly care at home Lahore | old age care Lahore · 24 hour attendant for elderly · dementia care at home | buzurgon ki dekh bhaal | clinical nursing terms |
 | `/charges` | home nurse charges Lahore | nurse rate Lahore · attendant price Lahore · home nursing cost | nurse ka kharcha | a published number (Ledger #9) |
+| `/services/long-term-care` | long term care at home Lahore | palliative care at home · bedridden patient care · permanent attendant Lahore | lambi bimari ki dekh bhaal | pain/symptom management (clinical) |
+| `/services/female-nurse` | female nurse at home Lahore | female nurse for female patient · lady nurse Lahore | female nurse ghar par | anything implying different clinical scope by gender |
+| `/services/male-nurse` | male nurse at home Lahore | male nurse for male patient · attendant for lifting | male nurse ghar par | as above |
+| `/services/mother-baby-care` | postnatal care at home Lahore | care after delivery at home · nurse after C-section | zachgi ke baad dekh bhaal | **baby care nurse Lahore** · newborn/neonatal terms — scope is the mother (Ledger, 2026-08-21) |
+| `/care-from-abroad` | nurse for parents in Lahore from abroad | home care for parents in Pakistan from UK / USA / UAE / Canada | bahar se walidain ki dekh bhaal | named payment rails, monitoring/cameras |
+| `/guides` + `/guides/<slug>` | informational, per guide | — | — | service/transactional terms |
+| `/areas` + `/areas/<slug>` | home nurse in DHA / Gulberg / Johar Town | attendant in <area> | — | hospital names in title/H1/meta |
 | `/about` | Sehat Connect founder / brand | who runs Sehat Connect | — | service terms |
 | `/book` | request a call back | — | — | everything (conversion page) |
 
@@ -67,22 +74,16 @@ This is the most valuable fix on the list, and it costs almost nothing.
 
 ## Planned pages
 
-Ordered by expected value. URLs follow the existing short-slug pattern under
-`/services/` — do not switch to keyword-stuffed slugs; mixing the two looks
-unmaintained and gains nothing Google needs.
+URLs follow the existing short-slug pattern under `/services/` — do not switch to
+keyword-stuffed slugs; mixing the two looks unmaintained and gains nothing Google
+needs.
 
 | URL | Primary phrase | Roman Urdu | Status |
 |---|---|---|---|
-| `/services/long-term-care` | long term care at home Lahore · palliative care at home | lambi bimari ki dekh bhaal | **Gap** — sold on the home page, no page exists |
-| `/guides/nurse-or-attendant` | difference between nurse and attendant | — | Group A article |
-| `/guides/post-operative-care-checklist` | post operative care checklist | — | Group A article |
-| `/guides/elderly-care-at-home` | elderly care at home what to expect | — | Group A article |
-| `/care-from-abroad` | nurse for parents in Lahore from UK/UAE/USA | bahar se walidain ki dekh bhaal | Blocked — need to know how overseas families pay |
-| `/services/female-nurse` | female nurse at home Lahore | female nurse ghar par | Blocked — confirm roster |
-| `/services/male-nurse` | male nurse at home Lahore | male nurse ghar par | Blocked — confirm roster |
-| `/services/mother-baby-care` | postnatal care at home Lahore · baby care nurse Lahore | zachgi ke baad dekh bhaal | Blocked — need scope |
-| `/services/physiotherapy` | physiotherapy at home Lahore | ghar par physiotherapy | Decision — contractor framing (Ledger #15) |
-| `/areas/<slug>` | home nurse in DHA / Gulberg / Johar Town | — | Decision — 3 or 7 |
+| `/services/physiotherapy` | physiotherapy at home Lahore | ghar par physiotherapy | **Decision needed** — not confirmed in-house, may be a contractor (Ledger #15). Build only with "we arrange a physiotherapist" framing, never "we employ" |
+| `/areas/model-town`, `/areas/cantt`, `/areas/bahria-town`, `/areas/wapda-town` | home nurse in <area> Lahore | — | **Deliberately not built.** Three areas ship first; a fourth is earned by passing the swap test in rule 5, ideally with a real review from that area to quote |
+| `/services/paediatric-care` | nursing care for children at home Lahore | bachon ki nursing | **Scope unconfirmed.** `QUALIFIED_NURSE_SERVICES.paediatric_care` currently claims "newborns, infants and young children" — verify what is actually delivered before writing a page on it |
+| `/guides/verify-pnc-registration` | how to check a nurse's PNC registration | — | Blocked — needs the real PNC portal walked and screenshotted |
 
 ### Article URLs
 

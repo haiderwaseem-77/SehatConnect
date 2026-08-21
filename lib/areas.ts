@@ -40,7 +40,7 @@ export interface Area {
 export const AREAS: Area[] = [
   {
     slug: "dha",
-    live: false,
+    live: true,
     name: { en: "DHA", ur: "ڈی ایچ اے" },
     hospitals: ["National Hospital & Medical Centre", "CMH Lahore"],
     distinct:
@@ -48,7 +48,7 @@ export const AREAS: Area[] = [
   },
   {
     slug: "gulberg",
-    live: false,
+    live: true,
     name: { en: "Gulberg", ur: "گلبرگ" },
     hospitals: ["Surgimed Hospital", "Fatima Memorial Hospital", "Hameed Latif Hospital"],
     distinct:
