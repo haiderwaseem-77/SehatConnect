@@ -210,7 +210,7 @@ function TickList({ items }: { items: Bilingual[] }) {
           </span>
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -245,14 +245,14 @@ export default function GulbergAreaPage() {
 
                   <span className="eyebrow eyebrow-plain">
                     <span data-en>Gulberg, Lahore &middot; care for a parent at home</span>
-                    <span data-ur className="urdu">گلبرگ، لاہور &middot; گھر پر والدین کی دیکھ بھال</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">گلبرگ، لاہور &middot; گھر پر والدین کی دیکھ بھال</span>
                   </span>
 
                   <h1>
                     <span data-en>
                       Nurse &amp; attendant at home in <span className="hl">{AREA.name.en}</span>, Lahore
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       لاہور کے <span className="hl">{AREA.name.ur}</span> میں گھر پر نرس اور اٹینڈنٹ
                     </span>
                   </h1>
@@ -264,7 +264,7 @@ export default function GulbergAreaPage() {
                       it, and now needs someone through the day or through the night. The care
                       families here ask for is long-running.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       گلبرگ سے آنے والی زیادہ تر کالیں ایمرجنسی نہیں ہوتیں۔ وہ ایسے والد یا والدہ کے
                       بارے میں ہوتی ہیں جو تیس چالیس سال سے ایک ہی گھر میں رہ رہے ہیں، وہ گھر چھوڑنے
                       والے نہیں، اور اب انہیں دن یا رات کسی کے ساتھ کی ضرورت ہے۔ یہاں کے گھرانے جو
@@ -275,19 +275,19 @@ export default function GulbergAreaPage() {
                   <div className="hero-trust">
                     <span className="pill">
                       <span data-en>Night shifts, 8:00 PM to 8:00 AM</span>
-                      <span data-ur className="urdu">رات کی شفٹ، 8 بجے سے صبح 8 بجے</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">رات کی شفٹ، 8 بجے سے صبح 8 بجے</span>
                     </span>
                     <span className="pill">
                       <span data-en>Same caregiver on request</span>
-                      <span data-ur className="urdu">درخواست پر وہی فرد</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">درخواست پر وہی فرد</span>
                     </span>
                     <span className="pill">
                       <span data-en>{PROMISES.trial.enShort}</span>
-                      <span data-ur className="urdu">{PROMISES.trial.urShort}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{PROMISES.trial.urShort}</span>
                     </span>
                     <span className="pill">
                       <span data-en>No advance</span>
-                      <span data-ur className="urdu">کوئی پیشگی نہیں</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">کوئی پیشگی نہیں</span>
                     </span>
                   </div>
 
@@ -297,12 +297,12 @@ export default function GulbergAreaPage() {
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                       </svg>
                       <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-                      <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
                     </a>
                     <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
                       <span className="wadot" />
                       <span data-en>WhatsApp us</span>
-                      <span data-ur className="urdu">واٹس ایپ کریں</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ کریں</span>
                     </a>
                   </div>
                 </div>
@@ -320,11 +320,11 @@ export default function GulbergAreaPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>What families here ask us for</span>
-                  <span data-ur className="urdu">یہاں کے گھرانے کیا مانگتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">یہاں کے گھرانے کیا مانگتے ہیں</span>
                 </span>
                 <h2>
                   <span data-en>Care that has to last, in a house nobody is leaving.</span>
-                  <span data-ur className="urdu">ایسی دیکھ بھال جو چلتی رہے، اُس گھر میں جسے کوئی نہیں چھوڑ رہا۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ایسی دیکھ بھال جو چلتی رہے، اُس گھر میں جسے کوئی نہیں چھوڑ رہا۔</span>
                 </h2>
               </div>
 
@@ -333,11 +333,11 @@ export default function GulbergAreaPage() {
                   <div key={a.title.en} style={CARD}>
                     <h3 style={{ fontSize: 20, marginBottom: 10, lineHeight: 1.25 }}>
                       <span data-en>{a.title.en}</span>
-                      <span data-ur className="urdu">{a.title.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{a.title.ur}</span>
                     </h3>
                     <p style={{ fontSize: 17, color: "var(--ink-soft)", lineHeight: 1.62, fontWeight: 500 }}>
                       <span data-en>{a.body.en}</span>
-                      <span data-ur className="urdu">{a.body.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{a.body.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -358,7 +358,7 @@ export default function GulbergAreaPage() {
               <div className="sec-head">
                 <h2>
                   <span data-en>Well served by hospitals &mdash; and a long way from our office</span>
-                  <span data-ur className="urdu">ہسپتال قریب &mdash; اور ہمارا دفتر خاصا دور</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ہسپتال قریب &mdash; اور ہمارا دفتر خاصا دور</span>
                 </h2>
               </div>
 
@@ -375,7 +375,7 @@ export default function GulbergAreaPage() {
                     not affiliated with, referred by, or connected to any hospital. What we do at home
                     follows what the patient&rsquo;s own doctor has prescribed.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     گلبرگ میں نجی ہسپتال خاصے قریب ہیں، اور یہاں کے گھرانے اکثر {HOSPITAL_A}، {HOSPITAL_B}
                     یا {HOSPITAL_C} میں داخل رہنے کے بعد &mdash; اور لاہور بھر کے دوسرے ہسپتالوں کے بعد
                     بھی &mdash; ہمیں کال کرتے ہیں۔ ان میں سے کوئی ہمارا پارٹنر نہیں: کسی ہسپتال سے ہمارا
@@ -390,7 +390,7 @@ export default function GulbergAreaPage() {
                     the call, we ask for a landmark near the house as well as the address, and you
                     hear from us when your caregiver is on the way.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     ہمارا دفتر {OFFICE_ADDRESS} میں ہے، یعنی شہر کی مشرقی طرف۔ وہاں سے گلبرگ باقاعدہ ایک
                     سفر ہے، اس لیے ہم اسی کے حساب سے بندوبست کرتے ہیں: آنے کا وقت کال پر طے ہوتا ہے، پتے
                     کے ساتھ قریبی نشانی پوچھ لیتے ہیں، اور جب نرس یا اٹینڈنٹ راستے میں ہو تو آپ کو اطلاع
@@ -407,11 +407,11 @@ export default function GulbergAreaPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Who comes into your home</span>
-                  <span data-ur className="urdu">آپ کے گھر کون آتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آپ کے گھر کون آتا ہے</span>
                 </span>
                 <h2>
                   <span data-en>Someone your parent can get used to.</span>
-                  <span data-ur className="urdu">ایسا فرد جس کی آپ کے والدین کو عادت ہو سکے۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ایسا فرد جس کی آپ کے والدین کو عادت ہو سکے۔</span>
                 </h2>
               </div>
 
@@ -429,7 +429,7 @@ export default function GulbergAreaPage() {
                   }}
                 >
                   <span data-en>{PROMISES.replacement.en}</span>
-                  <span data-ur className="urdu">{PROMISES.replacement.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{PROMISES.replacement.ur}</span>
                 </p>
               </div>
             </div>
@@ -441,11 +441,11 @@ export default function GulbergAreaPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>How the care is arranged</span>
-                  <span data-ur className="urdu">دیکھ بھال کیسے ترتیب پاتی ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">دیکھ بھال کیسے ترتیب پاتی ہے</span>
                 </span>
                 <h2>
                   <span data-en>Take the nights, the days, or both.</span>
-                  <span data-ur className="urdu">راتیں لیں، دن لیں، یا دونوں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">راتیں لیں، دن لیں، یا دونوں۔</span>
                 </h2>
               </div>
 
@@ -454,11 +454,11 @@ export default function GulbergAreaPage() {
                   <div key={f.id} style={CARD}>
                     <h3 style={{ fontSize: 20, marginBottom: 8 }}>
                       <span data-en>{f.name.en}</span>
-                      <span data-ur className="urdu">{f.name.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.name.ur}</span>
                     </h3>
                     <p style={{ fontSize: 17, color: "var(--ink-soft)", lineHeight: 1.62, fontWeight: 500 }}>
                       <span data-en>{f.detail.en}</span>
-                      <span data-ur className="urdu">{f.detail.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.detail.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -466,7 +466,7 @@ export default function GulbergAreaPage() {
 
               <p className="svc-foot" style={{ marginTop: 18 }}>
                 <span data-en>{PROMISES.payment.en} {START_PROMISE.en} {CALLBACK_PROMISE.en}</span>
-                <span data-ur className="urdu">{PROMISES.payment.ur} {START_PROMISE.ur} {CALLBACK_PROMISE.ur}</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">{PROMISES.payment.ur} {START_PROMISE.ur} {CALLBACK_PROMISE.ur}</span>
               </p>
             </div>
           </section>
@@ -477,11 +477,11 @@ export default function GulbergAreaPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Questions we get from Gulberg</span>
-                  <span data-ur className="urdu">گلبرگ سے آنے والے سوالات</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">گلبرگ سے آنے والے سوالات</span>
                 </span>
                 <h2>
                   <span data-en>Straight answers.</span>
-                  <span data-ur className="urdu">سیدھے جواب۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">سیدھے جواب۔</span>
                 </h2>
               </div>
 
@@ -491,14 +491,14 @@ export default function GulbergAreaPage() {
                     <div className="faq-q" style={{ cursor: "default", alignItems: "flex-start" }}>
                       <h3 className="qt">
                         <span data-en>{item.q}</span>
-                        <span data-ur className="urdu">{item.qUr}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{item.qUr}</span>
                       </h3>
                     </div>
                     <div className="faq-a" style={{ gridTemplateRows: "1fr" }}>
                       <div className="faq-a-in" style={{ fontSize: 17 }}>
                         <div className="faq-a-pad">
                           <span data-en>{item.a}</span>
-                          <span data-ur className="urdu">{item.aUr}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{item.aUr}</span>
                         </div>
                       </div>
                     </div>
@@ -514,29 +514,29 @@ export default function GulbergAreaPage() {
               <div className="sec-head" style={{ marginBottom: 14 }}>
                 <h2 style={{ fontSize: "clamp(20px,4.4vw,26px)" }}>
                   <span data-en>Somewhere else in Lahore?</span>
-                  <span data-ur className="urdu">لاہور کے کسی اور علاقے میں؟</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">لاہور کے کسی اور علاقے میں؟</span>
                 </h2>
               </div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
                 <Link className="btn btn-ghost" href="/areas/dha">
                   <span data-en>DHA</span>
-                  <span data-ur className="urdu">ڈی ایچ اے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ڈی ایچ اے</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/areas/johar-town">
                   <span data-en>Johar Town</span>
-                  <span data-ur className="urdu">جوہر ٹاؤن</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">جوہر ٹاؤن</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/areas">
                   <span data-en>All areas we serve</span>
-                  <span data-ur className="urdu">تمام علاقے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">تمام علاقے</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/services/elderly-care">
                   <span data-en>Elderly care at home</span>
-                  <span data-ur className="urdu">بزرگوں کی گھر پر دیکھ بھال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">بزرگوں کی گھر پر دیکھ بھال</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/charges">
                   <span data-en>How charges work</span>
-                  <span data-ur className="urdu">چارجز کیسے طے ہوتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">چارجز کیسے طے ہوتے ہیں</span>
                 </Link>
               </div>
             </div>

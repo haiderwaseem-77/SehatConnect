@@ -274,7 +274,7 @@ function TickList({ items }: { items: Bilingual[] }) {
           <Tick />
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -289,7 +289,7 @@ function CallButton() {
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
       </svg>
       <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-      <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+      <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
     </a>
   );
 }
@@ -299,7 +299,7 @@ function WhatsAppButton({ label }: { label: Bilingual }) {
     <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
       <span className="wadot" />
       <span data-en>{label.en}</span>
-      <span data-ur className="urdu">{label.ur}</span>
+      <span data-ur lang="ur" dir="rtl" className="urdu">{label.ur}</span>
     </a>
   );
 }
@@ -330,14 +330,14 @@ export default function InjectionDripPage() {
                 <div className="hero-copy">
                   <span className="eyebrow eyebrow-plain">
                     <span data-en>One visit is enough — Ghar par drip ya injection</span>
-                    <span data-ur className="urdu">ایک وزٹ ہی کافی ہے — گھر پر ڈرپ یا انجیکشن</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">ایک وزٹ ہی کافی ہے — گھر پر ڈرپ یا انجیکشن</span>
                   </span>
 
                   <h1>
                     <span data-en>
                       Injection and drip <span className="hl">at home in Lahore</span>
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       <span className="hl">لاہور</span> میں گھر پر انجیکشن اور ڈرپ
                     </span>
                   </h1>
@@ -351,7 +351,7 @@ export default function InjectionDripPage() {
                       Council. If your patient needs care all day or all night instead, we arrange
                       that too.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       نرس صرف ایک وزٹ کے لیے آ سکتی ہے۔ وہ انجیکشن لگاتی ہے یا ڈرپ لگا دیتی ہے،
                       ضرورت ہو تو ڈریسنگ بھی بدل دیتی ہے، اور چلی جاتی ہے — 12 گھنٹے کی کوئی پابندی
                       نہیں، اور مریض کو کلینک لے جانے کی ضرورت نہیں۔ انجیکشن اور ڈرپ ڈاکٹر کے نسخے کے
@@ -363,19 +363,19 @@ export default function InjectionDripPage() {
                   <div className="hero-trust">
                     <span className="pill">
                       <span data-en>A single visit, not a 12-hour shift</span>
-                      <span data-ur className="urdu">ایک وزٹ، 12 گھنٹے کی شفٹ نہیں</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">ایک وزٹ، 12 گھنٹے کی شفٹ نہیں</span>
                     </span>
                     <span className="pill">
                       <span data-en>PNC-registered nurse</span>
-                      <span data-ur className="urdu">PNC رجسٹرڈ نرس</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">PNC رجسٹرڈ نرس</span>
                     </span>
                     <span className="pill">
                       <span data-en>On the doctor&rsquo;s prescription</span>
-                      <span data-ur className="urdu">ڈاکٹر کے نسخے کے مطابق</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">ڈاکٹر کے نسخے کے مطابق</span>
                     </span>
                     <span className="pill">
                       <span data-en>Exact price on the first call</span>
-                      <span data-ur className="urdu">صحیح قیمت پہلی کال پر</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">صحیح قیمت پہلی کال پر</span>
                     </span>
                   </div>
 
@@ -388,7 +388,7 @@ export default function InjectionDripPage() {
 
                   <p style={{ ...BODY, fontSize: 16, fontWeight: 600, marginTop: 16 }}>
                     <span data-en>{CALLBACK_PROMISE.en}</span>
-                    <span data-ur className="urdu">{CALLBACK_PROMISE.ur}</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">{CALLBACK_PROMISE.ur}</span>
                   </p>
                 </div>
 
@@ -405,11 +405,11 @@ export default function InjectionDripPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>What a nurse can do at your home</span>
-                  <span data-ur className="urdu">نرس گھر پر کیا کر سکتی ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">نرس گھر پر کیا کر سکتی ہے</span>
                 </span>
                 <h2>
                   <span data-en>The injection, the drip, and everything around it.</span>
-                  <span data-ur className="urdu">انجیکشن، ڈرپ، اور اس سے جڑا ہر کام۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">انجیکشن، ڈرپ، اور اس سے جڑا ہر کام۔</span>
                 </h2>
                 <p>
                   <span data-en>
@@ -417,7 +417,7 @@ export default function InjectionDripPage() {
                     something you do not recognise, read it out to us on the call and we will tell
                     you honestly whether a nurse can do it at home.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     سیدھی بات، بغیر مشکل اصطلاحات کے۔ اگر ڈاکٹر نے کچھ ایسا لکھا ہے جو آپ کو سمجھ نہیں
                     آ رہا، تو کال پر پڑھ کر سنا دیں — ہم صاف بتا دیں گے کہ نرس یہ کام گھر پر کر سکتی
                     ہے یا نہیں۔
@@ -443,7 +443,7 @@ export default function InjectionDripPage() {
                     help with feeding, hygiene, movement and company. We will always tell you
                     honestly which one your patient needs.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     یہ سب نرس کا کام ہے۔ اٹینڈنٹ انجیکشن یا ڈرپ نہیں لگاتا — وہ کھانے، صفائی، چلنے
                     پھرنے اور ساتھ بیٹھنے میں مدد کرتا ہے۔ ہم ہمیشہ صاف بتا دیں گے کہ آپ کے مریض کے
                     لیے کون سا فرد مناسب ہے۔
@@ -452,7 +452,7 @@ export default function InjectionDripPage() {
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 18 }}>
                   <Link className="btn btn-ghost" href="/services/qualified-nurse">
                     <span data-en>Everything a qualified nurse handles</span>
-                    <span data-ur className="urdu">نرس کے تمام کام دیکھیں</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">نرس کے تمام کام دیکھیں</span>
                   </Link>
                 </div>
               </div>
@@ -472,11 +472,11 @@ export default function InjectionDripPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Who walks in with the needle</span>
-                  <span data-ur className="urdu">سوئی لے کر گھر میں کون آ رہا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">سوئی لے کر گھر میں کون آ رہا ہے</span>
                 </span>
                 <h2>
                   <span data-en>You know who is coming before they arrive.</span>
-                  <span data-ur className="urdu">آنے سے پہلے آپ کو معلوم ہوتا ہے کہ کون آ رہا ہے۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آنے سے پہلے آپ کو معلوم ہوتا ہے کہ کون آ رہا ہے۔</span>
                 </h2>
               </div>
 
@@ -494,7 +494,7 @@ export default function InjectionDripPage() {
                   }}
                 >
                   <span data-en>{VERIFICATION_PROMISE.en}</span>
-                  <span data-ur className="urdu">{VERIFICATION_PROMISE.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{VERIFICATION_PROMISE.ur}</span>
                 </p>
               </div>
             </div>
@@ -506,18 +506,18 @@ export default function InjectionDripPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>How it works</span>
-                  <span data-ur className="urdu">یہ کیسے ہوتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">یہ کیسے ہوتا ہے</span>
                 </span>
                 <h2>
                   <span data-en>A short visit, or a full shift. You choose.</span>
-                  <span data-ur className="urdu">مختصر وزٹ، یا پوری شفٹ۔ فیصلہ آپ کا۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">مختصر وزٹ، یا پوری شفٹ۔ فیصلہ آپ کا۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     Most families who need a drip or an injection need a nurse for half an hour, not
                     for half a day. So that is the first option, and it is a real one.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     ڈرپ یا انجیکشن کے لیے زیادہ تر گھرانوں کو نرس آدھے گھنٹے کے لیے چاہیے ہوتی ہے،
                     آدھے دن کے لیے نہیں۔ اسی لیے پہلا آپشن یہی ہے، اور یہ حقیقی آپشن ہے۔
                   </span>
@@ -540,19 +540,19 @@ export default function InjectionDripPage() {
                   />
                   <span className="eyebrow" style={{ marginBottom: 12 }}>
                     <span data-en>Start here</span>
-                    <span data-ur className="urdu">یہاں سے شروع کریں</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">یہاں سے شروع کریں</span>
                   </span>
                   <h3 style={{ fontSize: 22, marginBottom: 10, lineHeight: 1.25 }}>
                     <span data-en>{VISIT_FORMAT.name.en}</span>
-                    <span data-ur className="urdu">{VISIT_FORMAT.name.ur}</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">{VISIT_FORMAT.name.ur}</span>
                   </h3>
                   <p style={{ ...BODY, fontSize: 18 }}>
                     <span data-en>{VISIT_FORMAT.detail.en}</span>
-                    <span data-ur className="urdu">{VISIT_FORMAT.detail.ur}</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">{VISIT_FORMAT.detail.ur}</span>
                   </p>
                   <p style={{ ...BODY, fontSize: 16, fontWeight: 600, marginTop: 14 }}>
                     <span data-en>{PROMISES.priceOnCall.en}</span>
-                    <span data-ur className="urdu">{PROMISES.priceOnCall.ur}</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">{PROMISES.priceOnCall.ur}</span>
                   </p>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 18 }}>
                     <CallButton />
@@ -568,7 +568,7 @@ export default function InjectionDripPage() {
                   If the drips run for several days, or the patient needs someone with them through
                   the day or the night, a 12-hour shift is the better fit:
                 </span>
-                <span data-ur className="urdu">
+                <span data-ur lang="ur" dir="rtl" className="urdu">
                   اگر ڈرپ کئی دن لگنی ہے، یا مریض کے پاس دن بھر یا رات بھر کسی کا ہونا ضروری ہے، تو 12
                   گھنٹے کی شفٹ زیادہ مناسب رہتی ہے:
                 </span>
@@ -579,11 +579,11 @@ export default function InjectionDripPage() {
                   <div key={f.id} style={{ ...CARD, display: "flex", flexDirection: "column" }}>
                     <h3 style={{ fontSize: 20, marginBottom: 10, lineHeight: 1.25 }}>
                       <span data-en>{f.name.en}</span>
-                      <span data-ur className="urdu">{f.name.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.name.ur}</span>
                     </h3>
                     <p style={{ ...BODY, fontSize: 16.5 }}>
                       <span data-en>{f.detail.en}</span>
-                      <span data-ur className="urdu">{f.detail.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.detail.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -596,7 +596,7 @@ export default function InjectionDripPage() {
               <div style={{ ...CARD, marginTop: 16 }}>
                 <h3 style={{ fontSize: 20, marginBottom: 6 }}>
                   <span data-en>What we promise on a shift</span>
-                  <span data-ur className="urdu">شفٹ کے بارے میں ہمارا وعدہ</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">شفٹ کے بارے میں ہمارا وعدہ</span>
                 </h3>
                 <TickList items={[PROMISES.trial, PROMISES.payment, PROMISES.replacement, START_PROMISE]} />
                 <p style={{ ...BODY, fontSize: 16, fontWeight: 600, marginTop: 16 }}>
@@ -605,7 +605,7 @@ export default function InjectionDripPage() {
                     shift and we cancel or reschedule it at no charge. For how charging works in
                     general, read the charges page.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     منسوخ کرنا ہو یا وقت بدلنا ہو؟ شفٹ سے 4 گھنٹے پہلے تک کال یا واٹس ایپ کر دیں، ہم
                     بغیر کسی چارج کے منسوخ یا وقت تبدیل کر دیتے ہیں۔ ادائیگی کا پورا طریقہ چارجز کے
                     صفحے پر لکھا ہے۔
@@ -614,11 +614,11 @@ export default function InjectionDripPage() {
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 16 }}>
                   <Link className="btn btn-ghost" href="/charges">
                     <span data-en>How charges work</span>
-                    <span data-ur className="urdu">چارجز کیسے طے ہوتے ہیں</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">چارجز کیسے طے ہوتے ہیں</span>
                   </Link>
                   <Link className="btn btn-ghost" href="/services/qualified-nurse">
                     <span data-en>Qualified nurse at home</span>
-                    <span data-ur className="urdu">گھر پر PNC رجسٹرڈ نرس</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">گھر پر PNC رجسٹرڈ نرس</span>
                   </Link>
                 </div>
               </div>
@@ -638,11 +638,11 @@ export default function InjectionDripPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Before the nurse arrives</span>
-                  <span data-ur className="urdu">نرس کے آنے سے پہلے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">نرس کے آنے سے پہلے</span>
                 </span>
                 <h2>
                   <span data-en>What to keep ready.</span>
-                  <span data-ur className="urdu">کیا چیزیں تیار رکھنی ہیں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">کیا چیزیں تیار رکھنی ہیں۔</span>
                 </h2>
               </div>
 
@@ -668,7 +668,7 @@ export default function InjectionDripPage() {
                     need? Ask us on the first call. We would rather answer plainly before care starts
                     than surprise you afterwards.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     یہ واضح نہیں کہ دوا، ڈرپ سیٹ یا نرس کی ضرورت کی کوئی اور چیز کون منگوائے گا؟ پہلی
                     کال پر پوچھ لیں۔ ہم بعد میں حیران کرنے کے بجائے کام شروع ہونے سے پہلے صاف بات کرنا
                     بہتر سمجھتے ہیں۔
@@ -684,11 +684,11 @@ export default function InjectionDripPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Where we come</span>
-                  <span data-ur className="urdu">ہم کہاں آتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ہم کہاں آتے ہیں</span>
                 </span>
                 <h2>
                   <span data-en>All of Lahore.</span>
-                  <span data-ur className="urdu">پورا لاہور۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">پورا لاہور۔</span>
                 </h2>
               </div>
 
@@ -699,7 +699,7 @@ export default function InjectionDripPage() {
                     Town, Cantt and more. Call or WhatsApp us to check your area. Our office is at{" "}
                     {OFFICE_ADDRESS}.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     فی الحال ہم پورے لاہور میں خدمات دیتے ہیں: ڈی ایچ اے، گلبرگ، جوہر ٹاؤن، ماڈل ٹاؤن،
                     بحریہ ٹاؤن، کینٹ اور دیگر علاقے۔ اپنے علاقے کے بارے میں جاننے کے لیے کال یا واٹس ایپ
                     کریں۔ ہمارا دفتر {OFFICE_ADDRESS} میں ہے۔
@@ -719,11 +719,11 @@ export default function InjectionDripPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Ghar par drip aur injection — common questions</span>
-                  <span data-ur className="urdu">گھر پر ڈرپ اور انجیکشن — عام سوالات</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">گھر پر ڈرپ اور انجیکشن — عام سوالات</span>
                 </span>
                 <h2>
                   <span data-en>Straight answers before you call.</span>
-                  <span data-ur className="urdu">کال کرنے سے پہلے سیدھے جواب۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">کال کرنے سے پہلے سیدھے جواب۔</span>
                 </h2>
               </div>
 
@@ -733,14 +733,14 @@ export default function InjectionDripPage() {
                     <div className="faq-q" style={{ cursor: "default", alignItems: "flex-start" }}>
                       <h3 className="qt">
                         <span data-en>{item.q}</span>
-                        <span data-ur className="urdu">{item.qUr}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{item.qUr}</span>
                       </h3>
                     </div>
                     <div className="faq-a" style={{ gridTemplateRows: "1fr" }}>
                       <div className="faq-a-in" style={{ fontSize: 17 }}>
                         <div className="faq-a-pad">
                           <span data-en>{item.a}</span>
-                          <span data-ur className="urdu">{item.aUr}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{item.aUr}</span>
                         </div>
                       </div>
                     </div>

@@ -17,7 +17,10 @@ export default function LandingRoot({ children }: { children: React.ReactNode })
   const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.documentElement.lang = lang === "ur" ? "ur" : "en";
+    // Keep the region tag on both sides. The server renders lang="en-PK"; this
+    // used to reset it to a bare "en" on the first toggle, quietly dropping the
+    // region for the rest of the session.
+    document.documentElement.lang = lang === "ur" ? "ur-PK" : "en-PK";
   }, [lang]);
 
   useEffect(() => {

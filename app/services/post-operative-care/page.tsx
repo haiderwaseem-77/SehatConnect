@@ -318,7 +318,7 @@ function TickList({ items }: { items: Bilingual[] }) {
           <Tick />
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -352,14 +352,14 @@ export default function PostOperativeCarePage() {
                 <div className="hero-copy">
                   <span className="eyebrow eyebrow-plain">
                     <span data-en>After surgery · operation ke baad</span>
-                    <span data-ur className="urdu">آپریشن کے بعد</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">آپریشن کے بعد</span>
                   </span>
 
                   <h1>
                     <span data-en>
                       Post-operative care at home in <span className="hl">Lahore</span>
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       <span className="hl">لاہور</span> میں گھر پر آپریشن کے بعد کی دیکھ بھال
                     </span>
                   </h1>
@@ -370,7 +370,7 @@ export default function PostOperativeCarePage() {
                       monitoring after an operation — for a single visit, or for as many days as
                       your surgeon has asked for.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       آپریشن کے بعد گھر پر PNC رجسٹرڈ نرس: ڈریسنگ، دوائیں، انجیکشن اور نگرانی —
                       ایک وزٹ کے لیے، یا اتنے دن کے لیے جتنا آپ کے سرجن نے کہا ہو۔
                     </span>
@@ -379,19 +379,19 @@ export default function PostOperativeCarePage() {
                   <div className="hero-trust">
                     <span className="pill">
                       <span data-en>Care can start within 24 hours</span>
-                      <span data-ur className="urdu">24 گھنٹوں میں شروع</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">24 گھنٹوں میں شروع</span>
                     </span>
                     <span className="pill">
                       <span data-en>{PROMISES.trial.enShort}</span>
-                      <span data-ur className="urdu">{PROMISES.trial.urShort}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{PROMISES.trial.urShort}</span>
                     </span>
                     <span className="pill">
                       <span data-en>No advance</span>
-                      <span data-ur className="urdu">کوئی پیشگی نہیں</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">کوئی پیشگی نہیں</span>
                     </span>
                     <span className="pill">
                       <span data-en>Single visit or full shift</span>
-                      <span data-ur className="urdu">ایک وزٹ یا پوری شفٹ</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">ایک وزٹ یا پوری شفٹ</span>
                     </span>
                   </div>
 
@@ -401,12 +401,12 @@ export default function PostOperativeCarePage() {
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                       </svg>
                       <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-                      <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
                     </a>
                     <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
                       <span className="wadot" />
                       <span data-en>Send the discharge slip on WhatsApp</span>
-                      <span data-ur className="urdu">ڈسچارج پرچی واٹس ایپ کر دیں</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">ڈسچارج پرچی واٹس ایپ کر دیں</span>
                     </a>
                   </div>
                 </div>
@@ -424,7 +424,7 @@ export default function PostOperativeCarePage() {
               <div className="sec-head">
                 <h2>
                   <span data-en>Discharge day, and a page of instructions you did not expect</span>
-                  <span data-ur className="urdu">ڈسچارج کا دن، اور ہدایات کا وہ کاغذ جس کی توقع نہیں تھی</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ڈسچارج کا دن، اور ہدایات کا وہ کاغذ جس کی توقع نہیں تھی</span>
                 </h2>
               </div>
 
@@ -441,7 +441,7 @@ export default function PostOperativeCarePage() {
                     back on this date. In the hospital, a nurse did all of that. At home, from tonight,
                     it is you.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     آپریشن ہو گیا، اور اب مریض کو گھر بھیجا جا رہا ہے۔ کوئی آپ کے ہاتھ میں ڈسچارج سمری
                     اور نسخہ تھما دیتا ہے اور دروازے پر چند جملے کہہ دیتا ہے: ڈریسنگ بدلتے رہیں، یہ
                     گولیاں ان اوقات پر، بخار کا خیال رکھیں، اس تاریخ پر واپس آ جائیں۔ ہسپتال میں یہ سب
@@ -455,7 +455,7 @@ export default function PostOperativeCarePage() {
                     tonight. Send a photo of the discharge summary on WhatsApp, or leave your number
                     below, and a real person will call you back and arrange a nurse.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     زیادہ تر گھرانوں کو یقین نہیں ہوتا کہ انہوں نے سب کچھ ٹھیک سمجھا ہے — اور کوئی بھی
                     اپنے والدین کے تازہ ٹانکوں پر ڈریسنگ سیکھنا نہیں چاہتا۔ آپ کو آج رات یہ سب خود
                     سمجھنے کی ضرورت نہیں۔ ڈسچارج سمری کی تصویر واٹس ایپ کر دیں یا نیچے اپنا نمبر لکھ
@@ -475,7 +475,7 @@ export default function PostOperativeCarePage() {
                   }}
                 >
                   <span data-en>{CALLBACK_PROMISE.en} {START_PROMISE.en}</span>
-                  <span data-ur className="urdu">{CALLBACK_PROMISE.ur} {START_PROMISE.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{CALLBACK_PROMISE.ur} {START_PROMISE.ur}</span>
                 </p>
               </div>
             </div>
@@ -494,18 +494,18 @@ export default function PostOperativeCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Wound dressing and post-surgery care at home in Lahore</span>
-                  <span data-ur className="urdu">لاہور میں گھر پر ڈریسنگ اور آپریشن کے بعد کی نگہداشت</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">لاہور میں گھر پر ڈریسنگ اور آپریشن کے بعد کی نگہداشت</span>
                 </span>
                 <h2>
                   <span data-en>What the nurse actually does after surgery.</span>
-                  <span data-ur className="urdu">آپریشن کے بعد نرس اصل میں کیا کرتی ہے۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آپریشن کے بعد نرس اصل میں کیا کرتی ہے۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     Plain words, and only the work a PNC-registered nurse is qualified to do — always
                     on the doctor&rsquo;s written plan, never on our own.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     سیدھی بات، اور صرف وہی کام جو PNC رجسٹرڈ نرس کر سکتی ہے — ہمیشہ ڈاکٹر کے لکھے ہوئے
                     پلان کے مطابق، اپنی مرضی سے نہیں۔
                   </span>
@@ -517,11 +517,11 @@ export default function PostOperativeCarePage() {
                   <div key={item.title.en} style={CARD}>
                     <h3 style={{ fontSize: 20, marginBottom: 8, lineHeight: 1.25 }}>
                       <span data-en>{item.title.en}</span>
-                      <span data-ur className="urdu">{item.title.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{item.title.ur}</span>
                     </h3>
                     <p style={BODY}>
                       <span data-en>{item.body.en}</span>
-                      <span data-ur className="urdu">{item.body.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{item.body.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -530,11 +530,11 @@ export default function PostOperativeCarePage() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 22 }}>
                 <Link className="btn btn-ghost" href="/services/qualified-nurse">
                   <span data-en>Everything a qualified nurse handles</span>
-                  <span data-ur className="urdu">نرس کے تمام طبی کام</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">نرس کے تمام طبی کام</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/charges">
                   <span data-en>How charges work</span>
-                  <span data-ur className="urdu">چارجز کیسے طے ہوتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">چارجز کیسے طے ہوتے ہیں</span>
                 </Link>
               </div>
             </div>
@@ -547,11 +547,11 @@ export default function PostOperativeCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>ICU step-down</span>
-                  <span data-ur className="urdu">آئی سی یو کے بعد</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آئی سی یو کے بعد</span>
                 </span>
                 <h2>
                   <span data-en>Coming home after the ICU.</span>
-                  <span data-ur className="urdu">آئی سی یو سے گھر واپسی۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آئی سی یو سے گھر واپسی۔</span>
                 </h2>
               </div>
 
@@ -563,7 +563,7 @@ export default function PostOperativeCarePage() {
                     there is a bedroom. This is called step-down care — care after coming home from the
                     ICU — and it is one of the things our nurses do.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     جب مریض آئی سی یو یا ایچ ڈی یو سے گھر آتا ہے تو گھر والوں کو سب سے زیادہ فرق یہی
                     محسوس ہوتا ہے: کئی دن مانیٹر اور نرس سرہانے موجود تھے، اور اب صرف ایک کمرہ ہے۔ اسے
                     آئی سی یو کے بعد کی دیکھ بھال کہتے ہیں، اور یہ ہماری نرسیں کرتی ہیں۔
@@ -576,7 +576,7 @@ export default function PostOperativeCarePage() {
                     feeding tubes managed on the doctor&rsquo;s plan, and someone in the room who
                     notices a change early.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     گھر پر یہ وہی مستقل کام ہے: ڈاکٹر کے بتائے اوقات پر علامات چیک کر کے لکھنا، دوائیں
                     وقت پر، زخم کی دیکھ بھال، ڈاکٹر کے پلان کے مطابق کیتھیٹر اور فیڈنگ ٹیوب سنبھالنا،
                     اور کمرے میں کوئی ایسا فرد جو تبدیلی جلد پہچان لے۔
@@ -598,7 +598,7 @@ export default function PostOperativeCarePage() {
                     machine support to breathe, or a neck tube to breathe through, belongs in hospital —
                     we will tell you that plainly on the call rather than send a nurse who cannot help.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     صاف بات: یہ گھر پر آئی سی یو کے بعد والی دیکھ بھال ہے۔ جس مریض کو اب بھی سانس کے لیے
                     مشین کا سہارا یا گلے میں نلکی درکار ہو، اس کی جگہ ہسپتال ہے — ہم کال پر آپ کو صاف
                     بتا دیں گے، ایسی نرس بھیجنے کے بجائے جو مدد نہ کر سکے۔
@@ -621,18 +621,18 @@ export default function PostOperativeCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>How the care is arranged</span>
-                  <span data-ur className="urdu">دیکھ بھال کا بندوبست کیسے ہوتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">دیکھ بھال کا بندوبست کیسے ہوتا ہے</span>
                 </span>
                 <h2>
                   <span data-en>One dressing, or someone through the night.</span>
-                  <span data-ur className="urdu">صرف ایک ڈریسنگ، یا رات بھر کے لیے کوئی۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">صرف ایک ڈریسنگ، یا رات بھر کے لیے کوئی۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     Not every family needs the same thing after an operation. Pick the shape that fits
                     the week you are actually having — and change it as the patient improves.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     آپریشن کے بعد ہر گھرانے کی ضرورت ایک جیسی نہیں ہوتی۔ وہ صورت چنیں جو آپ کے اس ہفتے
                     کے حالات پر پوری اترے — اور جیسے جیسے مریض بہتر ہو، اسے بدل لیں۔
                   </span>
@@ -644,11 +644,11 @@ export default function PostOperativeCarePage() {
                   <div key={f.id} style={CARD}>
                     <h3 style={{ fontSize: 20, marginBottom: 8, lineHeight: 1.25 }}>
                       <span data-en>{f.name.en}</span>
-                      <span data-ur className="urdu">{f.name.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.name.ur}</span>
                     </h3>
                     <p style={BODY}>
                       <span data-en>{f.detail.en}</span>
-                      <span data-ur className="urdu">{f.detail.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.detail.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -668,7 +668,7 @@ export default function PostOperativeCarePage() {
                   }}
                 >
                   <span data-en>{VERIFICATION_PROMISE.en}</span>
-                  <span data-ur className="urdu">{VERIFICATION_PROMISE.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{VERIFICATION_PROMISE.ur}</span>
                 </p>
               </div>
             </div>
@@ -680,11 +680,11 @@ export default function PostOperativeCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Discharges across Lahore</span>
-                  <span data-ur className="urdu">لاہور بھر سے ڈسچارج</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">لاہور بھر سے ڈسچارج</span>
                 </span>
                 <h2>
                   <span data-en>Whichever hospital you are leaving.</span>
-                  <span data-ur className="urdu">آپ کسی بھی ہسپتال سے نکل رہے ہوں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آپ کسی بھی ہسپتال سے نکل رہے ہوں۔</span>
                 </h2>
               </div>
 
@@ -711,7 +711,7 @@ export default function PostOperativeCarePage() {
                     Town, Bahria Town, Cantt and beyond — and after-surgery care is the most common
                     reason families call us.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     ہم لاہور بھر میں گھروں کے لیے نرس کا بندوبست کرتے ہیں — ڈی ایچ اے، گلبرگ، جوہر ٹاؤن،
                     ماڈل ٹاؤن، بحریہ ٹاؤن، کینٹ اور اس سے آگے — اور آپریشن کے بعد کی دیکھ بھال سب سے
                     عام وجہ ہے جس پر گھر والے ہمیں کال کرتے ہیں۔
@@ -725,7 +725,7 @@ export default function PostOperativeCarePage() {
                     one: whichever hospital performed the operation, our nurse works from the discharge
                     summary and the prescription your surgeon has written.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     گھر والے شہر بھر کے ہسپتالوں سے ڈسچارج کے بعد ہمیں کال کرتے ہیں — National Hospital
                     (ڈی ایچ اے)، Doctors Hospital (جوہر ٹاؤن)، Hameed Latif، Fatima Memorial، Shaukat
                     Khanum، Evercare اور دیگر۔ کسی ہسپتال کے ساتھ ہمارا کوئی معاہدہ نہیں، اور ضرورت بھی
@@ -739,7 +739,7 @@ export default function PostOperativeCarePage() {
                     you live in, and when the patient will reach the house. We arrange the nurse around
                     that time, and send you the caregiver&rsquo;s card on WhatsApp before they come.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     کال پر ہمیں بتا دیں کہ آپ کس ہسپتال سے گھر آ رہے ہیں، لاہور کے کس علاقے میں رہتے ہیں،
                     اور مریض گھر کس وقت پہنچے گا۔ ہم نرس کا وقت اسی حساب سے رکھ دیں گے، اور آنے سے پہلے
                     اس کا کارڈ واٹس ایپ کر دیں گے۔
@@ -755,11 +755,11 @@ export default function PostOperativeCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Before the first visit</span>
-                  <span data-ur className="urdu">پہلے وزٹ سے پہلے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">پہلے وزٹ سے پہلے</span>
                 </span>
                 <h2>
                   <span data-en>What you need ready — and what you can leave to us.</span>
-                  <span data-ur className="urdu">آپ کے پاس کیا تیار ہونا چاہیے — اور کیا ہم پر چھوڑ دیں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آپ کے پاس کیا تیار ہونا چاہیے — اور کیا ہم پر چھوڑ دیں۔</span>
                 </h2>
               </div>
 
@@ -767,7 +767,7 @@ export default function PostOperativeCarePage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 6 }}>
                     <span data-en>Keep these two papers to hand</span>
-                    <span data-ur className="urdu">یہ کاغذات پاس رکھیں</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">یہ کاغذات پاس رکھیں</span>
                   </h3>
                   <TickList items={READY} />
                 </div>
@@ -775,7 +775,7 @@ export default function PostOperativeCarePage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 6 }}>
                     <span data-en>What we bring with the nurse</span>
-                    <span data-ur className="urdu">نرس کے ساتھ ہماری طرف سے کیا آتا ہے</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">نرس کے ساتھ ہماری طرف سے کیا آتا ہے</span>
                   </h3>
                   <TickList items={TRUST} />
                 </div>
@@ -799,7 +799,7 @@ export default function PostOperativeCarePage() {
                   anything on the surgeon&rsquo;s list? Ask on the first call. We would rather answer
                   plainly before care starts than surprise you afterwards.
                 </span>
-                <span data-ur className="urdu">
+                <span data-ur lang="ur" dir="rtl" className="urdu">
                   یہ نہیں معلوم کہ گھر پر نرس کو اور کیا کچھ درکار ہو گا — ڈریسنگ کا سامان، دوائیں، یا
                   سرجن کی فہرست کی کوئی چیز؟ پہلی کال پر پوچھ لیں۔ ہم بعد میں حیران کرنے کے بجائے کام
                   شروع ہونے سے پہلے صاف بات کرنا بہتر سمجھتے ہیں۔
@@ -814,11 +814,11 @@ export default function PostOperativeCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Operation ke baad dekh bhaal — the questions families ask</span>
-                  <span data-ur className="urdu">آپریشن کے بعد دیکھ بھال — عام سوالات</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آپریشن کے بعد دیکھ بھال — عام سوالات</span>
                 </span>
                 <h2>
                   <span data-en>Straight answers, before you decide.</span>
-                  <span data-ur className="urdu">فیصلے سے پہلے، سیدھے جواب۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">فیصلے سے پہلے، سیدھے جواب۔</span>
                 </h2>
               </div>
 
@@ -828,14 +828,14 @@ export default function PostOperativeCarePage() {
                     <div className="faq-q" style={{ cursor: "default", alignItems: "flex-start" }}>
                       <h3 className="qt">
                         <span data-en>{item.q}</span>
-                        <span data-ur className="urdu">{item.qUr}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{item.qUr}</span>
                       </h3>
                     </div>
                     <div className="faq-a" style={{ gridTemplateRows: "1fr" }}>
                       <div className="faq-a-in" style={{ fontSize: 17 }}>
                         <div className="faq-a-pad">
                           <span data-en>{item.a}</span>
-                          <span data-ur className="urdu">{item.aUr}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{item.aUr}</span>
                         </div>
                       </div>
                     </div>
@@ -849,12 +849,12 @@ export default function PostOperativeCarePage() {
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                   </svg>
                   <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-                  <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
                 </a>
                 <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
                   <span className="wadot" />
                   <span data-en>Ask on WhatsApp</span>
-                  <span data-ur className="urdu">واٹس ایپ پر پوچھیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ پر پوچھیں</span>
                 </a>
               </div>
             </div>

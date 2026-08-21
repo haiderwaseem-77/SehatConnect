@@ -70,17 +70,17 @@ const NurseExtra = (
         >
           <span className="eyebrow" style={{ marginBottom: 14 }}>
             <span data-en>Clinical care</span>
-            <span data-ur className="urdu">طبی دیکھ بھال</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">طبی دیکھ بھال</span>
           </span>
           <h2 style={{ fontSize: "clamp(22px,5vw,30px)", marginBottom: 8 }}>
             <span data-en>What a qualified nurse can do</span>
-            <span data-ur className="urdu">نرس کون سے طبی کام سنبھالتی ہے</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">نرس کون سے طبی کام سنبھالتی ہے</span>
           </h2>
           <p style={{ fontSize: 17, color: "var(--ink-soft)", fontWeight: 500, marginBottom: 20, maxWidth: "48ch" }}>
             <span data-en>
               A qualified nurse handles the medical tasks a patient needs at home — the clinical work that follows the doctor&rsquo;s plan, done safely and on time.
             </span>
-            <span data-ur className="urdu">
+            <span data-ur lang="ur" dir="rtl" className="urdu">
               نرس گھر پر وہ طبی کام سنبھالتی ہے جو ڈاکٹر کے پلان کے مطابق کرنے ہوتے ہیں — محفوظ طریقے سے اور وقت پر۔
             </span>
           </p>
@@ -106,7 +106,7 @@ const NurseExtra = (
                 </span>
                 <span style={{ fontSize: 16, fontWeight: 600, color: "var(--ink-soft)", lineHeight: 1.5 }}>
                   <span data-en>{d.en}</span>
-                  <span data-ur className="urdu">{d.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{d.ur}</span>
                 </span>
               </li>
             ))}
@@ -128,7 +128,7 @@ const NurseExtra = (
               <b style={{ color: "var(--ink)" }}>Only need daily, non-medical help</b> — feeding, bathing, company, movement? That is a{" "}
               <b style={{ color: "var(--ink)" }}>Patient Attendant</b>, not a nurse. We&rsquo;ll always tell you honestly which one your patient needs.
             </span>
-            <span data-ur className="urdu">
+            <span data-ur lang="ur" dir="rtl" className="urdu">
               <b style={{ color: "var(--ink)" }}>صرف روزمرہ، غیر طبی مدد</b> — کھانا کھلانا، غسل، ساتھ بیٹھنا یا چلنے پھرنے میں سہارا چاہیے؟ یہ{" "}
               <b style={{ color: "var(--ink)" }}>اٹینڈنٹ</b> کا کام ہے، نرس کا نہیں۔ ہم صاف بتا دیں گے کہ آپ کے مریض کے لیے کون سا فرد مناسب ہے۔
             </span>

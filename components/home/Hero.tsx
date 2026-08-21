@@ -9,34 +9,34 @@ export default function Hero() {
           <div className="hero-copy">
             <span className="eyebrow eyebrow-plain">
               <span data-en>Care for your loved one is a call away</span>
-              <span data-ur className="urdu">آپ کے عزیز کی دیکھ بھال، صرف ایک کال دور</span>
+              <span data-ur lang="ur" dir="rtl" className="urdu">آپ کے عزیز کی دیکھ بھال، صرف ایک کال دور</span>
             </span>
             <h1>
               <span data-en>A caring nurse or attendant at home in Lahore. <span className="hl">Leave your number</span> — we&rsquo;ll arrange the right person.</span>
-              <span data-ur className="urdu">لاہور میں گھر پر نرس یا اٹینڈنٹ۔ <span className="hl">اپنا نمبر دیں</span> — ہم مناسب فرد کا بندوبست کریں گے۔</span>
+              <span data-ur lang="ur" dir="rtl" className="urdu">لاہور میں گھر پر نرس یا اٹینڈنٹ۔ <span className="hl">اپنا نمبر دیں</span> — ہم مناسب فرد کا بندوبست کریں گے۔</span>
             </h1>
             <p className="hero-sub">
               <span data-en>The form takes less than 30 seconds. Our team will call and guide you from there.</span>
-              <span data-ur className="urdu">فارم 30 سیکنڈ سے کم لیتا ہے۔ ہماری ٹیم کال کر کے اگلا قدم بتا دے گی۔</span>
+              <span data-ur lang="ur" dir="rtl" className="urdu">فارم 30 سیکنڈ سے کم لیتا ہے۔ ہماری ٹیم کال کر کے اگلا قدم بتا دے گی۔</span>
             </p>
 
             <div className="hero-trust">
               <span className="pill">
                 <span data-en>First day free</span>
-                <span data-ur className="urdu">پہلا دن مفت</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">پہلا دن مفت</span>
               </span>
               <span className="pill">
                 <span data-en>No advance</span>
-                <span data-ur className="urdu">کوئی پیشگی نہیں</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">کوئی پیشگی نہیں</span>
               </span>
               <span className="pill">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round"><path d="M12 3l7 3v5c0 4.4-2.9 7.9-7 9-4.1-1.1-7-4.6-7-9V6l7-3z" /><path d="M9 12l2 2 4-4" strokeLinecap="round" /></svg>
                 <span data-en>PNC-registered nurses</span>
-                <span data-ur className="urdu">PNC رجسٹرڈ نرسیں</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">PNC رجسٹرڈ نرسیں</span>
               </span>
               <span className="pill">
                 <span data-en>Day or night</span>
-                <span data-ur className="urdu">دن ہو یا رات</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">دن ہو یا رات</span>
               </span>
             </div>
           </div>

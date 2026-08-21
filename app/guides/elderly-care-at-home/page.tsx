@@ -537,7 +537,7 @@ function P({ t, style }: { t: Bilingual; style?: CSSProperties }) {
   return (
     <p style={{ ...BODY, ...style }}>
       <span data-en>{t.en}</span>
-      <span data-ur className="urdu">{t.ur}</span>
+      <span data-ur lang="ur" dir="rtl" className="urdu">{t.ur}</span>
     </p>
   );
 }
@@ -570,7 +570,7 @@ function TickList({ items }: { items: Bilingual[] }) {
           <Tick />
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -602,7 +602,7 @@ function DashList({ items }: { items: Bilingual[] }) {
           </span>
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -621,11 +621,11 @@ function SectionHead({
     <div className="sec-head">
       <span className="eyebrow">
         <span data-en>{eyebrow.en}</span>
-        <span data-ur className="urdu">{eyebrow.ur}</span>
+        <span data-ur lang="ur" dir="rtl" className="urdu">{eyebrow.ur}</span>
       </span>
       <h2>
         <span data-en>{heading.en}</span>
-        <span data-ur className="urdu">{heading.ur}</span>
+        <span data-ur lang="ur" dir="rtl" className="urdu">{heading.ur}</span>
       </h2>
     </div>
   );
@@ -635,7 +635,7 @@ function CardHead({ t }: { t: Bilingual }) {
   return (
     <h3 style={{ fontSize: 20, marginBottom: 6, lineHeight: 1.25 }}>
       <span data-en>{t.en}</span>
-      <span data-ur className="urdu">{t.ur}</span>
+      <span data-ur lang="ur" dir="rtl" className="urdu">{t.ur}</span>
     </h3>
   );
 }
@@ -666,14 +666,14 @@ export default function ElderlyCareAtHomeGuide() {
               <div className="hero-copy">
                 <span className="eyebrow eyebrow-plain">
                   <span data-en>Guide &middot; Buzurgon ki dekh bhaal</span>
-                  <span data-ur className="urdu">رہنمائی &middot; بزرگوں کی دیکھ بھال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">رہنمائی &middot; بزرگوں کی دیکھ بھال</span>
                 </span>
 
                 <h1 style={{ maxWidth: "20ch" }}>
                   <span data-en>
                     Elderly care at home in Lahore: <span className="hl">what to expect</span>
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     لاہور میں بزرگوں کی گھر پر دیکھ بھال: <span className="hl">کیا توقع رکھیں</span>
                   </span>
                 </h1>
@@ -937,7 +937,7 @@ export default function ElderlyCareAtHomeGuide() {
                       }}
                     >
                       <span data-en>{d.when.en}</span>
-                      <span data-ur className="urdu">{d.when.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{d.when.ur}</span>
                     </p>
                     <P t={d.body} style={{ fontSize: 17, maxWidth: "58ch" }} />
                   </div>
@@ -962,14 +962,14 @@ export default function ElderlyCareAtHomeGuide() {
                     <div className="faq-q" style={{ cursor: "default", alignItems: "flex-start" }}>
                       <h3 className="qt">
                         <span data-en>{item.q}</span>
-                        <span data-ur className="urdu">{item.qUr}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{item.qUr}</span>
                       </h3>
                     </div>
                     <div className="faq-a" style={{ gridTemplateRows: "1fr" }}>
                       <div className="faq-a-in" style={{ fontSize: 17 }}>
                         <div className="faq-a-pad">
                           <span data-en>{item.a}</span>
-                          <span data-ur className="urdu">{item.aUr}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{item.aUr}</span>
                         </div>
                       </div>
                     </div>
@@ -1007,12 +1007,12 @@ export default function ElderlyCareAtHomeGuide() {
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                     </svg>
                     <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-                    <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
                   </a>
                   <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
                     <span className="wadot" />
                     <span data-en>Ask on WhatsApp</span>
-                    <span data-ur className="urdu">واٹس ایپ پر پوچھیں</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ پر پوچھیں</span>
                   </a>
                 </div>
               </div>
@@ -1020,19 +1020,19 @@ export default function ElderlyCareAtHomeGuide() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 22 }}>
                 <Link className="btn btn-ghost" href="/services/elderly-care">
                   <span data-en>Elderly care at home in Lahore</span>
-                  <span data-ur className="urdu">لاہور میں بزرگوں کی گھر پر دیکھ بھال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">لاہور میں بزرگوں کی گھر پر دیکھ بھال</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/services/attendant">
                   <span data-en>What an attendant does</span>
-                  <span data-ur className="urdu">اٹینڈنٹ کیا کرتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اٹینڈنٹ کیا کرتا ہے</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/charges">
                   <span data-en>How charges work</span>
-                  <span data-ur className="urdu">چارجز کیسے طے ہوتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">چارجز کیسے طے ہوتے ہیں</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/guides">
                   <span data-en>All guides</span>
-                  <span data-ur className="urdu">تمام رہنمائیاں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">تمام رہنمائیاں</span>
                 </Link>
               </div>
             </div>

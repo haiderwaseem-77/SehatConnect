@@ -80,19 +80,19 @@ export default function AboutPage() {
             <div className="sec-head">
               <span className="eyebrow eyebrow-plain">
                 <span data-en>About Sehat Connect</span>
-                <span data-ur className="urdu">Sehat Connect کے بارے میں</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">Sehat Connect کے بارے میں</span>
               </span>
               {/* The page's H1 — /about had none, which is costly on the page
                   Google leans on hardest for E-E-A-T. */}
               <h1>
                 <span data-en>A Lahore home nursing service built for worried families.</span>
-                <span data-ur className="urdu">پریشان گھر والوں کے لیے لاہور کی گھریلو نرسنگ سروس۔</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">پریشان گھر والوں کے لیے لاہور کی گھریلو نرسنگ سروس۔</span>
               </h1>
               <p>
                 <span data-en>
                   When someone is ill, the family needs clear answers: who will come, what can they do, and when do we pay?
                 </span>
-                <span data-ur className="urdu">
+                <span data-ur lang="ur" dir="rtl" className="urdu">
                   جب کوئی بیمار ہو تو گھر والوں کو صاف جواب چاہیے: کون آئے گا، کیا کر سکے گا، اور ادائیگی کب ہو گی؟
                 </span>
               </p>
@@ -105,7 +105,7 @@ export default function AboutPage() {
               />
               <h3 style={{ fontSize: 20, marginBottom: 12 }}>
                 <span data-en>Our mission</span>
-                <span data-ur className="urdu">ہمارا مقصد</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">ہمارا مقصد</span>
               </h3>
               <p style={{ fontSize: 18, color: "var(--ink-soft)", lineHeight: 1.7, fontWeight: 500 }}>
                 <span data-en>
@@ -113,7 +113,7 @@ export default function AboutPage() {
                   hospital stay. Sehat Connect gives them a clearer option: PNC-registered nurses and trained attendants
                   sent to the home, with checks you can verify.
                 </span>
-                <span data-ur className="urdu">
+                <span data-ur lang="ur" dir="rtl" className="urdu">
                   آپریشن یا بیماری کے بعد گھر والوں کے سامنے اکثر دو مشکل راستے ہوتے ہیں: گھر پر غیر تربیت یافتہ مدد، یا ہسپتال میں مزید دن رکنا۔
                   Sehat Connect ایک صاف راستہ دیتا ہے: PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ گھر بھیجنا، ایسی تصدیق کے ساتھ جسے آپ خود چیک کر سکیں۔
                 </span>
@@ -131,11 +131,11 @@ export default function AboutPage() {
             <div className="sec-head">
               <span className="eyebrow eyebrow-plain">
                 <span data-en>Why families trust us</span>
-                <span data-ur className="urdu">گھر والے ہم پر بھروسہ کیوں کرتے ہیں</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">گھر والے ہم پر بھروسہ کیوں کرتے ہیں</span>
               </span>
               <h2>
                 <span data-en>Checks happen before anyone reaches your door.</span>
-                <span data-ur className="urdu">دروازے تک پہنچنے سے پہلے ہر فرد کی تصدیق ہوتی ہے۔</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">دروازے تک پہنچنے سے پہلے ہر فرد کی تصدیق ہوتی ہے۔</span>
               </h2>
             </div>
 
@@ -150,7 +150,7 @@ export default function AboutPage() {
                     </span>
                     <span>
                       <span data-en>{c.en}</span>
-                      <span data-ur className="urdu">{c.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{c.ur}</span>
                     </span>
                   </div>
                 ))}
@@ -167,11 +167,11 @@ export default function AboutPage() {
             <div style={cardStyle}>
               <h3 style={{ fontSize: 18, marginBottom: 8 }}>
                 <span data-en>Our office</span>
-                <span data-ur className="urdu">ہمارا دفتر</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">ہمارا دفتر</span>
               </h3>
               <p style={{ fontSize: 16, color: "var(--ink-soft)", lineHeight: 1.6, fontWeight: 500 }}>
                 <span data-en>{OFFICE_ADDRESS} &middot; </span>
-                <span data-ur className="urdu">{OFFICE_ADDRESS} &middot; </span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">{OFFICE_ADDRESS} &middot; </span>
                 <strong style={{ color: "var(--teal-deep)" }}>{CONTACT_PHONE_DISPLAY}</strong>
               </p>
             </div>

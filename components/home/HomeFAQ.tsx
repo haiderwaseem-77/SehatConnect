@@ -117,7 +117,7 @@ export default function HomeFAQ() {
       <button className="faq-q" type="button" aria-expanded={open[i]} onClick={() => toggle(i)}>
         <span className="qt">
           <span data-en>{item.q}</span>
-          <span data-ur className="urdu">{item.qUr}</span>
+          <span data-ur lang="ur" dir="rtl" className="urdu">{item.qUr}</span>
         </span>
         <span className="qc">+</span>
       </button>
@@ -125,7 +125,7 @@ export default function HomeFAQ() {
         <div className="faq-a-in">
           <div className="faq-a-pad">
             <span data-en>{item.a}</span>
-            <span data-ur className="urdu">{item.aUr}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.aUr}</span>
           </div>
         </div>
       </div>
@@ -139,11 +139,11 @@ export default function HomeFAQ() {
           <PulseAccent />
           <h2>
             <span data-en>The worries we hear most, answered plainly.</span>
-            <span data-ur className="urdu">وہ سوالات جن کی گھر والے سب سے زیادہ فکر کرتے ہیں۔</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">وہ سوالات جن کی گھر والے سب سے زیادہ فکر کرتے ہیں۔</span>
           </h2>
           <p>
             <span data-en>The real questions stressed families ask before they let us in. Tap any to read the answer.</span>
-            <span data-ur className="urdu">گھر میں کسی کو بلانے سے پہلے گھر والے یہی سوال پوچھتے ہیں۔ جواب پڑھنے کے لیے ٹیپ کریں۔</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">گھر میں کسی کو بلانے سے پہلے گھر والے یہی سوال پوچھتے ہیں۔ جواب پڑھنے کے لیے ٹیپ کریں۔</span>
           </p>
         </div>
 
@@ -157,11 +157,11 @@ export default function HomeFAQ() {
             <span className="disc-titles">
               <span className="dt">
                 <span data-en>More questions</span>
-                <span data-ur className="urdu">مزید سوالات</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">مزید سوالات</span>
               </span>{" "}
               <span className="ds">
                 <span data-en>5 more answers &middot; tap to read</span>
-                <span data-ur className="urdu">5 مزید جواب &middot; پڑھنے کے لیے ٹیپ کریں</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">5 مزید جواب &middot; پڑھنے کے لیے ٹیپ کریں</span>
               </span>
             </span>
             <span className="disc-chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" /></svg></span>

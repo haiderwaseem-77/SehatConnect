@@ -100,7 +100,7 @@ export default async function BookingConfirmPage({
 
               <h1 style={{ fontSize: "clamp(24px,5.5vw,30px)", marginBottom: 12 }}>
                 <span data-en>Done. Our team will call you back soon.</span>
-                <span data-ur className="urdu">
+                <span data-ur lang="ur" dir="rtl" className="urdu">
                   درخواست موصول ہو گئی۔ ہماری ٹیم جلد واپس کال کرے گی۔
                 </span>
               </h1>
@@ -108,7 +108,7 @@ export default async function BookingConfirmPage({
               {name && (
                 <p style={{ fontSize: 18, color: "var(--ink)", fontWeight: 700, marginBottom: 8 }}>
                   <span data-en>Shukriya, {name}.</span>
-                  <span data-ur className="urdu">شکریہ، {name}۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">شکریہ، {name}۔</span>
                 </p>
               )}
 
@@ -117,7 +117,7 @@ export default async function BookingConfirmPage({
                   We&rsquo;ll call from <strong>{CONTACT_PHONE_DISPLAY}</strong>{" "}
                   to understand what you need and arrange everything — please save it so you know it&rsquo;s us. No payment now.
                 </span>
-                <span data-ur className="urdu">
+                <span data-ur lang="ur" dir="rtl" className="urdu">
                   ہم آپ کی ضرورت سمجھنے اور بندوبست کرنے کے لیے <strong><bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></strong>{" "}
                   سے کال کریں گے۔ نمبر محفوظ کر لیں تاکہ آپ پہچان سکیں۔ ابھی کوئی ادائیگی نہیں۔
                 </span>
@@ -144,7 +144,7 @@ export default async function BookingConfirmPage({
                   }}
                 >
                   <span data-en>Your reference number</span>
-                  <span data-ur className="urdu">آپ کا حوالہ نمبر</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آپ کا حوالہ نمبر</span>
                 </div>
                 <div
                   style={{
@@ -163,7 +163,7 @@ export default async function BookingConfirmPage({
               <div style={{ textAlign: "left", marginBottom: 26 }}>
                 <p style={{ fontSize: 17, fontWeight: 800, color: "var(--ink)", marginBottom: 14 }}>
                   <span data-en>What happens next?</span>
-                  <span data-ur className="urdu">آگے کیا ہوگا؟</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آگے کیا ہوگا؟</span>
                 </p>
                 <div style={{ display: "grid", gap: 12 }}>
                   {STEPS.map((s, i) => (
@@ -186,7 +186,7 @@ export default async function BookingConfirmPage({
                       </span>
                       <span style={{ fontSize: 16.5, color: "var(--ink-soft)", lineHeight: 1.5, fontWeight: 500 }}>
                         <span data-en>{s.en}</span>
-                        <span data-ur className="urdu">{s.ur}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{s.ur}</span>
                       </span>
                     </div>
                   ))}
@@ -200,7 +200,7 @@ export default async function BookingConfirmPage({
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                   </svg>
                   <span data-en>Can&rsquo;t wait? Call us now: {CONTACT_PHONE_DISPLAY}</span>
-                  <span data-ur className="urdu">انتظار نہیں کر سکتے؟ ابھی کال کریں: <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">انتظار نہیں کر سکتے؟ ابھی کال کریں: <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
                 </a>
                 <a
                   className="btn btn-wa btn-block btn-lg"
@@ -210,11 +210,11 @@ export default async function BookingConfirmPage({
                 >
                   <span className="wadot" />
                   <span data-en>WhatsApp us</span>
-                  <span data-ur className="urdu">واٹس ایپ پر بات کریں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ پر بات کریں</span>
                 </a>
                 <Link className="btn btn-ghost btn-block" href="/">
                   <span data-en>Back to home</span>
-                  <span data-ur className="urdu">ہوم پر واپس</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ہوم پر واپس</span>
                 </Link>
                 <a
                   href={`data:text/vcard;charset=utf-8,${encodeURIComponent(
@@ -236,7 +236,7 @@ export default async function BookingConfirmPage({
                   }}
                 >
                   <span data-en>Save our number, so our call isn&rsquo;t a stranger&rsquo;s number</span>
-                  <span data-ur className="urdu">ہمارا نمبر محفوظ کر لیں تاکہ ہماری کال پہچان سکیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ہمارا نمبر محفوظ کر لیں تاکہ ہماری کال پہچان سکیں</span>
                 </a>
               </div>
             </div>

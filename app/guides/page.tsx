@@ -34,19 +34,19 @@ export default function GuidesIndexPage() {
             <div className="wrap">
               <span className="eyebrow">
                 <span data-en>Guides</span>
-                <span data-ur className="urdu">رہنمائی</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">رہنمائی</span>
               </span>
               <div className="sec-head">
                 <h1>
                   <span data-en>Written for the person making the decision</span>
-                  <span data-ur className="urdu">اُس شخص کے لیے لکھا گیا جو فیصلہ کر رہا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اُس شخص کے لیے لکھا گیا جو فیصلہ کر رہا ہے</span>
                 </h1>
                 <p>
                   <span data-en>
                     No selling, no jargon. These answer the questions families actually
                     ask us on the phone &mdash; whether or not you call us afterwards.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     نہ کوئی سیلز، نہ مشکل الفاظ۔ یہ وہی سوال ہیں جو گھر والے ہم سے فون پر پوچھتے ہیں
                     &mdash; چاہے آپ بعد میں ہمیں کال کریں یا نہ کریں۔
                   </span>
@@ -64,7 +64,7 @@ export default function GuidesIndexPage() {
                     <span className="tick" aria-hidden="true">&#10003;</span>
                     <span>
                       <span data-en><b>{g.name.en}</b><br />{g.dek.en}</span>
-                      <span data-ur className="urdu"><b>{g.name.ur}</b><br />{g.dek.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu"><b>{g.name.ur}</b><br />{g.dek.ur}</span>
                     </span>
                   </Link>
                 ))}

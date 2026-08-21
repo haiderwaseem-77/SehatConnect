@@ -211,7 +211,7 @@ function TickList({ items }: { items: Bilingual[] }) {
           <Tick />
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -226,7 +226,7 @@ function CallButton() {
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
       </svg>
       <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-      <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+      <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
     </a>
   );
 }
@@ -236,7 +236,7 @@ function WhatsAppButton() {
     <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
       <span className="wadot" />
       <span data-en>Ask on WhatsApp</span>
-      <span data-ur className="urdu">واٹس ایپ پر پوچھیں</span>
+      <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ پر پوچھیں</span>
     </a>
   );
 }
@@ -267,14 +267,14 @@ export default function PhysiotherapyPage() {
                 <div className="hero-copy">
                   <span className="eyebrow eyebrow-plain">
                     <span data-en>Ghar par physiotherapy &middot; Lahore</span>
-                    <span data-ur className="urdu">گھر پر فزیوتھراپی &middot; لاہور</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">گھر پر فزیوتھراپی &middot; لاہور</span>
                   </span>
 
                   <h1>
                     <span data-en>
                       Physiotherapy at home in <span className="hl">Lahore</span>
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       <span className="hl">لاہور</span> میں گھر پر فزیوتھراپی
                     </span>
                   </h1>
@@ -290,7 +290,7 @@ export default function PhysiotherapyPage() {
                       nurses and attendants on a shift. This page explains both, plainly, so you can
                       pick the one your family actually needs.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       اگر ڈاکٹر نے فزیوتھراپی کا مشورہ دیا ہے، یا کمزور مریض کو کلینک تک لے جانا ممکن
                       ہی نہیں، تو ہم لاہور میں گھر پر فزیوتھراپسٹ کے وزٹ کا بندوبست کر سکتے ہیں۔ کال
                       کرنے سے پہلے دو باتیں جان لیجیے۔ پہلی، ہم اس وزٹ کا <em>بندوبست</em> کرتے ہیں —
@@ -304,19 +304,19 @@ export default function PhysiotherapyPage() {
                   <div className="hero-trust">
                     <span className="pill">
                       <span data-en>We arrange the visit</span>
-                      <span data-ur className="urdu">وزٹ کا بندوبست ہم کرتے ہیں</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">وزٹ کا بندوبست ہم کرتے ہیں</span>
                     </span>
                     <span className="pill">
                       <span data-en>At home, across Lahore</span>
-                      <span data-ur className="urdu">لاہور بھر میں، گھر پر</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">لاہور بھر میں، گھر پر</span>
                     </span>
                     <span className="pill">
                       <span data-en>Nurses and attendants on shift</span>
-                      <span data-ur className="urdu">شفٹ پر نرس اور اٹینڈنٹ</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">شفٹ پر نرس اور اٹینڈنٹ</span>
                     </span>
                     <span className="pill">
                       <span data-en>Call or WhatsApp, 24/7</span>
-                      <span data-ur className="urdu">کال یا واٹس ایپ، 24/7</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">کال یا واٹس ایپ، 24/7</span>
                     </span>
                   </div>
 
@@ -339,11 +339,11 @@ export default function PhysiotherapyPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>What this actually is</span>
-                  <span data-ur className="urdu">یہ اصل میں ہے کیا</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">یہ اصل میں ہے کیا</span>
                 </span>
                 <h2>
                   <span data-en>A physiotherapist&rsquo;s home visit, arranged by us</span>
-                  <span data-ur className="urdu">فزیوتھراپسٹ کا گھر پر وزٹ، بندوبست ہمارا</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">فزیوتھراپسٹ کا گھر پر وزٹ، بندوبست ہمارا</span>
                 </h2>
               </div>
 
@@ -351,7 +351,7 @@ export default function PhysiotherapyPage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 10, lineHeight: 1.25 }}>
                     <span data-en>What we can arrange</span>
-                    <span data-ur className="urdu">ہم کیا بندوبست کر سکتے ہیں</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">ہم کیا بندوبست کر سکتے ہیں</span>
                   </h3>
                   <p style={BODY}>
                     <span data-en>
@@ -362,7 +362,7 @@ export default function PhysiotherapyPage() {
                       between the physiotherapist, your doctor and your family. Our part is arranging
                       the visit and telling you who is coming.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       فزیوتھراپسٹ آپ سے طے شدہ وقت پر گھر آتا ہے — ڈاکٹر کے ریفرل پر یا گھر والوں کی
                       اپنی درخواست پر۔ گھر پر کرانے کی وجہ سادہ ہے: کمزور یا تکلیف میں مبتلا مریض کو
                       گاڑی میں بٹھا کر لے جانا اور واپس لانا نہیں پڑتا۔ اُس وزٹ میں کیا ہوتا ہے، اور
@@ -375,7 +375,7 @@ export default function PhysiotherapyPage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 10, lineHeight: 1.25 }}>
                     <span data-en>What we will not tell you</span>
-                    <span data-ur className="urdu">ہم آپ کو کیا نہیں بتائیں گے</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">ہم آپ کو کیا نہیں بتائیں گے</span>
                   </h3>
                   <p style={BODY}>
                     <span data-en>
@@ -387,7 +387,7 @@ export default function PhysiotherapyPage() {
                       help your patient is a question for your doctor, and we will say so on the
                       call rather than guess at it.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       کیا کرنا ہے، یہ ہم طے نہیں کرتے؛ ہم علاج کا کوئی منصوبہ نہیں لکھتے؛ اور نہ کسی
                       نتیجے، مدت یا وزٹ کی تعداد کا وعدہ کرتے ہیں۔ جس مریض کو دیکھا ہی نہ ہو، اُس کے
                       بارے میں فون پر ایسا وعدہ کوئی ایماندار شخص نہیں کرتا۔ اس صفحے پر سب سے بڑی بات
@@ -409,7 +409,7 @@ export default function PhysiotherapyPage() {
                     who comes may not be ours. You will know their name before they arrive, and if
                     you would rather deal with the physiotherapist directly, we will say that too.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     <b style={{ color: "var(--ink)" }}>کال سے پہلے صاف بات:</b> فزیوتھراپسٹ ہمارے
                     اپنے عملے کا حصہ نہیں۔ ہم وزٹ کا بندوبست کرتے ہیں، اور آنے والا شخص ہمارا اپنا نہ
                     بھی ہو تو ہو سکتا ہے۔ اُن کا نام آپ کو آنے سے پہلے معلوم ہوگا، اور اگر آپ براہِ
@@ -433,18 +433,18 @@ export default function PhysiotherapyPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>The part we do ourselves</span>
-                  <span data-ur className="urdu">وہ حصہ جو ہم خود کرتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">وہ حصہ جو ہم خود کرتے ہیں</span>
                 </span>
                 <h2>
                   <span data-en>What our nurses and attendants do for movement, every day</span>
-                  <span data-ur className="urdu">ہماری نرسیں اور اٹینڈنٹ چلنے پھرنے میں روز کیا کرتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ہماری نرسیں اور اٹینڈنٹ چلنے پھرنے میں روز کیا کرتے ہیں</span>
                 </h2>
                 <p>
                   <span data-en>
                     This is ordinary caregiving &mdash; the physical, repetitive help a family runs
                     out of strength for. It is not therapy, and we will not dress it up as therapy.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     یہ عام دیکھ بھال ہے — وہی جسمانی اور بار بار کرنے والا کام جس کے لیے گھر والوں کی
                     ہمت جواب دے جاتی ہے۔ یہ تھراپی نہیں، اور ہم اسے تھراپی بنا کر پیش نہیں کریں گے۔
                   </span>
@@ -470,7 +470,7 @@ export default function PhysiotherapyPage() {
                     If your patient needs a physiotherapist, that is a separate visit &mdash; and we
                     can arrange it.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     شفٹ پر ہم جو فرد بھیجتے ہیں وہ فزیوتھراپسٹ نہیں ہوتا۔ وہ ورزشیں طے نہیں کرتے، یہ
                     فیصلہ نہیں کرتے کہ جسم کو کیا کر لینا چاہیے، اور ڈاکٹر کے طے کردہ کسی معاملے میں
                     دخل نہیں دیتے۔ اگر آپ کے مریض کو فزیوتھراپسٹ چاہیے تو وہ ایک الگ وزٹ ہے — اور اُس
@@ -486,7 +486,7 @@ export default function PhysiotherapyPage() {
                 />
                 <h3 style={{ fontSize: 21, marginBottom: 10, lineHeight: 1.3 }}>
                   <span data-en>A visit, or a pair of hands for twelve hours?</span>
-                  <span data-ur className="urdu">ایک وزٹ چاہیے، یا بارہ گھنٹے کے لیے مددگار ہاتھ؟</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ایک وزٹ چاہیے، یا بارہ گھنٹے کے لیے مددگار ہاتھ؟</span>
                 </h3>
                 <p style={{ ...BODY, fontSize: 18 }}>
                   <span data-en>
@@ -497,7 +497,7 @@ export default function PhysiotherapyPage() {
                     your situation on the first call, even when the honest answer is the smaller
                     arrangement.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     فزیوتھراپسٹ ایک وزٹ کے لیے آتا ہے اور چلا جاتا ہے۔ اٹینڈنٹ یا نرس پوری شفٹ گھر میں
                     رہتی ہے۔ کئی گھرانے فزیوتھراپی کا کہہ کر کال کرتے ہیں جبکہ اصل مشکل یہ ہوتی ہے کہ
                     گھر میں کوئی مریض کو دن میں پانچ بار محفوظ طریقے سے اٹھا نہیں سکتا — اور یہ ایک
@@ -510,15 +510,15 @@ export default function PhysiotherapyPage() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 22 }}>
                 <Link className="btn btn-ghost" href="/services/elderly-care">
                   <span data-en>Elderly care at home</span>
-                  <span data-ur className="urdu">بزرگوں کی گھر پر دیکھ بھال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">بزرگوں کی گھر پر دیکھ بھال</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/services/long-term-care">
                   <span data-en>Long-term care at home</span>
-                  <span data-ur className="urdu">گھر پر طویل مدتی دیکھ بھال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">گھر پر طویل مدتی دیکھ بھال</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/charges">
                   <span data-en>How charges work</span>
-                  <span data-ur className="urdu">چارجز کیسے طے ہوتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">چارجز کیسے طے ہوتے ہیں</span>
                 </Link>
               </div>
             </div>
@@ -530,11 +530,11 @@ export default function PhysiotherapyPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>How to arrange it</span>
-                  <span data-ur className="urdu">بندوبست کیسے کریں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">بندوبست کیسے کریں</span>
                 </span>
                 <h2>
                   <span data-en>One call, and we say honestly what fits</span>
-                  <span data-ur className="urdu">ایک کال، اور ہم صاف بتا دیتے ہیں کہ کیا مناسب ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ایک کال، اور ہم صاف بتا دیتے ہیں کہ کیا مناسب ہے</span>
                 </h2>
                 <p>
                   <span data-en>
@@ -544,7 +544,7 @@ export default function PhysiotherapyPage() {
                     or both &mdash; and if it is a question for your doctor, we will say that instead
                     of selling you something.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     کال کریں، واٹس ایپ کریں، یا اپنا نام اور نمبر چھوڑ دیں — ایک اصل شخص آپ کو واپس کال
                     کرے گا۔ ہمیں بتائیں کہ اِس وقت آپ کا مریض گھر میں کیا کر سکتا ہے اور کیا نہیں۔ ہم
                     بتا دیں گے کہ بات فزیوتھراپسٹ کے وزٹ کی ہے، شفٹ پر کیئر گیور کی، یا دونوں کی — اور
@@ -558,11 +558,11 @@ export default function PhysiotherapyPage() {
                   <div key={f.id} style={CARD}>
                     <h3 style={{ fontSize: 20, marginBottom: 8, lineHeight: 1.25 }}>
                       <span data-en>{f.name.en}</span>
-                      <span data-ur className="urdu">{f.name.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.name.ur}</span>
                     </h3>
                     <p style={BODY}>
                       <span data-en>{f.detail.en}</span>
-                      <span data-ur className="urdu">{f.detail.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.detail.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -574,7 +574,7 @@ export default function PhysiotherapyPage() {
               <div style={{ ...CARD, marginTop: 18 }}>
                 <h3 style={{ fontSize: 20, marginBottom: 6 }}>
                   <span data-en>What we promise on the caregivers we send</span>
-                  <span data-ur className="urdu">جو نرس یا اٹینڈنٹ ہم بھیجتے ہیں، اُن پر ہمارا وعدہ</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">جو نرس یا اٹینڈنٹ ہم بھیجتے ہیں، اُن پر ہمارا وعدہ</span>
                 </h3>
                 <TickList
                   items={[
@@ -604,7 +604,7 @@ export default function PhysiotherapyPage() {
                     &mdash; what the visit involves, and what it costs, is told to you on the call
                     before anything is arranged.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     یہ وعدے اُس نرس یا اٹینڈنٹ کے بارے میں ہیں جو ہم شفٹ پر بھیجتے ہیں۔ بندوبست کیا
                     گیا فزیوتھراپسٹ ہمارے اپنے عملے کا حصہ نہیں، اس لیے ہم یہ وعدے اُس وزٹ پر نہیں
                     پھیلاتے — اُس وزٹ میں کیا ہوگا اور خرچ کیا ہوگا، یہ آپ کو کال پر بتا دیا جاتا ہے،
@@ -621,11 +621,11 @@ export default function PhysiotherapyPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>The awkward questions first</span>
-                  <span data-ur className="urdu">مشکل سوال پہلے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">مشکل سوال پہلے</span>
                 </span>
                 <h2>
                   <span data-en>Straight answers.</span>
-                  <span data-ur className="urdu">سیدھے جواب۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">سیدھے جواب۔</span>
                 </h2>
               </div>
 
@@ -635,14 +635,14 @@ export default function PhysiotherapyPage() {
                     <div className="faq-q" style={{ cursor: "default", alignItems: "flex-start" }}>
                       <h3 className="qt">
                         <span data-en>{item.q}</span>
-                        <span data-ur className="urdu">{item.qUr}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{item.qUr}</span>
                       </h3>
                     </div>
                     <div className="faq-a" style={{ gridTemplateRows: "1fr" }}>
                       <div className="faq-a-in" style={{ fontSize: 17 }}>
                         <div className="faq-a-pad">
                           <span data-en>{item.a}</span>
-                          <span data-ur className="urdu">{item.aUr}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{item.aUr}</span>
                         </div>
                       </div>
                     </div>
@@ -655,7 +655,7 @@ export default function PhysiotherapyPage() {
                 <WhatsAppButton />
                 <Link className="btn btn-ghost" href="/book">
                   <span data-en>Ask us to call you back</span>
-                  <span data-ur className="urdu">ہم سے کال منگوائیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ہم سے کال منگوائیں</span>
                 </Link>
               </div>
             </div>

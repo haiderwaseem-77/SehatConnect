@@ -34,12 +34,12 @@ export default function AreasIndexPage() {
             <div className="wrap">
               <span className="eyebrow">
                 <span data-en>Areas we serve &middot; Lahore</span>
-                <span data-ur className="urdu">جن علاقوں میں ہم آتے ہیں &middot; لاہور</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">جن علاقوں میں ہم آتے ہیں &middot; لاہور</span>
               </span>
               <div className="sec-head">
                 <h1>
                   <span data-en>We come to all of Lahore</span>
-                  <span data-ur className="urdu">ہم پورے لاہور میں آتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ہم پورے لاہور میں آتے ہیں</span>
                 </h1>
                 <p>
                   <span data-en>
@@ -47,7 +47,7 @@ export default function AreasIndexPage() {
                     listed, call anyway &mdash; we serve the whole city, and we will
                     tell you honestly on the call if we cannot reach you.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     یہ وہ علاقے ہیں جہاں سے ہمیں سب سے زیادہ رابطہ ہوتا ہے۔ اگر آپ کا علاقہ
                     یہاں نہیں لکھا تو بھی کال کریں &mdash; ہم پورے شہر میں آتے ہیں، اور اگر
                     نہ پہنچ سکیں تو کال پر صاف بتا دیں گے۔
@@ -66,7 +66,7 @@ export default function AreasIndexPage() {
                     <span className="tick" aria-hidden="true">&#10003;</span>
                     <span>
                       <span data-en><b>Nurse &amp; attendant at home in {a.name.en}</b></span>
-                      <span data-ur className="urdu"><b>{a.name.ur} میں گھر پر نرس اور اٹینڈنٹ</b></span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu"><b>{a.name.ur} میں گھر پر نرس اور اٹینڈنٹ</b></span>
                     </span>
                   </Link>
                 ))}
@@ -74,7 +74,7 @@ export default function AreasIndexPage() {
 
               <p className="svc-foot" style={{ marginTop: 18 }}>
                 <span data-en>Our office: {OFFICE_ADDRESS}</span>
-                <span data-ur className="urdu">ہمارا دفتر: {OFFICE_ADDRESS}</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">ہمارا دفتر: {OFFICE_ADDRESS}</span>
               </p>
             </div>
           </section>

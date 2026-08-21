@@ -399,7 +399,7 @@ function TickList({ items }: { items: Bilingual[] }) {
           <Tick />
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -429,7 +429,7 @@ function AnswerBadge({ answer }: { answer: Answer }) {
       }}
     >
       <span data-en>You need: {label.en}</span>
-      <span data-ur className="urdu">ضرورت: {label.ur}</span>
+      <span data-ur lang="ur" dir="rtl" className="urdu">ضرورت: {label.ur}</span>
     </span>
   );
 }
@@ -459,19 +459,19 @@ export default function NurseOrAttendantGuide() {
               <div className="hero-copy" style={{ maxWidth: "62ch" }}>
                 <span className="eyebrow eyebrow-plain">
                   <span data-en>Guide</span>
-                  <span data-ur className="urdu">رہنمائی</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">رہنمائی</span>
                 </span>
 
                 <h1>
                   <span data-en>
                     Nurse or attendant &mdash; <span className="hl">which does your patient need?</span>
                   </span>
-                  <span data-ur className="urdu">{TITLE_UR}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{TITLE_UR}</span>
                 </h1>
 
                 <p className="hero-sub" style={{ maxWidth: "52ch" }}>
                   <span data-en>{DEK_EN}</span>
-                  <span data-ur className="urdu">{DEK_UR}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{DEK_UR}</span>
                 </p>
               </div>
             </div>
@@ -487,7 +487,7 @@ export default function NurseOrAttendantGuide() {
                 />
                 <span className="eyebrow" style={{ marginBottom: 12 }}>
                   <span data-en>The short answer</span>
-                  <span data-ur className="urdu">مختصر جواب</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">مختصر جواب</span>
                 </span>
                 <p style={{ ...BODY_TEXT, fontSize: 19 }}>
                   <span data-en>
@@ -498,7 +498,7 @@ export default function NurseOrAttendantGuide() {
                     <b style={{ color: "var(--ink)" }}>Attendant</b> does everything else that keeps a
                     patient comfortable &mdash; feeding, hygiene, movement, company, nights.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     نرس اور اٹینڈنٹ میں فرق یہ ہے کہ مریض کے ساتھ کون سا کام کرنے کی اجازت اور تربیت کس کے
                     پاس ہے۔ <b style={{ color: "var(--ink)" }}>PNC رجسٹرڈ نرس</b> طبی کام کرتی ہے — انجیکشن،
                     ڈرپ، زخم کی ڈریسنگ، ٹیوب، تجویز کردہ دوائیں اور نگرانی۔{" "}
@@ -514,7 +514,7 @@ export default function NurseOrAttendantGuide() {
                     attendant is the right person &mdash; and the cheaper mistake to avoid is booking a
                     nurse you did not need.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     اس لیے عموماً ایک سوال سے بات طے ہو جاتی ہے:{" "}
                     <b style={{ color: "var(--ink)" }}>کیا ڈاکٹر نے گھر پر مریض کے لیے کچھ کرنے کو لکھا ہے؟</b>{" "}
                     اگر ہاں، تو نرس چاہیے۔ اگر مشکل کھانا کھلانے، نہلانے، چلانے اور اکیلا نہ چھوڑنے کی ہے،
@@ -531,13 +531,13 @@ export default function NurseOrAttendantGuide() {
               <div className="sec-head">
                 <h2>
                   <span data-en>What each one is</span>
-                  <span data-ur className="urdu">دونوں میں سے ہر ایک کیا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">دونوں میں سے ہر ایک کیا ہے</span>
                 </h2>
                 <p>
                   <span data-en>
                     Same verification, same shifts, different work. Nothing on either list is a maybe.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     تصدیق ایک جیسی، شفٹیں ایک جیسی، کام الگ۔ دونوں فہرستوں میں کوئی بات &ldquo;شاید&rdquo; والی نہیں۔
                   </span>
                 </p>
@@ -547,14 +547,14 @@ export default function NurseOrAttendantGuide() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 21, marginBottom: 8 }}>
                     <span data-en>A Qualified Nurse</span>
-                    <span data-ur className="urdu">PNC رجسٹرڈ نرس</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">PNC رجسٹرڈ نرس</span>
                   </h3>
                   <p style={{ ...BODY_TEXT, fontSize: 16.5, marginBottom: 6 }}>
                     <span data-en>
                       Registered with the Pakistan Nursing Council, with a registration number our team
                       checks. She follows the doctor&rsquo;s plan in your home.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       پاکستان نرسنگ کونسل میں رجسٹرڈ، اور اس کا رجسٹریشن نمبر ہماری ٹیم خود چیک کرتی ہے۔ وہ
                       آپ کے گھر میں ڈاکٹر کے پلان پر عمل کرتی ہے۔
                     </span>
@@ -565,14 +565,14 @@ export default function NurseOrAttendantGuide() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 21, marginBottom: 8 }}>
                     <span data-en>An Attendant</span>
-                    <span data-ur className="urdu">اٹینڈنٹ</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">اٹینڈنٹ</span>
                   </h3>
                   <p style={{ ...BODY_TEXT, fontSize: 16.5, marginBottom: 6 }}>
                     <span data-en>
                       Not a nurse, and not pretending to be one. An attendant does the everyday, hands-on
                       care that wears a family out &mdash; and does it all day, or all night.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       نرس نہیں، اور نہ ہی نرس بننے کا دعویٰ۔ اٹینڈنٹ وہ روزمرہ، ہاتھ سے کرنے والی دیکھ بھال
                       کرتا ہے جو گھر والوں کو تھکا دیتی ہے — سارا دن، یا ساری رات۔
                     </span>
@@ -596,17 +596,17 @@ export default function NurseOrAttendantGuide() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Eight situations, eight answers</span>
-                  <span data-ur className="urdu">آٹھ حالات، آٹھ جواب</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آٹھ حالات، آٹھ جواب</span>
                 </span>
                 <h2>
                   <span data-en>Find the one that sounds like your house.</span>
-                  <span data-ur className="urdu">وہ صورتحال ڈھونڈیں جو آپ کے گھر جیسی ہو۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">وہ صورتحال ڈھونڈیں جو آپ کے گھر جیسی ہو۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     These are the situations families describe to us most often, with what we tell them.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     یہ وہی حالات ہیں جو گھر والے ہمیں سب سے زیادہ بتاتے ہیں، اور ہم انہیں جو جواب دیتے ہیں۔
                   </span>
                 </p>
@@ -618,11 +618,11 @@ export default function NurseOrAttendantGuide() {
                     <AnswerBadge answer={s.answer} />
                     <h3 style={{ fontSize: 19, marginBottom: 10, lineHeight: 1.3 }}>
                       <span data-en>{s.title.en}</span>
-                      <span data-ur className="urdu">{s.title.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{s.title.ur}</span>
                     </h3>
                     <p style={BODY_TEXT}>
                       <span data-en>{s.body.en}</span>
-                      <span data-ur className="urdu">{s.body.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{s.body.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -636,7 +636,7 @@ export default function NurseOrAttendantGuide() {
               <div className="sec-head">
                 <h2>
                   <span data-en>What it costs you to get this wrong</span>
-                  <span data-ur className="urdu">غلط انتخاب کا نقصان کیا ہوتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">غلط انتخاب کا نقصان کیا ہوتا ہے</span>
                 </h2>
               </div>
 
@@ -644,7 +644,7 @@ export default function NurseOrAttendantGuide() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 10 }}>
                     <span data-en>An attendant, where a nurse was needed</span>
-                    <span data-ur className="urdu">نرس والے کام پر اٹینڈنٹ بلا لینا</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">نرس والے کام پر اٹینڈنٹ بلا لینا</span>
                   </h3>
                   <p style={BODY_TEXT}>
                     <span data-en>
@@ -653,7 +653,7 @@ export default function NurseOrAttendantGuide() {
                       is not taken. You lose the day, the family is still doing everything, and the patient
                       is no better off. Nobody can improvise their way around it.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       یہ مہنگی غلطی ہے، اور نقصان پیسوں کا نہیں۔ طبی کام ہو ہی نہیں پاتا — ڈریسنگ نہیں
                       بدلتی، ڈرپ نہیں لگتی، ریڈنگ نہیں لی جاتی۔ دن ضائع ہوتا ہے، سارا بوجھ گھر والوں پر ہی
                       رہتا ہے، اور مریض کا کوئی فائدہ نہیں ہوتا۔ اس میں کوئی جگاڑ نہیں چلتی۔
@@ -664,7 +664,7 @@ export default function NurseOrAttendantGuide() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 10 }}>
                     <span data-en>A nurse, where an attendant was enough</span>
-                    <span data-ur className="urdu">جہاں اٹینڈنٹ کافی تھا، وہاں نرس بلا لینا</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">جہاں اٹینڈنٹ کافی تھا، وہاں نرس بلا لینا</span>
                   </h3>
                   <p style={BODY_TEXT}>
                     <span data-en>
@@ -674,7 +674,7 @@ export default function NurseOrAttendantGuide() {
                       patient does not need it, we will tell you on the call, even though it means a
                       smaller booking for us.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       دیکھ بھال تو ہو جاتی ہے، اس لیے یہ نسبتاً ہلکی غلطی ہے — لیکن آپ ایسی مہارت کے پیسے
                       دیتے ہیں جو مریض استعمال ہی نہیں کر رہا۔ نرس اور اٹینڈنٹ کی قیمت الگ ہوتی ہے، کیونکہ
                       کام الگ ہے۔ اگر آپ دونوں میں سے مہنگا والا مانگیں اور مریض کو اس کی ضرورت نہ ہو، تو ہم
@@ -692,13 +692,13 @@ export default function NurseOrAttendantGuide() {
               <div className="sec-head">
                 <h2>
                   <span data-en>When you need both &mdash; and when the answer changes</span>
-                  <span data-ur className="urdu">جب دونوں کی ضرورت ہو — اور جب جواب بدل جائے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">جب دونوں کی ضرورت ہو — اور جب جواب بدل جائے</span>
                 </h2>
                 <p>
                   <span data-en>
                     Plenty of homes need one of each, and plenty of answers change after a week.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     بہت سے گھروں کو دونوں کی ضرورت ہوتی ہے، اور بہت سے جواب ایک ہفتے بعد بدل جاتے ہیں۔
                   </span>
                 </p>
@@ -722,7 +722,7 @@ export default function NurseOrAttendantGuide() {
                     we change the plan. You can call or WhatsApp us up to 4 hours before a shift to cancel
                     or reschedule at no charge.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     سب سے عام تبدیلی یہ ہوتی ہے: آپریشن کے بعد پہلے چند دن نرس، جب تک ڈریسنگ کرنی ہو، اور
                     پھر جب ڈاکٹر ڈریسنگ بند کر دے تو اٹینڈنٹ، کیونکہ اصل کام کھانا، صفائی اور چلنے پھرنے میں
                     مدد رہ جاتا ہے۔ معاملہ الٹ بھی ہو سکتا ہے — مریض کمزور ہو جائے اور کوئی طبی کام آ جائے۔
@@ -740,18 +740,18 @@ export default function NurseOrAttendantGuide() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>How we decide with you</span>
-                  <span data-ur className="urdu">فیصلہ ہم آپ کے ساتھ کیسے کرتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">فیصلہ ہم آپ کے ساتھ کیسے کرتے ہیں</span>
                 </span>
                 <h2>
                   <span data-en>Four questions on the call. That is the whole method.</span>
-                  <span data-ur className="urdu">کال پر چار سوال۔ بس یہی طریقہ ہے۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">کال پر چار سوال۔ بس یہی طریقہ ہے۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     They are printed here so you can work the answer out on your own if you would rather
                     not call anyone.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     یہ یہاں اس لیے لکھے ہیں کہ اگر آپ کسی کو کال نہ کرنا چاہیں تو خود بھی جواب نکال سکیں۔
                   </span>
                 </p>
@@ -779,11 +779,11 @@ export default function NurseOrAttendantGuide() {
                     </span>
                     <h3 style={{ fontSize: 19, marginBottom: 10, lineHeight: 1.3 }}>
                       <span data-en>{step.title.en}</span>
-                      <span data-ur className="urdu">{step.title.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{step.title.ur}</span>
                     </h3>
                     <p style={BODY_TEXT}>
                       <span data-en>{step.body.en}</span>
-                      <span data-ur className="urdu">{step.body.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{step.body.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -792,7 +792,7 @@ export default function NurseOrAttendantGuide() {
               <div style={{ ...CARD, marginTop: 18 }}>
                 <h3 style={{ fontSize: 19, marginBottom: 6 }}>
                   <span data-en>And if the decision still turns out wrong</span>
-                  <span data-ur className="urdu">اور اگر پھر بھی فیصلہ غلط نکلے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اور اگر پھر بھی فیصلہ غلط نکلے</span>
                 </h3>
                 <TickList items={CALL_PROMISES} />
               </div>
@@ -805,7 +805,7 @@ export default function NurseOrAttendantGuide() {
               <div className="sec-head">
                 <h2>
                   <span data-en>Questions we get right after this one</span>
-                  <span data-ur className="urdu">اس کے فوراً بعد پوچھے جانے والے سوال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اس کے فوراً بعد پوچھے جانے والے سوال</span>
                 </h2>
               </div>
 
@@ -815,14 +815,14 @@ export default function NurseOrAttendantGuide() {
                     <div className="faq-q" style={{ cursor: "default", alignItems: "flex-start" }}>
                       <h3 className="qt">
                         <span data-en>{item.q}</span>
-                        <span data-ur className="urdu">{item.qUr}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{item.qUr}</span>
                       </h3>
                     </div>
                     <div className="faq-a" style={{ gridTemplateRows: "1fr" }}>
                       <div className="faq-a-in" style={{ fontSize: 17 }}>
                         <div className="faq-a-pad">
                           <span data-en>{item.a}</span>
-                          <span data-ur className="urdu">{item.aUr}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{item.aUr}</span>
                         </div>
                       </div>
                     </div>
@@ -838,25 +838,25 @@ export default function NurseOrAttendantGuide() {
               <div className="sec-head">
                 <h2>
                   <span data-en>Read more before you decide</span>
-                  <span data-ur className="urdu">فیصلے سے پہلے مزید پڑھ لیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">فیصلے سے پہلے مزید پڑھ لیں</span>
                 </h2>
               </div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
                 <Link className="btn btn-ghost" href="/services/qualified-nurse" style={{ minHeight: 56 }}>
                   <span data-en>What a qualified nurse does</span>
-                  <span data-ur className="urdu">نرس کیا کرتی ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">نرس کیا کرتی ہے</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/services/attendant" style={{ minHeight: 56 }}>
                   <span data-en>What an attendant does</span>
-                  <span data-ur className="urdu">اٹینڈنٹ کیا کرتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اٹینڈنٹ کیا کرتا ہے</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/charges" style={{ minHeight: 56 }}>
                   <span data-en>How charges work</span>
-                  <span data-ur className="urdu">چارجز کیسے طے ہوتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">چارجز کیسے طے ہوتے ہیں</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/guides" style={{ minHeight: 56 }}>
                   <span data-en>All guides</span>
-                  <span data-ur className="urdu">تمام رہنمائی</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">تمام رہنمائی</span>
                 </Link>
               </div>
             </div>

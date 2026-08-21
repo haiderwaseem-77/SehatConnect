@@ -291,7 +291,7 @@ function TickList({ items }: { items: Bilingual[] }) {
           <Tick />
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -325,14 +325,14 @@ export default function MotherPostnatalCarePage() {
                 <div className="hero-copy">
                   <span className="eyebrow eyebrow-plain">
                     <span data-en>After delivery &middot; zachgi ke baad</span>
-                    <span data-ur className="urdu">زچگی کے بعد</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">زچگی کے بعد</span>
                   </span>
 
                   <h1>
                     <span data-en>
                       Postnatal care at home in <span className="hl">Lahore</span> — for the mother
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       <span className="hl">لاہور</span> میں گھر پر زچگی کے بعد ماں کی دیکھ بھال
                     </span>
                   </h1>
@@ -343,7 +343,7 @@ export default function MotherPostnatalCarePage() {
                       dressing, prescribed medicines and monitoring — or an attendant in the house
                       so she can actually rest. A female caregiver whenever you ask.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       لاہور میں گھر پر زچگی کے بعد کی دیکھ بھال: سی سیکشن کی ڈریسنگ، تجویز کردہ
                       دوائیں اور نگرانی کے لیے PNC رجسٹرڈ نرس — یا گھر میں اٹینڈنٹ، تاکہ وہ واقعی
                       آرام کر سکے۔ خاتون کیئر گیور، جب بھی آپ کہیں۔
@@ -353,19 +353,19 @@ export default function MotherPostnatalCarePage() {
                   <div className="hero-trust">
                     <span className="pill">
                       <span data-en>Female caregiver on request</span>
-                      <span data-ur className="urdu">خاتون کیئر گیور، آپ کے کہنے پر</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">خاتون کیئر گیور، آپ کے کہنے پر</span>
                     </span>
                     <span className="pill">
                       <span data-en>Care can start within 24 hours</span>
-                      <span data-ur className="urdu">24 گھنٹوں میں شروع</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">24 گھنٹوں میں شروع</span>
                     </span>
                     <span className="pill">
                       <span data-en>{PROMISES.trial.enShort}</span>
-                      <span data-ur className="urdu">{PROMISES.trial.urShort}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{PROMISES.trial.urShort}</span>
                     </span>
                     <span className="pill">
                       <span data-en>Single visit or full shift</span>
-                      <span data-ur className="urdu">ایک وزٹ یا پوری شفٹ</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">ایک وزٹ یا پوری شفٹ</span>
                     </span>
                   </div>
 
@@ -375,12 +375,12 @@ export default function MotherPostnatalCarePage() {
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                       </svg>
                       <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-                      <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
                     </a>
                     <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
                       <span className="wadot" />
                       <span data-en>Ask on WhatsApp</span>
-                      <span data-ur className="urdu">واٹس ایپ پر پوچھیں</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ پر پوچھیں</span>
                     </a>
                   </div>
                 </div>
@@ -400,7 +400,7 @@ export default function MotherPostnatalCarePage() {
               <div className="sec-head">
                 <h2>
                   <span data-en>You are probably arranging this for her.</span>
-                  <span data-ur className="urdu">یہ بندوبست غالباً آپ اس کے لیے کر رہے ہیں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">یہ بندوبست غالباً آپ اس کے لیے کر رہے ہیں۔</span>
                 </h2>
               </div>
 
@@ -415,7 +415,7 @@ export default function MotherPostnatalCarePage() {
                     or her sister — from the hospital corridor, or from the drawing room at home
                     while she is asleep in the next room.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     یہ کال عموماً ماں خود نہیں کرتی۔ اس کا شوہر، اس کی والدہ یا اس کی بہن کرتی ہے —
                     ہسپتال کی راہداری سے، یا گھر کے ڈرائنگ روم سے، جب وہ ساتھ والے کمرے میں سو رہی
                     ہوتی ہے۔
@@ -428,7 +428,7 @@ export default function MotherPostnatalCarePage() {
                     meals, helping her up, staying awake at night so the family does not have to —
                     is practical help. That is all we are offering here, and it is enough.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     بچے کی پیدائش کے بعد کے دن مشکل ہوتے ہیں، اور خیرخواہ لوگوں سے بھرا گھر مدد کے
                     برابر نہیں ہوتا۔ ایک ایسا فرد جس کا واحد کام ماں کا خیال رکھنا ہو — اسے کھانا لا
                     کر دینا، اٹھنے میں سہارا دینا، رات کو جاگنا تاکہ گھر والوں کو نہ جاگنا پڑے — یہی
@@ -440,7 +440,7 @@ export default function MotherPostnatalCarePage() {
                     Tell us what she needs and we will tell you plainly whether that is a nurse or an
                     attendant. You do not have to work it out on your own.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     ہمیں بتائیں کہ اسے کیا چاہیے، ہم صاف بتا دیں گے کہ نرس مناسب ہے یا اٹینڈنٹ۔ یہ سب
                     آپ کو خود طے کرنے کی ضرورت نہیں۔
                   </span>
@@ -458,7 +458,7 @@ export default function MotherPostnatalCarePage() {
                   }}
                 >
                   <span data-en>{CALLBACK_PROMISE.en} {START_PROMISE.en}</span>
-                  <span data-ur className="urdu">{CALLBACK_PROMISE.ur} {START_PROMISE.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{CALLBACK_PROMISE.ur} {START_PROMISE.ur}</span>
                 </p>
               </div>
             </div>
@@ -477,18 +477,18 @@ export default function MotherPostnatalCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Postnatal care at home in Lahore — what it actually is</span>
-                  <span data-ur className="urdu">لاہور میں گھر پر زچگی کے بعد کی دیکھ بھال — اصل میں کیا</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">لاہور میں گھر پر زچگی کے بعد کی دیکھ بھال — اصل میں کیا</span>
                 </span>
                 <h2>
                   <span data-en>What the caregiver does — for her.</span>
-                  <span data-ur className="urdu">کیئر گیور اس کے لیے کیا کرتی ہے۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">کیئر گیور اس کے لیے کیا کرتی ہے۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     Whether a nurse or an attendant comes depends on what your family actually needs.
                     We settle that together on the first call, and we say honestly which one it is.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     نرس آئے گی یا اٹینڈنٹ، اس کا انحصار آپ کے گھر کی اصل ضرورت پر ہے۔ یہ ہم پہلی کال
                     پر مل کر طے کرتے ہیں اور صاف بتا دیتے ہیں کہ کون سا فرد مناسب ہے۔
                   </span>
@@ -499,14 +499,14 @@ export default function MotherPostnatalCarePage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 6, lineHeight: 1.25 }}>
                     <span data-en>A Qualified Nurse — PNC-registered</span>
-                    <span data-ur className="urdu">کوالیفائیڈ نرس — PNC رجسٹرڈ</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">کوالیفائیڈ نرس — PNC رجسٹرڈ</span>
                   </h3>
                   <p style={{ ...BODY, fontSize: 16, marginBottom: 6 }}>
                     <span data-en>
                       The clinical work, always on the doctor&rsquo;s written plan — never on a plan
                       of ours.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       طبی کام، ہمیشہ ڈاکٹر کے لکھے ہوئے پلان کے مطابق — اپنی مرضی سے نہیں۔
                     </span>
                   </p>
@@ -516,14 +516,14 @@ export default function MotherPostnatalCarePage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 6, lineHeight: 1.25 }}>
                     <span data-en>An attendant — the everyday help</span>
-                    <span data-ur className="urdu">اٹینڈنٹ — روزمرہ کی مدد</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">اٹینڈنٹ — روزمرہ کی مدد</span>
                   </h3>
                   <p style={{ ...BODY, fontSize: 16, marginBottom: 6 }}>
                     <span data-en>
                       Non-clinical, hands-on help so the mother can lie down instead of running the
                       house.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       غیر طبی، عملی مدد — تاکہ ماں گھر چلانے کے بجائے آرام کر سکے۔
                     </span>
                   </p>
@@ -534,15 +534,15 @@ export default function MotherPostnatalCarePage() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 22 }}>
                 <Link className="btn btn-ghost" href="/services/qualified-nurse">
                   <span data-en>Everything a qualified nurse handles</span>
-                  <span data-ur className="urdu">نرس کے تمام طبی کام</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">نرس کے تمام طبی کام</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/services/attendant">
                   <span data-en>What an attendant does</span>
-                  <span data-ur className="urdu">اٹینڈنٹ کیا کرتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اٹینڈنٹ کیا کرتا ہے</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/charges">
                   <span data-en>How charges work</span>
-                  <span data-ur className="urdu">چارجز کیسے طے ہوتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">چارجز کیسے طے ہوتے ہیں</span>
                 </Link>
               </div>
             </div>
@@ -556,11 +556,11 @@ export default function MotherPostnatalCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Nurse after a C-section at home</span>
-                  <span data-ur className="urdu">سی سیکشن کے بعد گھر پر نرس</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">سی سیکشن کے بعد گھر پر نرس</span>
                 </span>
                 <h2>
                   <span data-en>After a C-section.</span>
-                  <span data-ur className="urdu">سی سیکشن کے بعد۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">سی سیکشن کے بعد۔</span>
                 </h2>
               </div>
 
@@ -572,7 +572,7 @@ export default function MotherPostnatalCarePage() {
                     schedule the doctor wrote down, with the medicines from the same prescription and
                     the follow-up date already on the paper in your hand.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     سی سیکشن کے بعد آپریشن کا زخم ہوتا ہے، اور اس کی دیکھ بھال بھی ویسے ہی ہوتی ہے
                     جیسے کسی بھی آپریشن کے زخم کی: PNC رجسٹرڈ نرس اسے صاف کر کے ڈریسنگ کرتی ہے، اسی
                     وقفے سے جو ڈاکٹر نے لکھا ہو، اسی نسخے کی دوائیں، اور اگلے چیک اپ کی وہی تاریخ جو
@@ -586,7 +586,7 @@ export default function MotherPostnatalCarePage() {
                     leave. Send a photo of the discharge paper on WhatsApp — you do not have to
                     explain it all on the phone.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     اگر گھر میں صرف ڈریسنگ ہی کوئی نہیں کر سکتا تو اس کے لیے 12 گھنٹے کی شفٹ لینے کی
                     ضرورت نہیں۔ نرس ایک وزٹ کے لیے آ سکتی ہے، ڈریسنگ کر کے چلی جائے گی۔ ڈسچارج والے
                     کاغذ کی تصویر واٹس ایپ کر دیں — سب کچھ فون پر بتانا ضروری نہیں۔
@@ -602,7 +602,7 @@ export default function MotherPostnatalCarePage() {
                     straight away so you can call that doctor. In an emergency, the hospital comes
                     first — always.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     صاف بات: ہم وہ ڈاکٹر نہیں جنہوں نے ڈیلیوری کروائی، اور ہم ایسا ظاہر بھی نہیں
                     کرتے۔ ہماری نرس صرف ڈسچارج کے کاغذ اور نسخے کے مطابق کام کرتی ہے — ہم تشخیص نہیں
                     کرتے، اور اس صفحے پر آپ کو علامات کی کوئی فہرست نہیں ملے گی، کیونکہ ان کے معاملے
@@ -633,11 +633,11 @@ export default function MotherPostnatalCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Zachgi ke baad dekh bhaal</span>
-                  <span data-ur className="urdu">زچگی کے بعد دیکھ بھال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">زچگی کے بعد دیکھ بھال</span>
                 </span>
                 <h2>
                   <span data-en>The help families have always arranged after a birth.</span>
-                  <span data-ur className="urdu">وہ مدد جو گھرانے ہمیشہ سے بچے کی پیدائش کے بعد کرتے آئے ہیں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">وہ مدد جو گھرانے ہمیشہ سے بچے کی پیدائش کے بعد کرتے آئے ہیں۔</span>
                 </h2>
               </div>
 
@@ -650,7 +650,7 @@ export default function MotherPostnatalCarePage() {
                     nobody free to do it, and the job quietly lands on whoever is least able to
                     refuse.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     ہمارے گھروں میں نئی ماں سے گھر چلوانا مقصود نہیں ہوتا۔ کوئی ذمہ داری سنبھال لیتا
                     ہے تاکہ وہ لیٹ سکے — روایتی طور پر کوئی خالہ، کوئی بڑی رشتہ دار یا کوئی پڑوسن جو
                     چند دن رک سکے۔ آج لاہور کے بہت سے گھروں میں یہ کرنے والا کوئی فارغ نہیں ہوتا، اور
@@ -665,7 +665,7 @@ export default function MotherPostnatalCarePage() {
                     somebody awake at night. Ordinary, practical, hands-on help — the kind that
                     actually lets a mother rest.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     ہم جو اٹینڈنٹ بھیجتے ہیں، اس کا پورا کام یہی ہے۔ وہ پوری شفٹ گھر میں رہتی ہے: ماں
                     کا کھانا اور پانی اسی کے پاس، نہانے دھونے اور کپڑے بدلنے میں مدد، اٹھتے وقت
                     سہارا، بستر صاف، کمرے میں ساتھ، اور رات کو جاگنے والا کوئی۔ سیدھی سادی، عملی مدد
@@ -679,7 +679,7 @@ export default function MotherPostnatalCarePage() {
                     tell you plainly whether our attendant does that than have you discover on the
                     morning she arrives that she does not.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     اگر ان دنوں کے لیے آپ کے گھر والوں کی کوئی خاص توقع ہے — کوئی مخصوص معمول یا کوئی
                     ایسا طریقہ جو آپ کے لیے اہم ہو — تو پہلی کال پر بتا دیں۔ ہم صاف بتا دینا بہتر
                     سمجھتے ہیں کہ ہماری اٹینڈنٹ وہ کام کرتی ہے یا نہیں، بجائے اس کے کہ آپ کو اس کے
@@ -696,11 +696,11 @@ export default function MotherPostnatalCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Female-for-female, always</span>
-                  <span data-ur className="urdu">خاتون کے لیے خاتون، ہمیشہ</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">خاتون کے لیے خاتون، ہمیشہ</span>
                 </span>
                 <h2>
                   <span data-en>A female caregiver, if you ask — and here, most families do.</span>
-                  <span data-ur className="urdu">خاتون کیئر گیور، اگر آپ کہیں — اور یہاں تقریباً سب کہتے ہیں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">خاتون کیئر گیور، اگر آپ کہیں — اور یہاں تقریباً سب کہتے ہیں۔</span>
                 </h2>
               </div>
 
@@ -711,7 +711,7 @@ export default function MotherPostnatalCarePage() {
                     to explain why, and you are not asking for a favour — for a service like this it
                     is what we expect to hear.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     کال پر بتا دیں، ہم خاتون نرس یا خاتون اٹینڈنٹ بھیجیں گے۔ وجہ بتانے کی ضرورت نہیں،
                     اور یہ کوئی رعایت مانگنا نہیں — ایسی خدمت کے لیے ہمیں یہی توقع ہوتی ہے۔
                   </span>
@@ -723,7 +723,7 @@ export default function MotherPostnatalCarePage() {
                     already seen. If you tell us up to 4 hours before the shift, there is no charge
                     to cancel or reschedule.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     آنے سے پہلے اس کا کارڈ آپ کو واٹس ایپ پر مل جاتا ہے — تصویر، نام، اور نرس ہو تو
                     اس کا PNC رجسٹریشن نمبر — تاکہ دروازے پر کھڑا فرد وہی ہو جسے آپ پہلے دیکھ چکے
                     ہیں۔ شفٹ سے 4 گھنٹے پہلے تک بتا دیں تو منسوخی یا وقت بدلنے کا کوئی چارج نہیں۔
@@ -746,18 +746,18 @@ export default function MotherPostnatalCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>How the care is arranged</span>
-                  <span data-ur className="urdu">دیکھ بھال کا بندوبست کیسے ہوتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">دیکھ بھال کا بندوبست کیسے ہوتا ہے</span>
                 </span>
                 <h2>
                   <span data-en>One visit, one shift, or somebody here at night.</span>
-                  <span data-ur className="urdu">ایک وزٹ، ایک شفٹ، یا رات بھر کے لیے کوئی۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ایک وزٹ، ایک شفٹ، یا رات بھر کے لیے کوئی۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     Pick the shape that fits the week you are actually having — and change it as the
                     house settles.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     وہ صورت چنیں جو آپ کے اس ہفتے کے حالات پر پوری اترے — اور گھر کے معمولات بہتر ہوں
                     تو اسے بدل لیں۔
                   </span>
@@ -769,11 +769,11 @@ export default function MotherPostnatalCarePage() {
                   <div key={f.id} style={CARD}>
                     <h3 style={{ fontSize: 20, marginBottom: 8, lineHeight: 1.25 }}>
                       <span data-en>{f.name.en}</span>
-                      <span data-ur className="urdu">{f.name.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.name.ur}</span>
                     </h3>
                     <p style={BODY}>
                       <span data-en>{f.detail.en}</span>
-                      <span data-ur className="urdu">{f.detail.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.detail.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -783,7 +783,7 @@ export default function MotherPostnatalCarePage() {
                 <TickList items={PROMISE_LINES} />
                 <p style={{ ...NOTE, fontSize: 16 }}>
                   <span data-en>{VERIFICATION_PROMISE.en}</span>
-                  <span data-ur className="urdu">{VERIFICATION_PROMISE.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{VERIFICATION_PROMISE.ur}</span>
                 </p>
               </div>
             </div>
@@ -795,11 +795,11 @@ export default function MotherPostnatalCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Zachgi ke baad dekh bhaal — the questions families ask</span>
-                  <span data-ur className="urdu">زچگی کے بعد دیکھ بھال — عام سوالات</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">زچگی کے بعد دیکھ بھال — عام سوالات</span>
                 </span>
                 <h2>
                   <span data-en>Straight answers, before you decide.</span>
-                  <span data-ur className="urdu">فیصلے سے پہلے، سیدھے جواب۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">فیصلے سے پہلے، سیدھے جواب۔</span>
                 </h2>
               </div>
 
@@ -809,14 +809,14 @@ export default function MotherPostnatalCarePage() {
                     <div className="faq-q" style={{ cursor: "default", alignItems: "flex-start" }}>
                       <h3 className="qt">
                         <span data-en>{item.q}</span>
-                        <span data-ur className="urdu">{item.qUr}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{item.qUr}</span>
                       </h3>
                     </div>
                     <div className="faq-a" style={{ gridTemplateRows: "1fr" }}>
                       <div className="faq-a-in" style={{ fontSize: 17 }}>
                         <div className="faq-a-pad">
                           <span data-en>{item.a}</span>
-                          <span data-ur className="urdu">{item.aUr}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{item.aUr}</span>
                         </div>
                       </div>
                     </div>
@@ -830,16 +830,16 @@ export default function MotherPostnatalCarePage() {
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                   </svg>
                   <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-                  <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
                 </a>
                 <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
                   <span className="wadot" />
                   <span data-en>Ask on WhatsApp</span>
-                  <span data-ur className="urdu">واٹس ایپ پر پوچھیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ پر پوچھیں</span>
                 </a>
                 <Link className="btn btn-ghost" href="/book">
                   <span data-en>Leave your number — we call you back</span>
-                  <span data-ur className="urdu">اپنا نمبر لکھ دیں — ہم کال کریں گے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اپنا نمبر لکھ دیں — ہم کال کریں گے</span>
                 </Link>
               </div>
             </div>

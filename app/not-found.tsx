@@ -47,14 +47,14 @@ export default function NotFound() {
 
               <h1 style={{ fontSize: "clamp(24px,5.5vw,30px)", marginBottom: 12 }}>
                 <span data-en>Let&rsquo;s get you back to a human.</span>
-                <span data-ur className="urdu">آئیں، آپ کو ہماری ٹیم تک لے چلتے ہیں۔</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">آئیں، آپ کو ہماری ٹیم تک لے چلتے ہیں۔</span>
               </h1>
 
               <p style={{ fontSize: 18, color: "var(--ink-soft)", lineHeight: 1.65, marginBottom: 26, fontWeight: 500 }}>
                 <span data-en>
                   This page doesn&rsquo;t exist, or it moved. Call or WhatsApp us and we&rsquo;ll help you right away.
                 </span>
-                <span data-ur className="urdu">
+                <span data-ur lang="ur" dir="rtl" className="urdu">
                   یہ صفحہ موجود نہیں یا منتقل ہو گیا ہے۔ کال یا واٹس ایپ کریں؛ ہم فوراً مدد کر دیں گے۔
                 </span>
               </p>
@@ -62,7 +62,7 @@ export default function NotFound() {
               <div style={{ display: "grid", gap: 10 }}>
                 <a className="btn btn-primary btn-block btn-lg" href={`tel:${CONTACT_PHONE_TEL}`}>
                   <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-                  <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
                 </a>
                 <a
                   className="btn btn-wa btn-block btn-lg"
@@ -72,11 +72,11 @@ export default function NotFound() {
                 >
                   <span className="wadot" />
                   <span data-en>WhatsApp us</span>
-                  <span data-ur className="urdu">واٹس ایپ پر بات کریں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ پر بات کریں</span>
                 </a>
                 <Link className="btn btn-ghost btn-block" href="/">
                   <span data-en>Back to home</span>
-                  <span data-ur className="urdu">ہوم پر واپس</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ہوم پر واپس</span>
                 </Link>
               </div>
             </div>

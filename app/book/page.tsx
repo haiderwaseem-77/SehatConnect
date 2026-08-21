@@ -34,18 +34,18 @@ export default function BookPage() {
               <div className="sec-head" style={{ marginBottom: 24 }}>
                 <span className="eyebrow">
                   <span data-en>A real person is one call away</span>
-                  <span data-ur className="urdu">حقیقی انسان، صرف ایک کال دور</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">حقیقی انسان، صرف ایک کال دور</span>
                 </span>
                 <h1>
                   <span data-en>Leave your number. We&rsquo;ll call you back.</span>
-                  <span data-ur className="urdu">اپنا نمبر چھوڑ دیں۔ ہم واپس کال کریں گے۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اپنا نمبر چھوڑ دیں۔ ہم واپس کال کریں گے۔</span>
                 </h1>
                 <p>
                   <span data-en>
                     Name and phone only. First day free. No payment now. No advance. A real person calls to understand what you need
                     and arrange the right nurse or attendant.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     صرف نام اور نمبر۔ پہلا دن مفت ہے۔ ابھی کوئی ادائیگی نہیں، کوئی پیشگی نہیں۔ ہماری ٹیم کال کر کے ضرورت سمجھے گی
                     اور مناسب نرس یا اٹینڈنٹ کا بندوبست کرے گی۔
                   </span>

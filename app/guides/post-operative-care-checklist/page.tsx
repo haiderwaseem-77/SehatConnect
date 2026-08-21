@@ -453,7 +453,7 @@ function TickList({ items }: { items: Bilingual[] }) {
           <Tick />
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -467,7 +467,7 @@ function Paras({ items, style }: { items: Bilingual[]; style?: CSSProperties }) 
       {items.map((p, i) => (
         <p key={p.en} style={{ ...BODY, ...style, marginTop: i === 0 ? 0 : 16 }}>
           <span data-en>{p.en}</span>
-          <span data-ur className="urdu">{p.ur}</span>
+          <span data-ur lang="ur" dir="rtl" className="urdu">{p.ur}</span>
         </p>
       ))}
     </>
@@ -500,7 +500,7 @@ export default function PostOperativeCareChecklistPage() {
               <div className="hero-copy">
                 <span className="eyebrow eyebrow-plain">
                   <span data-en>Guide &middot; discharge day</span>
-                  <span data-ur className="urdu">رہنمائی &middot; ڈسچارج والا دن</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">رہنمائی &middot; ڈسچارج والا دن</span>
                 </span>
 
                 <h1>
@@ -508,7 +508,7 @@ export default function PostOperativeCareChecklistPage() {
                     Bringing someone home after surgery: a{" "}
                     <span className="hl">post-operative care checklist</span>
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     آپریشن کے بعد کسی کو گھر لانا: <span className="hl">تیاری کی چیک لسٹ</span>
                   </span>
                 </h1>
@@ -519,7 +519,7 @@ export default function PostOperativeCareChecklistPage() {
                     through the first nights, and how to keep the papers straight. Print it or keep
                     it open on your phone &mdash; it is meant for the fridge door, not for one read.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     ہسپتال سے نکلنے سے پہلے کیا پوچھنا ہے، کمرہ کیسے تیار کرنا ہے، پہلی راتیں کیسے
                     نکالنی ہیں، اور کاغذات کیسے سنبھالنے ہیں۔ اسے پرنٹ کر لیں یا فون پر کھلا رکھیں
                     &mdash; یہ ایک بار پڑھنے کے لیے نہیں، فریج پر لگانے کے لیے ہے۔
@@ -529,15 +529,15 @@ export default function PostOperativeCareChecklistPage() {
                 <div className="hero-trust">
                   <span className="pill">
                     <span data-en>Preparation, not medical advice</span>
-                    <span data-ur className="urdu">تیاری، طبی مشورہ نہیں</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">تیاری، طبی مشورہ نہیں</span>
                   </span>
                   <span className="pill">
                     <span data-en>Written for families, not for doctors</span>
-                    <span data-ur className="urdu">گھر والوں کے لیے، ڈاکٹروں کے لیے نہیں</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">گھر والوں کے لیے، ڈاکٹروں کے لیے نہیں</span>
                   </span>
                   <span className="pill">
                     <span data-en>Useful whether or not you call us</span>
-                    <span data-ur className="urdu">کال کریں یا نہ کریں، کام کی بات</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں یا نہ کریں، کام کی بات</span>
                   </span>
                 </div>
               </div>
@@ -565,7 +565,7 @@ export default function PostOperativeCareChecklistPage() {
                   }}
                 >
                   <span data-en>{SCOPE_NOTE.en}</span>
-                  <span data-ur className="urdu">{SCOPE_NOTE.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{SCOPE_NOTE.ur}</span>
                 </p>
               </div>
             </div>
@@ -584,18 +584,18 @@ export default function PostOperativeCareChecklistPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>1 &middot; Before you leave the hospital</span>
-                  <span data-ur className="urdu">1 &middot; ہسپتال سے نکلنے سے پہلے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">1 &middot; ہسپتال سے نکلنے سے پہلے</span>
                 </span>
                 <h2>
                   <span data-en>Ask while the people who know are still in front of you.</span>
-                  <span data-ur className="urdu">جو لوگ سب جانتے ہیں، جب تک وہ سامنے ہیں، تب ہی پوچھ لیں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">جو لوگ سب جانتے ہیں، جب تک وہ سامنے ہیں، تب ہی پوچھ لیں۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     None of this needs medical knowledge. All of it needs you to still be standing in
                     the ward.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     ان میں سے کسی بات کے لیے طبی علم کی ضرورت نہیں، صرف وارڈ میں موجود ہونے کی ضرورت ہے۔
                   </span>
                 </p>
@@ -615,7 +615,7 @@ export default function PostOperativeCareChecklistPage() {
                   }}
                 >
                   <span data-en>{BEFORE_LEAVING_NOTE.en}</span>
-                  <span data-ur className="urdu">{BEFORE_LEAVING_NOTE.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{BEFORE_LEAVING_NOTE.ur}</span>
                 </p>
               </div>
             </div>
@@ -627,18 +627,18 @@ export default function PostOperativeCareChecklistPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>2 &middot; The room, before they arrive</span>
-                  <span data-ur className="urdu">2 &middot; کمرہ، ان کے پہنچنے سے پہلے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">2 &middot; کمرہ، ان کے پہنچنے سے پہلے</span>
                 </span>
                 <h2>
                   <span data-en>Half an hour of moving furniture saves a difficult week.</span>
-                  <span data-ur className="urdu">آدھے گھنٹے میں فرنیچر ٹھیک کر لیں تو پورا ہفتہ آسان ہو جاتا ہے۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آدھے گھنٹے میں فرنیچر ٹھیک کر لیں تو پورا ہفتہ آسان ہو جاتا ہے۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     Do this before the car reaches the gate &mdash; not with the patient standing in
                     the doorway.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     یہ کام گاڑی کے گیٹ پر پہنچنے سے پہلے کر لیں &mdash; نہ کہ جب مریض دروازے میں کھڑا ہو۔
                   </span>
                 </p>
@@ -663,11 +663,11 @@ export default function PostOperativeCareChecklistPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>3 &middot; The first night</span>
-                  <span data-ur className="urdu">3 &middot; پہلی رات</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">3 &middot; پہلی رات</span>
                 </span>
                 <h2>
                   <span data-en>Decide the nights out loud, before the patient is home.</span>
-                  <span data-ur className="urdu">راتوں کا فیصلہ مریض کے گھر آنے سے پہلے، سب کے سامنے کر لیں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">راتوں کا فیصلہ مریض کے گھر آنے سے پہلے، سب کے سامنے کر لیں۔</span>
                 </h2>
               </div>
 
@@ -689,18 +689,18 @@ export default function PostOperativeCareChecklistPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>4 &middot; Keeping the paperwork straight</span>
-                  <span data-ur className="urdu">4 &middot; کاغذات سنبھال کر رکھنا</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">4 &middot; کاغذات سنبھال کر رکھنا</span>
                 </span>
                 <h2>
                   <span data-en>One folder, one set of photographs, one place on the wall.</span>
-                  <span data-ur className="urdu">ایک فائل، تصویروں کا ایک سیٹ، اور دیوار پر ایک جگہ۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ایک فائل، تصویروں کا ایک سیٹ، اور دیوار پر ایک جگہ۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     Most of the confusion in the first week is not medical. It is two people in one
                     house working from two different pieces of paper.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     پہلے ہفتے کی زیادہ تر الجھن طبی نہیں ہوتی۔ وہ یہ ہوتی ہے کہ ایک ہی گھر کے دو افراد
                     الگ الگ کاغذ دیکھ کر کام کر رہے ہوتے ہیں۔
                   </span>
@@ -726,13 +726,13 @@ export default function PostOperativeCareChecklistPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>5 &middot; What you should not try to judge yourself</span>
-                  <span data-ur className="urdu">5 &middot; کن باتوں کا فیصلہ خود نہ کریں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">5 &middot; کن باتوں کا فیصلہ خود نہ کریں</span>
                 </span>
                 <h2>
                   <span data-en>
                     The wound, the medicines and the warning signs belong to the surgeon.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     زخم، دوائیں اور خطرے کی علامات — یہ سب سرجن کا معاملہ ہیں۔
                   </span>
                 </h2>
@@ -752,7 +752,7 @@ export default function PostOperativeCareChecklistPage() {
                   }}
                 >
                   <span data-en>{NURSE_CAN.en}</span>
-                  <span data-ur className="urdu">{NURSE_CAN.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{NURSE_CAN.ur}</span>
                 </p>
               </div>
             </div>
@@ -764,11 +764,11 @@ export default function PostOperativeCareChecklistPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Questions families ask on discharge day</span>
-                  <span data-ur className="urdu">ڈسچارج والے دن پوچھے جانے والے سوال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ڈسچارج والے دن پوچھے جانے والے سوال</span>
                 </span>
                 <h2>
                   <span data-en>Straight answers, and one we will not give.</span>
-                  <span data-ur className="urdu">سیدھے جواب، اور ایک جو ہم نہیں دیں گے۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">سیدھے جواب، اور ایک جو ہم نہیں دیں گے۔</span>
                 </h2>
               </div>
 
@@ -778,14 +778,14 @@ export default function PostOperativeCareChecklistPage() {
                     <div className="faq-q" style={{ cursor: "default", alignItems: "flex-start" }}>
                       <h3 className="qt">
                         <span data-en>{item.q}</span>
-                        <span data-ur className="urdu">{item.qUr}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{item.qUr}</span>
                       </h3>
                     </div>
                     <div className="faq-a" style={{ gridTemplateRows: "1fr" }}>
                       <div className="faq-a-in" style={{ fontSize: 17 }}>
                         <div className="faq-a-pad">
                           <span data-en>{item.a}</span>
-                          <span data-ur className="urdu">{item.aUr}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{item.aUr}</span>
                         </div>
                       </div>
                     </div>
@@ -801,14 +801,14 @@ export default function PostOperativeCareChecklistPage() {
               <div className="sec-head">
                 <h2>
                   <span data-en>If a nurse at home would help</span>
-                  <span data-ur className="urdu">اگر گھر پر نرس سے مدد ہو سکتی ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اگر گھر پر نرس سے مدد ہو سکتی ہے</span>
                 </h2>
                 <p>
                   <span data-en>
                     This checklist works whether or not you ever call us. If you do want a hand, these
                     pages say exactly what that involves &mdash; and what it does not.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     یہ چیک لسٹ آپ کے کام کی ہے، چاہے آپ ہمیں کبھی کال کریں یا نہ کریں۔ اگر مدد چاہیے ہو تو
                     ان صفحات پر لکھا ہے کہ اس میں کیا شامل ہے &mdash; اور کیا نہیں۔
                   </span>
@@ -819,7 +819,7 @@ export default function PostOperativeCareChecklistPage() {
                 {CLOSE_LINKS.map((l) => (
                   <Link className="btn btn-ghost" href={l.href} key={l.href}>
                     <span data-en>{l.label.en}</span>
-                    <span data-ur className="urdu">{l.label.ur}</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">{l.label.ur}</span>
                   </Link>
                 ))}
               </div>

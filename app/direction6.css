@@ -706,3 +706,9 @@ body{overflow-x:hidden}
   position:absolute;width:1px;height:1px;padding:0;margin:-1px;
   overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;
 }
+
+/* The breadcrumb separator is a bare glyph, not an Urdu span, so it keeps LTR
+   direction and points the wrong way once the trail reads right-to-left.
+   Mirror it in Urdu mode rather than swapping the character, so the markup
+   stays language-agnostic. */
+.d6.lang-ur .crumbs .crumb-sep{display:inline-block;transform:scaleX(-1)}

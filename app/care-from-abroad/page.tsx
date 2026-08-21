@@ -398,7 +398,7 @@ function P({ t, style }: { t: Bilingual; style?: CSSProperties }) {
   return (
     <p style={{ ...BODY, ...style }}>
       <span data-en>{t.en}</span>
-      <span data-ur className="urdu">{t.ur}</span>
+      <span data-ur lang="ur" dir="rtl" className="urdu">{t.ur}</span>
     </p>
   );
 }
@@ -431,7 +431,7 @@ function TickList({ items }: { items: Bilingual[] }) {
           <Tick />
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -463,7 +463,7 @@ function DashList({ items }: { items: Bilingual[] }) {
           </span>
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -476,11 +476,11 @@ function SectionHead({ eyebrow, heading }: { eyebrow: Bilingual; heading: Biling
     <div className="sec-head">
       <span className="eyebrow">
         <span data-en>{eyebrow.en}</span>
-        <span data-ur className="urdu">{eyebrow.ur}</span>
+        <span data-ur lang="ur" dir="rtl" className="urdu">{eyebrow.ur}</span>
       </span>
       <h2>
         <span data-en>{heading.en}</span>
-        <span data-ur className="urdu">{heading.ur}</span>
+        <span data-ur lang="ur" dir="rtl" className="urdu">{heading.ur}</span>
       </h2>
     </div>
   );
@@ -490,7 +490,7 @@ function CardHead({ t }: { t: Bilingual }) {
   return (
     <h3 style={{ fontSize: 20, marginBottom: 6, lineHeight: 1.25 }}>
       <span data-en>{t.en}</span>
-      <span data-ur className="urdu">{t.ur}</span>
+      <span data-ur lang="ur" dir="rtl" className="urdu">{t.ur}</span>
     </h3>
   );
 }
@@ -529,14 +529,14 @@ export default function CareFromAbroadPage() {
                 <div className="hero-copy">
                   <span className="eyebrow eyebrow-plain">
                     <span data-en>For families outside Pakistan &middot; Bahar se walidain ki dekh bhaal</span>
-                    <span data-ur className="urdu">بیرونِ ملک مقیم گھر والوں کے لیے &middot; باہر سے والدین کی دیکھ بھال</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">بیرونِ ملک مقیم گھر والوں کے لیے &middot; باہر سے والدین کی دیکھ بھال</span>
                   </span>
 
                   <h1>
                     <span data-en>
                       A nurse for your parents in Lahore, <span className="hl">arranged from abroad</span>
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       لاہور میں والدین کے لیے نرس، <span className="hl">بیرونِ ملک سے بندوبست</span>
                     </span>
                   </h1>
@@ -549,7 +549,7 @@ export default function CareFromAbroadPage() {
                     {HERO_PILLS.map((pill) => (
                       <span className="pill" key={pill.en}>
                         <span data-en>{pill.en}</span>
-                        <span data-ur className="urdu">{pill.ur}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{pill.ur}</span>
                       </span>
                     ))}
                   </div>
@@ -558,12 +558,12 @@ export default function CareFromAbroadPage() {
                     <a className="btn btn-call" href={`tel:${CONTACT_PHONE_TEL}`}>
                       <PhoneIcon />
                       <span data-en>Call <bdi dir="ltr">{CONTACT_PHONE_TEL}</bdi></span>
-                      <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_TEL}</bdi></span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_TEL}</bdi></span>
                     </a>
                     <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
                       <span className="wadot" />
                       <span data-en>WhatsApp us</span>
-                      <span data-ur className="urdu">واٹس ایپ کریں</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ کریں</span>
                     </a>
                   </div>
 
@@ -573,7 +573,7 @@ export default function CareFromAbroadPage() {
                   />
                   <p style={{ marginTop: 6, fontSize: 16, fontWeight: 700, color: "var(--teal-deep)" }}>
                     <span data-en>Inside Pakistan: {CONTACT_PHONE_DISPLAY}</span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       پاکستان کے اندر سے: <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi>
                     </span>
                   </p>
@@ -612,12 +612,12 @@ export default function CareFromAbroadPage() {
                       <span className="step-n">{i + 1}</span>
                       <h3>
                         <span data-en>{step.title.en}</span>
-                        <span data-ur className="urdu">{step.title.ur}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{step.title.ur}</span>
                       </h3>
                     </div>
                     <p>
                       <span data-en>{step.body.en}</span>
-                      <span data-ur className="urdu">{step.body.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{step.body.ur}</span>
                     </p>
                   </li>
                 ))}
@@ -661,7 +661,7 @@ export default function CareFromAbroadPage() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 22 }}>
                 <Link className="btn btn-ghost" href="/guides/elderly-care-at-home">
                   <span data-en>What the first weeks are actually like</span>
-                  <span data-ur className="urdu">پہلے ہفتے سچ میں کیسے گزرتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">پہلے ہفتے سچ میں کیسے گزرتے ہیں</span>
                 </Link>
               </div>
             </div>
@@ -699,7 +699,7 @@ export default function CareFromAbroadPage() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 20 }}>
                 <Link className="btn btn-ghost" href="/charges">
                   <span data-en>How charges are worked out</span>
-                  <span data-ur className="urdu">چارجز کیسے طے ہوتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">چارجز کیسے طے ہوتے ہیں</span>
                 </Link>
               </div>
             </div>
@@ -732,11 +732,11 @@ export default function CareFromAbroadPage() {
                       <span>
                         <b>
                           <span data-en>{format.name.en}</span>
-                          <span data-ur className="urdu">{format.name.ur}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{format.name.ur}</span>
                         </b>
                         <br />
                         <span data-en>{format.detail.en}</span>
-                        <span data-ur className="urdu">{format.detail.ur}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{format.detail.ur}</span>
                       </span>
                     </div>
                   ))}
@@ -746,11 +746,11 @@ export default function CareFromAbroadPage() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 22 }}>
                 <Link className="btn btn-ghost" href="/services/elderly-care">
                   <span data-en>Elderly care at home in Lahore</span>
-                  <span data-ur className="urdu">لاہور میں بزرگوں کی گھر پر دیکھ بھال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">لاہور میں بزرگوں کی گھر پر دیکھ بھال</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/services/long-term-care">
                   <span data-en>Long-term care at home</span>
-                  <span data-ur className="urdu">گھر پر طویل مدتی دیکھ بھال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">گھر پر طویل مدتی دیکھ بھال</span>
                 </Link>
               </div>
             </div>
@@ -794,14 +794,14 @@ export default function CareFromAbroadPage() {
                     <div className="faq-q" style={{ cursor: "default", alignItems: "flex-start" }}>
                       <h3 className="qt">
                         <span data-en>{item.q}</span>
-                        <span data-ur className="urdu">{item.qUr}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{item.qUr}</span>
                       </h3>
                     </div>
                     <div className="faq-a" style={{ gridTemplateRows: "1fr" }}>
                       <div className="faq-a-in" style={{ fontSize: 17 }}>
                         <div className="faq-a-pad">
                           <span data-en>{item.a}</span>
-                          <span data-ur className="urdu">{item.aUr}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{item.aUr}</span>
                         </div>
                       </div>
                     </div>
@@ -837,12 +837,12 @@ export default function CareFromAbroadPage() {
                   <a className="btn btn-call" href={`tel:${CONTACT_PHONE_TEL}`}>
                     <PhoneIcon />
                     <span data-en>Call <bdi dir="ltr">{CONTACT_PHONE_TEL}</bdi></span>
-                    <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_TEL}</bdi></span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_TEL}</bdi></span>
                   </a>
                   <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
                     <span className="wadot" />
                     <span data-en>WhatsApp us</span>
-                    <span data-ur className="urdu">واٹس ایپ کریں</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ کریں</span>
                   </a>
                 </div>
               </div>
@@ -850,19 +850,19 @@ export default function CareFromAbroadPage() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 22 }}>
                 <Link className="btn btn-ghost" href="/services/elderly-care">
                   <span data-en>Elderly care at home</span>
-                  <span data-ur className="urdu">گھر پر بزرگوں کی دیکھ بھال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">گھر پر بزرگوں کی دیکھ بھال</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/services/long-term-care">
                   <span data-en>Long-term care at home</span>
-                  <span data-ur className="urdu">گھر پر طویل مدتی دیکھ بھال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">گھر پر طویل مدتی دیکھ بھال</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/charges">
                   <span data-en>How charges work</span>
-                  <span data-ur className="urdu">چارجز کیسے طے ہوتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">چارجز کیسے طے ہوتے ہیں</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/guides/elderly-care-at-home">
                   <span data-en>Elderly care: what to expect</span>
-                  <span data-ur className="urdu">بزرگوں کی دیکھ بھال: کیا توقع رکھیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">بزرگوں کی دیکھ بھال: کیا توقع رکھیں</span>
                 </Link>
               </div>
             </div>

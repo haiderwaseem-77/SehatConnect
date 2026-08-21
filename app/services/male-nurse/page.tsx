@@ -297,7 +297,7 @@ function TickList({ items }: { items: Bilingual[] }) {
           <Tick />
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -312,7 +312,7 @@ function CallButton() {
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
       </svg>
       <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-      <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+      <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
     </a>
   );
 }
@@ -322,7 +322,7 @@ function WhatsAppButton({ label }: { label: Bilingual }) {
     <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
       <span className="wadot" />
       <span data-en>{label.en}</span>
-      <span data-ur className="urdu">{label.ur}</span>
+      <span data-ur lang="ur" dir="rtl" className="urdu">{label.ur}</span>
     </a>
   );
 }
@@ -353,7 +353,7 @@ export default function MaleNursePage() {
                 <div className="hero-copy">
                   <span className="eyebrow eyebrow-plain">
                     <span data-en>Male nurse ghar par — lifting, turning, night duty</span>
-                    <span data-ur className="urdu">گھر پر مرد نرس — اٹھانا، کروٹ بدلوانا، رات کی ڈیوٹی</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">گھر پر مرد نرس — اٹھانا، کروٹ بدلوانا، رات کی ڈیوٹی</span>
                   </span>
 
                   <h1>
@@ -361,7 +361,7 @@ export default function MaleNursePage() {
                       Male nurse <span className="hl">at home in Lahore</span> — for lifting,
                       personal care and night duty
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       <span className="hl">لاہور</span> میں گھر پر مرد نرس — اٹھانے، ذاتی دیکھ بھال
                       اور رات کی ڈیوٹی کے لیے
                     </span>
@@ -375,7 +375,7 @@ export default function MaleNursePage() {
                       or your own back. That is why families ask for a man. Say so when we call —
                       nobody asks why.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       جب مریض ایک بالغ مرد ہو جو خود کھڑا نہیں ہو سکتا، تو دن کا سب سے مشکل حصہ دوا
                       نہیں ہوتی۔ مشکل انہیں باتھ روم تک لے جانا ہے، رات تین بجے بستر پر کروٹ بدلوانی
                       ہے، اور یہ سب اس طرح کرنا ہے کہ نہ انہیں تکلیف ہو نہ آپ کی کمر خراب ہو۔ اسی لیے
@@ -386,19 +386,19 @@ export default function MaleNursePage() {
                   <div className="hero-trust">
                     <span className="pill">
                       <span data-en>Lifting, turning and transfers</span>
-                      <span data-ur className="urdu">اٹھانا، کروٹ بدلوانا اور منتقل کرنا</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">اٹھانا، کروٹ بدلوانا اور منتقل کرنا</span>
                     </span>
                     <span className="pill">
                       <span data-en>PNC-registered nurse</span>
-                      <span data-ur className="urdu">PNC رجسٹرڈ نرس</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">PNC رجسٹرڈ نرس</span>
                     </span>
                     <span className="pill">
                       <span data-en>12-hour night duty</span>
-                      <span data-ur className="urdu">بارہ گھنٹے رات کی ڈیوٹی</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">بارہ گھنٹے رات کی ڈیوٹی</span>
                     </span>
                     <span className="pill">
                       <span data-en>No reason needed</span>
-                      <span data-ur className="urdu">وجہ بتانے کی ضرورت نہیں</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">وجہ بتانے کی ضرورت نہیں</span>
                     </span>
                   </div>
 
@@ -411,7 +411,7 @@ export default function MaleNursePage() {
 
                   <p style={{ ...BODY, fontSize: 16, fontWeight: 600, marginTop: 16 }}>
                     <span data-en>{CALLBACK_PROMISE.en}</span>
-                    <span data-ur className="urdu">{CALLBACK_PROMISE.ur}</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">{CALLBACK_PROMISE.ur}</span>
                   </p>
                 </div>
 
@@ -428,11 +428,11 @@ export default function MaleNursePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Who asks for a male nurse</span>
-                  <span data-ur className="urdu">مرد نرس کون مانگتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">مرد نرس کون مانگتا ہے</span>
                 </span>
                 <h2>
                   <span data-en>Usually a son or a wife, arranging care for a man.</span>
-                  <span data-ur className="urdu">عموماً بیٹا یا اہلیہ، کسی مرد کی دیکھ بھال کے لیے۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">عموماً بیٹا یا اہلیہ، کسی مرد کی دیکھ بھال کے لیے۔</span>
                 </h2>
               </div>
 
@@ -453,7 +453,7 @@ export default function MaleNursePage() {
                     We ask which you prefer on the first call, so you do not have to bring it up.
                     You never have to explain the answer — not to us, and not to anyone else.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     پہلی کال پر ہم خود پوچھ لیتے ہیں کہ آپ کو مرد چاہیے یا خاتون، تاکہ آپ کو بات شروع
                     نہ کرنی پڑے۔ جواب کی وجہ بتانے کی ضرورت کبھی نہیں — نہ ہمیں، نہ کسی اور کو۔
                   </span>
@@ -475,18 +475,18 @@ export default function MaleNursePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Lifting, turning and getting about</span>
-                  <span data-ur className="urdu">اٹھانا، کروٹ بدلوانا اور چلنے پھرنے میں مدد</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اٹھانا، کروٹ بدلوانا اور چلنے پھرنے میں مدد</span>
                 </span>
                 <h2>
                   <span data-en>The part of the day nobody warns you about.</span>
-                  <span data-ur className="urdu">دن کا وہ حصہ جس کے بارے میں کوئی پہلے سے نہیں بتاتا۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">دن کا وہ حصہ جس کے بارے میں کوئی پہلے سے نہیں بتاتا۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     This is ordinary caregiving, done by someone who does it every day and knows
                     how to take a grown man&rsquo;s weight without hurting him.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     یہ روزمرہ دیکھ بھال کا کام ہے، جو ایسا شخص کرتا ہے جو یہ روز کرتا ہے اور جانتا ہے کہ
                     ایک بالغ مرد کا وزن کیسے سنبھالنا ہے کہ تکلیف نہ ہو۔
                   </span>
@@ -512,7 +512,7 @@ export default function MaleNursePage() {
                     shut, a son in the room, nothing said about it afterwards — tell us when we call
                     and it goes on the arrangement with everything else.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     غسل، شیو یا باتھ روم میں مدد لینا کسی بھی بزرگ مرد کے لیے آسان بات نہیں ہوتی۔ اگر وہ
                     چاہتے ہیں کہ یہ کام کسی خاص طریقے سے ہو — کسی خاص انداز میں ڈھانپ کر، دروازہ بند
                     رکھ کر، بیٹا کمرے میں ہو، اور بعد میں اس کا ذکر نہ ہو — تو کال پر بتا دیں، یہ بھی
@@ -529,11 +529,11 @@ export default function MaleNursePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>The nursing work</span>
-                  <span data-ur className="urdu">نرسنگ کا کام</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">نرسنگ کا کام</span>
                 </span>
                 <h2>
                   <span data-en>He is a Qualified Nurse first, and a pair of strong arms second.</span>
-                  <span data-ur className="urdu">وہ پہلے ایک رجسٹرڈ نرس ہیں، مضبوط ہاتھ بعد میں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">وہ پہلے ایک رجسٹرڈ نرس ہیں، مضبوط ہاتھ بعد میں۔</span>
                 </h2>
                 <p>
                   <span data-en>
@@ -541,7 +541,7 @@ export default function MaleNursePage() {
                     not recognise when we call, and we will tell you honestly whether a nurse can do
                     it at home.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     ہسپتال سے ملنے والی ڈسچارج سلپ مشکل اصطلاحات سے بھری ہوتی ہے۔ اس میں سے جو کچھ سمجھ
                     نہ آئے، کال پر پڑھ کر سنا دیں — ہم صاف بتا دیں گے کہ یہ کام گھر پر ہو سکتا ہے یا
                     نہیں۔
@@ -569,7 +569,7 @@ export default function MaleNursePage() {
                     non-clinical — feeding, hygiene, company, help moving — an Attendant may be the
                     right person, and we will say so.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     ان میں سے کوئی چیز کیئر گیور کی جنس سے نہیں بدلتی۔ PNC رجسٹریشن، شناختی کارڈ کی
                     جانچ، حوالہ جات، پولیس ویریفیکیشن اور کام — سب مرد اور خاتون نرس کے لیے ایک جیسے
                     ہیں۔ اور اگر آپ کے مریض کو طبی نہیں بلکہ روزمرہ مدد چاہیے — کھانا، صفائی، ساتھ، چلنے
@@ -579,11 +579,11 @@ export default function MaleNursePage() {
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 18 }}>
                   <Link className="btn btn-ghost" href="/services/qualified-nurse">
                     <span data-en>Everything a qualified nurse handles</span>
-                    <span data-ur className="urdu">نرس کے تمام کام دیکھیں</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">نرس کے تمام کام دیکھیں</span>
                   </Link>
                   <Link className="btn btn-ghost" href="/services/female-nurse">
                     <span data-en>Looking for a female nurse instead?</span>
-                    <span data-ur className="urdu">خاتون نرس درکار ہے؟</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">خاتون نرس درکار ہے؟</span>
                   </Link>
                 </div>
               </div>
@@ -603,18 +603,18 @@ export default function MaleNursePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Nights, days, and round-the-clock</span>
-                  <span data-ur className="urdu">راتیں، دن، اور چوبیس گھنٹے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">راتیں، دن، اور چوبیس گھنٹے</span>
                 </span>
                 <h2>
                   <span data-en>Somebody has to stay awake. It does not have to be you.</span>
-                  <span data-ur className="urdu">کسی کو جاگنا تو پڑے گا۔ ضروری نہیں کہ وہ آپ ہوں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">کسی کو جاگنا تو پڑے گا۔ ضروری نہیں کہ وہ آپ ہوں۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     Families arranging care for a bedridden man almost always ask about the night
                     first, so that is where this starts.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     جو گھرانے صاحبِ فراش مرد کی دیکھ بھال کروا رہے ہوتے ہیں وہ تقریباً ہمیشہ پہلے رات کے
                     بارے میں پوچھتے ہیں، اس لیے فہرست یہیں سے شروع ہو رہی ہے۔
                   </span>
@@ -637,11 +637,11 @@ export default function MaleNursePage() {
                   />
                   <h3 style={{ fontSize: 22, marginBottom: 10, lineHeight: 1.25 }}>
                     <span data-en>{NIGHT.name.en}</span>
-                    <span data-ur className="urdu">{NIGHT.name.ur}</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">{NIGHT.name.ur}</span>
                   </h3>
                   <p style={{ ...BODY, fontSize: 18 }}>
                     <span data-en>{NIGHT.detail.en}</span>
-                    <span data-ur className="urdu">{NIGHT.detail.ur}</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">{NIGHT.detail.ur}</span>
                   </p>
                 </div>
               )}
@@ -651,11 +651,11 @@ export default function MaleNursePage() {
                   <div key={f.id} style={{ ...CARD, display: "flex", flexDirection: "column" }}>
                     <h3 style={{ fontSize: 20, marginBottom: 10, lineHeight: 1.25 }}>
                       <span data-en>{f.name.en}</span>
-                      <span data-ur className="urdu">{f.name.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.name.ur}</span>
                     </h3>
                     <p style={{ ...BODY, fontSize: 16.5 }}>
                       <span data-en>{f.detail.en}</span>
-                      <span data-ur className="urdu">{f.detail.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.detail.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -666,19 +666,19 @@ export default function MaleNursePage() {
               <div style={{ ...CARD, marginTop: 16 }}>
                 <h3 style={{ fontSize: 20, marginBottom: 6 }}>
                   <span data-en>What we promise on a shift</span>
-                  <span data-ur className="urdu">شفٹ کے بارے میں ہمارا وعدہ</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">شفٹ کے بارے میں ہمارا وعدہ</span>
                 </h3>
                 <TickList items={[PROMISES.trial, PROMISES.payment, PROMISES.replacement, START_PROMISE]} />
                 <p style={{ ...BODY, fontSize: 16, fontWeight: 600, marginTop: 16 }}>
                   <span data-en>{PROMISES.priceOnCall.en}</span>
-                  <span data-ur className="urdu">{PROMISES.priceOnCall.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{PROMISES.priceOnCall.ur}</span>
                 </p>
                 <p style={{ ...BODY, fontSize: 16, fontWeight: 600, marginTop: 12 }}>
                   <span data-en>
                     Need to cancel or move the time? Call or WhatsApp us up to 4 hours before the
                     shift and we cancel or reschedule it at no charge.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     منسوخ کرنا ہو یا وقت بدلنا ہو؟ شفٹ سے 4 گھنٹے پہلے تک کال یا واٹس ایپ کر دیں، ہم
                     بغیر کسی چارج کے منسوخ یا وقت تبدیل کر دیتے ہیں۔
                   </span>
@@ -686,7 +686,7 @@ export default function MaleNursePage() {
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 16 }}>
                   <Link className="btn btn-ghost" href="/charges">
                     <span data-en>How charges work</span>
-                    <span data-ur className="urdu">چارجز کیسے طے ہوتے ہیں</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">چارجز کیسے طے ہوتے ہیں</span>
                   </Link>
                 </div>
               </div>
@@ -699,11 +699,11 @@ export default function MaleNursePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Before he arrives</span>
-                  <span data-ur className="urdu">ان کے آنے سے پہلے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ان کے آنے سے پہلے</span>
                 </span>
                 <h2>
                   <span data-en>You see his card before you open the door.</span>
-                  <span data-ur className="urdu">دروازہ کھولنے سے پہلے ان کا کارڈ آپ کے پاس ہوتا ہے۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">دروازہ کھولنے سے پہلے ان کا کارڈ آپ کے پاس ہوتا ہے۔</span>
                 </h2>
               </div>
 
@@ -721,7 +721,7 @@ export default function MaleNursePage() {
                   }}
                 >
                   <span data-en>{VERIFICATION_PROMISE.en}</span>
-                  <span data-ur className="urdu">{VERIFICATION_PROMISE.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{VERIFICATION_PROMISE.ur}</span>
                 </p>
               </div>
             </div>
@@ -740,11 +740,11 @@ export default function MaleNursePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Where we come</span>
-                  <span data-ur className="urdu">ہم کہاں آتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ہم کہاں آتے ہیں</span>
                 </span>
                 <h2>
                   <span data-en>All of Lahore.</span>
-                  <span data-ur className="urdu">پورا لاہور۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">پورا لاہور۔</span>
                 </h2>
               </div>
 
@@ -755,7 +755,7 @@ export default function MaleNursePage() {
                     Cantt and more. Call or WhatsApp to check your area. Our office is at{" "}
                     {OFFICE_ADDRESS}.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     فی الحال ہم پورے لاہور میں خدمات دیتے ہیں: ڈی ایچ اے، گلبرگ، جوہر ٹاؤن، ماڈل ٹاؤن،
                     بحریہ ٹاؤن، کینٹ اور دیگر علاقے۔ اپنے علاقے کے بارے میں جاننے کے لیے کال یا واٹس ایپ
                     کریں۔ ہمارا دفتر {OFFICE_ADDRESS} میں ہے۔
@@ -775,11 +775,11 @@ export default function MaleNursePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Male nurse ghar par — common questions</span>
-                  <span data-ur className="urdu">گھر پر مرد نرس — عام سوالات</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">گھر پر مرد نرس — عام سوالات</span>
                 </span>
                 <h2>
                   <span data-en>Straight answers before you call.</span>
-                  <span data-ur className="urdu">کال کرنے سے پہلے سیدھے جواب۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">کال کرنے سے پہلے سیدھے جواب۔</span>
                 </h2>
               </div>
 
@@ -789,14 +789,14 @@ export default function MaleNursePage() {
                     <div className="faq-q" style={{ cursor: "default", alignItems: "flex-start" }}>
                       <h3 className="qt">
                         <span data-en>{item.q}</span>
-                        <span data-ur className="urdu">{item.qUr}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{item.qUr}</span>
                       </h3>
                     </div>
                     <div className="faq-a" style={{ gridTemplateRows: "1fr" }}>
                       <div className="faq-a-in" style={{ fontSize: 17 }}>
                         <div className="faq-a-pad">
                           <span data-en>{item.a}</span>
-                          <span data-ur className="urdu">{item.aUr}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{item.aUr}</span>
                         </div>
                       </div>
                     </div>

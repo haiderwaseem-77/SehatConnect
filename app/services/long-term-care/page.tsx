@@ -238,7 +238,7 @@ function TickList({ items }: { items: Bilingual[] }) {
           <Tick />
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -253,7 +253,7 @@ function CallButton() {
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
       </svg>
       <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-      <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+      <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
     </a>
   );
 }
@@ -263,7 +263,7 @@ function WhatsAppButton() {
     <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
       <span className="wadot" />
       <span data-en>Ask on WhatsApp</span>
-      <span data-ur className="urdu">واٹس ایپ پر پوچھیں</span>
+      <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ پر پوچھیں</span>
     </a>
   );
 }
@@ -294,14 +294,14 @@ export default function LongTermCarePage() {
                 <div className="hero-copy">
                   <span className="eyebrow eyebrow-plain">
                     <span data-en>Lambi bimari ki dekh bhaal &middot; Lahore</span>
-                    <span data-ur className="urdu">لمبی بیماری کی دیکھ بھال &middot; لاہور</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">لمبی بیماری کی دیکھ بھال &middot; لاہور</span>
                   </span>
 
                   <h1>
                     <span data-en>
                       Long-term care at home in <span className="hl">Lahore</span>
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       <span className="hl">لاہور</span> میں گھر پر طویل مدتی دیکھ بھال
                     </span>
                   </h1>
@@ -315,7 +315,7 @@ export default function LongTermCarePage() {
                       wife lifting a husband she cannot lift. This page explains what long-term care
                       at home covers, who comes, and how it is arranged over months rather than days.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       کچھ بیماریاں ختم نہیں ہوتیں۔ فالج، کینسر، ڈیمنشیا، یا وہ جسم جو آہستہ آہستہ جواب
                       دے گیا ہو — اور دیکھ بھال جو مہینوں، کبھی برسوں چلتی ہے۔ ہمیں کال کرنے والے اکثر
                       گھرانے یہ بوجھ کافی عرصے سے اکیلے اٹھا رہے ہوتے ہیں: وہ بیٹی جو ہفتوں سے ٹھیک سے
@@ -328,19 +328,19 @@ export default function LongTermCarePage() {
                   <div className="hero-trust">
                     <span className="pill">
                       <span data-en>{PROMISES.trial.enShort}</span>
-                      <span data-ur className="urdu">{PROMISES.trial.urShort}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{PROMISES.trial.urShort}</span>
                     </span>
                     <span className="pill">
                       <span data-en>Day, night or 24 hours</span>
-                      <span data-ur className="urdu">دن، رات یا 24 گھنٹے</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">دن، رات یا 24 گھنٹے</span>
                     </span>
                     <span className="pill">
                       <span data-en>Same caregiver on request</span>
-                      <span data-ur className="urdu">درخواست پر وہی کیئر گیور</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">درخواست پر وہی کیئر گیور</span>
                     </span>
                     <span className="pill">
                       <span data-en>Pay after the shift</span>
-                      <span data-ur className="urdu">شفٹ کے بعد ادائیگی</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">شفٹ کے بعد ادائیگی</span>
                     </span>
                   </div>
 
@@ -363,11 +363,11 @@ export default function LongTermCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>The work itself</span>
-                  <span data-ur className="urdu">اصل کام کیا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اصل کام کیا ہے</span>
                 </span>
                 <h2>
                   <span data-en>What long-term care covers, day after day</span>
-                  <span data-ur className="urdu">طویل مدتی دیکھ بھال میں روز کیا کیا ہوتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">طویل مدتی دیکھ بھال میں روز کیا کیا ہوتا ہے</span>
                 </h2>
                 <p>
                   <span data-en>
@@ -375,7 +375,7 @@ export default function LongTermCarePage() {
                     ordinary work, done properly, every day &mdash; the work that becomes impossible
                     for a family to keep doing alone, month after month, while also going to work.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     طویل مدتی دیکھ بھال کوئی پروگرام یا علاج کا کورس نہیں۔ یہ وہی روزمرہ کام ہے جو ہر
                     دن ٹھیک طرح کرنا ہوتا ہے — اور یہی وہ کام ہے جو مہینوں تک، نوکری کے ساتھ ساتھ، گھر
                     والوں سے اکیلے نہیں ہو پاتا۔
@@ -402,7 +402,7 @@ export default function LongTermCarePage() {
                     which one your patient needs on the first call, and we do not send a nurse where
                     an attendant is enough.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     طبی کام — زخم کی ڈریسنگ، انجیکشن، ڈرپ، دوائیں اور نگرانی — PNC رجسٹرڈ نرس کا ہے،
                     اٹینڈنٹ کا نہیں۔ آپ کے مریض کو کیا چاہیے، یہ ہم پہلی کال پر بتا دیتے ہیں — اور
                     جہاں اٹینڈنٹ کافی ہو، وہاں ہم نرس نہیں بھیجتے۔
@@ -425,11 +425,11 @@ export default function LongTermCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Which one you need</span>
-                  <span data-ur className="urdu">آپ کو کون چاہیے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آپ کو کون چاہیے</span>
                 </span>
                 <h2>
                   <span data-en>An attendant or a nurse for a long-term patient?</span>
-                  <span data-ur className="urdu">لمبی بیماری کے مریض کے لیے اٹینڈنٹ یا نرس؟</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">لمبی بیماری کے مریض کے لیے اٹینڈنٹ یا نرس؟</span>
                 </h2>
               </div>
 
@@ -437,7 +437,7 @@ export default function LongTermCarePage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 10, lineHeight: 1.25 }}>
                     <span data-en>An Attendant &mdash; for the daily work</span>
-                    <span data-ur className="urdu">اٹینڈنٹ — روزمرہ کام کے لیے</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">اٹینڈنٹ — روزمرہ کام کے لیے</span>
                   </h3>
                   <p style={BODY}>
                     <span data-en>
@@ -447,7 +447,7 @@ export default function LongTermCarePage() {
                       does not pretend to do more. Ask for a female attendant for a female patient
                       and we send one.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       لمبی بیماری کے زیادہ تر مریضوں کو اٹینڈنٹ چاہیے ہوتا ہے۔ کھانا، صفائی، کپڑے
                       بدلوانا، چلنے پھرنے یا پوزیشن بدلنے میں مدد، اور دن بھر کا ساتھ — دن اسی میں
                       گزرتا ہے، اور ان میں سے کوئی کام طبی نہیں۔ اٹینڈنٹ یہی کام کرتا ہے، اس سے زیادہ
@@ -459,7 +459,7 @@ export default function LongTermCarePage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 10, lineHeight: 1.25 }}>
                     <span data-en>A Qualified Nurse &mdash; for the medical work</span>
-                    <span data-ur className="urdu">PNC رجسٹرڈ نرس — طبی کام کے لیے</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">PNC رجسٹرڈ نرس — طبی کام کے لیے</span>
                   </h3>
                   <p style={BODY}>
                     <span data-en>
@@ -469,7 +469,7 @@ export default function LongTermCarePage() {
                       task alone. Care after coming home from ICU or HDU is a nurse&rsquo;s work for
                       the first stretch.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       PNC رجسٹرڈ نرس وہ کام کرتی ہے جو ڈاکٹر نے لکھا ہو: زخم کی ڈریسنگ، انجیکشن، ڈرپ،
                       دوائیں اور نگرانی۔ کئی گھرانے شفٹ کے لیے اٹینڈنٹ رکھتے ہیں اور صرف اُس کام کے
                       لیے نرس کا وزٹ منگوا لیتے ہیں۔ آئی سی یو یا ایچ ڈی یو سے گھر آنے کے بعد شروع کے
@@ -482,15 +482,15 @@ export default function LongTermCarePage() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 22 }}>
                 <Link className="btn btn-ghost" href="/services/attendant">
                   <span data-en>What an attendant does</span>
-                  <span data-ur className="urdu">اٹینڈنٹ کیا کرتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اٹینڈنٹ کیا کرتا ہے</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/services/elderly-care">
                   <span data-en>Elderly care at home</span>
-                  <span data-ur className="urdu">بزرگوں کی گھر پر دیکھ بھال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">بزرگوں کی گھر پر دیکھ بھال</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/charges">
                   <span data-en>How charges work</span>
-                  <span data-ur className="urdu">چارجز کیسے طے ہوتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">چارجز کیسے طے ہوتے ہیں</span>
                 </Link>
               </div>
             </div>
@@ -502,18 +502,18 @@ export default function LongTermCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>How it is arranged</span>
-                  <span data-ur className="urdu">بندوبست کیسے ہوتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">بندوبست کیسے ہوتا ہے</span>
                 </span>
                 <h2>
                   <span data-en>Arranged in months, not days</span>
-                  <span data-ur className="urdu">مہینوں کے حساب سے، دنوں کے نہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">مہینوں کے حساب سے، دنوں کے نہیں</span>
                 </h2>
                 <p>
                   <span data-en>
                     Start with the hours your family actually cannot cover &mdash; for most long-term
                     households that is the nights &mdash; and change the plan as the months go.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     وہاں سے شروع کریں جہاں گھر والے واقعی نہیں سنبھال پا رہے — لمبی بیماری میں اکثر یہ
                     راتیں ہوتی ہیں — اور مہینوں کے ساتھ منصوبہ بدلتے رہیں۔
                   </span>
@@ -525,11 +525,11 @@ export default function LongTermCarePage() {
                   <div key={f.id} style={CARD}>
                     <h3 style={{ fontSize: 20, marginBottom: 8, lineHeight: 1.25 }}>
                       <span data-en>{f.name.en}</span>
-                      <span data-ur className="urdu">{f.name.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.name.ur}</span>
                     </h3>
                     <p style={BODY}>
                       <span data-en>{f.detail.en}</span>
-                      <span data-ur className="urdu">{f.detail.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.detail.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -543,7 +543,7 @@ export default function LongTermCarePage() {
                 />
                 <h3 style={{ fontSize: 21, marginBottom: 10, lineHeight: 1.3 }}>
                   <span data-en>A permanent attendant in Lahore means two people, not one</span>
-                  <span data-ur className="urdu">لاہور میں مستقل اٹینڈنٹ کا مطلب دو افراد ہیں، ایک نہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">لاہور میں مستقل اٹینڈنٹ کا مطلب دو افراد ہیں، ایک نہیں</span>
                 </h3>
                 <p style={{ ...BODY, fontSize: 18 }}>
                   <span data-en>
@@ -553,7 +553,7 @@ export default function LongTermCarePage() {
                     stops turning a patient at three in the morning. If an agency quotes you one
                     attendant for 24 hours a day, ask them when that person sleeps.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     چوبیس گھنٹے کی دیکھ بھال کا مطلب ہے دو کیئر گیور، دو بارہ گھنٹے کی شفٹوں میں — ایک
                     دن کے لیے، ایک رات کے لیے۔ یہ کبھی ایک ہی شخص کو 24 گھنٹے جگا کر نہیں ہوتی۔ لمبی
                     بیماری میں یہی فرق سب کچھ طے کرتا ہے: جو کیئر گیور سویا ہی نہ ہو، وہ رات تین بجے
@@ -567,7 +567,7 @@ export default function LongTermCarePage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 10, lineHeight: 1.25 }}>
                     <span data-en>The same caregiver, wherever we can</span>
-                    <span data-ur className="urdu">جہاں ممکن ہو، وہی کیئر گیور</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">جہاں ممکن ہو، وہی کیئر گیور</span>
                   </h3>
                   <p style={BODY}>
                     <span data-en>
@@ -575,7 +575,7 @@ export default function LongTermCarePage() {
                       try to send the same person again. We do not promise the same face for every
                       shift of every month &mdash; caregivers take leave and fall ill too.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       کوئی کیئر گیور آپ کے مریض کے لیے مناسب لگے تو ان کا نام واٹس ایپ کر دیں، ہم کوشش
                       کریں گے کہ وہی فرد دوبارہ بھیجیں۔ ہر مہینے کی ہر شفٹ میں وہی چہرہ ہوگا، یہ وعدہ
                       ہم نہیں کرتے — کیئر گیور بھی چھٹی لیتے ہیں اور بیمار ہوتے ہیں۔
@@ -586,7 +586,7 @@ export default function LongTermCarePage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 10, lineHeight: 1.25 }}>
                     <span data-en>When the needs change</span>
-                    <span data-ur className="urdu">جب ضرورت بدل جائے</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">جب ضرورت بدل جائے</span>
                   </h3>
                   <p style={BODY}>
                     <span data-en>
@@ -595,7 +595,7 @@ export default function LongTermCarePage() {
                       keep the attendant and bring a nurse in for one visit when there is a clinical
                       task.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       جو مریض مارچ میں چل رہا تھا، ہو سکتا ہے اگست میں نہ چل سکے۔ ہمیں بتا دیں، ہم
                       بندوبست بدل دیں گے — رات کی شفٹ بڑھا دیں، اٹینڈنٹ سے نرس پر لے آئیں، یا اٹینڈنٹ
                       برقرار رکھ کر کسی طبی کام کے لیے نرس کا ایک وزٹ رکھ دیں۔
@@ -617,11 +617,11 @@ export default function LongTermCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>The hardest part, said plainly</span>
-                  <span data-ur className="urdu">سب سے مشکل حصہ، صاف الفاظ میں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">سب سے مشکل حصہ، صاف الفاظ میں</span>
                 </span>
                 <h2>
                   <span data-en>Bedridden and palliative patients</span>
-                  <span data-ur className="urdu">بستر پر پڑے اور آرام دہ نگہداشت کے مریض</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">بستر پر پڑے اور آرام دہ نگہداشت کے مریض</span>
                 </h2>
               </div>
 
@@ -629,7 +629,7 @@ export default function LongTermCarePage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 10, lineHeight: 1.25 }}>
                     <span data-en>A patient who cannot get out of bed</span>
-                    <span data-ur className="urdu">وہ مریض جو بستر سے اٹھ نہیں سکتا</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">وہ مریض جو بستر سے اٹھ نہیں سکتا</span>
                   </h3>
                   <p style={BODY}>
                     <span data-en>
@@ -642,7 +642,7 @@ export default function LongTermCarePage() {
                       there is a wound to dress or a medicine to inject, that part is a
                       nurse&rsquo;s.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       یہاں کام جسمانی بھی ہے اور مسلسل بھی۔ پوری شفٹ کروٹ اور پوزیشن بدلوانا۔ بستر پر
                       ہی نہلانا اور کپڑے بدلوانا۔ آہستہ آہستہ، مریض کی رفتار سے کھانا کھلانا۔ جلد کو
                       صاف اور خشک رکھنا، اور جو نظر آئے وہ آپ کو صاف بتا دینا۔ اس کام کو نرم الفاظ میں
@@ -656,7 +656,7 @@ export default function LongTermCarePage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 10, lineHeight: 1.25 }}>
                     <span data-en>Palliative care at home</span>
-                    <span data-ur className="urdu">گھر پر آرام دہ نگہداشت</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">گھر پر آرام دہ نگہداشت</span>
                   </h3>
                   <p style={BODY}>
                     <span data-en>
@@ -669,7 +669,7 @@ export default function LongTermCarePage() {
                       Call and tell us the situation &mdash; we will say plainly what we can arrange
                       and what we cannot.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       کچھ گھرانے تب کال کرتے ہیں جب علاج کے لیے کچھ باقی نہیں رہتا، اور سوال صرف یہ رہ
                       جاتا ہے کہ گھر پر دن کیسے گزریں۔ ہم جو بندوبست کرتے ہیں وہ دیکھ بھال ہے: کوئی جو
                       مریض کو صاف رکھے، کھانا کھلائے، کروٹ بدلواتا رہے، اور اسے اکیلا نہ چھوڑے — اور
@@ -693,7 +693,7 @@ export default function LongTermCarePage() {
                     are things we do not do, and you will hear that from us before anyone is sent,
                     not afterwards.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     <b style={{ color: "var(--ink)" }}>جو ہم نہیں کر سکتے، وہ کال پر بتا دیتے ہیں۔</b>{" "}
                     آئی سی یو یا ایچ ڈی یو سے گھر آنے والے مریض کی دیکھ بھال ہم کرتے ہیں۔ اگر مریض گھر
                     پر مشین کے سہارے کے ساتھ آیا ہے تو پہلی کال پر بتا دیں: کچھ کام ہم نہیں کرتے، اور
@@ -717,18 +717,18 @@ export default function LongTermCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Who is in your house every day</span>
-                  <span data-ur className="urdu">روزانہ آپ کے گھر میں کون ہوتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">روزانہ آپ کے گھر میں کون ہوتا ہے</span>
                 </span>
                 <h2>
                   <span data-en>You know who is coming before they arrive.</span>
-                  <span data-ur className="urdu">آنے سے پہلے آپ کو معلوم ہوتا ہے کہ کون آ رہا ہے۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آنے سے پہلے آپ کو معلوم ہوتا ہے کہ کون آ رہا ہے۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     Over months, a caregiver becomes part of the household. So nothing about that
                     person is a surprise on the first day, or on the hundredth.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     مہینوں میں کیئر گیور گھر کا حصہ بن جاتا ہے۔ اسی لیے اُس فرد کے بارے میں پہلے دن بھی
                     کچھ اچانک سامنے نہیں آتا، اور سویں دن بھی نہیں۔
                   </span>
@@ -749,7 +749,7 @@ export default function LongTermCarePage() {
                   }}
                 >
                   <span data-en>{VERIFICATION_PROMISE.en}</span>
-                  <span data-ur className="urdu">{VERIFICATION_PROMISE.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{VERIFICATION_PROMISE.ur}</span>
                 </p>
               </div>
 
@@ -757,7 +757,7 @@ export default function LongTermCarePage() {
               <div style={{ ...CARD, marginTop: 16 }}>
                 <h3 style={{ fontSize: 20, marginBottom: 6 }}>
                   <span data-en>What we promise before you decide</span>
-                  <span data-ur className="urdu">فیصلہ کرنے سے پہلے ہمارا وعدہ</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">فیصلہ کرنے سے پہلے ہمارا وعدہ</span>
                 </h3>
                 <TickList
                   items={[
@@ -779,11 +779,11 @@ export default function LongTermCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>What long-term families ask us</span>
-                  <span data-ur className="urdu">لمبی بیماری والے گھرانے کیا پوچھتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">لمبی بیماری والے گھرانے کیا پوچھتے ہیں</span>
                 </span>
                 <h2>
                   <span data-en>Straight answers.</span>
-                  <span data-ur className="urdu">سیدھے جواب۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">سیدھے جواب۔</span>
                 </h2>
               </div>
 
@@ -793,14 +793,14 @@ export default function LongTermCarePage() {
                     <div className="faq-q" style={{ cursor: "default", alignItems: "flex-start" }}>
                       <h3 className="qt">
                         <span data-en>{item.q}</span>
-                        <span data-ur className="urdu">{item.qUr}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{item.qUr}</span>
                       </h3>
                     </div>
                     <div className="faq-a" style={{ gridTemplateRows: "1fr" }}>
                       <div className="faq-a-in" style={{ fontSize: 17 }}>
                         <div className="faq-a-pad">
                           <span data-en>{item.a}</span>
-                          <span data-ur className="urdu">{item.aUr}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{item.aUr}</span>
                         </div>
                       </div>
                     </div>
@@ -813,7 +813,7 @@ export default function LongTermCarePage() {
                 <WhatsAppButton />
                 <Link className="btn btn-ghost" href="/book">
                   <span data-en>Ask us to call you back</span>
-                  <span data-ur className="urdu">ہم سے کال منگوائیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ہم سے کال منگوائیں</span>
                 </Link>
               </div>
             </div>

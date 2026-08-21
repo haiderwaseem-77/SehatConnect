@@ -23,8 +23,8 @@ function Row({ svc, nm, ur, ds, dsUr }: { svc: string; nm: string; ur: string; d
     <a className="svc-row" href={waLink(serviceWaMsg(svc))} target="_blank" rel="noopener noreferrer">
       <WaMini />
       <div>
-        <div className="nm"><span data-en>{nm}</span> <span data-ur className="urdu">{ur}</span></div>
-        <div className="ds"><span data-en>{ds}</span><span data-ur className="urdu">{dsUr}</span></div>
+        <div className="nm"><span data-en>{nm}</span> <span data-ur lang="ur" dir="rtl" className="urdu">{ur}</span></div>
+        <div className="ds"><span data-en>{ds}</span><span data-ur lang="ur" dir="rtl" className="urdu">{dsUr}</span></div>
       </div>
     </a>
   );
@@ -42,11 +42,11 @@ export default function ServicesSection() {
         <div className="sec-head" data-reveal>
           <h2>
             <span data-en>Tap the care you need. We reply on WhatsApp.</span>
-            <span data-ur className="urdu">جس مدد کی ضرورت ہے، ٹیپ کریں۔ ہم واٹس ایپ پر جواب دیں گے۔</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">جس مدد کی ضرورت ہے، ٹیپ کریں۔ ہم واٹس ایپ پر جواب دیں گے۔</span>
           </h2>
           <p>
             <span data-en>Tap a service. WhatsApp opens with a ready message. Send it, and we&rsquo;ll guide you to the right care at home.</span>
-            <span data-ur className="urdu">سروس پر ٹیپ کریں؛ واٹس ایپ میں تیار پیغام کھلے گا۔ بھیج دیں، ہم گھر پر مناسب دیکھ بھال تک رہنمائی کر دیں گے۔</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">سروس پر ٹیپ کریں؛ واٹس ایپ میں تیار پیغام کھلے گا۔ بھیج دیں، ہم گھر پر مناسب دیکھ بھال تک رہنمائی کر دیں گے۔</span>
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function ServicesSection() {
 
           <p className="svc-foot">
             <span data-en>For medical tasks like injections, drips or wound dressing, we send a <b>qualified nurse</b>. Not sure what fits? WhatsApp us and we&rsquo;ll guide you.</span>
-            <span data-ur className="urdu">انجیکشن، ڈرپ یا زخم کی ڈریسنگ جیسے طبی کام کے لیے <b>تربیت یافتہ نرس</b> بھیجی جاتی ہے۔ سمجھ نہ آئے تو واٹس ایپ کریں؛ ہم بتا دیں گے۔</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">انجیکشن، ڈرپ یا زخم کی ڈریسنگ جیسے طبی کام کے لیے <b>تربیت یافتہ نرس</b> بھیجی جاتی ہے۔ سمجھ نہ آئے تو واٹس ایپ کریں؛ ہم بتا دیں گے۔</span>
           </p>
         </div>
       </div>

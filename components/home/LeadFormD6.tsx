@@ -80,13 +80,13 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
       <div className="ribbon">
         <span className={variant === "closer" ? "dot beat-dot" : "dot"} />
         <span data-en>We call back fast</span>
-        <span data-ur className="urdu">ہم جلد واپس کال کرتے ہیں</span>
+        <span data-ur lang="ur" dir="rtl" className="urdu">ہم جلد واپس کال کرتے ہیں</span>
       </div>
 
       <label className="fld">
         <span className="lbl">
           <span data-en>Your name</span>
-          <span data-ur className="urdu">آپ کا نام</span> <span className="req">*</span>
+          <span data-ur lang="ur" dir="rtl" className="urdu">آپ کا نام</span> <span className="req">*</span>
         </span>
         <input
           className="input"
@@ -103,7 +103,7 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
       <label className="fld">
         <span className="lbl">
           <span data-en>Phone number</span>
-          <span data-ur className="urdu">فون نمبر</span> <span className="req">*</span>
+          <span data-ur lang="ur" dir="rtl" className="urdu">فون نمبر</span> <span className="req">*</span>
         </span>
         <input
           className="input"
@@ -127,7 +127,7 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
           </svg>
           <span className="form-err-txt">
             <span data-en>{ERROR_MESSAGES[error].en}</span>
-            <span data-ur className="urdu">{ERROR_MESSAGES[error].ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{ERROR_MESSAGES[error].ur}</span>
           </span>
         </p>
       )}
@@ -136,12 +136,12 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
         {loading ? (
           <>
             <span data-en>Sending&hellip;</span>
-            <span data-ur className="urdu">بھیجا جا رہا ہے&hellip;</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">بھیجا جا رہا ہے&hellip;</span>
           </>
         ) : (
           <>
             <span data-en>Call me back</span>
-            <span data-ur className="urdu">مجھے واپس کال کریں</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">مجھے واپس کال کریں</span>
           </>
         )}
       </button>
@@ -153,11 +153,11 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
             </svg>
             <span data-en>Call</span>
-            <span data-ur className="urdu">کال</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">کال</span>
           </a>
           <a className="btn btn-wa" href={waLink(GENERIC_WA_MSG)} target="_blank" rel="noopener noreferrer">
             <span className="wadot" /> <span data-en>WhatsApp</span>
-            <span data-ur className="urdu">واٹس ایپ</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ</span>
           </a>
         </div>
       )}
@@ -166,7 +166,7 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
         <p className="form-foot">
           <a href={`tel:${CONTACT_PHONE_TEL}`}>
             <span data-en>Or call {CONTACT_PHONE_DISPLAY} — 24/7</span>
-            <span data-ur className="urdu">یا کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi> — 24/7</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">یا کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi> — 24/7</span>
           </a>
         </p>
       )}
@@ -176,12 +176,12 @@ export default function LeadFormD6({ variant, area }: { variant: Variant; area?:
         {variant === "hero" ? (
           <>
             <span data-en>Your number stays private. We only call about your care.</span>
-            <span data-ur className="urdu">آپ کا نمبر محفوظ رہے گا۔ ہم صرف دیکھ بھال کے سلسلے میں کال کریں گے۔</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">آپ کا نمبر محفوظ رہے گا۔ ہم صرف دیکھ بھال کے سلسلے میں کال کریں گے۔</span>
           </>
         ) : (
           <>
             <span data-en>Name + Phone only. Area is asked on the call.</span>
-            <span data-ur className="urdu">صرف نام اور نمبر۔ علاقہ کال پر پوچھ لیں گے۔</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">صرف نام اور نمبر۔ علاقہ کال پر پوچھ لیں گے۔</span>
           </>
         )}
       </p>

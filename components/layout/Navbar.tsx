@@ -26,7 +26,7 @@ export default function Navbar() {
               <b>Sehat <span>Connect</span></b>
               <small>
                 <span data-en>bringing the hospital to your home</span>
-                <span data-ur className="urdu">ہسپتال جیسی سہولت، آپ کے گھر پر</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">ہسپتال جیسی سہولت، آپ کے گھر پر</span>
               </small>
             </span>
           </Link>
@@ -38,7 +38,7 @@ export default function Navbar() {
             <a className="btn btn-wa nav-wa" href={waLink(GENERIC_WA_MSG)} target="_blank" rel="noopener noreferrer">
               <span className="wadot" aria-hidden="true" />
               <span data-en>WhatsApp</span>
-              <span data-ur className="urdu">واٹس ایپ</span>
+              <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ</span>
             </a>
             <a className="btn btn-primary nav-call" href={`tel:${CONTACT_PHONE_TEL}`}>
               <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

@@ -119,7 +119,7 @@ function Cell({ v }: { v: CellValue }) {
     return (
       <span style={{ fontWeight: 800, color: "var(--teal-deep)" }}>
         <span data-en>{v.en}</span>
-        <span data-ur className="urdu">{v.ur}</span>
+        <span data-ur lang="ur" dir="rtl" className="urdu">{v.ur}</span>
       </span>
     );
   }
@@ -132,13 +132,13 @@ function Cell({ v }: { v: CellValue }) {
     <span style={{ color: "var(--teal)", fontWeight: 800 }}>
       <span aria-hidden="true">✓</span>
       <span className="sr-only" data-en>Yes</span>
-      <span className="sr-only urdu" data-ur>جی ہاں</span>
+      <span className="sr-only urdu" data-ur lang="ur" dir="rtl">جی ہاں</span>
     </span>
   ) : (
     <span style={{ color: "var(--ink-soft)", fontWeight: 700, opacity: 0.55 }}>
       <span aria-hidden="true">–</span>
       <span className="sr-only" data-en>No</span>
-      <span className="sr-only urdu" data-ur>نہیں</span>
+      <span className="sr-only urdu" data-ur lang="ur" dir="rtl">نہیں</span>
     </span>
   );
 }
@@ -160,7 +160,7 @@ export default function ServicesPage() {
             <div className="wrap">
               <span className="eyebrow">
                 <span data-en>Home care in Lahore</span>
-                <span data-ur className="urdu">لاہور میں گھر پر دیکھ بھال</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">لاہور میں گھر پر دیکھ بھال</span>
               </span>
               <div className="sec-head" style={{ marginTop: 14, marginBottom: 0 }}>
                 {/* This is the page's H1. It was an <h2>, which left /services —
@@ -170,13 +170,13 @@ export default function ServicesPage() {
                     that is an editorial call for the owner, not a silent change. */}
                 <h1>
                   <span data-en>Our services</span>
-                  <span data-ur className="urdu">ہماری خدمات</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ہماری خدمات</span>
                 </h1>
                 <p>
                   <span data-en>
                     Need medical care? Choose a Qualified Nurse. Need daily support? Choose an Attendant. First day free. Pay after the shift. Not sure? We&rsquo;ll tell you honestly.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     طبی کام ہو تو نرس، روزمرہ مدد ہو تو اٹینڈنٹ مناسب ہے۔ پہلا دن مفت ہے، ادائیگی شفٹ کے بعد۔ سمجھ نہ آئے تو ہم صاف بتا دیں گے۔
                   </span>
                 </p>
@@ -194,7 +194,7 @@ export default function ServicesPage() {
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, marginBottom: 12 }}>
                         <h3 style={{ fontSize: 22, fontWeight: 800, color: "var(--ink)" }}>
                           <span data-en>{c.title}</span>{" "}
-                          <span data-ur className="urdu" style={{ fontSize: 16, color: "var(--teal-deep)", fontWeight: 700, marginRight: 4 }}>
+                          <span data-ur lang="ur" dir="rtl" className="urdu" style={{ fontSize: 16, color: "var(--teal-deep)", fontWeight: 700, marginRight: 4 }}>
                             {c.titleUr}
                           </span>
                         </h3>
@@ -212,16 +212,16 @@ export default function ServicesPage() {
                           }}
                         >
                           <span data-en>{c.badge.en}</span>
-                          <span data-ur className="urdu">{c.badge.ur}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{c.badge.ur}</span>
                         </span>
                       </div>
                       <p style={{ fontSize: 16, color: "var(--ink-soft)", lineHeight: 1.55, marginBottom: 14, fontWeight: 500 }}>
                         <span data-en>{c.desc.en}</span>
-                        <span data-ur className="urdu">{c.desc.ur}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{c.desc.ur}</span>
                       </p>
                       <div style={{ fontSize: 17, fontWeight: 700, color: "var(--teal-deep)", letterSpacing: "-.01em" }}>
                         <span data-en>First day free &middot; Pay after the shift</span>
-                        <span data-ur className="urdu">پہلا دن مفت &middot; ادائیگی شفٹ کے بعد</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">پہلا دن مفت &middot; ادائیگی شفٹ کے بعد</span>
                       </div>
                     </div>
 
@@ -248,25 +248,25 @@ export default function ServicesPage() {
                             </span>
                             <span style={{ fontSize: 16, fontWeight: 600, color: "var(--ink-soft)", lineHeight: 1.4 }}>
                               <span data-en>{s.label}</span>{" "}
-                              <span data-ur className="urdu" style={{ fontSize: 14, color: "var(--teal-deep)", fontWeight: 600 }}>{s.urdu}</span>
+                              <span data-ur lang="ur" dir="rtl" className="urdu" style={{ fontSize: 14, color: "var(--teal-deep)", fontWeight: 600 }}>{s.urdu}</span>
                             </span>
                           </li>
                         ))}
                         {c.services.length > 5 && (
                           <li style={{ listStyle: "none", fontSize: 15, fontWeight: 700, color: "var(--teal-deep)", paddingLeft: 32 }}>
                             <span data-en>+{c.services.length - 5} more</span>
-                            <span data-ur className="urdu">+{c.services.length - 5} مزید</span>
+                            <span data-ur lang="ur" dir="rtl" className="urdu">+{c.services.length - 5} مزید</span>
                           </li>
                         )}
                       </ul>
                       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
                         <Link className="btn btn-ghost" href={c.href} style={{ minHeight: 52, fontSize: 16 }}>
                           <span data-en>See details</span>
-                          <span data-ur className="urdu">مزید جانیں</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">مزید جانیں</span>
                         </Link>
                         <Link className="btn btn-primary" href={`/book?category=${c.cat}`} style={{ minHeight: 52, fontSize: 16 }}>
                           <span data-en>Request a call</span>
-                          <span data-ur className="urdu">کال منگوائیں</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">کال منگوائیں</span>
                         </Link>
                       </div>
                     </div>
@@ -290,11 +290,11 @@ export default function ServicesPage() {
               >
                 <h2 style={{ fontSize: "clamp(20px,4.6vw,26px)", marginBottom: 4 }}>
                   <span data-en>Not sure which you need?</span>
-                  <span data-ur className="urdu">سمجھ نہیں آ رہا نرس چاہیے یا اٹینڈنٹ؟</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">سمجھ نہیں آ رہا نرس چاہیے یا اٹینڈنٹ؟</span>
                 </h2>
                 <p style={{ fontSize: 16, color: "var(--ink-soft)", fontWeight: 500, marginBottom: 18 }}>
                   <span data-en>A quick look at what each one covers.</span>
-                  <span data-ur className="urdu">دونوں کا فرق مختصر میں دیکھ لیں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">دونوں کا فرق مختصر میں دیکھ لیں۔</span>
                 </p>
                 <div style={{ overflowX: "auto" }}>
                   <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15, tableLayout: "fixed" }}>
@@ -302,15 +302,15 @@ export default function ServicesPage() {
                       <tr style={{ borderBottom: "2px dashed var(--line-strong)" }}>
                         <th style={{ textAlign: "left", padding: "10px 6px", color: "var(--ink-soft)", fontWeight: 700 }}>
                           <span data-en>Feature</span>
-                          <span data-ur className="urdu">کام</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">کام</span>
                         </th>
                         <th style={{ width: "28%", textAlign: "center", padding: "10px 4px", color: "var(--teal-deep)", fontWeight: 800, lineHeight: 1.2, hyphens: "none", overflowWrap: "normal" }}>
                           <span data-en>Qualified Nurse</span>
-                          <span data-ur className="urdu">نرس</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">نرس</span>
                         </th>
                         <th style={{ width: "28%", textAlign: "center", padding: "10px 4px", color: "var(--ink)", fontWeight: 800, lineHeight: 1.2, hyphens: "none", overflowWrap: "normal" }}>
                           <span data-en>Attendant</span>
-                          <span data-ur className="urdu">اٹینڈنٹ</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">اٹینڈنٹ</span>
                         </th>
                       </tr>
                     </thead>
@@ -319,7 +319,7 @@ export default function ServicesPage() {
                         <tr key={feat.en} style={{ borderBottom: "1px solid var(--line)" }}>
                           <td style={{ padding: "12px 6px", color: "var(--ink)", fontWeight: 600, lineHeight: 1.35 }}>
                             <span data-en>{feat.en}</span>
-                            <span data-ur className="urdu">{feat.ur}</span>
+                            <span data-ur lang="ur" dir="rtl" className="urdu">{feat.ur}</span>
                           </td>
                           <td style={{ textAlign: "center", padding: "12px 4px" }}><Cell v={n} /></td>
                           <td style={{ textAlign: "center", padding: "12px 4px" }}><Cell v={a} /></td>
@@ -330,7 +330,7 @@ export default function ServicesPage() {
                 </div>
                 <p style={{ fontSize: 15, color: "var(--ink-soft)", fontWeight: 600, marginTop: 16 }}>
                   <span data-en>You pay after the shift — we tell you the exact price on the first call.</span>
-                  <span data-ur className="urdu">ادائیگی شفٹ کے بعد ہوتی ہے — صحیح قیمت پہلی کال پر بتا دی جاتی ہے۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ادائیگی شفٹ کے بعد ہوتی ہے — صحیح قیمت پہلی کال پر بتا دی جاتی ہے۔</span>
                 </p>
               </div>
             </div>
@@ -344,11 +344,11 @@ export default function ServicesPage() {
               <div className="sec-head">
                 <h2>
                   <span data-en>Care we are asked for most</span>
-                  <span data-ur className="urdu">جن خدمات کی سب سے زیادہ ضرورت پڑتی ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">جن خدمات کی سب سے زیادہ ضرورت پڑتی ہے</span>
                 </h2>
                 <p>
                   <span data-en>Each one explains plainly what happens, who comes, and how soon.</span>
-                  <span data-ur className="urdu">ہر ایک میں صاف لکھا ہے کیا ہوتا ہے، کون آتا ہے اور کتنی جلدی۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ہر ایک میں صاف لکھا ہے کیا ہوتا ہے، کون آتا ہے اور کتنی جلدی۔</span>
                 </p>
               </div>
               <div className="id-meta">
@@ -357,7 +357,7 @@ export default function ServicesPage() {
                     <span className="tick" aria-hidden="true">&#10003;</span>
                     <span>
                       <span data-en><b>{l.en}</b> &mdash; {l.dsEn}</span>
-                      <span data-ur className="urdu"><b>{l.ur}</b> &mdash; {l.dsUr}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu"><b>{l.ur}</b> &mdash; {l.dsUr}</span>
                     </span>
                   </Link>
                 ))}

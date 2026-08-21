@@ -122,7 +122,7 @@ export default function ServiceDetailPage({
             <div className="wrap">
               <span className="eyebrow">
                 <span data-en>{badge.en}</span>
-                <span data-ur className="urdu">{badge.ur}</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">{badge.ur}</span>
               </span>
               <div className="sec-head" style={{ marginTop: 14, marginBottom: 22 }}>
                 {/* The page's H1. This was an <h2>, leaving /services/qualified-nurse
@@ -130,11 +130,11 @@ export default function ServiceDetailPage({
                     H1 at all. `role` already carries each page's primary phrase. */}
                 <h1>
                   <span data-en>{role}</span>
-                  <span data-ur className="urdu">{roleUrdu}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{roleUrdu}</span>
                 </h1>
                 <p>
                   <span data-en>{intro.en}</span>
-                  <span data-ur className="urdu">{intro.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{intro.ur}</span>
                 </p>
               </div>
               <div
@@ -146,7 +146,7 @@ export default function ServiceDetailPage({
                 }}
               >
                 <span data-en>First day free &middot; No advance &middot; Pay after the shift</span>
-                <span data-ur className="urdu">پہلا دن مفت &middot; پیشگی ادائیگی نہیں &middot; ادائیگی شفٹ کے بعد</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">پہلا دن مفت &middot; پیشگی ادائیگی نہیں &middot; ادائیگی شفٹ کے بعد</span>
               </div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 22 }}>
                 <a
@@ -157,14 +157,14 @@ export default function ServiceDetailPage({
                 >
                   <span className="wadot" />
                   <span data-en>WhatsApp us</span>
-                  <span data-ur className="urdu">واٹس ایپ کریں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ کریں</span>
                 </a>
                 <a className="btn btn-call" href={`tel:${CONTACT_PHONE_TEL}`}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                   </svg>
                   <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-                  <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
                 </a>
               </div>
             </div>
@@ -176,12 +176,12 @@ export default function ServiceDetailPage({
               <div className="sec-head" style={{ marginBottom: 24 }}>
                 <h2 style={{ fontSize: "clamp(22px,5vw,30px)" }}>
                   <span data-en>{gridHeading.en}</span>
-                  <span data-ur className="urdu">{gridHeading.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{gridHeading.ur}</span>
                 </h2>
                 {gridSub && (
                   <p>
                     <span data-en>{gridSub.en} {VERIFY_TAIL.en}</span>
-                    <span data-ur className="urdu">{gridSub.ur} {VERIFY_TAIL.ur}</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">{gridSub.ur} {VERIFY_TAIL.ur}</span>
                   </p>
                 )}
               </div>
@@ -191,13 +191,13 @@ export default function ServiceDetailPage({
                   <div key={s.id} style={CARD}>
                     <h3 style={{ fontSize: 18, fontWeight: 800, color: "var(--ink)", lineHeight: 1.25 }}>
                       <span data-en>{s.label}</span>{" "}
-                      <span data-ur className="urdu" style={{ fontSize: 15, color: "var(--teal-deep)", fontWeight: 600, marginRight: 6 }}>
+                      <span data-ur lang="ur" dir="rtl" className="urdu" style={{ fontSize: 15, color: "var(--teal-deep)", fontWeight: 600, marginRight: 6 }}>
                         {s.urdu}
                       </span>
                     </h3>
                     <p style={{ fontSize: 16, color: "var(--ink-soft)", lineHeight: 1.5, marginTop: 8, fontWeight: 500, flex: 1 }}>
                       <span data-en>{s.description}</span>
-                      <span data-ur className="urdu">{s.descriptionUrdu}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{s.descriptionUrdu}</span>
                     </p>
                     <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10, marginTop: 16 }}>
                       <a
@@ -221,7 +221,7 @@ export default function ServiceDetailPage({
                       >
                         <WaMini />
                         <span data-en>WhatsApp</span>
-                        <span data-ur className="urdu">واٹس ایپ</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ</span>
                       </a>
                       <Link
                         href={`/book?service=${s.id}&category=${category}`}
@@ -235,7 +235,7 @@ export default function ServiceDetailPage({
                         }}
                       >
                         <span data-en>Call me back →</span>
-                        <span data-ur className="urdu">واپس کال منگوائیں ←</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">واپس کال منگوائیں ←</span>
                       </Link>
                     </div>
                   </div>

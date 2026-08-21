@@ -140,7 +140,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                       >
                         <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "var(--gold)", flex: "none" }} />
                         <span data-en>Coming soon</span>
-                        <span data-ur className="urdu">جلد آ رہا ہے</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">جلد آ رہا ہے</span>
                       </span>
                     </div>
                   )}
@@ -148,7 +148,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                   {isLive && (
                     <span className="eyebrow" style={{ marginBottom: "12px" }}>
                       <span data-en>A real person is one call away</span>
-                      <span data-ur className="urdu">حقیقی انسان، صرف ایک کال دور</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">حقیقی انسان، صرف ایک کال دور</span>
                     </span>
                   )}
 
@@ -156,12 +156,12 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                     {isLive ? (
                       <>
                         <span data-en>Nurse or attendant at home in <span className="hl">{cityName}</span></span>
-                        <span data-ur className="urdu"><span className="hl">{cityUr}</span> میں گھر پر نرس یا اٹینڈنٹ</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu"><span className="hl">{cityUr}</span> میں گھر پر نرس یا اٹینڈنٹ</span>
                       </>
                     ) : (
                       <>
                         <span data-en>Nurse or attendant at home in <span className="hl">{cityName}</span> &mdash; coming soon</span>
-                        <span data-ur className="urdu"><span className="hl">{cityUr}</span> میں گھر پر نرس یا اٹینڈنٹ &mdash; جلد آ رہا ہے</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu"><span className="hl">{cityUr}</span> میں گھر پر نرس یا اٹینڈنٹ &mdash; جلد آ رہا ہے</span>
                       </>
                     )}
                   </h1>
@@ -170,12 +170,12 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                     {isLive ? (
                       <>
                         <span data-en>PNC-registered nurses and trained attendants at home in {cityName}. CNIC checked, references called, police-verified. First day free. Pay after the shift. No advance.</span>
-                        <span data-ur className="urdu">{cityUr} میں گھر پر PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ۔ شناختی کارڈ اور حوالہ جات چیک ہو جاتے ہیں، اور پولیس تصدیق بھی ہو جاتی ہے۔ پہلا دن مفت۔ پیشگی ادائیگی نہیں۔ ادائیگی شفٹ کے بعد۔</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{cityUr} میں گھر پر PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ۔ شناختی کارڈ اور حوالہ جات چیک ہو جاتے ہیں، اور پولیس تصدیق بھی ہو جاتی ہے۔ پہلا دن مفت۔ پیشگی ادائیگی نہیں۔ ادائیگی شفٹ کے بعد۔</span>
                       </>
                     ) : (
                       <>
                         <span data-en>Sehat Connect is coming to {cityName} soon. Leave your name and number and we&rsquo;ll call you the day we go live.</span>
-                        <span data-ur className="urdu">Sehat Connect جلد {cityUr} میں شروع ہو رہا ہے۔ نام اور نمبر دیں؛ سروس شروع ہوتے ہی ہم کال کریں گے۔</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">Sehat Connect جلد {cityUr} میں شروع ہو رہا ہے۔ نام اور نمبر دیں؛ سروس شروع ہوتے ہی ہم کال کریں گے۔</span>
                       </>
                     )}
                   </p>
@@ -184,20 +184,20 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                     <div className="hero-trust">
                       <span className="pill">
                         <span data-en>First day free</span>
-                        <span data-ur className="urdu">پہلا دن مفت</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">پہلا دن مفت</span>
                       </span>
                       <span className="pill">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round"><path d="M12 3l7 3v5c0 4.4-2.9 7.9-7 9-4.1-1.1-7-4.6-7-9V6l7-3z" /><path d="M9 12l2 2 4-4" strokeLinecap="round" /></svg>
                         <span data-en>PNC-registered nurses</span>
-                        <span data-ur className="urdu">PNC رجسٹرڈ نرسیں</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">PNC رجسٹرڈ نرسیں</span>
                       </span>
                       <span className="pill">
                         <span data-en>Pay after the shift</span>
-                        <span data-ur className="urdu">شفٹ کے بعد ادائیگی</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">شفٹ کے بعد ادائیگی</span>
                       </span>
                       <span className="pill">
                         <span data-en>No advance</span>
-                        <span data-ur className="urdu">کوئی پیشگی نہیں</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">کوئی پیشگی نہیں</span>
                       </span>
                     </div>
                   )}
@@ -207,7 +207,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                   {!isLive && (
                     <p style={{ fontSize: "16px", fontWeight: 700, color: "var(--ink)", margin: "0 0 12px" }}>
                       <span data-en>Be first in line in {cityName}:</span>
-                      <span data-ur className="urdu">{cityUr} میں پہلے اطلاع پائیں:</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{cityUr} میں پہلے اطلاع پائیں:</span>
                     </p>
                   )}
                   <LeadFormD6 variant="hero" area={cityName} />
@@ -222,18 +222,18 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>What we do</span>
-                  <span data-ur className="urdu">ہم کیا کرتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ہم کیا کرتے ہیں</span>
                 </span>
                 <h2>
                   {isLive ? (
                     <>
                       <span data-en>Home nursing services in {cityName}</span>
-                      <span data-ur className="urdu">{cityUr} میں گھر پر نرسنگ خدمات</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{cityUr} میں گھر پر نرسنگ خدمات</span>
                     </>
                   ) : (
                     <>
                       <span data-en>Coming to {cityName} soon</span>
-                      <span data-ur className="urdu">{cityUr} میں جلد آ رہا ہے</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{cityUr} میں جلد آ رہا ہے</span>
                     </>
                   )}
                 </h2>
@@ -246,7 +246,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                       <span data-en>
                         Sehat Connect arranges nurses and attendants at home in {cityName}: post-op, elderly, paediatric, ICU step-down, diabetic, night duty, mother and baby, dementia, and long-term palliative care. We send a Qualified Nurse for medical tasks and an attendant for daily support.
                       </span>
-                      <span data-ur className="urdu">
+                      <span data-ur lang="ur" dir="rtl" className="urdu">
                         Sehat Connect {cityUr} میں گھر پر نرس یا اٹینڈنٹ کا بندوبست کرتا ہے: آپریشن کے بعد، بزرگوں کی دیکھ بھال، بچوں کی دیکھ بھال، ICU کے بعد، شوگر، رات کی ڈیوٹی، ماں اور بچہ، ڈیمنشیا اور طویل مدتی نگہداشت۔ طبی کام کے لیے نرس، روزمرہ مدد کے لیے اٹینڈنٹ مناسب ہوتا ہے۔
                       </span>
                     </p>
@@ -254,13 +254,13 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                       <span data-en>
                         Every caregiver is CNIC checked, references called, police-verified. You can request a female or male caregiver. We tell you the exact price on the first call before care starts. No advance. Pay after the shift.
                       </span>
-                      <span data-ur className="urdu">
+                      <span data-ur lang="ur" dir="rtl" className="urdu">
                         ہر فرد کا شناختی کارڈ اور حوالہ جات چیک ہو جاتے ہیں، اور پولیس تصدیق بھی ہو جاتی ہے۔ خاتون یا مرد نرس/اٹینڈنٹ مانگ سکتے ہیں۔ صحیح قیمت پہلی کال پر بتا دیتے ہیں۔ پیشگی ادائیگی نہیں؛ ادائیگی شفٹ کے بعد۔
                       </span>
                     </p>
                     <p style={{ fontSize: "17px", color: "var(--ink-soft)", lineHeight: 1.7, fontWeight: 500 }}>
                       <span data-en>Call or WhatsApp us at </span>
-                      <span data-ur className="urdu">ہمیں کال یا واٹس ایپ کریں: </span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">ہمیں کال یا واٹس ایپ کریں: </span>
                       <strong style={{ color: "var(--teal-deep)" }}>{CONTACT_PHONE_DISPLAY}</strong>.
                     </p>
                   </div>
@@ -270,7 +270,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                       Sehat Connect is not live in {cityName} yet. We plan to offer PNC-registered nurses and trained attendants for home care. Leave your details and we&apos;ll call when we launch. Questions? Call or WhatsApp{" "}
                       <strong style={{ color: "var(--teal-deep)" }}>{CONTACT_PHONE_DISPLAY}</strong>.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       Sehat Connect ابھی {cityUr} میں شروع نہیں ہوا۔ ہم گھر پر PNC رجسٹرڈ نرسیں اور تربیت یافتہ اٹینڈنٹ لانے کی تیاری کر رہے ہیں۔ اپنی تفصیلات دیں؛ سروس شروع ہوتے ہی ہم کال کریں گے۔ سوال ہو تو کال یا واٹس ایپ کریں{" "}
                       <strong style={{ color: "var(--teal-deep)" }}><bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></strong>۔
                     </span>
@@ -287,7 +287,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 <div className="sec-head" style={{ marginBottom: "14px" }}>
                   <h2 style={{ fontSize: "clamp(20px,4.4vw,26px)" }}>
                     <span data-en>Areas we serve in Lahore</span>
-                    <span data-ur className="urdu">لاہور کے وہ علاقے جہاں ہم آتے ہیں</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">لاہور کے وہ علاقے جہاں ہم آتے ہیں</span>
                   </h2>
                 </div>
                 <div className="founder-card">
@@ -308,13 +308,13 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                         }}
                       >
                         <span data-en>{area.en}</span>
-                        <span data-ur className="urdu">{area.ur}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{area.ur}</span>
                       </span>
                     ))}
                   </div>
                   <p style={{ fontSize: "16px", color: "var(--ink-soft)", lineHeight: 1.6, fontWeight: 500, margin: "16px 0 0" }}>
                     <span data-en>And everywhere in between, 24/7. We ask your exact area on the call.</span>
-                    <span data-ur className="urdu">اور آس پاس کے علاقے بھی، 24/7۔ صحیح علاقہ کال پر پوچھ لیتے ہیں۔</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">اور آس پاس کے علاقے بھی، 24/7۔ صحیح علاقہ کال پر پوچھ لیتے ہیں۔</span>
                   </p>
                 </div>
               </div>

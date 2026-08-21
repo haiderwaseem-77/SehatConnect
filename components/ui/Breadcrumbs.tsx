@@ -29,7 +29,7 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
           const label = (
             <>
               <span data-en>{crumb.name}</span>
-              <span data-ur className="urdu">{crumb.nameUr}</span>
+              <span data-ur lang="ur" dir="rtl" className="urdu">{crumb.nameUr}</span>
             </>
           );
           return (

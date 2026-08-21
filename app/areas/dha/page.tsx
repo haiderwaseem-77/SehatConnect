@@ -207,7 +207,7 @@ function TickList({ items }: { items: Bilingual[] }) {
           </span>
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -242,14 +242,14 @@ export default function DhaAreaPage() {
 
                   <span className="eyebrow eyebrow-plain">
                     <span data-en>DHA, Lahore &middot; the area our office is in</span>
-                    <span data-ur className="urdu">ڈی ایچ اے، لاہور &middot; وہ علاقہ جہاں ہمارا دفتر ہے</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">ڈی ایچ اے، لاہور &middot; وہ علاقہ جہاں ہمارا دفتر ہے</span>
                   </span>
 
                   <h1>
                     <span data-en>
                       Nurse &amp; attendant at home in <span className="hl">{AREA.name.en}</span>, Lahore
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       لاہور کے <span className="hl">{AREA.name.ur}</span> میں گھر پر نرس اور اٹینڈنٹ
                     </span>
                   </h1>
@@ -260,7 +260,7 @@ export default function DhaAreaPage() {
                       in Lahore, DHA is the part we are closest to, which
                       makes a short nurse visit here an easy thing for us to arrange.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       ہمارا دفتر ڈی ایچ اے فیز 8 میں ہے &mdash; یعنی اسی علاقے کے اندر۔ لاہور میں جہاں
                       جہاں ہم جاتے ہیں، ان میں ڈی ایچ اے ہمارے سب سے قریب ہے، اس لیے یہاں نرس کا
                       مختصر وزٹ ہمارے لیے آسانی سے بن جاتا ہے۔
@@ -270,19 +270,19 @@ export default function DhaAreaPage() {
                   <div className="hero-trust">
                     <span className="pill">
                       <span data-en>Office in DHA Phase 8</span>
-                      <span data-ur className="urdu">دفتر ڈی ایچ اے فیز 8 میں</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">دفتر ڈی ایچ اے فیز 8 میں</span>
                     </span>
                     <span className="pill">
                       <span data-en>{PROMISES.trial.enShort}</span>
-                      <span data-ur className="urdu">{PROMISES.trial.urShort}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{PROMISES.trial.urShort}</span>
                     </span>
                     <span className="pill">
                       <span data-en>No advance</span>
-                      <span data-ur className="urdu">کوئی پیشگی نہیں</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">کوئی پیشگی نہیں</span>
                     </span>
                     <span className="pill">
                       <span data-en>24/7</span>
-                      <span data-ur className="urdu">چوبیس گھنٹے</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">چوبیس گھنٹے</span>
                     </span>
                   </div>
 
@@ -292,12 +292,12 @@ export default function DhaAreaPage() {
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                       </svg>
                       <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-                      <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
                     </a>
                     <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
                       <span className="wadot" />
                       <span data-en>WhatsApp us</span>
-                      <span data-ur className="urdu">واٹس ایپ کریں</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ کریں</span>
                     </a>
                   </div>
                 </div>
@@ -315,11 +315,11 @@ export default function DhaAreaPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>What families here ask us for</span>
-                  <span data-ur className="urdu">یہاں کے گھرانے کیا مانگتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">یہاں کے گھرانے کیا مانگتے ہیں</span>
                 </span>
                 <h2>
                   <span data-en>Three requests we hear from DHA homes.</span>
-                  <span data-ur className="urdu">ڈی ایچ اے کے گھروں سے آنے والی تین بڑی درخواستیں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ڈی ایچ اے کے گھروں سے آنے والی تین بڑی درخواستیں۔</span>
                 </h2>
               </div>
 
@@ -328,11 +328,11 @@ export default function DhaAreaPage() {
                   <div key={a.title.en} style={CARD}>
                     <h3 style={{ fontSize: 20, marginBottom: 10, lineHeight: 1.25 }}>
                       <span data-en>{a.title.en}</span>
-                      <span data-ur className="urdu">{a.title.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{a.title.ur}</span>
                     </h3>
                     <p style={{ fontSize: 17, color: "var(--ink-soft)", lineHeight: 1.62, fontWeight: 500 }}>
                       <span data-en>{a.body.en}</span>
-                      <span data-ur className="urdu">{a.body.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{a.body.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -353,7 +353,7 @@ export default function DhaAreaPage() {
               <div className="sec-head">
                 <h2>
                   <span data-en>Where DHA families are coming home from</span>
-                  <span data-ur className="urdu">ڈی ایچ اے کے مریض کہاں سے گھر آ رہے ہوتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ڈی ایچ اے کے مریض کہاں سے گھر آ رہے ہوتے ہیں</span>
                 </h2>
               </div>
 
@@ -370,7 +370,7 @@ export default function DhaAreaPage() {
                     the care we give follows what the patient&rsquo;s own doctor has prescribed. The
                     family finds us and calls &mdash; often on the day they bring someone home.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     ڈی ایچ اے کے گھرانے اکثر {HOSPITAL_A} یا {HOSPITAL_B} سے، اور لاہور بھر کے دوسرے
                     ہسپتالوں سے، مریض گھر لانے کے بعد ہمیں کال کرتے ہیں۔ اس بات کا مطلب صاف کر دیں: کسی
                     ہسپتال سے ہمارا کوئی معاہدہ نہیں، کوئی ہسپتال ہمیں مریض نہیں بھیجتا، اور ہم وہی
@@ -385,7 +385,7 @@ export default function DhaAreaPage() {
                     Gulberg and Johar Town pages: those are trips across the city, and DHA is where we
                     already are.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     ہمارا اپنا پتہ ہے: {OFFICE_ADDRESS} &mdash; وہی پتہ جو فوٹر میں اور ہماری ہر لسٹنگ
                     میں لکھا ہے۔ یہی وجہ ہے کہ یہ صفحہ گلبرگ اور جوہر ٹاؤن والے صفحوں سے مختلف ہے: وہ
                     شہر کے دوسری طرف کا سفر ہیں، اور ڈی ایچ اے وہ جگہ ہے جہاں ہم پہلے سے موجود ہیں۔
@@ -401,11 +401,11 @@ export default function DhaAreaPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Who comes into your home</span>
-                  <span data-ur className="urdu">آپ کے گھر کون آتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آپ کے گھر کون آتا ہے</span>
                 </span>
                 <h2>
                   <span data-en>You meet them before they arrive.</span>
-                  <span data-ur className="urdu">وہ پہنچنے سے پہلے آپ ان سے متعارف ہو جاتے ہیں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">وہ پہنچنے سے پہلے آپ ان سے متعارف ہو جاتے ہیں۔</span>
                 </h2>
               </div>
 
@@ -423,7 +423,7 @@ export default function DhaAreaPage() {
                   }}
                 >
                   <span data-en>{PROMISES.replacement.en}</span>
-                  <span data-ur className="urdu">{PROMISES.replacement.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{PROMISES.replacement.ur}</span>
                 </p>
               </div>
             </div>
@@ -435,11 +435,11 @@ export default function DhaAreaPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>How the care is arranged</span>
-                  <span data-ur className="urdu">دیکھ بھال کیسے ترتیب پاتی ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">دیکھ بھال کیسے ترتیب پاتی ہے</span>
                 </span>
                 <h2>
                   <span data-en>A visit, a shift, or both shifts.</span>
-                  <span data-ur className="urdu">ایک وزٹ، ایک شفٹ، یا دونوں شفٹیں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ایک وزٹ، ایک شفٹ، یا دونوں شفٹیں۔</span>
                 </h2>
               </div>
 
@@ -448,11 +448,11 @@ export default function DhaAreaPage() {
                   <div key={f.id} style={CARD}>
                     <h3 style={{ fontSize: 20, marginBottom: 8 }}>
                       <span data-en>{f.name.en}</span>
-                      <span data-ur className="urdu">{f.name.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.name.ur}</span>
                     </h3>
                     <p style={{ fontSize: 17, color: "var(--ink-soft)", lineHeight: 1.62, fontWeight: 500 }}>
                       <span data-en>{f.detail.en}</span>
-                      <span data-ur className="urdu">{f.detail.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.detail.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -460,7 +460,7 @@ export default function DhaAreaPage() {
 
               <p className="svc-foot" style={{ marginTop: 18 }}>
                 <span data-en>{PROMISES.payment.en} {START_PROMISE.en} {CALLBACK_PROMISE.en}</span>
-                <span data-ur className="urdu">{PROMISES.payment.ur} {START_PROMISE.ur} {CALLBACK_PROMISE.ur}</span>
+                <span data-ur lang="ur" dir="rtl" className="urdu">{PROMISES.payment.ur} {START_PROMISE.ur} {CALLBACK_PROMISE.ur}</span>
               </p>
             </div>
           </section>
@@ -471,11 +471,11 @@ export default function DhaAreaPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Questions we get from DHA</span>
-                  <span data-ur className="urdu">ڈی ایچ اے سے آنے والے سوالات</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ڈی ایچ اے سے آنے والے سوالات</span>
                 </span>
                 <h2>
                   <span data-en>Straight answers.</span>
-                  <span data-ur className="urdu">سیدھے جواب۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">سیدھے جواب۔</span>
                 </h2>
               </div>
 
@@ -485,14 +485,14 @@ export default function DhaAreaPage() {
                     <div className="faq-q" style={{ cursor: "default", alignItems: "flex-start" }}>
                       <h3 className="qt">
                         <span data-en>{item.q}</span>
-                        <span data-ur className="urdu">{item.qUr}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{item.qUr}</span>
                       </h3>
                     </div>
                     <div className="faq-a" style={{ gridTemplateRows: "1fr" }}>
                       <div className="faq-a-in" style={{ fontSize: 17 }}>
                         <div className="faq-a-pad">
                           <span data-en>{item.a}</span>
-                          <span data-ur className="urdu">{item.aUr}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{item.aUr}</span>
                         </div>
                       </div>
                     </div>
@@ -508,29 +508,29 @@ export default function DhaAreaPage() {
               <div className="sec-head" style={{ marginBottom: 14 }}>
                 <h2 style={{ fontSize: "clamp(20px,4.4vw,26px)" }}>
                   <span data-en>Somewhere else in Lahore?</span>
-                  <span data-ur className="urdu">لاہور کے کسی اور علاقے میں؟</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">لاہور کے کسی اور علاقے میں؟</span>
                 </h2>
               </div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
                 <Link className="btn btn-ghost" href="/areas/gulberg">
                   <span data-en>Gulberg</span>
-                  <span data-ur className="urdu">گلبرگ</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">گلبرگ</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/areas/johar-town">
                   <span data-en>Johar Town</span>
-                  <span data-ur className="urdu">جوہر ٹاؤن</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">جوہر ٹاؤن</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/areas">
                   <span data-en>All areas we serve</span>
-                  <span data-ur className="urdu">تمام علاقے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">تمام علاقے</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/services/elderly-care">
                   <span data-en>Elderly care at home</span>
-                  <span data-ur className="urdu">بزرگوں کی گھر پر دیکھ بھال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">بزرگوں کی گھر پر دیکھ بھال</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/charges">
                   <span data-en>How charges work</span>
-                  <span data-ur className="urdu">چارجز کیسے طے ہوتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">چارجز کیسے طے ہوتے ہیں</span>
                 </Link>
               </div>
             </div>

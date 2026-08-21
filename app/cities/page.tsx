@@ -34,15 +34,15 @@ export default function CitiesPage() {
           <div className="wrap">
             <span className="eyebrow" style={{ marginBottom: "12px" }}>
               <span data-en>Where we work</span>
-              <span data-ur className="urdu">ہم کہاں کام کرتے ہیں</span>
+              <span data-ur lang="ur" dir="rtl" className="urdu">ہم کہاں کام کرتے ہیں</span>
             </span>
             <h1>
               <span data-en>Cities we <span className="hl">serve</span></span>
-              <span data-ur className="urdu">وہ شہر جہاں ہماری <span className="hl">سروس</span> دستیاب ہے</span>
+              <span data-ur lang="ur" dir="rtl" className="urdu">وہ شہر جہاں ہماری <span className="hl">سروس</span> دستیاب ہے</span>
             </h1>
             <p className="hero-sub">
               <span data-en>Nurses and attendants at home in Lahore now. More cities coming soon. Leave your number and a real person calls back.</span>
-              <span data-ur className="urdu">ابھی لاہور میں گھر پر نرسیں اور اٹینڈنٹ دستیاب ہیں۔ باقی شہروں میں جلد آ رہے ہیں۔ اپنا نمبر دیں؛ ہم کال کریں گے۔</span>
+              <span data-ur lang="ur" dir="rtl" className="urdu">ابھی لاہور میں گھر پر نرسیں اور اٹینڈنٹ دستیاب ہیں۔ باقی شہروں میں جلد آ رہے ہیں۔ اپنا نمبر دیں؛ ہم کال کریں گے۔</span>
             </p>
           </div>
         </section>
@@ -77,7 +77,7 @@ export default function CitiesPage() {
                       >
                         <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--gold)", flex: "none" }} />
                           <span data-en>Coming soon</span>
-                        <span data-ur className="urdu">جلد آ رہا ہے</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">جلد آ رہا ہے</span>
                       </span>
                     )}
 
@@ -102,18 +102,18 @@ export default function CitiesPage() {
 
                     <h2 style={{ fontSize: "22px", fontWeight: 800, color: "var(--ink)", marginBottom: "6px", lineHeight: 1.2 }}>
                       <span data-en>{city.en}</span>{" "}
-                      <span data-ur className="urdu" style={{ fontSize: 18 }}>{city.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu" style={{ fontSize: 18 }}>{city.ur}</span>
                     </h2>
                     <p style={{ fontSize: "16px", color: "var(--ink-soft)", lineHeight: 1.5, fontWeight: 500, marginBottom: isLive ? "14px" : "0" }}>
                       {isLive ? (
                         <>
                           <span data-en>Nurses &amp; attendants at home</span>
-                          <span data-ur className="urdu">گھر پر نرسیں اور اٹینڈنٹ</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">گھر پر نرسیں اور اٹینڈنٹ</span>
                         </>
                       ) : (
                         <>
                           <span data-en>Launching soon</span>
-                          <span data-ur className="urdu">جلد شروع ہو رہا ہے</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">جلد شروع ہو رہا ہے</span>
                         </>
                       )}
                     </p>
@@ -121,7 +121,7 @@ export default function CitiesPage() {
                     {isLive && (
                       <span style={{ fontSize: "16px", color: "var(--teal-deep)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: "6px" }}>
                         <span data-en>Request a call</span>
-                        <span data-ur className="urdu">کال منگوائیں</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">کال منگوائیں</span>
                         <span aria-hidden="true">&rarr;</span>
                       </span>
                     )}

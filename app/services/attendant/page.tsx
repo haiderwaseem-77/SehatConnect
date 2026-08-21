@@ -68,17 +68,17 @@ const AttendantExtra = (
         >
           <span className="eyebrow" style={{ marginBottom: 14 }}>
             <span data-en>Non-clinical care</span>
-            <span data-ur className="urdu">غیر طبی دیکھ بھال</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">غیر طبی دیکھ بھال</span>
           </span>
           <h2 style={{ fontSize: "clamp(22px,5vw,30px)", marginBottom: 8 }}>
             <span data-en>What an attendant does</span>
-            <span data-ur className="urdu">اٹینڈنٹ کون سی مدد کرتا ہے</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">اٹینڈنٹ کون سی مدد کرتا ہے</span>
           </h2>
           <p style={{ fontSize: 17, color: "var(--ink-soft)", fontWeight: 500, marginBottom: 20, maxWidth: "48ch" }}>
             <span data-en>
               An attendant handles the everyday, hands-on care an unwell or elderly person needs — the non-medical work that keeps them comfortable, clean and safe.
             </span>
-            <span data-ur className="urdu">
+            <span data-ur lang="ur" dir="rtl" className="urdu">
               اٹینڈنٹ بیمار یا بزرگ فرد کی روزمرہ، غیر طبی مدد کرتا ہے — آرام، صفائی اور حفاظت کا خیال رکھتے ہوئے۔
             </span>
           </p>
@@ -104,7 +104,7 @@ const AttendantExtra = (
                 </span>
                 <span style={{ fontSize: 16, fontWeight: 600, color: "var(--ink-soft)", lineHeight: 1.5 }}>
                   <span data-en>{d.en}</span>
-                  <span data-ur className="urdu">{d.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{d.ur}</span>
                 </span>
               </li>
             ))}
@@ -126,7 +126,7 @@ const AttendantExtra = (
               <b style={{ color: "var(--ink)" }}>Need a medical task</b> — injections, drips, wound dressing or monitoring? That is a{" "}
               <b style={{ color: "var(--ink)" }}>Qualified Nurse</b>, not an attendant. We&rsquo;ll always tell you honestly which one you need.
             </span>
-            <span data-ur className="urdu">
+            <span data-ur lang="ur" dir="rtl" className="urdu">
               <b style={{ color: "var(--ink)" }}>طبی کام</b> — انجیکشن، ڈرپ، ڈریسنگ یا نگرانی چاہیے؟ یہ{" "}
               <b style={{ color: "var(--ink)" }}>نرس</b> کا کام ہے، اٹینڈنٹ کا نہیں۔ ہم صاف بتا دیں گے کہ آپ کے لیے کون سا فرد مناسب ہے۔
             </span>
@@ -166,13 +166,13 @@ const AttendantExtra = (
           <div style={{ minWidth: 0 }}>
             <b style={{ display: "block", fontSize: 17, fontWeight: 800, color: "var(--ink)", lineHeight: 1.3 }}>
               <span data-en>Female or male attendant — you choose</span>
-              <span data-ur className="urdu">خاتون یا مرد اٹینڈنٹ — آپ کی پسند</span>
+              <span data-ur lang="ur" dir="rtl" className="urdu">خاتون یا مرد اٹینڈنٹ — آپ کی پسند</span>
             </b>
             <span style={{ display: "block", marginTop: 4, fontSize: 15.5, fontWeight: 500, color: "var(--ink-soft)", lineHeight: 1.5 }}>
               <span data-en>
                 Caring for a woman or an elderly mother? Ask for a female attendant — female-for-female, always. Just tell us on the call.
               </span>
-              <span data-ur className="urdu">
+              <span data-ur lang="ur" dir="rtl" className="urdu">
                 خاتون مریض یا بزرگ والدہ کے لیے خاتون اٹینڈنٹ چاہیے؟ کال پر بتا دیں؛ خاتون کے لیے خاتون کا بندوبست کیا جا سکتا ہے۔
               </span>
             </span>

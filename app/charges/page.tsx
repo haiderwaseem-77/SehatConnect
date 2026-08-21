@@ -274,7 +274,7 @@ function TickList({ items }: { items: Bilingual[] }) {
           <Tick />
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -308,14 +308,14 @@ export default function ChargesPage() {
                 <div className="hero-copy">
                   <span className="eyebrow eyebrow-plain">
                     <span data-en>Charges, explained honestly</span>
-                    <span data-ur className="urdu">قیمت کا معاملہ، صاف الفاظ میں</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">قیمت کا معاملہ، صاف الفاظ میں</span>
                   </span>
 
                   <h1>
                     <span data-en>
                       Home nurse and attendant <span className="hl">charges in Lahore</span>
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       <span className="hl">لاہور</span> میں گھر پر نرس اور اٹینڈنٹ کے چارجز
                     </span>
                   </h1>
@@ -326,7 +326,7 @@ export default function ChargesPage() {
                       depends on which of the two you need and which shift — so we tell you the exact
                       price on the first call, before care starts.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       اس صفحے پر ریٹ لسٹ نہیں، اور اس کی ایک صاف وجہ ہے۔ آپ کو کیا دینا ہو گا، یہ اس پر
                       ہے کہ نرس چاہیے یا اٹینڈنٹ، اور کون سی شفٹ — اسی لیے ہم صحیح قیمت پہلی کال پر،
                       کام شروع ہونے سے پہلے بتا دیتے ہیں۔
@@ -336,19 +336,19 @@ export default function ChargesPage() {
                   <div className="hero-trust">
                     <span className="pill">
                       <span data-en>{PROMISES.trial.enShort}</span>
-                      <span data-ur className="urdu">{PROMISES.trial.urShort}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{PROMISES.trial.urShort}</span>
                     </span>
                     <span className="pill">
                       <span data-en>No advance</span>
-                      <span data-ur className="urdu">کوئی پیشگی نہیں</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">کوئی پیشگی نہیں</span>
                     </span>
                     <span className="pill">
                       <span data-en>Pay after the shift</span>
-                      <span data-ur className="urdu">شفٹ کے بعد ادائیگی</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">شفٹ کے بعد ادائیگی</span>
                     </span>
                     <span className="pill">
                       <span data-en>Exact price on the first call</span>
-                      <span data-ur className="urdu">صحیح قیمت پہلی کال پر</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">صحیح قیمت پہلی کال پر</span>
                     </span>
                   </div>
 
@@ -358,12 +358,12 @@ export default function ChargesPage() {
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                       </svg>
                       <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-                      <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
                     </a>
                     <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
                       <span className="wadot" />
                       <span data-en>Ask on WhatsApp</span>
-                      <span data-ur className="urdu">واٹس ایپ پر پوچھیں</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ پر پوچھیں</span>
                     </a>
                   </div>
                 </div>
@@ -381,7 +381,7 @@ export default function ChargesPage() {
               <div className="sec-head">
                 <h2>
                   <span data-en>Why there is no price on this page</span>
-                  <span data-ur className="urdu">اس صفحے پر قیمت کیوں نہیں لکھی</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اس صفحے پر قیمت کیوں نہیں لکھی</span>
                 </h2>
               </div>
 
@@ -397,7 +397,7 @@ export default function ChargesPage() {
                     every night, so their father is not alone. A single number printed here would be
                     wrong for most of them.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     دو گھرانوں کی ضرورت شاذ و نادر ہی ایک جیسی ہوتی ہے۔ کسی کو آپریشن کے بعد تین دن
                     ڈریسنگ اور ڈرپ کے لیے نرس چاہیے۔ کسی کو ہر رات اٹینڈنٹ چاہیے تاکہ والد صاحب اکیلے
                     نہ رہیں۔ یہاں لکھا ہوا ایک نمبر زیادہ تر گھرانوں کے لیے غلط ہوتا۔
@@ -409,7 +409,7 @@ export default function ChargesPage() {
                     which shift, how many days — and give you one exact price for your case. You hear it
                     before anyone comes to your home, and it does not change afterwards.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     اس لیے ہم کال پر چند سوال پوچھتے ہیں — مریض کون ہے، کیا ضرورت ہے، کون سی شفٹ،
                     کتنے دن — اور آپ کے کیس کی ایک صحیح قیمت بتا دیتے ہیں۔ یہ قیمت آپ کو کسی کے گھر
                     آنے سے پہلے معلوم ہو جاتی ہے، اور بعد میں نہیں بدلتی۔
@@ -428,7 +428,7 @@ export default function ChargesPage() {
                   }}
                 >
                   <span data-en>{PROMISES.priceOnCall.en}</span>
-                  <span data-ur className="urdu">{PROMISES.priceOnCall.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{PROMISES.priceOnCall.ur}</span>
                 </p>
               </div>
             </div>
@@ -447,18 +447,18 @@ export default function ChargesPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>What decides your price</span>
-                  <span data-ur className="urdu">قیمت کن باتوں پر ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">قیمت کن باتوں پر ہے</span>
                 </span>
                 <h2>
                   <span data-en>Three things, and nothing else.</span>
-                  <span data-ur className="urdu">صرف تین باتیں، اور کچھ نہیں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">صرف تین باتیں، اور کچھ نہیں۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     You do not have to work any of this out on your own. Tell us the situation on the
                     call and we will do it with you.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     یہ سب آپ کو خود سمجھنے کی ضرورت نہیں۔ کال پر صورتحال بتا دیں، ہم آپ کے ساتھ مل کر
                     طے کر لیں گے۔
                   </span>
@@ -487,11 +487,11 @@ export default function ChargesPage() {
                     </span>
                     <h3 style={{ fontSize: 20, marginBottom: 10, lineHeight: 1.25 }}>
                       <span data-en>{f.title.en}</span>
-                      <span data-ur className="urdu">{f.title.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.title.ur}</span>
                     </h3>
                     <p style={{ fontSize: 17, color: "var(--ink-soft)", lineHeight: 1.62, fontWeight: 500 }}>
                       <span data-en>{f.body.en}</span>
-                      <span data-ur className="urdu">{f.body.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.body.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -500,11 +500,11 @@ export default function ChargesPage() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 22 }}>
                 <Link className="btn btn-ghost" href="/services/qualified-nurse">
                   <span data-en>What a nurse does</span>
-                  <span data-ur className="urdu">نرس کیا کرتی ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">نرس کیا کرتی ہے</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/services/attendant">
                   <span data-en>What an attendant does</span>
-                  <span data-ur className="urdu">اٹینڈنٹ کیا کرتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اٹینڈنٹ کیا کرتا ہے</span>
                 </Link>
               </div>
             </div>
@@ -516,11 +516,11 @@ export default function ChargesPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>What we promise about money</span>
-                  <span data-ur className="urdu">ادائیگی کے بارے میں ہمارا وعدہ</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ادائیگی کے بارے میں ہمارا وعدہ</span>
                 </span>
                 <h2>
                   <span data-en>You risk nothing to find out.</span>
-                  <span data-ur className="urdu">معلوم کرنے میں آپ کا کوئی نقصان نہیں۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">معلوم کرنے میں آپ کا کوئی نقصان نہیں۔</span>
                 </h2>
               </div>
 
@@ -538,7 +538,7 @@ export default function ChargesPage() {
                   }}
                 >
                   <span data-en>{VERIFICATION_PROMISE.en}</span>
-                  <span data-ur className="urdu">{VERIFICATION_PROMISE.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{VERIFICATION_PROMISE.ur}</span>
                 </p>
               </div>
             </div>
@@ -550,11 +550,11 @@ export default function ChargesPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>No hidden charges</span>
-                  <span data-ur className="urdu">کوئی چھپا ہوا خرچہ نہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">کوئی چھپا ہوا خرچہ نہیں</span>
                 </span>
                 <h2>
                   <span data-en>What a shift includes — and what you never pay for.</span>
-                  <span data-ur className="urdu">شفٹ میں کیا شامل ہے — اور کس چیز کا آپ کبھی نہیں دیتے۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">شفٹ میں کیا شامل ہے — اور کس چیز کا آپ کبھی نہیں دیتے۔</span>
                 </h2>
               </div>
 
@@ -562,7 +562,7 @@ export default function ChargesPage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 6 }}>
                     <span data-en>What a shift includes</span>
-                    <span data-ur className="urdu">شفٹ میں کیا شامل ہے</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">شفٹ میں کیا شامل ہے</span>
                   </h3>
                   <TickList items={INCLUDED} />
                 </div>
@@ -570,7 +570,7 @@ export default function ChargesPage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 6 }}>
                     <span data-en>What you never pay for</span>
-                    <span data-ur className="urdu">کس چیز کا آپ کبھی نہیں دیتے</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">کس چیز کا آپ کبھی نہیں دیتے</span>
                   </h3>
                   <TickList items={NEVER_PAY} />
                 </div>
@@ -592,7 +592,7 @@ export default function ChargesPage() {
                   Not sure whether something is covered? Ask on the first call. We would rather answer
                   plainly before care starts than surprise you afterwards.
                 </span>
-                <span data-ur className="urdu">
+                <span data-ur lang="ur" dir="rtl" className="urdu">
                   کسی چیز کے بارے میں شک ہو تو پہلی کال پر پوچھ لیں۔ ہم بعد میں حیران کرنے کے بجائے
                   کام شروع ہونے سے پہلے صاف بات کرنا بہتر سمجھتے ہیں۔
                 </span>
@@ -606,11 +606,11 @@ export default function ChargesPage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Questions families ask about cost</span>
-                  <span data-ur className="urdu">قیمت کے بارے میں عام سوالات</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">قیمت کے بارے میں عام سوالات</span>
                 </span>
                 <h2>
                   <span data-en>Straight answers about charges.</span>
-                  <span data-ur className="urdu">چارجز کے بارے میں سیدھے جواب۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">چارجز کے بارے میں سیدھے جواب۔</span>
                 </h2>
               </div>
 
@@ -620,14 +620,14 @@ export default function ChargesPage() {
                     <div className="faq-q" style={{ cursor: "default", alignItems: "flex-start" }}>
                       <h3 className="qt">
                         <span data-en>{item.q}</span>
-                        <span data-ur className="urdu">{item.qUr}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{item.qUr}</span>
                       </h3>
                     </div>
                     <div className="faq-a" style={{ gridTemplateRows: "1fr" }}>
                       <div className="faq-a-in" style={{ fontSize: 17 }}>
                         <div className="faq-a-pad">
                           <span data-en>{item.a}</span>
-                          <span data-ur className="urdu">{item.aUr}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{item.aUr}</span>
                         </div>
                       </div>
                     </div>

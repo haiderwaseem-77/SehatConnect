@@ -345,7 +345,7 @@ function TickList({ items }: { items: Bilingual[] }) {
           <Tick />
           <span>
             <span data-en>{item.en}</span>
-            <span data-ur className="urdu">{item.ur}</span>
+            <span data-ur lang="ur" dir="rtl" className="urdu">{item.ur}</span>
           </span>
         </div>
       ))}
@@ -379,14 +379,14 @@ export default function ElderlyCarePage() {
                 <div className="hero-copy">
                   <span className="eyebrow eyebrow-plain">
                     <span data-en>Buzurgon ki dekh bhaal &middot; Lahore</span>
-                    <span data-ur className="urdu">بزرگوں کی دیکھ بھال &middot; لاہور</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">بزرگوں کی دیکھ بھال &middot; لاہور</span>
                   </span>
 
                   <h1>
                     <span data-en>
                       Elderly care at home in <span className="hl">Lahore</span>
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       <span className="hl">لاہور</span> میں بزرگوں کی گھر پر دیکھ بھال
                     </span>
                   </h1>
@@ -399,7 +399,7 @@ export default function ElderlyCarePage() {
                       plainly what elderly care at home looks like, and whether your parent needs a
                       nurse or an attendant.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       ہمیں کال کرنے والے اکثر خود مریض نہیں ہوتے۔ وہ بیٹا یا بیٹی ہوتے ہیں — کام پر،
                       کسی دوسرے شہر میں، کبھی کسی دوسرے ملک میں — جو اپنی والدہ یا والد کے لیے فکرمند
                       ہیں جو اب گھر میں اکیلے نہیں سنبھل پا رہے۔ یہ صفحہ صاف الفاظ میں بتاتا ہے کہ گھر
@@ -410,19 +410,19 @@ export default function ElderlyCarePage() {
                   <div className="hero-trust">
                     <span className="pill">
                       <span data-en>{PROMISES.trial.enShort}</span>
-                      <span data-ur className="urdu">{PROMISES.trial.urShort}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{PROMISES.trial.urShort}</span>
                     </span>
                     <span className="pill">
                       <span data-en>Day, night or 24 hours</span>
-                      <span data-ur className="urdu">دن، رات یا 24 گھنٹے</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">دن، رات یا 24 گھنٹے</span>
                     </span>
                     <span className="pill">
                       <span data-en>Female attendant on request</span>
-                      <span data-ur className="urdu">درخواست پر خاتون اٹینڈنٹ</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">درخواست پر خاتون اٹینڈنٹ</span>
                     </span>
                     <span className="pill">
                       <span data-en>Pay after the shift</span>
-                      <span data-ur className="urdu">شفٹ کے بعد ادائیگی</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">شفٹ کے بعد ادائیگی</span>
                     </span>
                   </div>
 
@@ -432,12 +432,12 @@ export default function ElderlyCarePage() {
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                       </svg>
                       <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-                      <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
                     </a>
                     <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
                       <span className="wadot" />
                       <span data-en>Ask on WhatsApp</span>
-                      <span data-ur className="urdu">واٹس ایپ پر پوچھیں</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ پر پوچھیں</span>
                     </a>
                   </div>
                 </div>
@@ -455,11 +455,11 @@ export default function ElderlyCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>The first question every family asks</span>
-                  <span data-ur className="urdu">ہر گھرانے کا پہلا سوال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ہر گھرانے کا پہلا سوال</span>
                 </span>
                 <h2>
                   <span data-en>Nurse or attendant &mdash; which does your parent need?</span>
-                  <span data-ur className="urdu">نرس یا اٹینڈنٹ — آپ کے والدین کو کیا چاہیے؟</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">نرس یا اٹینڈنٹ — آپ کے والدین کو کیا چاہیے؟</span>
                 </h2>
                 <p>
                   <span data-en>
@@ -468,7 +468,7 @@ export default function ElderlyCarePage() {
                     are the situations we hear most. If yours is not on the list, tell us on the call
                     &mdash; we do not send a nurse where an attendant is enough.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     PNC رجسٹرڈ نرس طبی کام کرتی ہے۔ اٹینڈنٹ روزمرہ کا وہ کام کرتا ہے جس سے فرد صاف
                     رہے، کھانا کھائے، محفوظ رہے اور اکیلا نہ ہو۔ نیچے وہ صورتیں ہیں جو ہم سب سے زیادہ
                     سنتے ہیں۔ آپ کی بات فہرست میں نہ ہو تو کال پر بتا دیں — جہاں اٹینڈنٹ کافی ہو وہاں
@@ -482,7 +482,7 @@ export default function ElderlyCarePage() {
                   <div key={s.need.en} style={{ ...CARD, display: "flex", flexDirection: "column" }}>
                     <p style={{ fontSize: 18, fontWeight: 700, color: "var(--ink)", lineHeight: 1.45 }}>
                       <span data-en>{s.need.en}</span>
-                      <span data-ur className="urdu">{s.need.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{s.need.ur}</span>
                     </p>
                     <p
                       style={{
@@ -500,11 +500,11 @@ export default function ElderlyCarePage() {
                       }}
                     >
                       <span data-en>{s.answer.en}</span>
-                      <span data-ur className="urdu">{s.answer.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{s.answer.ur}</span>
                     </p>
                     <p style={{ ...BODY, marginTop: 12 }}>
                       <span data-en>{s.why.en}</span>
-                      <span data-ur className="urdu">{s.why.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{s.why.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -513,15 +513,15 @@ export default function ElderlyCarePage() {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 22 }}>
                 <Link className="btn btn-ghost" href="/services/qualified-nurse">
                   <span data-en>What a nurse does</span>
-                  <span data-ur className="urdu">نرس کیا کرتی ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">نرس کیا کرتی ہے</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/services/attendant">
                   <span data-en>What an attendant does</span>
-                  <span data-ur className="urdu">اٹینڈنٹ کیا کرتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اٹینڈنٹ کیا کرتا ہے</span>
                 </Link>
                 <Link className="btn btn-ghost" href="/charges">
                   <span data-en>How charges work</span>
-                  <span data-ur className="urdu">چارجز کیسے طے ہوتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">چارجز کیسے طے ہوتے ہیں</span>
                 </Link>
               </div>
             </div>
@@ -540,18 +540,18 @@ export default function ElderlyCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>How much cover you need</span>
-                  <span data-ur className="urdu">کتنی دیر کی مدد چاہیے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">کتنی دیر کی مدد چاہیے</span>
                 </span>
                 <h2>
                   <span data-en>Day, night, or round-the-clock.</span>
-                  <span data-ur className="urdu">دن، رات، یا چوبیس گھنٹے۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">دن، رات، یا چوبیس گھنٹے۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     Care is arranged around the household, not the other way round. Tell us the hours
                     your family actually struggles with and we build the plan from there.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     دیکھ بھال گھر کے حساب سے طے ہوتی ہے، گھر دیکھ بھال کے حساب سے نہیں۔ ہمیں بتا دیں کہ
                     گھر والوں کو کن گھنٹوں میں سب سے زیادہ مشکل ہوتی ہے، ہم اسی سے منصوبہ بناتے ہیں۔
                   </span>
@@ -563,11 +563,11 @@ export default function ElderlyCarePage() {
                   <div key={f.id} style={CARD}>
                     <h3 style={{ fontSize: 20, marginBottom: 8, lineHeight: 1.25 }}>
                       <span data-en>{f.name.en}</span>
-                      <span data-ur className="urdu">{f.name.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.name.ur}</span>
                     </h3>
                     <p style={BODY}>
                       <span data-en>{f.detail.en}</span>
-                      <span data-ur className="urdu">{f.detail.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{f.detail.ur}</span>
                     </p>
                   </div>
                 ))}
@@ -581,7 +581,7 @@ export default function ElderlyCarePage() {
                 />
                 <h3 style={{ fontSize: 21, marginBottom: 10, lineHeight: 1.3 }}>
                   <span data-en>A 24-hour attendant in Lahore means two people, not one</span>
-                  <span data-ur className="urdu">لاہور میں 24 گھنٹے کا اٹینڈنٹ یعنی دو افراد، ایک نہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">لاہور میں 24 گھنٹے کا اٹینڈنٹ یعنی دو افراد، ایک نہیں</span>
                 </h3>
                 <p style={{ ...BODY, fontSize: 18 }}>
                   <span data-en>
@@ -591,7 +591,7 @@ export default function ElderlyCarePage() {
                     morning. If someone quotes you one attendant for 24 hours a day, ask them when
                     that person sleeps.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     چوبیس گھنٹے کی دیکھ بھال کا مطلب ہے دو کیئر گیور، دو بارہ گھنٹے کی شفٹوں میں — ایک
                     دن کے لیے، ایک رات کے لیے۔ یہ کبھی ایک ہی شخص کو 24 گھنٹے جگا کر نہیں کیا جاتا۔ جو
                     شخص سویا ہی نہ ہو، وہ رات چار بجے آپ کے والد کے پاس ہونے کے قابل نہیں ہوتا۔ کوئی
@@ -608,18 +608,18 @@ export default function ElderlyCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>So you can picture it</span>
-                  <span data-ur className="urdu">تاکہ آپ تصور کر سکیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">تاکہ آپ تصور کر سکیں</span>
                 </span>
                 <h2>
                   <span data-en>What a day with an attendant actually looks like</span>
-                  <span data-ur className="urdu">اٹینڈنٹ کے ساتھ ایک دن اصل میں کیسا ہوتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">اٹینڈنٹ کے ساتھ ایک دن اصل میں کیسا ہوتا ہے</span>
                 </h2>
                 <p>
                   <span data-en>
                     This is a day shift, 8:00 AM to 8:00 PM. Nothing dramatic happens in it, and that
                     is the point.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     یہ دن کی شفٹ ہے، صبح 8 بجے سے رات 8 بجے تک۔ اس میں کچھ ڈرامائی نہیں ہوتا، اور یہی
                     اصل بات ہے۔
                   </span>
@@ -650,11 +650,11 @@ export default function ElderlyCarePage() {
                       }}
                     >
                       <span data-en>{t.when.en}</span>
-                      <span data-ur className="urdu">{t.when.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{t.when.ur}</span>
                     </span>
                     <span style={{ ...BODY, minWidth: 0 }}>
                       <span data-en>{t.body.en}</span>
-                      <span data-ur className="urdu">{t.body.ur}</span>
+                      <span data-ur lang="ur" dir="rtl" className="urdu">{t.body.ur}</span>
                     </span>
                   </div>
                 ))}
@@ -675,7 +675,7 @@ export default function ElderlyCarePage() {
                     work your doctor has asked for added into it: dressings, injections, drips,
                     medicines and monitoring.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     اگر اٹینڈنٹ کی جگہ PNC رجسٹرڈ نرس ہو تو دن اسی طرح گزرتا ہے — بس اس میں وہ طبی کام
                     شامل ہو جاتا ہے جو ڈاکٹر نے کہا ہو: ڈریسنگ، انجیکشن، ڈرپ، دوائیں اور نگرانی۔
                   </span>
@@ -695,11 +695,11 @@ export default function ElderlyCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>When it is harder than that</span>
-                  <span data-ur className="urdu">جب معاملہ اس سے مشکل ہو</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">جب معاملہ اس سے مشکل ہو</span>
                 </span>
                 <h2>
                   <span data-en>Dementia, bedridden and long-term care</span>
-                  <span data-ur className="urdu">ڈیمنشیا، بستر پر مریض، اور طویل مدتی دیکھ بھال</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">ڈیمنشیا، بستر پر مریض، اور طویل مدتی دیکھ بھال</span>
                 </h2>
               </div>
 
@@ -707,7 +707,7 @@ export default function ElderlyCarePage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 10, lineHeight: 1.25 }}>
                     <span data-en>Dementia and Alzheimer&rsquo;s</span>
-                    <span data-ur className="urdu">ڈیمنشیا اور الزائمر</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">ڈیمنشیا اور الزائمر</span>
                   </h3>
                   <p style={BODY}>
                     <span data-en>
@@ -718,7 +718,7 @@ export default function ElderlyCarePage() {
                       send the same person again. A familiar face is worth more here than anything
                       else we can arrange.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       ڈیمنشیا کی دیکھ بھال زیادہ تر روٹین، حفاظت اور ساتھ ہے: وہی کام، انہی وقتوں پر،
                       ٹھہرا ہوا لہجہ، اور جب ذہن الجھے تو کمرے میں کسی کا موجود ہونا۔ کوئی بحث کر کے
                       مریض کو اس حقیقت میں واپس نہیں لاتا جہاں وہ پہنچ نہیں سکتا۔ کوئی کیئر گیور آپ کی
@@ -731,7 +731,7 @@ export default function ElderlyCarePage() {
                 <div style={CARD}>
                   <h3 style={{ fontSize: 20, marginBottom: 10, lineHeight: 1.25 }}>
                     <span data-en>A parent who cannot get out of bed</span>
-                    <span data-ur className="urdu">وہ والدین جو بستر سے اٹھ نہیں سکتے</span>
+                    <span data-ur lang="ur" dir="rtl" className="urdu">وہ والدین جو بستر سے اٹھ نہیں سکتے</span>
                   </h3>
                   <p style={BODY}>
                     <span data-en>
@@ -743,7 +743,7 @@ export default function ElderlyCarePage() {
                       that part is a nurse&rsquo;s &mdash; many families take an attendant for the
                       shift and a single nurse visit for the task.
                     </span>
-                    <span data-ur className="urdu">
+                    <span data-ur lang="ur" dir="rtl" className="urdu">
                       یہاں کام جسمانی بھی ہے اور مسلسل بھی: کروٹ اور پوزیشن بدلنا تاکہ بیڈ سورز کا خطرہ کم ہو، بستر پر ہی نہلانا اور کپڑے بدلنا، کھانا کھلانا، اور مریض کو خشک اور آرام
                       دہ رکھنا۔ اسے نرم الفاظ میں کہنے کی نہ کوئی صورت ہے نہ ضرورت۔ یہ عام کام ہے،
                       اٹینڈنٹ پہلے بھی کر چکا ہوتا ہے، اور یہ سب کرتے ہوئے مریض کی عزت برقرار رہتی ہے۔
@@ -766,7 +766,7 @@ export default function ElderlyCarePage() {
                     needing machine support, say so on the first call &mdash; we will tell you honestly
                     whether we can arrange it, rather than send someone and hope.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     <b style={{ color: "var(--ink)" }}>طویل مدتی اور آرام دہ نگہداشت کے مریض</b> — کینسر،
                     فالج، یا لمبی بیماری — ان کی دیکھ بھال کا مقصد آرام ہوتا ہے: درد اور علامات میں کمی،
                     اور دن جتنا آسان ہو سکے۔ آئی سی یو یا ایچ ڈی یو سے گھر آنے والے مریض کے لیے ہم اُن
@@ -792,18 +792,18 @@ export default function ElderlyCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>Who walks into your parent&rsquo;s room</span>
-                  <span data-ur className="urdu">آپ کے والدین کے کمرے میں کون آتا ہے</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آپ کے والدین کے کمرے میں کون آتا ہے</span>
                 </span>
                 <h2>
                   <span data-en>You know who is coming before they arrive.</span>
-                  <span data-ur className="urdu">آنے سے پہلے آپ کو معلوم ہوتا ہے کہ کون آ رہا ہے۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">آنے سے پہلے آپ کو معلوم ہوتا ہے کہ کون آ رہا ہے۔</span>
                 </h2>
                 <p>
                   <span data-en>
                     Letting a stranger into the house to help an elderly parent is the hardest part of
                     this decision, so nothing about that person is a surprise.
                   </span>
-                  <span data-ur className="urdu">
+                  <span data-ur lang="ur" dir="rtl" className="urdu">
                     بزرگ والدین کی مدد کے لیے کسی اجنبی کو گھر میں آنے دینا اس فیصلے کا سب سے مشکل حصہ
                     ہے، اسی لیے اس فرد کے بارے میں کچھ بھی اچانک سامنے نہیں آتا۔
                   </span>
@@ -824,7 +824,7 @@ export default function ElderlyCarePage() {
                   }}
                 >
                   <span data-en>{VERIFICATION_PROMISE.en}</span>
-                  <span data-ur className="urdu">{VERIFICATION_PROMISE.ur}</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">{VERIFICATION_PROMISE.ur}</span>
                 </p>
               </div>
 
@@ -832,7 +832,7 @@ export default function ElderlyCarePage() {
               <div style={{ ...CARD, marginTop: 16 }}>
                 <h3 style={{ fontSize: 20, marginBottom: 6 }}>
                   <span data-en>What we promise before you decide</span>
-                  <span data-ur className="urdu">فیصلہ کرنے سے پہلے ہمارا وعدہ</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">فیصلہ کرنے سے پہلے ہمارا وعدہ</span>
                 </h3>
                 <TickList
                   items={[
@@ -854,11 +854,11 @@ export default function ElderlyCarePage() {
               <div className="sec-head">
                 <span className="eyebrow">
                   <span data-en>What families of elderly parents ask us</span>
-                  <span data-ur className="urdu">بزرگ والدین کے گھر والے کیا پوچھتے ہیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">بزرگ والدین کے گھر والے کیا پوچھتے ہیں</span>
                 </span>
                 <h2>
                   <span data-en>Straight answers.</span>
-                  <span data-ur className="urdu">سیدھے جواب۔</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">سیدھے جواب۔</span>
                 </h2>
               </div>
 
@@ -868,14 +868,14 @@ export default function ElderlyCarePage() {
                     <div className="faq-q" style={{ cursor: "default", alignItems: "flex-start" }}>
                       <h3 className="qt">
                         <span data-en>{item.q}</span>
-                        <span data-ur className="urdu">{item.qUr}</span>
+                        <span data-ur lang="ur" dir="rtl" className="urdu">{item.qUr}</span>
                       </h3>
                     </div>
                     <div className="faq-a" style={{ gridTemplateRows: "1fr" }}>
                       <div className="faq-a-in" style={{ fontSize: 17 }}>
                         <div className="faq-a-pad">
                           <span data-en>{item.a}</span>
-                          <span data-ur className="urdu">{item.aUr}</span>
+                          <span data-ur lang="ur" dir="rtl" className="urdu">{item.aUr}</span>
                         </div>
                       </div>
                     </div>
@@ -889,12 +889,12 @@ export default function ElderlyCarePage() {
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                   </svg>
                   <span data-en>Call {CONTACT_PHONE_DISPLAY}</span>
-                  <span data-ur className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">کال کریں <bdi dir="ltr">{CONTACT_PHONE_DISPLAY}</bdi></span>
                 </a>
                 <a className="btn btn-wa" href={waLink(WA_MSG)} target="_blank" rel="noopener noreferrer">
                   <span className="wadot" />
                   <span data-en>Ask on WhatsApp</span>
-                  <span data-ur className="urdu">واٹس ایپ پر پوچھیں</span>
+                  <span data-ur lang="ur" dir="rtl" className="urdu">واٹس ایپ پر پوچھیں</span>
                 </a>
               </div>
             </div>
