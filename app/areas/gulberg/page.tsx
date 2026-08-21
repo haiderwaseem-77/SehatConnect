@@ -76,8 +76,8 @@ const ASKS: { title: Bilingual; body: Bilingual }[] = [
   {
     title: { en: "The nights, so the house can sleep", ur: "راتیں، تاکہ گھر سو سکے" },
     body: {
-      en: "An attendant from 8:00 PM to 8:00 AM, sitting up with a parent who wakes, needs the bathroom, or should not be left alone until morning. It is usually the part of the week a family cannot keep doing on its own.",
-      ur: "رات 8 بجے سے صبح 8 بجے تک اٹینڈنٹ — ایسے والد یا والدہ کے پاس جو رات میں جاگ جاتے ہیں، باتھ روم جاتے ہیں، یا صبح تک اکیلے نہیں چھوڑے جا سکتے۔ عموماً یہی وہ حصہ ہوتا ہے جو گھر والے خود مسلسل نہیں سنبھال پاتے۔",
+      en: "An attendant from 8:00 PM to 8:00 AM, sitting up with a parent who wakes, needs the bathroom, or should not be left alone until morning.",
+      ur: "رات 8 بجے سے صبح 8 بجے تک اٹینڈنٹ — ایسے والد یا والدہ کے پاس جو رات میں جاگ جاتے ہیں، باتھ روم جاتے ہیں، یا صبح تک اکیلے نہیں چھوڑے جا سکتے۔",
     },
   },
   {
@@ -119,7 +119,7 @@ const WHO_COMES: Bilingual[] = [
     ur: "شفٹ شروع ہونے سے 4 گھنٹے پہلے بتا دیں تو منسوخی یا وقت بدلنے کا کوئی چارج نہیں",
   },
   {
-    en: "We ask for a landmark near the house as well as the address — we are coming from the other side of the city",
+    en: "We ask for a landmark as well as the address — we come from the other side of the city",
     ur: "ہم پتے کے ساتھ ساتھ گھر کے قریب کوئی نشانی بھی پوچھتے ہیں — ہم شہر کی دوسری طرف سے آ رہے ہوتے ہیں",
   },
 ];
@@ -133,7 +133,7 @@ const AREA_FAQ: { q: string; qUr: string; a: string; aUr: string }[] = [
   {
     q: "Do you come to all of Gulberg?",
     qUr: "کیا آپ پورے گلبرگ میں آتے ہیں؟",
-    a: "Yes, all of it. Our office is in DHA Phase 8, on the other side of the city, so we plan around that distance instead of pretending it is not there: the arrival time is agreed with you on the call, we ask for a landmark near the house as well as the address, and you get a message when your caregiver is on the way.",
+    a: "Yes, all of it. Our office is in DHA Phase 8, on the other side of the city, so we plan around that distance: the arrival time is agreed with you on the call, we ask for a landmark as well as the address, and you get a message when your caregiver is on the way.",
     aUr: "جی، پورے گلبرگ میں۔ ہمارا دفتر ڈی ایچ اے فیز 8 میں ہے، یعنی شہر کی دوسری طرف، اس لیے ہم اس فاصلے کو نظرانداز کرنے کے بجائے اُسی حساب سے بندوبست کرتے ہیں: آنے کا وقت کال پر طے ہوتا ہے، ہم پتے کے ساتھ قریبی نشانی بھی پوچھتے ہیں، اور جب نرس یا اٹینڈنٹ راستے میں ہو تو آپ کو اطلاع دیتے ہیں۔",
   },
   {
@@ -275,15 +275,13 @@ export default function GulbergAreaPage() {
                       Most calls from Gulberg are not emergencies. They are about a parent who has
                       lived in the same house for thirty or forty years, is not going to move out of
                       it, and now needs someone through the day or through the night. The care
-                      families here ask for is long-running, and it has to fit a household that
-                      already has its own way of doing things.
+                      families here ask for is long-running.
                     </span>
                     <span data-ur className="urdu">
                       گلبرگ سے آنے والی زیادہ تر کالیں ایمرجنسی نہیں ہوتیں۔ وہ ایسے والد یا والدہ کے
                       بارے میں ہوتی ہیں جو تیس چالیس سال سے ایک ہی گھر میں رہ رہے ہیں، وہ گھر چھوڑنے
                       والے نہیں، اور اب انہیں دن یا رات کسی کے ساتھ کی ضرورت ہے۔ یہاں کے گھرانے جو
-                      دیکھ بھال مانگتے ہیں وہ لمبے عرصے کی ہوتی ہے، اور اُسے اُس گھر کے پہلے سے بنے
-                      ہوئے طریقے میں سمانا پڑتا ہے۔
+                      دیکھ بھال مانگتے ہیں وہ لمبے عرصے کی ہوتی ہے۔
                     </span>
                   </p>
 

@@ -140,12 +140,6 @@ const AREA_FAQ: { q: string; qUr: string; a: string; aUr: string }[] = [
     aUr: "جی ہاں۔ نرس صرف ایک وزٹ کے لیے آ سکتی ہے — انجیکشن، ڈرپ یا ڈریسنگ، جو مریض کے ڈاکٹر نے لکھی ہو — اور کام مکمل ہوتے ہی چلی جاتی ہے۔ ایک کام کے لیے 12 گھنٹے کی شفٹ لینا ضروری نہیں۔",
   },
   {
-    q: "How do I know who is walking into my house?",
-    qUr: "مجھے کیسے پتا چلے گا کہ گھر میں کون آ رہا ہے؟",
-    a: "Before the visit we send their card on WhatsApp — photo, name, and for a nurse the PNC registration number our team has checked. Every caregiver is CNIC checked, references called, police-verified. If the person does not feel right, tell us: we replace the caregiver, free, until you're fully satisfied.",
-    aUr: "آنے سے پہلے ہم واٹس ایپ پر ان کا کارڈ بھیجتے ہیں — تصویر، نام، اور نرس کی صورت میں PNC نمبر جو ہماری ٹیم چیک کرتی ہے۔ ہر فرد کا شناختی کارڈ اور حوالہ جات چیک ہوتے ہیں اور پولیس تصدیق بھی۔ اگر گھر والوں کو فرد مناسب نہ لگے تو بتا دیں: ہم نرس یا اٹینڈنٹ مفت بدلتے رہیں گے، جب تک آپ مطمئن نہ ہوں۔",
-  },
-  {
     q: "My father comes home tomorrow. How soon can someone start?",
     qUr: "والد صاحب کل گھر آ رہے ہیں۔ کتنی جلدی کوئی آ سکتا ہے؟",
     a: "Leave your name and number, or just call. We call back fast — usually within 15 minutes. Care can start within 24 hours of your call. Your first day is free — no cost, no obligation. Continue only if you're happy.",

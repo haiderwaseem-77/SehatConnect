@@ -88,7 +88,7 @@ const ASKS: { title: Bilingual; body: Bilingual }[] = [
   {
     title: { en: "Comfort during a long treatment", ur: "لمبے علاج کے دوران آرام" },
     body: {
-      en: "For patients home in the middle of a long course of treatment, the work is mostly comfort: staying clean, eating something, turning and repositioning to reduce the risk of bed sores, and not being left alone with it. An attendant does this; a nurse comes when there is clinical work too.",
+      en: "For patients home in the middle of a long course of treatment, the work is mostly comfort: staying clean, eating something, turning and repositioning to reduce the risk of bed sores, and not being alone with it. An attendant does this; a nurse comes if there is clinical work too.",
       ur: "جو مریض لمبے علاج کے دوران گھر پر ہوں، ان کے لیے کام زیادہ تر آرام کا ہوتا ہے: صفائی، کچھ کھا لینا، بیڈ سور کا خطرہ کم کرنے کے لیے کروٹ اور پوزیشن بدلتے رہنا، اور اکیلا نہ چھوڑنا۔ یہ کام اٹینڈنٹ کرتا ہے؛ طبی کام ہو تو نرس آتی ہے۔",
     },
   },
@@ -118,7 +118,7 @@ const WHO_COMES: Bilingual[] = [
     ur: "خاتون مریضہ کے لیے خاتون نرس یا اٹینڈنٹ، جب آپ کہیں",
   },
   {
-    en: "We ask for the block and the house number, so nobody is circling the streets on a day you are already tired",
+    en: "We ask for the block and the house number, so nobody is circling the streets on a hard day",
     ur: "ہم بلاک اور مکان نمبر پوچھ لیتے ہیں، تاکہ جس دن آپ پہلے ہی تھکے ہوں، کوئی گلیوں میں چکر نہ لگاتا رہے",
   },
 ];
@@ -133,8 +133,8 @@ const AREA_FAQ: { q: string; qUr: string; a: string; aUr: string }[] = [
   {
     q: "We are being discharged tomorrow. Can care start in time?",
     qUr: "کل ڈسچارج ہو رہا ہے۔ کیا اُس وقت تک بندوبست ہو جائے گا؟",
-    a: `Usually, yes. Families in Johar Town often call us on discharge day itself, after ${HOSPITAL_A}, ${HOSPITAL_B}, ${HOSPITAL_C} or another of the hospitals across Lahore — we have no arrangement with any of them, families simply call us themselves. Call as soon as you know the date. We call back fast — usually within 15 minutes. Care can start within 24 hours of your call.`,
-    aUr: `عموماً جی ہاں۔ جوہر ٹاؤن کے گھرانے اکثر ڈسچارج والے دن ہی کال کرتے ہیں — ${HOSPITAL_A}، ${HOSPITAL_B}، ${HOSPITAL_C} یا لاہور کے کسی اور ہسپتال سے آنے کے بعد۔ ان میں سے کسی سے ہمارا کوئی معاہدہ نہیں؛ گھر والے خود ہی ہمیں کال کرتے ہیں۔ تاریخ معلوم ہوتے ہی کال کر لیں۔ ہم جلد واپس کال کرتے ہیں — عموماً 15 منٹ کے اندر۔ دیکھ بھال آپ کی کال کے 24 گھنٹوں کے اندر شروع ہو سکتی ہے۔`,
+    a: `Usually, yes. Families in Johar Town often call us on discharge day itself, after ${HOSPITAL_A}, ${HOSPITAL_B}, ${HOSPITAL_C} or another of the hospitals across Lahore — we have no arrangement with any of them. Call as soon as you know the date. We call back fast — usually within 15 minutes. Care can start within 24 hours of your call.`,
+    aUr: `عموماً جی ہاں۔ جوہر ٹاؤن کے گھرانے اکثر ڈسچارج والے دن ہی کال کرتے ہیں — ${HOSPITAL_A}، ${HOSPITAL_B}، ${HOSPITAL_C} یا لاہور کے کسی اور ہسپتال سے آنے کے بعد۔ ان میں سے کسی سے ہمارا کوئی معاہدہ نہیں۔ تاریخ معلوم ہوتے ہی کال کر لیں۔ ہم جلد واپس کال کرتے ہیں — عموماً 15 منٹ کے اندر۔ دیکھ بھال آپ کی کال کے 24 گھنٹوں کے اندر شروع ہو سکتی ہے۔`,
   },
   {
     q: "Kya nurse ghar aa kar dressing kar sakti hai?",
@@ -274,14 +274,13 @@ export default function JoharTownAreaPage() {
                   <p className="hero-sub">
                     <span data-en>
                       Johar Town sits beside some of the largest private and cancer hospitals in the
-                      city, and the calls we get from here show it. They usually come on discharge day
-                      or the evening after: the patient is home, and with them a discharge slip, a bag
-                      of medicines, and a list of instructions nobody had time to explain twice.
+                      city, and the calls we get from here show it. They come on discharge day: the
+                      patient is home, and with them a discharge slip, a bag of medicines, and a list
+                      of instructions nobody had time to explain twice.
                     </span>
                     <span data-ur className="urdu">
                       جوہر ٹاؤن شہر کے سب سے بڑے نجی اور کینسر ہسپتالوں کے ساتھ واقع ہے، اور یہاں سے
-                      آنے والی کالوں میں یہ بات صاف نظر آتی ہے۔ یہ کالیں عموماً ڈسچارج والے دن یا اُس کی
-                      شام کو آتی ہیں: مریض گھر آ چکا ہوتا ہے، ساتھ ڈسچارج سلپ، دواؤں کا تھیلا، اور
+                      آنے والی کالوں میں یہ بات صاف نظر آتی ہے۔ یہ کالیں ڈسچارج والے دن آتی ہیں: مریض گھر آ چکا ہوتا ہے، ساتھ ڈسچارج سلپ، دواؤں کا تھیلا، اور
                       ہدایات کی ایک فہرست جسے دوبارہ سمجھانے کا وقت کسی کے پاس نہیں تھا۔
                     </span>
                   </p>
@@ -401,8 +400,8 @@ export default function JoharTownAreaPage() {
                     large share of what families here ask us for is care after a discharge from one of
                     them &mdash; or from any of the other hospitals across Lahore. Be clear about what
                     that means: we are not affiliated with any hospital and none of them refer patients
-                    to us. Families call us themselves, and the care we give at home follows what the
-                    patient&rsquo;s own doctor has prescribed.
+                    to us. Families call us themselves, and we follow what their own doctor has
+                    prescribed.
                   </span>
                   <span data-ur className="urdu">
                     {HOSPITAL_A}، {HOSPITAL_B} اور {HOSPITAL_C} سب جوہر ٹاؤن میں یا اس کے ساتھ ہیں، اس
