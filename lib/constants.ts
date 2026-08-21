@@ -206,3 +206,70 @@ export const VERIFICATION_PROMISE: PromiseCopy = {
   en: "Every caregiver: CNIC checked, references called, police-verified — before they enter your home.",
   ur: "ہر نرس یا اٹینڈنٹ کا شناختی کارڈ اور حوالہ جات چیک ہوتے ہیں، اور پولیس تصدیق بھی — گھر میں داخل ہونے سے پہلے۔",
 };
+
+// ---------------------------------------------------------------------------
+// How care is actually delivered. Confirmed by the owner 2026-08-21.
+//
+// This exists because the site previously modelled ONLY 12-hour shifts (see
+// SHIFTS above), while the business also does short one-off nurse visits — an
+// injection, a drip, a dressing change. That is the single highest-volume
+// search intent in this category ("drip at home Lahore" / "ghar par drip"), and
+// it was invisible on every page. Any page describing what we do should offer
+// both formats rather than implying a 12-hour commitment is the only option.
+//
+// 24-hour cover is TWO caregivers across two 12-hour shifts — never one person
+// awake for 24 hours. Say this plainly: families ask, and the honest answer is
+// a trust win over agencies that imply one person never sleeps.
+// ---------------------------------------------------------------------------
+export interface CareFormat {
+  id: string;
+  name: PromiseCopy;
+  detail: PromiseCopy;
+}
+
+export const CARE_FORMATS: CareFormat[] = [
+  {
+    id: 'visit',
+    name: {
+      en: 'A single visit',
+      ur: 'ایک وزٹ',
+    },
+    detail: {
+      en: 'A nurse comes, does what is needed — an injection, a drip, a dressing — and leaves. No 12-hour commitment.',
+      ur: 'نرس آتی ہے، ضروری کام کرتی ہے — انجیکشن، ڈرپ یا ڈریسنگ — اور چلی جاتی ہے۔ 12 گھنٹے کی پابندی نہیں۔',
+    },
+  },
+  {
+    id: 'day',
+    name: {
+      en: 'A day shift',
+      ur: 'دن کی شفٹ',
+    },
+    detail: {
+      en: '12 hours, 8:00 AM to 8:00 PM, with one caregiver at home for the whole shift.',
+      ur: '12 گھنٹے، صبح 8 بجے سے رات 8 بجے تک، پوری شفٹ ایک کیئر گیور گھر پر۔',
+    },
+  },
+  {
+    id: 'night',
+    name: {
+      en: 'A night shift',
+      ur: 'رات کی شفٹ',
+    },
+    detail: {
+      en: '12 hours, 8:00 PM to 8:00 AM — for families who cannot stay awake with a patient every night.',
+      ur: '12 گھنٹے، رات 8 بجے سے صبح 8 بجے تک — ان گھر والوں کے لیے جو ہر رات جاگ نہیں سکتے۔',
+    },
+  },
+  {
+    id: 'roundtheclock',
+    name: {
+      en: 'Round-the-clock',
+      ur: 'چوبیس گھنٹے',
+    },
+    detail: {
+      en: 'Two caregivers across two 12-hour shifts. Not one person awake for 24 hours — nobody can do that well.',
+      ur: 'دو کیئر گیور، دو بارہ گھنٹے کی شفٹوں میں۔ ایک ہی شخص 24 گھنٹے نہیں — یہ کوئی بھی ٹھیک طرح نہیں کر سکتا۔',
+    },
+  },
+];
