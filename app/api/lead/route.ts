@@ -120,10 +120,17 @@ export async function POST(req: NextRequest) {
   ]);
 
   const delivered = results.filter((r) => r.ok).map((r) => r.channel);
-  const failed = results.filter((r) => !r.ok);
+  // A channel nobody has set up yet is not a failure. WhatsApp may arrive weeks
+  // after Telegram, and shouting about it on every single lead would teach the
+  // team that the error log is noise — so the two are logged differently.
+  const broken = results.filter((r) => !r.ok && r.configured);
+  const notSetUp = results.filter((r) => !r.configured).map((r) => r.channel);
 
-  for (const f of failed) {
-    console.error(`[lead] channel ${f.channel} failed for ${lead.ref}: ${f.detail}`);
+  for (const f of broken) {
+    console.error(`[lead] channel ${f.channel} FAILED for ${lead.ref}: ${f.detail}`);
+  }
+  if (notSetUp.length) {
+    console.info(`[lead] not configured, skipped: ${notSetUp.join(", ")}`);
   }
 
   if (delivered.length === 0) {
@@ -135,11 +142,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "delivery_failed" }, { status: 503 });
   }
 
-  if (failed.length > 0) {
+  if (broken.length > 0) {
     console.warn(
-      `[lead] ${lead.ref} delivered on ${delivered.join(", ")} but ${failed
+      `[lead] ${lead.ref} delivered on ${delivered.join(", ")} but ${broken
         .map((f) => f.channel)
-        .join(", ")} failed. The lead is safe; fix the channel.`,
+        .join(", ")} is set up and failing. The lead is safe; fix the channel.`,
     );
   }
 

@@ -22,7 +22,7 @@ export async function appendToSheet(lead: Lead): Promise<DeliveryResult> {
   const secret = process.env.SHEET_WEBHOOK_SECRET;
 
   if (!url || !secret) {
-    return { channel: "sheet", ok: false, detail: "SHEET_WEBHOOK_URL / SHEET_WEBHOOK_SECRET not set" };
+    return { channel: "sheet", ok: false, configured: false, detail: "SHEET_WEBHOOK_URL / SHEET_WEBHOOK_SECRET not set" };
   }
 
   try {
@@ -35,10 +35,10 @@ export async function appendToSheet(lead: Lead): Promise<DeliveryResult> {
       redirect: "follow",
     });
     if (!res.ok) {
-      return { channel: "sheet", ok: false, detail: `HTTP ${res.status}: ${(await res.text()).slice(0, 200)}` };
+      return { channel: "sheet", ok: false, configured: true, detail: `HTTP ${res.status}: ${(await res.text()).slice(0, 200)}` };
     }
-    return { channel: "sheet", ok: true };
+    return { channel: "sheet", ok: true, configured: true };
   } catch (e) {
-    return { channel: "sheet", ok: false, detail: String(e) };
+    return { channel: "sheet", ok: false, configured: true, detail: String(e) };
   }
 }

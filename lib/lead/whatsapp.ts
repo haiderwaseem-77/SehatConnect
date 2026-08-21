@@ -30,6 +30,7 @@ export async function sendWhatsApp(lead: Lead): Promise<DeliveryResult> {
     return {
       channel: "whatsapp",
       ok: false,
+      configured: false,
       detail: "WHATSAPP_TOKEN / WHATSAPP_PHONE_NUMBER_ID / WHATSAPP_ALERT_TO not set",
     };
   }
@@ -62,10 +63,10 @@ export async function sendWhatsApp(lead: Lead): Promise<DeliveryResult> {
     if (!res.ok) {
       // Meta's errors are specific and worth keeping whole in the log — a
       // rejected template or an expired token both surface here.
-      return { channel: "whatsapp", ok: false, detail: `HTTP ${res.status}: ${(await res.text()).slice(0, 300)}` };
+      return { channel: "whatsapp", ok: false, configured: true, detail: `HTTP ${res.status}: ${(await res.text()).slice(0, 300)}` };
     }
-    return { channel: "whatsapp", ok: true };
+    return { channel: "whatsapp", ok: true, configured: true };
   } catch (e) {
-    return { channel: "whatsapp", ok: false, detail: String(e) };
+    return { channel: "whatsapp", ok: false, configured: true, detail: String(e) };
   }
 }

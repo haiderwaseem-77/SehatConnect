@@ -25,6 +25,16 @@ export interface Lead {
 export interface DeliveryResult {
   channel: string;
   ok: boolean;
+  /**
+   * False when the channel's environment variables are absent — meaning it was
+   * never set up, as opposed to set up and broken.
+   *
+   * The distinction matters. WhatsApp may be added weeks after Telegram, and
+   * logging a hard error on every lead for a channel nobody has configured yet
+   * teaches the team that the error log is noise. Unconfigured is reported
+   * quietly; configured-but-failing is shouted about.
+   */
+  configured: boolean;
   /** Present on failure. Logged server-side, never returned to the browser. */
   detail?: string;
 }
