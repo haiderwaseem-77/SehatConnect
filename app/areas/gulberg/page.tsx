@@ -76,21 +76,21 @@ const ASKS: { title: Bilingual; body: Bilingual }[] = [
   {
     title: { en: "The nights, so the house can sleep", ur: "راتیں، تاکہ گھر سو سکے" },
     body: {
-      en: "An attendant from 8:00 PM to 8:00 AM, sitting up with a parent who wakes, needs the bathroom, or should not be left alone until morning. This is the single request we hear most from Gulberg, and it is usually the thing that has worn the family out.",
-      ur: "رات 8 بجے سے صبح 8 بجے تک اٹینڈنٹ — ایسے والد یا والدہ کے پاس جو رات میں جاگ جاتے ہیں، باتھ روم جاتے ہیں، یا صبح تک اکیلے نہیں چھوڑے جا سکتے۔ گلبرگ سے یہی درخواست سب سے زیادہ آتی ہے، اور عموماً یہی وہ چیز ہے جس نے گھر والوں کو تھکا دیا ہوتا ہے۔",
+      en: "An attendant from 8:00 PM to 8:00 AM, sitting up with a parent who wakes, needs the bathroom, or should not be left alone until morning. It is usually the part of the week a family cannot keep doing on its own.",
+      ur: "رات 8 بجے سے صبح 8 بجے تک اٹینڈنٹ — ایسے والد یا والدہ کے پاس جو رات میں جاگ جاتے ہیں، باتھ روم جاتے ہیں، یا صبح تک اکیلے نہیں چھوڑے جا سکتے۔ عموماً یہی وہ حصہ ہوتا ہے جو گھر والے خود مسلسل نہیں سنبھال پاتے۔",
     },
   },
   {
     title: { en: "Care measured in months, not days", ur: "دنوں کی نہیں، مہینوں کی دیکھ بھال" },
     body: {
-      en: "Feeding, washing, dressing, medicines on time, and a hand when a parent wants to move about a house they know far better than we do. It is not a hospital routine dropped into a home — it is a household that already has its own way of doing things, with one more person helping.",
-      ur: "کھانا، صفائی، کپڑے، دواؤں کا وقت، اور اُس گھر میں چلنے پھرنے کے لیے سہارا جسے وہ ہم سے کہیں بہتر جانتے ہیں۔ یہ ہسپتال کا معمول گھر میں لا کر رکھ دینا نہیں — یہ ایک ایسا گھر ہے جس کا اپنا طریقہ پہلے سے موجود ہے، بس ایک فرد اور مدد کے لیے آ جاتا ہے۔",
+      en: "Feeding, washing, dressing, medicines on time, and a hand when a parent wants to move about a house they know far better than we do. Not a hospital routine dropped into a home — a household that already has its own way of doing things, with one more person helping.",
+      ur: "کھانا، صفائی، کپڑے، دواؤں کا وقت، اور اُس گھر میں چلنے پھرنے کے لیے سہارا جسے وہ ہم سے کہیں بہتر جانتے ہیں۔ ہسپتال کا معمول گھر میں لا کر رکھ دینا نہیں — بلکہ ایک ایسا گھر جس کا اپنا طریقہ پہلے سے موجود ہے، بس ایک فرد اور مدد کے لیے آ جاتا ہے۔",
     },
   },
   {
     title: { en: "The same face, not a new stranger", ur: "وہی چہرہ، ہر بار نیا اجنبی نہیں" },
     body: {
-      en: "Someone who has kept the same house for decades rarely wants a different person in it every week. If a caregiver suits your parent, send us their name on WhatsApp and we will try to send the same person again. A female nurse or attendant for a female patient whenever you ask.",
+      en: "Someone who has kept the same house for decades rarely wants a different person in it every week. If a caregiver suits your parent, send us their name on WhatsApp and we try to send the same person again. Female for a female patient whenever you ask.",
       ur: "جس نے دہائیوں ایک ہی گھر سنبھالا ہو، وہ عموماً ہر ہفتے نیا فرد گھر میں نہیں چاہتا۔ اگر کوئی نرس یا اٹینڈنٹ آپ کے والدین کو موافق آئے تو ان کا نام واٹس ایپ پر بھیج دیں، ہم وہی فرد دوبارہ بھیجنے کی کوشش کرتے ہیں۔ خاتون مریضہ کے لیے خاتون نرس یا اٹینڈنٹ، جب بھی کہیں۔",
     },
   },
@@ -133,26 +133,20 @@ const AREA_FAQ: { q: string; qUr: string; a: string; aUr: string }[] = [
   {
     q: "Do you come to all of Gulberg?",
     qUr: "کیا آپ پورے گلبرگ میں آتے ہیں؟",
-    a: "Yes, all of it. Our office is in DHA Phase 8, on the other side of the city, so we plan around that distance instead of pretending it is not there: the arrival time is agreed with you on the call, we ask for a landmark near the house as well as the address, and you get a message from us when your caregiver is on the way. We will not quote you a travel time we have never measured.",
-    aUr: "جی، پورے گلبرگ میں۔ ہمارا دفتر ڈی ایچ اے فیز 8 میں ہے، یعنی شہر کی دوسری طرف، اس لیے ہم اس فاصلے کو نظرانداز کرنے کے بجائے اُسی حساب سے بندوبست کرتے ہیں: آنے کا وقت کال پر آپ کے ساتھ طے ہوتا ہے، ہم پتے کے ساتھ قریبی نشانی بھی پوچھتے ہیں، اور جب نرس یا اٹینڈنٹ راستے میں ہو تو آپ کو اطلاع دیتے ہیں۔ ہم ایسا وقت نہیں بتاتے جو ہم نے ناپا ہی نہ ہو۔",
+    a: "Yes, all of it. Our office is in DHA Phase 8, on the other side of the city, so we plan around that distance instead of pretending it is not there: the arrival time is agreed with you on the call, we ask for a landmark near the house as well as the address, and you get a message when your caregiver is on the way.",
+    aUr: "جی، پورے گلبرگ میں۔ ہمارا دفتر ڈی ایچ اے فیز 8 میں ہے، یعنی شہر کی دوسری طرف، اس لیے ہم اس فاصلے کو نظرانداز کرنے کے بجائے اُسی حساب سے بندوبست کرتے ہیں: آنے کا وقت کال پر طے ہوتا ہے، ہم پتے کے ساتھ قریبی نشانی بھی پوچھتے ہیں، اور جب نرس یا اٹینڈنٹ راستے میں ہو تو آپ کو اطلاع دیتے ہیں۔",
   },
   {
     q: "Raat ko koi ruk sakta hai? Can someone stay only at night?",
     qUr: "کیا رات کو کوئی رُک سکتا ہے؟ صرف رات کے لیے؟",
-    a: "Yes. A night shift is 12 hours, 8:00 PM to 8:00 AM, with one caregiver at home for the whole shift. Many families in Gulberg take only the nights and manage the days themselves. If you need cover around the clock, that is two caregivers across two 12-hour shifts — never one person awake for 24 hours.",
-    aUr: "جی ہاں۔ رات کی شفٹ 12 گھنٹے کی ہوتی ہے، رات 8 بجے سے صبح 8 بجے تک، اور پوری شفٹ ایک فرد گھر پر رہتا ہے۔ گلبرگ میں کئی گھرانے صرف راتیں لیتے ہیں اور دن خود سنبھال لیتے ہیں۔ اگر چوبیس گھنٹے چاہیے تو وہ دو افراد کی دو بارہ گھنٹے کی شفٹیں ہوتی ہیں — ایک ہی شخص 24 گھنٹے نہیں۔",
+    a: "Yes. A night shift is 12 hours, 8:00 PM to 8:00 AM, with one caregiver at home for the whole shift. You can take only the nights and keep the days as they are. If you need cover around the clock, that is two caregivers across two 12-hour shifts — never one person awake for 24 hours.",
+    aUr: "جی ہاں۔ رات کی شفٹ 12 گھنٹے کی ہوتی ہے، رات 8 بجے سے صبح 8 بجے تک، اور پوری شفٹ ایک فرد گھر پر رہتا ہے۔ آپ صرف راتیں لے سکتے ہیں اور دن ویسے کے ویسے رکھ سکتے ہیں۔ اگر چوبیس گھنٹے چاہیے تو وہ دو افراد کی دو بارہ گھنٹے کی شفٹیں ہوتی ہیں — ایک ہی شخص 24 گھنٹے نہیں۔",
   },
   {
     q: "My mother will not accept a stranger in her house. What if it does not work?",
     qUr: "امی گھر میں کسی اجنبی کو قبول نہیں کریں گی۔ اگر بات نہ بنی تو؟",
-    a: "Then you have lost nothing. Your first day is free — no cost, no obligation. Continue only if you're happy. And if the person is not right for your mother, tell us: we replace the caregiver, free, until you're fully satisfied. You can also cancel or move a shift at no charge, up to 4 hours before it starts.",
-    aUr: "تو آپ کا کوئی نقصان نہیں۔ پہلا دن مفت ہے؛ پسند آئے تو ہی آگے جاری رکھیں۔ اور اگر فرد آپ کی والدہ کے لیے مناسب نہ ہو تو بتا دیں: ہم نرس یا اٹینڈنٹ مفت بدلتے رہیں گے، جب تک آپ مطمئن نہ ہوں۔ شفٹ شروع ہونے سے 4 گھنٹے پہلے تک بغیر کسی چارج کے منسوخی یا وقت کی تبدیلی بھی ہو سکتی ہے۔",
-  },
-  {
-    q: "Do we need a nurse, or is an attendant enough?",
-    qUr: "ہمیں نرس چاہیے یا اٹینڈنٹ کافی ہے؟",
-    a: "If the work is clinical — injections, drips, wound dressing, medicines that must be given properly — you need a Qualified Nurse, who is PNC registered. If it is feeding, hygiene, moving about the house, company and being there overnight, an attendant is enough. Tell us what is actually happening at home and we will say honestly which one to send. We do not send a nurse where an attendant is enough.",
-    aUr: "اگر کام طبی ہو — انجیکشن، ڈرپ، زخم کی ڈریسنگ، یا وہ دوائیں جو ٹھیک طریقے سے دینی ہوں — تو PNC رجسٹرڈ نرس چاہیے۔ اگر کھانا، صفائی، گھر میں چلنا پھرنا، ساتھ بیٹھنا اور رات بھر موجود رہنا ہو تو اٹینڈنٹ کافی ہے۔ ہمیں بتا دیں کہ گھر میں اصل صورتحال کیا ہے، ہم صاف بتا دیں گے کہ کس کو بھیجنا چاہیے۔ جہاں اٹینڈنٹ کافی ہو، وہاں ہم نرس نہیں بھیجتے۔",
+    a: "Then you have lost nothing. Your first day is free — no cost, no obligation. Continue only if you're happy. And if the person is not right for your mother, tell us: we replace the caregiver, free, until you're fully satisfied.",
+    aUr: "تو آپ کا کوئی نقصان نہیں۔ پہلا دن مفت ہے؛ پسند آئے تو ہی آگے جاری رکھیں۔ اور اگر فرد آپ کی والدہ کے لیے مناسب نہ ہو تو بتا دیں: ہم نرس یا اٹینڈنٹ مفت بدلتے رہیں گے، جب تک آپ مطمئن نہ ہوں۔",
   },
 ];
 
@@ -392,34 +386,32 @@ export default function GulbergAreaPage() {
                   <span data-en>
                     Gulberg is unusually well served by private hospitals, and families here often
                     call us after a stay at {HOSPITAL_A}, {HOSPITAL_B} or {HOSPITAL_C} &mdash; and
-                    after stays at hospitals across Lahore. None of them are partners of ours. We are
-                    not affiliated with, referred by, or connected to any hospital, and we say so
-                    plainly because it would be easy to imply otherwise. What we do is follow what the
-                    patient&rsquo;s own doctor has prescribed, in your home.
+                    after stays at hospitals across Lahore. None of them are partners of ours: we are
+                    not affiliated with, referred by, or connected to any hospital. What we do at home
+                    follows what the patient&rsquo;s own doctor has prescribed.
                   </span>
                   <span data-ur className="urdu">
                     گلبرگ میں نجی ہسپتال خاصے قریب ہیں، اور یہاں کے گھرانے اکثر {HOSPITAL_A}، {HOSPITAL_B}
                     یا {HOSPITAL_C} میں داخل رہنے کے بعد &mdash; اور لاہور بھر کے دوسرے ہسپتالوں کے بعد
-                    بھی &mdash; ہمیں کال کرتے ہیں۔ ان میں سے کوئی ہمارا پارٹنر نہیں۔ کسی ہسپتال سے ہمارا
-                    کوئی تعلق یا معاہدہ نہیں اور نہ کوئی ہمیں مریض بھیجتا ہے؛ ہم یہ صاف لکھ رہے ہیں کیونکہ
-                    اس کا اُلٹا تاثر دینا آسان ہوتا۔ ہم صرف وہی کرتے ہیں جو مریض کے اپنے ڈاکٹر نے لکھا ہو،
-                    آپ کے گھر پر۔
+                    بھی &mdash; ہمیں کال کرتے ہیں۔ ان میں سے کوئی ہمارا پارٹنر نہیں: کسی ہسپتال سے ہمارا
+                    کوئی تعلق یا معاہدہ نہیں اور نہ کوئی ہمیں مریض بھیجتا ہے۔ گھر پر ہم وہی کرتے ہیں جو
+                    مریض کے اپنے ڈاکٹر نے لکھا ہو۔
                   </span>
                 </p>
                 <p style={{ fontSize: 18, color: "var(--ink-soft)", lineHeight: 1.7, fontWeight: 500, marginTop: 16 }}>
                   <span data-en>
                     Our office is at {OFFICE_ADDRESS}, on the eastern side of the city. Gulberg is a
-                    proper trip from there, not a five-minute one, and we would rather write that down
-                    than quote a travel time we have never measured. So we work around it: the arrival
-                    time is agreed on the call, we ask for a landmark near the house as well as the
-                    address, and you hear from us when your caregiver is on the way.
+                    proper trip from there, and we would rather write that down than quote a travel
+                    time we have never measured. So we work around it: the arrival time is agreed on
+                    the call, we ask for a landmark near the house as well as the address, and you
+                    hear from us when your caregiver is on the way.
                   </span>
                   <span data-ur className="urdu">
                     ہمارا دفتر {OFFICE_ADDRESS} میں ہے، یعنی شہر کی مشرقی طرف۔ وہاں سے گلبرگ باقاعدہ ایک
-                    سفر ہے، پانچ منٹ کی بات نہیں، اور ہم ایسا وقت بتانے کے بجائے یہ سچ لکھنا بہتر سمجھتے
-                    ہیں جو ہم نے ناپا ہی نہ ہو۔ اس لیے ہم اسی کے حساب سے بندوبست کرتے ہیں: آنے کا وقت کال
-                    پر طے ہوتا ہے، پتے کے ساتھ قریبی نشانی پوچھ لیتے ہیں، اور جب نرس یا اٹینڈنٹ راستے میں
-                    ہو تو آپ کو اطلاع دیتے ہیں۔
+                    سفر ہے، اور ہم ایسا وقت بتانے کے بجائے یہ سچ لکھنا بہتر سمجھتے ہیں جو ہم نے ناپا ہی
+                    نہ ہو۔ اس لیے ہم اسی کے حساب سے بندوبست کرتے ہیں: آنے کا وقت کال پر طے ہوتا ہے، پتے
+                    کے ساتھ قریبی نشانی پوچھ لیتے ہیں، اور جب نرس یا اٹینڈنٹ راستے میں ہو تو آپ کو اطلاع
+                    دیتے ہیں۔
                   </span>
                 </p>
               </div>

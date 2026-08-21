@@ -56,7 +56,7 @@ export const AREAS: Area[] = [
   },
   {
     slug: "johar-town",
-    live: false,
+    live: true,
     name: { en: "Johar Town", ur: "جوہر ٹاؤن" },
     hospitals: ["Doctors Hospital", "Shaukat Khanum Memorial Cancer Hospital", "Omar Hospital & Cardiac Centre"],
     distinct:

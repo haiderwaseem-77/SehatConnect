@@ -73,22 +73,22 @@ const ASKS: { title: Bilingual; body: Bilingual }[] = [
   {
     title: { en: "One nurse, one task, one visit", ur: "ایک نرس، ایک کام، ایک وزٹ" },
     body: {
-      en: "An injection, a drip or a dressing change that the patient's own doctor has prescribed. The nurse comes, does that, and leaves — there is no 12-hour commitment for a one-off visit. Of everything we arrange, this is the format that suits the area our office sits in best.",
+      en: "An injection, a drip or a dressing change that the patient's own doctor has prescribed. The nurse comes, does that, and leaves — there is no 12-hour commitment for a one-off visit. It is the format that suits the area our office sits in best.",
       ur: "انجیکشن، ڈرپ یا ڈریسنگ — وہی جو مریض کے اپنے ڈاکٹر نے لکھی ہو۔ نرس آتی ہے، وہ کام کرتی ہے اور چلی جاتی ہے۔ ایک وزٹ کے لیے 12 گھنٹے کی پابندی نہیں۔ ہمارا دفتر اسی علاقے میں ہے، اس لیے یہ صورت یہاں سب سے آسانی سے بن جاتی ہے۔",
     },
   },
   {
-    title: { en: "The first days back from hospital", ur: "ہسپتال سے واپسی کے پہلے دن" },
+    title: { en: "A course of visits, not a shift", ur: "وزٹ کا سلسلہ، شفٹ نہیں" },
     body: {
-      en: "Dressing changes, medicines at the right hours, and a hand when someone needs to get up, sit and move about the house. A Qualified Nurse is PNC registered and takes the clinical work; an Attendant takes the daily work beside it.",
-      ur: "ڈریسنگ کی تبدیلی، دواؤں کا صحیح وقت، اور اٹھنے، بیٹھنے اور گھر میں چلنے پھرنے میں سہارا۔ PNC رجسٹرڈ نرس طبی کام سنبھالتی ہے؛ اٹینڈنٹ ساتھ کا روزمرہ کام۔",
+      en: "A dressing that has to be changed every second day, or an injection course that runs for a week. Short visits, repeated — a far easier thing to keep to when the office is in the same area as the house.",
+      ur: "ایسی ڈریسنگ جو ہر دوسرے دن بدلنی ہو، یا ہفتہ بھر چلنے والا انجیکشن کا کورس۔ مختصر وزٹ، بار بار — اور جب دفتر اُسی علاقے میں ہو جہاں گھر ہے تو یہ سلسلہ نبھانا کہیں آسان ہوتا ہے۔",
     },
   },
   {
-    title: { en: "A day or a night for an elderly parent", ur: "بزرگ والدین کے لیے دن یا رات" },
+    title: { en: "A day shift for an elderly parent", ur: "بزرگ والدین کے لیے دن کی شفٹ" },
     body: {
-      en: "Feeding, hygiene, movement and company through a 12-hour shift, so nobody in the family has to hold the whole week together alone. If there is clinical work as well, a nurse comes instead of an attendant.",
-      ur: "12 گھنٹے کی شفٹ میں کھانا، صفائی، چلنا پھرنا اور ساتھ — تاکہ پورے ہفتے کا بوجھ گھر کے کسی ایک فرد پر نہ رہے۔ اگر طبی کام بھی ہو تو اٹینڈنٹ کی جگہ نرس آتی ہے۔",
+      en: "Feeding, hygiene, movement and company from 8:00 AM to 8:00 PM, so the working members of the house are not leaving a parent on their own all day. If there is clinical work too, a nurse comes instead of an attendant.",
+      ur: "صبح 8 بجے سے رات 8 بجے تک کھانا، صفائی، چلنا پھرنا اور ساتھ — تاکہ گھر کے کام پر جانے والے افراد والدین کو سارا دن اکیلا نہ چھوڑیں۔ اگر طبی کام بھی ہو تو اٹینڈنٹ کی جگہ نرس آتی ہے۔",
     },
   },
 ];
@@ -142,7 +142,7 @@ const AREA_FAQ: { q: string; qUr: string; a: string; aUr: string }[] = [
   {
     q: "How do I know who is walking into my house?",
     qUr: "مجھے کیسے پتا چلے گا کہ گھر میں کون آ رہا ہے؟",
-    a: "Before the visit we send their card on WhatsApp — photo, name, and for a nurse the PNC registration number our team has checked. Every caregiver is CNIC checked, references called, police-verified. If the person does not feel right to your family, tell us: we replace the caregiver, free, until you're fully satisfied.",
+    a: "Before the visit we send their card on WhatsApp — photo, name, and for a nurse the PNC registration number our team has checked. Every caregiver is CNIC checked, references called, police-verified. If the person does not feel right, tell us: we replace the caregiver, free, until you're fully satisfied.",
     aUr: "آنے سے پہلے ہم واٹس ایپ پر ان کا کارڈ بھیجتے ہیں — تصویر، نام، اور نرس کی صورت میں PNC نمبر جو ہماری ٹیم چیک کرتی ہے۔ ہر فرد کا شناختی کارڈ اور حوالہ جات چیک ہوتے ہیں اور پولیس تصدیق بھی۔ اگر گھر والوں کو فرد مناسب نہ لگے تو بتا دیں: ہم نرس یا اٹینڈنٹ مفت بدلتے رہیں گے، جب تک آپ مطمئن نہ ہوں۔",
   },
   {

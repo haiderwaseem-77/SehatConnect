@@ -119,10 +119,13 @@ export default function ServiceDetailPage({
                 <span data-ur className="urdu">{badge.ur}</span>
               </span>
               <div className="sec-head" style={{ marginTop: 14, marginBottom: 22 }}>
-                <h2>
+                {/* The page's H1. This was an <h2>, leaving /services/qualified-nurse
+                    and /services/attendant — both priority-0.9 SEO pages — with no
+                    H1 at all. `role` already carries each page's primary phrase. */}
+                <h1>
                   <span data-en>{role}</span>
                   <span data-ur className="urdu">{roleUrdu}</span>
-                </h2>
+                </h1>
                 <p>
                   <span data-en>{intro.en}</span>
                   <span data-ur className="urdu">{intro.ur}</span>

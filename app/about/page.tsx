@@ -79,10 +79,12 @@ export default function AboutPage() {
                 <span data-en>About Sehat Connect</span>
                 <span data-ur className="urdu">Sehat Connect کے بارے میں</span>
               </span>
-              <h2>
+              {/* The page's H1 — /about had none, which is costly on the page
+                  Google leans on hardest for E-E-A-T. */}
+              <h1>
                 <span data-en>A Lahore home nursing service built for worried families.</span>
                 <span data-ur className="urdu">پریشان گھر والوں کے لیے لاہور کی گھریلو نرسنگ سروس۔</span>
-              </h2>
+              </h1>
               <p>
                 <span data-en>
                   When someone is ill, the family needs clear answers: who will come, what can they do, and when do we pay?

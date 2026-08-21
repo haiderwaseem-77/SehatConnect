@@ -147,10 +147,15 @@ export default function ServicesPage() {
                 <span data-ur className="urdu">لاہور میں گھر پر دیکھ بھال</span>
               </span>
               <div className="sec-head" style={{ marginTop: 14, marginBottom: 0 }}>
-                <h2>
+                {/* This is the page's H1. It was an <h2>, which left /services —
+                    a priority-0.9 page — with no H1 at all. The wording stays
+                    generic on purpose: docs/keyword-map.md proposes retitling this
+                    page to the nurse-vs-attendant intent it actually answers, and
+                    that is an editorial call for the owner, not a silent change. */}
+                <h1>
                   <span data-en>Our services</span>
                   <span data-ur className="urdu">ہماری خدمات</span>
-                </h2>
+                </h1>
                 <p>
                   <span data-en>
                     Need medical care? Choose a Qualified Nurse. Need daily support? Choose an Attendant. First day free. Pay after the shift. Not sure? We&rsquo;ll tell you honestly.

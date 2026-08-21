@@ -33,10 +33,10 @@ export default function BookPage() {
                   <span data-en>A real person is one call away</span>
                   <span data-ur className="urdu">حقیقی انسان، صرف ایک کال دور</span>
                 </span>
-                <h2>
+                <h1>
                   <span data-en>Leave your number. We&rsquo;ll call you back.</span>
                   <span data-ur className="urdu">اپنا نمبر چھوڑ دیں۔ ہم واپس کال کریں گے۔</span>
-                </h2>
+                </h1>
                 <p>
                   <span data-en>
                     Name and phone only. First day free. No payment now. No advance. A real person calls to understand what you need

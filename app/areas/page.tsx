@@ -34,10 +34,10 @@ export default function AreasIndexPage() {
                 <span data-ur className="urdu">جن علاقوں میں ہم آتے ہیں &middot; لاہور</span>
               </span>
               <div className="sec-head">
-                <h2>
+                <h1>
                   <span data-en>We come to all of Lahore</span>
                   <span data-ur className="urdu">ہم پورے لاہور میں آتے ہیں</span>
-                </h2>
+                </h1>
                 <p>
                   <span data-en>
                     These are the areas we are asked for most often. If yours is not

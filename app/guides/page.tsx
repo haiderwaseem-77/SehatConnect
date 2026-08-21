@@ -34,10 +34,10 @@ export default function GuidesIndexPage() {
                 <span data-ur className="urdu">رہنمائی</span>
               </span>
               <div className="sec-head">
-                <h2>
+                <h1>
                   <span data-en>Written for the person making the decision</span>
                   <span data-ur className="urdu">اُس شخص کے لیے لکھا گیا جو فیصلہ کر رہا ہے</span>
-                </h2>
+                </h1>
                 <p>
                   <span data-en>
                     No selling, no jargon. These answer the questions families actually

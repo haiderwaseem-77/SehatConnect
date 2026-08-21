@@ -203,7 +203,8 @@ body{overflow-x:hidden}
 /* ================= SECTION SHELL ================= */
 .d6 section.block{padding:58px 0}
 .d6 .sec-head{max-width:46ch;margin-bottom:30px}
-.d6 .sec-head h2{font-size:clamp(27px,6.2vw,40px)}
+.d6 .sec-head h2,
+.d6 .sec-head h1{font-size:clamp(27px,6.2vw,40px)}
 .d6 .sec-head p{margin-top:12px;color:var(--ink-soft);font-size:18px}
 
 /* ---- How it works (3 steps) ---- */

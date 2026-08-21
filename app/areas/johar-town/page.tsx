@@ -74,7 +74,7 @@ const ASKS: { title: Bilingual; body: Bilingual }[] = [
   {
     title: { en: "The first days after an operation", ur: "آپریشن کے بعد کے پہلے دن" },
     body: {
-      en: "Wound dressing, a drip or an injection the patient's own doctor has prescribed, medicines given at the right hours, and a hand when someone needs to get out of bed and sit up. A Qualified Nurse is PNC registered and does the clinical work.",
+      en: "Wound dressing, a drip or an injection the patient's own doctor has prescribed, medicines at the right hours, and a hand when someone needs to get out of bed and sit up. The clinical work is done by a PNC-registered Qualified Nurse.",
       ur: "زخم کی ڈریسنگ، ڈرپ یا انجیکشن جو مریض کے اپنے ڈاکٹر نے لکھا ہو، دواؤں کا صحیح وقت پر دینا، اور بستر سے اٹھنے اور بیٹھنے میں سہارا۔ طبی کام PNC رجسٹرڈ نرس کرتی ہے۔",
     },
   },
@@ -110,10 +110,6 @@ const WHO_COMES: Bilingual[] = [
     ur: "آنے سے پہلے واٹس ایپ پر کارڈ: تصویر، نام، اور نرس کے لیے PNC نمبر",
   },
   {
-    en: "The start time agreed with you on the call, not a vague window",
-    ur: "شروع کرنے کا وقت کال پر آپ کے ساتھ طے، کوئی مبہم وقفہ نہیں",
-  },
-  {
     en: "A message from us when your caregiver is on the way",
     ur: "جب نرس یا اٹینڈنٹ راستے میں ہو تو ہماری طرف سے اطلاع",
   },
@@ -122,8 +118,8 @@ const WHO_COMES: Bilingual[] = [
     ur: "خاتون مریضہ کے لیے خاتون نرس یا اٹینڈنٹ، جب آپ کہیں",
   },
   {
-    en: "We ask for the block and the house number, so nobody is circling the streets on the day you are already tired",
-    ur: "ہم بلاک اور مکان نمبر پوچھ لیتے ہیں، تاکہ جس دن آپ پہلے ہی تھکے ہوئے ہوں، کوئی گلیوں میں چکر نہ لگاتا رہے",
+    en: "We ask for the block and the house number, so nobody is circling the streets on a day you are already tired",
+    ur: "ہم بلاک اور مکان نمبر پوچھ لیتے ہیں، تاکہ جس دن آپ پہلے ہی تھکے ہوں، کوئی گلیوں میں چکر نہ لگاتا رہے",
   },
 ];
 
@@ -143,20 +139,14 @@ const AREA_FAQ: { q: string; qUr: string; a: string; aUr: string }[] = [
   {
     q: "Kya nurse ghar aa kar dressing kar sakti hai?",
     qUr: "کیا نرس گھر آ کر ڈریسنگ کر سکتی ہے؟",
-    a: "Yes. A nurse can come for a single visit — a dressing change, an injection or a drip that the patient's doctor has prescribed — and leave when it is done. You do not have to book a 12-hour shift for one task, and many families here use single visits between the longer shifts.",
-    aUr: "جی ہاں۔ نرس صرف ایک وزٹ کے لیے آ سکتی ہے — ڈریسنگ کی تبدیلی، انجیکشن یا ڈرپ، جو مریض کے ڈاکٹر نے لکھی ہو — اور کام مکمل ہوتے ہی چلی جاتی ہے۔ ایک کام کے لیے 12 گھنٹے کی شفٹ لینا ضروری نہیں، اور یہاں کئی گھرانے لمبی شفٹوں کے درمیان ایسے ہی وزٹ کرواتے ہیں۔",
+    a: "Yes. A nurse can come for a single visit — a dressing change, an injection or a drip that the patient's doctor has prescribed — and leave when it is done. You do not have to book a 12-hour shift for one task.",
+    aUr: "جی ہاں۔ نرس صرف ایک وزٹ کے لیے آ سکتی ہے — ڈریسنگ کی تبدیلی، انجیکشن یا ڈرپ، جو مریض کے ڈاکٹر نے لکھی ہو — اور کام مکمل ہوتے ہی چلی جاتی ہے۔ ایک کام کے لیے 12 گھنٹے کی شفٹ لینا ضروری نہیں۔",
   },
   {
     q: "Do you cover all of Johar Town?",
     qUr: "کیا آپ پورے جوہر ٹاؤن میں آتے ہیں؟",
     a: "Yes, every block. Our office is in DHA Phase 8, on the eastern edge of the city, and Johar Town is well to the west — that distance is real and we are not going to invent a response time to cover it. Instead we agree the exact start time with you on the call, ask for the block and house number, and message you when the caregiver is on the way.",
     aUr: "جی، ہر بلاک میں۔ ہمارا دفتر ڈی ایچ اے فیز 8 میں ہے، یعنی شہر کے مشرقی کنارے پر، اور جوہر ٹاؤن خاصا مغرب میں ہے — یہ فاصلہ حقیقی ہے اور ہم اسے چھپانے کے لیے کوئی جھوٹا وقت نہیں بتائیں گے۔ اس کے بجائے ہم شروع کرنے کا صحیح وقت کال پر طے کرتے ہیں، بلاک اور مکان نمبر پوچھتے ہیں، اور روانگی کے وقت آپ کو اطلاع دیتے ہیں۔",
-  },
-  {
-    q: "Someone is needed day and night this week. How does that work?",
-    qUr: "اس ہفتے دن اور رات دونوں وقت کسی کی ضرورت ہے۔ یہ کیسے ہوگا؟",
-    a: "Two caregivers, two 12-hour shifts — one from 8:00 AM to 8:00 PM and one from 8:00 PM to 8:00 AM. We will not tell you one person can stay awake for 24 hours, because that is not care. Your first day is free — no cost, no obligation. Continue only if you're happy. No advance. Pay after the shift.",
-    aUr: "دو افراد، دو بارہ گھنٹے کی شفٹیں — ایک صبح 8 سے رات 8 تک اور دوسری رات 8 سے صبح 8 تک۔ ہم یہ نہیں کہیں گے کہ ایک ہی شخص 24 گھنٹے جاگ سکتا ہے، کیونکہ وہ دیکھ بھال نہیں ہوتی۔ پہلا دن مفت ہے؛ پسند آئے تو ہی آگے جاری رکھیں۔ کوئی پیشگی ادائیگی نہیں۔ ادائیگی شفٹ کے بعد۔",
   },
 ];
 
@@ -371,14 +361,13 @@ export default function JoharTownAreaPage() {
               <p className="svc-foot" style={{ marginTop: 18 }}>
                 <span data-en>
                   We take patients home after a stay in ICU or HDU. We do not do ventilator or
-                  tracheostomy care &mdash; we do not have the nurses or equipment for it, and we
-                  would rather say that on this page than on your doorstep.
+                  tracheostomy care &mdash; we do not have the nurses or equipment for it, and you
+                  should hear that here rather than at your door.
                 </span>
                 <span data-ur className="urdu">
                   آئی سی یو یا ایچ ڈی یو سے گھر آنے والے مریض ہم سنبھالتے ہیں۔ وینٹی لیٹر یا
                   ٹریکیوسٹومی کی دیکھ بھال ہم نہیں کرتے &mdash; اس کے لیے ہمارے پاس نہ عملہ ہے نہ
-                  سامان، اور یہ بات ہم آپ کے دروازے پر پہنچ کر کہنے کے بجائے اسی صفحے پر لکھ دینا
-                  بہتر سمجھتے ہیں۔
+                  سامان، اور یہ بات آپ کو دروازے پر نہیں، یہیں معلوم ہونی چاہیے۔
                 </span>
               </p>
             </div>
@@ -410,10 +399,10 @@ export default function JoharTownAreaPage() {
                   <span data-en>
                     {HOSPITAL_A}, {HOSPITAL_B} and {HOSPITAL_C} are all in or beside Johar Town, so a
                     large share of what families here ask us for is care after a discharge from one of
-                    them &mdash; or from any of the other hospitals across Lahore. We should be plain
-                    about that sentence: we are not affiliated with any hospital, none of them refer
-                    patients to us, and the care we give at home follows what the patient&rsquo;s own
-                    doctor has prescribed. Families find us and call us themselves.
+                    them &mdash; or from any of the other hospitals across Lahore. Be clear about what
+                    that means: we are not affiliated with any hospital and none of them refer patients
+                    to us. Families call us themselves, and the care we give at home follows what the
+                    patient&rsquo;s own doctor has prescribed.
                   </span>
                   <span data-ur className="urdu">
                     {HOSPITAL_A}، {HOSPITAL_B} اور {HOSPITAL_C} سب جوہر ٹاؤن میں یا اس کے ساتھ ہیں، اس
@@ -427,16 +416,15 @@ export default function JoharTownAreaPage() {
                 <p style={{ fontSize: 18, color: "var(--ink-soft)", lineHeight: 1.7, fontWeight: 500, marginTop: 16 }}>
                   <span data-en>
                     Our office is at {OFFICE_ADDRESS} &mdash; the eastern edge of the city, while
-                    Johar Town is well to the west. That is a long way across Lahore, and we will not
-                    invent a response time to make it sound shorter. What we do instead is agree the
-                    exact start time with you on the call, so a discharge that is happening tomorrow
-                    gets a straight yes or no from us today.
+                    Johar Town is well to the west. We will not invent a response time to make that
+                    sound shorter. We agree the exact start time with you on the call instead, so a
+                    discharge happening tomorrow gets a straight yes or no from us today.
                   </span>
                   <span data-ur className="urdu">
                     ہمارا دفتر {OFFICE_ADDRESS} میں ہے &mdash; شہر کا مشرقی کنارہ، جبکہ جوہر ٹاؤن خاصا
-                    مغرب میں ہے۔ یہ لاہور کے آر پار کا فاصلہ ہے، اور ہم اسے چھوٹا دکھانے کے لیے کوئی
-                    جھوٹا وقت نہیں لکھیں گے۔ اس کے بجائے ہم شروع کرنے کا صحیح وقت کال پر طے کرتے ہیں،
-                    تاکہ کل ہونے والے ڈسچارج کا سیدھا جواب آپ کو آج ہی مل جائے۔
+                    مغرب میں ہے۔ ہم اس فاصلے کو چھوٹا دکھانے کے لیے کوئی جھوٹا وقت نہیں لکھیں گے۔ اس کے
+                    بجائے شروع کرنے کا صحیح وقت کال پر طے کر لیتے ہیں، تاکہ کل ہونے والے ڈسچارج کا سیدھا
+                    جواب آپ کو آج ہی مل جائے۔
                   </span>
                 </p>
                 <p
