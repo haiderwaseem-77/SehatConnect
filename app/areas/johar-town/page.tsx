@@ -346,14 +346,13 @@ export default function JoharTownAreaPage() {
               {/* Scope honesty: ICU/HDU step-down only (Decision Ledger #16). */}
               <p className="svc-foot" style={{ marginTop: 18 }}>
                 <span data-en>
-                  We take patients home after a stay in ICU or HDU. We do not do ventilator or
-                  tracheostomy care &mdash; we do not have the nurses or equipment for it, and you
-                  should hear that here rather than at your door.
+                  We take patients home after a stay in ICU or HDU. Ventilator and tracheostomy
+                  care we do not take on &mdash; we do not have the nurses or the equipment for it.
                 </span>
                 <span data-ur className="urdu">
                   آئی سی یو یا ایچ ڈی یو سے گھر آنے والے مریض ہم سنبھالتے ہیں۔ وینٹی لیٹر یا
                   ٹریکیوسٹومی کی دیکھ بھال ہم نہیں کرتے &mdash; اس کے لیے ہمارے پاس نہ عملہ ہے نہ
-                  سامان، اور یہ بات آپ کو دروازے پر نہیں، یہیں معلوم ہونی چاہیے۔
+                  سامان۔
                 </span>
               </p>
             </div>
@@ -402,14 +401,12 @@ export default function JoharTownAreaPage() {
                 <p style={{ fontSize: 18, color: "var(--ink-soft)", lineHeight: 1.7, fontWeight: 500, marginTop: 16 }}>
                   <span data-en>
                     Our office is at {OFFICE_ADDRESS} &mdash; the eastern edge of the city, while
-                    Johar Town is well to the west. We will not invent a response time to make that
-                    sound shorter. We agree the exact start time with you on the call instead, so a
-                    discharge happening tomorrow gets a straight yes or no from us today.
+                    Johar Town is well to the west, so we agree the exact start time with you on the
+                    call. A discharge happening tomorrow gets a straight yes or no from us today.
                   </span>
                   <span data-ur className="urdu">
                     ہمارا دفتر {OFFICE_ADDRESS} میں ہے &mdash; شہر کا مشرقی کنارہ، جبکہ جوہر ٹاؤن خاصا
-                    مغرب میں ہے۔ ہم اس فاصلے کو چھوٹا دکھانے کے لیے کوئی جھوٹا وقت نہیں لکھیں گے۔ اس کے
-                    بجائے شروع کرنے کا صحیح وقت کال پر طے کر لیتے ہیں، تاکہ کل ہونے والے ڈسچارج کا سیدھا
+                    مغرب میں ہے، اس لیے شروع کرنے کا صحیح وقت کال پر طے کر لیتے ہیں، تاکہ کل ہونے والے ڈسچارج کا سیدھا
                     جواب آپ کو آج ہی مل جائے۔
                   </span>
                 </p>

@@ -386,15 +386,13 @@ export default function GulbergAreaPage() {
                 <p style={{ fontSize: 18, color: "var(--ink-soft)", lineHeight: 1.7, fontWeight: 500, marginTop: 16 }}>
                   <span data-en>
                     Our office is at {OFFICE_ADDRESS}, on the eastern side of the city. Gulberg is a
-                    proper trip from there, and we would rather write that down than quote a travel
-                    time we have never measured. So we work around it: the arrival time is agreed on
+                    proper trip from there, so we work around it: the arrival time is agreed on
                     the call, we ask for a landmark near the house as well as the address, and you
                     hear from us when your caregiver is on the way.
                   </span>
                   <span data-ur className="urdu">
                     ہمارا دفتر {OFFICE_ADDRESS} میں ہے، یعنی شہر کی مشرقی طرف۔ وہاں سے گلبرگ باقاعدہ ایک
-                    سفر ہے، اور ہم ایسا وقت بتانے کے بجائے یہ سچ لکھنا بہتر سمجھتے ہیں جو ہم نے ناپا ہی
-                    نہ ہو۔ اس لیے ہم اسی کے حساب سے بندوبست کرتے ہیں: آنے کا وقت کال پر طے ہوتا ہے، پتے
+                    سفر ہے، اس لیے ہم اسی کے حساب سے بندوبست کرتے ہیں: آنے کا وقت کال پر طے ہوتا ہے، پتے
                     کے ساتھ قریبی نشانی پوچھ لیتے ہیں، اور جب نرس یا اٹینڈنٹ راستے میں ہو تو آپ کو اطلاع
                     دیتے ہیں۔
                   </span>

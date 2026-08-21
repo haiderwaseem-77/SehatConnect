@@ -257,14 +257,12 @@ export default function DhaAreaPage() {
                   <p className="hero-sub">
                     <span data-en>
                       Our office is in DHA Phase 8 &mdash; inside the area itself. Of everywhere we go
-                      in Lahore, DHA is the part we are closest to. We will not attach a number to
-                      that, because we have not measured one. What it means in practice is simple: a
-                      short nurse visit here is an easy thing for us to arrange.
+                      in Lahore, DHA is the part we are closest to, which
+                      makes a short nurse visit here an easy thing for us to arrange.
                     </span>
                     <span data-ur className="urdu">
                       ہمارا دفتر ڈی ایچ اے فیز 8 میں ہے &mdash; یعنی اسی علاقے کے اندر۔ لاہور میں جہاں
-                      جہاں ہم جاتے ہیں، ان میں ڈی ایچ اے ہمارے سب سے قریب ہے۔ ہم اس کے ساتھ کوئی وقت
-                      نہیں لکھتے، کیونکہ ہم نے ابھی ناپا نہیں۔ عملی طور پر بات سیدھی ہے: یہاں نرس کا
+                      جہاں ہم جاتے ہیں، ان میں ڈی ایچ اے ہمارے سب سے قریب ہے، اس لیے یہاں نرس کا
                       مختصر وزٹ ہمارے لیے آسانی سے بن جاتا ہے۔
                     </span>
                   </p>
