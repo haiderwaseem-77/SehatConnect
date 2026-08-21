@@ -39,6 +39,9 @@ One job: a worried family member in Lahore leaves their name + phone (or calls /
 - Phone display: `0328-8489988` · tel: `+923288489988` · WhatsApp: `923288489988`
 - Prices (internal only as of 2026-07-02 — partner decision, explicitly reversible; see NORTH-STAR Decision Ledger #9): Qualified Nurse **Rs 4,000** / Attendant **Rs 3,000** per 12-hr shift · never public — quoted to the family on the first call, before care starts · pay after, no advance · first day free · `PRICES` constant stays in `lib/constants.ts`, marked do-not-render
 - Verification (all true today): CNIC + references + police verification, every caregiver
+- **Care formats** (confirmed 2026-08-21 — `CARE_FORMATS` in `lib/constants.ts`): a nurse can come for a **short single visit** (injection / drip / dressing) *or* a 12-hour day or night shift. Round-the-clock = **two caregivers, two shifts** — never one person for 24 hours; say this plainly. `SHIFTS` still drives the booking form.
+- **Physiotherapy — do not overpromise** (2026-08-21): listed as a service but **not confirmed in-house**; early on it may be a contractor. Never claim we employ or provide a physiotherapist, and never promise rehabilitation, therapy or a recovery programme. The home-page line "Movement, mobility and recovery support at home" is the **ceiling**. Helping someone move/walk/reposition is ordinary caregiving — describe it that way.
+- **ICU = step-down only** (2026-08-21): care after coming home from ICU/HDU, yes. **Ventilator or tracheostomy care, no** — never imply it.
 - **Domain: `https://mysehatconnect.com` is the final and only host** (decided 2026-08-21) — non-www apex; `www` 301s to it. There is no interim domain, no cutover, and no second host to flip to: `SITE_URL` in `lib/constants.ts` is `https://mysehatconnect.com` and stays that way.
 
 ## Stack & Commands
