@@ -161,8 +161,8 @@ const TIMELINE: { when: Bilingual; body: Bilingual }[] = [
   {
     when: { en: "Late morning", ur: "دن چڑھے" },
     body: {
-      en: "If your parent can walk, a short walk with support. If they cannot, turning and repositioning — which is how bed sores are kept away.",
-      ur: "اگر چل سکتے ہوں تو سہارے کے ساتھ تھوڑی چہل قدمی۔ اگر نہ چل سکتے ہوں تو کروٹ بدلوانا اور پوزیشن بدلنا — بیڈ سورز اسی طرح دور رکھے جاتے ہیں۔",
+      en: "If your parent can walk, a short walk with support. If they cannot, turning and repositioning, which is what reduces the risk of bed sores.",
+      ur: "اگر چل سکتے ہوں تو سہارے کے ساتھ تھوڑی چہل قدمی۔ اگر نہ چل سکتے ہوں تو کروٹ بدلوانا اور پوزیشن بدلنا — اسی سے بیڈ سورز کا خطرہ کم ہوتا ہے۔",
     },
   },
   {
@@ -732,8 +732,8 @@ export default function ElderlyCarePage() {
                   </h3>
                   <p style={BODY}>
                     <span data-en>
-                      The work here is physical and constant: turning and repositioning so bed sores do
-                      not start, bathing and changing in bed, feeding, and keeping them dry and
+                      The work here is physical and constant: turning and repositioning to reduce the risk of bed
+                      sores, bathing and changing in bed, feeding, and keeping them dry and
                       comfortable. There is no delicate way to say that, and no reason to. It is
                       ordinary work, an attendant has done it before, and your parent keeps their
                       dignity while it is done. If there are wounds to dress or medicines to inject,
@@ -741,8 +741,7 @@ export default function ElderlyCarePage() {
                       shift and a single nurse visit for the task.
                     </span>
                     <span data-ur className="urdu">
-                      یہاں کام جسمانی بھی ہے اور مسلسل بھی: کروٹ اور پوزیشن بدلنا تاکہ بیڈ سورز نہ
-                      بنیں، بستر پر ہی نہلانا اور کپڑے بدلنا، کھانا کھلانا، اور مریض کو خشک اور آرام
+                      یہاں کام جسمانی بھی ہے اور مسلسل بھی: کروٹ اور پوزیشن بدلنا تاکہ بیڈ سورز کا خطرہ کم ہو، بستر پر ہی نہلانا اور کپڑے بدلنا، کھانا کھلانا، اور مریض کو خشک اور آرام
                       دہ رکھنا۔ اسے نرم الفاظ میں کہنے کی نہ کوئی صورت ہے نہ ضرورت۔ یہ عام کام ہے،
                       اٹینڈنٹ پہلے بھی کر چکا ہوتا ہے، اور یہ سب کرتے ہوئے مریض کی عزت برقرار رہتی ہے۔
                       اگر زخم کی ڈریسنگ یا انجیکشن کی ضرورت ہو تو وہ نرس کا کام ہے — کئی گھرانے شفٹ کے

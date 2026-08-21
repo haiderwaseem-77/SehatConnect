@@ -19,6 +19,7 @@ One job: a worried family member in Lahore leaves their name + phone (or calls /
 - Body ≥18px, nothing important <16px, tap targets ≥56px, high-contrast dark-teal on cream — never faint grey. Actions are real buttons/links (min-height ≥44px), never inline text.
 - **One page, one action:** everything funnels to call / WhatsApp / "we'll call you". No accounts, browsing, calendars, or marketplace patterns — ever.
 - Form = Name + Phone required; anything else optional and tap-not-type.
+- **Never claim a clinical outcome.** Describe what a caregiver *does*, never what the patient's body will do as a result. "Turning and repositioning to **reduce the risk of** bed sores" — never "so bed sores do not start". Pressure sores depend on nutrition, circulation, moisture and illness; repositioning lowers risk, it does not guarantee prevention. The same holds for recovery, healing, mobility and comfort: no timelines, no guarantees, no outcome promises. This is a health (YMYL) site — Google holds it to a higher bar, and a family who was promised prevention has a real grievance if it happens anyway.
 - **Honesty rule:** never promise what ops doesn't deliver. Placeholders carry honesty labels. Every claim needs an artifact, a checkable number, or a named human (the "show the artifact" law, NORTH-STAR §3).
 - **The promises — use these exact phrasings, never improvise stronger ones (NORTH-STAR §3):**
   - Callback: "We call back fast — **usually within 15 minutes**." (the word *usually* is mandatory)

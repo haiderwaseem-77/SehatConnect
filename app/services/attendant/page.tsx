@@ -47,7 +47,7 @@ const breadcrumbs = breadcrumbList([
 const DOES: { en: string; ur: string }[] = [
   { en: "Feeding & meals — help with eating, drinking and timing medicines you hand over", ur: "کھانا — کھانا کھلانا، پانی پلانا، اور آپ کی دی ہوئی دوا وقت پر دینا" },
   { en: "Hygiene & bathing — sponge bath, changing, toilet help, keeping the patient clean", ur: "صفائی اور غسل — سپنج باتھ، کپڑے بدلوانا، بیت الخلا میں مدد اور مریض کو صاف رکھنا" },
-  { en: "Movement & positioning — turning, sitting up, walking support to prevent bed sores", ur: "حرکت اور پوزیشن — کروٹ بدلوانا، بٹھانا، چلنے میں سہارا تاکہ بیڈ سورز کا خطرہ کم ہو" },
+  { en: "Movement & positioning — turning, sitting up, walking support to reduce the risk of bed sores", ur: "حرکت اور پوزیشن — کروٹ بدلوانا، بٹھانا، چلنے میں سہارا تاکہ بیڈ سورز کا خطرہ کم ہو" },
   { en: "Companionship — sitting with them, talking, keeping them calm and not alone", ur: "ساتھ — مریض کے پاس بیٹھنا، بات کرنا، تسلی دینا اور اکیلا نہ چھوڑنا" },
 ];
 
