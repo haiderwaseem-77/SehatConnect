@@ -88,7 +88,7 @@ npm run lint   # linting
 | `app/care-from-abroad/` | The "Overseas Child" segment (NORTH-STAR §2): arranging care from the UK/USA/UAE/Canada, what reaches you, what we deliberately do *not* do (no cameras, no GPS), and how payment works from abroad |
 | `app/guides/` + 3 guides | `nurse-or-attendant`, `post-operative-care-checklist`, `elderly-care-at-home`. Informational only — never service/transactional terms |
 | `app/areas/` + `dha/`, `gulberg/`, `johar-town/` | Lahore area pages, three by choice (`lib/areas.ts`) |
-| `app/cities/` + `app/cities/[city]/` | Lahore live (LocalBusiness schema); other cities `noindex` "coming soon" — index a city only when actually launched |
+| `app/cities/` + `app/cities/[city]/` | **`/cities/lahore` 301s to `/`** (Ledger #25) — one live city means the city page *is* the home page; `LIVE_CITIES` is empty and Lahore is out of `generateStaticParams` so nothing generates or links a redirecting URL. The tree stays for a real second city |
 | `app/about/` | Founder story / E-E-A-T page |
 | `app/not-found.tsx` | 404 — one calm line plus Call/WhatsApp, so a wrong URL still reaches a human |
 | `app/sitemap.ts` | Derives static routes by walking `app/`; `LIVE_CITIES` supplies the dynamic ones. Do NOT re-hardcode (see rule below) |

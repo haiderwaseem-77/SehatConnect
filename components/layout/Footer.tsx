@@ -69,7 +69,6 @@ export default function Footer() {
           </div>
           <div className="foot-col">
             <h4><span data-en>Where we come</span><span data-ur lang="ur" dir="rtl" className="urdu">ہم کہاں آتے ہیں</span></h4>
-            <Link href="/cities/lahore"><span data-en>Nursing care in Lahore</span><span data-ur lang="ur" dir="rtl" className="urdu">لاہور میں گھر پر نرسنگ</span></Link>
             <Link href="/areas"><span data-en>Areas we serve</span><span data-ur lang="ur" dir="rtl" className="urdu">جن علاقوں میں ہم آتے ہیں</span></Link>
             {/* Driven by lib/areas.ts — only live areas, so this can never link a 404. */}
             {LIVE_AREAS.map((a) => (

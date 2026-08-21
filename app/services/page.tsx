@@ -17,9 +17,12 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { breadcrumbList, businessSameAs } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Home Nursing in Lahore | Nurse & Attendant",
+  // Moved off the head term, which belongs to "/" — this page's actual
+  // content is the nurse-vs-attendant comparison, so the title now says so
+  // (docs/keyword-map.md; decided 2026-08-21).
+  title: "Nurse or Attendant at Home in Lahore",
   description:
-    "Nurses and attendants at home in Lahore for post-op, elderly, paediatric, diabetic and night care. Leave your number. A real person calls back.",
+    "Which one does your patient need? A PNC-registered nurse does clinical work; an attendant does daily support. We tell you honestly on the call.",
   alternates: { canonical: `${SITE_URL}/services` },
 };
 

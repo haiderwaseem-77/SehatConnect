@@ -16,7 +16,10 @@ import { breadcrumbList, businessSameAs } from "@/lib/schema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export function generateStaticParams() {
-  return ["lahore", "karachi", "islamabad", "rawalpindi", "faisalabad"].map(city => ({ city }));
+  // "lahore" is deliberately absent: /cities/lahore 301s to "/" (next.config.ts),
+  // so generating it would only produce a page that is never served and whose
+  // title collides with /services.
+  return ["karachi", "islamabad", "rawalpindi", "faisalabad"].map(city => ({ city }));
 }
 
 function resolveCity(slug: string) {

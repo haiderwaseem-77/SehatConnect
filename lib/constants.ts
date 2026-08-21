@@ -100,7 +100,11 @@ export const CITIES = [
   { en: 'Faisalabad', ur: 'فیصل آباد' },
 ];
 
-export const LIVE_CITIES = ['Lahore'];
+// Empty on purpose. Lahore is served at "/" — /cities/lahore now 301s there
+// (see next.config.ts), so listing it here would put a redirecting URL in the
+// sitemap and link one from /cities. Add a city here only when it has its own
+// page that does not duplicate the home page.
+export const LIVE_CITIES: string[] = [];
 
 export const SHIFTS = [
   { id: 'morning', label: 'Day',   time: '8:00 AM – 8:00 PM' },

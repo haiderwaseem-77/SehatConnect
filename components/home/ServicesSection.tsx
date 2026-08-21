@@ -14,7 +14,7 @@ const CARE_ROWS: { svc: string; nm: string; ur: string; ds: string; dsUr: string
   { svc: "Elderly Care", nm: "Elderly Care", ur: "بزرگوں کی دیکھ بھال", ds: "Medicines, movement, feeding, hygiene and daily comfort.", dsUr: "دوائیں، چلنا پھرنا، کھانا، صفائی اور روزمرہ آرام۔" },
   { svc: "Injection & Drip Service", nm: "Injection & Drip Service", ur: "انجیکشن اور ڈرپ", ds: "Qualified help for injections, IV drips and basic monitoring at home.", dsUr: "گھر پر انجیکشن، IV ڈرپ اور بنیادی نگرانی کے لیے تربیت یافتہ مدد۔" },
   { svc: "Physiotherapy", nm: "Physiotherapy", ur: "فزیوتھراپی", ds: "Movement, mobility and recovery support at home.", dsUr: "گھر پر چلنے پھرنے، حرکت اور ریکوری میں مدد۔" },
-  { svc: "Mother & Baby Care", nm: "Mother & Baby Care", ur: "ماں اور بچے کی دیکھ بھال", ds: "Newborn and postnatal support for new mothers.", dsUr: "نوزائیدہ بچے اور زچگی کے بعد ماں کی مدد۔" },
+  { svc: "Mother & Baby Care", nm: "Mother & Baby Care", ur: "ماں اور بچے کی دیکھ بھال", ds: "Care for the mother after delivery \u2014 wound care, medicines, rest.", dsUr: "زچگی کے بعد ماں کی دیکھ بھال \u2014 زخم، دوائیں اور آرام۔" },
   { svc: "Long-term Care & Comfort", nm: "Long-term Care & Comfort", ur: "طویل مدتی دیکھ بھال اور آرام", ds: "Ongoing care, hygiene, feeding, movement and companionship.", dsUr: "مسلسل دیکھ بھال، صفائی، کھانا، چلنا پھرنا اور ساتھ۔" },
 ];
 
