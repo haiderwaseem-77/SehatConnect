@@ -98,7 +98,7 @@ npm run lint   # linting
 | `app/direction6.css` | The ported mockup CSS, scoped under a `.d6` wrapper (applied by `LandingRoot`). `.sec-head` styles `h1` and `h2` identically, so a section head can be an H1 with no visual change |
 | `components/home/` | `LandingRoot`, `Hero`, `HowItWorks`, `PriceReceipt`, `ServicesSection`, `VerifiedCard`, `HomeFAQ`, `FounderNote`, `CtaBanner`, `LeadFormD6`, `Testimonials` (empty stub — mounts only when real testimonials exist, NORTH-STAR §7.6) |
 | `components/layout/`, `components/ui/` | `Navbar`, `Footer` · `StickyActionBar` (mobile Call / WhatsApp / Get-a-call — the most important 76px on the site) · `Breadcrumbs` (visible trail, fed the same `Crumb[]` as the JSON-LD) |
-| `components/i18n/LanguageProvider.tsx` | EN/اردو context, available site-wide via `LandingRoot` |
+| `components/i18n/LanguageProvider.tsx` | EN/اردو, **derived from the `?lang=ur` URL parameter**, not held in state — so the address bar always describes what is on screen and an Urdu link is shareable (a son sending his father a link that opens in Urdu). `useSyncExternalStore`, server snapshot always `en`, so static generation is kept. English strips the param, so the shared link and the canonical match in the common case. |
 | `lib/constants.ts` | **Content source of truth**: `SITE_URL`, prices, services (+ Urdu labels), `CARE_FORMATS`, `SHIFTS`, FAQ items, promise strings, phone/WhatsApp constants |
 | `lib/wa.ts` | WhatsApp deep-link prefills (warm Roman Urdu) |
 | `lib/schema.ts` | Shared JSON-LD: `OPENING_HOURS`, `businessSameAs()`, `breadcrumbList()`, the `Crumb` type. **Build every structured-data block from these** so the business identity is byte-identical site-wide |
