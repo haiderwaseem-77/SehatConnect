@@ -123,10 +123,23 @@ function Cell({ v }: { v: CellValue }) {
       </span>
     );
   }
+  // The tick and dash carry this table's entire meaning for a screen-reader
+  // user, so each needs readable text. It is a visually-hidden bilingual pair
+  // rather than an aria-label because an aria-label is an attribute: the CSS
+  // language toggle cannot reach it, so it would have announced English to an
+  // Urdu-mode user permanently.
   return v ? (
-    <span style={{ color: "var(--teal)", fontWeight: 800 }} aria-label="Yes">✓</span>
+    <span style={{ color: "var(--teal)", fontWeight: 800 }}>
+      <span aria-hidden="true">✓</span>
+      <span className="sr-only" data-en>Yes</span>
+      <span className="sr-only urdu" data-ur>جی ہاں</span>
+    </span>
   ) : (
-    <span style={{ color: "var(--ink-soft)", fontWeight: 700, opacity: 0.55 }} aria-label="No">–</span>
+    <span style={{ color: "var(--ink-soft)", fontWeight: 700, opacity: 0.55 }}>
+      <span aria-hidden="true">–</span>
+      <span className="sr-only" data-en>No</span>
+      <span className="sr-only urdu" data-ur>نہیں</span>
+    </span>
   );
 }
 

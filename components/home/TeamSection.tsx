@@ -114,6 +114,12 @@ export default function TeamSection() {
               strokeLinejoin="round"
             />
           </svg>
+          {/* A formatted variant of VERIFICATION_PROMISE in lib/constants.ts —
+              written out here only because this rendering needs <b> emphasis.
+              It must keep BOTH halves: all three checks, AND the timing clause.
+              The Urdu had lost the timing clause, which is the reassuring half,
+              precisely because it was retyped here instead of imported. If you
+              edit either language, check it against the constant. */}
           <span>
             <span data-en>
               Every caregiver we send is <b>CNIC checked, references called,
@@ -121,7 +127,8 @@ export default function TeamSection() {
             </span>
             <span data-ur className="urdu">
               جس فرد کو بھی ہم آپ کے گھر بھیجتے ہیں، اس کا شناختی کارڈ اور
-              حوالہ جات چیک ہو جاتے ہیں، اور پولیس تصدیق بھی ہو جاتی ہے۔
+              حوالہ جات چیک ہو جاتے ہیں، اور پولیس تصدیق بھی &mdash; گھر میں
+              داخل ہونے سے پہلے۔
             </span>
           </span>
         </p>

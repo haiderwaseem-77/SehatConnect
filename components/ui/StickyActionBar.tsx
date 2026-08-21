@@ -1,12 +1,35 @@
+"use client";
+
 // Direction-6 sticky mobile action bar — Call / WhatsApp / Get a call.
 // Ported from design-explorations-v2/direction-6-combined.html
+//
+// This is a client component for one reason: the language toggle.
+//
+// The rest of the site switches language through CSS — `.d6.lang-ur [data-ur]`
+// in direction6.css — but this bar is rendered by app/layout.tsx as a SIBLING of
+// {children}, while `.d6` is opened inside each page by LandingRoot. So the bar
+// sits outside `.d6` and that rule could never match it. Combined with an
+// unscoped `.sticky-bar [data-ur]{display:none}`, the Urdu labels shipped in the
+// DOM on every page and were invisible in BOTH languages — an Urdu-mode user got
+// a fully translated page with an English-only action bar pinned over it, on the
+// most important 76px of the site.
+//
+// Rather than move the bar inside LandingRoot (which would drop it from any page
+// that does not use LandingRoot), it reads the language itself and sets the
+// class, so the same [data-en]/[data-ur] markup as everywhere else keeps working.
 import Link from "next/link";
+import { useLanguage } from "@/components/i18n/LanguageProvider";
 import { CONTACT_PHONE_TEL } from "@/lib/constants";
 import { waLink, GENERIC_WA_MSG } from "@/lib/wa";
 
 export default function StickyActionBar() {
+  const { lang } = useLanguage();
+
   return (
-    <nav className="sticky-bar" aria-label="Quick contact">
+    <nav
+      className={lang === "ur" ? "sticky-bar lang-ur" : "sticky-bar"}
+      aria-label="Quick contact"
+    >
       <a className="s-call" href={`tel:${CONTACT_PHONE_TEL}`}>
         <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />

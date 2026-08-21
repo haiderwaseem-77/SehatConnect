@@ -444,6 +444,11 @@ body{overflow-x:hidden}
   font-size:12.5px;font-weight:800;text-decoration:none;line-height:1.05;letter-spacing:0;color:var(--ink);
 }
 .sticky-bar [data-ur]{display:none}
+/* The bar lives outside .d6 (see components/ui/StickyActionBar.tsx), so the
+   global .d6.lang-ur rules cannot reach it. It sets .lang-ur on itself instead.
+   Without these two lines the Urdu labels above are dead markup in both modes. */
+.sticky-bar.lang-ur [data-en]{display:none}
+.sticky-bar.lang-ur [data-ur]{display:revert}
 .sticky-bar .s-call,.sticky-bar .s-wa{background:#fff;border:1px solid var(--line);box-shadow:0 8px 18px -16px rgba(10,46,43,.45)}
 .sticky-bar .s-cta{background:var(--teal);color:#fff;border:1px solid rgba(13,122,110,.2);box-shadow:0 10px 22px -15px rgba(10,46,43,.65)}
 .sticky-bar svg{width:19px;height:19px;flex:none}
@@ -688,3 +693,16 @@ body{overflow-x:hidden}
 .d6 .crumbs a:hover{border-bottom-color:var(--teal)}
 .d6 .crumbs [aria-current="page"]{color:var(--ink-soft);font-weight:500}
 .d6 .crumbs .crumb-sep{margin:0 8px;color:var(--line-strong);font-size:15px}
+
+/* ---- Visually hidden, still announced -------------------------------------
+   For text that a screen reader needs but the design conveys another way (a
+   tick or a dash in a comparison table). Deliberately NOT display:none, which
+   would remove it from the accessibility tree too.
+   Because it is real markup rather than an aria-label attribute, the normal
+   [data-en]/[data-ur] toggle drives it — which is the whole point: an
+   aria-label is a string in an attribute and cannot be switched by CSS, so it
+   would have stayed English forever. */
+.d6 .sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;
+}

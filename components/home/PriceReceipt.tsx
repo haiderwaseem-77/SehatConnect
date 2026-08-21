@@ -109,7 +109,8 @@ export default function PriceReceipt() {
                     replacement.
                   </span>
                   <span data-ur className="urdu">
-                    ہمیں بتائیں۔ ہم متبادل کا بندوبست کرتے ہیں۔
+                    اگر فرد مناسب نہ لگے تو ہمیں بتائیں۔ ہم متبادل کا بندوبست
+                    کرتے ہیں۔
                   </span>
                 </dd>
               </div>

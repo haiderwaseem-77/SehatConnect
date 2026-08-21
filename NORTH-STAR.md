@@ -1,6 +1,6 @@
 # Sehat Connect — North Star (v2)
 
-**This is the source of truth.** It supersedes `design/north-star.html` and any strategy text in other documents. When another doc disagrees with this one, this one wins. Written 2026-07-01; all operational decisions finalized with the founder the same day — **this document carries no open questions** (see the Decision Ledger at the end).
+**This is the source of truth.** It supersedes `design/north-star.html` and any strategy text in other documents. When another doc disagrees with this one, this one wins. Written 2026-07-01; all operational decisions finalized with the founder the same day, and extended 2026-08-21 (Decision Ledger entries 12–21). **This document carries no open business questions** (see the Decision Ledger at the end). One implementation divergence is recorded rather than hidden — the analytics choice in §12, where the code and this document disagree — and it is flagged for the founder instead of being decided quietly.
 
 **Locked assets (the only things not up for debate):** the logo (`design/Sehat Connect Logo.jpg`), the printed visiting cards (`design/Sehat Connect Visiting Card Standalone.html`), the brand name *Sehat Connect*, the tagline *"bringing the hospital to your home"*, and the phone number `0328-8489988`. Everything else — layout, copy, pages, features — serves the mission below and changes whenever it serves it better.
 
@@ -46,7 +46,7 @@ That's it. The website is not a booking app, not a marketplace, not a brochure. 
 
 - Pakistani in the US/UK/Gulf arranging care for parents in Lahore. Searches in English, at odd hours, on a good phone. Higher willingness to pay; *very* high scam-alertness because they can't visit to check.
 - Their questions: can I arrange this from abroad? Who exactly comes to the house? How do I stay in the loop? (Answer: yes, over WhatsApp; the caregiver card; WhatsApp updates.)
-- Worth one small dedicated section + one FAQ. They convert through the same funnel (WhatsApp especially).
+- Worth a home-page FAQ plus, since 2026-08-21, a page of their own — `/care-from-abroad`, which answers the payment question (Ledger #19), names what does *not* happen (no cameras, no GPS), and says who has to be able to open the door. They convert through the same funnel (WhatsApp especially).
 
 ### The invisible decision-maker: the family WhatsApp group
 
@@ -70,7 +70,7 @@ The page is not organized around our services. It is organized around **their fe
 | 2 | "Who will walk into my home?" | You meet them before they arrive; CNIC, references and police verification checked; female caregiver on request | The **caregiver card** (photo, name, PNC #, verification date) sent on WhatsApp before the shift — shown as a real sample on the site | Sample card ✅ but placeholder photo ❌ |
 | 3 | "Can they actually do the medical task?" | Qualified Nurses are PNC-registered (checkable); attendants are for non-clinical care and we say so plainly | PNC registration number **on the card** · plain nurse-vs-attendant explainer | ✅ copy exists; card needs real PNC # |
 | 4 | "What will it cost me?" | We tell you the exact price on the first call — before care starts. No fine print, no surprises. Your first day is free — no cost, no obligation | The "How payment works" card — itemized terms (no amounts shown), with "You pay: AFTER SHIFT" | ✅ |
-| 5 | "Can I just talk to a human?" | Yes — call or WhatsApp right now, or leave a number and a real person calls back | **Visible phone number as text**, sticky Call/WhatsApp bar, callback promise we always hit | Sticky bar ✅ · number-as-text in hero ❌ |
+| 5 | "Can I just talk to a human?" | Yes — call or WhatsApp right now, or leave a number and a real person calls back | **Visible phone number as text**, sticky Call/WhatsApp bar, callback promise we always hit | Sticky bar ✅ · number-as-text ✅ (2026-08-21, under the form and in the footer) |
 
 **The "show the artifact" law:** any claim on the site must be backed by a visible artifact, a checkable number, or a named human — or it must carry an honesty label ("Sample photo — your nurse's real card is sent before the visit") until the real thing exists. No unverifiable superlatives, ever ("best", "top", "trusted by thousands").
 
@@ -130,22 +130,31 @@ Rules:
 
 ## 6. Site Architecture: one machine + thin satellites
 
-**The model:** one conversion page (home) that does ~95% of the work, plus a small ring of satellite pages that exist for SEO landings and deeper reassurance — and every satellite is itself a *mini conversion page* (what + where + payment terms + form/CTA), never a dead-end brochure page. No page exists that a worried human could land on and feel abandoned.
+**The model:** one conversion page (home) that does ~95% of the work, plus a ring of satellite pages that exist for SEO landings and deeper reassurance — and every satellite is itself a *mini conversion page* (what + where + payment terms + form/CTA), never a dead-end brochure page. No page exists that a worried human could land on and feel abandoned.
+
+**The ring grew on 2026-08-21**, from ~10 pages to **26 indexable URLs**. The model did not change: home still carries the conversion, and every new page ends in the same form and the same number. What changed is that a family searching *"drip at home Lahore"* or *"nurse ka kharcha"* now lands on a page written for that sentence instead of on a general one. **`docs/keyword-map.md` is the register of which page owns which phrase** — one page, one primary phrase; before adding or retitling any page, find its row there. Two pages chasing one term make Google choose, and it often chooses wrong.
 
 | Page | Job | Notes |
 |---|---|---|
-| `/` | **The machine.** Full fear-to-relief narrative + form ×2 | Spec in §7 |
-| `/book` | Form-only page for ads/direct links; mirrors hero form | Keep minimal |
-| `/book/confirm` | The emotional peak — see spec below | Currently under-loved |
-| `/services/qualified-nurse` | SEO landing: "home nursing services Lahore" etc. + deep detail (all 9 services explained) | Mini conversion page |
-| `/services/attendant` | SEO landing: "patient attendant Lahore", *attendant chahiye* | Mini conversion page |
-| `/services` | Thin index → routes to the two above | Or redirect to `/#services` |
-| `/cities/lahore` | "Areas we serve in Lahore" — DHA, Gulberg, Johar Town, Model Town, Bahria Town, Cantt… with honest coverage detail | The only *indexed* city page (non-live cities are already `noindex` "coming soon" — correct; keep it that way; index a city only when we actually launch there) |
+| `/` | **The machine.** Full fear-to-relief narrative + form ×2 | Spec in §7; owns the head terms ("home nurse Lahore") outright |
+| `/book` · `/book/confirm` | Form-only page for ads/direct links · the post-submit emotional peak | Confirm page built (spec below); `/book/confirm` stays noindex |
+| `/charges` | "What does a home nurse cost in Lahore" — answers **how** pricing works, never **what** it costs | Owns the highest-volume anxious query in the category while publishing no figure (Ledger #9) |
+| `/services` | Index of the ten service pages; its real content is the nurse-vs-attendant comparison | Should be retitled to own *"which one do I need"* rather than the head term — see `docs/keyword-map.md` |
+| `/services/qualified-nurse` · `/services/attendant` | The two tiers, in depth | Shared `ServiceDetailPage` component |
+| `/services/injection-drip` | The **short single visit** — an injection, a drip, a dressing | The highest-volume service the site used to hide (Ledger #14) |
+| `/services/post-operative-care` · `/elderly-care` · `/long-term-care` | The three situations families actually arrive in: after surgery, ageing at home, a long illness or a bedridden patient | Step-down only; no ventilator or tracheostomy (Ledger #16) |
+| `/services/female-nurse` · `/services/male-nurse` | Who comes into the house, and the family's comfort | Both real (Ledger #17). Gender never changes clinical scope, registration, verification or price — both pages say so |
+| `/services/mother-baby-care` | Postnatal care **for the mother** | Newborn care is not sold (Ledger #18) |
+| `/services/physiotherapy` | "We **arrange** a physiotherapist" — the only approved framing | Non-employment stated outright (Ledger #15) |
+| `/care-from-abroad` | The "Overseas Child" (§2) in full: arranging from the UK/USA/UAE/Canada, what reaches you, what we deliberately don't do, how payment works (Ledger #19) | The segment's own landing page, no longer one FAQ |
+| `/guides` + `/guides/<slug>` | Three guides: nurse-or-attendant · post-op checklist · elderly care at home | `/guides/`, never `/blog/` — the one-a-month cap (§9.3, §11) is the point |
+| `/areas` + `/areas/dha` · `/gulberg` · `/johar-town` | Lahore areas, **three by choice** | Map-pack rank falls off with distance from the DHA office; area pages plus reviews naming that area are the levers we have (Ledger #20) |
+| `/cities/lahore` | Currently near-duplicates home. Its job is to become the parent of the area pages | The only *indexed* city page (non-live cities stay `noindex` "coming soon" — index a city only when we actually launch there) |
 | `/about` | The founder story, expanded; team; how verification works | The "who ARE these people" deep-dive |
 | ~~`/contact`~~ | Already merged into home (301) — contact lives in the footer + `ContactPoint` schema | Correct call; GBP links to home |
-| 404 | One line ("Let's get you back to a human") + Call/WhatsApp buttons | 2-minute build, real trust save |
+| 404 | One line ("Let's get you back to a human") + Call/WhatsApp buttons | Built |
 
-**Navigation stays skeletal.** Header: logo + phone number + اردو toggle (+ desktop-only WhatsApp/call buttons). No menu of pages on mobile — the page *is* the menu. Footer carries the sitemap links (this is where satellites get their internal links), the number in large type, areas served, and the trust line (PNC · CNIC & references checked · pay after).
+**Navigation stays skeletal.** Header: logo + phone number + اردو toggle (+ desktop-only WhatsApp/call buttons). No menu of pages on mobile — the page *is* the menu. Footer carries the sitemap links (this is where satellites get their internal links), the number in large type, areas served, and the trust line (PNC · CNIC & references checked · pay after). **The footer has not kept up with the ring** — it still lists the original five service pages, and nothing links to `/areas`, `/guides` or `/care-from-abroad`. A satellite no hub links to is a page Google reaches only through the sitemap; fixing this is §13 item 12.
 
 **Should the home page have MORE or LESS information?** Less surface, same substance. The current mobile page is ~35 phone-screens long; the target is **≤ 20 screens**. Cut by: collapsing (max 6 FAQ visible, max 6 service chips visible, "show more" for the rest), tightening section headers, and trusting the satellites to hold depth. A stressed person doesn't read 35 screens; they read until they feel safe, then they act. Every screen after safety is friction.
 
@@ -163,10 +172,10 @@ The narrative logic: *act now if you're ready → what happens if I do → what 
 
 The current hero's *emotion* is right; its *clarity* has one hole: **it never says what we provide or where.** "Worried about caring for someone at home?" could be an insurance ad. A 58-year-old (and Google) must see the noun and the city.
 
-- **Eyebrow:** `A real person is one call away` (keep).
-- **H1 (revised):** name the *thing* and the *place*, keep the beloved highlight device on the action:
-  > **A verified nurse or attendant at home, in Lahore. `Leave your number` — a real person calls you back.**
-  Urdu mode: گھر پر تصدیق شدہ نرس یا تیماردار، لاہور میں۔ اپنا نمبر چھوڑیں — ایک اصل انسان آپ کو کال کرے گا۔
+- **Eyebrow:** `Care for your loved one is a call away`.
+- **H1 (shipped 2026-08-21)** — names the *thing* and the *place*, keeps the highlight device on the action:
+  > **A caring nurse or attendant at home in Lahore. `Leave your number` — we'll arrange the right person.**
+  Urdu mode: لاہور میں گھر پر نرس یا اٹینڈنٹ۔ اپنا نمبر دیں — ہم مناسب فرد کا بندوبست کریں گے۔
 - **Sub (tighten to 2 lines):** "Take a breath. No advance, no long form. Tell us your name and number — we'll call, listen, and arrange the right person." Plus one small inline Nastaliq line so Urdu is visible pre-toggle.
 - **Trust chips (keep, small edits):** `PNC-registered nurses` · `Pay after the shift` · `No advance` (not "0 advance" — "No" reads warmer than a digit) · `First day free` · `Day or night` · `ہم اردو بولتے ہیں — We speak Urdu`.
 - **The phone number appears as TEXT:** "Or call **0328-8489988** — 24/7" directly under the form button (tel: linked). Buttons alone hide the number; this audience writes numbers down, reads them out to spouses, and trusts a visible number more than a button. The number-as-text also survives screenshots.
@@ -199,8 +208,8 @@ The deepest fear, answered with the product's #1 feature: **you meet the caregiv
 ### 7.5 Services (budget: ~2.5 screens)
 
 - Two tiers, plainly split: **Qualified Nurse (PNC-registered, clinical)** vs **Attendant (trained, non-clinical)** — with the one-line "what's the difference" right there, because it's a real question (and keep it in FAQ too).
-- Chips with Urdu labels that deep-link to WhatsApp with a pre-filled Roman-Urdu message (keep — this is the site's second-best conversion device).
-- **Max 6 chips visible**; the rest behind the existing "All services" disclosure. Post-op, Elderly, Night Duty, Mother & Baby, Dementia, Palliative earn the visible slots (highest-intent needs).
+- Bilingual rows that deep-link to WhatsApp with a pre-filled Roman-Urdu message (keep — this is the site's second-best conversion device). As built: six full-width care rows — Post-op, Elderly, Injection & Drip, Physiotherapy, Mother & Baby, Long-term Care — replacing the older chip grid and its "All services" disclosure.
+- **Six is the ceiling**, and each row now has a service page behind it. Two consequences: every row should link to its page as well as to WhatsApp (§13 item 12), and **each row's one-line description must not out-promise the page beneath it** — the Mother & Baby row currently does, against Ledger #18.
 - The honest helper line stays: "Not sure which one fits? WhatsApp us — we'll tell you honestly whether you need a nurse or an attendant." (This sentence *is* the brand.)
 
 ### 7.6 Testimonials (budget: ~1.5 screens) — NEW section; build the pipeline first (§8)
@@ -217,7 +226,7 @@ The deepest fear, answered with the product's #1 feature: **you meet the caregiv
 - Add three high-intent Q&As:
   1. **"How fast can care start?"** — "Within 24 hours of your call, often sooner." (Finalized.)
   2. **"What if we're not comfortable with the caregiver?"** — the full replacement promise (upgraded 2026-07-02): "Tell us — we replace the caregiver, free, until you're fully satisfied. You've paid nothing in advance, so you're never stuck."
-  3. **"I live abroad — can I arrange care for my parents in Lahore?"** — yes, over WhatsApp; card before the shift; updates on WhatsApp; family in Lahore pays after the shift (or state the actual mechanism).
+  3. **"I live abroad — can I arrange care for my parents in Lahore?"** — yes, over WhatsApp; card before the shift; updates on WhatsApp; payment in Pakistan or in the US, settled on the first call (Ledger #19). The full answer now has its own page, `/care-from-abroad`; the FAQ stays short and links to it.
 - All FAQ content emits `FAQPage` JSON-LD (§9).
 
 ### 7.8 Founder note (budget: ~1.5 screens)
@@ -238,9 +247,9 @@ The grandmother story is the single most credible paragraph on the site — it's
 - **Sticky mobile bar** (Call / WhatsApp / Get a call, ≥56px, safe-area inset): the most important 76 pixels on the site. Never hidden, never redesigned casually. `pb-20` on the body so it never covers content.
 - **Header:** slim; logo + tagline, phone number (desktop), اردو toggle ≥56px.
 
-### `/book/confirm` — the neglected emotional peak
+### `/book/confirm` — the emotional peak (built 2026-08-21)
 
-The moment after someone hands us their number is the moment of maximum vulnerability ("did that go anywhere? was that stupid?"). Spec:
+The moment after someone hands us their number is the moment of maximum vulnerability ("did that go anywhere? was that stupid?"). The spec below is what the page now does — keep it that way:
 - Big calm confirmation: "Done. A real person will call you back — usually within 15 minutes." + their name echoed ("Shukriya, Ahmed sahib.") + Urdu line.
 - What happens next, in 3 tiny steps (we call → we listen → we send the caregiver's card on WhatsApp before the visit).
 - "Can't wait? Call us now: 0328-8489988" + WhatsApp button.
@@ -282,26 +291,36 @@ For "nurse near me / home care Lahore" queries, the local pack outranks every we
 - **Review drip:** ask every satisfied family for a Google review (same WhatsApp ask as testimonials — one message, two asks max). Target a steady trickle (1–2/week), never a burst. Respond to every review, warmly, in the reviewer's language.
 - Seed the Q&A section with the top 5 FAQ (anyone can ask; the owner can answer).
 
-### 9.2 Keyword map (from live research)
+### 9.2 Keyword map
+
+**The full, current map lives in `docs/keyword-map.md`** (shipped 2026-08-21) — one row per page: primary phrase, secondary terms, the Roman Urdu variant, and what that page must **not** target. It is the register that keeps two pages from competing, and it is the first thing to read before adding or retitling a page. The clusters below are the shape of it; the file is the detail.
 
 | Intent cluster | Terms | Landing page |
 |---|---|---|
-| Nursing head terms | home nursing services Lahore · nurse for home Lahore · 24 hour home nursing Lahore · nurse for patient at home | `/services/qualified-nurse` (+ home) |
-| Attendant terms | patient attendant Lahore · attendant for patient · female/lady attendant Lahore | `/services/attendant` |
-| Elder care | elderly care at home Lahore · old age care Lahore | `/services/qualified-nurse` + home |
-| **Roman Urdu gap (low competition — our edge)** | ghar par nurse · attendant chahiye Lahore · bemar ke liye attendant · ghar pe nurse chahiye | Woven *naturally* into home FAQ + services copy (a heading like "Ghar par nurse chahiye? — need a nurse at home?") — not doorway pages |
+| Head terms | home nurse Lahore · nurse at home Lahore · home nursing service Lahore | `/` — owns these outright |
+| Which one do I need | difference between a nurse and an attendant | `/services` + `/guides/nurse-or-attendant` |
+| The two tiers | qualified/PNC nurse at home · patient attendant, *attendant chahiye* | `/services/qualified-nurse` · `/services/attendant` |
+| Single visit | drip at home Lahore · injection at home Lahore | `/services/injection-drip` |
+| Situations | post-operative · elderly · long-term/bedridden · postnatal (the mother) | the matching `/services/…` page, one each |
+| Who comes | female nurse at home · male nurse at home | `/services/female-nurse` · `/services/male-nurse` |
+| Physiotherapy | physiotherapy at home Lahore | `/services/physiotherapy` — "we arrange", never "we employ" (Ledger #15) |
+| Cost | home nurse charges Lahore · nurse rate Lahore · *nurse ka kharcha* | `/charges` — never a published figure (Ledger #9) |
+| **Roman Urdu gap (low competition — our edge)** | ghar par nurse · attendant chahiye Lahore · bemar ke liye attendant | Woven *naturally* into every page's headings and FAQ — never doorway pages |
 | Near-me | nurse near me · home care near me | GBP (local pack), not the website |
-| Overseas | home care for parents in Lahore/Pakistan (searched from abroad) | Home §7.7 FAQ + `/about` |
+| Area | home nurse in DHA / Gulberg / Johar Town | `/areas/<slug>` — three only, and no hospital name in a title, H1 or meta (Ledger #21) |
+| Overseas | home care for parents in Lahore from the UK/USA/UAE/Canada | `/care-from-abroad` |
 
 ### 9.3 On-page mechanics
 
-- One `<h1>` per page containing the service + city ("nurse or attendant at home in Lahore" — §7.1 fixes this for home).
+- **Exactly one `<h1>` per page**, containing the service + city. Five pages shipped with none — each opened on an `<h2>` inside `.sec-head`. That class now styles `h1` identically, so the correct tag costs nothing visually; there is no reason for a page to lack one.
 - Title/meta per page, written like a calm classified ad, no price amounts ("Home nursing in Lahore — exact price on the first call, pay after the shift. A real person answers 24/7.") — the meta description is ad copy for the fearful, not keyword soup.
-- JSON-LD: `LocalBusiness` (subtype `MedicalBusiness`/`HomeHealthCareService`) with name, phone, **the DHA office address**, area served, hours (no `priceRange` — prices are not public as of 2026-07-02); `FAQPage` on home; keep it in sync with visible content only.
-- `sitemap.ts`/`robots.ts` already exist — keep; noindex or remove non-live city pages.
-- Internal links: footer → satellites; satellites → home form. (The recent footer-links commit had the right idea; make sure every linked page passes the "mini conversion page" bar.)
+- JSON-LD: `LocalBusiness` (subtype `MedicalBusiness`/`HomeHealthCareService`) with name, phone, **the DHA office address**, area served, hours (no `priceRange` — prices are not public as of 2026-07-02); `FAQPage` on home and on every satellite that carries an FAQ; `BreadcrumbList` everywhere below the root; keep all of it in sync with visible content only. Every block is built from `lib/schema.ts` so the business identity is byte-identical site-wide.
+- **Breadcrumbs: visible trail and `BreadcrumbList` from the same array.** Both are fed one `Crumb[]`, so they cannot disagree — a mismatch between markup and what the page shows is worse than having neither. `Crumb.nameUr` is required: while it was optional, three area pages rendered English inside the Urdu layer and nothing looked broken.
+- **The sitemap derives itself from the filesystem.** It was a hand-kept array and had silently dropped four shipped pages; a page Google is never told about earns nothing. Never re-hardcode it. `robots.ts` stays; non-live city pages stay noindexed and out of the sitemap.
+- **One OG card per page**, all generated from `lib/og.tsx` — WhatsApp forwarding is this business's main channel, and an identical preview for every link teaches the recipient nothing. **The cards are English only**: the edge renderer has no Nastaliq face, so Urdu there renders as tofu or in a font that sets it badly. Urdu belongs on the page.
+- Internal links: footer + hubs → satellites; satellites → home form. Every linked page must pass the "mini conversion page" bar. **Currently behind:** several 2026-08-21 pages have no hub linking to them (§6, §13 item 12).
 - Images: descriptive alt text with real names where consented ("Nurse Ayesha Saleem's verified Sehat Connect ID card").
-- **Content later, only when real:** one honest guide per month max ("What a night attendant actually does", "Bringing a parent home after the ICU: a Lahore checklist"). Written from real ops experience, in the site's plain voice. Zero AI-filler pages; thin content damages the exact trust we're building.
+- **Content only when real:** one honest guide per month max, at **`/guides/<slug>`** — never `/blog/`, which signals volume publishing and invites exactly the thin filler that would damage the trust the rest of the site is built on. Written from real ops experience, in the site's plain voice, declared in `lib/guides.ts` first. Zero AI-filler pages.
 
 ### 9.4 Where this audience actually is: Facebook + WhatsApp
 
@@ -337,7 +356,7 @@ Hard budgets, verified on every significant change (Lighthouse mobile / real mid
 | Same-caregiver continuity | **BUILD (ops, no customer tech)** | Retention + the "request same nurse" FAQ promise |
 | Female-for-female matching | **BUILD (ops)** | First-class screening criterion (research-confirmed) |
 | Internal ops tool (lead inbox, roster, verification records, templates) | **BUILD** | The only dashboard worth building is for staff |
-| "Living abroad?" content + FAQ | **BUILD (content)** | Real high-value segment, zero tech |
+| ~~"Living abroad?" content + FAQ~~ | **BUILT** (2026-08-21) | `/care-from-abroad` — real high-value segment, zero tech |
 | Founder video (Urdu, 30–45s) | **Phase 2** | Highest-trust medium for this audience |
 | Voice-note testimonials | **Phase 3** | Novel, credible, cheap; after text testimonials exist |
 | Easypaisa/JazzCash | **Later, optional** | Cash-after is itself a trust feature; add e-wallets as convenience, never require upfront |
@@ -363,7 +382,8 @@ Hard budgets, verified on every significant change (Lighthouse mobile / real mid
 Keep it nearly effortless — a weekly 10-minute habit, not a dashboard project:
 
 - **North-star metric: qualified callback requests per week** = form submits + inbound calls + new WhatsApp conversations. (Denominator to watch casually: sessions, from analytics.)
-- Instrument the three actions: form submit (already server-side), `tel:` clicks, `wa.me` clicks — one lightweight analytics tool (Vercel Web Analytics or Plausible; **no GA4**, no cookies banner needed).
+- Instrument the three actions: form submit (already server-side), `tel:` clicks, `wa.me` clicks — one lightweight analytics tool.
+  - **Divergence to settle with the founder (noted 2026-08-21):** this line originally said *Vercel Web Analytics or Plausible; no GA4*. What actually shipped is **GA4** (`lib/analytics.ts`, `components/analytics/`, events `lead_call` / `lead_whatsapp` / `lead_form_submit`), on the reasoning that a Google Ads campaign can only count conversions GA4 reports. It is **completely inert until `NEXT_PUBLIC_GA4_ID` is set**, which it is not, so nothing is being collected and nothing is committed. Two things follow either way: analytics never gates or breaks a lead action, and it never fires on submit *intent* — only once the server confirms the lead. If GA4 stands, this bullet gets rewritten and the cookie/consent question answered before the ID is set; if it does not, the module comes out. Decide it, date it in the ledger, fold it in.
 - GBP insights monthly: calls from profile, direction requests, search terms.
 - **Callback integrity.** The printed promise is "usually within 15 minutes" — track the real median for a month. If callbacks genuinely always land inside 15 minutes, the wording may harden to "within 15 minutes"; if not, "usually" stays. The promise text follows reality, never the other way round.
 - **The 58-year-old test** (§4.3) after every major change, and quarterly regardless: 10s comprehension / 30s payment terms / 60s action.
@@ -375,27 +395,30 @@ Keep it nearly effortless — a weekly 10-minute habit, not a dashboard project:
 
 ### Now (weeks 1–2) — truth & foundations
 1. ~~**Domain consolidation** (§9.0): `SITE_URL`, canonicals, sitemap, robots, and JSON-LD all on `mysehatconnect.com`~~ — **done in code (2026-08-21); `mysehatconnect.com` is the final and only host.** Remaining real-world steps: attach the apex domain in DNS with `www` 301'ing to it, and set up care@mysehatconnect.com.
-2. **Hero H1 says the noun + the city** (§7.1); phone number as visible text in hero and footer; ~~"0 advance" → "No advance"~~ (done 2026-07-02); promise line becomes "We call back fast — usually within 15 minutes".
-3. **Google Business Profile** live and complete (§9.1), anchored on the DHA office address. Start the review/testimonial WhatsApp ask on every completed job.
-4. **Founder photo** from Sardar Waseem Ilyas (§8, item 1) — the note itself is final; footer gets the office address + email.
-5. **Page diet:** home to ≤20 phone-screens (§6): 6 FAQ + 6 chips visible, rest collapsed.
-6. ~~Honest cities + contact cleanup~~ — already done (2026-07-01 route consolidation: non-live cities noindexed, `/contact` and `/faq` 301'd into home). Remaining: give `/cities/lahore` the full "areas we serve" content pass.
-7. 404 page + `/book/confirm` upgrade (§7.9 spec).
+2. ~~**Hero H1 says the noun + the city** (§7.1); phone number as visible text in hero and footer; "0 advance" → "No advance"; promise line becomes "We call back fast — usually within 15 minutes"~~ — **all done** ("0 advance" 2026-07-02, the rest 2026-08-21). The H1 reads *"A caring nurse or attendant at home in Lahore. Leave your number — we'll arrange the right person."*, the number sits as text under the form and in the footer, and the callback promise is verbatim from `lib/constants.ts`.
+3. **Google Business Profile** live and complete (§9.1), anchored on the DHA office address. Start the review/testimonial WhatsApp ask on every completed job — ~~the ask itself needs writing~~; the scripts are ready in `docs/review-ask-messages.md` (2026-08-21). **This is now the single highest-value item on the list**, and the one blocking the area pages from earning their reviews.
+4. **Founder photo** from Sardar Waseem Ilyas (§8, item 1) — the note itself is final; ~~footer gets the office address + email~~ (done). The photo is the only pending brand asset.
+5. **Page diet:** home to ≤20 phone-screens (§6). The FAQ half is done (6 visible + a "More questions" disclosure), and the services section was rebuilt as six WhatsApp care rows rather than a chip grid, so the "6 chips + All services" wording in §7.5 describes a section that no longer exists. What remains is the measurement itself: count the screens at 390px and cut. The satellites now hold the depth that made a long home page defensible, so the case for cutting is stronger than it was.
+6. ~~Honest cities + contact cleanup~~ — done (2026-07-01 route consolidation: non-live cities noindexed, `/contact` and `/faq` 301'd into home). **Remaining, and now sharper:** `/cities/lahore` still near-duplicates home. Its job is to become the parent of `/areas/dha`, `/gulberg` and `/johar-town`; if that is not done, 301 it to `/` — a near-duplicate of the home page is worth less than nothing (`docs/keyword-map.md`).
+7. ~~404 page + `/book/confirm` upgrade (§7.9 spec)~~ — **done 2026-08-21.** Both exist; `/book/confirm` echoes the name, gives the three next steps, and offers "save our number".
+8. **Set the Supabase env vars on Vercel.** Leads currently reach a human only through the ntfy channel; nothing is persisted. The lead-capture code is already fail-safe (§11) — this is one dashboard action.
 
 ### Next (months 1–2) — proof & language
-8. **Real caregiver card** replaces the sample (photo + consent + PNC #) — plus the verified-on-date artifact (§7.4).
-9. 3–5 caregiver portraits shot and placed (site + GBP + Facebook).
-10. **First 3 real testimonials** live → §7.6 section mounts.
-11. **Full honest Urdu toggle** — every customer-visible string translated, `lib/constants.ts` as the bilingual source of truth.
-12. Satellite pages content pass to "mini conversion page" standard (§6) + Roman-Urdu phrases woven into FAQ/services (§9.2).
-13. Facebook page + WhatsApp Business profile (§9.4). Receipt "share with family" button (§7.3).
-14. New FAQs: 24-hour start, replacement promise, living-abroad (§7.7 — all decided; just write them).
+9. **Real caregiver card** replaces the sample (photo + consent + PNC #) — plus the verified-on-date artifact (§7.4).
+10. 3–5 caregiver portraits shot and placed (site + GBP + Facebook).
+11. **First 3 real testimonials** live → §7.6 section mounts. The area pages want one review each from that area (§6).
+12. **Internal linking catches up with the ring.** The footer and `/services` still list only the original five service pages; `/areas`, `/guides`, `/care-from-abroad`, `/services/mother-baby-care` and `/services/physiotherapy` have no hub pointing at them. Also retitle `/services` off the head term (`docs/keyword-map.md`). Cheap, and it is what turns 26 pages into one site.
+    - **One copy fix rides with it, and it is not cosmetic:** the home page's Mother & Baby row still reads *"Newborn and postnatal support for new mothers"*, which promises the newborn care Ledger #18 says we do not sell — the service page beneath it refuses that promise explicitly. The home page must be brought to the page's scope, never the reverse. The home care rows also open WhatsApp only; giving each row a link to its service page is the same edit.
+13. **Full honest Urdu toggle** — every customer-visible string translated, `lib/constants.ts` as the bilingual source of truth. The 2026-08-21 satellites all ship `en`/`ur` pairs, so the remaining gap is narrower than it was.
+14. ~~Satellite pages content pass to "mini conversion page" standard (§6) + Roman-Urdu phrases woven in (§9.2)~~ — **done 2026-08-21**: every satellite ends in the form, the number and the payment terms, and carries at least one natural Roman Urdu phrase.
+15. Facebook page + WhatsApp Business profile (§9.4). Receipt "share with family" button (§7.3).
+16. ~~New FAQs: 24-hour start, replacement promise, living-abroad (§7.7)~~ — done (2026-07-02); the living-abroad answer now has a whole page behind it (`/care-from-abroad`).
 
 ### Later (month 3+) — compounding trust
-15. Founder video (Urdu) with tap-to-play.
-16. One real guide per month, only from ops experience.
-17. Voice-note testimonials; mixed review included once volume exists.
-18. Easypaisa/JazzCash as convenience; city expansion pages only when a city is actually live.
+17. Founder video (Urdu) with tap-to-play.
+18. One real guide per month, only from ops experience — three exist (§6); the fourth is due, not overdue. `/guides/verify-pnc-registration` is the strongest candidate and is blocked on someone actually walking the PNC portal and screenshotting it.
+19. Voice-note testimonials; mixed review included once volume exists.
+20. Easypaisa/JazzCash as convenience; city expansion pages only when a city is actually live. A **fourth area page** belongs here too, and only once it passes the swap test with a real review from that area (Ledger #20).
 
 ---
 
@@ -441,5 +464,15 @@ Every previously open question, closed. These are facts the rest of the document
 15. **Physiotherapy stays deliberately vague** (2026-08-21, owner): physiotherapy is listed as a service, but it is **not confirmed in-house — early on it may be delivered by a contractor.** So no surface may claim we employ or directly provide a physiotherapist, and no page may promise rehabilitation, therapy or a structured recovery programme. The existing home-page wording — "Movement, mobility and recovery support at home" — is the **ceiling**, not a starting point. Helping a patient move, walk, change position or get out of bed is ordinary caregiving and may be described as such; calling it therapy is not. Revisit only when physiotherapists are actually employed (honesty rule, §3).
 
 16. **ICU scope is step-down only** (2026-08-21, owner): we take patients **home after ICU/HDU** and say so, but we do **not** offer ventilator or tracheostomy care. Competitors lead with those; we do not have the nurses or equipment, so no page may imply we do. Revisit only if that changes.
+
+17. **Male nurses are on the roster** (2026-08-21, owner): male PNC-registered nurses are available, not only female ones, so `/services/male-nurse` describes a real service rather than an aspiration. **Gender changes who walks into the house and whether the family is comfortable — never the clinical scope, the registration, the verification or the price**, and both gender pages must say so plainly. The two pages answer different questions on purpose: the male page is about physical handling, an older man's dignity and night duty; the female page is about modesty, the female patient, and how to make the request. If they ever converge they are one page competing with itself (`docs/keyword-map.md` rule 1).
+
+18. **Mother & baby means the mother** (2026-08-21, owner): the service is care for the **mother after delivery** — C-section wound care and dressing, vitals, prescribed medicines, injections and drips on the doctor's prescription (nurse work) — plus **traditional postnatal support** so she can rest: her meals, hygiene, help moving around the house, company, overnight duty (attendant work). **Day-to-day newborn care is not confirmed and is therefore not sold.** No surface may promise baby, newborn or neonatal care or imply a caregiver will look after the infant; "baby care nurse Lahore" is deliberately not targeted. A family expecting a baby nurse and receiving a maternal attendant is the mismatch that destroys trust on day one, so the page refuses it once, plainly, in the FAQ. Maternal health is high-stakes YMYL: no breastfeeding advice, no guidance on bleeding, pain or resuming anything, no warning-signs list, no recovery timeline — every clinical worry routes back to the doctor who looked after the delivery.
+
+19. **Paying from abroad — two options, settled on the call** (2026-08-21, owner): an overseas family can pay **in Pakistan** (someone in Lahore pays after the shift) **or in the United States**. Which of the two suits them is settled on the first call, before care starts. **No payment rail is ever named on the site** — no bank, no Wise, Zelle, Remitly or PayPal, no IBAN, no account number — because none is confirmed, and naming one that later turns out wrong reads as a scam to precisely the reader who is most alert to one (§4 law 6). What does not change, wherever the money comes from: no advance, pay after the shift, first day free.
+
+20. **Area pages stop at three** (2026-08-21, owner): DHA, Gulberg and Johar Town, held in `AREAS` in `lib/areas.ts`. Seven near-identical pages for one city is the doorway pattern Google discounts, and they would cannibalise each other and `/cities/lahore` for the same terms. **The swap test is the bar: if two area pages could exchange names and still read correctly, they are not done.** A fourth is earned — by having something true only of that area to say, ideally a real review from a family there — not added because the area exists. Model Town, Cantt, Bahria Town and Wapda Town are deliberately unbuilt, not forgotten. Why area pages matter at all here: map-pack rank falls off with distance from the office, and the office sits in DHA Phase 8 on the city's eastern edge, so for Gulberg and Johar Town proximity works against us and an area page plus reviews naming that area are the levers we actually have.
+
+21. **Hospitals are context, never affiliation** (2026-08-21, owner): real Lahore hospital names may appear on the site **only as a factual statement about where our patients come from** — "families call us after discharge from…". We have no relationship with any of them. No page may imply partnership, affiliation, referral or endorsement, and **no hospital name goes in a title, an H1 or a meta description**, where it would read as a claim rather than as context and invite a complaint we would deserve. Names must be verified real ones; never invent one to fill an area page.
 
 **Standing rule:** this document never carries open questions. When a new one appears, it gets decided with the founder, recorded here with the date, and folded into the body.
