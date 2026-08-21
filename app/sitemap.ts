@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { LIVE_CITIES, SITE_URL } from "@/lib/constants";
 import { GUIDES } from "@/lib/guides";
+import { LIVE_AREAS } from "@/lib/areas";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE_URL;
@@ -15,6 +16,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.6,
+  }));
+
+  const areaPages: MetadataRoute.Sitemap = LIVE_AREAS.map((a) => ({
+    url: `${base}/areas/${a.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
   }));
 
   const cityPages: MetadataRoute.Sitemap = LIVE_CITIES.map((city) => ({
@@ -92,6 +100,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     ...guidePages,
+    {
+      url: `${base}/areas`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    ...areaPages,
     ...cityPages,
     {
       url: `${base}/about`,
