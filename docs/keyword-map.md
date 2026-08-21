@@ -18,9 +18,13 @@ Three pages currently target the same head term:
 
 | Page | Current title |
 |---|---|
-| `/` | Sehat Connect \| **Home Nursing Service in Lahore** \| Nurse at Home |
-| `/services` | **Home Nursing Services in Lahore** \| Nurse & Attendant |
+| `/` | Sehat Connect \| **Home Nursing Service in Lahore** |
+| `/services` | **Home Nursing in Lahore** \| Nurse & Attendant |
 | `/cities/lahore` | **Nurse or Attendant at Home in Lahore** |
+
+*(Titles were shortened 2026-08-21 so they stop truncating in search results — every
+page is now under 60 characters. That fixed the length problem, not the overlap
+problem: all three still lead on the same head term.)*
 
 Their meta descriptions are near-identical too — all three lead with "nurses and
 attendants at home in Lahore". And because **Lahore is the only live city**,
