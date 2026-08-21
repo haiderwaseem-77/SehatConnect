@@ -50,7 +50,7 @@ const PATH = "/guides/elderly-care-at-home";
 const HEADLINE = "Elderly care at home in Lahore: what to expect";
 
 const DESCRIPTION =
-  "What to expect when elderly care starts at home in Lahore: the first day, how long a parent takes to accept help, what an attendant does and does not do, why nights are hardest, and arranging care from abroad.";
+  "What to expect when elderly care starts at home in Lahore: the first day, how long a parent takes to accept help, and why the nights are hardest.";
 
 export const metadata: Metadata = {
   title: "Elderly Care at Home: What to Expect",

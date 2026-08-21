@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   // repeat the brand here.
   title: "Post-Operative Care at Home in Lahore",
   description:
-    "Post-operative care at home in Lahore: a PNC-registered nurse for wound dressing, medicines, drips and monitoring after surgery. Care can start within 24 hours of your call.",
+    "Post-operative care at home in Lahore: a PNC-registered nurse for wound dressing, medicines and monitoring. Care can start within 24 hours of your call.",
   alternates: { canonical: `${SITE_URL}/services/post-operative-care` },
 };
 

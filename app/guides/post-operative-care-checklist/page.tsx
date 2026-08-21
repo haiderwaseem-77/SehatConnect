@@ -56,12 +56,12 @@ const PATH = "/guides/post-operative-care-checklist";
 const HEADLINE =
   "Bringing someone home after surgery: a post-operative care checklist";
 const DESCRIPTION =
-  "A plain post-operative care checklist for families in Lahore: what to ask before you leave the hospital, how to set the room up, how to plan the first nights, and how to keep the paperwork straight. Preparation only — the medical side stays with your surgeon.";
+  "A post-operative care checklist for families in Lahore: what to ask before discharge, how to set the room up, and how to plan the first nights at home.";
 
 export const metadata: Metadata = {
   // The root layout appends "| Sehat Connect" via its title template — do not
   // repeat the brand here.
-  title: "Post-Operative Care Checklist — Coming Home After Surgery",
+  title: "Post-Operative Care Checklist for Families",
   description: DESCRIPTION,
   alternates: { canonical: `${SITE_URL}${PATH}` },
 };

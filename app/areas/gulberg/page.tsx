@@ -59,7 +59,7 @@ const [HOSPITAL_A, HOSPITAL_B, HOSPITAL_C] = AREA.hospitals;
 export const metadata: Metadata = {
   title: "Home Nurse in Gulberg, Lahore | Day & Night",
   description:
-    "Nurses and attendants at home in Gulberg, Lahore — night shifts so the family can sleep, and long-running daily care for an elderly parent at home. Same caregiver on request. First day free, no advance.",
+    "Nurses and attendants at home in Gulberg, Lahore: night shifts so the family can sleep, and daily care for an elderly parent. Same caregiver on request.",
   alternates: { canonical: `${SITE_URL}/areas/${AREA.slug}` },
 };
 

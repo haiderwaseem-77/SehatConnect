@@ -68,10 +68,10 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 const PATH = "/care-from-abroad";
 
 const DESCRIPTION =
-  "Arranging a nurse or attendant for your parents in Lahore from abroad. Set up by phone and WhatsApp from the UK, USA, UAE or Canada — verified caregivers, first day free, no advance, pay after the shift.";
+  "Arranging a nurse or attendant for your parents in Lahore from the UK, USA, UAE or Canada. Set up by phone and WhatsApp. No advance. Pay after the shift.";
 
 export const metadata: Metadata = {
-  title: "Nurse for Parents in Lahore, Arranged From Abroad",
+  title: "Nurse for Parents in Lahore, From Abroad",
   description: DESCRIPTION,
   alternates: { canonical: `${SITE_URL}${PATH}` },
 };

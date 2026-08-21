@@ -49,9 +49,9 @@ import { waLink, serviceWaMsg } from "@/lib/wa";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Injection & Drip at Home in Lahore | Nurse Visit",
+  title: "Injection & Drip at Home in Lahore",
   description:
-    "A PNC-registered nurse comes home in Lahore for an injection, an IV drip or a dressing — a single visit, no 12-hour commitment. On the doctor's prescription. Call and a real person answers.",
+    "A PNC-registered nurse comes to your home in Lahore for an injection, an IV drip or a dressing. A single visit, on the doctor's prescription.",
   alternates: { canonical: `${SITE_URL}/services/injection-drip` },
 };
 

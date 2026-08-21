@@ -10,7 +10,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { breadcrumbList } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Areas We Serve in Lahore | Nurse & Attendant at Home",
+  title: "Areas We Serve in Lahore | Nurse at Home",
   description:
     "We send nurses and attendants across Lahore, including DHA, Gulberg and Johar Town. Call or leave your number and a real person calls you back.",
   alternates: { canonical: `${SITE_URL}/areas` },

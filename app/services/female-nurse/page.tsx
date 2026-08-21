@@ -54,9 +54,9 @@ import { waLink, serviceWaMsg } from "@/lib/wa";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Female Nurse at Home in Lahore | Female-for-Female on Request",
+  title: "Female Nurse at Home in Lahore | Lady Nurse",
   description:
-    "Caring for a mother, wife or elderly relative at home in Lahore? Ask for a female nurse and you never have to explain why. Female-for-female whenever you ask, privacy during bathing and hygiene care, PNC-registered and police-verified.",
+    "A female nurse at home in Lahore for your mother, wife or elderly relative. Female-for-female whenever you ask, privacy during bathing and hygiene care.",
   alternates: { canonical: `${SITE_URL}/services/female-nurse` },
 };
 

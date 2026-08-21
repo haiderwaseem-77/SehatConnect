@@ -8,9 +8,9 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { breadcrumbList } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Request a Free Call Back | Home Nursing in Lahore",
+  title: "Request a Free Call Back | Nurse in Lahore",
   description:
-    "Leave your name and phone number. A real person from Sehat Connect calls back to arrange the right nurse or attendant at home in Lahore. No payment now, no advance.",
+    "Leave your name and phone number. A real person calls back to arrange a nurse or attendant at home in Lahore. No advance. Pay after the shift.",
   alternates: { canonical: `${SITE_URL}/book` },
 };
 

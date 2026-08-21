@@ -47,8 +47,8 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   return {
     title: { absolute: `Nurse or Attendant at Home in ${cityName} | Sehat Connect` },
     description: isLive
-      ? `Nurses and attendants at home in ${cityName}. PNC-registered nurses; every caregiver is CNIC checked, references called, police-verified. First day free. No advance. Call ${CONTACT_PHONE_DISPLAY}.`
-      : `Sehat Connect is coming to ${cityName} soon with nurses and attendants at home. Leave your name and number and we'll call you the day we go live. Call ${CONTACT_PHONE_DISPLAY}.`,
+      ? `Nurses and attendants at home in ${cityName}. Every caregiver is CNIC checked, references called, police-verified. First day free. Call ${CONTACT_PHONE_DISPLAY}.`
+      : `Sehat Connect is coming to ${cityName} soon with nurses and attendants at home. Leave your number and we call you the day we go live. Call ${CONTACT_PHONE_DISPLAY}.`,
     alternates: { canonical },
     // Not-yet-live cities are thin content — keep them out of the index but let
     // link equity flow. Live cities (Lahore) stay fully indexable.

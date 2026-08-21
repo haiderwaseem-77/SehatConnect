@@ -12,7 +12,7 @@ import { breadcrumbList } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Guides for Families Arranging Care at Home",
   description:
-    "Plain guides for families arranging nursing care at home in Lahore: choosing between a nurse and an attendant, bringing someone home after surgery, and what elderly care actually involves.",
+    "Plain guides for families arranging care at home in Lahore: choosing between a nurse and an attendant, coming home after surgery, and elderly care.",
   alternates: { canonical: `${SITE_URL}/guides` },
 };
 

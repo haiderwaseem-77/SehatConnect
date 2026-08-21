@@ -41,7 +41,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Elderly Care at Home in Lahore",
   description:
-    "Elderly care at home in Lahore — attendants for daily support, PNC-registered nurses for medical care. Day, night or round-the-clock (two caregivers, two shifts). First day free, no advance, pay after the shift.",
+    "Elderly care at home in Lahore: attendants for daily support, PNC-registered nurses for medical care. Day, night or round-the-clock on two shifts.",
   alternates: { canonical: `${SITE_URL}/services/elderly-care` },
 };
 

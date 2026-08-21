@@ -54,7 +54,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Physiotherapy at Home in Lahore",
   description:
-    "Physiotherapy at home in Lahore: we arrange a physiotherapist to visit your home, on your doctor's referral or your family's request. Our own nurses and attendants help with day-to-day moving, walking and repositioning on a 12-hour shift. Call or WhatsApp — we call back fast, usually within 15 minutes.",
+    "Physiotherapy at home in Lahore: we arrange a physiotherapist to visit, on your doctor's referral or your family's request. Call and a real person answers.",
   alternates: { canonical: `${SITE_URL}/services/physiotherapy` },
 };
 

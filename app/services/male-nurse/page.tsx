@@ -56,9 +56,9 @@ import { waLink, serviceWaMsg } from "@/lib/wa";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Male Nurse at Home in Lahore | Lifting, Personal Care & Night Duty",
+  title: "Male Nurse at Home in Lahore | Night Duty",
   description:
-    "A male PNC-registered nurse at home in Lahore for a father, husband or brother who has to be lifted, turned or helped to the bathroom — plus dressings, injections and night duty. Ask for a man and nobody asks why.",
+    "A male nurse at home in Lahore for a father, husband or brother who needs lifting, turning or help to the bathroom, plus dressings and night duty.",
   alternates: { canonical: `${SITE_URL}/services/male-nurse` },
 };
 

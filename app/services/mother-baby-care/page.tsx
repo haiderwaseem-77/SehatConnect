@@ -77,9 +77,9 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   // The root layout appends "| Sehat Connect" via its title template.
-  title: "Postnatal Care at Home in Lahore — Care After Delivery",
+  title: "Postnatal Care at Home in Lahore",
   description:
-    "Postnatal care at home in Lahore for the mother after delivery: a PNC-registered nurse for C-section dressing, prescribed medicines and monitoring, or an attendant so she can rest. Female caregiver on request. Care can start within 24 hours of your call.",
+    "Postnatal care at home in Lahore for the mother after delivery: a nurse for C-section dressing and prescribed medicines, or an attendant so she can rest.",
   alternates: { canonical: `${SITE_URL}/services/mother-baby-care` },
 };
 

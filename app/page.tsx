@@ -14,7 +14,7 @@ import { CONTACT_PHONE_TEL, CONTACT_EMAIL, SITE_URL, OFFICE_POSTAL_ADDRESS } fro
 import { businessSameAs } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Sehat Connect | Home Nursing Service in Lahore | Nurse at Home",
+  title: "Sehat Connect | Home Nursing Service in Lahore",
   description:
     "Qualified nurses and attendants at home in Lahore, 24/7. First day free, no advance, pay after the shift. CNIC checked, references called, police-verified.",
   alternates: { canonical: SITE_URL },

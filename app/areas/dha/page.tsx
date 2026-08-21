@@ -56,7 +56,7 @@ const [HOSPITAL_A, HOSPITAL_B] = AREA.hospitals;
 export const metadata: Metadata = {
   title: "Home Nurse & Attendant in DHA, Lahore",
   description:
-    "Our office is in DHA Phase 8, so DHA is the part of Lahore we are closest to. PNC-registered nurses for a single visit or a 12-hour shift, and trained attendants. First day free, no advance.",
+    "Nurses and attendants at home in DHA, Lahore, the area our Phase 8 office sits in. A single nurse visit or a 12-hour shift. First day free.",
   alternates: { canonical: `${SITE_URL}/areas/${AREA.slug}` },
 };
 

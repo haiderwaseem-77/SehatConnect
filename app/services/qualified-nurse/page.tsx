@@ -9,7 +9,7 @@ import {
 } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Qualified Home Nurse in Lahore | PNC Registered",
+  title: "Qualified PNC Nurse at Home in Lahore",
   description:
     "Qualified nurses at home in Lahore for injections, drips, wound care and post-surgery care. First day free, no advance — pay after the 12-hour shift.",
   alternates: { canonical: `${SITE_URL}/services/qualified-nurse` },

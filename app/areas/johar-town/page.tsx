@@ -56,9 +56,9 @@ const AREA = areaBySlug("johar-town")!;
 const [HOSPITAL_A, HOSPITAL_B, HOSPITAL_C] = AREA.hospitals;
 
 export const metadata: Metadata = {
-  title: "Home Nurse in Johar Town, Lahore | Post-Op Care",
+  title: "Home Nurse in Johar Town, Lahore",
   description:
-    "Nurse or attendant at home in Johar Town, Lahore for the days after a hospital discharge — dressings, drips, medicines on time, help getting out of bed. Care can start within 24 hours of your call.",
+    "A nurse or attendant at home in Johar Town, Lahore for the days after discharge: dressings, drips, medicines on time, help getting out of bed.",
   alternates: { canonical: `${SITE_URL}/areas/${AREA.slug}` },
 };
 

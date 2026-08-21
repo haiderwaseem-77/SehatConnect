@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = {
   title: "Patient Attendant at Home in Lahore",
   description:
-    "Trained male or female patient attendants at home in Lahore for elderly care, personal hygiene, companionship and overnight duty. First day free, no advance — pay after the shift.",
+    "Trained male and female patient attendants at home in Lahore for elderly care, personal hygiene, companionship and night duty. First day free.",
   alternates: { canonical: `${SITE_URL}/services/attendant` },
 };
 

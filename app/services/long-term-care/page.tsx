@@ -48,7 +48,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Long-term Care at Home in Lahore",
   description:
-    "Long term care at home in Lahore — attendants for the daily care of bedridden, dementia and palliative patients, PNC-registered nurses for clinical tasks. Day, night or round-the-clock (two caregivers, two shifts). First day free, no advance, pay after the shift.",
+    "Long term care at home in Lahore for bedridden, dementia and palliative patients: attendants for daily care, nurses for clinical tasks. Day, night or both.",
   alternates: { canonical: `${SITE_URL}/services/long-term-care` },
 };
 

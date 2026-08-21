@@ -51,7 +51,7 @@ const DAY_SHIFT = SHIFTS.find((s) => s.id === "morning")?.time ?? "";
 const NIGHT_SHIFT = SHIFTS.find((s) => s.id === "night")?.time ?? "";
 
 const META_DESCRIPTION =
-  "The difference between a nurse and an attendant, explained with eight real situations — a dressing after an operation, a daily drip, a bedridden parent, nights with dementia — and a clear answer for each.";
+  "The difference between a nurse and an attendant, explained through eight real situations: a dressing after surgery, a daily drip, nights with dementia.";
 
 export const metadata: Metadata = {
   title: "Difference Between a Nurse and an Attendant",
