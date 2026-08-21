@@ -23,4 +23,4 @@ npm run lint   # linting
 
 ## Deployment
 
-Live at `lucaintel.com` (interim); the canonical domain is **`mysehatconnect.com`** — cutover is roadmap item 1 in `NORTH-STAR.md` §9.0. Deploy recipe lives in the gitignored local `DEPLOY-ACCESS.md`.
+Live at **`https://mysehatconnect.com`** — the final and only domain (non-www apex; `www` 301s to it). Deploy recipe lives in the gitignored local `DEPLOY-ACCESS.md`.

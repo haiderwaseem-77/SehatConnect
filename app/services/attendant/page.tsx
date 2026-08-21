@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServiceDetailPage from "@/components/services/ServiceDetailPage";
+import { breadcrumbList, businessSameAs, OPENING_HOURS } from "@/lib/schema";
 import {
   ATTENDANT_SERVICES,
   SITE_URL,
@@ -28,6 +29,8 @@ const jsonLd = {
     telephone: CONTACT_PHONE_TEL,
     address: OFFICE_POSTAL_ADDRESS,
     areaServed: { "@type": "City", name: "Lahore" },
+    openingHours: OPENING_HOURS,
+    sameAs: businessSameAs(),
   },
   areaServed: { "@type": "City", name: "Lahore" },
   offers: {
@@ -35,6 +38,11 @@ const jsonLd = {
     description: "Exact price told on the first call. Pay after the shift, no advance.",
   },
 };
+
+const breadcrumbs = breadcrumbList([
+  { name: "Services", path: "/services" },
+  { name: "Patient Attendant" },
+]);
 
 const DOES: { en: string; ur: string }[] = [
   { en: "Feeding & meals — help with eating, drinking and timing medicines you hand over", ur: "کھانا — کھانا کھلانا، پانی پلانا، اور آپ کی دی ہوئی دوا وقت پر دینا" },
@@ -196,6 +204,7 @@ export default function AttendantPage() {
       services={ATTENDANT_SERVICES}
       waPrefix="an Attendant for "
       jsonLd={jsonLd}
+      breadcrumbs={breadcrumbs}
       extra={AttendantExtra}
     />
   );

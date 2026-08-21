@@ -11,9 +11,9 @@ import {
   SITE_URL,
   CONTACT_PHONE_TEL,
   CONTACT_EMAIL,
-  WHATSAPP_NUMBER,
   OFFICE_POSTAL_ADDRESS,
 } from "@/lib/constants";
+import { breadcrumbList, businessSameAs } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Home Nursing Services in Lahore | Qualified Nurse & Attendant | Sehat Connect",
@@ -33,7 +33,7 @@ const jsonLd = {
   areaServed: { "@type": "City", name: "Lahore" },
   // priceRange / offers.price intentionally omitted — prices are hidden from
   // all public surfaces as of 2026-07-02 (NORTH-STAR Decision Ledger).
-  sameAs: [`https://wa.me/${WHATSAPP_NUMBER}`],
+  sameAs: businessSameAs(),
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Home care services",
@@ -118,10 +118,13 @@ function Cell({ v }: { v: CellValue }) {
   );
 }
 
+const breadcrumbs = breadcrumbList([{ name: "Services" }]);
+
 export default function ServicesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
       <LandingRoot>
         <Navbar />
         <main className="flex-1">

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "screenshots:live": "node scripts/capture-lucaintel-mobile-screenshots.js"
+    "screenshots:live": "node scripts/capture-live-mobile-screenshots.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.1",

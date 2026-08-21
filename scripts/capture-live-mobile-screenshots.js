@@ -6,6 +6,9 @@ const os = require("os");
 const path = require("path");
 const { spawnSync } = require("child_process");
 
+// mysehatconnect.com is the final and only live host (decided 2026-08-21).
+const LIVE_BASE_URL = "https://mysehatconnect.com";
+
 const ROUTES = [
   ["home", "/"],
   ["services", "/services"],
@@ -26,15 +29,15 @@ function hasOption(args, option) {
 }
 
 function usage() {
-  console.log(`Capture the standard live Lucaintel mobile screenshot pass.
+  console.log(`Capture the standard live Sehat Connect mobile screenshot pass.
 
 Usage:
   npm run screenshots:live
-  npm run screenshots:live -- --out screenshots/lucaintel-YYYY-MM-DD-mobile
+  npm run screenshots:live -- --out screenshots/live-YYYY-MM-DD-mobile
 
 Defaults:
-  target: https://lucaintel.com
-  output: screenshots/lucaintel-<today>-mobile
+  target: ${LIVE_BASE_URL}
+  output: screenshots/live-<today>-mobile
   routes: ${ROUTES.map(([name]) => name).join(", ")}
 
 Additional arguments are passed through to the $mobile-app-screenshots script.
@@ -60,12 +63,15 @@ if (!fs.existsSync(skillScript)) {
 
 const delegatedArgs = [];
 
-if (!hasOption(args, "--base-url") && !hasOption(args, "--lucaintel")) {
-  delegatedArgs.push("--lucaintel");
+// `--live` is this wrapper's shorthand for "shoot the production site"; it is
+// translated into an explicit --base-url so the delegated skill script needs no
+// site-specific flag of its own.
+if (!hasOption(args, "--base-url")) {
+  delegatedArgs.push("--base-url", LIVE_BASE_URL);
 }
 
 if (!hasOption(args, "--out")) {
-  delegatedArgs.push("--out", path.join("screenshots", `lucaintel-${today()}-mobile`));
+  delegatedArgs.push("--out", path.join("screenshots", `live-${today()}-mobile`));
 }
 
 if (!hasOption(args, "--route")) {
@@ -74,7 +80,8 @@ if (!hasOption(args, "--route")) {
   }
 }
 
-delegatedArgs.push(...args);
+// --live is consumed here, not forwarded.
+delegatedArgs.push(...args.filter((arg) => arg !== "--live"));
 
 const result = spawnSync(process.execPath, [skillScript, ...delegatedArgs], {
   cwd: process.cwd(),

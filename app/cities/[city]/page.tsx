@@ -10,10 +10,10 @@ import {
   CONTACT_PHONE_DISPLAY,
   CONTACT_PHONE_TEL,
   CONTACT_EMAIL,
-  WHATSAPP_NUMBER,
   SITE_URL,
   OFFICE_POSTAL_ADDRESS,
 } from "@/lib/constants";
+import { breadcrumbList, businessSameAs } from "@/lib/schema";
 
 export function generateStaticParams() {
   return ["lahore", "karachi", "islamabad", "rawalpindi", "faisalabad"].map(city => ({ city }));
@@ -82,8 +82,15 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         openingHours: "Mo-Su 00:00-23:59",
         // priceRange intentionally omitted — prices are hidden from all public
         // surfaces as of 2026-07-02 (NORTH-STAR Decision Ledger).
-        sameAs: [`https://wa.me/${WHATSAPP_NUMBER}`],
+        sameAs: businessSameAs(),
       }
+    : null;
+
+  const breadcrumbs = isLive
+    ? breadcrumbList([
+        { name: "Areas we serve", path: "/cities" },
+        { name: cityName },
+      ])
     : null;
 
   return (
@@ -92,6 +99,12 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
+      {breadcrumbs && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
         />
       )}
       <LandingRoot>

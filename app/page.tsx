@@ -10,7 +10,8 @@ import HomeFAQ from "@/components/home/HomeFAQ";
 import FounderNote from "@/components/home/FounderNote";
 import TeamSection from "@/components/home/TeamSection";
 import CtaBanner from "@/components/home/CtaBanner";
-import { CONTACT_PHONE_TEL, CONTACT_EMAIL, WHATSAPP_NUMBER, SITE_URL, OFFICE_POSTAL_ADDRESS } from "@/lib/constants";
+import { CONTACT_PHONE_TEL, CONTACT_EMAIL, SITE_URL, OFFICE_POSTAL_ADDRESS } from "@/lib/constants";
+import { businessSameAs } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Sehat Connect | Home Nursing Service in Lahore | Nurse at Home",
@@ -50,7 +51,7 @@ const jsonLd = {
   openingHours: "Mo-Su 00:00-23:59",
   // priceRange intentionally omitted — prices are hidden from all public
   // surfaces as of 2026-07-02 (NORTH-STAR Decision Ledger); see PROMISES.priceOnCall.
-  sameAs: [`https://wa.me/${WHATSAPP_NUMBER}`],
+  sameAs: businessSameAs(),
 };
 
 // FAQPage structured data — must mirror all questions/answers rendered in

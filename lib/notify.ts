@@ -9,17 +9,22 @@
 //
 // Fire-and-forget safe: a notification failure is caught internally and
 // never bubbles up to the caller.
+//
+// Returns TRUE only when ntfy actually accepted the message. Lead capture treats
+// this as an independent delivery channel — if the database write fails, a
+// successful notification is what stops the lead being lost — so the caller has
+// to be able to tell delivery from silence. Never change this back to `void`.
 
 export async function notify(opts: {
   title: string;
   body: string;
   priority?: string;
   tags?: string;
-}): Promise<void> {
+}): Promise<boolean> {
   const topic = process.env.NTFY_TOPIC;
   if (!topic) {
     console.warn("notify: NTFY_TOPIC is not set — skipping notification.");
-    return;
+    return false;
   }
 
   const headers: Record<string, string> = {
@@ -32,12 +37,18 @@ export async function notify(opts: {
   if (token) headers["Authorization"] = `Bearer ${token}`;
 
   try {
-    await fetch(`https://ntfy.sh/${topic}`, {
+    const res = await fetch(`https://ntfy.sh/${topic}`, {
       method: "POST",
       headers,
       body: opts.body,
     });
+    if (!res.ok) {
+      console.error("notify: ntfy rejected the message:", res.status, await res.text());
+      return false;
+    }
+    return true;
   } catch (e) {
     console.error("notify: failed to send ntfy notification:", e);
+    return false;
   }
 }

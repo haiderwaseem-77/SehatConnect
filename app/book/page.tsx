@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import LandingRoot from "@/components/home/LandingRoot";
 import LeadFormD6 from "@/components/home/LeadFormD6";
 import { SITE_URL } from "@/lib/constants";
+import { breadcrumbList } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Request a Free Call Back | Sehat Connect Lahore",
@@ -12,8 +13,15 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/book` },
 };
 
+const breadcrumbs = breadcrumbList([{ name: "Get a call back" }]);
+
 export default function BookPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
     <LandingRoot>
       <Navbar />
       <main className="flex-1">
@@ -48,5 +56,6 @@ export default function BookPage() {
       </main>
       <Footer />
     </LandingRoot>
+    </>
   );
 }

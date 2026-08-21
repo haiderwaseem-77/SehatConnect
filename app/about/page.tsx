@@ -5,6 +5,7 @@ import LandingRoot from "@/components/home/LandingRoot";
 import FounderNote from "@/components/home/FounderNote";
 import CtaBanner from "@/components/home/CtaBanner";
 import { SITE_URL, OFFICE_ADDRESS, CONTACT_PHONE_DISPLAY } from "@/lib/constants";
+import { breadcrumbList } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About Us | Sehat Connect Home Nursing Service Lahore",
@@ -58,8 +59,15 @@ const cardStyle: React.CSSProperties = {
   boxShadow: "var(--shadow-sm)",
 };
 
+const breadcrumbs = breadcrumbList([{ name: "About" }]);
+
 export default function AboutPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
     <LandingRoot>
       <Navbar />
       <main className="flex-1">
@@ -171,5 +179,6 @@ export default function AboutPage() {
       </main>
       <Footer />
     </LandingRoot>
+    </>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServiceDetailPage from "@/components/services/ServiceDetailPage";
+import { breadcrumbList, businessSameAs, OPENING_HOURS } from "@/lib/schema";
 import {
   QUALIFIED_NURSE_SERVICES,
   SITE_URL,
@@ -27,6 +28,8 @@ const jsonLd = {
     telephone: CONTACT_PHONE_TEL,
     address: OFFICE_POSTAL_ADDRESS,
     areaServed: { "@type": "City", name: "Lahore" },
+    openingHours: OPENING_HOURS,
+    sameAs: businessSameAs(),
   },
   areaServed: { "@type": "City", name: "Lahore" },
   offers: {
@@ -35,6 +38,11 @@ const jsonLd = {
   },
   relevantSpecialty: QUALIFIED_NURSE_SERVICES.map((s) => s.label),
 };
+
+const breadcrumbs = breadcrumbList([
+  { name: "Services", path: "/services" },
+  { name: "Qualified Nurse" },
+]);
 
 const CAN_DO: { en: string; ur: string }[] = [
   { en: "Injections & drips — IM/IV injections and IV drips, given on the doctor's prescription", ur: "انجیکشن اور ڈرپ — ڈاکٹر کے نسخے کے مطابق IM/IV انجیکشن اور IV ڈرپ" },
@@ -151,6 +159,7 @@ export default function QualifiedNursePage() {
       }}
       services={QUALIFIED_NURSE_SERVICES}
       jsonLd={jsonLd}
+      breadcrumbs={breadcrumbs}
       extra={NurseExtra}
     />
   );

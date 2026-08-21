@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LandingRoot from "@/components/home/LandingRoot";
 import { CITIES, LIVE_CITIES, SITE_URL } from "@/lib/constants";
+import { breadcrumbList } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: { absolute: "Cities We Serve | Home Nursing in Lahore | Sehat Connect" },
@@ -12,8 +13,15 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/cities` },
 };
 
+const breadcrumbs = breadcrumbList([{ name: "Areas we serve" }]);
+
 export default function CitiesPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
     <LandingRoot>
       <Navbar />
       <main className="flex-1">
@@ -153,5 +161,6 @@ export default function CitiesPage() {
       </main>
       <Footer />
     </LandingRoot>
+    </>
   );
 }

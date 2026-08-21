@@ -1,8 +1,9 @@
-// Canonical domain — used for canonical URLs, sitemap, and JSON-LD.
-// mysehatconnect.com is the final decided domain (NORTH-STAR §9.0), but DNS doesn't
-// point there yet — still testing on lucaintel.com. Flip this the moment DNS/Vercel
-// actually resolves mysehatconnect.com, so canonical/JSON-LD/OG URLs never claim a
-// domain that isn't reachable.
+// Canonical domain — used for canonical URLs, sitemap, robots, and JSON-LD.
+// mysehatconnect.com is the FINAL and ONLY domain (decided 2026-08-21). There is no
+// interim domain and no second host: the non-www apex is canonical, and www must 301
+// to it at the DNS/Vercel layer. Every canonical tag, sitemap entry, JSON-LD `url`,
+// OG URL, and external citation points at this exact string — one host, forever, so
+// no link equity is ever split. Do not add a trailing slash.
 export const SITE_URL = "https://mysehatconnect.com";
 
 // Prices are HIDDEN from every public surface (UI, SEO/JSON-LD, WhatsApp
@@ -109,17 +110,40 @@ export const SHIFTS = [
 export const WHATSAPP_NUMBER = '923288489988';
 export const CONTACT_PHONE_DISPLAY = '0328-8489988';
 export const CONTACT_PHONE_TEL = '+923288489988';
-export const OFFICE_ADDRESS = '442-G, Street 7, Phase 6, DHA, Lahore, Pakistan';
+// Office address — the single NAP (name/address/phone) source of truth.
+// Updated 2026-08-21: supersedes the former Phase 6 address entirely. The old
+// address must not appear anywhere — site, citations, GBP or docs.
+// This exact string is what goes into Google Business Profile and every citation;
+// they must match it character for character or local ranking signals fragment.
+export const OFFICE_ADDRESS = '4th Floor, 26-T, Commercial Area, DHA Phase 8, Lahore, Pakistan';
 export const CONTACT_EMAIL = 'care@mysehatconnect.com';
+
+/**
+ * Social and directory profiles for JSON-LD `sameAs`.
+ *
+ * EMPTY ON PURPOSE. These profiles do not exist yet — creating them is the
+ * "Citations batch 1" task (Facebook, Instagram, LinkedIn, Bing Places, Apple
+ * Business Connect), followed by the Google Business Profile.
+ *
+ * Add each URL here only once the profile is LIVE and shows this exact business
+ * name, address and phone. A `sameAs` entry pointing at a 404 or at a profile
+ * whose NAP disagrees with OFFICE_ADDRESS actively hurts — it tells Google our
+ * identity is inconsistent. One wrong entry is worse than an empty array.
+ */
+export const SOCIAL_PROFILES: string[] = [];
 
 // Structured (schema.org PostalAddress) form of OFFICE_ADDRESS — single source of
 // truth so every JSON-LD block on the site emits an identical, NAP-consistent address.
+// NOTE: postalCode is intentionally omitted. The former value (54920) belonged to
+// the old Phase 6 address and is wrong for Phase 8. Rather than guess a replacement,
+// we ship without it — schema.org treats postalCode as optional, and a WRONG code is
+// far more damaging to NAP consistency than a missing one. Add it here once the real
+// Phase 8 code is confirmed from Google Business Profile.
 export const OFFICE_POSTAL_ADDRESS = {
   "@type": "PostalAddress",
-  streetAddress: "442-G, Street 7, Phase 6, DHA",
+  streetAddress: "4th Floor, 26-T, Commercial Area, DHA Phase 8",
   addressLocality: "Lahore",
   addressRegion: "Punjab",
-  postalCode: "54920",
   addressCountry: "PK",
 } as const;
 

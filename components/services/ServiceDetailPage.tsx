@@ -38,6 +38,8 @@ interface Props {
   /** Prefixed onto each service label in the WhatsApp prefill (e.g. "an Attendant for "). */
   waPrefix?: string;
   jsonLd: object;
+  /** BreadcrumbList JSON-LD, built with breadcrumbList() from lib/schema. */
+  breadcrumbs?: object;
   /** Optional extra section rendered between the grid and the closing CTA. */
   extra?: ReactNode;
 }
@@ -91,6 +93,7 @@ export default function ServiceDetailPage({
   services,
   waPrefix = "",
   jsonLd,
+  breadcrumbs,
   extra,
 }: Props) {
   return (
@@ -99,6 +102,12 @@ export default function ServiceDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {breadcrumbs && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+        />
+      )}
       <LandingRoot>
         <Navbar />
         <main className="flex-1">

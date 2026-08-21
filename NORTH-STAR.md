@@ -231,7 +231,7 @@ The grandmother story is the single most credible paragraph on the site — it's
 ### 7.9 Final CTA + Footer (budget: ~2 screens)
 
 - Final CTA: teal drench, short ("Leave your number. A real person calls you back."), the mirrored mini-form, and the phone number as large text with the Urdu line. Keep.
-- Footer = the trust ledger: number in large type · WhatsApp link · **care@mysehatconnect.com** · hours (24/7) · **Office: 442-G, Street 7, Phase 6, DHA, Lahore** · areas served (named localities — also SEO) · sitemap links to satellites · the verification trust line · © Sehat Connect, Lahore. A real, checkable street address is rare in this category (only 2 competitors show one) — ours goes in the footer, on `/about`, on GBP, and in the JSON-LD.
+- Footer = the trust ledger: number in large type · WhatsApp link · **care@mysehatconnect.com** · hours (24/7) · **Office: 4th Floor, 26-T, Commercial Area, DHA Phase 8, Lahore** · areas served (named localities — also SEO) · sitemap links to satellites · the verification trust line · © Sehat Connect, Lahore. A real, checkable street address is rare in this category (only 2 competitors show one) — ours goes in the footer, on `/about`, on GBP, and in the JSON-LD.
 
 ### Always-on elements
 
@@ -267,17 +267,17 @@ The site's design is ahead of its evidence. The highest-leverage work for the ne
 
 ## 9. SEO & Discovery
 
-### 9.0 The domain (BLOCKING — fix before any SEO work)
+### 9.0 The domain (settled — one host, forever)
 
-**Decided: the canonical domain is `mysehatconnect.com`.** The live site currently sits on `lucaintel.com` — a domain with zero relation to the brand — while parts of the metadata already reference `mysehatconnect.com`. Split identity is both an SEO bug (canonicals pointing at a domain that isn't live) and a trust bug (a suspicious Arranger who checks the URL sees a random name).
+**`https://mysehatconnect.com` is the final and only domain** (decided 2026-08-21). Non-www apex; `www.mysehatconnect.com` 301s to it. There is no interim domain, no second host, and no migration pending — every signal accrues to this one name forever. The site's split identity, which was both an SEO bug (canonicals pointing at a host that wasn't live) and a trust bug (a suspicious Arranger who checks the URL sees a random name), is closed.
 
-**Action:** deploy to `mysehatconnect.com`, 301 `lucaintel.com` (and any other alias) to it, and align `SITE_URL` in `lib/constants.ts` (currently set to lucaintel.com), sitemap, robots, canonicals, and all JSON-LD. Set up **care@mysehatconnect.com** (mail forwarding is enough) at the same time. Do this before building links or GBP, so every signal accrues to one domain forever.
+**What this means in practice:** `SITE_URL` in `lib/constants.ts` is `https://mysehatconnect.com` and never changes; sitemap, robots, canonicals, and every JSON-LD block emit that host and only that host. Any new alias that ever appears 301s to the apex — never the reverse. **care@mysehatconnect.com** is the business email (mail forwarding is enough). Only the DNS/domain attachment and the mailbox remain as real-world setup steps (§13, item 1).
 
 ### 9.1 Google Business Profile — the highest-leverage discovery action, full stop
 
 For "nurse near me / home care Lahore" queries, the local pack outranks every website. Competitors are weak here (the best-funded one is unrated). Playbook:
 
-- Create/claim the profile: category **Home health care service**; name exactly "Sehat Connect"; the real phone; the office address (**442-G, Street 7, Phase 6, DHA, Lahore**) as the location anchor plus Lahore-wide service area; hours 24/7; link to `mysehatconnect.com`.
+- Create/claim the profile: category **Home health care service**; name exactly "Sehat Connect"; the real phone; the office address (**4th Floor, 26-T, Commercial Area, DHA Phase 8, Lahore**) as the location anchor plus Lahore-wide service area; hours 24/7; link to `mysehatconnect.com`.
 - Fill *everything*: services (price told on request — call or WhatsApp for the exact quote; **do not publish prices for now**, per the 2026-07-02 partner decision), description in plain English + Urdu, real photos as they're collected (§8).
 - **Review drip:** ask every satisfied family for a Google review (same WhatsApp ask as testimonials — one message, two asks max). Target a steady trickle (1–2/week), never a burst. Respond to every review, warmly, in the reviewer's language.
 - Seed the Q&A section with the top 5 FAQ (anyone can ask; the owner can answer).
@@ -374,7 +374,7 @@ Keep it nearly effortless — a weekly 10-minute habit, not a dashboard project:
 ## 13. Roadmap
 
 ### Now (weeks 1–2) — truth & foundations
-1. **Domain consolidation** (§9.0): deploy to `mysehatconnect.com`; 301 `lucaintel.com`; fix `SITE_URL`, canonicals, JSON-LD; set up care@mysehatconnect.com.
+1. ~~**Domain consolidation** (§9.0): `SITE_URL`, canonicals, sitemap, robots, and JSON-LD all on `mysehatconnect.com`~~ — **done in code (2026-08-21); `mysehatconnect.com` is the final and only host.** Remaining real-world steps: attach the apex domain in DNS with `www` 301'ing to it, and set up care@mysehatconnect.com.
 2. **Hero H1 says the noun + the city** (§7.1); phone number as visible text in hero and footer; ~~"0 advance" → "No advance"~~ (done 2026-07-02); promise line becomes "We call back fast — usually within 15 minutes".
 3. **Google Business Profile** live and complete (§9.1), anchored on the DHA office address. Start the review/testimonial WhatsApp ask on every completed job.
 4. **Founder photo** from Sardar Waseem Ilyas (§8, item 1) — the note itself is final; footer gets the office address + email.
@@ -422,9 +422,9 @@ A change ships only if **all** pass:
 
 Every previously open question, closed. These are facts the rest of the document builds on:
 
-1. **Canonical domain:** `mysehatconnect.com` — deploy there, 301 `lucaintel.com`.
+1. **Canonical domain:** `mysehatconnect.com` — deploy there, 301 any other alias to it. (Reaffirmed and made absolute 2026-08-21 — see entry 12 below.)
 2. **Founder:** Sardar Waseem Ilyas, publicly named, with photo (photo being arranged — the only pending *asset*, not a pending *decision*).
-3. **Office address:** 442-G, Street 7, Phase 6, DHA, Lahore, Pakistan — shown in the footer, `/about`, GBP, and JSON-LD. (Corrected 2026-07-02; supersedes the original Model Town placeholder used while the real address was pending.)
+3. **Office address:** 442-G, Street 7, Phase 6, DHA, Lahore, Pakistan — shown in the footer, `/about`, GBP, and JSON-LD. (Corrected 2026-07-02; superseded the original Model Town placeholder used while the real address was pending. **Superseded in turn 2026-08-21 — see entry 13 below**; this Phase 6 address is dead and must appear nowhere.)
 4. **Callback promise:** "We call back fast — usually within 15 minutes." The word *usually* stays until ops data proves a bare "within 15 minutes" is always true (§12).
 5. **Care start:** within 24 hours of the call.
 6. **Replacement promise:** full — "tell us after the first shift and we send someone else." (Superseded 2026-07-02 — see entry 11 below.)
@@ -433,5 +433,7 @@ Every previously open question, closed. These are facts the rest of the document
 9. **Prices hidden from public surfaces** (2026-07-02, partner decision, explicitly reversible): Rs 4,000 nurse / Rs 3,000 attendant remain internal facts only — quoted to the family on the first call, before care starts, never published on the site, SEO/JSON-LD, meta descriptions, WhatsApp prefills, or (once live) GBP. The `PRICES` constant stays in `lib/constants.ts`, marked do-not-render, so it can be restored quickly if the partner reverses the call.
 10. **Trial promise adopted** (2026-07-02): "Your first day is free — no cost, no obligation. Continue only if you're happy." Short form "First day free." Canonical phrasing, now in the §3 promises table.
 11. **Replacement promise upgraded** (2026-07-02): "Not comfortable? Tell us — we replace the caregiver, free, until you're fully satisfied." Supersedes the 2026-07-01 phrasing in entry 6 ("tell us after the first shift and we send someone else").
+12. **Domain settled, permanently** (2026-08-21, owner): `https://mysehatconnect.com` is the final and only URL — non-www apex, with `www` 301'd to it. The old `lucaintel.com` host will never be used again; it is not an interim domain, and there is no cutover left to plan. Supersedes the "deploy there, 301 lucaintel" framing in entry 1 — the code already ships this host, so only DNS and the mailbox remain (§9.0, §13 item 1).
+13. **Office address moved** (2026-08-21, owner): **4th Floor, 26-T, Commercial Area, DHA Phase 8, Lahore, Pakistan** — shown in the footer, `/about`, GBP, JSON-LD, and every citation. Supersedes the Phase 6 address in entry 3, which is dead and must appear nowhere. **The postal code is deliberately omitted everywhere:** the old 54920 belonged to Phase 6 and is wrong for Phase 8, and a wrong code damages NAP consistency more than a missing one. The correct code is pending confirmation from the Google Business Profile (§9.1); until it is confirmed, no postal code is published.
 
 **Standing rule:** this document never carries open questions. When a new one appears, it gets decided with the founder, recorded here with the date, and folded into the body.

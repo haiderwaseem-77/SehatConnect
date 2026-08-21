@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sehat Connect · Lahore rank plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3F7F5; --card:#FFFFFF; --ink:#10302B; --ink-2:#2C4A45;
+    --teal:#0E6B5E; --teal-deep:#09493F; --teal-soft:#E2EFEB;
+    --marigold:#E6A41C; --marigold-soft:#FBF0D4; --marigold-deep:#8A5E06;
+    --muted:#5E746F; --line:#D6E1DC; --line-2:#EAF0ED; --red:#B3412E;
+    --t-profile:#0E6B5E; --t-web:#3F6A9A; --t-pages:#7D4F8E; --t-urdu:#2E7D7A; --t-links:#B35E2E; --t-ads:#5B7C2E; --t-measure:#4A5568;
+    --radius:14px;
+    --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+    --body:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+  button,input,textarea{font:inherit;color:inherit}
+  button{cursor:pointer}
+  code{font-family:var(--mono);font-size:.92em;background:var(--line-2);padding:1px 5px;border-radius:4px}
+  :focus-visible{outline:3px solid var(--marigold);outline-offset:2px;border-radius:6px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:18px 16px 80px}
+
+  header{display:grid;gap:14px;margin-bottom:18px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(30px,5.5vw,50px);line-height:.98;letter-spacing:-.02em;margin:4px 0 0}
+  h1 em{font-style:normal;color:var(--teal)}
+  .sub{color:var(--ink-2);max-width:62ch;margin:8px 0 0}
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .btn{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;color:var(--ink-2);display:inline-flex;align-items:center;gap:6px}
+  .btn:hover{border-color:var(--teal);color:var(--teal)}
+  .btn.primary{background:var(--teal);border-color:var(--teal);color:#fff}
+  .btn.primary:hover{background:var(--teal-deep)}
+  .btn.danger:hover{border-color:var(--red);color:var(--red)}
+  .btn[disabled]{opacity:.45;cursor:default}
+  .btn[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+
+  .panels{display:grid;grid-template-columns:1fr;gap:12px}
+  @media (min-width:820px){.panels{grid-template-columns:1.15fr 1.5fr 1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+  .panel h2{font-family:var(--display);font-weight:700;font-size:15px;margin:0 0 10px;letter-spacing:-.01em}
+  .date-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .date-row input[type=date]{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:#fff;font-family:var(--mono);font-size:14px}
+  .now{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:10px}
+  .now strong{color:var(--ink);font-weight:600}
+
+  .pace-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .pace-num{font-family:var(--display);font-weight:800;font-size:44px;line-height:1;letter-spacing:-.03em}
+  .pace-num small{font-size:18px;color:var(--muted);font-weight:500;letter-spacing:0}
+  .counter{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+  .counter button{border:0;background:#fff;width:42px;height:38px;font-size:20px;line-height:1;color:var(--teal)}
+  .counter button:hover{background:var(--teal-soft)}
+  .counter button+button{border-left:1px solid var(--line)}
+  .ladder{position:relative;height:54px;margin:14px 0 4px}
+  .ladder .rail{position:absolute;left:0;right:0;top:24px;height:6px;background:var(--line-2);border-radius:3px}
+  .ladder .fill{position:absolute;left:0;top:24px;height:6px;background:var(--teal);border-radius:3px;transition:width .4s ease}
+  .ladder .expect{position:absolute;top:14px;width:2px;height:26px;background:var(--marigold);border-radius:2px;transform:translateX(-1px);transition:left .4s ease}
+  .ladder .expect::after{content:"pace";position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10px;color:var(--marigold);letter-spacing:.08em;text-transform:uppercase}
+  .ladder .tick{position:absolute;top:40px;font-family:var(--mono);font-size:10px;color:var(--muted);transform:translateX(-50%)}
+  .verdict{font-size:13px;color:var(--ink-2)}
+  .verdict b{font-weight:600}
+  .verdict.ahead b{color:var(--teal)} .verdict.behind b{color:var(--red)}
+  .pace-note{font-size:12px;color:var(--muted);margin-top:8px}
+
+  .overall{display:flex;align-items:center;gap:14px}
+  .ring{--p:0;width:74px;height:74px;border-radius:50%;background:conic-gradient(var(--teal) calc(var(--p)*1%),var(--line-2) 0);display:grid;place-items:center;flex:none}
+  .ring::after{content:attr(data-label);width:56px;height:56px;border-radius:50%;background:#fff;display:grid;place-items:center;font-family:var(--mono);font-weight:600;font-size:14px}
+  .overall p{margin:0;font-size:13px;color:var(--ink-2)}
+  .overall p strong{display:block;font-family:var(--display);font-size:18px;font-weight:700;color:var(--ink)}
+  .trend{display:flex;gap:3px;align-items:flex-end;height:34px;margin-top:10px}
+  .trend i{flex:1;background:var(--teal-soft);border-radius:2px 2px 0 0;min-height:2px}
+  .trend i.has{background:var(--teal)}
+  .trend-cap{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px}
+
+  /* tabs */
+  .tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:20px 0 12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:5px}
+  .tab{border:0;background:transparent;border-radius:10px;padding:10px 12px;text-align:left;display:flex;flex-direction:column;gap:1px}
+  .tab b{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.01em}
+  .tab span{font-size:12px;color:var(--muted)}
+  .tab[aria-selected=true]{background:var(--ink);color:#fff}
+  .tab[aria-selected=true] span{color:rgba(255,255,255,.7)}
+  .tab:hover:not([aria-selected=true]){background:var(--line-2)}
+
+  /* shared task */
+  .task{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid var(--line-2)}
+  .task:last-child{border-bottom:0}
+  .task input[type=checkbox]{width:20px;height:20px;margin-top:2px;accent-color:var(--teal);cursor:pointer}
+  .task .t-title{font-weight:600;font-size:15px;line-height:1.35;cursor:pointer}
+  .task.done .t-title{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+  .task .meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:5px}
+  .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;color:#fff;background:var(--c)}
+  .time,.donedate{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .pin{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--marigold-soft);color:var(--marigold-deep);border:1px solid #EFD089}
+  details{margin-top:6px}
+  summary{list-style:none;font-size:13px;color:var(--teal);font-weight:500;cursor:pointer;display:inline-flex;gap:5px;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"";width:0;height:0;border-left:5px solid currentColor;border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .15s}
+  details[open] summary::before{transform:rotate(90deg)}
+  .detail{font-size:13.5px;color:var(--ink-2);margin:6px 0 0;padding-left:12px;border-left:2px solid var(--line)}
+  .detail ul{margin:4px 0 0;padding-left:18px}
+  .detail li{margin:3px 0}
+  .detail .why{display:block;margin-top:6px;color:var(--muted);font-size:12.5px}
+
+  /* backlog */
+  .bl-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+  .bl-head p{margin:0;font-size:13.5px;color:var(--ink-2);max-width:64ch}
+  .groups{display:grid;gap:12px}
+  .group{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px 6px}
+  @media (min-width:820px){.group{padding:16px 22px 8px}}
+  .g-head{display:flex;align-items:center;gap:12px;padding-bottom:8px;border-bottom:1px solid var(--line-2)}
+  .g-head .mini{--p:0;width:34px;height:34px;border-radius:50%;background:conic-gradient(var(--c) calc(var(--p)*1%),var(--line-2) 0);display:grid;place-items:center;flex:none}
+  .g-head .mini::after{content:"";width:24px;height:24px;border-radius:50%;background:#fff}
+  .g-head.done .mini{background:var(--c)}
+  .g-head.done .mini::after{content:"✓";background:transparent;color:#fff;font-weight:700;font-size:14px}
+  .g-head h2{font-family:var(--display);font-weight:700;font-size:18px;margin:0;letter-spacing:-.01em;line-height:1.1}
+  .g-head .g-sub{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .group.collapsed .task{display:none}
+  .g-toggle{margin-left:auto;border:0;background:transparent;color:var(--muted);font-size:12px;padding:4px 6px}
+  .empty{color:var(--muted);font-size:13px;padding:14px 0}
+
+  /* timeline */
+  .tl-intro{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;font-size:13.5px;color:var(--ink-2)}
+  .tl-intro b{color:var(--ink)}
+  .gated{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px 6px;margin-bottom:12px}
+  @media (min-width:820px){.gated{padding:16px 22px 8px}}
+  .gated h2{font-family:var(--display);font-weight:700;font-size:18px;margin:0;letter-spacing:-.01em}
+  .gated .g-sub{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:4px}
+  .status{font-family:var(--mono);font-size:11px;letter-spacing:.04em;padding:3px 9px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+  .status::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+  .status.ready{background:var(--teal-soft);color:var(--teal-deep)}
+  .status.soon{background:var(--marigold-soft);color:var(--marigold-deep)}
+  .status.locked{background:var(--line-2);color:var(--muted)}
+  .status.finished{background:var(--line-2);color:var(--muted)}
+  .waiting{font-size:12.5px;color:var(--muted);margin-top:4px}
+  .waiting a{color:var(--teal);text-decoration:none;border-bottom:1px dotted var(--teal);cursor:pointer}
+  .task.locked .t-title{color:var(--ink-2)}
+
+  .main{display:grid;grid-template-columns:1fr;gap:14px}
+  @media (min-width:820px){.main{grid-template-columns:220px 1fr;align-items:start}}
+  .rail-wrap{position:sticky;top:0;z-index:5;background:var(--paper);padding:6px 16px 8px;margin:0 -16px}
+  @media (min-width:820px){.rail-wrap{top:12px;margin:0;padding:0;background:transparent}}
+  .weeks{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+  .weeks::-webkit-scrollbar{display:none}
+  @media (min-width:820px){.weeks{flex-direction:column;overflow:visible}}
+  .wk{flex:none;display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px 10px;text-align:left;min-width:132px;position:relative}
+  @media (min-width:820px){.wk{min-width:0}}
+  .wk:hover{border-color:var(--teal)}
+  .wk[aria-current=true]{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+  .wk .mini{--p:0;width:30px;height:30px;border-radius:50%;background:conic-gradient(var(--teal) calc(var(--p)*1%),var(--line-2) 0);display:grid;place-items:center;flex:none}
+  .wk .mini::after{content:"";width:20px;height:20px;border-radius:50%;background:#fff}
+  .wk.done .mini{background:var(--teal)}
+  .wk.done .mini::after{content:"✓";color:#fff;background:transparent;font-size:13px;font-weight:700}
+  .wk .lbl{display:flex;flex-direction:column;line-height:1.15}
+  .wk .lbl b{font-family:var(--mono);font-size:12px;font-weight:600}
+  .wk .lbl span{font-size:11.5px;color:var(--muted);white-space:nowrap}
+  .wk .nowdot{position:absolute;top:-5px;right:-5px;width:12px;height:12px;border-radius:50%;background:var(--marigold);border:2px solid var(--paper)}
+
+  .week{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px 10px}
+  @media (min-width:820px){.week{padding:24px 24px 14px}}
+  .week-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:flex-end;border-bottom:1px solid var(--line-2);padding-bottom:14px;margin-bottom:6px}
+  .week-head .k{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+  .week-head h2{font-family:var(--display);font-weight:800;font-size:clamp(22px,3.6vw,30px);letter-spacing:-.02em;margin:4px 0 0;line-height:1.05}
+  .week-head .range{font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+  .revgoal{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--teal-soft);border-radius:10px;padding:10px 12px;margin:12px 0 4px;font-size:13.5px;color:var(--teal-deep)}
+  .revgoal b{font-family:var(--display);font-size:22px;font-weight:800;line-height:1}
+  .revgoal .st{font-family:var(--mono);font-size:11px}
+  .routine{border:1px dashed var(--line);border-radius:10px;padding:10px 12px;margin:12px 0 4px}
+  .routine h3{margin:0 0 6px;font-size:12px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .routine .r-list{display:flex;flex-wrap:wrap;gap:6px 14px}
+  .routine label{display:inline-flex;align-items:center;gap:7px;font-size:13px;cursor:pointer}
+  .routine input{accent-color:var(--teal);width:16px;height:16px}
+  .quiet{font-size:13px;color:var(--muted);padding:12px 0 4px}
+
+  .checkin{margin-top:14px;border-top:1px solid var(--line);padding-top:14px}
+  .checkin h3{font-family:var(--display);font-size:15px;font-weight:700;margin:0 0 4px}
+  .checkin p{margin:0 0 10px;font-size:12.5px;color:var(--muted)}
+  .ci-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  @media (min-width:620px){.ci-grid{grid-template-columns:repeat(4,1fr)}}
+  .ci{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:#fff}
+  .ci label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .ci input{width:100%;border:0;padding:4px 0 0;font-family:var(--mono);font-size:18px;font-weight:600;background:transparent;outline:none}
+  .ci input::placeholder{color:var(--line)}
+  .ci-note{margin-top:8px}
+  .ci-note textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-height:58px;resize:vertical;font-size:13.5px;background:#fff}
+  .nav-btns{display:flex;justify-content:space-between;gap:8px;margin-top:14px;padding-top:10px;border-top:1px solid var(--line-2)}
+
+  .toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:9px 14px;border-radius:999px;font-size:13px;opacity:0;transition:all .25s;pointer-events:none;z-index:20}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .footnote{font-size:12px;color:var(--muted);margin-top:16px;line-height:1.5}
+  .hidden{display:none!important}
+  .flash{animation:flash 1.2s ease}
+  @keyframes flash{0%{background:var(--marigold-soft)}100%{background:transparent}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <div class="eyebrow">Sehat Connect · mysehatconnect.com · Lahore</div>
+    <h1>Getting to <em>#1 in the map pack around DHA Phase 8</em></h1>
+    <p class="sub">There is no single "#1 in Lahore" number. Map-pack rank is proximity, prominence and reviews — and the Phase 8 office sits on the city's eastern edge, further from Gulberg, Johar Town, Model Town and Bahria Town than it looks. So the target is: <b>#1 in the map pack within about 5 km of the office</b>, <b>top 3 organic city-wide</b>, read off a geo-grid area by area rather than one search from one spot.</p>
+    <p class="sub">Two lists. The <b>backlog</b> is work you can start today, in whatever order and at whatever pace you choose. The <b>timeline</b> holds only the things that depend on the Google profile being live, on data accumulating, or on backlog work being finished.</p>
+  </div>
+  <div class="toolbar">
+    <button class="btn" id="exportBtn">⤓ Export progress</button>
+    <label class="btn" for="importFile">⤒ Import<input type="file" id="importFile" accept="application/json" hidden></label>
+    <button class="btn danger" id="resetBtn">Reset</button>
+  </div>
+</header>
+
+<section class="panels">
+  <div class="panel">
+    <h2>Google profile verified on</h2>
+    <div class="date-row">
+      <input type="date" id="gbpDate" aria-label="Date the Google Business Profile was verified">
+      <button class="btn" id="todayBtn">Verified today</button>
+    </div>
+    <div class="now" id="nowLine">Waiting on verification. The 12-week timeline and the review clock start the day it goes live.</div>
+  </div>
+
+  <div class="panel">
+    <h2>Google reviews · 30 in the first 60 days</h2>
+    <div class="pace-head">
+      <div class="pace-num"><span id="revCount">0</span><small> / 30</small></div>
+      <div class="counter" role="group" aria-label="Adjust review count">
+        <button id="revMinus" aria-label="One fewer review">−</button>
+        <button id="revPlus" aria-label="One more review">+</button>
+      </div>
+    </div>
+    <div class="ladder" aria-hidden="true">
+      <div class="rail"></div><div class="fill" id="paceFill"></div><div class="expect" id="paceExpect"></div>
+      <div class="tick" style="left:0">day 0</div><div class="tick" style="left:25%">15</div><div class="tick" style="left:50%">30</div><div class="tick" style="left:75%">45</div><div class="tick" style="left:100%">60</div>
+    </div>
+    <div class="verdict" id="paceVerdict">Pace shows once the profile is verified.</div>
+    <div class="pace-note">3 to 5 a week. A burst of 20 on a new profile gets filtered. Reviews are the lever that beats distance — they are what wins the far areas from Phase 8.</div>
+  </div>
+
+  <div class="panel">
+    <h2>Overall progress</h2>
+    <div class="overall">
+      <div class="ring" id="overallRing" data-label="0%"></div>
+      <p><strong id="overallCount">0 of 0 tasks</strong><span id="overallSplit"></span></p>
+    </div>
+    <div class="trend" id="trend" aria-label="Website leads per week"></div>
+    <div class="trend-cap">Website leads logged per week</div>
+  </div>
+</section>
+
+<div class="tabs" role="tablist">
+  <button class="tab" role="tab" id="tab-backlog" aria-selected="true"><b>Backlog · do anytime</b><span id="tabBacklogSub"></span></button>
+  <button class="tab" role="tab" id="tab-timeline" aria-selected="false"><b>Timeline · when it's time</b><span id="tabTimelineSub"></span></button>
+</div>
+
+<section id="backlogView"></section>
+
+<section id="timelineView" class="hidden">
+  <div class="tl-intro" id="tlIntro"></div>
+  <div class="gated" id="gated"></div>
+  <div class="main">
+    <div class="rail-wrap"><nav class="weeks" id="weeks" aria-label="Weeks"></nav></div>
+    <article class="week" id="weekView"></article>
+  </div>
+</section>
+
+<p class="footnote">Progress saves in this browser automatically; use Export / Import to move it between devices. Rank checks: run a geo-grid (Local Falcon or similar) for "home nurse Lahore" so you see the map pack area by area, and note the organic position alongside it. One search from one spot only tells you about that spot.</p>
+
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+"use strict";
+
+/* ============================ DATA ============================ */
+const TRACKS = {
+  web:     {name:"Website",          color:"var(--t-web)"},
+  pages:   {name:"Pages",            color:"var(--t-pages)"},
+  urdu:    {name:"Urdu",             color:"var(--t-urdu)"},
+  links:   {name:"Citations & links",color:"var(--t-links)"},
+  ads:     {name:"Ads",              color:"var(--t-ads)"},
+  profile: {name:"Google profile",   color:"var(--t-profile)"},
+  measure: {name:"Measure",          color:"var(--t-measure)"}
+};
+
+/* ---- Backlog: no blockers, your order, your pace ---- */
+const BACKLOG = [
+{ id:"g-web", name:"Website fixes", color:"var(--t-web)", tasks:[
+  {id:"b-form", t:"web", pin:true, time:"30 min", title:"Fix the lead form — set the Supabase env vars on Vercel", d:`The call-back form returns a <b>500 on submit</b> today: <code>NEXT_PUBLIC_SUPABASE_URL</code> and <code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code> are not set on the Vercel project. Set both, set the server-only <code>NTFY_TOPIC</code> as well (never with a <code>NEXT_PUBLIC_</code> prefix), redeploy, then submit a <b>real test lead from a phone</b> and confirm two things: the row appears in Supabase, and the ntfy notification actually reaches the phone that answers leads. A form that saves silently and never rings is still broken.<span class="why">Every other task on this list drives traffic to this form. Until it works, the traffic is spent for nothing.</span>`},
+  {id:"b-leadtrack", t:"measure", time:"30 min", title:"Track leads through to paying customers, not just leads logged", d:`The weekly check-in counts leads. Add one more column wherever you keep them — a sheet, a notebook, a WhatsApp label — for what happened to each: quoted, first day booked, became a paying customer, lost and why. Roll it up every week next to the lead count.<span class="why">Without it, week 12 can show more traffic and more leads and still not tell you whether any money moved.</span>`},
+  {id:"b-canon", t:"web", pin:true, time:"30 min", title:"Point mysehatconnect.com at the site and 301 www to the apex", d:`The decision is already made: the non-www apex <code>mysehatconnect.com</code> is the canonical host and the only host — no interim domain, no second migration later. The code side is already aligned: <code>SITE_URL</code>, the canonical tags, the sitemap and the JSON-LD all use it. What is left is DNS and Vercel: add the domain to the Vercel project, point the records, set <code>www</code> to 301 to the apex, then make sure the Search Console property, the sitemap and every citation use that exact host.<span class="why">One host, one set of signals. Two is the quiet leak that keeps a site at #4.</span>`},
+  {id:"b-gsc", t:"web", time:"30 min", title:"Google Search Console (Domain property) + Bing Webmaster Tools", d:`Submit <code>/sitemap.xml</code>. Request indexing for the pages that exist today: home, /services, /services/qualified-nurse, /services/attendant, /cities/lahore, /about.`},
+  {id:"b-ga4", t:"web", pin:true, time:"60 min", title:"GA4 with events on every lead action", d:`Fire events on <code>tel:</code> clicks, <code>wa.me</code> clicks, and the call-back form submit. Mark all three as conversions. This is how you prove the website now produces customers, and it feeds the ads account later.`},
+  {id:"b-speed", t:"web", time:"2–3 hrs", title:"PageSpeed audit and Core Web Vitals fixes", d:`Test on mobile. The hero photos are requested at 3840px — serve rendered sizes via <code>next/image</code> with proper <code>sizes</code>, lazy-load below the fold, preload the display font, defer third-party scripts. Target LCP under 2.5s on a mid-range Android on 4G.`},
+  {id:"b-schema", t:"web", time:"20 min", title:"Structured data: close the three remaining gaps", d:`Most of this already ships: MedicalBusiness + ContactPoint on the home page, FAQPage on the home page, Service / MedicalTherapy on both service pages, OfferCatalog on /services, LocalBusiness on /cities/lahore. Only three things are actually missing:<ul><li><code>sameAs</code> → the Google profile and the social profiles, as each one goes live.</li><li><code>openingHours</code> stated as 24/7.</li><li><code>BreadcrumbList</code> on the pages below the home page.</li></ul>Re-validate with the Rich Results test when the three are in.`},
+  {id:"b-tiles", t:"web", time:"30 min", title:"Point the home-page service tiles at real pages", d:`Today every tile opens WhatsApp. Make the tile go to the service page and keep WhatsApp as a second button. Nothing should link only to a page Google cannot see.`},
+  {id:"b-ilinks", t:"web", time:"half day", title:"Internal linking pass + breadcrumbs", d:`Every service page links to the area pages and pricing; every area page links to services and pricing; nav and footer list all of them; a Services and an Areas section on the home page with real links.`},
+  {id:"b-index", t:"web", time:"10 min each", title:"Request indexing after every publish, confirm a week later", d:`Search Console → URL inspection → Request indexing. A week later check Pages → fix anything under "Discovered – currently not indexed" by linking to it from the home page.`},
+  {id:"b-audit", t:"web", time:"half day", title:"Final technical re-audit once the build is finished", d:`PageSpeed on the five most important pages, broken links, duplicate titles and descriptions, sitemap current, hreflang validated, schema validated with the Rich Results test.`}
+]},
+{ id:"g-pages", name:"Pages & content", color:"var(--t-pages)", tasks:[
+  {id:"b-map", t:"pages", time:"60 min", title:"Keyword and page map", d:`One row per page: target phrase, Roman Urdu variant, URL. Example: Injection & drip → "drip at home Lahore", "ghar par drip lagwana Lahore", <code>/services/injection-drip-at-home-lahore</code>. Use Google autocomplete and People-also-ask from a Lahore location.`},
+  {id:"b-drip", t:"pages", pin:true, time:"1 day", title:"Service page: Injection & drip at home in Lahore", d:`600–1000 words. What is included, who comes (PNC nurse), how fast, price range, areas, 5 FAQs, Roman Urdu phrasing in a heading or FAQ, WhatsApp + call CTA, Service schema.<span class="why">Highest search volume of all your services in Pakistan and the easiest first booking.</span>`},
+  {id:"b-elder", t:"pages", pin:true, time:"1 day", title:"Service page: Elderly care at home in Lahore", d:`Same structure. Attendant vs nurse for elderly care, day/night/24h, female-for-female, dementia and bedridden care, what a typical day looks like.`},
+  {id:"b-postop", t:"pages", pin:true, time:"1 day", title:"Service page: Post-operative care at home in Lahore", d:`Same structure. Wound care, dressing changes, drains, mobility, medicines, ICU step-down. Name the hospitals you commonly discharge from.`},
+  {id:"b-physio", t:"pages", time:"1 day", title:"Service page: Physiotherapy at home", d:`Same structure. Conditions covered, session length, who comes.`},
+  {id:"b-mother", t:"pages", time:"1 day", title:"Service page: Mother & baby / postnatal care", d:`Target "postnatal care at home Lahore" and "baby care nurse Lahore".`},
+  {id:"b-female", t:"pages", time:"half day", title:"Service page: Female nurse at home", d:`400–600 words answering the trust questions: who comes, verification, female-for-female, price, availability.`},
+  {id:"b-male", t:"pages", time:"half day", title:"Service page: Male nurse at home", d:`Same shape as the female-nurse page.`},
+  {id:"b-icu", t:"pages", time:"decision", title:"Decide: ICU care at home page", d:`Z Care and Shine Care lead with ventilator and tracheostomy care at home; demand is real. Publish only if you have the nurses and equipment to deliver it. Tick this once decided either way.`},
+  {id:"b-pricing", t:"pages", pin:true, time:"half day", title:"/charges page: how home nursing charges work in Lahore", d:`Rank for "charges", "rate", "price" by explaining <b>how</b> pricing works, without publishing numbers: the 12-hour shift structure, nurse versus attendant, what changes the price (skill level, night shift, length of engagement), first day free, no advance, pay after the shift, the exact price quoted on the first call before care starts, no hidden charges. Answer the question well enough that a family stops searching, then send them to the call.<ul><li><b>Open decision, not an SEO task:</b> whether real ranges ever get published is for you and your partner to settle — the standing decision (Ledger #9, 2 Jul 2026) is internal only. Honest tradeoff: published numbers win the click from price-shoppers and filter out families who cannot afford it, but they also let Z Care and Shine Care undercut you precisely, and they anchor a family on a figure before a human can explain what is behind it. This page ships either way — see the decision task below.</li></ul>`},
+  {id:"b-price-decide", t:"pages", time:"decision", title:"Decide: publish price ranges, or keep the number for the call", d:`Currently internal only (Ledger #9, 2 Jul 2026 — explicitly reversible). Sit with your partner once, weigh it, and write the answer down so the site stops drifting: publish, keep it back, or a middle path such as a single "from" figure. Whatever you choose, the /charges page carries it. Tick this once decided either way.`},
+  {id:"b-overseas", t:"pages", time:"1 day", title:"Page: Arrange care for your parents in Lahore from abroad", d:`Target "nurse for parents in Lahore from UK / UAE / USA / Canada". Time-zone call-backs, WhatsApp updates and photos, who pays and how, verification, one overseas family's story if you have it.<span class="why">High-value leads, little competition, fits your UK and UAE footprint.</span>`},
+  {id:"b-areas1", t:"pages", time:"1.5 days", title:"Area pages: DHA, Gulberg, Johar Town", d:`Each must say something only true for that area: nearby hospitals you discharge from, typical requests, response time, a review quote from that area. If two area pages could swap names and still read fine, they are not done.`},
+  {id:"b-areas2", t:"pages", time:"1.5 days", title:"Area pages: Model Town, Bahria Town, Cantt, Wapda Town", d:`Same rule.`},
+  {id:"b-about", t:"pages", time:"1 day", title:"Rebuild the About page for trust", d:`Founder bio and photo, the verification process step by step (CNIC, references, police) with photos, team credentials, office photos, how complaints and replacements are handled.<span class="why">Outreach and press both need this page to exist — they link to it.</span>`},
+  {id:"b-caregivers", t:"pages", time:"half day", title:"Caregivers page", d:`First names, role (PNC nurse / attendant), years of experience, specialities — with consent. Do not mark these up as reviews or ratings.`},
+  {id:"b-art1", t:"pages", time:"1 day", title:"Article: Nurse vs attendant — which does your patient need?", d:`Answer the question families ask on the phone. 6–8 situations with a clear answer each, the price difference, links to both service pages.`},
+  {id:"b-art2", t:"pages", time:"half day", title:"Article: How to verify a nurse's PNC registration", d:`Step by step with screenshots. Position yourself as the company that wants families to check.`},
+  {id:"b-art3", t:"pages", time:"1 day", title:"Article: Post-operative care at home — a checklist for families", d:`Practical and printable. Link from the post-op page.`},
+  {id:"b-art4", t:"pages", time:"1 day", title:"Article: Elderly care at home in Lahore — what families should expect", d:`Link from the elderly care page.`},
+  {id:"b-video", t:"pages", time:"half day", title:"60-second founder video in Urdu", d:`Phone camera, office background: who you are, how you verify, first day free, pay after the shift. Upload to YouTube, embed on home and About, post to the Google profile once it is live.`}
+]},
+{ id:"g-urdu", name:"Urdu site", color:"var(--t-urdu)", tasks:[
+  {id:"b-ur-arch", t:"urdu", time:"decision + build", title:"Split languages: / (English) and /ur/ (Urdu) with hreflang", d:`English and Urdu currently sit interleaved on one page; Google sees a mixed-language document and matches it weakly to both. Separate URLs with <code>hreflang="en-PK"</code> / <code>"ur-PK"</code> in both directions, Urdu URLs in the sitemap, keep the language toggle.`},
+  {id:"b-ur-home", t:"urdu", time:"half day", title:"Urdu home page", d:`Proper translation, not word-for-word machine output.`},
+  {id:"b-ur-top3", t:"urdu", time:"1 day", title:"Urdu: drip, elderly care, post-op pages", d:``},
+  {id:"b-ur-rest", t:"urdu", time:"2 days", title:"Urdu: remaining service pages + pricing", d:`Then check both languages appear correctly in Search Console.`}
+]},
+{ id:"g-cit", name:"Citations & preparation", color:"var(--t-links)", tasks:[
+  {id:"b-gbp-verify", t:"profile", pin:true, time:"30 min + a wait", title:"Start Google Business Profile verification now", d:`Every week on the timeline is anchored to the day this verifies, so start it before anything else on this page is finished. In Pakistan video and postcard verification often fail on the first attempt — film the video with the building, the door number and the street sign clearly visible, keep the CNIC and a utility bill or tenancy paper to hand, and plan for a second attempt rather than treating a rejection as the end of it. Set the <b>service area to all of Lahore</b>, not just a pin at Phase 8: you go to the patient's home, and the service-area setting is what lets you appear away from the office.<span class="why">Nothing on the 12-week timeline starts until this is live.</span>`},
+  {id:"b-cit1", t:"links", time:"90 min", title:"Citations batch 1: Facebook, Instagram, LinkedIn, Bing Places, Apple Business Connect", d:`A citation is your name, address, and phone listed somewhere else — you create it yourself. Write <b>Sehat Connect · 4th Floor, 26-T, Commercial Area, DHA Phase 8, Lahore · 0328-8489988</b> identically everywhere — same words, same punctuation, same order, matching the Google profile character for character — and link to the canonical host. No postal code until the Google profile confirms one.<span class="why">Consistent citations that exist before the profile goes live help Google trust it faster.</span>`},
+  {id:"b-cit2", t:"links", time:"90 min", title:"Citations batch 2: YellowPages.pk, OLX (services), Cybo, Hotfrog, Locanto", d:`Same exact NAP. OLX also brings direct leads. Skip anything that looks like a spam farm.`},
+  {id:"b-brand", t:"links", time:"10 min", title:"Check the brand search for \"Sehat Connect\"", d:`Search from Lahore. "Sehat Kahani" and "Sehat.com.pk" are established brands — confirm your site (and soon your profile) own the first page.`},
+  {id:"b-outlist", t:"links", time:"2 hrs", title:"Outreach target list: 20 names", d:`Hospitals and clinics (discharge-care partner listing), physiotherapy clinics, pharmacies, medical equipment rental shops, old-age care groups, Pakistani health blogs, ProPakistani / TechJuice (founder story), overseas-Pakistani community sites and groups. Name, contact, angle for each. Sending waits for the pages to exist — see the timeline.`},
+  {id:"b-revmsg", t:"profile", time:"30 min", title:"Write the review-ask message (Urdu + English)", d:`Two WhatsApp-ready versions. Ask the family to mention <b>the service and their area</b> naturally ("nurse for my father in Johar Town"). Leave a placeholder for the Google review link.`},
+  {id:"b-revlist", t:"profile", time:"30 min", title:"Line up the first 10 review customers", d:`Name, service, area, best time to message. Mix services and areas. On verification day you send 3–5 without scrambling and keep that pace.`}
+]}
+];
+
+/* ---- Timeline: fixed weeks (from verification) ---- */
+const WEEKS = [
+{ n:1,  title:"Profile live",        rev:5,  tasks:[
+  {id:"t1a", t:"profile", time:"60 min", title:"Complete the profile: services, Q&A, first post", d:`<ul><li>Add each service separately (post-op, elderly, injection & drip, physiotherapy, mother & baby, long-term care, qualified nurse, attendant) with a 2–3 line description.</li><li>Seed Q&A with your 11 site FAQs — ask and answer them yourself.</li><li>First post: "First day free, no advance", a photo, the WhatsApp link.</li></ul>`},
+  {id:"t1b", t:"profile", time:"15 min", title:"Get the review short link; send the first 3–5 asks", d:`Profile → Ask for reviews → copy the link into your message. Send to the first names on your list, across a few days.`},
+  {id:"t1c", t:"web", time:"20 min", title:"Put the Google review link on the site", d:`Footer and the thank-you state after the call-back form.`}
+]},
+{ n:2,  title:"Reviews building",    rev:10, tasks:[]},
+{ n:3,  title:"Reviews building",    rev:14, tasks:[]},
+{ n:4,  title:"Reviews building",    rev:18, tasks:[]},
+{ n:5,  title:"Reviews building",    rev:22, tasks:[]},
+{ n:6,  title:"Reviews building",    rev:26, tasks:[]},
+{ n:7,  title:"Reviews building",    rev:29, tasks:[]},
+{ n:8,  title:"Target week",         rev:30, tasks:[]},
+{ n:9,  title:"Day 60 checkpoint",   rev:32, tasks:[
+  {id:"t9a", t:"measure", time:"60 min", title:"Day-60 audit: geo-grid ranks + Search Console positions 4–15", d:`Run the baseline queries again, ideally with a geo-grid tool so you see rank across Lahore, not just DHA. Log it. Then Search Console → Performance → queries ranking 4–15: those pages are the quick wins.`}
+]},
+{ n:10, title:"Hold the pace",       rev:34, tasks:[]},
+{ n:11, title:"Hold the pace",       rev:36, tasks:[]},
+{ n:12, title:"Measure & decide",    rev:38, tasks:[
+  {id:"t12a", t:"measure", time:"60 min", title:"Final rank report vs baseline", d:`Same queries, same geo-grid. Per query: map-pack position, organic position, change. Website leads since verification.`},
+  {id:"t12b", t:"measure", time:"60 min", title:"Diagnose anything short of the target", d:`Judge each term per area, not once for the city. For each one still short: fewer reviews than the business above you? Fewer links to that page? Weaker page? Wrong page ranking? Or simply distance — in which case reviews, an area page and links are the only levers. One fix per term for next quarter.`},
+  {id:"t12c", t:"measure", time:"decision", title:"Decide on other cities", d:`Google will not rank a Lahore-only business for Karachi or Islamabad. Expand only with real staff and a real address there, then a separate profile per location. Until then, national-intent traffic comes through the overseas page and the articles.`},
+  {id:"t12d", t:"profile", time:"30 min", title:"Lock the ongoing routine in the calendar", d:`2–3 reviews a week · 1 profile post a week · 1 article every two weeks · 2 outreach messages a week · monthly rank check.`}
+]}
+];
+
+const ROUTINE = [
+  "Send this week's review asks",
+  "Post once on the Google profile",
+  "Reply to every new review within 24h",
+  "Answer any new Q&A",
+  "Log this week's numbers below"
+];
+
+/* ---- Timeline: gated items (unlock from other work or from time) ---- */
+const GATED = [
+  {id:"b-ads", t:"ads", time:"2 hrs", title:"Launch a small Google Search campaign", deps:["b-form","b-ga4"],
+   d:`Gated on purpose: spend nothing until the lead form actually submits and you have watched GA4 record a conversion — otherwise you are paying for clicks that land on a broken form and you cannot tell which term paid for itself. Then: Lahore geo only. Phrase and exact match: nurse at home Lahore, home nursing Lahore, patient attendant Lahore, drip at home Lahore, post op care Lahore. Call and WhatsApp assets. Negatives from day one: jobs, vacancy, course, training, salary, college. Modest budget — this buys leads now and shows which terms actually convert. The ads reviews below unlock from the day you tick this.`},
+  {id:"x-baseline", t:"measure", time:"30 min", title:"Record the rank baseline", deps:["b-drip","b-elder","b-postop"], minWeek:2,
+   d:`From a Lahore location or a geo-grid tool, note map-pack and organic position for: home nurse Lahore, home nursing service Lahore, nurse at home Lahore, patient attendant Lahore. Log it in that week's check-in. Everything after is measured against this.`},
+  {id:"x-ads-terms", t:"ads", time:"30 min", title:"Ads: search-terms review and negatives", deps:["b-ads"], delay:2,
+   d:`Two weeks of data is enough to see waste. Add negatives, raise bids on terms that produced calls, pause spend with no conversions.`},
+  {id:"x-ads-budget", t:"ads", time:"30 min", title:"Ads: move budget to what converts", deps:["b-ads"], delay:6,
+   d:`Six weeks in, concentrate spend on terms that produced calls and WhatsApp chats.`},
+  {id:"x-ads-trim", t:"ads", time:"30 min", title:"Ads: trim terms you now rank #1 for", deps:["b-ads","x-baseline"], delay:10,
+   d:`Where you hold #1 organically and in the pack, cut the paid spend; keep it on the rest.`},
+  {id:"x-out1", t:"links", time:"2 hrs", title:"Send outreach batch 1 (10 targets)", deps:["b-outlist","b-about","b-drip","b-elder","b-postop"],
+   d:`Short, specific messages. Clinics: "We would like to be listed as a home-care partner for your discharged patients — here is how we verify staff." Press: the founder's mother-in-law story and the pay-after-shift model. Link to the page most relevant to them, not only the home page.<span class="why">Needs the About page and the core service pages to exist — that is what they will link to.</span>`},
+  {id:"x-out1f", t:"links", time:"45 min", title:"Follow up batch 1 once", deps:["x-out1"], delay:1, d:`One polite follow-up is normal. Track replies on the list.`},
+  {id:"x-out2", t:"links", time:"90 min", title:"Send outreach batch 2", deps:["x-out1"], delay:1, d:``},
+  {id:"x-out3", t:"links", time:"90 min", title:"Send outreach batch 3 + follow up batch 2", deps:["x-out2"], delay:2, d:``},
+  {id:"x-links", t:"links", time:"ongoing", title:"Land the first 3–5 links", deps:["x-out2"], delay:2,
+   d:`Partner listings on clinic or pharmacy sites, a directory feature, one press or community mention. Log links earned in the weekly check-in.`},
+  {id:"x-families", t:"pages", time:"half day", title:"Add a 'Families say' section with real Google review quotes", minReviews:10,
+   d:`6–8 quotes with first names and areas, linked to the Google profile. Do not add review or aggregate-rating schema for your own business — that is against Google's guidelines.`},
+  {id:"x-quick", t:"pages", time:"2 days", title:"Quick-wins pass: improve every page ranking 4–15", deps:["b-drip","b-elder","b-postop"], delay:6,
+   d:`For each: missing sub-questions from People-also-ask, real photos, 2–3 more FAQs, a stronger internal link from the home page, a tighter title that matches the query wording.<span class="why">Needs six weeks of Search Console data after the pages go live.</span>`},
+  {id:"x-press", t:"links", time:"90 min", title:"Press push: founder-story pitch to 5 outlets", deps:["b-about"], minReviews:25,
+   d:`Lead with the problem (a stranger in your home), the model (pay after the shift), and a number (families served, reviews). Offer photos and the video.<span class="why">Stronger with a review count behind it.</span>`}
+];
+
+/* ============================ STATE ============================ */
+const KEY="sehat-seo-tracker-v2";
+const ALL = {};
+BACKLOG.forEach(g=>g.tasks.forEach(t=>ALL[t.id]={...t,where:"backlog",group:g.name}));
+WEEKS.forEach(w=>w.tasks.forEach(t=>ALL[t.id]={...t,where:"week",week:w.n}));
+GATED.forEach(t=>ALL[t.id]={...t,where:"gated"});
+const TOTAL=Object.keys(ALL).length;
+
+let state={ gbpDate:"", reviews:0, done:{}, routine:{}, checkins:{}, view:1, tab:"backlog", pinOnly:false, collapsed:{} };
+
+async function load(){
+  let raw=null;
+  try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(KEY,false); if(r&&r.value) raw=r.value; } }catch(e){}
+  if(!raw){ try{ raw=localStorage.getItem(KEY); }catch(e){} }
+  if(raw){ try{ Object.assign(state,JSON.parse(raw)); }catch(e){} }
+  // migrate any boolean done flags to dates
+  Object.keys(state.done).forEach(k=>{ if(state.done[k]===true) state.done[k]=todayStr(); if(!state.done[k]) delete state.done[k]; });
+}
+let saveTimer=null;
+function save(){
+  clearTimeout(saveTimer);
+  saveTimer=setTimeout(async()=>{
+    const raw=JSON.stringify(state); let ok=false;
+    try{ if(window.storage&&window.storage.set){ const r=await window.storage.set(KEY,raw,false); ok=!!r; } }catch(e){}
+    if(!ok){ try{ localStorage.setItem(KEY,raw); }catch(e){} }
+  },150);
+}
+
+/* ============================ HELPERS ============================ */
+const $=s=>document.querySelector(s);
+const MS=86400000;
+function parseDate(s){ if(!s) return null; const [y,m,d]=s.split("-").map(Number); return new Date(y,m-1,d); }
+function today(){ const t=new Date(); return new Date(t.getFullYear(),t.getMonth(),t.getDate()); }
+function todayStr(){ const t=today(); return `${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,"0")}-${String(t.getDate()).padStart(2,"0")}`; }
+function fmt(d){ return d.toLocaleDateString("en-GB",{day:"numeric",month:"short"}); }
+function daysSinceGbp(){ const s=parseDate(state.gbpDate); if(!s) return null; return Math.floor((today()-s)/MS); }
+function currentWeek(){ const d=daysSinceGbp(); if(d===null) return null; if(d<0) return 0; return Math.min(12,Math.floor(d/7)+1); }
+function weekStart(n){ const s=parseDate(state.gbpDate); if(!s) return null; return new Date(s.getTime()+(n-1)*7*MS); }
+function weekRange(n){ const a=weekStart(n); if(!a) return ""; const b=new Date(a.getTime()+6*MS); return `${fmt(a)} – ${fmt(b)}`; }
+function isDone(id){ return !!state.done[id]; }
+function doneDate(id){ return parseDate(state.done[id]); }
+function esc(s){ return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("show"),1900); }
+
+/* gate evaluation */
+function gateStatus(t){
+  if(isDone(t.id)) return {kind:"finished",label:"Done "+fmt(doneDate(t.id))};
+  const missing=(t.deps||[]).filter(d=>!isDone(d));
+  if(missing.length) return {kind:"locked",label:"Waiting on earlier work",missing};
+  let ready=today();
+  if(t.delay){ const latest=Math.max(...(t.deps||[]).map(d=>doneDate(d).getTime())); ready=new Date(latest+t.delay*7*MS); }
+  if(t.minWeek){ const ws=weekStart(t.minWeek); if(!ws) return {kind:"locked",label:"Waiting on profile verification",missing:[]}; if(ws>ready) ready=ws; }
+  if(t.minReviews && state.reviews<t.minReviews) return {kind:"locked",label:`Needs ${t.minReviews} reviews — you have ${state.reviews}`,missing:[]};
+  if(ready>today()){ const days=Math.round((ready-today())/MS); return {kind:"soon",label:`Ready ${fmt(ready)} · in ${days} day${days===1?"":"s"}`,ready}; }
+  return {kind:"ready",label:"Ready now"};
+}
+
+/* ============================ RENDER: TOP ============================ */
+function renderTop(){
+  $("#gbpDate").value=state.gbpDate||"";
+  const d=daysSinceGbp(), cw=currentWeek(), now=$("#nowLine");
+  if(d===null) now.innerHTML="Waiting on verification. The 12-week timeline and the review clock start the day it goes live.";
+  else if(d<0) now.innerHTML=`That date is in the future — week 1 begins ${fmt(parseDate(state.gbpDate))}.`;
+  else if(d>83) now.innerHTML=`<strong>Day ${d}</strong> — the 12 weeks are done. Keep the week-12 routine going.`;
+  else now.innerHTML=`Today is <strong>day ${d}</strong> · <strong>week ${cw}</strong> of 12`;
+
+  $("#revCount").textContent=state.reviews;
+  $("#paceFill").style.width=Math.min(100,state.reviews/30*100)+"%";
+  const v=$("#paceVerdict"); v.className="verdict";
+  if(d===null||d<0){ $("#paceExpect").style.left="0%"; v.textContent= state.reviews>0 ? `${state.reviews} logged. Pace shows once the profile is verified.` : "Pace shows once the profile is verified."; }
+  else{
+    const dd=Math.max(0,Math.min(60,d)), expected=30*dd/60; $("#paceExpect").style.left=(dd/60*100)+"%";
+    const diff=state.reviews-expected;
+    if(state.reviews>=30){ v.classList.add("ahead"); v.innerHTML=`<b>Target reached.</b> Keep 2–3 a week so velocity never stalls.`; }
+    else if(d>60){ v.classList.add("behind"); v.innerHTML=`<b>${30-state.reviews} short</b> of the day-60 target. Make the ask part of every completed engagement.`; }
+    else if(diff>=0){ v.classList.add("ahead"); v.innerHTML=`<b>On pace</b> — ${diff.toFixed(1)} ahead of the line. ${30-state.reviews} to go in ${60-dd} days.`; }
+    else{ v.classList.add("behind"); v.innerHTML=`<b>Behind by ${Math.abs(diff).toFixed(1)}.</b> ${30-state.reviews} to go in ${60-dd} days — about ${Math.ceil((30-state.reviews)/Math.max(1,(60-dd)/7))} a week.`; }
+  }
+
+  const done=Object.keys(state.done).filter(k=>ALL[k]).length, pct=Math.round(100*done/TOTAL);
+  const ring=$("#overallRing"); ring.style.setProperty("--p",pct); ring.dataset.label=pct+"%";
+  $("#overallCount").textContent=`${done} of ${TOTAL} tasks`;
+  const bTotal=Object.values(ALL).filter(t=>t.where==="backlog").length, bDone=Object.values(ALL).filter(t=>t.where==="backlog"&&isDone(t.id)).length;
+  const tTotal=TOTAL-bTotal, tDone=done-bDone;
+  $("#overallSplit").textContent=`Backlog ${bDone}/${bTotal} · Timeline ${tDone}/${tTotal}`;
+  $("#tabBacklogSub").textContent=`${bTotal-bDone} left · your pace`;
+  const readyN=GATED.filter(t=>gateStatus(t).kind==="ready").length;
+  $("#tabTimelineSub").textContent= readyN ? `${readyN} unlocked and waiting` : (state.gbpDate ? `Week ${cw||1} of 12` : "Starts at verification");
+
+  const tr=$("#trend"); tr.innerHTML="";
+  const vals=WEEKS.map(w=>{ const c=state.checkins[w.n]; return c&&c.leads!==""&&c.leads!=null?Number(c.leads):null; });
+  const max=Math.max(1,...vals.filter(v=>v!==null));
+  vals.forEach((v,i)=>{ const b=document.createElement("i"); if(v!==null){ b.classList.add("has"); b.style.height=Math.max(6,Math.round(v/max*100))+"%"; b.title=`Week ${i+1}: ${v} leads`; } else { b.style.height="6%"; b.title=`Week ${i+1}: not logged`; } tr.appendChild(b); });
+}
+
+/* ============================ RENDER: TASK ============================ */
+function taskHTML(t,opts={}){
+  const tr=TRACKS[t.t], done=isDone(t.id);
+  const st=opts.status;
+  return `<div class="task${done?" done":""}${st&&st.kind==="locked"?" locked":""}" data-task="${t.id}" id="task-${t.id}">
+    <input type="checkbox" id="cb-${t.id}" ${done?"checked":""} aria-label="Mark done: ${esc(t.title)}">
+    <div>
+      <label class="t-title" for="cb-${t.id}">${esc(t.title)}</label>
+      <div class="meta">
+        ${t.pin&&!done?`<span class="pin">Start here</span>`:""}
+        ${st?`<span class="status ${st.kind}">${esc(st.label)}</span>`:""}
+        <span class="tag" style="--c:${tr.color}">${tr.name}</span>
+        ${t.time?`<span class="time">${esc(t.time)}</span>`:""}
+        ${done?`<span class="donedate">✓ ${fmt(doneDate(t.id))}</span>`:""}
+      </div>
+      ${st&&st.missing&&st.missing.length?`<div class="waiting">Waiting on: ${st.missing.map(m=>`<a data-jump="${m}">${esc(ALL[m].title)}</a>`).join(" · ")}</div>`:""}
+      ${t.d?`<details><summary>How to do it</summary><div class="detail">${t.d}</div></details>`:""}
+    </div></div>`;
+}
+function bindTasks(root){
+  root.querySelectorAll('input[type=checkbox][id^="cb-"]').forEach(cb=>cb.addEventListener("change",e=>{
+    const id=e.target.id.slice(3);
+    if(e.target.checked) state.done[id]=todayStr(); else delete state.done[id];
+    save(); renderAll();
+    if(e.target.checked){
+      const unlocked=GATED.filter(g=>g.id!==id&&(g.deps||[]).includes(id)&&gateStatus(g).kind==="ready");
+      if(unlocked.length) toast(`Unlocked on the timeline: ${unlocked[0].title}${unlocked.length>1?` +${unlocked.length-1}`:""}`);
+    }
+  }));
+  root.querySelectorAll("[data-jump]").forEach(a=>a.addEventListener("click",e=>{
+    const id=e.currentTarget.dataset.jump; const t=ALL[id]; if(!t) return;
+    if(t.where==="backlog"){ state.tab="backlog"; const g=BACKLOG.find(g=>g.tasks.some(x=>x.id===id)); if(g) state.collapsed[g.id]=false; state.pinOnly=false; save(); renderAll(); }
+    else if(t.where==="gated"){ state.tab="timeline"; save(); renderAll(); }
+    else if(t.where==="week"){ state.tab="timeline"; state.view=t.week; save(); renderAll(); }
+    const el=document.getElementById("task-"+id); if(el){ el.scrollIntoView({behavior:"smooth",block:"center"}); el.classList.add("flash"); setTimeout(()=>el.classList.remove("flash"),1300); }
+  }));
+}
+
+/* ============================ RENDER: BACKLOG ============================ */
+function renderBacklog(){
+  const root=$("#backlogView");
+  const pins=Object.values(ALL).filter(t=>t.pin&&!isDone(t.id)).length;
+  let html=`<div class="bl-head"><p>No dates here. Start-here marks the handful with the most leverage; the rest is yours to order. Ticking an item records the date, and anything on the timeline that depends on it unlocks by itself.</p>
+    <button class="btn" id="pinToggle" aria-pressed="${state.pinOnly}">★ Start here only${pins?` (${pins})`:""}</button></div><div class="groups">`;
+  BACKLOG.forEach(g=>{
+    const tasks=g.tasks.filter(t=>!state.pinOnly||t.pin);
+    const done=g.tasks.filter(t=>isDone(t.id)).length, pct=Math.round(100*done/g.tasks.length);
+    const collapsed=!!state.collapsed[g.id];
+    html+=`<div class="group${collapsed?" collapsed":""}" data-group="${g.id}">
+      <div class="g-head${pct===100?" done":""}" style="--c:${g.color}"><span class="mini" style="--p:${pct}"></span>
+        <div><h2>${esc(g.name)}</h2><div class="g-sub">${done}/${g.tasks.length} done</div></div>
+        <button class="g-toggle" data-collapse="${g.id}" aria-expanded="${!collapsed}">${collapsed?"Show":"Hide"}</button></div>
+      ${tasks.length?tasks.map(t=>taskHTML(t)).join(""):`<p class="empty">No start-here items in this group.</p>`}
+    </div>`;
+  });
+  html+=`</div>`;
+  root.innerHTML=html;
+  bindTasks(root);
+  $("#pinToggle").addEventListener("click",()=>{ state.pinOnly=!state.pinOnly; save(); renderBacklog(); });
+  root.querySelectorAll("[data-collapse]").forEach(b=>b.addEventListener("click",e=>{ const id=e.currentTarget.dataset.collapse; state.collapsed[id]=!state.collapsed[id]; save(); renderBacklog(); }));
+}
+
+/* ============================ RENDER: TIMELINE ============================ */
+function renderTimeline(){
+  const cw=currentWeek();
+  $("#tlIntro").innerHTML = state.gbpDate
+    ? `Anchored to <b>${fmt(parseDate(state.gbpDate))}</b>, the day the profile verified. Weekly items below; gated items unlock from backlog work, from time passing, or from your review count.`
+    : `Nothing here is due yet. Set the verification date above when Google's mail arrives. Gated items still unlock from backlog work in the meantime.`;
+
+  // gated
+  const items=GATED.map(t=>({t,s:gateStatus(t)}));
+  const order={ready:0,soon:1,locked:2,finished:3};
+  items.sort((a,b)=>order[a.s.kind]-order[b.s.kind] || ((a.s.ready&&b.s.ready)?a.s.ready-b.s.ready:0));
+  const readyN=items.filter(i=>i.s.kind==="ready").length;
+  let gh=`<h2>Unlocks when…</h2><div class="g-sub">${readyN?`${readyN} ready now · `:""}${items.filter(i=>i.s.kind==="soon").length} scheduled · ${items.filter(i=>i.s.kind==="locked").length} waiting · ${items.filter(i=>i.s.kind==="finished").length} done</div>`;
+  gh+=items.map(i=>taskHTML(i.t,{status:i.s})).join("");
+  $("#gated").innerHTML=gh;
+  bindTasks($("#gated"));
+
+  // rail
+  const nav=$("#weeks"); nav.innerHTML="";
+  WEEKS.forEach(w=>{
+    const rt=state.routine[w.n]||{}; const rdone=ROUTINE.filter((_,i)=>rt[i]).length;
+    const tdone=w.tasks.filter(t=>isDone(t.id)).length;
+    const total=ROUTINE.length+w.tasks.length, done=rdone+tdone, pct=Math.round(100*done/total);
+    const b=document.createElement("button"); b.className="wk"+(pct===100?" done":"");
+    b.setAttribute("aria-current", state.view===w.n?"true":"false");
+    b.innerHTML=`<span class="mini" style="--p:${pct}"></span><span class="lbl"><b>Week ${w.n}</b><span>${esc(w.title)}</span></span>${cw===w.n?'<span class="nowdot" title="This week"></span>':""}`;
+    b.addEventListener("click",()=>{ state.view=w.n; save(); renderTimeline(); if(window.innerWidth<820) $("#weekView").scrollIntoView({behavior:"smooth",block:"start"}); });
+    nav.appendChild(b);
+  });
+  const cur=nav.querySelector('[aria-current="true"]'); if(cur&&window.innerWidth<820) cur.scrollIntoView({inline:"center",block:"nearest"});
+
+  // week view
+  const w=WEEKS.find(x=>x.n===state.view)||WEEKS[0];
+  const rt=state.routine[w.n]||{}, ci=state.checkins[w.n]||{};
+  const revState = state.reviews>=w.rev ? `<span class="st">✓ reached</span>` : (cw&&cw>w.n ? `<span class="st">${w.rev-state.reviews} short</span>` : `<span class="st">${Math.max(0,w.rev-state.reviews)} to go</span>`);
+  let html=`<div class="week-head"><div><div class="k">Week ${w.n} of 12${cw===w.n?" · this week":""}</div><h2>${esc(w.title)}</h2></div><div class="range">${weekRange(w.n)||"dates set at verification"}</div></div>
+    <div class="revgoal"><span>Reviews by end of this week</span><span><b>${w.rev}</b> &nbsp;${revState}</span></div>
+    <div class="routine"><h3>Every week</h3><div class="r-list">${ROUTINE.map((r,i)=>`<label><input type="checkbox" data-routine="${i}" ${rt[i]?"checked":""}>${esc(r)}</label>`).join("")}</div></div>`;
+  if(w.tasks.length) html+=w.tasks.map(t=>taskHTML(t)).join("");
+  else html+=`<p class="quiet">Nothing fixed to this week beyond the routine. Check the "Unlocks when…" list above and the backlog.</p>`;
+  html+=`<div class="checkin"><h3>Week ${w.n} check-in</h3><p>Map-pack rank changes with distance from Phase 8 — check "home nurse Lahore" from near the office and from one far area (Johar Town or Bahria Town), and log the worse of the two. Leads = calls + WhatsApp + form submits from the website this week.</p>
+    <div class="ci-grid">
+      <div class="ci"><label for="ci-pack">Map pack position</label><input id="ci-pack" type="number" min="0" inputmode="numeric" placeholder="—" data-ci="pack" value="${ci.pack??""}"></div>
+      <div class="ci"><label for="ci-org">Organic position</label><input id="ci-org" type="number" min="0" inputmode="numeric" placeholder="—" data-ci="org" value="${ci.org??""}"></div>
+      <div class="ci"><label for="ci-leads">Website leads</label><input id="ci-leads" type="number" min="0" inputmode="numeric" placeholder="—" data-ci="leads" value="${ci.leads??""}"></div>
+      <div class="ci"><label for="ci-links">Links earned</label><input id="ci-links" type="number" min="0" inputmode="numeric" placeholder="—" data-ci="links" value="${ci.links??""}"></div>
+    </div>
+    <div class="ci-note"><textarea data-ci="note" placeholder="Notes — what moved, what got stuck, what to carry forward" aria-label="Week notes">${esc(ci.note||"")}</textarea></div></div>
+    <div class="nav-btns"><button class="btn" data-nav="-1" ${w.n===1?"disabled":""}>← Week ${w.n-1||1}</button><button class="btn primary" data-nav="1" ${w.n===12?"disabled":""}>Week ${Math.min(12,w.n+1)} →</button></div>`;
+  const el=$("#weekView"); el.innerHTML=html;
+  bindTasks(el);
+  el.querySelectorAll("input[data-routine]").forEach(cb=>cb.addEventListener("change",e=>{ state.routine[w.n]=state.routine[w.n]||{}; state.routine[w.n][e.target.dataset.routine]=e.target.checked; save(); renderTimeline(); }));
+  el.querySelectorAll("[data-ci]").forEach(inp=>inp.addEventListener("input",e=>{ state.checkins[w.n]=state.checkins[w.n]||{}; state.checkins[w.n][e.target.dataset.ci]=e.target.value; save(); if(e.target.dataset.ci==="leads") renderTop(); }));
+  el.querySelectorAll("[data-nav]").forEach(b=>b.addEventListener("click",e=>{ state.view=Math.max(1,Math.min(12,w.n+Number(e.currentTarget.dataset.nav))); save(); renderTimeline(); $("#weeks").scrollIntoView({behavior:"smooth",block:"start"}); }));
+}
+
+/* ============================ TABS & CONTROLS ============================ */
+function renderTabs(){
+  const b=state.tab==="backlog";
+  $("#tab-backlog").setAttribute("aria-selected",b); $("#tab-timeline").setAttribute("aria-selected",!b);
+  $("#backlogView").classList.toggle("hidden",!b); $("#timelineView").classList.toggle("hidden",b);
+}
+function renderAll(){ renderTop(); renderTabs(); renderBacklog(); renderTimeline(); }
+function bind(){
+  $("#tab-backlog").addEventListener("click",()=>{ state.tab="backlog"; save(); renderTabs(); });
+  $("#tab-timeline").addEventListener("click",()=>{ state.tab="timeline"; save(); renderTabs(); });
+  $("#gbpDate").addEventListener("change",e=>{ state.gbpDate=e.target.value; const cw=currentWeek(); if(cw) state.view=cw; save(); renderAll(); });
+  $("#todayBtn").addEventListener("click",()=>{ state.gbpDate=todayStr(); state.view=1; state.tab="timeline"; save(); renderAll(); toast("Day 0 — send the first review asks"); });
+  $("#revPlus").addEventListener("click",()=>{ state.reviews=Math.min(999,state.reviews+1); save(); renderAll(); if(state.reviews===30) toast("30 reviews — target hit"); if(state.reviews===10) toast("10 reviews — 'Families say' section unlocked"); });
+  $("#revMinus").addEventListener("click",()=>{ state.reviews=Math.max(0,state.reviews-1); save(); renderAll(); });
+  $("#exportBtn").addEventListener("click",()=>{ const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=`sehat-seo-progress-${todayStr()}.json`; a.click(); URL.revokeObjectURL(a.href); toast("Progress exported"); });
+  $("#importFile").addEventListener("change",e=>{ const f=e.target.files[0]; if(!f) return; const r=new FileReader();
+    r.onload=()=>{ try{ const d=JSON.parse(r.result); if(typeof d!=="object"||!("done" in d)) throw 0; state={ gbpDate:"",reviews:0,done:{},routine:{},checkins:{},view:1,tab:"backlog",pinOnly:false,collapsed:{}, ...d }; Object.keys(state.done).forEach(k=>{ if(state.done[k]===true) state.done[k]=todayStr(); }); save(); renderAll(); toast("Progress imported"); }catch(err){ toast("That file is not a progress export"); } e.target.value=""; };
+    r.readAsText(f); });
+  $("#resetBtn").addEventListener("click",()=>{ if(!confirm("Clear all progress, check-ins and the review count? Export first if you want a backup.")) return; state={ gbpDate:"",reviews:0,done:{},routine:{},checkins:{},view:1,tab:"backlog",pinOnly:false,collapsed:{} }; save(); renderAll(); toast("Reset"); });
+}
+
+load().then(()=>{ bind(); renderAll(); });
+})();
+</script>
+</body>
+</html>

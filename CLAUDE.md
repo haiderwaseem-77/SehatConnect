@@ -34,12 +34,12 @@ One job: a worried family member in Lahore leaves their name + phone (or calls /
 
 - Brand: **Sehat Connect** · tagline *"bringing the hospital to your home"* · Lahore · 24/7
 - Founder: **Sardar Waseem Ilyas** (publicly named; photo pending — the only pending asset)
-- Office: **442-G, Street 7, Phase 6, DHA, Lahore, Pakistan** (goes in footer, /about, GBP, JSON-LD)
-- Email (to set up at domain cutover): **care@mysehatconnect.com**
+- Office: **4th Floor, 26-T, Commercial Area, DHA Phase 8, Lahore, Pakistan** (goes in footer, /about, GBP, JSON-LD) — updated 2026-08-21; the old Phase 6 address is dead and must appear nowhere. **No postal code anywhere**: the old code belonged to Phase 6 and is wrong for Phase 8; the correct one is pending confirmation from the Google Business Profile, and a wrong code hurts NAP consistency more than a missing one.
+- Email (to set up at the registrar/mail host): **care@mysehatconnect.com**
 - Phone display: `0328-8489988` · tel: `+923288489988` · WhatsApp: `923288489988`
 - Prices (internal only as of 2026-07-02 — partner decision, explicitly reversible; see NORTH-STAR Decision Ledger #9): Qualified Nurse **Rs 4,000** / Attendant **Rs 3,000** per 12-hr shift · never public — quoted to the family on the first call, before care starts · pay after, no advance · first day free · `PRICES` constant stays in `lib/constants.ts`, marked do-not-render
 - Verification (all true today): CNIC + references + police verification, every caregiver
-- **Domain: canonical is `mysehatconnect.com`.** The site is still live on `lucaintel.com` until the cutover (NORTH-STAR roadmap item 1). `SITE_URL` in `lib/constants.ts` tracks the *live* domain and flips at cutover.
+- **Domain: `https://mysehatconnect.com` is the final and only host** (decided 2026-08-21) — non-www apex; `www` 301s to it. There is no interim domain, no cutover, and no second host to flip to: `SITE_URL` in `lib/constants.ts` is `https://mysehatconnect.com` and stays that way.
 
 ## Stack & Commands
 
@@ -53,8 +53,8 @@ npm run lint   # linting
 
 ## Deployment
 
-- Live at **https://lucaintel.com** (Vercel project `lucaintel`, account **`lucaagent000`**) — until the mysehatconnect.com cutover.
-- **Full deploy + access recipe: `DEPLOY-ACCESS.md`** (repo root, **gitignored / local-only — never commit**). It includes the planned cutover steps.
+- Live at **https://mysehatconnect.com** — the final and only host (non-www apex; `www` 301s to it). Vercel project `lucaintel` on account **`lucaagent000`**: the project slug is a legacy name from before the brand domain was settled and says nothing about the site's URL. Renaming it is a separate owner action.
+- **Full deploy + access recipe: `DEPLOY-ACCESS.md`** (repo root, **gitignored / local-only — never commit**). It covers the DNS/domain attachment steps.
 - **Two hard-won gotchas — do NOT undo:**
   1. `vercel.json` must keep `"framework": "nextjs"` — the Vercel preset is `null`; without the override every route 404s despite a green build.
   2. Vercel **Deployment Protection must stay OFF** — otherwise a login wall blocks the public site.
@@ -95,7 +95,7 @@ npm run lint   # linting
 
 **Not done — NORTH-STAR §13 is the work queue (don't jump ahead of it):**
 - Supabase env vars on Vercel → lead form currently 500s on submit
-- Domain cutover to `mysehatconnect.com` + care@ email (roadmap item 1; steps in `DEPLOY-ACCESS.md`)
+- DNS: point `mysehatconnect.com` (+ the `www` → apex 301) at the Vercel project, and set up care@mysehatconnect.com (steps in `DEPLOY-ACCESS.md`) — the code side is already on the final domain
 - Hero H1 doesn't yet name the noun + city; form promise line still says "usually the same day" (→ "usually within 15 minutes")
 - Home page diet: ~35 phone-screens → ≤20 (§6)
 - Trust assets pending: founder photo, real caregiver card, caregiver portraits, first testimonials, Google Business Profile
