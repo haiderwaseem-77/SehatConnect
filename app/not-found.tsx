@@ -7,7 +7,7 @@ import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL } from "@/lib/constants";
 import { waLink, GENERIC_WA_MSG } from "@/lib/wa";
 
 export const metadata: Metadata = {
-  title: "Page Not Found | Sehat Connect Lahore",
+  title: "Page Not Found",
   description: "This page doesn't exist or has moved. Call or WhatsApp us and a real person will help.",
   robots: { index: false, follow: true },
 };

@@ -7,7 +7,7 @@ import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL } from "@/lib/constants";
 import { waLink, GENERIC_WA_MSG } from "@/lib/wa";
 
 export const metadata: Metadata = {
-  title: "Request Received | Sehat Connect Lahore",
+  title: "Request Received",
   description: "Thank you — we've got your details. Our team will call you back shortly to arrange care.",
   robots: { index: false, follow: true },
 };

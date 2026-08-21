@@ -34,7 +34,7 @@ import { breadcrumbList, businessSameAs, OPENING_HOURS } from "@/lib/schema";
 import { waLink, serviceWaMsg } from "@/lib/wa";
 
 export const metadata: Metadata = {
-  title: "Home Nurse & Attendant Charges in Lahore | Sehat Connect",
+  title: "Home Nurse & Attendant Charges in Lahore",
   description:
     "How home nursing charges work in Lahore. Your exact price is quoted on the first call, before care starts — first day free, no advance, pay after the shift.",
   alternates: { canonical: `${SITE_URL}/charges` },

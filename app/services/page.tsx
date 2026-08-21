@@ -16,7 +16,7 @@ import {
 import { breadcrumbList, businessSameAs } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Home Nursing Services in Lahore | Qualified Nurse & Attendant | Sehat Connect",
+  title: "Home Nursing Services in Lahore | Nurse & Attendant",
   description:
     "Nurses and attendants at home in Lahore for post-op, elderly, paediatric, diabetic and night care. Leave your number. A real person calls back.",
   alternates: { canonical: `${SITE_URL}/services` },

@@ -8,7 +8,7 @@ import { SITE_URL, OFFICE_ADDRESS, CONTACT_PHONE_DISPLAY } from "@/lib/constants
 import { breadcrumbList } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About Us | Sehat Connect Home Nursing Service Lahore",
+  title: "About Us | Home Nursing Service in Lahore",
   description:
     "Meet Sehat Connect: a Lahore home nursing service run by real people, with PNC-registered nurses, trained attendants, no advance, and 24/7 phone support.",
   alternates: { canonical: `${SITE_URL}/about` },

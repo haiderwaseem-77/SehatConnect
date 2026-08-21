@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/constants";
 import { breadcrumbList } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Request a Free Call Back | Sehat Connect Lahore",
+  title: "Request a Free Call Back | Home Nursing in Lahore",
   description:
     "Leave your name and phone number. A real person from Sehat Connect calls back to arrange the right nurse or attendant at home in Lahore. No payment now, no advance.",
   alternates: { canonical: `${SITE_URL}/book` },

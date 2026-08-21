@@ -41,6 +41,9 @@ export default function Footer() {
             <Link href="/services"><span data-en>Home nursing service</span><span data-ur className="urdu">گھر پر نرسنگ سروس</span></Link>
             <Link href="/services/qualified-nurse"><span data-en>Qualified nurse (PNC)</span><span data-ur className="urdu">PNC رجسٹرڈ نرس</span></Link>
             <Link href="/services/attendant"><span data-en>Patient attendant</span><span data-ur className="urdu">مریض کا اٹینڈنٹ</span></Link>
+            <Link href="/services/injection-drip"><span data-en>Injection &amp; drip at home</span><span data-ur className="urdu">گھر پر انجیکشن اور ڈرپ</span></Link>
+            <Link href="/services/elderly-care"><span data-en>Elderly care at home</span><span data-ur className="urdu">بزرگوں کی گھر پر دیکھ بھال</span></Link>
+            <Link href="/services/post-operative-care"><span data-en>Post-operative care</span><span data-ur className="urdu">آپریشن کے بعد دیکھ بھال</span></Link>
             <Link href="/charges"><span data-en>Charges &amp; how payment works</span><span data-ur className="urdu">اخراجات اور ادائیگی کا طریقہ</span></Link>
           </div>
           <div className="foot-col">
