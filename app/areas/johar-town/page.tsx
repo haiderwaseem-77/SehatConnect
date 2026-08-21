@@ -146,8 +146,8 @@ const AREA_FAQ: { q: string; qUr: string; a: string; aUr: string }[] = [
   {
     q: "Do you cover all of Johar Town?",
     qUr: "کیا آپ پورے جوہر ٹاؤن میں آتے ہیں؟",
-    a: "Yes, every block. Our office is in DHA Phase 8, on the eastern edge of the city, and Johar Town is well to the west — that distance is real and we are not going to invent a response time to cover it. Instead we agree the exact start time with you on the call, ask for the block and house number, and message you when the caregiver is on the way.",
-    aUr: "جی، ہر بلاک میں۔ ہمارا دفتر ڈی ایچ اے فیز 8 میں ہے، یعنی شہر کے مشرقی کنارے پر، اور جوہر ٹاؤن خاصا مغرب میں ہے — یہ فاصلہ حقیقی ہے اور ہم اسے چھپانے کے لیے کوئی جھوٹا وقت نہیں بتائیں گے۔ اس کے بجائے ہم شروع کرنے کا صحیح وقت کال پر طے کرتے ہیں، بلاک اور مکان نمبر پوچھتے ہیں، اور روانگی کے وقت آپ کو اطلاع دیتے ہیں۔",
+    a: "Yes, every block. Our office is in DHA Phase 8, on the eastern edge of the city, and Johar Town is well to the west — that distance is real, so we agree the exact start time with you on the call, ask for the block and house number, and message you when the caregiver is on the way.",
+    aUr: "جی، ہر بلاک میں۔ ہمارا دفتر ڈی ایچ اے فیز 8 میں ہے، یعنی شہر کے مشرقی کنارے پر، اور جوہر ٹاؤن خاصا مغرب میں ہے — یہ فاصلہ حقیقی ہے، اس لیے ہم شروع کرنے کا صحیح وقت کال پر طے کرتے ہیں، بلاک اور مکان نمبر پوچھتے ہیں، اور روانگی کے وقت آپ کو اطلاع دیتے ہیں۔",
   },
 ];
 

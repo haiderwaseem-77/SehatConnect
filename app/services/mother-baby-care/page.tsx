@@ -15,15 +15,19 @@
 // Whether a nurse or an attendant goes depends on what the family needs,
 // decided on the first call — the same as every other service here.
 //
-// DAY-TO-DAY NEWBORN CARE IS **NOT** CONFIRMED and is therefore NOT SOLD here.
+// DAY-TO-DAY NEWBORN CARE IS NOT WHAT THIS PAGE SELLS. It is not a refusal
+// either: the owner's position (2026-08-21) is that it is simply not something
+// we usually do, and could be arranged if a family asked.
 // Hard rules for this page, do not loosen:
 //   · The page is about the MOTHER. She is the subject of every sentence.
-//   · Never promise newborn care, baby care or neonatal care; never imply a
-//     caregiver will look after the infant. The words "baby nurse" /
-//     "newborn nurse" appear exactly once, inside an explicit refusal in the
-//     FAQ — never as something we offer. A family expecting a baby nurse and
-//     receiving a maternal attendant is the mismatch that destroys trust on
-//     day one, so we say it plainly and once.
+//   · Never PROMISE newborn, baby or neonatal care, and never imply the
+//     caregiver will look after the infant — a family expecting a baby nurse
+//     and receiving a maternal attendant is the mismatch that destroys trust
+//     on day one.
+//   · But do NOT slam the door either. Describe what the caregiver comes for,
+//     then invite the ask on the first call. Not promising is enough; an
+//     explicit "no" turns something we could arrange into something we have
+//     publicly refused.
 //   · The keyword "baby care nurse Lahore" is deliberately NOT targeted
 //     (keyword-map rule 4: never target a term the business cannot deliver).
 //
@@ -165,8 +169,8 @@ const POSTNATAL_FAQ: { q: string; qUr: string; a: string; aUr: string }[] = [
   {
     q: "Will your caregiver look after the baby as well?",
     qUr: "کیا آپ کا عملہ بچے کو بھی سنبھالے گا؟",
-    a: "No — and we would rather write that plainly here than have you find out on the morning she arrives. What we arrange is care for the mother: her wound and dressing, her prescribed medicines, her meals, help with hygiene and with moving around the house, and somebody with her through the night. We do not send a baby nurse and we do not promise care of a newborn. If what your family needs is help specifically with the baby, please raise it on the very first call — we will tell you honestly what we can and cannot do, before anyone is booked and before you have paid anything.",
-    aUr: "نہیں — اور یہ بات ہم یہاں صاف لکھ دینا بہتر سمجھتے ہیں، بجائے اس کے کہ آپ کو اس دن پتہ چلے جب عملہ گھر پہنچے۔ ہمارا بندوبست ماں کی دیکھ بھال کے لیے ہوتا ہے: اس کا زخم اور ڈریسنگ، تجویز کردہ دوائیں، اس کا کھانا، صفائی اور چلنے پھرنے میں مدد، اور رات بھر اس کے پاس کوئی۔ ہم بچے کی نرس نہیں بھیجتے اور نہ نومولود کی دیکھ بھال کا وعدہ کرتے ہیں۔ اگر آپ کے گھر والوں کو خاص طور پر بچے کے لیے مدد چاہیے تو پہلی ہی کال پر بتا دیں — ہم صاف بتا دیں گے کہ ہم کیا کر سکتے ہیں اور کیا نہیں، کسی بکنگ سے پہلے اور کوئی ادائیگی کیے بغیر۔",
+    a: "What we arrange is care for the mother — her wound and dressing, her prescribed medicines, her meals, help with hygiene and with moving around the house, and somebody with her through the night. That is what the caregiver comes for, so it is worth settling before she arrives rather than on the morning. If your family also wants help with the baby, say so on the first call: we will look at what you need and tell you what we can arrange, before anyone is booked and before you have paid anything.",
+    aUr: "ہمارا بندوبست ماں کی دیکھ بھال کے لیے ہوتا ہے — اس کا زخم اور ڈریسنگ، تجویز کردہ دوائیں، اس کا کھانا، صفائی اور چلنے پھرنے میں مدد، اور رات بھر اس کے پاس کوئی۔ عملہ اسی کام کے لیے آتا ہے، اس لیے یہ بات پہلے طے کر لینا بہتر ہے، نہ کہ اُس دن جب وہ گھر پہنچے۔ اگر آپ کے گھر والے بچے کے لیے بھی مدد چاہتے ہیں تو پہلی کال پر بتا دیں: ہم آپ کی ضرورت دیکھ کر بتا دیں گے کہ کیا بندوبست ہو سکتا ہے، کسی بکنگ سے پہلے اور کوئی ادائیگی کیے بغیر۔",
   },
   {
     q: "Can a nurse change the dressing at home after a C-section?",

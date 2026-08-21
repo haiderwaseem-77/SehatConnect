@@ -131,8 +131,8 @@ const AREA_FAQ: { q: string; qUr: string; a: string; aUr: string }[] = [
   {
     q: "Which parts of DHA do you cover?",
     qUr: "ڈی ایچ اے کے کن حصوں میں آپ آتے ہیں؟",
-    a: "All of DHA. Our office is in DHA Phase 8, which makes this the area of Lahore we are closest to — we do not put a number on that, because we have not measured one. On the call we ask which phase and which block you are in, and we fix the arrival time with you then.",
-    aUr: "پورے ڈی ایچ اے میں۔ ہمارا دفتر ڈی ایچ اے فیز 8 میں ہے، اس لیے لاہور میں یہ علاقہ ہمارے سب سے قریب ہے — ہم اس کے ساتھ کوئی وقت نہیں لکھتے، کیونکہ ہم نے ابھی ناپا نہیں۔ کال پر ہم پوچھ لیتے ہیں کہ کون سا فیز اور کون سا بلاک، اور آنے کا وقت اُسی وقت طے کر لیتے ہیں۔",
+    a: "All of DHA. Our office is in DHA Phase 8, which makes this the area of Lahore we are closest to. On the call we ask which phase and which block you are in, and we fix the arrival time with you then.",
+    aUr: "پورے ڈی ایچ اے میں۔ ہمارا دفتر ڈی ایچ اے فیز 8 میں ہے، اس لیے لاہور میں یہ علاقہ ہمارے سب سے قریب ہے۔ کال پر ہم پوچھ لیتے ہیں کہ کون سا فیز اور کون سا بلاک، اور آنے کا وقت اُسی وقت طے کر لیتے ہیں۔",
   },
   {
     q: "Ghar par drip lagwani hai — can a nurse come for just one visit?",
