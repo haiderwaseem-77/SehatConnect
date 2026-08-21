@@ -85,8 +85,20 @@ const NEED_LINKS = [
     dsEn: "wounds, dressings and medicines after surgery", dsUr: "زخم، ڈریسنگ اور آپریشن کے بعد دوائیں" },
   { href: "/services/elderly-care", en: "Elderly care at home", ur: "بزرگوں کی گھر پر دیکھ بھال",
     dsEn: "day, night, or two caregivers round the clock", dsUr: "دن، رات، یا چوبیس گھنٹے دو کیئر گیور" },
+  { href: "/services/long-term-care", en: "Long-term & bedridden care", ur: "طویل مدتی اور بستر پر دیکھ بھال",
+    dsEn: "care measured in months, not days", dsUr: "دنوں کی نہیں، مہینوں کی دیکھ بھال" },
+  { href: "/services/mother-baby-care", en: "Care after delivery", ur: "زچگی کے بعد دیکھ بھال",
+    dsEn: "for the mother — wound care, medicines, rest", dsUr: "ماں کے لیے — زخم، دوائیں اور آرام" },
+  { href: "/services/female-nurse", en: "Female nurse at home", ur: "گھر پر خاتون نرس",
+    dsEn: "ask, and you never have to explain why", dsUr: "بس کہہ دیں، وجہ بتانے کی ضرورت نہیں" },
+  { href: "/services/male-nurse", en: "Male nurse at home", ur: "گھر پر مرد نرس",
+    dsEn: "lifting, personal care and night duty", dsUr: "اٹھانا، ذاتی دیکھ بھال اور رات کی ڈیوٹی" },
+  { href: "/services/physiotherapy", en: "Physiotherapy at home", ur: "گھر پر فزیوتھراپی",
+    dsEn: "we arrange a physiotherapist to visit", dsUr: "ہم فزیوتھراپسٹ کے وزٹ کا بندوبست کرتے ہیں" },
   { href: "/charges", en: "How charges work", ur: "اخراجات کا طریقہ",
     dsEn: "what decides the price, and when you pay", dsUr: "قیمت کس بات پر ہے، اور ادائیگی کب" },
+  { href: "/care-from-abroad", en: "Arranging care from abroad", ur: "بیرونِ ملک سے بندوبست",
+    dsEn: "for families in the UK, USA, UAE or Canada", dsUr: "برطانیہ، امریکہ، یو اے ای یا کینیڈا میں رہنے والوں کے لیے" },
 ];
 
 // nurse-vs-attendant comparison (preserved from the original page)

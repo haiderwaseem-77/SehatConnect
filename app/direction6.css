@@ -423,7 +423,16 @@ body{overflow-x:hidden}
 .sc-footer .foot-brand p{color:rgba(251,248,242,.74);font-size:15.5px;margin-top:14px;max-width:34ch}
 .sc-footer .foot-brand .ur{font-size:15px;color:#9fc4be;margin-top:10px}
 .sc-footer .foot-col h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#6fd0c3;margin-bottom:14px;font-weight:800}
-.sc-footer .foot-col a,.sc-footer .foot-col p{display:block;color:rgba(251,248,242,.82);font-size:16px;margin-bottom:10px;font-weight:600}
+.sc-footer .foot-col p{display:block;color:rgba(251,248,242,.82);font-size:16px;margin-bottom:10px;font-weight:600}
+/* Footer links are a real tap target on a phone, not decoration. The list grew
+   to 28 links when every page got an inbound link from here, and at 16px text
+   with a 10px gap each one was under 30px tall — a mistap risk for the 40-65
+   audience this site is built for. Padding, not margin, so the whole 44px is
+   clickable rather than just the text. */
+.sc-footer .foot-col a{
+  display:flex;align-items:center;min-height:44px;
+  color:rgba(251,248,242,.82);font-size:16px;font-weight:600;margin-bottom:0;
+}
 .sc-footer .foot-col a:hover,.sc-footer .foot-col a:focus-visible{color:#fff}
 .sc-footer .foot-num{font-size:20px;color:#fff !important;font-weight:800;letter-spacing:.02em}
 .sc-footer .areas{color:rgba(251,248,242,.62);font-size:14px;line-height:1.7;font-weight:600}
